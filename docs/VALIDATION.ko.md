@@ -14,6 +14,7 @@
 | ABI | APK의 모든 네이티브 라이브러리는 `arm64-v8a` |
 | 네트워크 권한 | 완성 APK에 INTERNET 없음. AndroidX의 앱 전용 signature permission만 존재 |
 | 공식 모델 준비 | 0.6B CustomVoice 및 12Hz Tokenizer 실제 다운로드·변환·해시 생성 성공 |
+| 전체 소스 ZIP | C++/ggml 포함 확인. Git 메타데이터 없는 ZIP을 풀어 모델 준비 실행 및 동일 SHA-256 재현 성공 |
 | Sohee 메타데이터 | 공식 설정과 GGUF 모두 `sohee=2864`, 한국어 언어 ID 2064 |
 | 호스트 합성 | 기본 한국어 10문장 모두 WAV 생성·정상 길이 종료, 토큰 상한 도달 없음 |
 | PCM 검사 | 10개 모두 24kHz/mono/PCM16, 0보다 큰 RMS, 샘플 포화(±32767) 없음 |
