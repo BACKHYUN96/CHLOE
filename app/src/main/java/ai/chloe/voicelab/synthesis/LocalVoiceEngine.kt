@@ -57,9 +57,9 @@ internal class LocalVoiceEngine(
         }
     }
     private fun send(msg: Message) { try { remote!!.send(msg) } catch (e: RemoteException) { failure(e) } }
-    override fun initialize() = request(VoiceProtocol.INIT)
-    override fun synthesize(text: String, outputPath: String) = request(VoiceProtocol.GENERATE, Bundle().apply {
-        putString("text", text); putString("output", outputPath)
+    override fun initialize(modelKey: String) = request(VoiceProtocol.INIT, Bundle().apply { putString("model", modelKey) })
+    override fun synthesize(text: String, outputPath: String, instruction: String) = request(VoiceProtocol.GENERATE, Bundle().apply {
+        putString("text", text); putString("output", outputPath); putString("instruction", instruction)
     })
     override fun stop() {
         ++requestId; pending = null

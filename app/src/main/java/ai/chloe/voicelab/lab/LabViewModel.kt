@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import ai.chloe.voicelab.audio.WavPlayer
 import ai.chloe.voicelab.diagnostics.LabLog
 import ai.chloe.voicelab.model.ModelStore
+import ai.chloe.voicelab.model.ModelSpec
 import ai.chloe.voicelab.synthesis.LocalVoiceEngine
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,6 +22,9 @@ internal data class LabState(
     val text: String = koreanSamples.first(),
     val status: String = "모델 폴더를 가져온 뒤 초기화해 주세요.",
     val installed: Boolean = false,
+    val model: ModelSpec = ModelSpec.SMALL,
+    val installedModels: Set<ModelSpec> = emptySet(),
+    val instruction: String = "",
     val ready: Boolean = false,
     val busy: Boolean = false,
     val importing: Boolean = false,
@@ -39,8 +43,11 @@ internal data class LabState(
 
 internal class LabViewModel(app: Application) : AndroidViewModel(app) {
     private val store = ModelStore(app)
+    private val preferences = app.getSharedPreferences("voice_lab", 0)
+    private val initialSpec = runCatching { ModelSpec.fromKey(preferences.getString("model", "0.6b")!!) }.getOrDefault(ModelSpec.SMALL)
     private val log = LabLog(app, "ui")
-    private val mutable = MutableStateFlow(LabState(installed = store.installed()))
+    private val mutable = MutableStateFlow(LabState(model = initialSpec, installed = store.installed(initialSpec),
+        installedModels = ModelSpec.entries.filter { store.installed(it) }.toSet()))
     val state = mutable.asStateFlow()
     private val engine = LocalVoiceEngine(app, ::event)
     private val player = WavPlayer(app, viewModelScope)
@@ -58,6 +65,20 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
     }
     fun setText(value: String) { if (!state.value.busy) mutable.update { it.copy(text = value) } }
     fun setAutoPlay(value: Boolean) { mutable.update { it.copy(autoPlay = value) } }
+    fun setInstruction(value: String) {
+        if (!state.value.busy && state.value.model.supportsInstruction) mutable.update { it.copy(instruction = value) }
+    }
+    fun selectModel(spec: ModelSpec) {
+        if (state.value.busy || state.value.playing || state.value.model == spec) return
+        stopPlayback()
+        output = null; report = null; reportFile = null
+        mutable.update { it.copy(ready = false, busy = true) }
+        engine.stop()
+        preferences.edit().putString("model", spec.key).apply()
+        mutable.update { it.copy(model = spec, installed = store.installed(spec), instruction = "", error = null,
+            hasAudio = false, hasReport = false, metrics = "선택한 모델의 측정 결과가 없습니다.", memory = "미측정",
+            pronunciation = 0, intonation = 0, rhythm = 0, notes = "", status = "${spec.label} 선택됨 · 초기화해 주세요.") }
+    }
     fun rate(kind: String, value: Int) = mutable.update {
         when (kind) {
             "pronunciation" -> it.copy(pronunciation = value)
@@ -72,8 +93,11 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
         mutable.update { it.copy(busy = true, importing = true, error = null, status = "모델 패키지 검사 중…") }
         importJob = viewModelScope.launch {
             try {
-                withContext(Dispatchers.IO) { store.import(uri) { progress -> mutable.update { it.copy(status = progress) } } }
-                mutable.update { it.copy(installed = true, status = "모델 가져오기 완료. 초기화를 눌러 주세요.") }
+                val selected = state.value.model
+                withContext(Dispatchers.IO) { store.import(uri, selected) { progress -> mutable.update { it.copy(status = progress) } } }
+                mutable.update { it.copy(installed = store.installed(it.model),
+                    installedModels = ModelSpec.entries.filter { spec -> store.installed(spec) }.toSet(),
+                    status = "${selected.label} 가져오기 완료. 초기화를 눌러 주세요.") }
                 log.record("model_imported")
             } catch (e: CancellationException) {
                 mutable.update { it.copy(status = "모델 가져오기를 중지했습니다.") }
@@ -86,12 +110,13 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
         if (!state.value.installed || state.value.busy) return
         stopPlayback()
         mutable.update { it.copy(busy = true, ready = false, error = null, status = "추론 서비스 연결 중…") }
-        runCatching { engine.initialize() }.onFailure { error(it.message ?: "초기화 실패") }
+        runCatching { engine.initialize(state.value.model.key) }.onFailure { error(it.message ?: "초기화 실패") }
     }
     fun generate() {
         val s = state.value
         if (!s.ready || s.busy) return
         if (s.text.isBlank() || s.text.codePointCount(0, s.text.length) > 240) { error("한국어 문장을 1~240자 입력하세요.", keepReady = true); return }
+        if (s.instruction.codePointCount(0, s.instruction.length) > 240) { error("말투 지시를 240자 이내로 입력하세요.", keepReady = true); return }
         stopPlayback()
         output = null; report = null; reportFile = null
         requestedNanos = System.nanoTime()
@@ -99,12 +124,12 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
         mutable.update { it.copy(busy = true, error = null, status = "Sohee 음성 생성 중…", hasAudio = false,
             hasReport = false, metrics = "생성 중…", pronunciation = 0, intonation = 0, rhythm = 0, notes = "") }
         log.record("generation_requested", JSONObject().put("characters", s.text.codePointCount(0, s.text.length)))
-        runCatching { engine.synthesize(s.text, file.path) }.onFailure { error(it.message ?: "생성 요청 실패") }
+        runCatching { engine.synthesize(s.text, file.path, s.instruction) }.onFailure { error(it.message ?: "생성 요청 실패") }
     }
     private fun event(data: JSONObject) {
         when (data.optString("type")) {
-            "initializing" -> mutable.update { it.copy(status = "F16 모델 초기화 중…") }
-            "ready" -> mutable.update { it.copy(busy = false, ready = true, status = "Sohee 준비 완료 · 초기화 ${data.optLong("init_ms")} ms") }
+            "initializing" -> mutable.update { it.copy(status = "${it.model.label} F16 모델 초기화 중…") }
+            "ready" -> mutable.update { it.copy(busy = false, ready = true, status = "${it.model.label} Sohee 준비 완료 · 초기화 ${data.optLong("init_ms")} ms") }
             "generating" -> mutable.update { it.copy(status = "Sohee 음성 생성 중…") }
             "memory" -> mutable.update { it.copy(memory = "추론 PSS ${"%.1f".format(data.optInt("pss_kib") / 1024.0)} MiB · 관측 최대 ${"%.1f".format(data.optInt("peak_pss_kib") / 1024.0)} MiB · ${data.optLong("elapsed_ms") / 1000}초 · 열 상태 ${data.optInt("thermal_status")}") }
             "generated" -> {
@@ -113,6 +138,7 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
                 val seconds = data.getDouble("audio_seconds")
                 report = JSONObject(data.toString()).apply {
                     put("app_version", ai.chloe.voicelab.BuildConfig.VERSION_NAME)
+                    put("model_variant", state.value.model.key).put("instruction", state.value.instruction)
                     remove("path"); remove("pcm_ready_nanos"); remove("type")
                     put("input", state.value.text).put("speaker", "sohee").put("language", "Korean")
                     put("precision", "f16-f32-cp-down").put("mode", "buffered").put("threads", 4)
@@ -124,7 +150,7 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
                     put("device", Build.MODEL).put("sdk", Build.VERSION.SDK_INT)
                     put("fingerprint", Build.FINGERPRINT).put("abi", Build.SUPPORTED_ABIS.firstOrNull())
                     put("created_at_epoch_ms", System.currentTimeMillis())
-                    put("model_pack", JSONObject(File(store.active, "model-pack.json").readText()))
+                    put("model_pack", JSONObject(File(store.directory(state.value.model), "model-pack.json").readText()))
                 }
                 val reports = File(getApplication<Application>().filesDir, "reports").apply { mkdirs() }
                 reportFile = File(reports, output!!.nameWithoutExtension + ".json")

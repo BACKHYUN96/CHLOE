@@ -1,0 +1,116 @@
+Loading models from: /workspace/CHLOE/models/chloe-sohee-1.7b-f16-stable
+  [mem] load/start               rss=11.62 MB  phys=11.62 MB
+  TTS model path:       /workspace/CHLOE/models/chloe-sohee-1.7b-f16-stable/qwen-talker-1.7b-customvoice-f16-stable.gguf
+  Tokenizer model path: /workspace/CHLOE/models/chloe-sohee-1.7b-f16-stable/qwen-tokenizer-12hz-f16.gguf
+Loading TTS model from /workspace/CHLOE/models/chloe-sohee-1.7b-f16-stable/qwen-talker-1.7b-customvoice-f16-stable.gguf...
+  Text tokenizer loaded: vocab_size=151676 (97 ms)
+  [mem] load/after-tokenizer     rss=47.17 MB  phys=47.17 MB
+  Speaker encoder: deferred (lazy load)
+  Codec IDs: pad=2148, bos=2149, eos=2150, think=2154, nothink=2155, think_bos=2156, think_eos=2157
+  TTS model type: custom_voice
+  Metadata supports_instruction: true
+  CustomVoice speakers loaded: 9
+  Native backend preference: 0
+  Native active backend: CPU
+  Native CPU threads: 4
+  Native backend preference: 0
+  Native active backend: CPU
+  Native CPU threads: 4
+  TTSTransformer backend: CPU
+  TTS transformer loaded: hidden_size=2048, n_layers=28 (1044 ms)
+  [mem] load/after-transformer   rss=4.24 GB  phys=4.24 GB
+Loading vocoder from /workspace/CHLOE/models/chloe-sohee-1.7b-f16-stable/qwen-tokenizer-12hz-f16.gguf...
+  AudioTokenizerDecoder backend: CPU
+  Vocoder loaded: sample_rate=24000, n_codebooks=16 (238 ms)
+  [mem] load/after-vocoder       rss=4.24 GB  phys=4.24 GB
+All models loaded in 1398 ms
+  [mem] load/end                 rss=4.24 GB  phys=4.24 GB
+Synthesizing: "그러게요. 저도 그렇게 생각해요."
+Using named speaker: sohee (2048 floats)
+  [mem] synth/start              rss=4.24 GB  phys=4.24 GB
+  [mem] synth/after-tokenize     rss=4.24 GB  phys=4.24 GB
+Text tokenized: 20 tokens
+  Tokens: 151644 77091 198 48606 60294 57801 35711 13 125569 47985 ...
+  build_prefill_graph: n_tokens=20, n_instruct=0, has_speaker=yes, has_reference=no
+  Talker KV cache: F32 (default)
+
+Generating: 1/1024 tokens
+Generating: 2/1024 tokens
+Generating: 3/1024 tokens
+Generating: 4/1024 tokens
+Generating: 5/1024 tokens
+Generating: 6/1024 tokens
+Generating: 7/1024 tokens
+Generating: 8/1024 tokens
+Generating: 9/1024 tokens
+Generating: 10/1024 tokens
+Generating: 11/1024 tokens
+Generating: 12/1024 tokens
+Generating: 13/1024 tokens
+Generating: 14/1024 tokens
+Generating: 15/1024 tokens
+Generating: 16/1024 tokens
+Generating: 17/1024 tokens
+Generating: 18/1024 tokens
+Generating: 19/1024 tokens
+Generating: 20/1024 tokens
+Generating: 21/1024 tokens
+Generating: 22/1024 tokens
+Generating: 23/1024 tokens
+Generating: 24/1024 tokens
+Generating: 25/1024 tokens
+Generating: 26/1024 tokens
+Generating: 27/1024 tokens
+Generating: 28/1024 tokens
+Generating: 29/1024 tokens
+Generating: 30/1024 tokens
+Generating: 31/1024 tokens
+Generating: 32/1024 tokens
+Generating: 33/1024 tokens
+Generating: 34/1024 tokens
+Generating: 35/1024 tokens
+Generating: 36/1024 tokens
+Generating: 37/1024 tokens
+Generating: 38/1024 tokens
+Generating: 39/1024 tokens  [mem] synth/after-generate     rss=4.24 GB  phys=4.24 GB
+Speech codes generated: 39 frames x 16 codebooks
+  [mem] synth/after-decode       rss=4.35 GB  phys=4.35 GB
+  [mem] synth/end                rss=4.35 GB  phys=4.35 GB
+
+Timing:
+  Tokenization:    1 ms
+  Speaker encode:  0 ms
+  Code generation: 3893 ms
+  Vocoder decode:  2069 ms
+    graph build:   1 ms (rebuilt)
+    graph alloc:   0 ms
+    input upload:  0 ms
+    graph compute: 2068 ms
+    output read:   0 ms
+    frames/samples:39 / 74880
+  Total:           5963 ms
+  Audio duration:  3.12 s
+  Throughput:      0.52x realtime (RTF=1.911)
+
+Memory:
+  RSS start/end:   4.24 GB -> 4.35 GB
+  RSS peak:        4.35 GB
+  Phys start/end:  4.24 GB -> 4.35 GB
+  Phys peak:       4.35 GB
+
+Output saved to: /workspace/CHLOE/artifacts/host-17b-all/sample-08.wav
+Audio duration: 3.12 seconds
+
+Timing:
+  Load:           0 ms
+  Tokenize:       1 ms
+  Encode:         0 ms
+  Generate:    3893 ms
+  Decode:      2069 ms
+    graph build:        1 ms (rebuilt)
+    graph alloc:        0 ms
+    input upload:       0 ms
+    graph compute:   2068 ms
+    output read:        0 ms
+    frames/samples:    39 / 74880
+  Total:       5963 ms

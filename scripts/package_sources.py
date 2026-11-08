@@ -3,9 +3,11 @@
 from pathlib import Path
 import subprocess
 import zipfile
+import re
 
 root = Path(__file__).resolve().parents[1]
-target = root / "artifacts/CHLOE-0.1.0-alpha1-sources.zip"
+version = re.search(r'versionName = "([^"]+)"', (root / "app/build.gradle.kts").read_text())[1]
+target = root / f"artifacts/CHLOE-{version}-sources.zip"
 target.parent.mkdir(exist_ok=True)
 files = subprocess.check_output(["git", "ls-files", "--recurse-submodules", "-z"], cwd=root).decode().split("\0")
 with zipfile.ZipFile(target, "w", compression=zipfile.ZIP_DEFLATED) as archive:

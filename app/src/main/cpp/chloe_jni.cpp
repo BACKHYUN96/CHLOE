@@ -15,6 +15,7 @@
 
 namespace {
 std::unique_ptr<qwen3_tts::Qwen3TTS> engine;
+bool instruction_supported = false;
 using Clock = std::chrono::steady_clock;
 double elapsed(Clock::time_point start) {
     return std::chrono::duration<double, std::milli>(Clock::now() - start).count();
@@ -31,7 +32,7 @@ void fail(JNIEnv* env, const char* message) {
     env->ThrowNew(env->FindClass("java/lang/IllegalStateException"), message);
 }
 // Check actual GGUF metadata; filenames alone never establish CustomVoice support.
-void validate_talker(const std::string& path) {
+void validate_talker(const std::string& path, int expected_hidden) {
     gguf_init_params params{true, nullptr};
     std::unique_ptr<gguf_context, decltype(&gguf_free)> ctx(gguf_init_from_file(path.c_str(), params), gguf_free);
     if (!ctx) throw std::runtime_error("Invalid talker GGUF");
@@ -41,8 +42,8 @@ void validate_talker(const std::string& path) {
         std::string(gguf_get_val_str(ctx.get(), type)) != "custom_voice")
         throw std::runtime_error("Only CustomVoice GGUF is accepted; Base is not Sohee");
     auto dim = key("qwen3-tts.talker.embedding_length");
-    if (dim < 0 || gguf_get_kv_type(ctx.get(), dim) != GGUF_TYPE_UINT32 || gguf_get_val_u32(ctx.get(), dim) != 1024)
-        throw std::runtime_error("Expected the 0.6B talker (1024 hidden size)");
+    if (dim < 0 || gguf_get_kv_type(ctx.get(), dim) != GGUF_TYPE_UINT32 || gguf_get_val_u32(ctx.get(), dim) != expected_hidden)
+        throw std::runtime_error("Talker hidden size does not match selected model");
     auto names = key("qwen3-tts.codec.speaker_names");
     auto ids = key("qwen3-tts.codec.speaker_ids");
     if (names < 0 || ids < 0 || gguf_get_kv_type(ctx.get(), names) != GGUF_TYPE_ARRAY ||
@@ -80,9 +81,15 @@ void write_wav(const std::string& path, const std::vector<float>& audio, int rat
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_ai_chloe_voicelab_synthesis_NativeBridge_initialize(JNIEnv* env, jobject, jstring directory, jstring logPath) {
+Java_ai_chloe_voicelab_synthesis_NativeBridge_initialize(JNIEnv* env, jobject, jstring directory, jstring talkerFile, jint hiddenSize, jstring logPath) {
     try {
         engine.reset();
+        instruction_supported = false;
+        if (hiddenSize != 1024 && hiddenSize != 2048) throw std::runtime_error("Unsupported model size");
+        const std::string name = string(env, talkerFile);
+        const std::string expected = hiddenSize == 1024
+            ? "qwen-talker-0.6b-customvoice-f16-stable.gguf" : "qwen-talker-1.7b-customvoice-f16-stable.gguf";
+        if (name != expected) throw std::runtime_error("Unexpected talker filename");
         // Preserve upstream diagnostics in app-private storage; never send logs over a network.
         static bool redirected = false;
         if (!redirected) {
@@ -93,31 +100,39 @@ Java_ai_chloe_voicelab_synthesis_NativeBridge_initialize(JNIEnv* env, jobject, j
             redirected = true;
         }
         auto dir = string(env, directory);
-        validate_talker(dir + "/qwen-talker-0.6b-customvoice-f16-stable.gguf");
+        validate_talker(dir + "/" + name, hiddenSize);
         qwen3_tts_set_cpu_threads(4);
         auto candidate = std::make_unique<qwen3_tts::Qwen3TTS>();
-        if (!candidate->load_models(dir, "qwen-talker-0.6b-customvoice-f16-stable.gguf"))
+        if (!candidate->load_models(dir, name))
             throw std::runtime_error(candidate->get_error());
         auto caps = candidate->get_model_capabilities();
         auto speakers = candidate->get_available_speakers();
         if (caps.model_type != "custom_voice" || !caps.supports_named_speakers ||
             std::find(speakers.begin(), speakers.end(), "sohee") == speakers.end())
             throw std::runtime_error("Loaded runtime cannot resolve Sohee");
+        if (hiddenSize == 2048 && !caps.supports_instruction)
+            throw std::runtime_error("1.7B instruction capability missing");
+        instruction_supported = hiddenSize == 2048 && caps.supports_instruction;
         engine = std::move(candidate);
-        return env->NewStringUTF("CustomVoice 0.6B / Sohee / Korean / F16 + F32 CP-down / CPU 4 threads");
+        return env->NewStringUTF(hiddenSize == 1024 ? "0.6B / Sohee / CPU 4 threads" : "1.7B / Sohee / instruction / CPU 4 threads");
     } catch (const std::exception& e) { fail(env, e.what()); }
       catch (...) { fail(env, "Unknown native initialization failure"); }
     return nullptr;
 }
 
 extern "C" JNIEXPORT jdoubleArray JNICALL
-Java_ai_chloe_voicelab_synthesis_NativeBridge_synthesize(JNIEnv* env, jobject, jbyteArray text, jstring wavPath) {
+Java_ai_chloe_voicelab_synthesis_NativeBridge_synthesize(JNIEnv* env, jobject, jbyteArray text, jstring wavPath, jbyteArray instruction) {
     try {
         if (!engine) throw std::runtime_error("Initialize Sohee first");
         std::string utf8(env->GetArrayLength(text), '\0');
         env->GetByteArrayRegion(text, 0, utf8.size(), reinterpret_cast<jbyte*>(utf8.data()));
         if (env->ExceptionCheck()) return nullptr;
+        std::string instruct(env->GetArrayLength(instruction), '\0');
+        env->GetByteArrayRegion(instruction, 0, instruct.size(), reinterpret_cast<jbyte*>(instruct.data()));
+        if (env->ExceptionCheck()) return nullptr;
+        if (!instruct.empty() && !instruction_supported) throw std::runtime_error("0.6B does not support instructions");
         qwen3_tts::tts_params params;
+        params.instruction = instruct;
         params.language_id = 2064;
         params.speaker = "sohee";
         params.n_threads = 4;

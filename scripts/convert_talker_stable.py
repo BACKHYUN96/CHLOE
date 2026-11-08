@@ -22,6 +22,12 @@ def main():
     spec.loader.exec_module(module)
 
     class StableConverter(module.Qwen3TTSConverter):
+        def _add_metadata(self, writer):
+            super()._add_metadata(writer)
+            # The pinned converter computes this flag but does not serialize it.
+            if self.tts_model_size == "1b7":
+                writer.add_bool("qwen3-tts.supports_instruction", self.supports_instruction)
+
         def _convert_dtype(self, tensor, tensor_name=""):
             if tensor_name.startswith("code_pred.") and ".ffn_down.weight" in tensor_name:
                 return tensor.float().numpy(), gguf.GGMLQuantizationType.F32

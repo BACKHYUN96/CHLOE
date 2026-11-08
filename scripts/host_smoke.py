@@ -28,21 +28,25 @@ def main():
     p.add_argument("--models", required=True, type=Path)
     p.add_argument("--output", default=Path("artifacts/host-smoke"), type=Path)
     p.add_argument("--all", action="store_true")
+    p.add_argument("--variant", choices=["0.6b", "1.7b"], default="0.6b")
+    p.add_argument("--instruction", default="")
     a = p.parse_args()
     a.output.mkdir(parents=True, exist_ok=True)
     results = []
     for i, text in enumerate(SAMPLES if a.all else SAMPLES[:1], 1):
         output = a.output / f"sample-{i:02}.wav"
         command = [str(a.binary.resolve()), "-m", str(a.models.resolve()),
-            "--model-name", "qwen-talker-0.6b-customvoice-f16-stable.gguf", "--speaker", "sohee",
+            "--model-name", f"qwen-talker-{a.variant}-customvoice-f16-stable.gguf", "--speaker", "sohee",
             "-l", "ko", "--seed", "42", "--max-tokens", "1024", "-j", "4", "-t", text, "-o", str(output.resolve())]
+        if a.instruction: command += ["--instruction", a.instruction]
         start = time.perf_counter()
         r = subprocess.run(command, capture_output=True, text=True, encoding="utf-8", errors="replace")
         total = (time.perf_counter() - start) * 1000
         (a.output / f"sample-{i:02}.log").write_text(r.stdout + r.stderr, encoding="utf-8")
         result = dict(sample=i, text=text, exit_code=r.returncode, process_wall_ms=round(total, 2),
             host=platform.platform(), hardware=platform.machine(), threads=4, speaker="sohee", language="ko",
-            first_output_ms=None, pronunciation=None, intonation=None, device_test=False)
+            first_output_ms=None, pronunciation=None, intonation=None, device_test=False,
+            model_variant=a.variant, instruction=a.instruction)
         if r.returncode == 0:
             with wave.open(str(output)) as wav:
                 result.update(sample_rate=wav.getframerate(), samples=wav.getnframes(), channels=wav.getnchannels(),

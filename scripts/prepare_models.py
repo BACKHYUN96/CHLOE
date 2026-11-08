@@ -6,13 +6,16 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import shutil
 
-MODEL = "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice"
+VARIANTS = {
+    "0.6b": ("Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice", "85e237c12c027371202489a0ec509ded67b5e4b5", "0b6", 1024),
+    "1.7b": ("Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice", "0c0e3051f131929182e2c023b9537f8b1c68adfe", "1b7", 2048),
+}
+
 TOKENIZER = "Qwen/Qwen3-TTS-Tokenizer-12Hz"
-MODEL_REV = "85e237c12c027371202489a0ec509ded67b5e4b5"
 TOKENIZER_REV = "7dd38ad4e9bad454aae9cd937d0cd577604fe229"
 RUNTIME = "4562731dc612cb87b4cd1eedac275a17d1078773"
-TALKER_FILE = "qwen-talker-0.6b-customvoice-f16-stable.gguf"
 TOKENIZER_FILE = "qwen-tokenizer-12hz-f16.gguf"
 
 
@@ -26,11 +29,16 @@ def sha256(path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=Path("models/chloe-sohee-f16-stable"))
+    parser.add_argument("--variant", choices=VARIANTS, default="0.6b")
+    parser.add_argument("--output", type=Path)
     parser.add_argument("--cache", type=Path, default=Path("models/hf"))
     parser.add_argument("--local-talker", type=Path, help="Use an already downloaded official checkpoint")
     parser.add_argument("--local-tokenizer", type=Path)
     args = parser.parse_args()
+    model, model_rev, model_size, hidden_size = VARIANTS[args.variant]
+    talker_file = f"qwen-talker-{args.variant}-customvoice-f16-stable.gguf"
+    if args.output is None:
+        args.output = Path("models/chloe-sohee-f16-stable") if args.variant == "0.6b" else Path("models/chloe-sohee-1.7b-f16-stable")
     repo = Path(__file__).resolve().parents[1]
     runtime = repo / "external/qwen3-tts.cpp"
     if (runtime / ".git").exists():
@@ -47,30 +55,31 @@ def main():
         raise SystemExit("Supply both local checkpoint directories or neither")
     else:
         from huggingface_hub import snapshot_download
-        talker = Path(snapshot_download(MODEL, revision=MODEL_REV, local_dir=args.cache / "customvoice",
+        talker = Path(snapshot_download(model, revision=model_rev, local_dir=args.cache / ("customvoice-" + args.variant),
             allow_patterns=["config.json", "generation_config.json", "vocab.json", "merges.txt", "tokenizer_config.json", "model.safetensors"]))
         tokenizer = Path(snapshot_download(TOKENIZER, revision=TOKENIZER_REV, local_dir=args.cache / "tokenizer",
             allow_patterns=["config.json", "model.safetensors"]))
     cfg = json.loads((talker / "config.json").read_text(encoding="utf-8"))
-    if not (cfg.get("tts_model_type") == "custom_voice" and cfg.get("tts_model_size") == "0b6"
+    if not (cfg.get("tts_model_type") == "custom_voice" and cfg.get("tts_model_size") == model_size
             and cfg["talker_config"]["spk_id"].get("sohee") == 2864):
-        raise SystemExit("Expected official 0.6B CustomVoice with Sohee; refusing Base/other speakers")
+        raise SystemExit(f"Expected official {args.variant} CustomVoice with Sohee; refusing Base/other speakers")
     args.output.mkdir(parents=True, exist_ok=True)
     # An interrupted conversion must never leave a valid-looking package manifest.
     (args.output / "model-pack.json").unlink(missing_ok=True)
     for script, source, filename, extra in [
-        (repo / "scripts/convert_talker_stable.py", talker, TALKER_FILE, []),
+        (repo / "scripts/convert_talker_stable.py", talker, talker_file, []),
         (runtime / "scripts/convert_tokenizer_to_gguf.py", tokenizer, TOKENIZER_FILE, ["--type", "f16"]),
     ]:
         subprocess.run([sys.executable, str(script), "--input", str(source),
             "--output", str(args.output / filename), *extra], check=True)
     # Verify emitted metadata instead of assuming that conversion preserved the speaker map.
     from gguf import GGUFReader
-    gguf = GGUFReader(str(args.output / TALKER_FILE))
+    gguf = GGUFReader(str(args.output / talker_file))
     def contents(key):
         return gguf.fields[key].contents()
     assert contents("qwen3-tts.model_type") == "custom_voice"
-    assert contents("qwen3-tts.talker.embedding_length") == 1024
+    assert contents("qwen3-tts.talker.embedding_length") == hidden_size
+    if args.variant == "1.7b": assert contents("qwen3-tts.supports_instruction")
     names = contents("qwen3-tts.codec.speaker_names")
     ids = contents("qwen3-tts.codec.speaker_ids")
     assert ids[names.index("sohee")] == 2864
@@ -78,11 +87,12 @@ def main():
     from gguf import GGMLQuantizationType
     assert all(tensors[f"code_pred.blk.{i}.ffn_down.weight"].tensor_type == GGMLQuantizationType.F32 for i in range(5))
     files = [{"name": name, "size": (args.output / name).stat().st_size,
-              "sha256": sha256(args.output / name)} for name in [TALKER_FILE, TOKENIZER_FILE]]
-    manifest = dict(schema=1, model_id=MODEL, tokenizer_id=TOKENIZER, model_revision=MODEL_REV,
+              "sha256": sha256(args.output / name)} for name in [talker_file, TOKENIZER_FILE]]
+    manifest = dict(schema=1, model_id=model, tokenizer_id=TOKENIZER, model_revision=model_rev,
         tokenizer_revision=TOKENIZER_REV, runtime_commit=RUNTIME, precision="f16-f32-cp-down", files=files,
         local_checkpoint_override=bool(args.local_talker), license="Apache-2.0")
     (args.output / "model-pack.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    shutil.copyfile(repo / "third_party/licenses/Qwen3-TTS-Apache-2.0.txt", args.output / "LICENSE-Qwen-Apache-2.0.txt")
     print(f"Prepared {args.output.resolve()}; copy the entire folder to your phone.")
 
 

@@ -1,0 +1,109 @@
+Loading models from: /workspace/CHLOE/models/chloe-sohee-1.7b-f16-stable
+  [mem] load/start               rss=11.62 MB  phys=11.62 MB
+  TTS model path:       /workspace/CHLOE/models/chloe-sohee-1.7b-f16-stable/qwen-talker-1.7b-customvoice-f16-stable.gguf
+  Tokenizer model path: /workspace/CHLOE/models/chloe-sohee-1.7b-f16-stable/qwen-tokenizer-12hz-f16.gguf
+Loading TTS model from /workspace/CHLOE/models/chloe-sohee-1.7b-f16-stable/qwen-talker-1.7b-customvoice-f16-stable.gguf...
+  Text tokenizer loaded: vocab_size=151676 (80 ms)
+  [mem] load/after-tokenizer     rss=46.99 MB  phys=46.99 MB
+  Speaker encoder: deferred (lazy load)
+  Codec IDs: pad=2148, bos=2149, eos=2150, think=2154, nothink=2155, think_bos=2156, think_eos=2157
+  TTS model type: custom_voice
+  Metadata supports_instruction: true
+  CustomVoice speakers loaded: 9
+  Native backend preference: 0
+  Native active backend: CPU
+  Native CPU threads: 4
+  Native backend preference: 0
+  Native active backend: CPU
+  Native CPU threads: 4
+  TTSTransformer backend: CPU
+  TTS transformer loaded: hidden_size=2048, n_layers=28 (1107 ms)
+  [mem] load/after-transformer   rss=4.23 GB  phys=4.23 GB
+Loading vocoder from /workspace/CHLOE/models/chloe-sohee-1.7b-f16-stable/qwen-tokenizer-12hz-f16.gguf...
+  AudioTokenizerDecoder backend: CPU
+  Vocoder loaded: sample_rate=24000, n_codebooks=16 (208 ms)
+  [mem] load/after-vocoder       rss=4.23 GB  phys=4.23 GB
+All models loaded in 1411 ms
+  [mem] load/end                 rss=4.23 GB  phys=4.23 GB
+Synthesizing: "아니, 그게 아니라 제 말은요."
+Using named speaker: sohee (2048 floats)
+  [mem] synth/start              rss=4.23 GB  phys=4.23 GB
+  [mem] synth/after-tokenize     rss=4.23 GB  phys=4.23 GB
+Text tokenized: 19 tokens
+  Tokens: 151644 77091 198 52959 83036 11 54825 57801 130651 62071 ...
+  build_prefill_graph: n_tokens=19, n_instruct=0, has_speaker=yes, has_reference=no
+  Talker KV cache: F32 (default)
+
+Generating: 1/1024 tokens
+Generating: 2/1024 tokens
+Generating: 3/1024 tokens
+Generating: 4/1024 tokens
+Generating: 5/1024 tokens
+Generating: 6/1024 tokens
+Generating: 7/1024 tokens
+Generating: 8/1024 tokens
+Generating: 9/1024 tokens
+Generating: 10/1024 tokens
+Generating: 11/1024 tokens
+Generating: 12/1024 tokens
+Generating: 13/1024 tokens
+Generating: 14/1024 tokens
+Generating: 15/1024 tokens
+Generating: 16/1024 tokens
+Generating: 17/1024 tokens
+Generating: 18/1024 tokens
+Generating: 19/1024 tokens
+Generating: 20/1024 tokens
+Generating: 21/1024 tokens
+Generating: 22/1024 tokens
+Generating: 23/1024 tokens
+Generating: 24/1024 tokens
+Generating: 25/1024 tokens
+Generating: 26/1024 tokens
+Generating: 27/1024 tokens
+Generating: 28/1024 tokens
+Generating: 29/1024 tokens
+Generating: 30/1024 tokens
+Generating: 31/1024 tokens
+Generating: 32/1024 tokens  [mem] synth/after-generate     rss=4.23 GB  phys=4.23 GB
+Speech codes generated: 32 frames x 16 codebooks
+  [mem] synth/after-decode       rss=4.31 GB  phys=4.31 GB
+  [mem] synth/end                rss=4.31 GB  phys=4.31 GB
+
+Timing:
+  Tokenization:    0 ms
+  Speaker encode:  0 ms
+  Code generation: 3385 ms
+  Vocoder decode:  1690 ms
+    graph build:   0 ms (rebuilt)
+    graph alloc:   1 ms
+    input upload:  0 ms
+    graph compute: 1689 ms
+    output read:   0 ms
+    frames/samples:32 / 61440
+  Total:           5075 ms
+  Audio duration:  2.56 s
+  Throughput:      0.50x realtime (RTF=1.982)
+
+Memory:
+  RSS start/end:   4.23 GB -> 4.31 GB
+  RSS peak:        4.31 GB
+  Phys start/end:  4.23 GB -> 4.31 GB
+  Phys peak:       4.31 GB
+
+Output saved to: /workspace/CHLOE/artifacts/host-17b-all/sample-04.wav
+Audio duration: 2.56 seconds
+
+Timing:
+  Load:           0 ms
+  Tokenize:       0 ms
+  Encode:         0 ms
+  Generate:    3385 ms
+  Decode:      1690 ms
+    graph build:        0 ms (rebuilt)
+    graph alloc:        1 ms
+    input upload:       0 ms
+    graph compute:   1689 ms
+    output read:        0 ms
+    frames/samples:    32 / 61440
+  Total:       5075 ms

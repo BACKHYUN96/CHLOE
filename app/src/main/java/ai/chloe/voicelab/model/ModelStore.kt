@@ -25,12 +25,12 @@ private fun InputStream.readBounded(limit: Int): ByteArray {
 
 internal data class PackFile(val name: String, val size: Long, val sha256: String)
 
-internal data class PackManifest(val json: String, val files: List<PackFile>) {
+internal data class PackManifest(val json: String, val files: List<PackFile>, val spec: ModelSpec) {
     companion object {
         fun parse(text: String): PackManifest {
             val doc = JSONObject(text)
             require(doc.getInt("schema") == 1) { "지원하지 않는 모델 패키지 버전" }
-            require(doc.getString("model_id") == "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice") { "0.6B CustomVoice 패키지가 필요합니다. Base는 지원하지 않습니다." }
+            val spec = ModelSpec.fromModelId(doc.getString("model_id"))
             require(doc.getString("tokenizer_id") == "Qwen/Qwen3-TTS-Tokenizer-12Hz")
             require(doc.getString("runtime_commit") == VoiceProtocol.RUNTIME_COMMIT) { "다른 런타임용 패키지입니다." }
             require(doc.getString("precision") == "f16-f32-cp-down") { "F32 안정화 투영이 포함된 F16 패키지가 필요합니다." }
@@ -42,23 +42,24 @@ internal data class PackManifest(val json: String, val files: List<PackFile>) {
                 val f = list.getJSONObject(i)
                 PackFile(f.getString("name"), f.getLong("size"), f.getString("sha256"))
             }
-            require(files.map { it.name }.toSet() == setOf(VoiceProtocol.TALKER, VoiceProtocol.TOKENIZER)) { "패키지 파일명이 올바르지 않습니다." }
+            require(files.map { it.name }.toSet() == setOf(spec.talkerFile, VoiceProtocol.TOKENIZER)) { "모델 크기와 패키지 파일명이 일치하지 않습니다." }
             files.forEach {
                 require(it.size in 1_000_000..6_000_000_000L) { "비정상적인 모델 크기" }
                 require(it.sha256.matches(Regex("[0-9a-f]{64}"))) { "SHA-256 누락" }
             }
             require(files.sumOf { it.size } <= 8_000_000_000L) { "패키지 크기 초과" }
-            return PackManifest(text, files)
+            return PackManifest(text, files, spec)
         }
     }
 }
 
 internal class ModelStore(private val context: Context) {
     private val root = File(context.filesDir, "models").apply { mkdirs() }
-    val active = File(root, "active")
-    fun installed(): Boolean = File(active, "model-pack.json").isFile
+    private val library = ModelLibrary(root)
+    fun directory(spec: ModelSpec) = library.directory(spec)
+    fun installed(spec: ModelSpec): Boolean = library.installed(spec)
 
-    suspend fun import(uri: Uri, progress: (String) -> Unit) {
+    suspend fun import(uri: Uri, selected: ModelSpec, progress: (String) -> Unit): ModelSpec {
         val tree = DocumentFile.fromTreeUri(context, uri) ?: error("폴더를 열 수 없습니다.")
         val manifestDoc = tree.findFile("model-pack.json") ?: error("model-pack.json이 없습니다. PC 준비 스크립트를 먼저 실행하세요.")
         val text = context.contentResolver.openInputStream(manifestDoc.uri)!!.use {
@@ -67,9 +68,10 @@ internal class ModelStore(private val context: Context) {
             bytes.toString(Charsets.UTF_8)
         }
         val manifest = PackManifest.parse(text)
+        require(manifest.spec == selected) { "선택한 ${selected.label}와 다른 모델입니다. ${manifest.spec.label}를 선택한 뒤 가져오세요." }
         val required = manifest.files.sumOf { it.size }
         require(StatFs(root.path).availableBytes > required + 512_000_000L) { "내부 저장소 공간이 부족합니다." }
-        val stage = File(root, "importing").apply { deleteRecursively(); mkdirs() }
+        val stage = File(root, "${selected.key}.importing").apply { deleteRecursively(); mkdirs() }
         try {
             var copied = 0L
             for (file in manifest.files) {
@@ -102,13 +104,15 @@ internal class ModelStore(private val context: Context) {
                 }
             }
             File(stage, "model-pack.json").writeText(text)
-            val previous = File(root, "previous").apply { deleteRecursively() }
+            val active = directory(selected)
+            val previous = File(root, "${selected.key}.previous").apply { deleteRecursively() }
             if (active.exists()) check(active.renameTo(previous)) { "기존 모델 보관 실패" }
             if (!stage.renameTo(active)) {
                 previous.renameTo(active)
                 error("모델 적용 실패; 기존 모델을 복원했습니다.")
             }
             previous.deleteRecursively()
+            return selected
         } finally { stage.deleteRecursively() }
     }
 }

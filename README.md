@@ -1,10 +1,12 @@
-# CHLOE Voice Lab · 0.1.0-alpha2
+# CHLOE Voice Lab · 0.1.0-alpha3
+
+alpha3는 0.6B/1.7B Sohee 선택과 모델별 저장을 추가합니다. 기존 0.6B 모델은 업데이트 시 자동 보존됩니다. 1.7B는 별도 가져오기가 필요하며, 폰 실행·음질 검증은 아직 필요합니다. [1.7B 설치 안내](docs/ALPHA3.ko.md)를 참고하세요.
 
 alpha2는 static AudioTrack에 PCM을 쓰기 전 상태를 오류로 판단했던 재생 버그를 수정합니다. 기존 alpha1 위에 업데이트 설치하며 모델을 다시 받을 필요는 없습니다. 상세 내용은 [수정 및 기기 측정 기록](docs/ALPHA2.ko.md)을 참고하세요.
 
-Android ARM64에서 **Qwen3-TTS 0.6B CustomVoice / Sohee / 한국어**를 검증하는 개인용 오프라인 음성 실험 앱입니다. 전체 대화 AI의 구현에 앞서 음질과 실행 가능성을 평가합니다.
+Android ARM64에서 **Qwen3-TTS 0.6B·1.7B CustomVoice / Sohee / 한국어**를 검증하는 개인용 오프라인 음성 실험 앱입니다. 전체 대화 AI의 구현에 앞서 음질과 실행 가능성을 평가합니다.
 
-**Android 실기기 합성·청취 검증은 아직 완료하지 않았습니다.** 코드/변환 성공, 호스트 추론, APK 빌드와 휴대전화 검증을 구분한 결과는 [검증 기록](docs/VALIDATION.ko.md)에 있습니다. 참고 Android 앱은 Base 모델을 사용하며 그것을 Sohee 지원으로 간주하지 않았습니다. [구현 경로 조사](docs/RESEARCH.ko.md)를 먼저 읽어 주세요.
+**1.7B는 Android 실기기 검증 전입니다.** 0.6B의 기기 측정과 alpha2 재생 수정 기록은 문서에서 별도로 확인할 수 있습니다. 코드/변환 성공, 호스트 추론, APK 빌드와 휴대전화 검증을 구분한 결과는 [검증 기록](docs/VALIDATION.ko.md)에 있습니다. 참고 Android 앱은 Base 모델을 사용하며 그것을 Sohee 지원으로 간주하지 않았습니다. [구현 경로 조사](docs/RESEARCH.ko.md)를 먼저 읽어 주세요.
 
 ## 앱 기능
 
@@ -38,7 +40,7 @@ adb install -r .\app\build\outputs\apk\debug\app-debug.apk
 
 Linux/macOS에서는 같은 명령의 `gradlew.bat`를 `./gradlew`로 바꿉니다. 빌드 산출물은 `app/build/outputs/apk/debug/app-debug.apk`입니다. ARM64만 포함하며 최소 Android 12/API 31입니다. Debug APK는 debuggable이고 추론 C++ 라이브러리는 Release 최적화로 컴파일합니다. 첫 빌드에는 개발 PC 인터넷이 필요하지만 설치 후 앱의 오프라인 실행과는 별개입니다.
 
-별도로 제공하는 `CHLOE-0.1.0-alpha1-sources.zip`에는 C++/ggml 소스도 포함되어 있습니다. ZIP을 풀어 Android Studio로 열 수 있고 submodule 다운로드를 다시 할 필요가 없습니다. GitHub의 기본 “Download ZIP”은 submodule 소스를 포함하지 않으므로 재귀 clone 또는 별도 전체 소스 ZIP을 사용하세요.
+별도로 제공하는 `CHLOE-0.1.0-alpha3-sources.zip`에는 C++/ggml 소스도 포함되어 있습니다. ZIP을 풀어 Android Studio로 열 수 있고 submodule 다운로드를 다시 할 필요가 없습니다. GitHub의 기본 “Download ZIP”은 submodule 소스를 포함하지 않으므로 재귀 clone 또는 별도 전체 소스 ZIP을 사용하세요.
 
 다른 개발 PC에서 만든 Debug APK는 서명키가 다를 수 있습니다. 서명 불일치 시 기존 앱을 삭제해야 설치할 수 있으며, 삭제 전 WAV/JSON을 내보내고 모델 원본을 보관하세요.
 

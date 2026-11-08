@@ -12,10 +12,23 @@ class PackManifestTest {
         .put("tokenizer_id", "Qwen/Qwen3-TTS-Tokenizer-12Hz")
         .put("runtime_commit", VoiceProtocol.RUNTIME_COMMIT).put("precision", "f16-f32-cp-down")
         .put("model_revision", "a".repeat(40)).put("tokenizer_revision", "b".repeat(40))
-        .put("files", JSONArray(listOf(VoiceProtocol.TALKER, VoiceProtocol.TOKENIZER).map {
+        .put("files", JSONArray(listOf(ModelSpec.SMALL.talkerFile, VoiceProtocol.TOKENIZER).map {
             JSONObject().put("name", it).put("size", 1_000_000).put("sha256", "a".repeat(64))
         }))
     @Test fun acceptsExpectedPair() { assertEquals(2, PackManifest.parse(manifest().toString()).files.size) }
+    @Test fun acceptsLargeCustomVoiceAndChecksMatchingTalker() {
+        val doc = manifest().put("model_id", ModelSpec.LARGE.modelId)
+        doc.getJSONArray("files").getJSONObject(0).put("name", ModelSpec.LARGE.talkerFile)
+        assertEquals(ModelSpec.LARGE, PackManifest.parse(doc.toString()).spec)
+        doc.getJSONArray("files").getJSONObject(0).put("name", ModelSpec.SMALL.talkerFile)
+        assertThrows(IllegalArgumentException::class.java) { PackManifest.parse(doc.toString()) }
+    }
+    @Test fun rejectsUnknownModelAndPathKeys() {
+        assertThrows(IllegalArgumentException::class.java) { ModelSpec.fromKey("../../active") }
+        assertThrows(IllegalArgumentException::class.java) { ModelSpec.fromModelId("Qwen/Qwen3-TTS-12Hz-0.7B-CustomVoice") }
+        assertTrue(ModelSpec.LARGE.supportsInstruction)
+        assertFalse(ModelSpec.SMALL.supportsInstruction)
+    }
     @Test fun rejectsBaseEvenWithCorrectFilenames() {
         assertThrows(IllegalArgumentException::class.java) {
             PackManifest.parse(manifest().put("model_id", "Qwen/Qwen3-TTS-12Hz-0.6B-Base").toString())

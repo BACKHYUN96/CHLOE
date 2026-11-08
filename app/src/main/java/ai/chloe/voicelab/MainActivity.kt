@@ -17,6 +17,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import ai.chloe.voicelab.lab.*
+import ai.chloe.voicelab.model.ModelSpec
 
 class MainActivity : ComponentActivity() {
     private val vm: LabViewModel by viewModels()
@@ -55,17 +56,25 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
             Text("Voice Lab", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
             Spacer(Modifier.height(8.dp))
             Text("한국어 여성 음성 실험실 · ${BuildConfig.VERSION_NAME}", style = MaterialTheme.typography.bodyMedium)
-            Text("완전 오프라인 · Sohee · 0.6B CustomVoice", style = MaterialTheme.typography.labelLarge)
+            Text("완전 오프라인 · Sohee · ${s.model.label} CustomVoice", style = MaterialTheme.typography.labelLarge)
         }
         item {
             LabCard("모델") {
-                Text(if (s.installed) "F16 패키지 설치됨" else "PC에서 준비한 모델 폴더가 필요합니다.")
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    ModelSpec.entries.forEach { spec ->
+                        FilterChip(selected = s.model == spec, onClick = { vm.selectModel(spec) },
+                            enabled = !s.busy && !s.playing,
+                            label = { Text("${spec.label} · ${if (spec in s.installedModels) "설치됨" else "미설치"}") })
+                    }
+                }
+                Text(if (s.installed) "${s.model.label} F16 패키지 설치됨" else "${s.model.label} 모델 폴더를 가져오세요.")
                 Text("model-pack.json과 GGUF 두 파일이 있는 폴더를 선택하세요. 가져온 파일은 앱 내부 저장소에 복사됩니다.", style = MaterialTheme.typography.bodySmall)
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     OutlinedButton(onClick = onImport, enabled = !s.busy && !s.ready) { Text("폴더 가져오기") }
                     Button(onClick = vm::initialize, enabled = s.installed && !s.busy && !s.ready) { Text("초기화") }
                 }
-                Text("모델을 교체하려면 먼저 중지하세요. Sohee가 없는 모델은 거부합니다.", style = MaterialTheme.typography.bodySmall)
+                Text("두 모델을 별도 보관합니다. 모델 선택을 바꾸면 기존 추론 메모리를 해제하며 다시 초기화해야 합니다.", style = MaterialTheme.typography.bodySmall)
+                if (s.model == ModelSpec.LARGE) Text("1.7B는 기기 성능·메모리·음질 검증 전입니다. 먼저 짧은 문장으로 시험하세요.", style = MaterialTheme.typography.bodySmall)
             }
         }
         item {
@@ -73,6 +82,11 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
                 OutlinedTextField(value = s.text, onValueChange = vm::setText, modifier = Modifier.fillMaxWidth(),
                     enabled = !s.busy, label = { Text("한국어 문장") }, minLines = 3, maxLines = 6,
                     supportingText = { Text("${s.text.codePointCount(0, s.text.length)} / 240자") })
+                if (s.model.supportsInstruction) OutlinedTextField(value = s.instruction, onValueChange = vm::setInstruction,
+                    enabled = !s.busy, modifier = Modifier.fillMaxWidth(), maxLines = 3,
+                    label = { Text("말투 지시 (선택 · 1.7B)") },
+                    placeholder = { Text("차분하고 다정하게, 친한 친구에게 말하듯") },
+                    supportingText = { Text("${s.instruction.codePointCount(0, s.instruction.length)} / 240자 · 비워 두면 기본 Sohee") })
                 Row {
                     Checkbox(checked = s.autoPlay, onCheckedChange = vm::setAutoPlay, enabled = !s.busy)
                     Text("생성 후 자동 재생", modifier = Modifier.padding(top = 12.dp))
@@ -82,7 +96,7 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
                     OutlinedButton(onClick = { vm.play() }, enabled = s.hasAudio && !s.busy && !s.playing) { Text("재생") }
                     OutlinedButton(onClick = vm::stop, enabled = s.ready || s.busy || s.playing) { Text("중지") }
                 }
-                Text("F16 + 일부 F32 안정화 · CPU 4 스레드\n문장 전체 생성 후 재생합니다. 0.6B는 자연어 감정 지시를 지원하지 않습니다.", style = MaterialTheme.typography.bodySmall)
+                Text("${s.model.label} · F16 + 일부 F32 안정화 · CPU 4 스레드\n문장 전체 생성 후 재생합니다. ${if (s.model.supportsInstruction) "1.7B는 말투 지시를 사용할 수 있습니다." else "0.6B는 자연어 감정 지시를 지원하지 않습니다."}", style = MaterialTheme.typography.bodySmall)
             }
         }
         item {

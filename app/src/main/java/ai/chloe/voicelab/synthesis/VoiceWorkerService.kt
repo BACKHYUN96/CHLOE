@@ -4,6 +4,9 @@ import android.app.Service
 import android.content.Intent
 import android.os.*
 import ai.chloe.voicelab.diagnostics.LabLog
+import ai.chloe.voicelab.model.ModelLibrary
+import ai.chloe.voicelab.model.ModelSpec
+import ai.chloe.voicelab.model.PackManifest
 import org.json.JSONObject
 import java.io.File
 import java.util.concurrent.Executors
@@ -17,6 +20,7 @@ class VoiceWorkerService : Service() {
     private val main = Handler(Looper.getMainLooper())
     private var bridge: NativeBridge? = null
     private var ready = false
+    private var loadedSpec: ModelSpec? = null
     private lateinit var log: LabLog
     private var client: Messenger? = null
     private var peakPss = 0
@@ -56,23 +60,33 @@ class VoiceWorkerService : Service() {
                 peakPss = 0
                 main.post(monitor)
                 val text = msg.data.getString("text").orEmpty()
+                val instruction = msg.data.getString("instruction").orEmpty()
+                val modelKey = msg.data.getString("model").orEmpty()
                 val requestedPath = msg.data.getString("output").orEmpty()
                 executor.execute {
                     var completion: Pair<String, JSONObject>? = null
                     try {
                         if (operation == VoiceProtocol.INIT) {
                             ready = false
+                            loadedSpec = null
+                            val spec = ModelSpec.fromKey(modelKey)
                             send("initializing")
                             val native = bridge ?: NativeBridge().also { bridge = it }
                             val logs = File(filesDir, "logs").apply { mkdirs() }
                             val nativeLog = File(logs, "native.log")
                             if (nativeLog.length() > 8 * 1024 * 1024) nativeLog.writeText("")
-                            val capabilities = native.initialize(File(filesDir, "models/active").path, nativeLog.path)
+                            val directory = ModelLibrary(File(filesDir, "models")).directory(spec)
+                            val manifest = PackManifest.parse(File(directory, "model-pack.json").readText())
+                            require(manifest.spec == spec) { "모델 패키지와 선택한 모델이 다릅니다." }
+                            val capabilities = native.initialize(directory.path, spec.talkerFile, spec.hiddenSize, nativeLog.path)
+                            loadedSpec = spec
                             ready = true
                             completion = "ready" to JSONObject().put("capabilities", capabilities)
                                 .put("init_ms", SystemClock.elapsedRealtime() - operationStart)
                         } else {
                             check(ready) { "모델을 먼저 초기화하세요." }
+                            require(instruction.codePointCount(0, instruction.length) <= 240)
+                            require(loadedSpec!!.supportsInstruction || instruction.isBlank()) { "0.6B는 말투 지시를 지원하지 않습니다." }
                             require(text.isNotBlank() && text.codePointCount(0, text.length) <= 240)
                             val outputRoot = File(filesDir, "audio").apply { mkdirs() }.canonicalFile
                             val output = File(requestedPath).canonicalFile
@@ -81,7 +95,7 @@ class VoiceWorkerService : Service() {
                             send("generating")
                             try {
                                 val nativeStartNanos = System.nanoTime()
-                                val metrics = bridge!!.synthesize(text.toByteArray(Charsets.UTF_8), partial.path)
+                                val metrics = bridge!!.synthesize(text.toByteArray(Charsets.UTF_8), partial.path, instruction.toByteArray(Charsets.UTF_8))
                                 check(partial.renameTo(output)) { "WAV 저장 실패" }
                                 completion = "generated" to JSONObject().put("path", output.path)
                                     .put("generation_ms", metrics[0]).put("audio_seconds", metrics[1])

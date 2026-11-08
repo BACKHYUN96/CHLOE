@@ -1,0 +1,19 @@
+{
+  "version": "0.1.0-alpha3",
+  "unit_tests": 13,
+  "unit_failures": 0,
+  "lint_errors": 0,
+  "lint_warnings": 9,
+  "android_test_apk_built": true,
+  "android_tests_run": false,
+  "device_17b_tested": false,
+  "abi": "arm64-v8a",
+  "apk_bytes": 29475339,
+  "apk_sha256": "8aab198ccf6c8d81df2bb3d5cc45ebed2d3aa8927bd14c0e3a71871ba4447fde",
+  "signature_matches_alpha2": true,
+  "zipalign_16k_verified": true,
+  "official_weights_sha256": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+  "archive_bytes": 3331722701,
+  "archive_volumes": 36,
+  "archive_crc_checked_with_7zip": true
+}

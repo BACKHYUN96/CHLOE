@@ -1,0 +1,30 @@
+[
+  {
+    "sample": 1,
+    "text": "안녕하세요? 저는 클로이예요.",
+    "exit_code": 0,
+    "process_wall_ms": 7466.05,
+    "host": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "hardware": "x86_64",
+    "threads": 4,
+    "speaker": "sohee",
+    "language": "ko",
+    "first_output_ms": null,
+    "pronunciation": null,
+    "intonation": null,
+    "device_test": false,
+    "model_variant": "1.7b",
+    "instruction": "Speak warmly and gently, like a close friend, with natural pauses.",
+    "sample_rate": 24000,
+    "samples": 67200,
+    "channels": 1,
+    "sample_width": 2,
+    "audio_seconds": 2.8,
+    "token_limit_reached": false,
+    "status": "generated_unrated",
+    "generation_ms": 4204,
+    "decode_ms": 1794,
+    "native_total_ms": 5998,
+    "diagnostic_rtf": 2.1421428571428573
+  }
+]
