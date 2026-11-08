@@ -36,8 +36,10 @@ internal class WavPlayer(context: Context, private val scope: CoroutineScope) {
                     .setAudioFormat(AudioFormat.Builder().setEncoding(AudioFormat.ENCODING_PCM_16BIT)
                         .setSampleRate(rate).setChannelMask(AudioFormat.CHANNEL_OUT_MONO).build())
                     .setTransferMode(AudioTrack.MODE_STATIC).setBufferSizeInBytes(pcmSize).build()
-                check(track.state == AudioTrack.STATE_INITIALIZED) { "AudioTrack 초기화 실패" }
+                // MODE_STATIC stays STATE_NO_STATIC_DATA until its first successful write.
+                check(track.state != AudioTrack.STATE_UNINITIALIZED) { "AudioTrack 생성 실패 (state=${track.state})" }
                 check(track.write(wav, 44, pcmSize, AudioTrack.WRITE_BLOCKING) == pcmSize) { "PCM 쓰기 실패" }
+                check(track.state == AudioTrack.STATE_INITIALIZED) { "AudioTrack PCM 준비 실패 (state=${track.state})" }
                 ensureActive()
                 track.play()
                 val timestamp = AudioTimestamp()

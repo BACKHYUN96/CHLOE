@@ -53,7 +53,7 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
     private var playbackId = 0
 
     init {
-        log.record("launch", JSONObject().put("version", "0.1.0-alpha1").put("device", Build.MODEL))
+        log.record("launch", JSONObject().put("version", ai.chloe.voicelab.BuildConfig.VERSION_NAME).put("device", Build.MODEL))
         File(app.filesDir, "audio").listFiles()?.filter { it.name.endsWith(".partial") }?.forEach { it.delete() }
     }
     fun setText(value: String) { if (!state.value.busy) mutable.update { it.copy(text = value) } }
@@ -112,6 +112,7 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
                 val generation = data.getDouble("generation_ms")
                 val seconds = data.getDouble("audio_seconds")
                 report = JSONObject(data.toString()).apply {
+                    put("app_version", ai.chloe.voicelab.BuildConfig.VERSION_NAME)
                     remove("path"); remove("pcm_ready_nanos"); remove("type")
                     put("input", state.value.text).put("speaker", "sohee").put("language", "Korean")
                     put("precision", "f16-f32-cp-down").put("mode", "buffered").put("threads", 4)
@@ -151,6 +152,8 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
             }
         }, onFinished = { message ->
             if (id == playbackId) {
+                report?.put("playback_error", message ?: JSONObject.NULL)
+                updateReport()
                 mutable.update { it.copy(playing = false, status = if (message == null) "WAV 재생 완료" else "재생 오류", error = message) }
                 log.record("playback_finished", JSONObject().put("error", message ?: JSONObject.NULL))
             }

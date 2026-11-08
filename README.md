@@ -1,4 +1,6 @@
-# CHLOE Voice Lab · 0.1.0-alpha1
+# CHLOE Voice Lab · 0.1.0-alpha2
+
+alpha2는 static AudioTrack에 PCM을 쓰기 전 상태를 오류로 판단했던 재생 버그를 수정합니다. 기존 alpha1 위에 업데이트 설치하며 모델을 다시 받을 필요는 없습니다. 상세 내용은 [수정 및 기기 측정 기록](docs/ALPHA2.ko.md)을 참고하세요.
 
 Android ARM64에서 **Qwen3-TTS 0.6B CustomVoice / Sohee / 한국어**를 검증하는 개인용 오프라인 음성 실험 앱입니다. 전체 대화 AI의 구현에 앞서 음질과 실행 가능성을 평가합니다.
 

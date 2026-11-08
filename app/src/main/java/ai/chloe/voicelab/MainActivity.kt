@@ -54,7 +54,7 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
             Text("CHLOE", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.Bold)
             Text("Voice Lab", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
             Spacer(Modifier.height(8.dp))
-            Text("한국어 여성 음성 실험실 · 0.1.0-alpha1", style = MaterialTheme.typography.bodyMedium)
+            Text("한국어 여성 음성 실험실 · ${BuildConfig.VERSION_NAME}", style = MaterialTheme.typography.bodyMedium)
             Text("완전 오프라인 · Sohee · 0.6B CustomVoice", style = MaterialTheme.typography.labelLarge)
         }
         item {
