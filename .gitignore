@@ -1,0 +1,17 @@
+.gradle/
+**/build/
+.idea/
+local.properties
+**/.cxx/
+*.iml
+*.jks
+*.keystore
+*.gguf
+*.safetensors
+*.wav
+models/
+artifacts/
+.venv/
+__pycache__/
+*.jsonl
+*.csv

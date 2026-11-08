@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "model_id": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+  "tokenizer_id": "Qwen/Qwen3-TTS-Tokenizer-12Hz",
+  "model_revision": "85e237c12c027371202489a0ec509ded67b5e4b5",
+  "tokenizer_revision": "7dd38ad4e9bad454aae9cd937d0cd577604fe229",
+  "runtime_commit": "4562731dc612cb87b4cd1eedac275a17d1078773",
+  "precision": "f16-f32-cp-down",
+  "files": [
+    {
+      "name": "qwen-talker-0.6b-customvoice-f16-stable.gguf",
+      "size": 1849146624,
+      "sha256": "377769cbec91f57cec9d2edb98986907cbe8a767b404bc5370014fb898f28f47"
+    },
+    {
+      "name": "qwen-tokenizer-12hz-f16.gguf",
+      "size": 358980384,
+      "sha256": "22b6114e83ca845ed3cfe43e7af155800f42c6c95c8a3366887d77354959992b"
+    }
+  ],
+  "local_checkpoint_override": true,
+  "license": "Apache-2.0"
+}

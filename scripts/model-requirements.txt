@@ -1,0 +1,6 @@
+# CPU Torch is sufficient for conversion; see README for the CPU wheel command.
+gguf==0.19.0
+safetensors==0.8.0
+huggingface_hub==0.36.2
+numpy==2.5.4
+tqdm==4.70.1
