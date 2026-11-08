@@ -1,5 +1,7 @@
 # 0.1.0-alpha3 — 1.7B Sohee 추가
 
+후속 사용자 제공 파일에서 1.7B 실기기 생성·재생이 확인됐다. 아래의 기기 미검증 설명은 최초 배포 시점의 상태이며, 최신 측정과 요구사항은 [실기기 피드백](VOICE_DIRECTION.ko.md)을 참고한다.
+
 0.6B와 1.7B CustomVoice 모델을 앱 내부에 각각 보관하고 선택해서 초기화한다. 두 모델을 동시에 추론 메모리에 올리지 않는다. 모델 선택 변경 시 현재 worker를 종료해 메모리를 해제하고 새 모델을 초기화하도록 한다. 기존 alpha1/2의 `files/models/active`는 `files/models/0.6b`로 이름을 변경해 보존하며 가중치를 다시 다운로드할 필요가 없다.
 
 1.7B 공식 출처: `Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice`, revision `0c0e3051f131929182e2c023b9537f8b1c68adfe`, Apache-2.0. Talker hidden size 2048, code predictor hidden size 1024, Sohee ID 2864다. 0.6B와 동일한 고정 C++ 런타임을 사용하고 CustomVoice·Sohee·선택한 hidden size·F32 CP-down tensor를 확인한다. 1.7B 초기화에는 instruction capability도 확인한다.
