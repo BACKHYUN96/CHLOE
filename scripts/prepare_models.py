@@ -33,9 +33,14 @@ def main():
     args = parser.parse_args()
     repo = Path(__file__).resolve().parents[1]
     runtime = repo / "external/qwen3-tts.cpp"
-    revision = subprocess.check_output(["git", "-C", str(runtime), "rev-parse", "HEAD"], text=True).strip()
-    if revision != RUNTIME:
-        raise SystemExit("Initialize the pinned submodules first: git submodule update --init --recursive")
+    if (runtime / ".git").exists():
+        revision = subprocess.check_output(["git", "-C", str(runtime), "rev-parse", "HEAD"], text=True).strip()
+        if revision != RUNTIME:
+            raise SystemExit("Initialize the pinned submodules first: git submodule update --init --recursive")
+    # A full-source ZIP has no Git metadata. Validate the exact converter files in both forms.
+    lock = json.loads((repo / "third_party/runtime-lock.json").read_text(encoding="utf-8"))
+    if lock["commit"] != RUNTIME or any(sha256(runtime / name) != value for name, value in lock["converter_sha256"].items()):
+        raise SystemExit("Pinned converter integrity check failed; restore the supplied runtime sources")
     if args.local_talker and args.local_tokenizer:
         talker, tokenizer = args.local_talker.resolve(), args.local_tokenizer.resolve()
     elif args.local_talker or args.local_tokenizer:

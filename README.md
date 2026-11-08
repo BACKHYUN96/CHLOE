@@ -36,6 +36,8 @@ adb install -r .\app\build\outputs\apk\debug\app-debug.apk
 
 Linux/macOS에서는 같은 명령의 `gradlew.bat`를 `./gradlew`로 바꿉니다. 빌드 산출물은 `app/build/outputs/apk/debug/app-debug.apk`입니다. ARM64만 포함하며 최소 Android 12/API 31입니다. Debug APK는 debuggable이고 추론 C++ 라이브러리는 Release 최적화로 컴파일합니다. 첫 빌드에는 개발 PC 인터넷이 필요하지만 설치 후 앱의 오프라인 실행과는 별개입니다.
 
+별도로 제공하는 `CHLOE-0.1.0-alpha1-sources.zip`에는 C++/ggml 소스도 포함되어 있습니다. ZIP을 풀어 Android Studio로 열 수 있고 submodule 다운로드를 다시 할 필요가 없습니다. GitHub의 기본 “Download ZIP”은 submodule 소스를 포함하지 않으므로 재귀 clone 또는 별도 전체 소스 ZIP을 사용하세요.
+
 다른 개발 PC에서 만든 Debug APK는 서명키가 다를 수 있습니다. 서명 불일치 시 기존 앱을 삭제해야 설치할 수 있으며, 삭제 전 WAV/JSON을 내보내고 모델 원본을 보관하세요.
 
 ## 모델 준비 — PC에서만 실행

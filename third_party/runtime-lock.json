@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/Danmoreng/qwen3-tts.cpp",
+  "commit": "4562731dc612cb87b4cd1eedac275a17d1078773",
+  "converter_sha256": {
+    "scripts/convert_tts_to_gguf.py": "d5c586b8ed5b58eaa1561bd756d32751beabd12cc494fbff69e6dfb760727e35",
+    "scripts/convert_tokenizer_to_gguf.py": "dcdd9758db52adcea0c6a64a07a513a0e793cfb904d021b10bbc4c825e0da5c4"
+  }
+}
