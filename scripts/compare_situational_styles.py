@@ -58,16 +58,57 @@ def followup_plan():
     return cases
 
 
+def load_custom_plan(path):
+    """Validate file names and Android text limits before starting any native process."""
+    data = json.loads(path.read_text(encoding='utf-8'))
+    if not isinstance(data, dict) or not isinstance(data.get('study'), str) or not re.fullmatch(r'[a-z0-9][a-z0-9_-]{0,63}', data['study']):
+        raise ValueError('Invalid study identifier')
+    cases = data.get('cases')
+    if not isinstance(cases, list) or not 1 <= len(cases) <= 32:
+        raise ValueError('Expected 1–32 cases')
+    ids, outputs = set(), set()
+    for case in cases:
+        if not isinstance(case, dict):
+            raise ValueError('Invalid case')
+        case_id = case.get('id')
+        if not isinstance(case_id, str) or not re.fullmatch(r'[a-z0-9][a-z0-9_-]{0,63}', case_id) or case_id in ids:
+            raise ValueError('Invalid or duplicate case identifier')
+        ids.add(case_id)
+        text = case.get('text')
+        if not isinstance(text, str) or not text.strip() or len(text) > 240:
+            raise ValueError('Text must contain 1–240 characters')
+        instructions = case.get('instructions')
+        if not isinstance(instructions, dict) or not instructions:
+            raise ValueError('Expected style instructions')
+        for style, instruction in instructions.items():
+            if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{0,31}', style):
+                raise ValueError('Invalid style identifier')
+            if not isinstance(instruction, str) or not instruction.strip() or len(instruction) > 240:
+                raise ValueError('Instruction must contain 1–240 characters')
+            output = case_id + '_' + style
+            if output in outputs:
+                raise ValueError('Colliding output file names')
+            outputs.add(output)
+    if len(outputs) > 64:
+        raise ValueError('At most 64 clips per run')
+    return data
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--binary', type=Path, required=True)
     p.add_argument('--models', type=Path, required=True)
     p.add_argument('--output', type=Path, default=Path('artifacts/situation-study-01'))
-    p.add_argument('--followup', action='store_true', help='Render feedback-based C candidates and surprise_03 D calm variant')
+    mode = p.add_mutually_exclusive_group()
+    mode.add_argument('--followup', action='store_true', help='Render feedback-based C candidates and surprise_03 D calm variant')
+    mode.add_argument('--plan', type=Path, help='Render a validated custom study JSON')
     a=p.parse_args()
     if a.output.exists() and any(a.output.iterdir()): p.error('Choose an empty output folder')
-    cases=followup_plan() if a.followup else plan()
-    assert len(cases)==(6 if a.followup else 12)
+    try:
+        custom = load_custom_plan(a.plan) if a.plan else None
+    except (ValueError, OSError) as e:
+        p.error(str(e))
+    cases=custom['cases'] if custom else followup_plan() if a.followup else plan()
     assert all(len(c['text'])<=240 and all(len(i)<=240 for i in c['instructions'].values()) for c in cases)
     manifest=json.loads((a.models/'model-pack.json').read_text())
     if manifest['model_id']!='Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice' or manifest['runtime_commit']!=RUNTIME:
@@ -77,10 +118,13 @@ def main():
         path=a.models/f['name']
         if path.stat().st_size!=f['size'] or digest(path)!=f['sha256']: p.error('Model integrity mismatch')
     a.output.mkdir(parents=True,exist_ok=True)
-    report=dict(study='situation-study-02' if a.followup else 'situation-study-01', device_test=False, perceptual_evaluation='pending',
+    study=custom['study'] if custom else 'situation-study-02' if a.followup else 'situation-study-01'
+    report=dict(study=study, device_test=False, perceptual_evaluation='pending',
         model_pack=manifest, source_runtime=RUNTIME, native_binary_sha256=digest(a.binary),
         host=platform.platform(), seed=42, threads=4, sampling=SAMPLING, untouched_pcm=True,
         common_breath_instruction=BREATH, cases=cases, clips=[])
+    if custom:
+        report['plan_snapshot'] = custom
     for c in cases:
         for style,instruction in c['instructions'].items():
             clip_id=c['id']+'_'+style

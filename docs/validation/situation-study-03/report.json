@@ -1,0 +1,386 @@
+{
+  "study": "situation-study-03",
+  "device_test": false,
+  "perceptual_evaluation": "pending",
+  "model_pack": {
+    "schema": 1,
+    "model_id": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+    "tokenizer_id": "Qwen/Qwen3-TTS-Tokenizer-12Hz",
+    "model_revision": "0c0e3051f131929182e2c023b9537f8b1c68adfe",
+    "tokenizer_revision": "7dd38ad4e9bad454aae9cd937d0cd577604fe229",
+    "runtime_commit": "4562731dc612cb87b4cd1eedac275a17d1078773",
+    "precision": "f16-f32-cp-down",
+    "files": [
+      {
+        "name": "qwen-talker-1.7b-customvoice-f16-stable.gguf",
+        "size": 3871042976,
+        "sha256": "1f5b8a4b67c406d054078b65d4966d884364fe49fc3b3546402555be8434ce6e"
+      },
+      {
+        "name": "qwen-tokenizer-12hz-f16.gguf",
+        "size": 358980384,
+        "sha256": "22b6114e83ca845ed3cfe43e7af155800f42c6c95c8a3366887d77354959992b"
+      }
+    ],
+    "local_checkpoint_override": true,
+    "license": "Apache-2.0"
+  },
+  "source_runtime": "4562731dc612cb87b4cd1eedac275a17d1078773",
+  "native_binary_sha256": "e34dc781e53cccfa760d2cce6e769de29f84e8f51e547d5eca0cb179457f2d2b",
+  "host": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "seed": 42,
+  "threads": 4,
+  "sampling": {
+    "temperature": 0.9,
+    "top_k": 50,
+    "top_p": 1.0,
+    "repetition_penalty": 1.05,
+    "max_tokens": 1024
+  },
+  "untouched_pcm": true,
+  "common_breath_instruction": "호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요.",
+  "cases": [
+    {
+      "id": "explanation_01",
+      "group": "정보 안내의 생기",
+      "text": "먼저 앱을 열고, 아래쪽 설정을 눌러 주세요.",
+      "instructions": {
+        "CTRL": "담담하고 부드럽게 설명해 주세요. 중간 구절은 끊지 말고 이어 말하고, 연결 구절과 문장 끝에서 음높이를 들뜨게 올리지 마세요. 첫 단어부터 정확하게 발음하고 감정과 강조를 절제해 주세요. 끝말을 길게 늘이지 말고 편안하게 마무리해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요.",
+        "E": "따뜻하고 또렷한 목소리로 편안하게 안내해 주세요. 힘이 빠지지 않게 적당한 생기를 유지하고 열고에서 아래쪽 설정을까지 짧고 부드럽게 이어 주세요. 감정을 과장하지 말고 끝은 안정적으로 마무리해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+      }
+    },
+    {
+      "id": "explanation_02",
+      "group": "친근한 권유와 웃음",
+      "text": "두 파일을 차례로 들어보세요. 더 편안하게 들리는 쪽을 골라 주시면 돼요.",
+      "instructions": {
+        "CTRL": "담담하고 부드럽게 설명해 주세요. 중간 구절은 끊지 말고 이어 말하고, 연결 구절과 문장 끝에서 음높이를 들뜨게 올리지 마세요. 첫 단어부터 정확하게 발음하고 감정과 강조를 절제해 주세요. 끝말을 길게 늘이지 말고 편안하게 마무리해 주세요. 돼요의 마지막 음절에만 아주 짧고 은은한 여운을 주세요. 길거나 과장된 늘임은 피해주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요.",
+        "SMILE": "친한 사람에게 귀엽고 발랄하게 권하듯 말해 주세요. 들어보세요는 가볍게 올라가며 부드러운 여운을 주고, 골라 주시면 돼요는 웃는 표정이 느껴지는 따뜻한 목소리로 자연스럽게 마무리해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요.",
+        "LAUGH_ATTEMPT": "친한 사람에게 귀엽고 발랄하게 권하듯 말해 주세요. 들어보세요는 가볍게 올라가며 부드러운 여운을 주세요. 골라 주시면 돼요를 따뜻하게 말하고 마지막 말 뒤에 짧고 자연스러운 웃음을 가볍게 표현해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+      }
+    },
+    {
+      "id": "explanation_03",
+      "group": "문장 경계에서 호흡 없이 연결",
+      "text": "생성 시간은 소리를 만드는 데 걸린 시간이에요. 오디오 길이와 비교하면 속도를 알 수 있어요.",
+      "instructions": {
+        "CTRL": "담담하고 부드럽게 설명해 주세요. 중간 구절은 끊지 말고 이어 말하고, 연결 구절과 문장 끝에서 음높이를 들뜨게 올리지 마세요. 첫 단어부터 정확하게 발음하고 감정과 강조를 절제해 주세요. 끝말을 길게 늘이지 말고 편안하게 마무리해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요.",
+        "E": "담담하지만 힘이 빠지지 않는 따뜻한 목소리로 설명해 주세요. 시간이에요 다음 오디오 길이와 비교하면으로 넘어갈 때 숨을 새로 들이마시거나 길게 멈추지 말고 부드럽게 이어 말해 주세요. 첫 발음은 정확하게 하고 끝말은 과하게 늘이지 마세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+      }
+    },
+    {
+      "id": "surprise_02",
+      "group": "마지막 단어의 억양",
+      "text": "와, 그걸 벌써 끝냈어? 생각보다 훨씬 빠른데?",
+      "instructions": {
+        "CTRL": "친구가 해낸 일을 보고 기분 좋게 감탄해 주세요. 첫 감탄과 끝냈어의 생생함을 살리고, 생각보다 훨씬 빠른데까지 놀라움과 감탄을 과하지 않게 유지해 주세요. 마지막도 감탄이 살짝 남는 상승 억양과 여운으로 마무리해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요.",
+        "E": "기분 좋게 감탄하며 자연스럽게 말해 주세요. 와와 끝냈어의 생생한 감탄을 살리고, 생각보다 훨씬까지는 음을 올려 몰아가지 마세요. 마지막 빠른데라는 단어에서만 억양을 가볍게 올려 여운을 남겨 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+      }
+    },
+    {
+      "id": "surprise_03",
+      "group": "차분한 원문 대조",
+      "text": "잠깐, 그럼 네가 직접 만든 거야? 어떻게 했어?",
+      "instructions": {
+        "CTRL": "낮고 차분한 톤에서도 집중과 놀람과 감탄을 담아 주세요. 잠깐 뒤에는 차분한 짧은 쉼을 허용하고, 뒤 질문은 궁금함을 살려 자연스럽게 이어 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+      }
+    },
+    {
+      "id": "surprise_03_gentle",
+      "group": "한 글자로 차가움 완화",
+      "text": "잠깐만, 그럼 네가 직접 만든 거야? 어떻게 했어?",
+      "instructions": {
+        "WORD": "낮고 차분한 톤에서도 집중과 놀람과 감탄을 담아 주세요. 잠깐 뒤에는 차분한 짧은 쉼을 허용하고, 뒤 질문은 궁금함을 살려 자연스럽게 이어 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+      }
+    }
+  ],
+  "clips": [
+    {
+      "clip_id": "explanation_01_CTRL",
+      "case_id": "explanation_01",
+      "style": "CTRL",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 11048.477893999916,
+      "sample_rate": 24000,
+      "samples": 92160,
+      "audio_seconds": 3.84,
+      "pcm_peak": 17121,
+      "pcm_rms": 2795.448395779028,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 9285,
+      "code_generation_ms": 7510,
+      "decode_ms": 1773,
+      "rtf": 2.41796875,
+      "wav_sha256": "c85d1094d04eefb44979777fb77ffa8160faaec71166005b4c9079514d4f481f",
+      "rss_peak_display": "4.44 GB"
+    },
+    {
+      "clip_id": "explanation_01_E",
+      "case_id": "explanation_01",
+      "style": "E",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 9627.067723999971,
+      "sample_rate": 24000,
+      "samples": 84480,
+      "audio_seconds": 3.52,
+      "pcm_peak": 18737,
+      "pcm_rms": 3568.749693151953,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 8234,
+      "code_generation_ms": 6640,
+      "decode_ms": 1593,
+      "rtf": 2.3392045454545456,
+      "wav_sha256": "1d69ebb6741a71c8165eb323cc9736968b9a357dab67df259b4c513bbb751b0c",
+      "rss_peak_display": "4.41 GB"
+    },
+    {
+      "clip_id": "explanation_02_CTRL",
+      "case_id": "explanation_02",
+      "style": "CTRL",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 14777.347372999884,
+      "sample_rate": 24000,
+      "samples": 140160,
+      "audio_seconds": 5.84,
+      "pcm_peak": 16188,
+      "pcm_rms": 2781.409392900674,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 13464,
+      "code_generation_ms": 10831,
+      "decode_ms": 2631,
+      "rtf": 2.3054794520547945,
+      "wav_sha256": "4d0e6ce35d98e343f1c4878ef7b19d40c64055a87dddfbe10b8a90406ee5fbc0",
+      "rss_peak_display": "4.60 GB"
+    },
+    {
+      "clip_id": "explanation_02_SMILE",
+      "case_id": "explanation_02",
+      "style": "SMILE",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 12621.535312000105,
+      "sample_rate": 24000,
+      "samples": 122880,
+      "audio_seconds": 5.12,
+      "pcm_peak": 16474,
+      "pcm_rms": 2386.4575346059564,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 11296,
+      "code_generation_ms": 8970,
+      "decode_ms": 2325,
+      "rtf": 2.20625,
+      "wav_sha256": "a76d1b7c3c87ba61e9cf6ce9a527eb43cfc76a8613278516a13a15ce38462c43",
+      "rss_peak_display": "4.53 GB"
+    },
+    {
+      "clip_id": "explanation_02_LAUGH_ATTEMPT",
+      "case_id": "explanation_02",
+      "style": "LAUGH_ATTEMPT",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 14433.905670000058,
+      "sample_rate": 24000,
+      "samples": 145920,
+      "audio_seconds": 6.08,
+      "pcm_peak": 14103,
+      "pcm_rms": 2136.6517870572975,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 13080,
+      "code_generation_ms": 10302,
+      "decode_ms": 2777,
+      "rtf": 2.151315789473684,
+      "wav_sha256": "791137b8d1dfcd59eba2d9c3a8919e70402edbbe96682333f32481ac61d137d5",
+      "rss_peak_display": "4.60 GB"
+    },
+    {
+      "clip_id": "explanation_03_CTRL",
+      "case_id": "explanation_03",
+      "style": "CTRL",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 16357.696057999874,
+      "sample_rate": 24000,
+      "samples": 167040,
+      "audio_seconds": 6.96,
+      "pcm_peak": 18212,
+      "pcm_rms": 2369.954263170215,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 15048,
+      "code_generation_ms": 11780,
+      "decode_ms": 3267,
+      "rtf": 2.1620689655172414,
+      "wav_sha256": "bd4bd9102b491e6bcede71c18690470d9d36ef91a737783c354ae5874a528c32",
+      "rss_peak_display": "4.67 GB"
+    },
+    {
+      "clip_id": "explanation_03_E",
+      "case_id": "explanation_03",
+      "style": "E",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 19125.75767899989,
+      "sample_rate": 24000,
+      "samples": 201600,
+      "audio_seconds": 8.4,
+      "pcm_peak": 17340,
+      "pcm_rms": 1879.0203873788905,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 17818,
+      "code_generation_ms": 13957,
+      "decode_ms": 3860,
+      "rtf": 2.1211904761904763,
+      "wav_sha256": "49b01d01ed4a84560f43ad880894c56fd7be3497635b6569d2b7509fb5c950f4",
+      "rss_peak_display": "4.77 GB"
+    },
+    {
+      "clip_id": "surprise_02_CTRL",
+      "case_id": "surprise_02",
+      "style": "CTRL",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 13643.665940000119,
+      "sample_rate": 24000,
+      "samples": 134400,
+      "audio_seconds": 5.6,
+      "pcm_peak": 20951,
+      "pcm_rms": 2467.4870894720625,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 12305,
+      "code_generation_ms": 9807,
+      "decode_ms": 2497,
+      "rtf": 2.1973214285714286,
+      "wav_sha256": "9d74feb01795645280ca6dad1d255ee6f6ea6618d7e557cfda08730496cf3ebf",
+      "rss_peak_display": "4.57 GB"
+    },
+    {
+      "clip_id": "surprise_02_E",
+      "case_id": "surprise_02",
+      "style": "E",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 13127.797934000228,
+      "sample_rate": 24000,
+      "samples": 128640,
+      "audio_seconds": 5.36,
+      "pcm_peak": 16899,
+      "pcm_rms": 3076.239363258936,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 11803,
+      "code_generation_ms": 9413,
+      "decode_ms": 2389,
+      "rtf": 2.2020522388059702,
+      "wav_sha256": "5f4d90c298a3e4a21b084460980bfffd0ab40a09b1544d81d038e99ce61c2ca5",
+      "rss_peak_display": "4.55 GB"
+    },
+    {
+      "clip_id": "surprise_03_CTRL",
+      "case_id": "surprise_03",
+      "style": "CTRL",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 10576.386856000227,
+      "sample_rate": 24000,
+      "samples": 99840,
+      "audio_seconds": 4.16,
+      "pcm_peak": 9691,
+      "pcm_rms": 1361.8628748901288,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 9293,
+      "code_generation_ms": 7431,
+      "decode_ms": 1861,
+      "rtf": 2.2338942307692307,
+      "wav_sha256": "a71b171571fb99fafd78a1f3873f9b7565e6183f346569c6778389fda4d538a8",
+      "rss_peak_display": "4.46 GB"
+    },
+    {
+      "clip_id": "surprise_03_gentle_WORD",
+      "case_id": "surprise_03_gentle",
+      "style": "WORD",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 11948.78073899963,
+      "sample_rate": 24000,
+      "samples": 117120,
+      "audio_seconds": 4.88,
+      "pcm_peak": 11627,
+      "pcm_rms": 1676.2744548736096,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 10632,
+      "code_generation_ms": 8461,
+      "decode_ms": 2170,
+      "rtf": 2.178688524590164,
+      "wav_sha256": "433c3f2762919ab22c7a79379aed366428fda964c0719f950b901a361160db87",
+      "rss_peak_display": "4.51 GB"
+    }
+  ],
+  "plan_snapshot": {
+    "study": "situation-study-03",
+    "cases": [
+      {
+        "id": "explanation_01",
+        "group": "정보 안내의 생기",
+        "text": "먼저 앱을 열고, 아래쪽 설정을 눌러 주세요.",
+        "instructions": {
+          "CTRL": "담담하고 부드럽게 설명해 주세요. 중간 구절은 끊지 말고 이어 말하고, 연결 구절과 문장 끝에서 음높이를 들뜨게 올리지 마세요. 첫 단어부터 정확하게 발음하고 감정과 강조를 절제해 주세요. 끝말을 길게 늘이지 말고 편안하게 마무리해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요.",
+          "E": "따뜻하고 또렷한 목소리로 편안하게 안내해 주세요. 힘이 빠지지 않게 적당한 생기를 유지하고 열고에서 아래쪽 설정을까지 짧고 부드럽게 이어 주세요. 감정을 과장하지 말고 끝은 안정적으로 마무리해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+        }
+      },
+      {
+        "id": "explanation_02",
+        "group": "친근한 권유와 웃음",
+        "text": "두 파일을 차례로 들어보세요. 더 편안하게 들리는 쪽을 골라 주시면 돼요.",
+        "instructions": {
+          "CTRL": "담담하고 부드럽게 설명해 주세요. 중간 구절은 끊지 말고 이어 말하고, 연결 구절과 문장 끝에서 음높이를 들뜨게 올리지 마세요. 첫 단어부터 정확하게 발음하고 감정과 강조를 절제해 주세요. 끝말을 길게 늘이지 말고 편안하게 마무리해 주세요. 돼요의 마지막 음절에만 아주 짧고 은은한 여운을 주세요. 길거나 과장된 늘임은 피해주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요.",
+          "SMILE": "친한 사람에게 귀엽고 발랄하게 권하듯 말해 주세요. 들어보세요는 가볍게 올라가며 부드러운 여운을 주고, 골라 주시면 돼요는 웃는 표정이 느껴지는 따뜻한 목소리로 자연스럽게 마무리해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요.",
+          "LAUGH_ATTEMPT": "친한 사람에게 귀엽고 발랄하게 권하듯 말해 주세요. 들어보세요는 가볍게 올라가며 부드러운 여운을 주세요. 골라 주시면 돼요를 따뜻하게 말하고 마지막 말 뒤에 짧고 자연스러운 웃음을 가볍게 표현해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+        }
+      },
+      {
+        "id": "explanation_03",
+        "group": "문장 경계에서 호흡 없이 연결",
+        "text": "생성 시간은 소리를 만드는 데 걸린 시간이에요. 오디오 길이와 비교하면 속도를 알 수 있어요.",
+        "instructions": {
+          "CTRL": "담담하고 부드럽게 설명해 주세요. 중간 구절은 끊지 말고 이어 말하고, 연결 구절과 문장 끝에서 음높이를 들뜨게 올리지 마세요. 첫 단어부터 정확하게 발음하고 감정과 강조를 절제해 주세요. 끝말을 길게 늘이지 말고 편안하게 마무리해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요.",
+          "E": "담담하지만 힘이 빠지지 않는 따뜻한 목소리로 설명해 주세요. 시간이에요 다음 오디오 길이와 비교하면으로 넘어갈 때 숨을 새로 들이마시거나 길게 멈추지 말고 부드럽게 이어 말해 주세요. 첫 발음은 정확하게 하고 끝말은 과하게 늘이지 마세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+        }
+      },
+      {
+        "id": "surprise_02",
+        "group": "마지막 단어의 억양",
+        "text": "와, 그걸 벌써 끝냈어? 생각보다 훨씬 빠른데?",
+        "instructions": {
+          "CTRL": "친구가 해낸 일을 보고 기분 좋게 감탄해 주세요. 첫 감탄과 끝냈어의 생생함을 살리고, 생각보다 훨씬 빠른데까지 놀라움과 감탄을 과하지 않게 유지해 주세요. 마지막도 감탄이 살짝 남는 상승 억양과 여운으로 마무리해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요.",
+          "E": "기분 좋게 감탄하며 자연스럽게 말해 주세요. 와와 끝냈어의 생생한 감탄을 살리고, 생각보다 훨씬까지는 음을 올려 몰아가지 마세요. 마지막 빠른데라는 단어에서만 억양을 가볍게 올려 여운을 남겨 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+        }
+      },
+      {
+        "id": "surprise_03",
+        "group": "차분한 원문 대조",
+        "text": "잠깐, 그럼 네가 직접 만든 거야? 어떻게 했어?",
+        "instructions": {
+          "CTRL": "낮고 차분한 톤에서도 집중과 놀람과 감탄을 담아 주세요. 잠깐 뒤에는 차분한 짧은 쉼을 허용하고, 뒤 질문은 궁금함을 살려 자연스럽게 이어 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+        }
+      },
+      {
+        "id": "surprise_03_gentle",
+        "group": "한 글자로 차가움 완화",
+        "text": "잠깐만, 그럼 네가 직접 만든 거야? 어떻게 했어?",
+        "instructions": {
+          "WORD": "낮고 차분한 톤에서도 집중과 놀람과 감탄을 담아 주세요. 잠깐 뒤에는 차분한 짧은 쉼을 허용하고, 뒤 질문은 궁금함을 살려 자연스럽게 이어 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+        }
+      }
+    ],
+    "feedback_pr": "https://github.com/BACKHYUN96/CHLOE/pull/2",
+    "controls": "기존 모델 해시·원문·샘플링·호흡 지시 유지. 새 환경의 CPU/빌드 차이를 분리하기 위해 5개 기존 조건을 새로 생성. surprise_03_gentle만 원문에서 만 한 글자 추가하고 지시는 원문 대조군과 동일.",
+    "interpretation": {
+      "arrows": "억양 방향",
+      "repeated_punctuation": "말투와 감정 의도, 원문에 직접 추가하지 않음",
+      "laughter": "미소 음성과 실제 짧은 웃음을 별도 조건으로 시도. LAUGH_ATTEMPT의 실제 웃음 생성 여부는 청취 전 미확인"
+    },
+    "unchanged_reference": "surprise_01_C는 이미 합격한 차분한 공감형. 원본 SHA 확인 후 참고로 복사하며 새 말투로 덮어쓰지 않음.",
+    "limitations": "새 지시의 준수·개선, 웃음 생성, 지정 경계의 무호흡, 특정 단어만의 억양 변화는 청취로 검증. 정밀 길이/F0 제어 기능 아님. 실제 동시 맞장구·연속 대화·API·서버 기능 미구현."
+  }
+}
