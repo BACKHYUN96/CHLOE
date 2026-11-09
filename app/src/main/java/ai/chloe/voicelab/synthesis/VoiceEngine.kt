@@ -2,7 +2,7 @@ package ai.chloe.voicelab.synthesis
 
 /** Transport boundary for the later conversation layer. No remote implementation in alpha1. */
 interface VoiceEngine : AutoCloseable {
-    fun initialize(modelKey: String, threads: Int = 4)
+    fun initialize(modelKey: String, threads: Int = 4, profile: String = "cpu")
     fun synthesize(text: String, outputPath: String, instruction: String = "", threads: Int = 4)
     fun stop()
 }

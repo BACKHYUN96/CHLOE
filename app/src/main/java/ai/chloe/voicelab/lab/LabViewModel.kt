@@ -10,6 +10,7 @@ import ai.chloe.voicelab.diagnostics.LabLog
 import ai.chloe.voicelab.model.ModelStore
 import ai.chloe.voicelab.model.ModelSpec
 import ai.chloe.voicelab.synthesis.LocalVoiceEngine
+import ai.chloe.voicelab.synthesis.BackendProfile
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -45,6 +46,7 @@ internal data class LabState(
     val benchmarkSummary: String = "자동 비교 결과가 없습니다.",
     val hasBenchmark: Boolean = false,
     val backend: String = "초기화 전",
+    val profile: BackendProfile = BackendProfile.CPU,
 )
 
 internal class LabViewModel(app: Application) : AndroidViewModel(app) {
@@ -65,6 +67,7 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
     private var reportFile: File? = null
     private var requestedNanos = 0L
     private var playbackId = 0
+    private var pendingProfileRun = false
     private var benchmarkId = ""
     private var benchmarkTickets = emptyList<CpuTicket>()
     private var benchmarkIndex = 0
@@ -95,7 +98,7 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
         benchmarkStartedMs = android.os.SystemClock.elapsedRealtime()
         benchmarkSnapshot = JSONObject().put("input", s.text).put("instruction", s.instruction).put("model_variant", s.model.key)
             .put("cpu_count", s.cpuCount).put("seed", 42).put("precision", "f16-f32-cp-down")
-            .put("rounds", 2).put("backend_requested", "CPU").put("app_version", ai.chloe.voicelab.BuildConfig.VERSION_NAME)
+            .put("rounds", 2).put("backend_requested", s.profile.key).put("app_version", ai.chloe.voicelab.BuildConfig.VERSION_NAME)
             .put("application_id", ai.chloe.voicelab.BuildConfig.APPLICATION_ID)
             .put("device", Build.MODEL).put("sdk", Build.VERSION.SDK_INT)
         benchmarkFile = File(getApplication<Application>().filesDir, "reports/benchmark-$benchmarkId.json").also { it.parentFile!!.mkdirs() }
@@ -211,7 +214,16 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
         if (!state.value.installed || state.value.busy) return
         stopPlayback()
         mutable.update { it.copy(busy = true, ready = false, error = null, status = "추론 서비스 연결 중…") }
-        runCatching { engine.initialize(state.value.model.key, state.value.threads) }.onFailure { error(it.message ?: "초기화 실패") }
+        runCatching { engine.initialize(state.value.model.key, state.value.threads, state.value.profile.key) }.onFailure { error(it.message ?: "초기화 실패") }
+    }
+    fun runProfile(profile: BackendProfile) {
+        val s = state.value
+        if (!s.installed || s.busy || s.playing || s.benchmarking) return
+        if (profile != BackendProfile.CPU && !ai.chloe.voicelab.BuildConfig.VULKAN_ENABLED) return
+        if (s.ready && s.profile == profile) { generate(); return }
+        pendingProfileRun = true
+        mutable.update { it.copy(profile = profile, backend = "초기화 전", ready = false, busy = true, error = null, status = "실행 모드 전환 중…") }
+        engine.stop()
     }
     fun generate() { if (!state.value.benchmarking) generateInternal() }
     private fun generateInternal() {
@@ -223,7 +235,7 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
         output = null; report = null; reportFile = null
         requestedNanos = System.nanoTime()
         val file = File(getApplication<Application>().filesDir, "audio/${UUID.randomUUID()}.wav")
-        mutable.update { it.copy(busy = true, error = null, status = if (s.benchmarking) "CPU 비교 ${benchmarkIndex + 1}/${benchmarkTickets.size} · ${s.threads} 스레드" else "Sohee 음성 생성 중…", hasAudio = false,
+        mutable.update { it.copy(busy = true, error = null, status = if (s.benchmarking) "현재 모드 비교 ${benchmarkIndex + 1}/${benchmarkTickets.size} · ${s.threads} 스레드" else "Sohee 음성 생성 중…", hasAudio = false,
             hasReport = false, metrics = "생성 중…", pronunciation = 0, intonation = 0, rhythm = 0, notes = "") }
         log.record("generation_requested", JSONObject().put("characters", s.text.codePointCount(0, s.text.length)))
         runCatching { engine.synthesize(s.text, file.path, s.instruction, s.threads) }.onFailure { error(it.message ?: "생성 요청 실패") }
@@ -231,8 +243,10 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
     private fun event(data: JSONObject) {
         when (data.optString("type")) {
             "initializing" -> mutable.update { it.copy(status = "${it.model.label} F16 모델 초기화 중…") }
-            "ready" -> mutable.update { it.copy(busy = false, ready = true, backend = data.optString("backend", "unknown"), status = "${it.model.label} Sohee 준비 완료 · 초기화 ${data.optLong("init_ms")} ms") }
-            "generating" -> mutable.update { it.copy(status = if (it.benchmarking) "CPU 비교 ${benchmarkIndex + 1}/${benchmarkTickets.size} · ${it.threads} 스레드" else "Sohee 음성 생성 중…") }
+            "ready" -> { mutable.update { it.copy(busy = false, ready = true, backend = data.optString("backend", "unknown"), status = "${it.model.label} Sohee 준비 완료 · 초기화 ${data.optLong("init_ms")} ms") }
+                if (pendingProfileRun) { pendingProfileRun = false; generateInternal() }
+            }
+            "generating" -> mutable.update { it.copy(status = if (it.benchmarking) "현재 모드 비교 ${benchmarkIndex + 1}/${benchmarkTickets.size} · ${it.threads} 스레드" else "Sohee 음성 생성 중…") }
             "memory" -> mutable.update { it.copy(memory = "추론 PSS ${"%.1f".format(data.optInt("pss_kib") / 1024.0)} MiB · 관측 최대 ${"%.1f".format(data.optInt("peak_pss_kib") / 1024.0)} MiB · ${data.optLong("elapsed_ms") / 1000}초 · 열 상태 ${data.optInt("thermal_status")} · 배터리 온도 ${data.opt("battery_temperature_c")}°C") }
             "generated" -> {
                 output = File(data.getString("path"))
@@ -266,12 +280,15 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
                 mutable.update { it.copy(busy = false, hasAudio = true, hasReport = true, status = "WAV 생성 완료 · 24 kHz / PCM16 / 모노") }
                 if (state.value.benchmarking) recordBenchmark() else if (state.value.autoPlay) play(auto = true)
             }
+            "timeout" -> { pendingProfileRun = false; finishBenchmark("timeout"); error(data.optString("message", "시간 초과")) }
             "error" -> error(data.optString("message", "추론 오류"))
             "worker_died" -> {
                 ++playbackId; player.stop()
                 error("추론 프로세스가 종료됐습니다. 메모리 부족 또는 네이티브 오류일 수 있습니다. 모델을 다시 초기화하세요.")
             }
-            "stopped" -> mutable.update { it.copy(busy = false, ready = false, status = "중지됨 · 생성하려면 모델을 다시 초기화하세요.") }
+            "stopped" -> { mutable.update { it.copy(busy = false, ready = false, status = if (it.error == null) "중지됨 · 생성하려면 모델을 다시 초기화하세요." else "작업 실패 · 다시 초기화하세요.") }
+                if (pendingProfileRun) initialize()
+            }
         }
     }
     fun play(auto: Boolean = false) {
@@ -295,6 +312,7 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
     }
     private fun stopPlayback() { ++playbackId; player.stop(); mutable.update { it.copy(playing = false) } }
     fun stop() {
+        pendingProfileRun = false
         finishBenchmark("stopped")
         stopPlayback()
         if (state.value.importing) { importJob?.cancel(); return }
@@ -313,7 +331,7 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
         val r = report ?: return
         runCatching { reportFile?.writeText(r.toString(2)) }.onFailure { error(it.message ?: "측정 기록 저장 실패", true) }
         val outputMs = if (r.isNull("first_output_ms")) "미측정" else "%.0f ms".format(r.getDouble("first_output_ms"))
-        mutable.update { it.copy(metrics = "${r.optInt("threads")} 스레드 · ${r.optString("backend")}\n생성 %.0f ms · 오디오 %.2f초 · RTF %.2f\n첫 PCM 준비 %.0f ms · WAV 수신 %.0f ms\n첫 재생 출력 $outputMs (기기 타임스탬프)".format(
+        mutable.update { it.copy(metrics = "${r.optString("profile", "cpu")} · 코드 ${r.optLong("code_generation_ms")} ms / 디코딩 ${r.optLong("audio_decode_ms")} ms\n${r.optInt("threads")} 스레드 · ${r.optString("backend")}\n생성 %.0f ms · 오디오 %.2f초 · RTF %.2f\n첫 PCM 준비 %.0f ms · WAV 수신 %.0f ms\n첫 재생 출력 $outputMs (기기 타임스탬프)".format(
             r.getDouble("generation_ms"), r.getDouble("audio_seconds"), r.getDouble("rtf"),
             r.getDouble("first_pcm_ready_ms"), r.getDouble("wav_received_ms"))) }
     }
@@ -334,6 +352,7 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
     private fun error(message: String, keepReady: Boolean = false) {
+        pendingProfileRun = false
         finishBenchmark("error")
         mutable.update { it.copy(busy = false, ready = keepReady && it.ready, playing = false, error = message, status = "작업 실패") }
         log.record("error", JSONObject().put("message", message))

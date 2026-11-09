@@ -22,6 +22,15 @@ class VoiceWorkerService : Service() {
     private val main = Handler(Looper.getMainLooper())
     private var bridge: NativeBridge? = null
     private var ready = false
+    private var profile = BackendProfile.CPU
+    private var initMs = 0L
+    private var generationCount = 0
+    private val timeout = Runnable {
+        if (busy.get()) {
+            send("timeout", JSONObject().put("message", "120초 제한을 초과해 추론 프로세스를 종료했습니다. 더 짧은 문장 또는 다른 모드를 사용하세요."))
+            Process.killProcess(Process.myPid())
+        }
+    }
     private var loadedSpec: ModelSpec? = null
     private lateinit var log: LabLog
     private var client: Messenger? = null
@@ -66,10 +75,12 @@ class VoiceWorkerService : Service() {
                 peakThermal = getSystemService(PowerManager::class.java).currentThermalStatus
                 cpuStartMs = Process.getElapsedCpuTime()
                 main.post(monitor)
+                main.postDelayed(timeout, 120_000)
                 val threads = msg.data.getInt("threads", 4)
                 val text = msg.data.getString("text").orEmpty()
                 val instruction = msg.data.getString("instruction").orEmpty()
                 val modelKey = msg.data.getString("model").orEmpty()
+                val requestedProfile = msg.data.getString("profile", "cpu")!!
                 val requestedPath = msg.data.getString("output").orEmpty()
                 executor.execute {
                     var completion: Pair<String, JSONObject>? = null
@@ -79,6 +90,8 @@ class VoiceWorkerService : Service() {
                         if (operation == VoiceProtocol.INIT) {
                             ready = false
                             loadedSpec = null
+                            profile = BackendProfile.fromKey(requestedProfile)
+                            require(profile == BackendProfile.CPU || ai.chloe.voicelab.BuildConfig.VULKAN_ENABLED) { "Vulkan 미포함 APK입니다." }
                             val spec = ModelSpec.fromKey(modelKey)
                             send("initializing")
                             val native = bridge ?: NativeBridge().also { bridge = it }
@@ -88,8 +101,10 @@ class VoiceWorkerService : Service() {
                             val directory = ModelLibrary(File(filesDir, "models")).directory(spec)
                             val manifest = PackManifest.parse(File(directory, "model-pack.json").readText())
                             require(manifest.spec == spec) { "모델 패키지와 선택한 모델이 다릅니다." }
-                            val capabilities = native.initialize(directory.path, spec.talkerFile, spec.hiddenSize, nativeLog.path, threads)
+                            val capabilities = native.initialize(directory.path, spec.talkerFile, spec.hiddenSize, nativeLog.path, threads, profile.nativeId)
                             loadedSpec = spec
+                            initMs = SystemClock.elapsedRealtime() - operationStart
+                            generationCount = 0
                             ready = true
                             completion = "ready" to JSONObject().put("capabilities", capabilities)
                                 .put("init_ms", SystemClock.elapsedRealtime() - operationStart)
@@ -112,6 +127,10 @@ class VoiceWorkerService : Service() {
                                     .put("generation_ms", metrics[0]).put("audio_seconds", metrics[1])
                                     .put("sample_rate", metrics[2].toInt()).put("samples", metrics[3].toLong())
                                     .put("native_wav_ready_ms", metrics[4])
+                                    .put("code_generation_ms", metrics[5]).put("audio_decode_ms", metrics[6])
+                                    .put("profile", profile.key).put("model_init_ms", initMs)
+                                    .put("model_reused", generationCount++ > 0)
+                                    .put("backend_diagnostics", JSONObject(bridge!!.backendInfo()))
                                     .put("pcm_ready_nanos", nativeStartNanos + (metrics[0] * 1_000_000).toLong())
                                     .put("worker_total_ms", SystemClock.elapsedRealtime() - operationStart)
                                     .put("peak_worker_pss_kib", peakPss).put("seed", 42)
@@ -128,7 +147,7 @@ class VoiceWorkerService : Service() {
                         log.record("failure", JSONObject().put("type", e.javaClass.name).put("message", e.message.orEmpty()))
                         completion = "error" to JSONObject().put("message", e.message ?: e.javaClass.simpleName)
                     } finally {
-                        busy.set(false); main.removeCallbacks(monitor)
+                        busy.set(false); main.removeCallbacks(monitor); main.removeCallbacks(timeout)
                         completion?.let { send(it.first, it.second) }
                     }
                 }
@@ -148,6 +167,7 @@ class VoiceWorkerService : Service() {
     }
     override fun onDestroy() {
         main.removeCallbacks(monitor)
+        main.removeCallbacks(timeout)
         executor.shutdownNow()
         super.onDestroy()
         // No JNI object destruction races with an in-flight ggml call.

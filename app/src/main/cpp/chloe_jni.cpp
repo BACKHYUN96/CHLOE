@@ -3,6 +3,7 @@
 #include <gguf.h>
 #include "qwen3_tts.h"
 #include "qwen3_tts_c.h"
+#include "chloe_backend_policy.h"
 #include <algorithm>
 #include <chrono>
 #include <cmath>
@@ -81,10 +82,11 @@ void write_wav(const std::string& path, const std::vector<float>& audio, int rat
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_ai_chloe_voicelab_synthesis_NativeBridge_initialize(JNIEnv* env, jobject, jstring directory, jstring talkerFile, jint hiddenSize, jstring logPath, jint threads) {
+Java_ai_chloe_voicelab_synthesis_NativeBridge_initialize(JNIEnv* env, jobject, jstring directory, jstring talkerFile, jint hiddenSize, jstring logPath, jint threads, jint profile) {
     try {
         engine.reset();
         instruction_supported = false;
+        chloe::configure(profile);
         if (hiddenSize != 1024 && hiddenSize != 2048) throw std::runtime_error("Unsupported model size");
         const std::string name = string(env, talkerFile);
         const std::string expected = hiddenSize == 1024
@@ -102,7 +104,7 @@ Java_ai_chloe_voicelab_synthesis_NativeBridge_initialize(JNIEnv* env, jobject, j
         auto dir = string(env, directory);
         validate_talker(dir + "/" + name, hiddenSize);
         if (threads < 1 || threads > 32) throw std::runtime_error("Invalid CPU thread count");
-        if (!qwen3_tts_set_backend_preference(QWEN3_TTS_BACKEND_CPU) || !qwen3_tts_set_cpu_threads(threads))
+        if (!qwen3_tts_set_backend_preference(profile == 0 ? QWEN3_TTS_BACKEND_CPU : QWEN3_TTS_BACKEND_AUTO) || !qwen3_tts_set_cpu_threads(threads))
             throw std::runtime_error("CPU backend configuration failed");
         auto candidate = std::make_unique<qwen3_tts::Qwen3TTS>();
         if (!candidate->load_models(dir, name))
@@ -116,7 +118,7 @@ Java_ai_chloe_voicelab_synthesis_NativeBridge_initialize(JNIEnv* env, jobject, j
             throw std::runtime_error("1.7B instruction capability missing");
         instruction_supported = hiddenSize == 2048 && caps.supports_instruction;
         engine = std::move(candidate);
-        const std::string description = std::string(hiddenSize == 1024 ? "0.6B" : "1.7B") + " / Sohee / CPU " + std::to_string(threads) + " threads";
+        const std::string description = std::string(hiddenSize == 1024 ? "0.6B" : "1.7B") + " / Sohee / mode " + std::to_string(profile) + " / CPU fallback " + std::to_string(threads) + " threads";
         return env->NewStringUTF(description.c_str());
     } catch (const std::exception& e) { fail(env, e.what()); }
       catch (...) { fail(env, "Unknown native initialization failure"); }
@@ -149,6 +151,7 @@ Java_ai_chloe_voicelab_synthesis_NativeBridge_synthesize(JNIEnv* env, jobject, j
         });
         // Buffered full decode is the alpha1 quality baseline. No streaming seam tradeoff.
         auto start = Clock::now();
+        chloe::reset_graph_stats();
         auto result = engine->synthesize(utf8, params);
         auto pcmReady = elapsed(start);
         if (!result.success) throw std::runtime_error(result.error_msg);
@@ -158,9 +161,9 @@ Java_ai_chloe_voicelab_synthesis_NativeBridge_synthesize(JNIEnv* env, jobject, j
             throw std::runtime_error("Audio token limit reached; shorten the input and retry");
         write_wav(string(env, wavPath), result.audio, result.sample_rate);
         double metrics[]{pcmReady, double(result.audio.size()) / result.sample_rate,
-                         double(result.sample_rate), double(result.audio.size()), elapsed(start)};
-        auto output = env->NewDoubleArray(5);
-        if (output) env->SetDoubleArrayRegion(output, 0, 5, metrics);
+                         double(result.sample_rate), double(result.audio.size()), elapsed(start), double(result.t_generate_ms), double(result.t_decode_ms)};
+        auto output = env->NewDoubleArray(7);
+        if (output) env->SetDoubleArrayRegion(output, 0, 7, metrics);
         return output;
     } catch (const std::exception& e) { fail(env, e.what()); }
       catch (...) { fail(env, "Unknown native synthesis failure"); }
@@ -177,4 +180,9 @@ Java_ai_chloe_voicelab_synthesis_NativeBridge_backendName(JNIEnv* env, jobject) 
     jstring value = env->NewStringUTF(name);
     qwen3_tts_free_string(name);
     return value;
+}
+
+extern "C" JNIEXPORT jstring JNICALL
+Java_ai_chloe_voicelab_synthesis_NativeBridge_backendInfo(JNIEnv* env, jobject) {
+    return env->NewStringUTF(chloe::diagnostics().c_str());
 }

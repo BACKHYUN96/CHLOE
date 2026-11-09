@@ -46,12 +46,27 @@ if (QWEN3_ANDROID_VULKAN AND CMAKE_HOST_WIN32)
         set(Vulkan_GLSLC_EXECUTABLE "${_qwen3_glslc}" CACHE FILEPATH "" FORCE)
     endif()
 endif()
+if(QWEN3_ANDROID_VULKAN)
+    if(NOT CHLOE_VULKAN_HEADERS OR NOT CHLOE_SPIRV_HEADERS)
+        message(FATAL_ERROR "Provide CHLOE_VULKAN_HEADERS and CHLOE_SPIRV_HEADERS; see GPU_ALPHA5.ko.md")
+    endif()
+    set(Vulkan_INCLUDE_DIR "${CHLOE_VULKAN_HEADERS}/include" CACHE PATH "" FORCE)
+    set(SPIRV-Headers_DIR "${CHLOE_SPIRV_HEADERS}/share/cmake/SPIRV-Headers" CACHE PATH "" FORCE)
+    if(ANDROID AND CMAKE_HOST_UNIX)
+        set(Vulkan_GLSLC_EXECUTABLE "${CMAKE_ANDROID_NDK}/shader-tools/linux-x86_64/glslc" CACHE FILEPATH "" FORCE)
+    endif()
+endif()
+include("${CMAKE_CURRENT_LIST_DIR}/BackendOverlay.cmake")
 add_subdirectory("${GGML_DIR}" "${CMAKE_CURRENT_BINARY_DIR}/ggml")
+if(QWEN3_ANDROID_VULKAN)
+    target_include_directories(ggml-vulkan PRIVATE "${CHLOE_SPIRV_HEADERS}/include")
+endif()
 
 find_package(Threads REQUIRED)
 
 function(qwen3_link_ggml target_name)
     target_link_libraries(${target_name} PUBLIC ggml ggml-base ggml-cpu)
+    target_include_directories(${target_name} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
     if (QWEN3_ANDROID_VULKAN)
         target_link_libraries(${target_name} PUBLIC ggml-vulkan)
         target_compile_definitions(${target_name} PUBLIC QWEN3_TTS_VULKAN_ENABLED)
@@ -64,7 +79,7 @@ endfunction()
 
 add_library(text_tokenizer STATIC
     "${QWEN3_TTS_ROOT}/src/text_tokenizer.cpp"
-    "${QWEN3_TTS_ROOT}/src/gguf_loader.cpp"
+    "${CHLOE_OVERLAY}/gguf_loader.cpp"
     "${QWEN3_TTS_ROOT}/src/tokenizer_unicode.cpp"
     "${QWEN3_TTS_ROOT}/src/tokenizer_unicode_data.cpp"
 )
@@ -73,18 +88,18 @@ qwen3_link_ggml(text_tokenizer)
 target_link_libraries(text_tokenizer PUBLIC Threads::Threads)
 
 add_library(tts_transformer STATIC
-    "${QWEN3_TTS_ROOT}/src/gguf_loader.cpp"
+    "${CHLOE_OVERLAY}/gguf_loader.cpp"
     "${QWEN3_TTS_ROOT}/src/tts_transformer.cpp"
     "${QWEN3_TTS_ROOT}/src/transformer/transformer_cache.cpp"
     "${QWEN3_TTS_ROOT}/src/transformer/transformer_debug.cpp"
     "${QWEN3_TTS_ROOT}/src/transformer/transformer_embeddings.cpp"
     "${QWEN3_TTS_ROOT}/src/transformer/transformer_graph_code_pred.cpp"
     "${QWEN3_TTS_ROOT}/src/transformer/transformer_graph_talker.cpp"
-    "${QWEN3_TTS_ROOT}/src/transformer/transformer_loader.cpp"
+    "${CHLOE_OVERLAY}/transformer/transformer_loader.cpp"
     "${QWEN3_TTS_ROOT}/src/transformer/transformer_loader_metadata.cpp"
     "${QWEN3_TTS_ROOT}/src/transformer/transformer_loader_tensors.cpp"
-    "${QWEN3_TTS_ROOT}/src/transformer/transformer_runtime.cpp"
-    "${QWEN3_TTS_ROOT}/src/transformer/transformer_runtime_code_pred.cpp"
+    "${CHLOE_OVERLAY}/transformer/transformer_runtime.cpp"
+    "${CHLOE_OVERLAY}/transformer/transformer_runtime_code_pred.cpp"
     "${QWEN3_TTS_ROOT}/src/transformer/transformer_generate.cpp"
     "${QWEN3_TTS_ROOT}/src/coreml_code_predictor_stub.cpp"
 )
@@ -98,7 +113,7 @@ add_library(audio_tokenizer_encoder STATIC
     "${QWEN3_TTS_ROOT}/src/encoder/encoder_graph.cpp"
     "${QWEN3_TTS_ROOT}/src/encoder/encoder_loader.cpp"
     "${QWEN3_TTS_ROOT}/src/encoder/encoder_runtime.cpp"
-    "${QWEN3_TTS_ROOT}/src/gguf_loader.cpp"
+    "${CHLOE_OVERLAY}/gguf_loader.cpp"
 )
 target_include_directories(audio_tokenizer_encoder PUBLIC "${QWEN3_TTS_ROOT}/src" "${GGML_DIR}/include")
 qwen3_link_ggml(audio_tokenizer_encoder)
@@ -106,7 +121,7 @@ target_link_libraries(audio_tokenizer_encoder PUBLIC Threads::Threads)
 
 add_library(speech_tokenizer_encoder STATIC
     "${QWEN3_TTS_ROOT}/src/speech_tokenizer_encoder.cpp"
-    "${QWEN3_TTS_ROOT}/src/gguf_loader.cpp"
+    "${CHLOE_OVERLAY}/gguf_loader.cpp"
 )
 target_include_directories(speech_tokenizer_encoder PUBLIC "${QWEN3_TTS_ROOT}/src" "${GGML_DIR}/include")
 qwen3_link_ggml(speech_tokenizer_encoder)
@@ -116,9 +131,9 @@ add_library(audio_tokenizer_decoder STATIC
     "${QWEN3_TTS_ROOT}/src/decoder/decoder_cache.cpp"
     "${QWEN3_TTS_ROOT}/src/decoder/decoder_graph.cpp"
     "${QWEN3_TTS_ROOT}/src/decoder/decoder_layers.cpp"
-    "${QWEN3_TTS_ROOT}/src/decoder/decoder_loader.cpp"
-    "${QWEN3_TTS_ROOT}/src/decoder/decoder_runtime.cpp"
-    "${QWEN3_TTS_ROOT}/src/gguf_loader.cpp"
+    "${CHLOE_OVERLAY}/decoder/decoder_loader.cpp"
+    "${CHLOE_OVERLAY}/decoder/decoder_runtime.cpp"
+    "${CHLOE_OVERLAY}/gguf_loader.cpp"
 )
 target_include_directories(audio_tokenizer_decoder PUBLIC "${QWEN3_TTS_ROOT}/src" "${GGML_DIR}/include")
 qwen3_link_ggml(audio_tokenizer_decoder)
@@ -145,6 +160,11 @@ target_link_libraries(qwen3_tts PUBLIC
 )
 target_compile_definitions(qwen3_tts PRIVATE QWEN3_TTS_EXPORT)
 
-add_library(chloe_voice SHARED chloe_jni.cpp)
+if(ANDROID)
+add_library(chloe_voice SHARED chloe_jni.cpp chloe_backend_policy.cpp)
 target_include_directories(chloe_voice PRIVATE "${QWEN3_TTS_ROOT}/src")
 target_link_libraries(chloe_voice PRIVATE qwen3_tts log)
+else()
+add_executable(chloe_backend_probe chloe_backend_probe.cpp chloe_backend_policy.cpp)
+target_link_libraries(chloe_backend_probe PRIVATE qwen3_tts)
+endif()

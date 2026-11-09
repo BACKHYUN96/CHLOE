@@ -15,7 +15,9 @@ internal class LocalVoiceEngine(
     private var stopping = false
     private val replies = Messenger(Handler(Looper.getMainLooper()) { msg ->
         if (msg.arg1 == requestId) runCatching {
-            onEvent(JSONObject(msg.data.getString("json") ?: "{}"))
+            val event = JSONObject(msg.data.getString("json") ?: "{}")
+            if (event.optString("type") == "timeout") stopping = true
+            onEvent(event)
         }.onFailure { failure(it) }
         true
     })
@@ -28,14 +30,17 @@ internal class LocalVoiceEngine(
         }
         override fun onServiceDisconnected(name: ComponentName) {
             remote = null
-            onEvent(JSONObject().put("type", if (stopping) "stopped" else "worker_died"))
+            val wasStopping = stopping
             stopping = false
+            onEvent(JSONObject().put("type", if (wasStopping) "stopped" else "worker_died"))
         }
         override fun onBindingDied(name: ComponentName) {
             remote = null
             if (bound) context.unbindService(this)
             bound = false
-            onEvent(JSONObject().put("type", "worker_died"))
+            val wasStopping = stopping
+            stopping = false
+            onEvent(JSONObject().put("type", if (wasStopping) "stopped" else "worker_died"))
         }
         override fun onNullBinding(name: ComponentName) { onBindingDied(name) }
     }
@@ -57,7 +62,7 @@ internal class LocalVoiceEngine(
         }
     }
     private fun send(msg: Message) { try { remote!!.send(msg) } catch (e: RemoteException) { failure(e) } }
-    override fun initialize(modelKey: String, threads: Int) = request(VoiceProtocol.INIT, Bundle().apply { putString("model", modelKey); putInt("threads", threads) })
+    override fun initialize(modelKey: String, threads: Int, profile: String) = request(VoiceProtocol.INIT, Bundle().apply { putString("profile", profile); putString("model", modelKey); putInt("threads", threads) })
     override fun synthesize(text: String, outputPath: String, instruction: String, threads: Int) = request(VoiceProtocol.GENERATE, Bundle().apply {
         putString("text", text); putString("output", outputPath); putString("instruction", instruction); putInt("threads", threads)
     })
