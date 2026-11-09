@@ -1,0 +1,66 @@
+{
+  "version": "0.1.0-alpha7",
+  "version_code": 7,
+  "application_id": "ai.chloe.voicelab.performance",
+  "architecture": "arm64-v8a",
+  "apk_bytes": 30771740,
+  "apk_sha256": "103009602ee2e94efefc42fae4c1c6cbc64043672a5867951af87bcb3958fb8b",
+  "debug_certificate_sha256": "3fe9a122bb262451150fc78c786ad19c56c462a5ac15a3f18892fafe16786896",
+  "apk_signature_verified": true,
+  "zipalign_16k": true,
+  "elf_pt_load_alignment": {
+    "lib/arm64-v8a/libandroidx.graphics.path.so": [
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libc++_shared.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libggml-base.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libggml-cpu.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libggml.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libchloe_voice.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ]
+  },
+  "internet_permission": false,
+  "model_weights_or_audio_in_apk": false,
+  "android_unit_tests": 28,
+  "android_unit_failures": 0,
+  "python_tests": 7,
+  "python_failures": 0,
+  "lint_errors": 0,
+  "lint_warnings": 11,
+  "instrumentation_apk_built": true,
+  "instrumentation_executed": false,
+  "device_test": false,
+  "device_test_reason": "No Android device attached; build and host inference do not establish S26 Ultra runtime success",
+  "baseline_engine_sources_unchanged": [
+    "app/src/main/cpp/chloe_jni.cpp",
+    "app/src/main/java/ai/chloe/voicelab/synthesis",
+    "app/src/main/java/ai/chloe/voicelab/model",
+    "app/src/main/java/ai/chloe/voicelab/audio/WavPlayer.kt"
+  ]
+}

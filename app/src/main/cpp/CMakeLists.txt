@@ -145,6 +145,6 @@ target_link_libraries(qwen3_tts PUBLIC
 )
 target_compile_definitions(qwen3_tts PRIVATE QWEN3_TTS_EXPORT)
 
-add_library(chloe_voice SHARED chloe_jni.cpp)
+add_library(chloe_voice SHARED chloe_jni.cpp comparison_jni.cpp)
 target_include_directories(chloe_voice PRIVATE "${QWEN3_TTS_ROOT}/src")
 target_link_libraries(chloe_voice PRIVATE qwen3_tts log)

@@ -1,0 +1,23 @@
+# CHLOE 아키텍처 · TTS 비교 실험 추가
+
+기존 설계는 [ARCHITECTURE.ko.md](ARCHITECTURE.ko.md), 음성 기준은 [VOICE_REFERENCES.ko.md](VOICE_REFERENCES.ko.md)를 유지한다.
+
+## 경계
+
+- 기존 경로: MainActivity → LabViewModel → VoiceEngine / LocalVoiceEngine → VoiceWorkerService (`:voice`) → NativeBridge → pinned qwen3-tts.cpp. 기존 모델 라이브러리/가져오기/말투 표본은 보존한다.
+- 실험 경로: ComparisonActivity → ComparisonViewModel → ComparisonClient → ComparisonWorkerService (`:comparison`) → ComparisonNative. 기존 JNI 함수와 별도 C++ engine 객체를 사용한다. 프로세스 종료가 다른 엔진의 객체를 파괴하지 않는다.
+- 저장소: 기존 `files/models/`는 읽어 기준 Sohee를 사용한다. 실험 `files/tts-comparison/design/`는 별도 모델, `clips/`는 WAV와 개별 JSON, root에는 batch/오류/취소/평가 JSON을 둔다. 모델 가져오기는 staging 검사 후 rename으로 게시하며 기존 모델을 덮어쓰지 않는다.
+- 평가: ComparisonData는 공통 20문장/조건 검사/블라인드 pair를 정의한다. ComparisonStorage는 SAF·해시·WAV 형식과 경로를 검증한다. ComparisonWavPlayer는 16/24/48kHz를 원래 속도로 재생한다. 원래 24kHz WavPlayer는 변경하지 않는다.
+- PC 도구: tts_comparison.py의 Qwen CLI/Vox C++/CosyVoice3 공식 Python CPU 어댑터가 같은 manifest를 만든다. 앱은 미연결 모델도 샘플 import 후 평가할 수 있다. 연구 구현의 존재와 CHLOE 실행 지원은 모델 목록에서 구분한다.
+
+기존 화면에서 실험으로 이동할 때 기존 추론을 중지해 동시 모델 상주를 피한다. 실험은 화면이 활성화된 동안만 실행하며 작업 중 screen-on을 유지한다. 중지/백그라운드 이탈은 `:comparison`을 종료하고 완료 파일과 중단 기록을 보존한다. 모델 오류·native abort·OOM은 Binder 연결 종료로 UI에 알린다.
+
+새 native backend는 기존 qwen3-tts.cpp/ggml을 교체하지 않는다. VoxCPM2 등 다른 ggml fork의 향후 통합은 별도 라이브러리·symbol/ABI·프로세스 경계를 검증한 후 추가한다. 원격 TTS·음성 인식·대화 생성·통화 관리 계층과 묶지 않는다. 앱은 INTERNET/마이크 권한을 추가하지 않는다.
+
+## 재현성과 블라인드 평가
+
+모델 ID/revision/변환 정밀도/음색/스타일/seed/sampling/플랫폼을 오디오마다 기록한다. 공통 조건과 모델별 조정은 분리하며 조건·문장·seed·플랫폼이 다른 파일을 한 A/B pair에 넣지 않는다. 파일명은 내부 UUID로 바꾼다. 점수는 6항목 1~5, 미입력은 null이며 메모와 공개 여부를 함께 저장한다. 공개 전 export는 모델 이름을 감추고 clip ID로 연결한다.
+
+하드웨어 출력 타임스탬프와 실제 음향 도달 시간, buffered PCM과 streaming 청크, 로딩과 재사용, 호스트와 Android를 구분한다. CPU/GPU 비율·온도를 측정하지 못하면 추정값을 넣지 않는다. 안정성 반복은 통화 부하의 대리 시험으로만 해석한다.
+
+모델/사용자 음성/개인 통화는 Git에 넣지 않는다. 실행은 local-only이며 개발 모델 다운로드는 별도 준비 단계다. 외부 음성 업로드는 별도 사용자 동의가 있을 때만 수행한다.

@@ -1,0 +1,24 @@
+# Linux Python 3.12 CPU reference, not an Android runtime.
+# Install CPU torch/torchaudio first and Whisper/pyworld with --no-build-isolation;
+# see docs/tts-comparison.md and the full successful-environment freeze.
+numpy==1.26.4
+onnxruntime==1.18.0
+transformers==4.51.3
+huggingface-hub==0.36.2
+HyperPyYAML==1.2.3
+diffusers==0.29.0
+conformer==0.3.2
+x-transformers==2.11.24
+einops==0.8.2
+librosa==0.10.2
+soundfile==0.12.1
+lightning==2.2.4
+hydra-core==1.3.2
+inflect==7.3.1
+matplotlib==3.9.4
+contourpy==1.3.1
+pyarrow==18.1.0
+modelscope==1.20.0
+wetext==0.0.4
+gdown==5.1.0
+rich==13.7.1

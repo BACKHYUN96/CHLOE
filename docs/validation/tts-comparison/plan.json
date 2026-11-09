@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "corpus": "app/src/main/assets/tts-comparison-cases.json",
+  "controlled": {
+    "case_ids": [
+      "ko01",
+      "ko02",
+      "ko03",
+      "ko04",
+      "ko05",
+      "ko06",
+      "ko07",
+      "ko08",
+      "ko09",
+      "ko10",
+      "ko11",
+      "ko12",
+      "ko13",
+      "ko14",
+      "ko15",
+      "ko16",
+      "ko17",
+      "ko18",
+      "ko19",
+      "ko20"
+    ],
+    "instruction": {
+      "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice": "친한 친구와 대화하듯 편안하고 다정하게 말해 주세요. 감정을 과장하지 말고 문장 흐름을 자연스럽게 유지해 주세요. 매 문장 앞에 과장된 들숨을 반복하지 마세요.",
+      "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign": "자연스러운 한국어를 구사하는 성인 여성의 따뜻하고 맑은 목소리. 특정 인물을 모방하지 않는 편안한 중간 음역. 친한 친구와 대화하듯 편안하고 다정하게 말해 주세요. 감정을 과장하지 말고 문장 흐름을 자연스럽게 유지해 주세요. 매 문장 앞에 과장된 들숨을 반복하지 마세요.",
+      "openbmb/VoxCPM2": "자연스러운 한국어를 구사하는 성인 여성의 따뜻하고 맑은 목소리. 특정 인물을 모방하지 않는 편안한 중간 음역. 친한 친구와 대화하듯 편안하고 다정하게 말해 주세요. 감정을 과장하지 말고 문장 흐름을 자연스럽게 유지해 주세요. 매 문장 앞에 과장된 들숨을 반복하지 마세요.",
+      "FunAudioLLM/Fun-CosyVoice3-0.5B-2512": null
+    },
+    "cosy_mode": "zero-shot with fixed heldout synthetic reference; no instruction conditioning"
+  },
+  "optimized": {
+    "case_ids": [
+      "ko01",
+      "ko11",
+      "ko12",
+      "ko13"
+    ],
+    "instruction": {
+      "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice": "차분하고 다정하게, 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요.",
+      "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign": "An adult Korean woman with a warm, clear middle-register voice. Speak fluent Korean like a close friend, with natural rhythm and understated emotion. Do not add an inhalation before every sentence.",
+      "openbmb/VoxCPM2": "An adult Korean woman with a warm, clear middle-register voice. Speak fluent Korean like a close friend, with natural rhythm and understated emotion. Do not add an inhalation before every sentence.",
+      "FunAudioLLM/Fun-CosyVoice3-0.5B-2512": "Speak Korean in a relaxed, friendly tone, with natural rhythm and clear sentence endings. Avoid exaggerated emotion and unnecessary inhalations."
+    },
+    "interpretation": "Exploratory model-specific instructions; not proven optimal. Includes duration-outlier cases, not a full 20-case optimized sweep."
+  },
+  "defaults": {
+    "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice": {
+      "temperature": 0.9,
+      "top_k": 50,
+      "top_p": 1.0,
+      "repetition_penalty": 1.05,
+      "max_audio_tokens": 1024
+    },
+    "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign": {
+      "temperature": 0.9,
+      "top_k": 50,
+      "top_p": 1.0,
+      "repetition_penalty": 1.05,
+      "max_audio_tokens": 1024
+    },
+    "openbmb/VoxCPM2": {
+      "cfg_value": 2.0,
+      "inference_timesteps": 10,
+      "temperature": 1.0,
+      "max_steps": 200,
+      "sample_rate": 48000
+    },
+    "FunAudioLLM/Fun-CosyVoice3-0.5B-2512": {
+      "llm_sampling": "ras_sampling",
+      "top_p": 0.8,
+      "top_k": 25,
+      "win_size": 10,
+      "tau_r": 0.1,
+      "speed": 1.0,
+      "text_frontend": false,
+      "fp16": false,
+      "flow_noise_buffer_seed": 0,
+      "python_numpy_torch_seed": "per clip 42/43/44"
+    }
+  },
+  "human_evaluation": "pending; no automatic winner"
+}

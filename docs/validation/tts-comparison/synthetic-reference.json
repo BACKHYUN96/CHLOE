@@ -1,0 +1,25 @@
+{
+  "origin": "new generic adult female VoiceDesign output created in this experiment; no real-person or call recording",
+  "model_id": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+  "source_condition": "heldout synthetic reference, not a test sentence",
+  "seed": 42,
+  "wav_sha256": "519229d5e4b39932b23c9ba51d27bab8acc93afacddc985ed8b44df281fed27c",
+  "text": "반가워요. 편하게 이야기해 주세요. 저는 여기서 듣고 있을게요.",
+  "instruction": "A warm, clear adult Korean female voice. Speak Korean naturally in a relaxed, friendly conversational tone.",
+  "asr_hypothesis": " 반가워요. 편하게 이야기해 주세요. 저는 여기서 듣고 있을게요.",
+  "asr_auxiliary": {
+    "edits": 0,
+    "reference_characters": 25,
+    "cer": 0.0,
+    "normalization": "NFC lowercase letters/numbers; remove spaces/punctuation"
+  },
+  "stats": {
+    "sample_rate": 24000,
+    "samples": 144000,
+    "audio_seconds": 6.0,
+    "pcm_rms": 3422.1920136695444,
+    "pcm_full_scale_samples": 0
+  },
+  "perceptual_gender_and_quality": "not rated",
+  "source_runtime": "4562731dc612cb87b4cd1eedac275a17d1078773"
+}
