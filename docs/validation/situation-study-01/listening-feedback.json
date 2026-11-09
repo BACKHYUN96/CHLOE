@@ -1,0 +1,130 @@
+{
+  "study": "situation-study-01",
+  "source": "user_listening_feedback",
+  "interpretation": "최종 정정 반영: DAILY_03_A, EMPATHY_01_A, EXPLANATION_02_A도 폐기. 미언급 파일은 불량으로 제외. EXPLANATION_03_A만 설명 비교 기준으로 보존.",
+  "physical_file_deletion": false,
+  "default_style_changed": false,
+  "measurement_limit": "쉼과 어미 길이는 사용자 청취 관찰 또는 희망값이며 자동 측정 결과가 아님. 자연어 지시로 밀리초 단위 길이를 보장하지 않음.",
+  "clips": [
+    {
+      "clip_id": "daily_01_A",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "daily_01_B",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "daily_02_A",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "daily_02_B",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "daily_03_A",
+      "status": "rejected",
+      "reason": "마지막 메시지에서 명시적 폐기"
+    },
+    {
+      "clip_id": "daily_03_B",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "surprise_01_A",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "surprise_01_B",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "surprise_02_A",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "surprise_02_B",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "surprise_03_A",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "surprise_03_B",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "empathy_01_A",
+      "status": "rejected",
+      "reason": "마지막 메시지에서 명시적 폐기"
+    },
+    {
+      "clip_id": "empathy_01_B",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "empathy_02_A",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "empathy_02_B",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "empathy_03_A",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "empathy_03_B",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "explanation_01_A",
+      "status": "rejected",
+      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+    },
+    {
+      "clip_id": "explanation_01_B",
+      "status": "rejected",
+      "reason": "사용자 청취: 열고 뒤 약 1초의 쉼이 흐름을 끊음. 아래쪽 설정을 구간에서 상승하는 억양과 톤 대신 부드러운 연결 필요."
+    },
+    {
+      "clip_id": "explanation_02_A",
+      "status": "rejected",
+      "reason": "마지막 메시지에서 명시적 폐기"
+    },
+    {
+      "clip_id": "explanation_02_B",
+      "status": "rejected",
+      "reason": "사용자 청취: 보세요의 상승 억양 대신 안정적인 종결 필요. 돼요는 약 0.1~0.2초의 미세한 여운을 희망하며 과장된 늘임은 피함."
+    },
+    {
+      "clip_id": "explanation_03_A",
+      "status": "reference_only",
+      "reason": "설명 비교에서 B보다 낫다는 사용자 평가. 전체 기본값 승인 아님."
+    },
+    {
+      "clip_id": "explanation_03_B",
+      "status": "rejected",
+      "reason": "사용자 청취: 생성 시간은의 첫 발화가 소시간은처럼 들림. 설명의 감정과 억양이 과하고 알 수 있어요의 늘임이 김. A가 더 나음."
+    }
+  ]
+}
