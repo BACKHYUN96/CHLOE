@@ -1,0 +1,27 @@
+[
+  {
+    "control": "explanation_01_CTRL",
+    "original": "explanation_01_C",
+    "wav_sha256_matches": true
+  },
+  {
+    "control": "explanation_02_CTRL",
+    "original": "explanation_02_C",
+    "wav_sha256_matches": true
+  },
+  {
+    "control": "explanation_03_CTRL",
+    "original": "explanation_03_C",
+    "wav_sha256_matches": true
+  },
+  {
+    "control": "surprise_02_CTRL",
+    "original": "surprise_02_C",
+    "wav_sha256_matches": true
+  },
+  {
+    "control": "surprise_03_CTRL",
+    "original": "surprise_03_D",
+    "wav_sha256_matches": true
+  }
+]
