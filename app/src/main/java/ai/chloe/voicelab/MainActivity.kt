@@ -8,6 +8,8 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -23,6 +25,7 @@ class MainActivity : ComponentActivity() {
     private val vm: LabViewModel by viewModels()
     private val importFolder = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) { uri -> uri?.let(vm::importModels) }
     private val exportWav = registerForActivityResult(ActivityResultContracts.CreateDocument("audio/wav")) { uri -> uri?.let { vm.export(it, "wav") } }
+    private val exportBenchmark = registerForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { uri -> uri?.let { vm.export(it, "benchmark") } }
     private val exportReport = registerForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { uri -> uri?.let { vm.export(it, "json") } }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,22 +33,28 @@ class MainActivity : ComponentActivity() {
         setContent {
             MaterialTheme(colorScheme = lightColorScheme(primary = Color(0xFF625783), background = Color(0xFFF8F6FC))) {
                 val state by vm.state.collectAsStateWithLifecycle()
+                DisposableEffect(state.busy, state.benchmarking) {
+                    if (state.busy || state.benchmarking) window.addFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+                    else window.clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+                    onDispose { window.clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON) }
+                }
                 LabScreen(state, vm,
                     onImport = { importFolder.launch(null) },
                     onExportWav = { exportWav.launch("chloe-sohee.wav") },
+                    onExportBenchmark = { exportBenchmark.launch("chloe-cpu-benchmark.json") },
                     onExportReport = { vm.saveEvaluation(); exportReport.launch("chloe-evaluation.json") })
             }
         }
     }
     override fun onStop() {
         // File pickers also stop the activity; no background synthesis is needed for alpha1.
-        if (!isChangingConfigurations && (vm.state.value.busy && !vm.state.value.importing || vm.state.value.playing)) vm.stop()
+        if (!isChangingConfigurations && (vm.state.value.benchmarking || vm.state.value.busy && !vm.state.value.importing || vm.state.value.playing)) vm.stop()
         super.onStop()
     }
 }
 
 @Composable
-private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExportWav: () -> Unit, onExportReport: () -> Unit) {
+private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExportWav: () -> Unit, onExportReport: () -> Unit, onExportBenchmark: () -> Unit) {
     var samplesExpanded by remember { mutableStateOf(false) }
     LazyColumn(
         modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background).safeDrawingPadding(),
@@ -53,7 +62,7 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
     ) {
         item {
             Text("CHLOE", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.Bold)
-            Text("Voice Lab", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
+            Text(if (BuildConfig.PERFORMANCE_EDITION) "Voice Lab Performance" else "Voice Lab", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
             Spacer(Modifier.height(8.dp))
             Text("한국어 여성 음성 실험실 · ${BuildConfig.VERSION_NAME}", style = MaterialTheme.typography.bodyMedium)
             Text("완전 오프라인 · Sohee · ${s.model.label} CustomVoice", style = MaterialTheme.typography.labelLarge)
@@ -63,7 +72,7 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     ModelSpec.entries.forEach { spec ->
                         FilterChip(selected = s.model == spec, onClick = { vm.selectModel(spec) },
-                            enabled = !s.busy && !s.playing,
+                            enabled = !s.busy && !s.playing && !s.benchmarking,
                             label = { Text("${spec.label} · ${if (spec in s.installedModels) "설치됨" else "미설치"}") })
                     }
                 }
@@ -78,25 +87,41 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
             }
         }
         item {
+            LabCard("성능 측정 · CPU") {
+                Text("앱에서 확인한 CPU ${s.cpuCount}개 · 다음 합성 ${s.threads} 스레드 · 실제 백엔드 ${s.backend}")
+                LazyRow(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    items(CpuThreads.choices(s.cpuCount)) { threads ->
+                        FilterChip(selected = s.threads == threads, onClick = { vm.setThreads(threads) },
+                            enabled = !s.busy && !s.playing && !s.benchmarking, label = { Text("$threads") })
+                    }
+                }
+                Text("모델·정밀도·seed는 유지합니다. 스레드가 많아도 느려질 수 있으므로 실제 결과를 비교하세요. GPU 가속은 이 빌드에 포함하지 않았습니다.", style = MaterialTheme.typography.bodySmall)
+                Button(onClick = vm::startBenchmark, enabled = s.ready && !s.busy && !s.playing && !s.benchmarking) { Text("CPU 자동 비교") }
+                Text("현재 문장·말투로 준비 1회 후 스레드별 2회 비교합니다. 모델은 유지하고 재생은 생략합니다. 수분 걸릴 수 있으며 중지 버튼이나 화면 이탈로 종료됩니다. 높은 열 상태에서는 다음 실행을 중단합니다.", style = MaterialTheme.typography.bodySmall)
+                Text(s.benchmarkSummary)
+                TextButton(onClick = onExportBenchmark, enabled = s.hasBenchmark && !s.busy && !s.benchmarking) { Text("성능 비교 JSON 내보내기") }
+            }
+        }
+        item {
             LabCard("음성 생성") {
                 OutlinedTextField(value = s.text, onValueChange = vm::setText, modifier = Modifier.fillMaxWidth(),
-                    enabled = !s.busy, label = { Text("한국어 문장") }, minLines = 3, maxLines = 6,
+                    enabled = !s.busy && !s.benchmarking, label = { Text("한국어 문장") }, minLines = 3, maxLines = 6,
                     supportingText = { Text("${s.text.codePointCount(0, s.text.length)} / 240자") })
                 if (s.model.supportsInstruction) OutlinedTextField(value = s.instruction, onValueChange = vm::setInstruction,
-                    enabled = !s.busy, modifier = Modifier.fillMaxWidth(), maxLines = 3,
+                    enabled = !s.busy && !s.benchmarking, modifier = Modifier.fillMaxWidth(), maxLines = 3,
                     label = { Text("말투 지시 (선택 · 1.7B)") },
                     placeholder = { Text("차분하고 다정하게, 친한 친구에게 말하듯") },
                     supportingText = { Text("${s.instruction.codePointCount(0, s.instruction.length)} / 240자 · 비워 두면 기본 Sohee") })
                 Row {
-                    Checkbox(checked = s.autoPlay, onCheckedChange = vm::setAutoPlay, enabled = !s.busy)
+                    Checkbox(checked = s.autoPlay, onCheckedChange = vm::setAutoPlay, enabled = !s.busy && !s.benchmarking)
                     Text("생성 후 자동 재생", modifier = Modifier.padding(top = 12.dp))
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Button(onClick = vm::generate, enabled = s.ready && !s.busy && !s.playing) { Text("합성 시작") }
-                    OutlinedButton(onClick = { vm.play() }, enabled = s.hasAudio && !s.busy && !s.playing) { Text("재생") }
-                    OutlinedButton(onClick = vm::stop, enabled = s.ready || s.busy || s.playing) { Text("중지") }
+                    Button(onClick = vm::generate, enabled = s.ready && !s.busy && !s.playing && !s.benchmarking) { Text("합성 시작") }
+                    OutlinedButton(onClick = { vm.play() }, enabled = s.hasAudio && !s.busy && !s.playing && !s.benchmarking) { Text("재생") }
+                    OutlinedButton(onClick = vm::stop, enabled = s.ready || s.busy || s.playing || s.benchmarking) { Text("중지") }
                 }
-                Text("${s.model.label} · F16 + 일부 F32 안정화 · CPU 4 스레드\n문장 전체 생성 후 재생합니다. ${if (s.model.supportsInstruction) "1.7B는 말투 지시를 사용할 수 있습니다." else "0.6B는 자연어 감정 지시를 지원하지 않습니다."}", style = MaterialTheme.typography.bodySmall)
+                Text("${s.model.label} · F16 + 일부 F32 안정화 · CPU ${s.threads} 스레드\n문장 전체 생성 후 재생합니다. ${if (s.model.supportsInstruction) "1.7B는 말투 지시를 사용할 수 있습니다." else "0.6B는 자연어 감정 지시를 지원하지 않습니다."}", style = MaterialTheme.typography.bodySmall)
             }
         }
         item {
@@ -109,8 +134,8 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
                 Text(s.metrics)
                 Text("RTF = 생성 시간 ÷ 오디오 길이. 1보다 작으면 실시간보다 빠릅니다.\n첫 재생 출력은 자동 재생 시 AudioTrack 타임스탬프 기준입니다. 기기에서 값을 제공하지 않으면 미측정으로 남습니다. 스피커 소리의 물리적 도달 시간은 별도 측정이 필요합니다.", style = MaterialTheme.typography.bodySmall)
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    TextButton(onClick = onExportWav, enabled = s.hasAudio && !s.busy) { Text("WAV 내보내기") }
-                    TextButton(onClick = onExportReport, enabled = s.hasReport && !s.busy) { Text("측정 JSON") }
+                    TextButton(onClick = onExportWav, enabled = s.hasAudio && !s.busy && !s.benchmarking) { Text("WAV 내보내기") }
+                    TextButton(onClick = onExportReport, enabled = s.hasReport && !s.busy && !s.benchmarking) { Text("측정 JSON") }
                 }
             }
         }
@@ -121,13 +146,13 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
                 Score("억양", s.intonation) { vm.rate("intonation", it) }
                 Score("리듬 / 자연스러움", s.rhythm) { vm.rate("rhythm", it) }
                 OutlinedTextField(s.notes, vm::notes, label = { Text("관찰 메모") }, modifier = Modifier.fillMaxWidth(), maxLines = 4)
-                Button(onClick = vm::saveEvaluation, enabled = !s.busy) { Text("평가 저장") }
+                Button(onClick = vm::saveEvaluation, enabled = !s.busy && !s.benchmarking) { Text("평가 저장") }
                 Text("각 생성의 문장·측정·평가는 내부 저장소에 별도 JSON으로 보관됩니다.", style = MaterialTheme.typography.bodySmall)
             }
         }
         item { TextButton(onClick = { samplesExpanded = !samplesExpanded }) { Text(if (samplesExpanded) "기본 테스트 10문장 접기" else "기본 테스트 10문장 열기") } }
         if (samplesExpanded) itemsIndexed(koreanSamples) { index, sample ->
-            OutlinedCard(onClick = { vm.setText(sample) }, enabled = !s.busy, modifier = Modifier.fillMaxWidth()) {
+            OutlinedCard(onClick = { vm.setText(sample) }, enabled = !s.busy && !s.benchmarking, modifier = Modifier.fillMaxWidth()) {
                 Text("${index + 1}. $sample", Modifier.padding(16.dp))
             }
         }

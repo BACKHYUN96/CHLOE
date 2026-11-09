@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0-alpha4",
+  "application_id": "ai.chloe.voicelab.performance",
+  "apk": "CHLOE-Voice-Lab-Performance-0.1.0-alpha4-arm64-debug.apk",
+  "bytes": 29580831,
+  "sha256": "51a48e706ebab9d369386096b7fa0fb432284c271240a3861648b43e163f14c8",
+  "abis": [
+    "arm64-v8a"
+  ],
+  "backend": "CPU only",
+  "native_optimized_release": true,
+  "unit_tests": 16,
+  "unit_failures": 0,
+  "lint_errors": 0,
+  "lint_warnings": 11,
+  "android_test_apk_built": true,
+  "device_test_performed": false,
+  "device_performance_measured": false,
+  "internet_permission": false,
+  "signing_certificate_sha256": "3fe9a122bb262451150fc78c786ad19c56c462a5ac15a3f18892fafe16786896",
+  "zip_alignment_16k": true,
+  "all_native_elf_alignment_16k": true,
+  "connected_android_devices": 0
+}
