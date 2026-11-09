@@ -1,0 +1,6 @@
+{
+  "method": "Linux /proc VmHWM, kernel process-lifetime RSS high water; not Android PSS",
+  "peak_rss_kib": 8482356,
+  "samples": 1327,
+  "pid_published": false
+}

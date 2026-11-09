@@ -1,6 +1,8 @@
+[TTS Lab 모델 비교 실험 · alpha7](docs/tts-comparison.md): 기존 CPU 엔진을 유지하며 20문장·3개 seed, 블라인드 평가와 독립 VoiceDesign 경로를 추가했습니다. 모델별 미통합·미측정 상태는 보고서에 구분합니다.
+
 말투 기준 표본 선택: [alpha6 적용 안내](docs/VOICE_REFERENCES.ko.md). CPU 기준, 1.7B Sohee의 합격 표본 지시를 선택할 수 있습니다.
 
-# CHLOE Voice Lab · 0.1.0-alpha4
+# CHLOE Voice Lab · 0.1.0-alpha7
 
 alpha4는 CPU 스레드 선택·자동 비교와 온도/배터리/메모리 기록을 추가합니다. 별도 설치되는 성능판 빌드와 모델 가져오기·측정 방법은 [성능 측정판 안내](docs/PERFORMANCE_ALPHA4.ko.md)를 참고하세요. GPU 가속은 이번 APK에 포함하지 않습니다.
 

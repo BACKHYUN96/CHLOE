@@ -14,6 +14,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".comparison.ComparisonActivity" android:exported="false" />
+        <service android:name=".comparison.ComparisonWorkerService" android:exported="false" android:process=":comparison" />
         <service android:name=".synthesis.VoiceWorkerService"
             android:exported="false" android:process=":voice" />
     </application>

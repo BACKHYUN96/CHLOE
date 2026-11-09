@@ -26,3 +26,5 @@ RTF = native 생성 시간(ms) / (출력 sample 수 / sample rate × 1000)
 ```
 
 첫 PCM 준비: 합성 버튼 → JNI의 완성 PCM 반환 시점. WAV 수신: 합성 버튼 → WAV 저장 및 IPC 완료. 첫 재생 출력: 합성 버튼 → AudioTrack 출력 timestamp로 역산한 첫 frame. 자동 재생에서만 기록하며 timestamp를 얻지 못하면 null. 후자는 Android 오디오 clock 추정값으로 블루투스 지연이나 스피커의 물리적 음향 도달까지 측정하지 않는다.
+
+TTS Lab 실험의 독립 프로세스·저장소·평가 경계는 [architecture.md](architecture.md)를 참고한다.

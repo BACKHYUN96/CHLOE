@@ -1,0 +1,6 @@
+# CPU-only local auxiliary ASR; not Android runtime dependencies.
+# PyAV 19 removes metadata_errors, which faster-whisper 1.2.1 still passes.
+faster-whisper==1.2.1
+ctranslate2==4.8.5
+av==16.0.1
+tokenizers==0.23.3

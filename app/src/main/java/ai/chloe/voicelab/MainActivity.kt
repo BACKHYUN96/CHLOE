@@ -39,6 +39,7 @@ class MainActivity : ComponentActivity() {
                     onDispose { window.clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON) }
                 }
                 LabScreen(state, vm,
+                    onComparison = { vm.stop(); startActivity(android.content.Intent(this@MainActivity, ai.chloe.voicelab.comparison.ComparisonActivity::class.java)) },
                     onImport = { importFolder.launch(null) },
                     onExportWav = { exportWav.launch("chloe-sohee.wav") },
                     onExportBenchmark = { exportBenchmark.launch("chloe-cpu-benchmark.json") },
@@ -54,7 +55,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExportWav: () -> Unit, onExportReport: () -> Unit, onExportBenchmark: () -> Unit) {
+private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExportWav: () -> Unit, onExportReport: () -> Unit, onExportBenchmark: () -> Unit, onComparison: () -> Unit) {
     var samplesExpanded by remember { mutableStateOf(false) }
     LazyColumn(
         modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background).safeDrawingPadding(),
@@ -63,6 +64,7 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
         item {
             Text("CHLOE", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.Bold)
             Text(if (BuildConfig.PERFORMANCE_EDITION) "Voice Lab Performance" else "Voice Lab", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
+            TextButton(onClick = onComparison, enabled = !s.busy && !s.playing && !s.benchmarking) { Text("TTS Lab · 모델 비교 실험") }
             Spacer(Modifier.height(8.dp))
             Text("한국어 여성 음성 실험실 · ${BuildConfig.VERSION_NAME}", style = MaterialTheme.typography.bodyMedium)
             Text("완전 오프라인 · Sohee · ${s.model.label} CustomVoice", style = MaterialTheme.typography.labelLarge)
