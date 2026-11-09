@@ -1,10 +1,10 @@
 {
   "study": "situation-study-01",
   "source": "user_listening_feedback",
-  "interpretation": "최종 정정 반영: DAILY_03_A, EMPATHY_01_A, EXPLANATION_02_A도 폐기. 미언급 파일은 불량으로 제외. EXPLANATION_03_A만 설명 비교 기준으로 보존.",
+  "interpretation": "설명 피드백의 폐기 정정을 유지하며, 이후 놀람 개별 평가가 이전 미언급 일괄 제외 판정을 대체한다. 놀람 5개는 구간별 또는 변형 참고로 보존, surprise_02_B는 폐기. EXPLANATION_03_A는 설명 비교 기준. 전체 기본값 승인 아님.",
   "physical_file_deletion": false,
   "default_style_changed": false,
-  "measurement_limit": "쉼과 어미 길이는 사용자 청취 관찰 또는 희망값이며 자동 측정 결과가 아님. 자연어 지시로 밀리초 단위 길이를 보장하지 않음.",
+  "measurement_limit": "억양 화살표, 쉼과 길이는 사용자 청취 관찰 또는 표현 목표이며 정밀 음향 측정이 아니다. 자연어 지시로 음높이 곡선·밀리초 길이·감정을 강제하지 못한다.",
   "clips": [
     {
       "clip_id": "daily_01_A",
@@ -38,33 +38,39 @@
     },
     {
       "clip_id": "surprise_01_A",
-      "status": "rejected",
-      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+      "status": "partial_reference",
+      "reason": "오~ 감탄사는 사용자 발화 중 맞장구 후보. 진짜와 그래서 어떻게 됐어는 궁금함이 부족하고 딱딱함.",
+      "note": "감탄사 구간의 표현 참고이며 동시 맞장구 동작 검증은 아님."
     },
     {
       "clip_id": "surprise_01_B",
-      "status": "rejected",
-      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+      "status": "partial_reference",
+      "reason": "진짜??의 실제 궁금한 감정은 선호. 그래서 어떻게 됐어는 A/B 모두 딱딱하여 빠르고 호기심 있는 질문으로 개선.",
+      "note": "01_A의 감탄사와 01_B의 궁금한 반응을 표현 목표로 결합하되 PCM 접합 승인은 아님."
     },
     {
       "clip_id": "surprise_02_A",
-      "status": "rejected",
-      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+      "status": "partial_reference",
+      "reason": "와↗~~와 그걸 벌써 끝냈어↗~?의 감탄은 선호. 빠른데에서도 과하지 않은 감탄을 유지하고 상승·여운으로 이어 마무리.",
+      "note": "설명용 하강 종결 규칙을 놀람 표현에 일괄 적용하지 않음."
     },
     {
       "clip_id": "surprise_02_B",
       "status": "rejected",
-      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+      "reason": "사용자 명시적 폐기.",
+      "note": ""
     },
     {
       "clip_id": "surprise_03_A",
-      "status": "rejected",
-      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+      "status": "reference_needs_refinement",
+      "reason": "전반적으로 훌륭함. 잠깐에는 집중·놀람·감탄이 함께 느껴지는 하강 후 상승 표현 필요. 뒤의 두 질문은 좋은 표현을 유지하면서 궁금해서 빨리 듣고 싶은 귀여운 재촉으로 약간 빠르게.",
+      "note": "사용자가 말한 그걸 네가 직접 만든 거야는 의미 설명으로 기록. 기존 입력 그럼 네가 직접 만든 거야는 통제 실험에서 유지."
     },
     {
       "clip_id": "surprise_03_B",
-      "status": "rejected",
-      "reason": "미언급 파일도 폐기 수준이라는 사용자 정정에 따라 제외"
+      "status": "alternative_reference",
+      "reason": "차분하고 낮은 톤의 다른 감정 표현으로 보존. 잠깐 뒤 끊는 차분한 뉘앙스도 허용하되 집중·놀람·감탄의 복합 표현 목표를 기록.",
+      "note": "03_A와 별개의 차분한 변형이며 무조건 높은 톤으로 통일하지 않음."
     },
     {
       "clip_id": "empathy_01_A",
