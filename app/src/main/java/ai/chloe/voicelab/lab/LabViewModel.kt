@@ -45,9 +45,11 @@ internal data class LabState(
     val benchmarkSummary: String = "자동 비교 결과가 없습니다.",
     val hasBenchmark: Boolean = false,
     val backend: String = "초기화 전",
+    val referenceId: String? = null,
 )
 
 internal class LabViewModel(app: Application) : AndroidViewModel(app) {
+    val references = voiceReferences(app.assets.open("voice-reference-catalog.json").bufferedReader().use { it.readText() })
     private val store = ModelStore(app)
     private val preferences = app.getSharedPreferences("voice_lab", 0)
     private val initialSpec = runCatching { ModelSpec.fromKey(preferences.getString("model", if (ai.chloe.voicelab.BuildConfig.PERFORMANCE_EDITION) "1.7b" else "0.6b")!!) }.getOrDefault(ModelSpec.SMALL)
@@ -164,10 +166,18 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
         log.record("launch", JSONObject().put("version", ai.chloe.voicelab.BuildConfig.VERSION_NAME).put("device", Build.MODEL))
         File(app.filesDir, "audio").listFiles()?.filter { it.name.endsWith(".partial") }?.forEach { it.delete() }
     }
+    fun applyReference(id: String, includeText: Boolean) {
+        val s = state.value
+        if (s.busy || s.playing || s.benchmarking || !s.model.supportsInstruction) return
+        val reference = references.firstOrNull { it.id == id } ?: return
+        mutable.update { it.copy(instruction = reference.instruction,
+            text = if (includeText) reference.text else it.text, referenceId = reference.id,
+            status = "${reference.label} 말투 적용 · 새 문장의 품질은 별도 확인이 필요합니다.") }
+    }
     fun setText(value: String) { if (!state.value.busy && !state.value.benchmarking) mutable.update { it.copy(text = value) } }
     fun setAutoPlay(value: Boolean) { mutable.update { it.copy(autoPlay = value) } }
     fun setInstruction(value: String) {
-        if (!state.value.busy && !state.value.benchmarking && state.value.model.supportsInstruction) mutable.update { it.copy(instruction = value) }
+        if (!state.value.busy && !state.value.benchmarking && state.value.model.supportsInstruction) mutable.update { it.copy(instruction = value, referenceId = null) }
     }
     fun selectModel(spec: ModelSpec) {
         if (state.value.busy || state.value.playing || state.value.benchmarking || state.value.model == spec) return
@@ -176,7 +186,7 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
         mutable.update { it.copy(ready = false, busy = true) }
         engine.stop()
         preferences.edit().putString("model", spec.key).apply()
-        mutable.update { it.copy(model = spec, installed = store.installed(spec), instruction = "", error = null,
+        mutable.update { it.copy(model = spec, installed = store.installed(spec), instruction = "", referenceId = null, error = null,
             hasAudio = false, hasReport = false, metrics = "선택한 모델의 측정 결과가 없습니다.", memory = "미측정",
             pronunciation = 0, intonation = 0, rhythm = 0, notes = "", status = "${spec.label} 선택됨 · 초기화해 주세요.") }
     }
@@ -242,6 +252,9 @@ internal class LabViewModel(app: Application) : AndroidViewModel(app) {
                     put("app_version", ai.chloe.voicelab.BuildConfig.VERSION_NAME)
                     put("application_id", ai.chloe.voicelab.BuildConfig.APPLICATION_ID)
                     put("model_variant", state.value.model.key).put("instruction", state.value.instruction)
+                    val reference = references.firstOrNull { it.id == state.value.referenceId }
+                    put("style_reference", reference?.let { JSONObject().put("id", it.id).put("source_study", it.sourceStudy)
+                        .put("wav_sha256", it.wavSha256).put("application", "instruction_only").put("reference_pcm_used", false) } ?: JSONObject.NULL)
                     remove("path"); remove("pcm_ready_nanos"); remove("type")
                     put("audio_id", output!!.nameWithoutExtension)
                     put("input", state.value.text).put("speaker", "sohee").put("language", "Korean")
