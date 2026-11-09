@@ -4,6 +4,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 val performanceEdition = providers.gradleProperty("performanceEdition").orNull == "true"
+val vulkanEnabled = providers.gradleProperty("vulkanEnabled").orNull == "true"
 android {
     namespace = "ai.chloe.voicelab"
     compileSdk = 35
@@ -12,15 +13,21 @@ android {
         applicationId = if (performanceEdition) "ai.chloe.voicelab.performance" else "ai.chloe.voicelab"
         manifestPlaceholders["appLabel"] = if (performanceEdition) "CHLOE Voice Lab Performance" else "CHLOE Voice Lab"
         buildConfigField("boolean", "PERFORMANCE_EDITION", performanceEdition.toString())
+        buildConfigField("boolean", "VULKAN_ENABLED", vulkanEnabled.toString())
         minSdk = 31
         targetSdk = 35
-        versionCode = 4
-        versionName = "0.1.0-alpha4"
+        versionCode = 5
+        versionName = "0.1.0-alpha5"
         ndk { abiFilters += "arm64-v8a" }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild.cmake {
             // Keep the APK debuggable while avoiding unoptimized transformer/decoder kernels.
-            arguments += listOf("-DANDROID_STL=c++_shared", "-DGGML_NATIVE=OFF", "-DCMAKE_BUILD_TYPE=Release", "-DQWEN3_ANDROID_VULKAN=OFF", "-DQWEN3_ANDROID_OPENCL=OFF")
+            arguments += listOf("-DANDROID_STL=c++_shared", "-DGGML_NATIVE=OFF", "-DCMAKE_BUILD_TYPE=Release", "-DQWEN3_ANDROID_VULKAN=${if (vulkanEnabled) "ON" else "OFF"}", "-DQWEN3_ANDROID_OPENCL=OFF")
+            if (vulkanEnabled) {
+                arguments += listOf(
+                    "-DCHLOE_VULKAN_HEADERS=${providers.gradleProperty("vulkanHeadersDir").get()}",
+                    "-DCHLOE_SPIRV_HEADERS=${providers.gradleProperty("spirvHeadersDir").get()}")
+            }
             targets += "chloe_voice"
             cppFlags += "-std=c++17"
         }
@@ -35,6 +42,7 @@ android {
         path = file("src/main/cpp/CMakeLists.txt")
         version = "3.22.1"
     }
+    sourceSets.getByName("main").assets.srcDir("../third_party")
     packaging.jniLibs.useLegacyPackaging = false
 }
 dependencies {

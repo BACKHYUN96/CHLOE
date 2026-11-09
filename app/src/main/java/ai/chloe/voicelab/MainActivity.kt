@@ -87,7 +87,7 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
             }
         }
         item {
-            LabCard("성능 측정 · CPU") {
+            LabCard("성능 측정 · CPU / GPU") {
                 Text("앱에서 확인한 CPU ${s.cpuCount}개 · 다음 합성 ${s.threads} 스레드 · 실제 백엔드 ${s.backend}")
                 LazyRow(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                     items(CpuThreads.choices(s.cpuCount)) { threads ->
@@ -95,8 +95,8 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
                             enabled = !s.busy && !s.playing && !s.benchmarking, label = { Text("$threads") })
                     }
                 }
-                Text("모델·정밀도·seed는 유지합니다. 스레드가 많아도 느려질 수 있으므로 실제 결과를 비교하세요. GPU 가속은 이 빌드에 포함하지 않았습니다.", style = MaterialTheme.typography.bodySmall)
-                Button(onClick = vm::startBenchmark, enabled = s.ready && !s.busy && !s.playing && !s.benchmarking) { Text("CPU 자동 비교") }
+                Text("모델·정밀도·seed는 유지합니다. 스레드가 많아도 느려질 수 있으므로 실제 결과를 비교하세요. Vulkan 포함 여부: ${BuildConfig.VULKAN_ENABLED}. GPU 모드에서도 지원되지 않는 연산은 CPU에서 처리됩니다.", style = MaterialTheme.typography.bodySmall)
+                Button(onClick = vm::startBenchmark, enabled = s.ready && !s.busy && !s.playing && !s.benchmarking) { Text("현재 모드 스레드 비교") }
                 Text("현재 문장·말투로 준비 1회 후 스레드별 2회 비교합니다. 모델은 유지하고 재생은 생략합니다. 수분 걸릴 수 있으며 중지 버튼이나 화면 이탈로 종료됩니다. 높은 열 상태에서는 다음 실행을 중단합니다.", style = MaterialTheme.typography.bodySmall)
                 Text(s.benchmarkSummary)
                 TextButton(onClick = onExportBenchmark, enabled = s.hasBenchmark && !s.busy && !s.benchmarking) { Text("성능 비교 JSON 내보내기") }
@@ -117,10 +117,17 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
                     Text("생성 후 자동 재생", modifier = Modifier.padding(top = 12.dp))
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Button(onClick = vm::generate, enabled = s.ready && !s.busy && !s.playing && !s.benchmarking) { Text("합성 시작") }
+                    Button(onClick = vm::generate, enabled = s.ready && !s.busy && !s.playing && !s.benchmarking) { Text("현재 모드 합성") }
                     OutlinedButton(onClick = { vm.play() }, enabled = s.hasAudio && !s.busy && !s.playing && !s.benchmarking) { Text("재생") }
                     OutlinedButton(onClick = vm::stop, enabled = s.ready || s.busy || s.playing || s.benchmarking) { Text("중지") }
                 }
+                ai.chloe.voicelab.synthesis.BackendProfile.entries.forEach { profile ->
+                    Button(onClick = { vm.runProfile(profile) }, enabled = s.installed && !s.busy && !s.playing && !s.benchmarking &&
+                        (profile == ai.chloe.voicelab.synthesis.BackendProfile.CPU || BuildConfig.VULKAN_ENABLED)) {
+                        Text("${profile.label}로 합성")
+                    }
+                }
+                Text("선택: ${s.profile.label} · GPU 우선은 지원 연산을 GPU에 배정합니다. 하이브리드는 GPU 음성 코드 생성 → CPU 오디오 디코딩의 순차 분담이며 동시 병렬이 아닙니다. 모드 전환 시 모델을 다시 로드합니다. 초기화·합성 각각 120초 제한. 같은 문장·말투·4스레드로 모드별 2회 이상 비교하고 측정 JSON을 저장하세요.", style = MaterialTheme.typography.bodySmall)
                 Text("${s.model.label} · F16 + 일부 F32 안정화 · CPU ${s.threads} 스레드\n문장 전체 생성 후 재생합니다. ${if (s.model.supportsInstruction) "1.7B는 말투 지시를 사용할 수 있습니다." else "0.6B는 자연어 감정 지시를 지원하지 않습니다."}", style = MaterialTheme.typography.bodySmall)
             }
         }

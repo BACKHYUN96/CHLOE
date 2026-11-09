@@ -1,3 +1,5 @@
+현재 실험판: [alpha5 CPU / Vulkan / 하이브리드 설치·비교 안내](docs/GPU_ALPHA5.ko.md). 실제 GPU 속도·음질은 기기 검증 전입니다.
+
 # CHLOE Voice Lab · 0.1.0-alpha4
 
 alpha4는 CPU 스레드 선택·자동 비교와 온도/배터리/메모리 기록을 추가합니다. 별도 설치되는 성능판 빌드와 모델 가져오기·측정 방법은 [성능 측정판 안내](docs/PERFORMANCE_ALPHA4.ko.md)를 참고하세요. GPU 가속은 이번 APK에 포함하지 않습니다.

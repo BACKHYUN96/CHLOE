@@ -3,7 +3,7 @@ package ai.chloe.voicelab.lab
 internal object CpuThreads {
     fun limit(available: Int) = available.coerceIn(1, 32)
     fun choices(available: Int) = (1..limit(available)).toList()
-    fun sweep(available: Int) = (listOf(2, 4, 6, 8) + limit(available)).filter { it <= limit(available) }.distinct().sorted()
+    fun sweep(available: Int) = (listOf(2, 4, 6) + minOf(limit(available), 6)).filter { it <= limit(available) }.distinct().sorted()
     fun valid(value: Int, available: Int) = value in 1..limit(available)
 }
 

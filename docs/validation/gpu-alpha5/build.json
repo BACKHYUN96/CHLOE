@@ -1,0 +1,106 @@
+{
+  "version": "0.1.0-alpha5",
+  "application_id": "ai.chloe.voicelab.performance",
+  "apk": "CHLOE-Voice-Lab-Performance-0.1.0-alpha5-arm64-debug.apk",
+  "bytes": 62778565,
+  "sha256": "752a1eba48d083e8459e467e12973a80ebbbdbad651a08ab2c2df1d95da81414",
+  "abis": [
+    "arm64-v8a"
+  ],
+  "backend": "CPU / Vulkan preferred / GPU code generation + CPU decode (sequential)",
+  "native_optimized_release": true,
+  "unit_tests": 18,
+  "unit_failures": 0,
+  "lint_errors": 0,
+  "lint_warnings": 11,
+  "android_test_apk_built": true,
+  "device_test_performed": false,
+  "device_performance_measured": false,
+  "connected_android_devices": 0,
+  "internet_permission": false,
+  "signing_certificate_sha256": "3fe9a122bb262451150fc78c786ad19c56c462a5ac15a3f18892fafe16786896",
+  "zip_alignment_16k": true,
+  "all_native_elf_alignment_16k": true,
+  "native_libraries": [
+    {
+      "path": "lib/arm64-v8a/libandroidx.graphics.path.so",
+      "load_alignments": [
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libc++_shared.so",
+      "load_alignments": [
+        16384,
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libchloe_voice.so",
+      "load_alignments": [
+        16384,
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libggml-base.so",
+      "load_alignments": [
+        16384,
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libggml-cpu.so",
+      "load_alignments": [
+        16384,
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libggml-vulkan.so",
+      "load_alignments": [
+        16384,
+        16384,
+        16384,
+        16384
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libggml.so",
+      "load_alignments": [
+        16384,
+        16384,
+        16384,
+        16384
+      ]
+    }
+  ],
+  "vulkan_headers_commit": "409c16be502e39fe70dd6fe2d9ad4842ef2c9a53",
+  "spirv_headers_commit": "6efe5ae6b7c6ad29da3f2cc3f164b9c3d72b78b1",
+  "host_cpu_reference": {
+    "platform": "Linux x86_64 AMD EPYC 9V45 virtual host, simultaneous build load; not phone performance",
+    "threads": 4,
+    "samples": 67200,
+    "sample_rate": 24000,
+    "seconds": 2.8,
+    "code_generation_ms": 43173,
+    "audio_decode_ms": 10522,
+    "finite_nonzero_pcm": true,
+    "gpu_nodes": 0,
+    "unassigned_nodes": 0
+  },
+  "host_tiny_graph_add_passed": true,
+  "host_cpu_only_gpu_request_rejected": true,
+  "timeout_ms": 120000,
+  "simultaneous_parallel": false
+}
