@@ -1,4 +1,6 @@
-# CHLOE Voice Lab · 0.1.0-alpha3
+# CHLOE Voice Lab · 0.1.0-alpha4
+
+alpha4는 CPU 스레드 선택·자동 비교와 온도/배터리/메모리 기록을 추가합니다. 별도 설치되는 성능판 빌드와 모델 가져오기·측정 방법은 [성능 측정판 안내](docs/PERFORMANCE_ALPHA4.ko.md)를 참고하세요. GPU 가속은 이번 APK에 포함하지 않습니다.
 
 alpha3는 0.6B/1.7B Sohee 선택과 모델별 저장을 추가합니다. 기존 0.6B 모델은 업데이트 시 자동 보존됩니다. 1.7B는 별도 가져오기가 필요합니다. [1.7B 설치 안내](docs/ALPHA3.ko.md)를 참고하세요.
 

@@ -81,7 +81,7 @@ void write_wav(const std::string& path, const std::vector<float>& audio, int rat
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_ai_chloe_voicelab_synthesis_NativeBridge_initialize(JNIEnv* env, jobject, jstring directory, jstring talkerFile, jint hiddenSize, jstring logPath) {
+Java_ai_chloe_voicelab_synthesis_NativeBridge_initialize(JNIEnv* env, jobject, jstring directory, jstring talkerFile, jint hiddenSize, jstring logPath, jint threads) {
     try {
         engine.reset();
         instruction_supported = false;
@@ -101,7 +101,9 @@ Java_ai_chloe_voicelab_synthesis_NativeBridge_initialize(JNIEnv* env, jobject, j
         }
         auto dir = string(env, directory);
         validate_talker(dir + "/" + name, hiddenSize);
-        qwen3_tts_set_cpu_threads(4);
+        if (threads < 1 || threads > 32) throw std::runtime_error("Invalid CPU thread count");
+        if (!qwen3_tts_set_backend_preference(QWEN3_TTS_BACKEND_CPU) || !qwen3_tts_set_cpu_threads(threads))
+            throw std::runtime_error("CPU backend configuration failed");
         auto candidate = std::make_unique<qwen3_tts::Qwen3TTS>();
         if (!candidate->load_models(dir, name))
             throw std::runtime_error(candidate->get_error());
@@ -114,14 +116,15 @@ Java_ai_chloe_voicelab_synthesis_NativeBridge_initialize(JNIEnv* env, jobject, j
             throw std::runtime_error("1.7B instruction capability missing");
         instruction_supported = hiddenSize == 2048 && caps.supports_instruction;
         engine = std::move(candidate);
-        return env->NewStringUTF(hiddenSize == 1024 ? "0.6B / Sohee / CPU 4 threads" : "1.7B / Sohee / instruction / CPU 4 threads");
+        const std::string description = std::string(hiddenSize == 1024 ? "0.6B" : "1.7B") + " / Sohee / CPU " + std::to_string(threads) + " threads";
+        return env->NewStringUTF(description.c_str());
     } catch (const std::exception& e) { fail(env, e.what()); }
       catch (...) { fail(env, "Unknown native initialization failure"); }
     return nullptr;
 }
 
 extern "C" JNIEXPORT jdoubleArray JNICALL
-Java_ai_chloe_voicelab_synthesis_NativeBridge_synthesize(JNIEnv* env, jobject, jbyteArray text, jstring wavPath, jbyteArray instruction) {
+Java_ai_chloe_voicelab_synthesis_NativeBridge_synthesize(JNIEnv* env, jobject, jbyteArray text, jstring wavPath, jbyteArray instruction, jint threads) {
     try {
         if (!engine) throw std::runtime_error("Initialize Sohee first");
         std::string utf8(env->GetArrayLength(text), '\0');
@@ -135,7 +138,9 @@ Java_ai_chloe_voicelab_synthesis_NativeBridge_synthesize(JNIEnv* env, jobject, j
         params.instruction = instruct;
         params.language_id = 2064;
         params.speaker = "sohee";
-        params.n_threads = 4;
+        if (threads < 1 || threads > 32 || !qwen3_tts_set_cpu_threads(threads))
+            throw std::runtime_error("Invalid CPU thread count");
+        params.n_threads = threads;
         params.seed = 42;
         params.max_audio_tokens = 1024;
         engine->set_progress_callback([](int tokens, int maximum) {
@@ -164,3 +169,12 @@ Java_ai_chloe_voicelab_synthesis_NativeBridge_synthesize(JNIEnv* env, jobject, j
 
 extern "C" JNIEXPORT void JNICALL
 Java_ai_chloe_voicelab_synthesis_NativeBridge_release(JNIEnv*, jobject) { engine.reset(); }
+
+extern "C" JNIEXPORT jstring JNICALL
+Java_ai_chloe_voicelab_synthesis_NativeBridge_backendName(JNIEnv* env, jobject) {
+    char* name = qwen3_tts_get_active_backend_name();
+    if (!name) return env->NewStringUTF("unknown");
+    jstring value = env->NewStringUTF(name);
+    qwen3_tts_free_string(name);
+    return value;
+}

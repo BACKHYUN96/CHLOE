@@ -3,21 +3,24 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
 }
+val performanceEdition = providers.gradleProperty("performanceEdition").orNull == "true"
 android {
     namespace = "ai.chloe.voicelab"
     compileSdk = 35
     ndkVersion = "28.2.13676358"
     defaultConfig {
-        applicationId = "ai.chloe.voicelab"
+        applicationId = if (performanceEdition) "ai.chloe.voicelab.performance" else "ai.chloe.voicelab"
+        manifestPlaceholders["appLabel"] = if (performanceEdition) "CHLOE Voice Lab Performance" else "CHLOE Voice Lab"
+        buildConfigField("boolean", "PERFORMANCE_EDITION", performanceEdition.toString())
         minSdk = 31
         targetSdk = 35
-        versionCode = 3
-        versionName = "0.1.0-alpha3"
+        versionCode = 4
+        versionName = "0.1.0-alpha4"
         ndk { abiFilters += "arm64-v8a" }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild.cmake {
             // Keep the APK debuggable while avoiding unoptimized transformer/decoder kernels.
-            arguments += listOf("-DANDROID_STL=c++_shared", "-DGGML_NATIVE=OFF", "-DCMAKE_BUILD_TYPE=Release")
+            arguments += listOf("-DANDROID_STL=c++_shared", "-DGGML_NATIVE=OFF", "-DCMAKE_BUILD_TYPE=Release", "-DQWEN3_ANDROID_VULKAN=OFF", "-DQWEN3_ANDROID_OPENCL=OFF")
             targets += "chloe_voice"
             cppFlags += "-std=c++17"
         }

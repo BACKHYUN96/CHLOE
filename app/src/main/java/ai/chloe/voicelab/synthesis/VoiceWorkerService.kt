@@ -4,6 +4,8 @@ import android.app.Service
 import android.content.Intent
 import android.os.*
 import ai.chloe.voicelab.diagnostics.LabLog
+import ai.chloe.voicelab.diagnostics.deviceTelemetry
+import ai.chloe.voicelab.lab.CpuThreads
 import ai.chloe.voicelab.model.ModelLibrary
 import ai.chloe.voicelab.model.ModelSpec
 import ai.chloe.voicelab.model.PackManifest
@@ -23,7 +25,9 @@ class VoiceWorkerService : Service() {
     private var loadedSpec: ModelSpec? = null
     private lateinit var log: LabLog
     private var client: Messenger? = null
-    private var peakPss = 0
+    @Volatile private var peakPss = 0
+    @Volatile private var peakThermal = 0
+    private var cpuStartMs = 0L
     private var nativeBytes = 0L
     private var operation = 0
     private var operationStart = 0L
@@ -34,7 +38,8 @@ class VoiceWorkerService : Service() {
             val info = Debug.MemoryInfo().also { Debug.getMemoryInfo(it) }
             peakPss = maxOf(peakPss, info.totalPss)
             nativeBytes = Debug.getNativeHeapAllocatedSize()
-            val data = JSONObject().put("pss_kib", info.totalPss).put("peak_pss_kib", peakPss)
+            peakThermal = maxOf(peakThermal, getSystemService(PowerManager::class.java).currentThermalStatus)
+            val data = deviceTelemetry(this@VoiceWorkerService).put("pss_kib", info.totalPss).put("peak_pss_kib", peakPss)
                 .put("native_heap_bytes", nativeBytes).put("operation", operation)
                 .put("elapsed_ms", SystemClock.elapsedRealtime() - operationStart)
                 .put("thermal_status", getSystemService(PowerManager::class.java).currentThermalStatus)
@@ -58,7 +63,10 @@ class VoiceWorkerService : Service() {
                 requestId = msg.arg1
                 operationStart = SystemClock.elapsedRealtime()
                 peakPss = 0
+                peakThermal = getSystemService(PowerManager::class.java).currentThermalStatus
+                cpuStartMs = Process.getElapsedCpuTime()
                 main.post(monitor)
+                val threads = msg.data.getInt("threads", 4)
                 val text = msg.data.getString("text").orEmpty()
                 val instruction = msg.data.getString("instruction").orEmpty()
                 val modelKey = msg.data.getString("model").orEmpty()
@@ -66,6 +74,8 @@ class VoiceWorkerService : Service() {
                 executor.execute {
                     var completion: Pair<String, JSONObject>? = null
                     try {
+                        require(CpuThreads.valid(threads, Runtime.getRuntime().availableProcessors())) { "지원 범위를 벗어난 CPU 스레드 수입니다." }
+                        val telemetryStart = deviceTelemetry(this)
                         if (operation == VoiceProtocol.INIT) {
                             ready = false
                             loadedSpec = null
@@ -78,11 +88,12 @@ class VoiceWorkerService : Service() {
                             val directory = ModelLibrary(File(filesDir, "models")).directory(spec)
                             val manifest = PackManifest.parse(File(directory, "model-pack.json").readText())
                             require(manifest.spec == spec) { "모델 패키지와 선택한 모델이 다릅니다." }
-                            val capabilities = native.initialize(directory.path, spec.talkerFile, spec.hiddenSize, nativeLog.path)
+                            val capabilities = native.initialize(directory.path, spec.talkerFile, spec.hiddenSize, nativeLog.path, threads)
                             loadedSpec = spec
                             ready = true
                             completion = "ready" to JSONObject().put("capabilities", capabilities)
                                 .put("init_ms", SystemClock.elapsedRealtime() - operationStart)
+                                .put("threads", threads).put("backend", native.backendName())
                         } else {
                             check(ready) { "모델을 먼저 초기화하세요." }
                             require(instruction.codePointCount(0, instruction.length) <= 240)
@@ -95,7 +106,7 @@ class VoiceWorkerService : Service() {
                             send("generating")
                             try {
                                 val nativeStartNanos = System.nanoTime()
-                                val metrics = bridge!!.synthesize(text.toByteArray(Charsets.UTF_8), partial.path, instruction.toByteArray(Charsets.UTF_8))
+                                val metrics = bridge!!.synthesize(text.toByteArray(Charsets.UTF_8), partial.path, instruction.toByteArray(Charsets.UTF_8), threads)
                                 check(partial.renameTo(output)) { "WAV 저장 실패" }
                                 completion = "generated" to JSONObject().put("path", output.path)
                                     .put("generation_ms", metrics[0]).put("audio_seconds", metrics[1])
@@ -105,6 +116,11 @@ class VoiceWorkerService : Service() {
                                     .put("worker_total_ms", SystemClock.elapsedRealtime() - operationStart)
                                     .put("peak_worker_pss_kib", peakPss).put("seed", 42)
                                     .put("runtime_commit", VoiceProtocol.RUNTIME_COMMIT)
+                                    .put("threads", threads).put("backend", bridge!!.backendName())
+                                    .put("available_processors", Runtime.getRuntime().availableProcessors())
+                                    .put("worker_cpu_time_ms", Process.getElapsedCpuTime() - cpuStartMs)
+                                    .put("telemetry_start", telemetryStart).put("telemetry_end", deviceTelemetry(this))
+                                    .put("peak_thermal_status", maxOf(peakThermal, getSystemService(PowerManager::class.java).currentThermalStatus))
                             } finally { partial.delete() }
                         }
                     } catch (e: Throwable) {
