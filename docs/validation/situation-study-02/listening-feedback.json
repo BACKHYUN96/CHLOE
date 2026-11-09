@@ -1,0 +1,101 @@
+{
+  "study": "situation-study-02",
+  "source": "user_listening_feedback",
+  "agent_listening_performed": false,
+  "notation": {
+    "arrows": "↗↘는 억양의 방향",
+    "punctuation": "?, !, ~와 반복 횟수는 문맥상 말투와 감정의 표현. 입력에 그대로 삽입하는 지시나 고정 음높이·길이 명령으로 취급하지 않음"
+  },
+  "laughter": {
+    "clarification": "상황에 따라 미소가 섞인 목소리와 실제 짧은 웃음 모두 사용",
+    "modes": [
+      "smiling_voice",
+      "short_audible_laugh"
+    ],
+    "implementation": "요구사항만 기록. 실제 웃음 음원 추가·생성 제어는 미구현, 새 음성 미생성"
+  },
+  "new_clips": [
+    {
+      "clip_id": "explanation_01_C",
+      "status": "needs_revision",
+      "observation": "음성 전반적으로 힘이 없어 보임",
+      "target": "담담함을 유지하면서 발성의 생기와 전달력을 회복. 감정 절제를 무기력함으로 만들지 않음"
+    },
+    {
+      "clip_id": "explanation_02_C",
+      "status": "needs_revision",
+      "observation": "귀엽고 발랄하게 권하는 느낌을 희망",
+      "target": "들어보세요에 부드러운 여운과 상승, 골라 주시면 돼요에 미소/상황에 맞는 짧은 웃음",
+      "role": "friendly_recommendation",
+      "supersedes": "설명 전체에 상승 억양과 여운을 금지하던 해석. 정보 설명과 권유를 구분"
+    },
+    {
+      "clip_id": "explanation_03_C",
+      "status": "usable_with_revision",
+      "observation": "전반적으로 괜찮음. 시간이에요 다음 오디오 길이와 비교하면으로 넘어갈 때 호흡 없이 바로 연결 필요",
+      "target": "특정 문장 경계의 들숨과 불필요한 멈춤을 줄이고 흐름을 유지",
+      "wording_check": "보관된 입력은 오디오 길이와 비교하면이다. 사용자 인용의 오디오 끼리 표현은 확정된 발음 오류로 단정하거나 입력 변경으로 자동 반영하지 않음"
+    },
+    {
+      "clip_id": "surprise_01_C",
+      "status": "accepted_calm_response",
+      "observation": "오↘는 약한 공감과 계속 듣고 있음, 진짜↘는 공감, 후속 질문은 차분한 궁금함으로 합격",
+      "target": "이 표현을 차분한 공감형으로 보존. 끝말의 상승이나 빠른 재촉을 강제하지 않음"
+    },
+    {
+      "clip_id": "surprise_02_C",
+      "status": "improved_needs_revision",
+      "observation": "기존 대비 전반적인 개선. 생각보다 훨씬 빠른데에서 마지막 단어만 상승 희망",
+      "target": "앞 구절은 유지하고 빠른데에만 제한적으로 상승 억양"
+    },
+    {
+      "clip_id": "surprise_03_C",
+      "status": "rejected_candidate",
+      "observation": "전반적으로 어색하고 감탄보다 지나치게 정제된 느낌. 만든 거야와 어떻게 했어가 평서문처럼 들림",
+      "target": "표현 기준으로 채택하지 않음"
+    },
+    {
+      "clip_id": "surprise_03_D",
+      "status": "preferred_variant_with_text_change",
+      "observation": "신규 중 제일 괜찮음. 낮고 차분한 짧은 말이 차갑게 느껴질 수 있음",
+      "target": "지시를 유지하며 잠깐을 잠깐만으로 변경하는 단일 변수 비교"
+    }
+  ],
+  "reference_clips": [
+    {
+      "clip_id": "explanation_03_A",
+      "status": "usable_with_revision",
+      "score": null,
+      "observation": "전반적으로 괜찮음. 알 수 있어요를 미소/상황에 맞는 웃음과 은은한 여운으로 마무리 희망"
+    },
+    {
+      "clip_id": "surprise_01_A",
+      "status": "accepted_reference",
+      "score": 4.5,
+      "scale": 5,
+      "observation": "묵묵히 친구의 이야기를 듣는 뉘앙스와 하강 억양. 좋은 표본"
+    },
+    {
+      "clip_id": "surprise_01_B",
+      "status": "near_acceptance_reference",
+      "score": 4.5,
+      "scale": 5,
+      "observation": "합격 기준에 근접. 첫 감탄사의 톤이 너무 눌려 A처럼 조금 띄우기를 희망"
+    },
+    {
+      "clip_id": "surprise_02_A",
+      "status": "accepted_reference",
+      "score": 4.5,
+      "scale": 5,
+      "observation": "합격. 훨씬 빠른걸 같은 후속 대사와 더 생생한 감탄 문장도 별도 비교 희망"
+    }
+  ],
+  "prior_references_not_reassessed": [
+    "surprise_03_A",
+    "surprise_03_B"
+  ],
+  "evaluation_limits": "점수는 사용자가 명시한 세 참고 파일에만 기록. 다른 파일은 점수 미부여. 자동 음향 측정이나 모델 지시 준수 검증을 수행한 결과가 아님.",
+  "default_style_changed": false,
+  "new_audio_generated": false,
+  "physical_file_deletion": false
+}
