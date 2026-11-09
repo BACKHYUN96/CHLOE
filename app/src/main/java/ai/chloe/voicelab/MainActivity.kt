@@ -112,6 +112,18 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
                     label = { Text("말투 지시 (선택 · 1.7B)") },
                     placeholder = { Text("차분하고 다정하게, 친한 친구에게 말하듯") },
                     supportingText = { Text("${s.instruction.codePointCount(0, s.instruction.length)} / 240자 · 비워 두면 기본 Sohee") })
+                if (s.model.supportsInstruction) {
+                    Text("클로이 말투 기준 표본", style = MaterialTheme.typography.titleMedium)
+                    Text("합격한 원본의 말투 지시를 적용합니다. 음성 복사·학습이나 원본 재생이 아니며, 새 문장에서는 결과가 달라질 수 있어요.", style = MaterialTheme.typography.bodySmall)
+                    vm.references.forEach { reference ->
+                        Text("${if (s.referenceId == reference.id) "✓ " else ""}${reference.label} · ${reference.id}")
+                        Text(reference.feedback, style = MaterialTheme.typography.bodySmall)
+                        Row {
+                            TextButton(onClick = { vm.applyReference(reference.id, false) }, enabled = !s.busy && !s.playing && !s.benchmarking) { Text("말투만 적용") }
+                            TextButton(onClick = { vm.applyReference(reference.id, true) }, enabled = !s.busy && !s.playing && !s.benchmarking) { Text("예문과 말투 적용") }
+                        }
+                    }
+                }
                 Row {
                     Checkbox(checked = s.autoPlay, onCheckedChange = vm::setAutoPlay, enabled = !s.busy && !s.benchmarking)
                     Text("생성 후 자동 재생", modifier = Modifier.padding(top = 12.dp))
