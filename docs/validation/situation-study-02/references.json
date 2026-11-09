@@ -1,0 +1,44 @@
+[
+  {
+    "clip_id": "explanation_03_A",
+    "file": "REF_explanation_03_A.wav",
+    "source_study": "situation-study-01",
+    "wav_sha256": "fc84d40cc370e23bc64f05061d2c3abbc1fef6ff723be5bd2777d4af7677a380",
+    "new_generation": false
+  },
+  {
+    "clip_id": "surprise_01_A",
+    "file": "REF_surprise_01_A.wav",
+    "source_study": "situation-study-01",
+    "wav_sha256": "9438024d0632dded5d21508f379bf2e29b1090b52a3d2540be30da34520ebe75",
+    "new_generation": false
+  },
+  {
+    "clip_id": "surprise_01_B",
+    "file": "REF_surprise_01_B.wav",
+    "source_study": "situation-study-01",
+    "wav_sha256": "cc8f1b3a18079be34c1aa3c4cffea9f218d58ec1978ba579c03335a3a9b910ac",
+    "new_generation": false
+  },
+  {
+    "clip_id": "surprise_02_A",
+    "file": "REF_surprise_02_A.wav",
+    "source_study": "situation-study-01",
+    "wav_sha256": "b0f06cef3212beb8584355944f57e53b00a732e6568879ab9ddedd10ba1d43c7",
+    "new_generation": false
+  },
+  {
+    "clip_id": "surprise_03_A",
+    "file": "REF_surprise_03_A.wav",
+    "source_study": "situation-study-01",
+    "wav_sha256": "d38a2c9c83dd2d35c0c8cd059cd5a8bd7dbe9443ece3f91d4d47516e41fc4972",
+    "new_generation": false
+  },
+  {
+    "clip_id": "surprise_03_B",
+    "file": "REF_surprise_03_B.wav",
+    "source_study": "situation-study-01",
+    "wav_sha256": "3905e2878bc1b4173b3a6576dbbd091b4d6f1d48316664ac078f2a347ca41c22",
+    "new_generation": false
+  }
+]

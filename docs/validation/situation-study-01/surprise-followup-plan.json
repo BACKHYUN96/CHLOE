@@ -1,6 +1,6 @@
 {
   "study": "surprise-followup-plan",
-  "status": "prepared_not_generated",
+  "status": "generated_pending_listening",
   "source": "user_listening_feedback",
   "reference_policy": "설명의 담담한 종결과 놀람의 상승·감탄은 상황별로 분리. 보존은 전체 음성 채택 또는 앱 기본값 적용을 뜻하지 않음.",
   "cases": [
@@ -47,5 +47,6 @@
   ],
   "controls": "1차 비교는 기존 원문·문장부호·모델·seed·샘플링·공통 호흡 지시 유지, 말투 지시만 변경. 입력을 오오?! 등으로 바꾸는 실험은 별도 변수로 분리.",
   "future_backchannel": "01_A의 감탄사는 표현 참고로 보존. 실제 사용자 발화 중 동시 맞장구에는 발화 시점 판단·마이크·에코 제어가 필요하며 현재 Voice Lab에서는 미구현.",
-  "limits": "억양 화살표와 반복 물음표는 표현 의도이며 정밀 F0 제어 명령이 아니다. 음성 편집·접합·기본값 변경·후속 생성은 수행하지 않음."
+  "limits": "↗↘는 억양 방향이며 ?, !, ~ 반복은 말투·감정의 사용자 표현이다. 원하는 음높이·길이의 정밀 제어를 보장하지 않는다. PCM 편집·접합과 앱 기본값 변경은 하지 않았다.",
+  "result": "../situation-study-02/report.json"
 }

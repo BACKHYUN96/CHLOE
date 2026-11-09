@@ -1,8 +1,8 @@
 {
   "study": "explanation-followup-plan",
-  "status": "prepared_not_generated",
+  "status": "generated_pending_listening",
   "reference": "explanation_03_A",
-  "instruction_candidate": "담담하고 부드럽게 설명해 주세요. 문장 중간은 흐름을 끊지 말고 이어 말하고, 연결 구절과 문장 끝에서 음높이를 들뜨게 올리지 마세요. 첫 단어부터 정확하게 발음하고 감정과 강조를 절제해 주세요. 끝말을 길게 늘이지 말고 편안하게 마무리해 주세요.",
+  "instruction_candidate": "담담하고 부드럽게 설명해 주세요. 중간 구절은 끊지 말고 이어 말하고, 연결 구절과 문장 끝에서 음높이를 들뜨게 올리지 마세요. 첫 단어부터 정확하게 발음하고 감정과 강조를 절제해 주세요. 끝말을 길게 늘이지 말고 편안하게 마무리해 주세요.",
   "special_case": {
     "explanation_02": "돼요의 마지막 음절에만 아주 짧고 은은한 여운을 주세요. 길거나 과장된 늘임은 피해주세요."
   },
@@ -14,5 +14,6 @@
     "돼요의 미세한 여운과 알 수 있어요의 과한 늘임을 구별",
     "설명에 맞는 절제된 감정"
   ],
-  "limits": "자연어 지시는 연속적인 F0·어미 길이의 정밀 제어 API가 아니다. 청취 확인이 필요하며 PCM 절단·시간 늘이기·피치 변조는 적용하지 않음."
+  "limits": "자연어 지시는 연속적인 F0·어미 길이의 정밀 제어 API가 아니다. 청취 확인이 필요하며 PCM 절단·시간 늘이기·피치 변조는 적용하지 않음.",
+  "result": "../situation-study-02/report.json"
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate 12 original Korean sentences in paired styles; human listening remains required."""
+"""Generate paired situation styles or feedback-based follow-ups; human listening remains required."""
 import argparse
 import csv
 import json
@@ -33,15 +33,41 @@ def plan():
     return cases
 
 
+def followup_plan():
+    root = Path(__file__).resolve().parents[1]
+    folder = root / 'docs/validation/situation-study-01'
+    explanation = json.loads((folder / 'explanation-followup-plan.json').read_text(encoding='utf-8'))
+    surprise = json.loads((folder / 'surprise-followup-plan.json').read_text(encoding='utf-8'))
+    originals = {c['id']: c for c in plan()}
+    cases = []
+    for group in ('explanation', 'surprise'):
+        for n in range(1, 4):
+            key = f'{group}_{n:02}'
+            original = originals[key]
+            if group == 'explanation':
+                instruction = explanation['instruction_candidate']
+                if key in explanation['special_case']:
+                    instruction += ' ' + explanation['special_case'][key]
+                instructions = {'C': instruction + ' ' + BREATH}
+            else:
+                source = next(c for c in surprise['cases'] if c['case_id'] == key)
+                instructions = {'C': source['instruction_candidate'] + ' ' + BREATH}
+                if 'calm_variant' in source:
+                    instructions['D'] = source['calm_variant'] + ' ' + BREATH
+            cases.append(dict(id=key, group=original['group'], text=original['text'], instructions=instructions))
+    return cases
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--binary', type=Path, required=True)
     p.add_argument('--models', type=Path, required=True)
     p.add_argument('--output', type=Path, default=Path('artifacts/situation-study-01'))
+    p.add_argument('--followup', action='store_true', help='Render feedback-based C candidates and surprise_03 D calm variant')
     a=p.parse_args()
     if a.output.exists() and any(a.output.iterdir()): p.error('Choose an empty output folder')
-    cases=plan()
-    assert len(cases)==12
+    cases=followup_plan() if a.followup else plan()
+    assert len(cases)==(6 if a.followup else 12)
     assert all(len(c['text'])<=240 and all(len(i)<=240 for i in c['instructions'].values()) for c in cases)
     manifest=json.loads((a.models/'model-pack.json').read_text())
     if manifest['model_id']!='Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice' or manifest['runtime_commit']!=RUNTIME:
@@ -51,7 +77,7 @@ def main():
         path=a.models/f['name']
         if path.stat().st_size!=f['size'] or digest(path)!=f['sha256']: p.error('Model integrity mismatch')
     a.output.mkdir(parents=True,exist_ok=True)
-    report=dict(study='situation-study-01', device_test=False, perceptual_evaluation='pending',
+    report=dict(study='situation-study-02' if a.followup else 'situation-study-01', device_test=False, perceptual_evaluation='pending',
         model_pack=manifest, source_runtime=RUNTIME, native_binary_sha256=digest(a.binary),
         host=platform.platform(), seed=42, threads=4, sampling=SAMPLING, untouched_pcm=True,
         common_breath_instruction=BREATH, cases=cases, clips=[])

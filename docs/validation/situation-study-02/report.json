@@ -1,0 +1,235 @@
+{
+  "study": "situation-study-02",
+  "device_test": false,
+  "perceptual_evaluation": "pending",
+  "model_pack": {
+    "schema": 1,
+    "model_id": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+    "tokenizer_id": "Qwen/Qwen3-TTS-Tokenizer-12Hz",
+    "model_revision": "0c0e3051f131929182e2c023b9537f8b1c68adfe",
+    "tokenizer_revision": "7dd38ad4e9bad454aae9cd937d0cd577604fe229",
+    "runtime_commit": "4562731dc612cb87b4cd1eedac275a17d1078773",
+    "precision": "f16-f32-cp-down",
+    "files": [
+      {
+        "name": "qwen-talker-1.7b-customvoice-f16-stable.gguf",
+        "size": 3871042976,
+        "sha256": "1f5b8a4b67c406d054078b65d4966d884364fe49fc3b3546402555be8434ce6e"
+      },
+      {
+        "name": "qwen-tokenizer-12hz-f16.gguf",
+        "size": 358980384,
+        "sha256": "22b6114e83ca845ed3cfe43e7af155800f42c6c95c8a3366887d77354959992b"
+      }
+    ],
+    "local_checkpoint_override": true,
+    "license": "Apache-2.0"
+  },
+  "source_runtime": "4562731dc612cb87b4cd1eedac275a17d1078773",
+  "native_binary_sha256": "e34dc781e53cccfa760d2cce6e769de29f84e8f51e547d5eca0cb179457f2d2b",
+  "host": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "seed": 42,
+  "threads": 4,
+  "sampling": {
+    "temperature": 0.9,
+    "top_k": 50,
+    "top_p": 1.0,
+    "repetition_penalty": 1.05,
+    "max_tokens": 1024
+  },
+  "untouched_pcm": true,
+  "common_breath_instruction": "호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요.",
+  "cases": [
+    {
+      "id": "explanation_01",
+      "group": "설명",
+      "text": "먼저 앱을 열고, 아래쪽 설정을 눌러 주세요.",
+      "instructions": {
+        "C": "담담하고 부드럽게 설명해 주세요. 중간 구절은 끊지 말고 이어 말하고, 연결 구절과 문장 끝에서 음높이를 들뜨게 올리지 마세요. 첫 단어부터 정확하게 발음하고 감정과 강조를 절제해 주세요. 끝말을 길게 늘이지 말고 편안하게 마무리해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+      }
+    },
+    {
+      "id": "explanation_02",
+      "group": "설명",
+      "text": "두 파일을 차례로 들어보세요. 더 편안하게 들리는 쪽을 골라 주시면 돼요.",
+      "instructions": {
+        "C": "담담하고 부드럽게 설명해 주세요. 중간 구절은 끊지 말고 이어 말하고, 연결 구절과 문장 끝에서 음높이를 들뜨게 올리지 마세요. 첫 단어부터 정확하게 발음하고 감정과 강조를 절제해 주세요. 끝말을 길게 늘이지 말고 편안하게 마무리해 주세요. 돼요의 마지막 음절에만 아주 짧고 은은한 여운을 주세요. 길거나 과장된 늘임은 피해주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+      }
+    },
+    {
+      "id": "explanation_03",
+      "group": "설명",
+      "text": "생성 시간은 소리를 만드는 데 걸린 시간이에요. 오디오 길이와 비교하면 속도를 알 수 있어요.",
+      "instructions": {
+        "C": "담담하고 부드럽게 설명해 주세요. 중간 구절은 끊지 말고 이어 말하고, 연결 구절과 문장 끝에서 음높이를 들뜨게 올리지 마세요. 첫 단어부터 정확하게 발음하고 감정과 강조를 절제해 주세요. 끝말을 길게 늘이지 말고 편안하게 마무리해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+      }
+    },
+    {
+      "id": "surprise_01",
+      "group": "놀람과 호기심",
+      "text": "어, 진짜? 그래서 어떻게 됐어?",
+      "instructions": {
+        "C": "친한 친구의 뜻밖의 이야기에 감탄하고 진심으로 궁금해하며 말해 주세요. 첫 감탄사는 부드럽게 여운을 주고, 진짜는 놀란 질문처럼 표현해 주세요. 그래서 어떻게 됐어는 빨리 듣고 싶어 가볍게 재촉하듯 조금 빠르고 생기 있게 물어봐 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+      }
+    },
+    {
+      "id": "surprise_02",
+      "group": "놀람과 호기심",
+      "text": "와, 그걸 벌써 끝냈어? 생각보다 훨씬 빠른데?",
+      "instructions": {
+        "C": "친구가 해낸 일을 보고 기분 좋게 감탄해 주세요. 첫 감탄과 끝냈어의 생생함을 살리고, 생각보다 훨씬 빠른데까지 놀라움과 감탄을 과하지 않게 유지해 주세요. 마지막도 감탄이 살짝 남는 상승 억양과 여운으로 마무리해 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+      }
+    },
+    {
+      "id": "surprise_03",
+      "group": "놀람과 호기심",
+      "text": "잠깐, 그럼 네가 직접 만든 거야? 어떻게 했어?",
+      "instructions": {
+        "C": "잠깐에 주의를 모으는 느낌과 놀람과 감탄을 함께 담아 주세요. 잠깐의 억양은 가볍게 낮아졌다 살아나게 표현하고, 뒤의 두 질문은 궁금해서 빨리 듣고 싶어 귀엽게 재촉하듯 조금 빠르게 물어봐 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요.",
+        "D": "낮고 차분한 톤에서도 집중과 놀람과 감탄을 담아 주세요. 잠깐 뒤에는 차분한 짧은 쉼을 허용하고, 뒤 질문은 궁금함을 살려 자연스럽게 이어 주세요. 호흡은 필요한 의미 경계에서만 자연스럽게 사용하고, 매 문장 앞의 과장된 들숨은 반복하지 마세요."
+      }
+    }
+  ],
+  "clips": [
+    {
+      "clip_id": "explanation_01_C",
+      "case_id": "explanation_01",
+      "style": "C",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 10504.480766001507,
+      "sample_rate": 24000,
+      "samples": 92160,
+      "audio_seconds": 3.84,
+      "pcm_peak": 17121,
+      "pcm_rms": 2795.448395779028,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 8063,
+      "code_generation_ms": 6039,
+      "decode_ms": 2023,
+      "rtf": 2.099739583333333,
+      "wav_sha256": "c85d1094d04eefb44979777fb77ffa8160faaec71166005b4c9079514d4f481f",
+      "rss_peak_display": "4.44 GB"
+    },
+    {
+      "clip_id": "explanation_02_C",
+      "case_id": "explanation_02",
+      "style": "C",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 14188.56211599632,
+      "sample_rate": 24000,
+      "samples": 140160,
+      "audio_seconds": 5.84,
+      "pcm_peak": 16188,
+      "pcm_rms": 2781.409392900674,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 12673,
+      "code_generation_ms": 9342,
+      "decode_ms": 3329,
+      "rtf": 2.1700342465753426,
+      "wav_sha256": "4d0e6ce35d98e343f1c4878ef7b19d40c64055a87dddfbe10b8a90406ee5fbc0",
+      "rss_peak_display": "4.60 GB"
+    },
+    {
+      "clip_id": "explanation_03_C",
+      "case_id": "explanation_03",
+      "style": "C",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 14186.667467001826,
+      "sample_rate": 24000,
+      "samples": 167040,
+      "audio_seconds": 6.96,
+      "pcm_peak": 18212,
+      "pcm_rms": 2369.954263170215,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 12602,
+      "code_generation_ms": 9139,
+      "decode_ms": 3462,
+      "rtf": 1.810632183908046,
+      "wav_sha256": "bd4bd9102b491e6bcede71c18690470d9d36ef91a737783c354ae5874a528c32",
+      "rss_peak_display": "4.67 GB"
+    },
+    {
+      "clip_id": "surprise_01_C",
+      "case_id": "surprise_01",
+      "style": "C",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 7883.069037998212,
+      "sample_rate": 24000,
+      "samples": 76800,
+      "audio_seconds": 3.2,
+      "pcm_peak": 12550,
+      "pcm_rms": 1249.106769053307,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 6419,
+      "code_generation_ms": 4763,
+      "decode_ms": 1655,
+      "rtf": 2.0059375,
+      "wav_sha256": "ac93f867bfea1b5542ce1049eef257bba4de658b412d8a154536e9a87f4079e3",
+      "rss_peak_display": "4.39 GB"
+    },
+    {
+      "clip_id": "surprise_02_C",
+      "case_id": "surprise_02",
+      "style": "C",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 12573.50082800258,
+      "sample_rate": 24000,
+      "samples": 134400,
+      "audio_seconds": 5.6,
+      "pcm_peak": 20951,
+      "pcm_rms": 2467.4870894720625,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 11111,
+      "code_generation_ms": 8357,
+      "decode_ms": 2753,
+      "rtf": 1.9841071428571428,
+      "wav_sha256": "9d74feb01795645280ca6dad1d255ee6f6ea6618d7e557cfda08730496cf3ebf",
+      "rss_peak_display": "4.57 GB"
+    },
+    {
+      "clip_id": "surprise_03_C",
+      "case_id": "surprise_03",
+      "style": "C",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 9346.594408001692,
+      "sample_rate": 24000,
+      "samples": 103680,
+      "audio_seconds": 4.32,
+      "pcm_peak": 19616,
+      "pcm_rms": 2599.28487401604,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 7874,
+      "code_generation_ms": 5726,
+      "decode_ms": 2146,
+      "rtf": 1.822685185185185,
+      "wav_sha256": "931590e996c53be70bc1a8194f3186442d3b4ef058a88052077145b462b76d63",
+      "rss_peak_display": "4.47 GB"
+    },
+    {
+      "clip_id": "surprise_03_D",
+      "case_id": "surprise_03",
+      "style": "D",
+      "status": "generated_unrated",
+      "exit_code": 0,
+      "process_wall_ms": 9145.918034002534,
+      "sample_rate": 24000,
+      "samples": 99840,
+      "audio_seconds": 4.16,
+      "pcm_peak": 9691,
+      "pcm_rms": 1361.8628748901288,
+      "pcm_full_scale_samples": 0,
+      "native_total_ms": 7683,
+      "code_generation_ms": 5589,
+      "decode_ms": 2093,
+      "rtf": 1.846875,
+      "wav_sha256": "a71b171571fb99fafd78a1f3873f9b7565e6183f346569c6778389fda4d538a8",
+      "rss_peak_display": "4.46 GB"
+    }
+  ]
+}

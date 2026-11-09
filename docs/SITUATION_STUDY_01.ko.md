@@ -45,7 +45,7 @@ python3 scripts/compare_situational_styles.py \
 
 설명은 감정·강조를 절제하고 중간 구절을 부드럽게 이어야 한다. 문장 종결을 불필요하게 올리지 않으며, 돼요의 0.1~0.2초 수준의 미세한 여운과 알 수 있어요의 과장된 늘임을 구별한다. 시간 값은 사용자 관찰·희망이며 기계 측정값이나 지시 준수 보장이 아니다. 첫 발화의 생성 시간은이 소시간은처럼 들린다는 발음 오류도 재검증한다.
 
-[청취 판정](validation/situation-study-01/listening-feedback.json)과 [설명 재검증 계획](validation/situation-study-01/explanation-followup-plan.json)을 기록했다. 후속 음성은 아직 생성하지 않았고 앱 기본값도 바꾸지 않았다. 일상·공감에는 채택된 기준 음성이 아직 없다.
+[청취 판정](validation/situation-study-01/listening-feedback.json)과 [설명 재검증 계획](validation/situation-study-01/explanation-followup-plan.json)을 기록했다. 후속 음성은 [수정 비교 02](SITUATION_STUDY_02.ko.md)에 생성했으며 앱 기본값은 유지한다. 일상·공감에는 채택된 기준 음성이 아직 없다.
 
 ## 추가 놀람 청취 평가
 
@@ -62,4 +62,4 @@ python3 scripts/compare_situational_styles.py \
 
 설명은 불필요한 상승과 과한 감정을 줄이는 반면, 놀람은 감탄과 질문의 궁금함을 끝까지 유지한다. 두 상황에 같은 종결 규칙을 적용하지 않는다. 감탄사·질문 템포·문장 끝의 감정 지속을 나누어 평가한다. 보존한 구간을 편집·접합한 음성을 생성한 것은 아니다.
 
-[놀람 후속 계획](validation/situation-study-01/surprise-followup-plan.json)에 지시 후보와 판정 기준을 준비했다. 원문의 문장부호를 먼저 유지하고 지시만 비교하며, 반복 물음표나 감탄사 철자 변경은 별도 실험으로 분리한다. 지시가 특정 음높이 곡선이나 감정을 보장하지 않으므로 재청취가 필요하다. 현재 앱은 사용자 발화 중 동시에 맞장구를 넣는 동작을 지원하지 않는다. 후속 WAV와 APK는 새로 만들지 않았다.
+[놀람 후속 계획](validation/situation-study-01/surprise-followup-plan.json)에 지시 후보와 판정 기준을 준비했다. 원문의 문장부호를 먼저 유지하고 지시만 비교하며, 반복 물음표나 감탄사 철자 변경은 별도 실험으로 분리한다. 지시가 특정 음높이 곡선이나 감정을 보장하지 않으므로 재청취가 필요하다. 현재 앱은 사용자 발화 중 동시에 맞장구를 넣는 동작을 지원하지 않는다. 후속 WAV는 [수정 비교 02](SITUATION_STUDY_02.ko.md)에 생성했다. APK는 변경하지 않았다.
