@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "model_id": "openbmb/VoxCPM2",
+  "model_revision": "7936080b41163874f38610f46f438e2c0757f9fd",
+  "upstream_url": "https://github.com/OpenBMB/VoxCPM",
+  "upstream_commit": "300e4260b509066151d623dc9c0aa922cf82232b",
+  "dataset_id": "Bingsu/KSS_Dataset",
+  "dataset_revision": "48fdfd7ab1dbc1a62e4e8a8b9f4c360259d51d3c",
+  "dataset_original": "https://www.kaggle.com/datasets/bryanpark/korean-single-speaker-speech-dataset",
+  "dataset_license": "CC-BY-NC-SA-4.0",
+  "dataset_author": "Kyubyong Park",
+  "dataset_purpose": "published Korean TTS dataset, one professional female speaker",
+  "performer_consent_document_reviewed": false,
+  "permitted_scope_for_this_experiment": "private noncommercial experiment; attribution retained, no external audio or adapter upload",
+  "target_gpu": "NVIDIA GeForce RTX 4070 SUPER 12GB (user reported)",
+  "fit_in_12gb_verified": false,
+  "python_original_inference_verified": false,
+  "training_executed": false,
+  "quality_improvement_verified": false
+}

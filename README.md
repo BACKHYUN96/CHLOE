@@ -129,3 +129,5 @@ adb shell run-as ai.chloe.voicelab ls files/reports
 오류가 나면 화면 메시지, `native.log`, worker JSONL을 함께 확인합니다. 로그와 보고서에는 입력 문장이 포함될 수 있으므로 공유 전 내용을 확인하세요. 네이티브 프로세스 종료 후 UI가 유지되고 재초기화되는지도 확인합니다. 매니페스트만 있고 파일이 없거나 손상된 경우 폴더를 다시 가져옵니다.
 
 세부 측정 정의와 저장 정책은 [아키텍처](docs/ARCHITECTURE.ko.md), 완료/미완료 및 다음 단계는 [검증 기록](docs/VALIDATION.ko.md)을 참고하세요.
+
+VoxCPM2 로컬 LoRA 준비: [RTX 4070 SUPER 12GB · KSS 비상업 실험 안내](docs/voxcpm2-lora-local.md). 실제 PC 추론·학습·12GB 적합성은 아직 미검증입니다.

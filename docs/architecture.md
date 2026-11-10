@@ -21,3 +21,7 @@
 하드웨어 출력 타임스탬프와 실제 음향 도달 시간, buffered PCM과 streaming 청크, 로딩과 재사용, 호스트와 Android를 구분한다. CPU/GPU 비율·온도를 측정하지 못하면 추정값을 넣지 않는다. 안정성 반복은 통화 부하의 대리 시험으로만 해석한다.
 
 모델/사용자 음성/개인 통화는 Git에 넣지 않는다. 실행은 local-only이며 개발 모델 다운로드는 별도 준비 단계다. 외부 음성 업로드는 별도 사용자 동의가 있을 때만 수행한다.
+
+## PC 학습 실험 경계
+
+`voxcpm2_lab.py`는 별도 로컬-PC 사전 점검·KSS 데이터 준비·LoRA 계획/실행 도구다. `voxcpm2_compare.py`는 공식 Python 경로의 adapter off/on 비교를 수행한다. 파일은 Git 제외 `artifacts/voxcpm2-local/`에 둔다. Android 엔진·모델·ABI를 변경하지 않는다. KSS의 비상업 조건과 실제 학습/기기 검증 상태를 `docs/voxcpm2-lora-local.md`에서 구분한다.
