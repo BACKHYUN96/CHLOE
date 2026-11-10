@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0-alpha8",
+  "apk_bytes": 36478474,
+  "sha256": "2a9ed219bd8fb2e0606b193477b4edfc273f05b929e25447729242be526ace64",
+  "android_tests": 35,
+  "test_failures": 0,
+  "lint_errors": 0,
+  "lint_warnings": 11,
+  "arm64_build": true,
+  "zipalign_16k": true,
+  "llama_cpp_commit": "aa75ff3239f9cc675b081697deda9e1b112345c6",
+  "model_inference_tested": false,
+  "device_tested": false,
+  "conversation_quality_tested": false,
+  "memory_4b_plus_tts": null,
+  "first_token_ms": null,
+  "tokens_per_second": null,
+  "stability_10min": null,
+  "stability_30min": null,
+  "blockers": [
+    "No device attached",
+    "Insufficient free disk for selected GGUF; existing models preserved"
+  ],
+  "internet_permission": false
+}

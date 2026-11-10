@@ -25,3 +25,7 @@
 ## PC 학습 실험 경계
 
 `voxcpm2_lab.py`는 별도 로컬-PC 사전 점검·KSS 데이터 준비·LoRA 계획/실행 도구다. `voxcpm2_compare.py`는 공식 Python 경로의 adapter off/on 비교를 수행한다. 파일은 Git 제외 `artifacts/voxcpm2-local/`에 둔다. Android 엔진·모델·ABI를 변경하지 않는다. KSS의 비상업 조건과 실제 학습/기기 검증 상태를 `docs/voxcpm2-lora-local.md`에서 구분한다.
+
+## 로컬 대화 엔진
+
+ConversationManager/PersonaManager/DialogueContextManager/VoiceDirector/TtsInstructionMapper/ConversationEvaluator는 TTS와 독립이다. AndroidLocalLlmEngine은 :llm worker 및 별도 static llama.cpp 모듈을 사용하며 기존 LocalVoiceEngine으로 Sohee를 재생한다. 원격 구현은 없다. [설계와 미측정 항목](conversation-engine.md)을 따른다.

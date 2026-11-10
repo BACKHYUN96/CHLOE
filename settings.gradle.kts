@@ -7,3 +7,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "CHLOE"
 include(":app")
+
+include(":llm")
