@@ -1,0 +1,12 @@
+# Proposed local-PC recipe, not a validated installed training environment.
+# Install CUDA torch/torchaudio separately as documented.
+numpy==1.26.4
+scipy==1.15.3
+soundfile==0.13.1
+huggingface-hub==0.36.2
+transformers==4.51.3
+datasets==3.6.0
+torchcodec==0.7.0
+tensorboardX==2.6.4
+argbind==0.3.9
+PyYAML==6.0.3

@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-10",
+  "user_pc": {"gpu_reported_by_user": "RTX 4070 SUPER 12GB", "remote_access": false, "ram": null, "disk_free": null, "wsl2_installed": null},
+  "execution_environment": "separate Linux CPU cloud; no CUDA device; approximately 0.56 GiB free disk",
+  "validated": {"python_unit_tests": 10, "failures": 0, "bytecode_compilation": true, "diff_check": true, "upstream_code_read": true, "dataset_and_model_revisions_checked": true},
+  "unexecuted": ["KSS audio download", "human listening", "PC dependency installation", "official Python baseline inference", "one-step CUDA training", "12GB VRAM fit", "pilot training", "adapter audio comparison", "Android LoRA integration"],
+  "fixture_tests_are_not_real_training": true,
+  "audio_or_model_uploaded": false,
+  "paid_service_used": false,
+  "new_apk": false,
+  "model_quality_winner": null
+}

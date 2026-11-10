@@ -16,3 +16,9 @@ artifacts/
 __pycache__/
 *.jsonl
 *.csv
+# Local training checkpoints and private speech datasets
+*.pt
+*.pth
+*.ckpt
+
+.venv-vox/
