@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0-alpha11",
+  "apk_bytes": 36615126,
+  "sha256": "05b2f47b6003b784b3fe9d82810a5b38c46beba6b117454f64ec7a6c60380493",
+  "tests": {
+    "tests": 49,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Error": 0,
+    "Warning": 11
+  },
+  "tts_native_identical_to_alpha10": true,
+  "arm64_build": true,
+  "zipalign_16k": true,
+  "device_tested": false,
+  "speed_improvement_measured": false,
+  "casual_register_quality_measured": false,
+  "physical_first_sound_ms": null,
+  "true_app_peak_pss_kib": null,
+  "internet_permission": false
+}

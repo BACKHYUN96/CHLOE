@@ -14,4 +14,7 @@ class ConversationTest {
  @Test fun failedOutputDoesNotEnterHistory(){val m=ConversationManager();m.accept("인사", "{broken");assertEquals(2,org.json.JSONArray(m.prompt("다시",true)).length())}
  @Test fun incompleteAndReasoningHaveFailureCodes(){for(raw in listOf("{\"spoken_text\":", "<think>숨김</think>")){val r=VoiceDirector().parse(raw);assertEquals("invalid_output",r.failureCode);assertFalse(r.spokenText.contains("숨김"))};assertEquals("empty_content",VoiceDirector().parse("").failureCode)}
  @Test fun recoverableSpeechRetainsContext(){val m=ConversationManager();val r=m.accept("인사", "안녕하세요.");assertEquals("plain_text",r.failureCode);assertEquals(4,org.json.JSONArray(m.prompt("다시",true)).length())}
+ @Test fun casualPersonaResistsRoleTriggeredHonorifics(){val p=PersonaManager().system(false);assertTrue(p.contains("개발자·선생님이어도"));assertTrue(p.contains("존댓말로 전환하지 않는다"));assertFalse(PersonaManager().system(true).contains("존댓말로 전환하지 않는다"))}
+ @Test fun unusedInstructionIsRequestedEmpty(){assertTrue(PersonaManager().system(false).contains("항상 빈 문자열"))}
+ @Test fun registerWarningIsAdvisory(){val c=SpeechRegisterCheck();assertTrue(c.suspectedPoliteEnding("개발자님, 반가워요."));assertTrue(c.suspectedPoliteEnding("친하게 지내겠습니다."));assertFalse(c.suspectedPoliteEnding("반가워! 같이 생각해 볼까?"));assertEquals("친하게 지내겠습니다.",VoiceDirector().parse("친하게 지내겠습니다.").spokenText)}
 }

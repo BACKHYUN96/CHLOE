@@ -72,3 +72,15 @@ alpha10은 LlmRequestClient와 AndroidLlmChannel을 분리한다. 중지 시 기
 회귀 테스트는 연속 정상 요청, 중지 후 재연결, bind 전 취소와 늦은 콜백, 이전 응답 차단, 미접속 timeout 후 재시도, progress 시 예산 전환, disconnect 후 복구를 검사한다. fake transport 기반 상태 시험이며 실제 Binder/폰 실측을 대체하지 않는다. 4B 속도/발열 최적화, native 추가 변경은 이번 범위에 없다. 모든 native 라이브러리는 alpha9 APK와 동일함을 확인했다.
 
 기기 시험: 앱을 끄지 않고 3회 연속 입력 → 중지/초기화 후 재요청 → 모델 변경 → TTS 재생 후 재요청. 실패 시 상태와 내용 없는 JSON을 내보낸다. 실제 기기 성공/10·30분 안정성은 아직 미검증이다. APK와 빌드 자료는 `validation/conversation/alpha10-build.json`을 따른다.
+
+## alpha11 · 말투와 지연 계측
+
+alpha10 사용자 제공 4B 결과 3회는 모두 parser ok/fallback false/한도 미도달이었다. 첫 토큰 19.19/23.86/28.41초, 생성 35.91/47.12/58.17초. 사용자 보고상 3회 성공이지만 각 요청의 load_ms가 모두 양수이고 prompt_tokens도 230/227/212로, 파일만으로 같은 문맥을 유지한 3회 warm 연속 대화나 TTS 후 재연결 성공을 확정하지 않는다. 세 번의 성공과 10·30분 안정성은 별개다. 뒤 회차의 토큰 수도 늘어 발열 하나로 지연 증가를 설명하지 않는다.
+
+반말 persona에 역할/호칭과 무관한 말투 유지와 구체적인 예를 추가한다. 짧은 대화는 1~2문장으로 권하고 매번 질문을 강요하지 않는다. JSON 구조와 style enum은 보존한다. 실제로 사용하지 않던 자유형 tts_instruction은 빈 문자열로 생성하도록 요청한다. 실제 TTS는 이전부터 enum 매핑을 사용했으므로 음성 지시 경로는 같다. regex register_warning은 일부 존댓말 말끝을 잡는 보조 진단으로, 인용/명사 오탐 및 누락 가능성이 있다. 자동 어미 치환/재생성은 하지 않으며 실제 반말 일관성은 기기 응답으로 평가한다.
+
+모델 객체에 종속된 chat template 분석 객체를 프로세스 내 재사용한다. 모델 변경 전에 reset하고 프로세스 종료 시 캐시는 사라진다. 각 응답 session과 sampler, 문맥 추론은 새로 생성하므로 생성 상태/KV를 재사용하는 기능은 아니다. template_cached/template_ms/tokenize_ms/prefill_ms/sampler_ms/decode_ms/decode_tokens_per_second/native_request_ms를 기록한다. 기존 tokens_per_second는 prefill 등을 포함하는 지표로 그대로 두고 decode 속도와 분리한다. 첫 토큰은 스피커 소리 지연이 아니다. 단계 계측은 모델 로드·템플릿·입력 연산·생성을 구분하는 자료이며 실기기 속도 개선 주장은 아직 없다.
+
+메모리는 worker 자체 llm_pss_kib를 완료 시점 값으로 별도 표시한다. UI 측 Android PSS 합산은 누락/캐시/권한 제한을 배제할 수 없어 전체/진짜 최대값으로 부르지 않는다. app_total_peak_pss_kib는 null로 기록한다. 이전 alpha10의 UI 252MiB와 worker 약2.8GiB가 충돌한 문제를 숫자 보정이나 추정 합계로 가리지 않는다. 요청마다 history_turns를 기록해 초기화/문맥 유지 상태도 확인한다.
+
+코드 회귀는 요청 완료 후 release/reset을 모사한 재연결을 확인하지만 실제 TTS 재생/Binder/기기 테스트는 아니다. 검증 순서: 업데이트 후 4B(또는 이미 준비한 2B)로 초기화 1번 → 인사/개발자 소개/이름 기억 질문을 초기화 없이 연속 입력 → 스타일 음성 재생 후 재요청 → 대화 초기화 후 재요청. history_turns=0/1/2, 말투, worker PSS와 각 지연 단계를 확인한다. 신규 기기 결과와 음성 청취, 10·30분은 미측정이다. 모델/양자화/CPU4/Sohee와 기존 TTS native는 유지한다.
