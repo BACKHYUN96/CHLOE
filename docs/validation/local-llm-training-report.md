@@ -1,6 +1,65 @@
 # 로컬 대화 LLM 학습 사전 검증 · 2026-11-12 갱신
 
-## 2026-11-12 WSL 설치 진행 · 재부팅 필요
+## 현재 결과 · 재부팅 후 WSL2/CUDA 및 10-step 실행
+
+**WSL2 준비, 고정 Qwen3.5-2B 4-bit forward/backward, 10-step QLoRA, adapter 저장·새 객체 재로드를 실제 실행했다. 그러나 재로드 응답은 384-token 한도에 걸려 JSON 계약을 통과하지 못했고, 부분 원본/adapter 비교도 두 후보 모두 계약 실패다. 품질 개선·Android 적용을 승인하지 않는다.**
+
+사용자 재부팅 후 `CHLOE-Training-24.04`라는 새 전용 배포판에 Ubuntu 24.04.5를 등록했다. 기존 Windows 환경·모델·앱은 보존했다. WSL 기본 메모리는 약31GiB, swap8GiB로 관측됐고 호스트64GiB와 구분한다. Linux의 약1TB 여유 표시는 동적 VHD의 가상 용량이며 물리 C: 여유 공간과 다르다. Linux 사용자 `chloetrain`의 `/home/chloetrain/CHLOE` 및 `.venv-llm`만 학습에 사용했다.
+
+| 단계 | 현재 상태 | 증거 |
+| --- | --- | --- |
+| WSL2·Ubuntu·GPU·CUDA tensor | 완료 | WSL3.0.5, kernel6.18.58.1-microsoft-standard-WSL2, RTX4070 SUPER, BF16 CUDA 연산 통과 |
+| 모델 로드·QLoRA forward/backward | 완료 | 원본 checkpoint SHA 검증, missing key 없음, GPU만 사용, assistant mask 검사 |
+| 최대10-step·adapter 저장 | 완료 | 각 step loss/gradient 유한, 새 디렉터리에 저장 |
+| adapter 재로드·생성 실행 | 완료 | 새 base 객체와 저장 adapter를 다시 로드해 추론 |
+| 재로드 응답의 앱 계약 | 실패 | 384tokens, 종료 토큰 미도달, JSON 미완성·반복 출력 |
+| 원본/adapter 부분 비교 | 실행 완료·계약 실패 | 고정 첫4질문×2말투×2후보=16회, 정상 종료16회, 엄격 JSON/enum/소비자 계약 통과0/16 |
+| 전체54입력×2말투 비교·사람 블라인드 평가 | 미완료 | 부분 비교를 전체 품질 평가로 확대 해석하지 않음; 사람 점수 null |
+| merge·GGUF·Q4_K_M·Android 실측 | 미실행 | 품질 이득 미확인. export의 승인 누락 거부 경로만 검증 |
+
+### 실제 설정·수치
+
+- 환경: Python3.12.3, PyTorch2.9.1+cu128, Transformers5.23.0.dev0(`a72a1c3…`), PEFT0.21.3.dev0(`34d342a…`), TRL1.18.0.dev0(`6a7764a…`), bitsandbytes0.50.2, accelerate1.15.0. 기존에 읽은 HF 커밋을 선택했고 PyTorch는 공식 CUDA12.8 배포 조합을 사용했다. [requirements.lock.txt](../../training/requirements.lock.txt)는 전이 의존성까지 고정한 실제 freeze이며, wheel 전체를 hash-lock한 배포물은 아니다. pip25.3으로 설치·`pip check` 반환0.
+- Qwen revision과 원본 checkpoint SHA는 아래 최초 조사와 동일하다. 이번에는 **4,548,221,488-byte checkpoint를 로컬에서 실제 해시 검증**했다. config/template/tokenizer config/LICENSE도 준비 CLI에서 일치함을 재확인했다. GGUF를 학습하거나 remote model code를 실행하지 않았다.
+- 사용자가 검토 자료의 합성6개를 모두 시험용으로 승인했다. train4/validation1/test1의 서로 다른 대화 family로 분리했고 기존54평가 입력과 근접 문자열을 검사했다. 의미적 의역 누락까지 자동 증명한 것은 아니다. 데이터와 응답 본문은 PR에 넣지 않고 승인 범위·SHA만 기록했다.
+- microbatch1, context512, gradient checkpointing, rank8/alpha16, AdamW lr1e-4, seed42, 최대10step. 실제 입력280–321tokens, assistant55–66tokens. 원본 Qwen3.5 template에 대응하는 TRL 전용 mask를 사용해 system/user/빈 thinking prefill을 loss에서 제외하고 완전한 assistant JSON을 확인했다.
+- 실제 `named_modules()`에서 full-attention q_proj/v_proj 12개만 선택했다. trainable **417,792개**. NF4/double-quant/BF16, eager attention, GPU-only. `causal_conv1d`/flash-linear-attention 미설치로 **느린 reference PyTorch kernel**을 사용했다. CPU offload나 모델 교체는 없다.
+- 최종10step의 loss는 **1.73999–2.21116**, 첫1.97212 / 마지막1.90731이다. 서로 다른 샘플 순환 값이므로 단조 감소나 품질 향상을 주장하지 않는다. validation loss2.01304 / test loss1.96367이며 각각 한 샘플뿐이다.
+- 최종 학습 구간 **4.09464초**, PyTorch 최대 allocated **4,795,348,992 bytes(약4.47GiB)** / reserved **5,133,828,096 bytes(약4.78GiB)**. 다운로드·모델 로드·adapter 재로드·생성 시간과 전체 보드 메모리를 포함하지 않는다.
+- adapter SHA-256 `661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025`. 로컬 outputs에 adapter ZIP만 제공하고 Git에는 가중치를 넣지 않았다. 품질 미검증 상태이며 Android용 GGUF가 아니다.
+
+### 재현 명령과 검증 범위
+
+Linux 전용 clone 루트에서 실행한다. 승인 데이터는 로컬 `artifacts/llm-training/data/smoke-approved.jsonl`에 보존돼 있으며 공개 저장소에는 없다. 이미 존재하는 run 출력은 거부하므로 재실행할 때 config의 output_dir을 새 artifact 경로로 지정한다.
+
+```bash
+python3 -m venv .venv-llm             # 새 clone에서만; 기존 venv 덮어쓰기 금지
+.venv-llm/bin/python -m pip install pip==25.3
+.venv-llm/bin/python -m pip install -r training/requirements.lock.txt
+.venv-llm/bin/python training/scripts/prepare_model.py --config training/configs/smoke.json
+.venv-llm/bin/python training/scripts/train.py --config training/configs/smoke.json
+# 전체 비교 CLI; 이번에는 --limit 4를 명시해 부분 실행했다.
+.venv-llm/bin/python training/scripts/evaluate.py --config training/configs/smoke.json --compare-base
+.venv-llm/bin/python -m unittest discover -s training/tests -v
+```
+
+실제 호환성/학습/부분 비교/최종17개 회귀 테스트는 반환0이었다. `prepare_model.py`의 이미 준비된 모델 검증 경로를 실제 실행해 반환0을 확인했다. 최초 다운로드는 같은 snapshot_download API와 고정 allowlist를 사용한 사전 검사에서 수행했으며, 새 다운로드 CLI의 빈 디렉터리 경로를 다시 내려받아 시험하지는 않았다. 학습 구현은 직접 PyTorch/PEFT loop이고 TRL은 검증된 assistant mask template 경로를 사용한다. `evaluate.py`는 원본과 adapter에 같은 persona/seed/greedy/thinking=false/종료 토큰/384token/2048문맥을 적용한다. llama.cpp JSON grammar를 적용한 앱 실행과는 다르며 앱 schema와 소비자 규칙으로 사후 검증한다.
+
+`export.py --config … --format gguf --quality-approval <receipt.json>`은 사람 품질 검토·adapter hash가 맞지 않으면 merge 전 반환1로 거부한다. 이 거부 경로를 실제 확인했다. 정상 merge/변환 경로와 변환 의존성·quantizer 실행은 미검증이며 이번에는 실행하지 않았다. 긴 학습과 배포용 변환은 품질 이득이 확인된 뒤 진행한다.
+
+증거: [실행 요약](local-llm-training/execution-summary-20261112.json), [WSL CUDA preflight](local-llm-training/preflight-wsl-runtime-20261112.json), [checkpoint 검사](local-llm-training/checkpoint-compatibility-20261112.json), [최종10step](local-llm-training/smoke-result-20261112.json), [부분 비교16회](local-llm-training/evaluation-partial-20261112.json), [데이터 승인](local-llm-training/data-review-20261112.json), [export 차단](local-llm-training/export-guard-20261112.json).
+
+### 문제·수정·남은 항목
+
+- 내장 Ubuntu 다운로드는 Store/web 양쪽 모두 WININET_E_NAME_NOT_RESOLVED로 실패했다. Microsoft 공식 배포 목록에서 Ubuntu24.04 이미지/해시를 확인하고 별도 DNS에서 조회한 공식 서버로 HTTPS 다운로드했다. 첫 IP 연결은 timeout, 다른 공식 IP는 성공했다. TLS 검증과 Windows DNS 설정은 유지했다. 새 배포판 안에서만 resolver1.1.1.1/1.0.0.1을 사용해 apt를 준비했다. 이미지 SHA는 실행 요약에 있다.
+- 사전 forward/backward 후 결과 저장 중 HF의 set 타입을 JSON으로 쓸 수 없는 오류가 있었다. 원본 로그/부분 파일을 로컬에 보존했고 list로 변환해 재검사했다. 최종 증거 저장 함수는 파일 생성 전에 JSON 직렬화를 마치며 이 회귀를 테스트한다.
+- 첫 비교에서는 text config의 EOS248044와 chat tokenizer의 im_end248046 차이로 정상 종료를 false로 표시했다. 두 종료 토큰을 지원하도록 고치고 회귀 테스트와 비교를 재실행했다. 수정 전·후 로컬 로그는 모두 보존했다. 최종 코드도 새 디렉터리에서 **원본부터 별도의10step**로 재현했으며 두 adapter SHA가 같았다. 연속20step 또는 더 긴 학습이 아니다. 수정 후16회 비교는 동일 adapter의 결과다.
+- Windows에서 Linux로 복사한 파일의 CRLF 때문에 Linux diff 검사가 한 차례 실패했다. Linux 작업 복사본을 LF로 정규화한 뒤 diff 검사, Python 구문 컴파일과 세 CLI help가 모두 통과했다. Windows 원본 모델이나 사용자 자료를 정리하지 않았다.
+- train/evaluate/export CLI와 lock 구현, 모델 준비,10step 및 재로드 실행은 완료했다. **재로드 JSON 계약·전체 평가·사람 품질 검토·GGUF·Android는 미완료/실패**로 유지한다. 6개 샘플로 이득을 주장하거나 추가 장기 학습을 자동 실행하지 않는다. register/enum/반복 개선과 더 넓은 승인 데이터가 후속 과제다.
+
+## 앞선 설치 기록 · 재부팅 전
+
+아래는 2026-11-12 00:41 당시 기록이다. 이후 사용자 재부팅과 위 환경 준비/실행으로 재부팅 차단은 해소됐다.
 
 사용자가 WSL2 설치부터 진행하도록 명시적으로 요청해, Windows 관리자 승인(UAC)을 거쳐 `wsl.exe --install -d Ubuntu-24.04 --no-launch`를 실제 실행했다. **WSL 패키지와 커널 설치는 완료했고, VirtualMachinePlatform 기능 활성화를 위한 Windows 재부팅이 필요하다. Ubuntu 배포판 등록과 WSL2 실행 준비는 아직 완료되지 않았다.** 재부팅은 자동 실행하지 않았다.
 

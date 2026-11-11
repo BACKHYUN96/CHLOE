@@ -1,0 +1,243 @@
+{
+  "completed": true,
+  "full_suite_completed": false,
+  "case_count": 4,
+  "registers": [
+    "casual",
+    "polite"
+  ],
+  "candidates": [
+    "base",
+    "adapter"
+  ],
+  "generation": {
+    "seed": 42,
+    "do_sample": false,
+    "max_new_tokens": 384,
+    "context_tokens": 2048,
+    "enable_thinking": false
+  },
+  "human_scores": {
+    "korean_naturalness": null,
+    "register_consistency": null,
+    "self_introduction": null,
+    "excessive_empathy": null,
+    "instruction_exposure": null,
+    "context_memory": null,
+    "honesty": null
+  },
+  "human_review_completed": false,
+  "quality_improvement_verified": false,
+  "results": [
+    {
+      "id": "conv01",
+      "register": "casual",
+      "candidate": "base",
+      "tokens": 16,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv02",
+      "register": "casual",
+      "candidate": "base",
+      "tokens": 82,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv03",
+      "register": "casual",
+      "candidate": "base",
+      "tokens": 83,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv04",
+      "register": "casual",
+      "candidate": "base",
+      "tokens": 80,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv01",
+      "register": "polite",
+      "candidate": "base",
+      "tokens": 83,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv02",
+      "register": "polite",
+      "candidate": "base",
+      "tokens": 100,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv03",
+      "register": "polite",
+      "candidate": "base",
+      "tokens": 83,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv04",
+      "register": "polite",
+      "candidate": "base",
+      "tokens": 89,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv01",
+      "register": "casual",
+      "candidate": "adapter",
+      "tokens": 74,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv02",
+      "register": "casual",
+      "candidate": "adapter",
+      "tokens": 76,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv03",
+      "register": "casual",
+      "candidate": "adapter",
+      "tokens": 83,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv04",
+      "register": "casual",
+      "candidate": "adapter",
+      "tokens": 79,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv01",
+      "register": "polite",
+      "candidate": "adapter",
+      "tokens": 80,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv02",
+      "register": "polite",
+      "candidate": "adapter",
+      "tokens": 84,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv03",
+      "register": "polite",
+      "candidate": "adapter",
+      "tokens": 84,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "id": "conv04",
+      "register": "polite",
+      "candidate": "adapter",
+      "tokens": 74,
+      "eos_reached": true,
+      "json_valid": false,
+      "last_token_id": 248046,
+      "eos_token_ids": [
+        248044,
+        248046
+      ]
+    }
+  ],
+  "adapter_sha256": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+  "adapter_identity_matches_final_run": true
+}

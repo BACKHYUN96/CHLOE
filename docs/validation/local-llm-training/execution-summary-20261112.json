@@ -1,0 +1,26 @@
+{
+  "recorded_at": "2026-11-11T16:12:57.128097+00:00",
+  "distro": "CHLOE-Training-24.04",
+  "ubuntu": "24.04.5 LTS",
+  "wsl": "3.0.5.0",
+  "kernel": "6.18.58.1-microsoft-standard-WSL2",
+  "linux_ram_limit_gib": 31,
+  "linux_swap_gib": 8,
+  "ubuntu_image_url": "https://releases.ubuntu.com/24.04.5/ubuntu-24.04.5-wsl-amd64.wsl",
+  "ubuntu_image_sha256": "bb415d824822c4b878125729af451a5d18fb13d1cf5cbed9a7393ad64ac6039e",
+  "ubuntu_image_bytes": 388975696,
+  "windows_dns_modified": false,
+  "new_distro_resolver": "1.1.1.1 / 1.0.0.1",
+  "training_run_count": 2,
+  "steps_per_run": 10,
+  "continued_20_step_training": false,
+  "final_adapter_matches_initial": true,
+  "adapter_package_sha256": "93bf86818953c4067e4466f3181621ae32a2e6d9d2ecc0c7174c13f57a923759",
+  "evaluation_counts": {
+    "base:invalid": 8,
+    "adapter:invalid": 8
+  },
+  "tests_passed": 17,
+  "android_changed": false,
+  "gguf_exported": false
+}

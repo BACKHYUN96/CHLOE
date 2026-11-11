@@ -1,8 +1,29 @@
 # 로컬 Codex 작업 지시: CHLOE 한국어 대화 LLM 학습
 
-이 문서를 로컬 Codex에게 읽히고 실제 PC에서 진행한다. 현재 자료는 **학습 인수인계/사전 점검**이다. GPU 학습·Qwen3.5 QLoRA·Android 변환을 클라우드에서 성공시켰다는 결과가 아니다. 실행 가능한 trainer는 로컬 호환성 조사 후 구현하는 작업이다.
+이 문서를 로컬 Codex에게 읽히고 실제 PC에서 진행한다. 최초 자료는 **학습 인수인계/사전 점검**이었다. 아래 현재 상태는 실제 PC 실행 결과이며 클라우드 학습 결과가 아니다.
 
-## 2026-11-12 현재 상태 · Windows 재부팅 필요
+## 현재 상태 · WSL2 QLoRA10step 실행, 품질 계약 실패
+
+사용자 재부팅 후 독립 `CHLOE-Training-24.04` 배포판의 Linux 전용 `.venv-llm`에서 GPU/PyTorch·원본 모델 SHA·assistant mask·forward/backward를 검증하고 train/evaluate/export와 고정 requirements를 구현했다. 승인한 합성6개(train4/validation1/test1)로10step, adapter 저장과 새 객체 재로드까지 실행했다. 최종 학습4.09초, trainable417,792개, peak allocated 약4.47GiB / reserved4.78GiB였다. 기존 Windows 환경·Android 모델은 보존했다.
+
+**재로드 응답은384토큰 한도에 걸려 JSON 미완성이고, 첫4질문×2말투×원본/adapter의16회 부분 비교는 엄격한 앱 JSON/enum 계약 통과0회다.** 전체54입력·사람 평가·품질 이득·GGUF·Android는 미검증이다. 원본/adapter 모두의 실패를 그대로 기록했으며 기본 모델을 교체하지 않는다.
+
+실제 지표·실패·재현 명령은 [최신 보고서](../docs/validation/local-llm-training-report.md), 실제 선택 버전은 [requirements.lock.txt](requirements.lock.txt)에 있다. Linux clone에서 다음 명령을 사용한다. 승인 데이터·가중치·adapter는 Git 제외 로컬 artifact에 보존한다. 출력 경로가 존재하면 덮어쓰지 않으므로 재실행은 config의 output_dir을 새 경로로 지정한다.
+
+```bash
+.venv-llm/bin/python -m pip install -r training/requirements.lock.txt
+.venv-llm/bin/python training/scripts/prepare_model.py --config training/configs/smoke.json
+.venv-llm/bin/python training/scripts/train.py --config training/configs/smoke.json
+# 기본은 전체54입력×2말투 비교. 이번 실제 실행은 --limit 4를 붙인 부분 비교다.
+.venv-llm/bin/python training/scripts/evaluate.py --config training/configs/smoke.json --compare-base
+.venv-llm/bin/python -m unittest discover -s training/tests -v
+```
+
+`export.py --config training/configs/smoke.json --format gguf --quality-approval <receipt.json>`은 사람 품질 이득 승인과 일치하는 adapter hash, clean pinned llama.cpp 및 준비된 quantizer를 요구한다. 이번에는 승인 누락 거부만 확인했고 merge/GGUF 정상 경로는 미실행이다.
+
+## 앞선 기록 · 재부팅 전 설치 상태
+
+이하 기록은 최초 설치/점검 당시 상태다. 현재 실행 결과는 위 항목을 따른다.
 
 사용자 요청으로 관리자 승인 후 WSL 설치를 실행했다. WSL 3.0.5 / kernel 6.18.58.1-1 설치와 VirtualMachinePlatform 기능 추가는 완료했으며 **변경 사항 적용을 위한 Windows 재부팅이 필요하다.** 자동 재부팅은 하지 않았다. Ubuntu 배포판은 아직 등록되지 않았고 WSL2 내부 GPU/CUDA 실행도 미검증이다. 기존 환경·앱·Android 모델은 보존했다.
 
@@ -78,15 +99,15 @@ source .venv-llm/bin/activate
 # python -m pip install -r training/requirements.lock.txt
 ```
 
-아래는 **로컬 Codex가 구현·검증해야 하는 CLI 계약**이며 현재 실행 가능한 학습 명령이 아니다:
+아래는 최초 인수인계의 CLI 계약이다. 현재는 위 설정과 승인 데이터로 train/evaluate를 실제 실행했으며 export는 추가 품질 승인과 변환 도구가 필요한 제한 경로다:
 
 ```bash
 python training/scripts/train.py --config training/configs/smoke.json
 python training/scripts/evaluate.py --config training/configs/smoke.json --compare-base
-python training/scripts/export.py --config training/configs/smoke.json --format gguf
+python training/scripts/export.py --config training/configs/smoke.json --format gguf --quality-approval <receipt.json>
 ```
 
-옵션/실제 재현 명령은 구현 후 이 문서에 갱신한다. 패키지 버전이나 모델 지원을 추정해 빈 trainer를 성공 처리하지 않는다.
+실제 실행 범위와 미실행 경로는 최신 보고서를 따른다. 패키지 버전이나 모델 지원을 추정해 성공 처리하지 않는다.
 
 ## 데이터 계약과 완료 기준
 
