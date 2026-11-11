@@ -1,0 +1,65 @@
+{
+  "version": "0.1.0-alpha9",
+  "apk_bytes": 42962538,
+  "sha256": "15a4b7dfc83b926bca10402662c144f5c644aed10141b376eae26d8e483808cc",
+  "android_tests": 38,
+  "test_failures": 0,
+  "lint_errors": 0,
+  "lint_warnings": 11,
+  "arm64_build": true,
+  "zipalign_16k": true,
+  "elf_load_alignments": {
+    "lib/arm64-v8a/libandroidx.graphics.path.so": [
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libc++_shared.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libchloe_llm.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libchloe_voice.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libggml-base.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libggml-cpu.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libggml.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ]
+  },
+  "tts_native_binaries_identical_to_alpha8": true,
+  "model_inference_tested": false,
+  "device_tested": false,
+  "root_cause_confirmed": false,
+  "bug_resolved_on_device": null,
+  "internet_permission": false,
+  "llama_cpp_commit": "aa75ff3239f9cc675b081697deda9e1b112345c6",
+  "blockers": [
+    "No Android device attached",
+    "Insufficient storage for an additional selected GGUF; existing data preserved"
+  ]
+}

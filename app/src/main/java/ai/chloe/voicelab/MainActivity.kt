@@ -39,6 +39,7 @@ class MainActivity : ComponentActivity() {
                     onDispose { window.clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON) }
                 }
                 LabScreen(state, vm,
+                    onConversation = { vm.stop(); startActivity(android.content.Intent(this@MainActivity, ai.chloe.voicelab.conversation.ConversationActivity::class.java)) },
                     onComparison = { vm.stop(); startActivity(android.content.Intent(this@MainActivity, ai.chloe.voicelab.comparison.ComparisonActivity::class.java)) },
                     onImport = { importFolder.launch(null) },
                     onExportWav = { exportWav.launch("chloe-sohee.wav") },
@@ -55,7 +56,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExportWav: () -> Unit, onExportReport: () -> Unit, onExportBenchmark: () -> Unit, onComparison: () -> Unit) {
+private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExportWav: () -> Unit, onExportReport: () -> Unit, onExportBenchmark: () -> Unit, onComparison: () -> Unit, onConversation: () -> Unit) {
     var samplesExpanded by remember { mutableStateOf(false) }
     LazyColumn(
         modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background).safeDrawingPadding(),
@@ -64,6 +65,7 @@ private fun LabScreen(s: LabState, vm: LabViewModel, onImport: () -> Unit, onExp
         item {
             Text("CHLOE", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.Bold)
             Text(if (BuildConfig.PERFORMANCE_EDITION) "Voice Lab Performance" else "Voice Lab", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
+            TextButton(onClick = onConversation, enabled = !s.busy && !s.playing && !s.benchmarking) { Text("Conversation Lab · 로컬 대화") }
             TextButton(onClick = onComparison, enabled = !s.busy && !s.playing && !s.benchmarking) { Text("TTS Lab · 모델 비교 실험") }
             Spacer(Modifier.height(8.dp))
             Text("한국어 여성 음성 실험실 · ${BuildConfig.VERSION_NAME}", style = MaterialTheme.typography.bodyMedium)

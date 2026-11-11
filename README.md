@@ -1,3 +1,5 @@
+[Conversation Lab · alpha8](docs/conversation-engine.md): Qwen3.5 Q4_K_M 로컬 대화·JSON Voice Director 추가. 기기 추론/품질/동시 메모리는 미검증입니다.
+
 [TTS Lab 모델 비교 실험 · alpha7](docs/tts-comparison.md): 기존 CPU 엔진을 유지하며 20문장·3개 seed, 블라인드 평가와 독립 VoiceDesign 경로를 추가했습니다. 모델별 미통합·미측정 상태는 보고서에 구분합니다.
 
 말투 기준 표본 선택: [alpha6 적용 안내](docs/VOICE_REFERENCES.ko.md). CPU 기준, 1.7B Sohee의 합격 표본 지시를 선택할 수 있습니다.

@@ -1,3 +1,6 @@
 [submodule "external/qwen3-tts.cpp"]
 	path = external/qwen3-tts.cpp
 	url = https://github.com/Danmoreng/qwen3-tts.cpp.git
+[submodule "external/llama.cpp"]
+	path = external/llama.cpp
+	url = https://github.com/ggml-org/llama.cpp.git

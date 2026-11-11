@@ -1,0 +1,68 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "spoken_text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 220
+    },
+    "intent": {
+      "enum": [
+        "chat",
+        "explain",
+        "comfort",
+        "question"
+      ]
+    },
+    "emotion": {
+      "enum": [
+        "neutral",
+        "warm",
+        "curious",
+        "pleased"
+      ]
+    },
+    "delivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pace": {
+          "enum": [
+            "slow",
+            "normal",
+            "brisk"
+          ]
+        },
+        "energy": {
+          "enum": [
+            "low",
+            "medium"
+          ]
+        },
+        "expressiveness": {
+          "enum": [
+            "restrained",
+            "gentle"
+          ]
+        }
+      },
+      "required": [
+        "pace",
+        "energy",
+        "expressiveness"
+      ]
+    },
+    "tts_instruction": {
+      "type": "string",
+      "maxLength": 160
+    }
+  },
+  "required": [
+    "spoken_text",
+    "intent",
+    "emotion",
+    "delivery",
+    "tts_instruction"
+  ]
+}

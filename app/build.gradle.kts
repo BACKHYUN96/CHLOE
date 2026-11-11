@@ -14,8 +14,8 @@ android {
         buildConfigField("boolean", "PERFORMANCE_EDITION", performanceEdition.toString())
         minSdk = 31
         targetSdk = 35
-        versionCode = 7
-        versionName = "0.1.0-alpha7"
+        versionCode = 9
+        versionName = "0.1.0-alpha9"
         ndk { abiFilters += "arm64-v8a" }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild.cmake {
@@ -36,8 +36,10 @@ android {
         version = "3.22.1"
     }
     packaging.jniLibs.useLegacyPackaging = false
+    packaging.jniLibs.pickFirsts += "**/libc++_shared.so"
 }
 dependencies {
+    implementation(project(":llm"))
     implementation("androidx.core:core-ktx:1.15.0")
     implementation("androidx.activity:activity-compose:1.10.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
