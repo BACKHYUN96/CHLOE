@@ -84,3 +84,17 @@ alpha10 사용자 제공 4B 결과 3회는 모두 parser ok/fallback false/한�
 메모리는 worker 자체 llm_pss_kib를 완료 시점 값으로 별도 표시한다. UI 측 Android PSS 합산은 누락/캐시/권한 제한을 배제할 수 없어 전체/진짜 최대값으로 부르지 않는다. app_total_peak_pss_kib는 null로 기록한다. 이전 alpha10의 UI 252MiB와 worker 약2.8GiB가 충돌한 문제를 숫자 보정이나 추정 합계로 가리지 않는다. 요청마다 history_turns를 기록해 초기화/문맥 유지 상태도 확인한다.
 
 코드 회귀는 요청 완료 후 release/reset을 모사한 재연결을 확인하지만 실제 TTS 재생/Binder/기기 테스트는 아니다. 검증 순서: 업데이트 후 4B(또는 이미 준비한 2B)로 초기화 1번 → 인사/개발자 소개/이름 기억 질문을 초기화 없이 연속 입력 → 스타일 음성 재생 후 재요청 → 대화 초기화 후 재요청. history_turns=0/1/2, 말투, worker PSS와 각 지연 단계를 확인한다. 신규 기기 결과와 음성 청취, 10·30분은 미측정이다. 모델/양자화/CPU4/Sohee와 기존 TTS native는 유지한다.
+
+## alpha12 · prefill 비교와 간결한 persona
+
+alpha11 사용자 측정에서 prefill 27.8/38.8/54.8초, decode 약21~23초, template 5~11ms였다. 주요 비용은 입력 연산이므로 template cache만으로 해결됐다고 주장하지 않는다. Android/모델의 하이브리드 recurrent state에서 안전한 prefix 복구를 검증하지 않았으므로 이번에는 KV 재사용을 구현하지 않는다.
+
+alpha12는 llama_set_n_threads(ctx,4,prefillThreads)를 매 요청 적용한다. 선택 가능한 prefillThreads는 4/6/8이며 기본4다. JNI/worker/client에서 값을 검증하고 request payload와 측정에 전달한다. n_threads_batch는 다중 토큰 입력용이며 단일 토큰 답변 생성 n_threads는 4로 유지한다. GPU offload/양자화/모델 변경은 없다. 고스레드가 더 빠른지 여부는 미측정이며 4가 더 좋을 수 있다. 실패 행에도 요청 설정을 남긴다.
+
+간결한 프롬프트 기본 on. alpha11의 구체적인 개발자/선생님 예가 응답에 노출된 사용자 표본을 보고, 그 문구를 없애고 자기 이름/사용자 이름 구분과 내부 규칙을 대사로 설명하지 않는 규칙을 명시했다. alpha11 persona는 스위치를 끄면 그대로 사용한다. 프롬프트 전환은 문맥을 초기화한다. 기존 최대4턴/1200자 문맥, JSON Schema, enum 기반 TTS 매핑, 사고 과정 차단은 유지한다. 간결화가 사실성/말투를 개선한다는 실측은 아직 없다. 자동 대사 치환이나 숨은 재생성은 없다.
+
+테스트: compact persona의 내부 역할 예 제거/자기소개/출력 계약/길이, compact에서도 문맥 보존, 요청별 스레드 전달과 허용 외 값 차단. 기존 재연결/파싱 테스트도 함께 실행한다. fake transport와 빌드가 실기기 속도·자연스러움 평가를 대체하지 않는다.
+
+기기 비교는 모델·문장·문맥(초기화)·프롬프트·충전 여부를 고정해 입력 스레드4/6/8을 시험한다. 설정당 가능하면 3회 이상, 순서를 바꾸고 열 상태를 비슷하게 맞춘다. prefill_ms, prompt_tokens, decode_threads, native_request_ms, 실패를 함께 본다. 우선 4스레드에서 alpha11/compact를 비교한 뒤 compact로4/6/8을 비교하면 원인을 나눌 수 있다. 이후 초기화 없이 이름 기억/개발자 소개/자기소개, TTS 후 질문을 확인한다. 첫 토큰 지연과 실제 스피커 출력은 구분한다. 이 환경에는 기기 연결이 없어 실기기 개선/발열/10·30분은 미측정이다.
+
+별도 로컬 학습 지시서 PR #13과 독립이며 이 앱 PR은 alpha11 #12 위에 쌓는다. 디스크 확보를 위해 Drive 업로드 확인된 과거 alpha10의 작업 생성 로컬 APK 사본만 정리했다. alpha11/기존 모델/사용자 데이터/소스는 보존했다.
