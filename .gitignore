@@ -22,3 +22,5 @@ __pycache__/
 *.ckpt
 
 .venv-vox/
+
+.venv-llm/
