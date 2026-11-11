@@ -14,8 +14,8 @@ android {
         buildConfigField("boolean", "PERFORMANCE_EDITION", performanceEdition.toString())
         minSdk = 31
         targetSdk = 35
-        versionCode = 10
-        versionName = "0.1.0-alpha10"
+        versionCode = 11
+        versionName = "0.1.0-alpha11"
         ndk { abiFilters += "arm64-v8a" }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild.cmake {

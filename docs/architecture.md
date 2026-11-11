@@ -37,3 +37,7 @@ LLM native는 pinned llama.cpp의 common_chat_session → apply_sampling/common_
 ## LLM 연결 수명 · alpha10
 
 AndroidLocalLlmEngine은 순수 Kotlin LlmRequestClient(요청 ID·진행 상태·타임아웃)와 AndroidLlmChannel(Binder binding)을 조합한다. stop은 채널 참조를 무효화한 뒤 프로세스 중지/바인딩 해제를 수행한다. 새 요청은 해제된 채널을 재사용하지 않는다. worker의 접수/연산 진행 이벤트는 완료 이벤트와 구분하고, 완료 전 busy를 풀지 않는다. 기존 native/TTS 경계와 모델 설정은 유지한다.
+
+## alpha11 관측과 말투
+
+PersonaManager는 UI 말투 설정을 명시하고 VoiceDirector는 생성 결과를 자동 치환하지 않는다. ConversationEvaluator의 register_warning은 보조 신호이며 자연스러움 점수를 대체하지 않는다. LLM native chat-template 객체만 모델 수명 동안 재사용하고 세션/샘플러는 매 요청 분리한다. 단계별 지연과 history_turns를 기록한다. UI 가시 프로세스 PSS 표본과 worker 자체 완료 PSS를 나누며 실제 앱 전체 최대 PSS는 미측정(null)이다.
