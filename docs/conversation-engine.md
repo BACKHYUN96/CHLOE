@@ -54,3 +54,9 @@ JDK17 / SDK35 / NDK28.2 / CMake3.22.1을 사용한다. Performance alpha8을 업
 conversation-cases.json에 수다/위로/설명/정직성/문맥 50개를 작성했다. 문맥 그룹은 순서대로 시험한다. 단위 테스트는 50입력×두 선호 프롬프트 계약과 parser/fallback/매핑/history를 검사한다. **50개 실제 모델 대화 품질을 통과했다는 뜻이 아니다.** 사람 평가의 사실성/자연스러움은 null이다.
 
 새 native 컴파일 중 디스크 부족 링크 실패가 발생해 이번 작업의 llm/.cxx만 정리하고 -g0로 심볼 크기를 줄였다. 기존 모델·샘플은 삭제하지 않았다. 최종 빌드 결과는 validation/conversation/build.json을 따른다. S26 Ultra의 모델 로드/문맥/음성 재생·오류 복구·원음 대비 스타일·메모리·발열은 아직 미검증이다. main 자동 병합하지 않는다.
+
+## alpha9 수정 후보
+
+alpha8 사용자 실측에서 4회 모두 fallback이 보고되어 검증 완료 상태가 아니다. alpha9는 upstream chat session/sampling/parser 계약을 적용하고, 실패 안내의 기억 저장 및 자동 TTS를 차단한다. 로컬 `진단용 원문 보기`는 기본 off이며 생성 텍스트 8192바이트 이내를 표시한다. 이 원문에는 추론 내용이 있을 수 있으므로 자동 음성화하지 않는다. 내용 없는 측정 JSON에는 원문/사용자 입력이 없다. 요청마다 model/release_before_tts/polite/run_id를 남기며 PSS 관측 최대를 새로 시작한다. 1초 표본이므로 짧은 순간의 최대값은 보장하지 않는다. 기존 alpha8 최상위 model 필드만으로 과거 회차의 모델을 확정하지 않는다.
+
+APK 업데이트 후 기존 GGUF/TTS 파일은 유지한다. 먼저 대화 초기화 → 인사 1회 → native_parse_status 및 evaluation 확인. 성공할 때만 다음 입력과 TTS를 시험한다. 실패 시 코드와 로컬 원문으로 원인을 좁힌다. 기기에서 성공하기 전까지 이 변경은 수정 후보이며, 속도나 음질 개선을 주장하지 않는다.

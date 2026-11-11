@@ -2,7 +2,7 @@ package ai.chloe.voicelab.conversation
 
 import org.json.JSONObject
 
-data class DirectedReply(val spokenText:String,val intent:String="chat",val emotion:String="neutral",val pace:String="normal",val energy:String="medium",val expressiveness:String="restrained",val instruction:String="",val fallback:Boolean=false)
+data class DirectedReply(val spokenText:String,val intent:String="chat",val emotion:String="neutral",val pace:String="normal",val energy:String="medium",val expressiveness:String="restrained",val instruction:String="",val fallback:Boolean=false,val failureCode:String="none")
 interface ConversationEngine { fun request(messages:String,model:String); fun stop() }
 interface LocalLlmEngine:ConversationEngine
 class PersonaManager {
@@ -33,11 +33,11 @@ class VoiceDirector {
                     require(r.intent in listOf("chat","explain","comfort","question") && r.emotion in listOf("neutral","warm","curious","pleased"))
                     require(r.pace in listOf("slow","normal","brisk") && r.energy in listOf("low","medium") && r.expressiveness in listOf("restrained","gentle") && r.instruction.length<=160)
                     r
-                }.getOrElse{DirectedReply(spoken,fallback=true)}
+                }.getOrElse{DirectedReply(spoken,fallback=true,failureCode="invalid_direction")}
             }
         }
         val plain=if(!clean.startsWith("{") && !clean.contains("<think>"))runCatching{safe(clean)}.getOrNull() else null
-        return DirectedReply(plain ?: "답변을 정리하지 못했어요. 다시 말씀해 주세요.",fallback=true)
+        return DirectedReply(plain ?: "답변을 정리하지 못했어요. 다시 말씀해 주세요.",fallback=true,failureCode=if(plain!=null)"plain_text" else if(clean.isBlank())"empty_content" else "invalid_output")
     }
 }
 class TtsInstructionMapper {
@@ -50,8 +50,8 @@ class TtsInstructionMapper {
 class ConversationManager {
     val context=DialogueContextManager();private val persona=PersonaManager();private val director=VoiceDirector()
     fun prompt(input:String,polite:Boolean):String {require(input.isNotBlank() && input.length<=400);return context.messages(persona.system(polite),input)}
-    fun accept(input:String,raw:String):DirectedReply=director.parse(raw).also{context.add(input,it.spokenText)}
+    fun accept(input:String,raw:String):DirectedReply=director.parse(raw).also{if(it.failureCode in setOf("none","invalid_direction","plain_text"))context.add(input,it.spokenText)}
 }
 class ConversationEvaluator {
-    fun structural(reply:DirectedReply)=JSONObject().put("fallback",reply.fallback).put("length",reply.spokenText.length).put("human_naturalness",JSONObject.NULL).put("factual_accuracy",JSONObject.NULL)
+    fun structural(reply:DirectedReply)=JSONObject().put("fallback",reply.fallback).put("failure_code",reply.failureCode).put("length",reply.spokenText.length).put("human_naturalness",JSONObject.NULL).put("factual_accuracy",JSONObject.NULL)
 }
