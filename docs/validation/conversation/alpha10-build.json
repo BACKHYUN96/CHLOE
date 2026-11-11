@@ -1,0 +1,16 @@
+{
+  "version": "0.1.0-alpha10",
+  "apk_bytes": 36466766,
+  "sha256": "b2cfd8372ce83f6014a3abb2cab526858d24c6f48a885ae24c8320a353aeaf37",
+  "android_tests": 45,
+  "test_failures": 0,
+  "lint_errors": 0,
+  "lint_warnings": 11,
+  "native_libraries_identical_to_alpha9": true,
+  "device_tested": false,
+  "repeated_device_requests_verified": false,
+  "speed_improvement_measured": false,
+  "internet_permission": false,
+  "request_accept_timeout_ms": 15000,
+  "inference_timeout_ms": 180000
+}

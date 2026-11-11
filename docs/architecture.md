@@ -33,3 +33,7 @@ ConversationManager/PersonaManager/DialogueContextManager/VoiceDirector/TtsInstr
 ## alpha9 대화 출력 경계
 
 LLM native는 pinned llama.cpp의 common_chat_session → apply_sampling/common_sampler → finish를 사용한다. Kotlin에는 파싱된 assistant content만 전달하며, 문법의 prefill/trigger를 수동으로 재구현하지 않는다. 토큰 한도/빈 응답/형식 실패는 명시적인 상태다. 안전한 spoken_text를 복구할 수 없는 실패 안내는 DialogueContextManager와 TTS로 보내지 않는다. 내용 없는 요청별 측정과 opt-in 로컬 진단 원문을 분리한다. [기준 감사와 단계별 통과 조건](CHLOE_BASELINE.ko.md)을 따른다. 새 TTS 어댑터와 STT/VAD는 이번 단계에 구현하지 않았다.
+
+## LLM 연결 수명 · alpha10
+
+AndroidLocalLlmEngine은 순수 Kotlin LlmRequestClient(요청 ID·진행 상태·타임아웃)와 AndroidLlmChannel(Binder binding)을 조합한다. stop은 채널 참조를 무효화한 뒤 프로세스 중지/바인딩 해제를 수행한다. 새 요청은 해제된 채널을 재사용하지 않는다. worker의 접수/연산 진행 이벤트는 완료 이벤트와 구분하고, 완료 전 busy를 풀지 않는다. 기존 native/TTS 경계와 모델 설정은 유지한다.
