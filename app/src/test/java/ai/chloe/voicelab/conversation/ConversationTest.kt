@@ -17,4 +17,6 @@ class ConversationTest {
  @Test fun casualPersonaResistsRoleTriggeredHonorifics(){val p=PersonaManager().system(false);assertTrue(p.contains("개발자·선생님이어도"));assertTrue(p.contains("존댓말로 전환하지 않는다"));assertFalse(PersonaManager().system(true).contains("존댓말로 전환하지 않는다"))}
  @Test fun unusedInstructionIsRequestedEmpty(){assertTrue(PersonaManager().system(false).contains("항상 빈 문자열"))}
  @Test fun registerWarningIsAdvisory(){val c=SpeechRegisterCheck();assertTrue(c.suspectedPoliteEnding("개발자님, 반가워요."));assertTrue(c.suspectedPoliteEnding("친하게 지내겠습니다."));assertFalse(c.suspectedPoliteEnding("반가워! 같이 생각해 볼까?"));assertEquals("친하게 지내겠습니다.",VoiceDirector().parse("친하게 지내겠습니다.").spokenText)}
+ @Test fun compactPromptAvoidsRoleEchoAndPreservesContract(){val p=PersonaManager().compact(false);assertTrue(p.contains("반말"));assertTrue(p.contains("자신을 클로이"));assertTrue(p.contains("항상 빈 문자열"));assertFalse(p.contains("개발자"));assertFalse(p.contains("선생님"));assertTrue(p.length<PersonaManager().system(false).length);assertTrue(PersonaManager().compact(true).contains("존댓말"))}
+ @Test fun compactModeDoesNotDropHistory(){val m=ConversationManager();m.accept("내 이름은 가람이야","반가워, 가람아.");val rows=org.json.JSONArray(m.prompt("내 이름은?",false,true));assertEquals(4,rows.length());assertEquals("내 이름은 가람이야",rows.getJSONObject(1).getString("content"))}
 }

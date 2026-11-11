@@ -2,7 +2,7 @@ package ai.chloe.voicelab.conversation
 
 import org.json.JSONObject
 
-internal data class LlmRequest(val id:Int,val messages:String,val model:String)
+internal data class LlmRequest(val id:Int,val messages:String,val model:String,val prefillThreads:Int=4)
 internal interface LlmChannel {
     fun bind(connected:()->Unit, disconnected:()->Unit):Boolean
     fun send(request:LlmRequest)
@@ -22,9 +22,10 @@ internal class LlmRequestClient(
     private var cancelTimeout:(()->Unit)?=null
     private var stage="idle"
 
-    fun request(messages:String,model:String) {
+    fun request(messages:String,model:String,prefillThreads:Int=4) {
+        require(prefillThreads in listOf(4,6,8))
         check(pending==null){"이미 요청을 처리하고 있습니다"}
-        val request=LlmRequest(++serial,messages,model)
+        val request=LlmRequest(++serial,messages,model,prefillThreads)
         pending=request;stage="binding"
         arm(request.id,15_000)
         if(channel==null){

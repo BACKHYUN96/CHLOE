@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0-alpha12",
+  "apk_bytes": 36643822,
+  "sha256": "2bda182de1bdda79cb6d93e1c0e87f00690d82e8b93f8cb148baa203e1f32965",
+  "tests": {
+    "tests": 53,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Error": 0,
+    "Warning": 11
+  },
+  "tts_native_identical_to_alpha11": true,
+  "device_tested": false,
+  "speed_improvement_measured": false,
+  "quality_improvement_measured": false,
+  "prefill_threads": [
+    4,
+    6,
+    8
+  ],
+  "default_prefill_threads": 4,
+  "decode_threads": 4,
+  "internet_permission": false
+}
