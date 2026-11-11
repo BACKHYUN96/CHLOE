@@ -29,3 +29,7 @@
 ## 로컬 대화 엔진
 
 ConversationManager/PersonaManager/DialogueContextManager/VoiceDirector/TtsInstructionMapper/ConversationEvaluator는 TTS와 독립이다. AndroidLocalLlmEngine은 :llm worker 및 별도 static llama.cpp 모듈을 사용하며 기존 LocalVoiceEngine으로 Sohee를 재생한다. 원격 구현은 없다. [설계와 미측정 항목](conversation-engine.md)을 따른다.
+
+## alpha9 대화 출력 경계
+
+LLM native는 pinned llama.cpp의 common_chat_session → apply_sampling/common_sampler → finish를 사용한다. Kotlin에는 파싱된 assistant content만 전달하며, 문법의 prefill/trigger를 수동으로 재구현하지 않는다. 토큰 한도/빈 응답/형식 실패는 명시적인 상태다. 안전한 spoken_text를 복구할 수 없는 실패 안내는 DialogueContextManager와 TTS로 보내지 않는다. 내용 없는 요청별 측정과 opt-in 로컬 진단 원문을 분리한다. [기준 감사와 단계별 통과 조건](CHLOE_BASELINE.ko.md)을 따른다. 새 TTS 어댑터와 STT/VAD는 이번 단계에 구현하지 않았다.
