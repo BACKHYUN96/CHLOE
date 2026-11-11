@@ -2,6 +2,26 @@
 
 이 문서를 로컬 Codex에게 읽히고 실제 PC에서 진행한다. 현재 자료는 **학습 인수인계/사전 점검**이다. GPU 학습·Qwen3.5 QLoRA·Android 변환을 클라우드에서 성공시켰다는 결과가 아니다. 실행 가능한 trainer는 로컬 호환성 조사 후 구현하는 작업이다.
 
+## 2026-11-11 로컬 실행 상태
+
+실제 Windows PC에서 RTX 4070 SUPER 12GB·RAM 약64GiB를 확인했지만 WSL 미설치로 WSL2/CUDA 학습 환경 검증에 실패했다. 별도 `.venv-llm`에서 점검했고 기존 앱·Android 모델은 변경하지 않았다. 공식 Qwen3.5-2B revision의 메타데이터/라이선스/SHA와 TRL Qwen3.5 전용 mask template 및 pinned llama.cpp 지원 소스를 대조했다. 모델 가중치 로드·10-step·adapter·품질 비교·GGUF·Android 실측은 미실행이다. requirements lock과 train/evaluate/export는 실제 runtime 검증 후 구현할 계약으로 남는다.
+
+실제 결과와 재개 조건: [로컬 학습 보고서](../docs/validation/local-llm-training-report.md). [평가 계획](configs/evaluation-plan.json)은 기존50개+보강4개 입력을 고정하며 모든 품질 점수는 미평가다.
+
+현재 실행 가능한 stdlib 점검 CLI:
+
+```bash
+# 기본은 설치/모델 다운로드 없는 inventory이며 환경 미준비여도 0을 반환할 수 있다.
+python training/scripts/preflight.py --output artifacts/llm-training/preflight-new.json
+# WSL2 환경이 아니면 기록 후 1 반환. 런타임 옵션은 import와 작은 CUDA tensor 연산만 수행한다.
+python training/scripts/preflight.py --output artifacts/llm-training/runtime-new.json --require-wsl2 --require-runtime
+# 공식 고정 revision의 소형 메타데이터만 HTTPS로 읽고 SHA를 기록. 가중치/remote code 실행 없음.
+python training/scripts/inspect_model.py --output artifacts/llm-training/model-metadata-new.json
+python -m unittest discover -s training/tests -v
+```
+
+`--probe-runtime`은 import/CUDA probe만 추가하며, `--require-runtime`은 이를 포함하고 실패 시1을 반환한다. 이 검사도 Qwen3.5 모델 forward나 QLoRA 성공을 인증하지 않는다. 모든 출력 파일은 기존 경로가 있으면 거부한다. Windows에서 만든 venv는 WSL에서 재사용하지 않는다.
+
 ## 목표와 보존 범위
 
 - Windows PC / RTX 4070 SUPER 12GB. RAM·여유 저장 공간·WSL2·드라이버는 현장에서 확인한다.
