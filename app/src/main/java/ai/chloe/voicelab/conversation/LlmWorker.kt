@@ -11,7 +11,10 @@ class LlmWorker:Service(){
  private val messenger=Messenger(Handler(Looper.getMainLooper()){msg->
   if(msg.what==2){Process.killProcess(Process.myPid());return@Handler true}
   val reply=msg.replyTo;val serial=msg.arg1;val input=msg.data.getString("messages").orEmpty();val size=msg.data.getString("model").orEmpty()
+  fun progress(stage:String){runCatching{reply.send(Message.obtain(null,4).apply{arg1=serial;data=Bundle().apply{putString("result",JSONObject().put("progress",stage).toString())}})}}
+  progress("accepted")
   executor.execute {
+   progress("inference")
    val result=runCatching {
     require(size in listOf("4b","2b") && input.length<=14000)
     val file=File(filesDir,"conversation-models/$size.gguf");check(file.isFile){"선택한 GGUF를 가져오세요"}
@@ -22,16 +25,40 @@ class LlmWorker:Service(){
   };true
  });override fun onBind(intent:Intent)=messenger.binder
 }
-class AndroidLocalLlmEngine(private val context:Context,private val event:(JSONObject)->Unit):LocalLlmEngine,AutoCloseable {
- private var remote:Messenger?=null;private var bound=false;private var serial=0;private var pending:Message?=null;private var stopping=false
- private val replies=Messenger(Handler(Looper.getMainLooper()){m->if(m.arg1==serial)event(JSONObject(m.data.getString("result")!!));true})
+class AndroidLocalLlmEngine(private val context:Context,event:(JSONObject)->Unit):LocalLlmEngine,AutoCloseable {
+ private val handler=Handler(Looper.getMainLooper())
+ private val client=LlmRequestClient(
+  factory={receive->AndroidLlmChannel(context,receive)},
+  schedule={delay,action->val task=Runnable{action()};handler.postDelayed(task,delay);{handler.removeCallbacks(task)}},
+  event=event
+ )
+ override fun request(messages:String,model:String)=client.request(messages,model)
+ override fun stop()=client.stop()
+ override fun close()=client.stop()
+}
+private class AndroidLlmChannel(private val context:Context,receive:(Int,JSONObject)->Unit):LlmChannel {
+ private var remote:Messenger?=null
+ private var bound=false
+ private var closed=false
+ private val replies=Messenger(Handler(Looper.getMainLooper()){m->if(!closed)receive(m.arg1,JSONObject(m.data.getString("result")!!));true})
+ private var connected:()->Unit={}
+ private var disconnected:()->Unit={}
  private val connection=object:ServiceConnection{
-  override fun onServiceConnected(n:ComponentName,b:IBinder){remote=Messenger(b);stopping=false;pending?.let{send(it)};pending=null}
-  override fun onServiceDisconnected(n:ComponentName){remote=null;if(!stopping)event(JSONObject().put("error","LLM 프로세스 종료/OOM 가능 · 재시도하세요"));stopping=false}
-  override fun onBindingDied(n:ComponentName){if(bound)context.unbindService(this);bound=false;onServiceDisconnected(n)}
+  override fun onServiceConnected(n:ComponentName,b:IBinder){if(!closed){remote=Messenger(b);connected()}}
+  override fun onServiceDisconnected(n:ComponentName){if(!closed){remote=null;disconnected()}}
+  override fun onBindingDied(n:ComponentName){if(!closed)disconnected()}
+  override fun onNullBinding(n:ComponentName){if(!closed)disconnected()}
  }
- private fun send(m:Message){runCatching{remote!!.send(m)}.onFailure{event(JSONObject().put("error",it.message))}}
- override fun request(messages:String,model:String){val m=Message.obtain(null,1).apply{arg1=++serial;replyTo=replies;data=Bundle().apply{putString("messages",messages);putString("model",model)}};if(remote!=null)send(m) else{pending=m;if(!bound){bound=context.bindService(Intent(context,LlmWorker::class.java),connection,Context.BIND_AUTO_CREATE);check(bound)}}}
- override fun stop(){stopping=true;++serial;pending=null;runCatching{remote?.send(Message.obtain(null,2))};remote=null}
- override fun close(){stop();if(bound)context.unbindService(connection);bound=false}
+ override fun bind(connected:()->Unit,disconnected:()->Unit):Boolean {
+  check(!closed);this.connected=connected;this.disconnected=disconnected
+  bound=context.bindService(Intent(context,LlmWorker::class.java),connection,Context.BIND_AUTO_CREATE)
+  return bound
+ }
+ override fun send(request:LlmRequest){check(!closed);val target=checkNotNull(remote){"LLM 서비스 미연결"};target.send(Message.obtain(null,1).apply{arg1=request.id;replyTo=replies;data=Bundle().apply{putString("messages",request.messages);putString("model",request.model)}})}
+ override fun close(){
+  if(closed)return
+  closed=true
+  runCatching{remote?.send(Message.obtain(null,2))};remote=null
+  if(bound){bound=false;runCatching{context.unbindService(connection)}}
+ }
 }

@@ -60,3 +60,15 @@ conversation-cases.json에 수다/위로/설명/정직성/문맥 50개를 작성
 alpha8 사용자 실측에서 4회 모두 fallback이 보고되어 검증 완료 상태가 아니다. alpha9는 upstream chat session/sampling/parser 계약을 적용하고, 실패 안내의 기억 저장 및 자동 TTS를 차단한다. 로컬 `진단용 원문 보기`는 기본 off이며 생성 텍스트 8192바이트 이내를 표시한다. 이 원문에는 추론 내용이 있을 수 있으므로 자동 음성화하지 않는다. 내용 없는 측정 JSON에는 원문/사용자 입력이 없다. 요청마다 model/release_before_tts/polite/run_id를 남기며 PSS 관측 최대를 새로 시작한다. 1초 표본이므로 짧은 순간의 최대값은 보장하지 않는다. 기존 alpha8 최상위 model 필드만으로 과거 회차의 모델을 확정하지 않는다.
 
 APK 업데이트 후 기존 GGUF/TTS 파일은 유지한다. 먼저 대화 초기화 → 인사 1회 → native_parse_status 및 evaluation 확인. 성공할 때만 다음 입력과 TTS를 시험한다. 실패 시 코드와 로컬 원문으로 원인을 좁힌다. 기기에서 성공하기 전까지 이 변경은 수정 후보이며, 속도나 음질 개선을 주장하지 않는다.
+
+## alpha10 · 서비스 재연결
+
+사용자 alpha9 측정 1회는 4B, `native_parse_status=ok`, `fallback=false`, 로드 581.6ms / 첫 토큰 19009.4ms / 전체 36460.8ms / 112토큰 / worker PSS 2934541KiB였다. 사용자는 앱 재실행 후 첫 응답만 나오며, 멈춘 상태에서 외부 모니터의 전력이 낮아지는 현상을 보고했다. 이 전력값은 앱 내 계측이나 GPU 사용 증명이 아니다. 측정 파일에는 완료된 1회만 있어 실패 요청의 위치를 직접 입증하지는 못한다.
+
+소스에서 확인한 재연결 결함: 기존 `AndroidLocalLlmEngine.stop()`은 remote만 null로 만들고 bound=true를 유지했다. 작업 중 중지/초기화/모델 변경/화면 이탈/TTS 전 해제를 거친 뒤 요청하면 pending에 넣고도 `if (!bound)` 때문에 새 bind를 하지 않을 수 있었다. Android가 이미 연결된 서비스를 다시 통지할 의무도 없다. 따라서 실제 연산을 하지 않는 대기 상태가 만들어질 수 있었다. 이것이 기기에서 관측한 모든 실패의 유일한 원인인지는 추가 검증이 필요하다.
+
+alpha10은 LlmRequestClient와 AndroidLlmChannel을 분리한다. 중지 시 기존 채널을 먼저 무효화하고 unbind하며, 다음 요청은 새 채널을 만든다. 살아 있는 연결은 연속 요청에서 재사용한다. 이전 채널 콜백과 이전 요청 ID의 응답은 무시한다. 서비스는 `accepted`/`inference` 단계를 보고한다. 연결·접수 15초, 연산 180초 watchdog은 오류로 종료하고 채널을 해제하여 다음 시도에서 재연결한다. native 한 번의 decode가 끝나야 한다는 제한 대신 기존 worker 프로세스 종료 경로로 취소한다. 이 제한은 응답속도 목표가 아니다. 실패 측정에는 failure_code와 request_stage가 남는다.
+
+회귀 테스트는 연속 정상 요청, 중지 후 재연결, bind 전 취소와 늦은 콜백, 이전 응답 차단, 미접속 timeout 후 재시도, progress 시 예산 전환, disconnect 후 복구를 검사한다. fake transport 기반 상태 시험이며 실제 Binder/폰 실측을 대체하지 않는다. 4B 속도/발열 최적화, native 추가 변경은 이번 범위에 없다. 모든 native 라이브러리는 alpha9 APK와 동일함을 확인했다.
+
+기기 시험: 앱을 끄지 않고 3회 연속 입력 → 중지/초기화 후 재요청 → 모델 변경 → TTS 재생 후 재요청. 실패 시 상태와 내용 없는 JSON을 내보낸다. 실제 기기 성공/10·30분 안정성은 아직 미검증이다. APK와 빌드 자료는 `validation/conversation/alpha10-build.json`을 따른다.
