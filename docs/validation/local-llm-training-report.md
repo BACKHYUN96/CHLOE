@@ -1,6 +1,34 @@
-# 로컬 대화 LLM 학습 사전 검증 · 2026-11-11
+# 로컬 대화 LLM 학습 사전 검증 · 2026-11-12 갱신
 
-## 결과
+## 2026-11-12 WSL 설치 진행 · 재부팅 필요
+
+사용자가 WSL2 설치부터 진행하도록 명시적으로 요청해, Windows 관리자 승인(UAC)을 거쳐 `wsl.exe --install -d Ubuntu-24.04 --no-launch`를 실제 실행했다. **WSL 패키지와 커널 설치는 완료했고, VirtualMachinePlatform 기능 활성화를 위한 Windows 재부팅이 필요하다. Ubuntu 배포판 등록과 WSL2 실행 준비는 아직 완료되지 않았다.** 재부팅은 자동 실행하지 않았다.
+
+설치 전 작업 트리는 깨끗했고, 로컬/원격 작업 브랜치는 `277d44185e124ddb951ade165e7c2fcf703fb2ea`로 같았다. 원격 main은 기존 `fd9b5982466db52c65ded7f3436e94beb3fcb54c`였다. 기존 WSL 배포판은 없었으며 기존 앱·Python 환경·Android 모델·GGUF·TTS는 변경/삭제하지 않았다. WSL에 Linux NVIDIA 드라이버를 설치하지 않았다.
+
+| 실제 명령/검사 | 결과 |
+| --- | --- |
+| 관리자 역할 / CPU 가상화 확인 | 일반 셸은 관리자 아님; 펌웨어 가상화 및 SLAT는 true |
+| 관리자 설치 명령 | 2026-11-12 00:40:51–00:41:42 KST, 반환0, stderr 0 bytes |
+| 설치 로그 | VirtualMachinePlatform 추가, WSL 3.0.5 설치 완료, 시스템 재시작 후 변경 사항 적용 안내 |
+| `wsl --version` | 반환0; WSL 3.0.5.0 / kernel 6.18.58.1-1 / WSLg 1.0.79 |
+| Windows CBS RebootPending | true |
+| `wsl --status` | 반환0, 기본 버전2; 가상 머신 플랫폼이 활성화되지 않아 WSL2를 시작할 수 없다는 안내 |
+| `wsl --list --verbose` | 설치된 배포판 없음; shell -1 / Python unsigned 4294967295 |
+| 설치 후 strict preflight | 반환1; Windows 호스트에서 실행, WSL2·CUDA runtime 검증 미완료 |
+
+설치 명령의 반환0이나 WSL 기본 버전2를 Ubuntu/WSL2/CUDA 실행 성공으로 보고하지 않는다. 지금 상태에서 WSL 설치를 반복하거나 기존 환경을 재설치하지 않는다. 실제 설치 기록은 [wsl-install-20261112.json](local-llm-training/wsl-install-20261112.json), 설치 후 환경은 [preflight-after-wsl-install-20261112.json](local-llm-training/preflight-after-wsl-install-20261112.json)에 보관했다. 원본 로컬 설치 로그는 Git 제외 경로 `artifacts/llm-training/wsl-install-20261112-attempt1/`에 보존했다.
+
+**사용자에게 필요한 다음 작업은 열려 있는 작업을 저장하고 Windows를 재부팅하는 것이다.** 재부팅 후 이 채팅에서 이어서 진행하면 아래 순서로 확인한다.
+
+1. `wsl --status`, `wsl --version`, `wsl --list --verbose`를 다시 읽는다. Ubuntu-24.04가 이미 등록돼 있으면 다시 설치하지 않는다.
+2. 배포판이 여전히 없을 때만 `wsl --install -d Ubuntu-24.04 --no-launch`로 Ubuntu 설치를 마친다. 초기 Linux 계정 설정이 필요하면 안내한다. 기존 배포판 unregister/reset 및 자동 재부팅은 하지 않는다.
+3. Ubuntu VERSION=2와 Linux 내부 `nvidia-smi`를 확인하고 Linux 홈에 독립 작업 clone 및 Linux Python `.venv-llm`을 준비한다. Windows venv는 재사용하지 않는다.
+4. 아래 재개 조건에 따라 실제 학습 조합·checkpoint 로드/forward·LoRA target·assistant mask를 검증한 뒤 lock 및 train/evaluate/export를 구현한다. 승인된 데이터가 준비되면 최대10-step·adapter 저장/재로드를 실행하고 같은 PR을 업데이트한다.
+
+이번 갱신은 설치 실행 증거와 재개 절차를 추가한 문서/JSON 변경이다. `git diff --check`와 JSON 무결성 검사를 실행했다. 아래 9개 테스트 통과 기록은 2026-11-11의 코드 검증 결과이며 이번에 학습·Android·모델 실행 검증을 추가했다는 뜻이 아니다. 학습 스크립트 구현·10-step·adapter·평가·GGUF·Android 실측은 계속 미완료다.
+
+## 최초 검증 결과 · 2026-11-11
 
 **호스트 점검과 공식 소스 대조를 완료했으나, WSL2가 설치되지 않아 학습 환경 검증은 실패했다. Qwen3.5-2B 모델 로드·10-step 학습은 미실행이다.** Qwen3.5 자체가 이 GPU에서 학습 불가능하다는 결과는 아니다. 기존 Android 앱·모델·Sohee TTS·GGUF·사용자 파일은 건드리지 않았다.
 

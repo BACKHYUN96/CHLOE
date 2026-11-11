@@ -2,7 +2,13 @@
 
 이 문서를 로컬 Codex에게 읽히고 실제 PC에서 진행한다. 현재 자료는 **학습 인수인계/사전 점검**이다. GPU 학습·Qwen3.5 QLoRA·Android 변환을 클라우드에서 성공시켰다는 결과가 아니다. 실행 가능한 trainer는 로컬 호환성 조사 후 구현하는 작업이다.
 
-## 2026-11-11 로컬 실행 상태
+## 2026-11-12 현재 상태 · Windows 재부팅 필요
+
+사용자 요청으로 관리자 승인 후 WSL 설치를 실행했다. WSL 3.0.5 / kernel 6.18.58.1-1 설치와 VirtualMachinePlatform 기능 추가는 완료했으며 **변경 사항 적용을 위한 Windows 재부팅이 필요하다.** 자동 재부팅은 하지 않았다. Ubuntu 배포판은 아직 등록되지 않았고 WSL2 내부 GPU/CUDA 실행도 미검증이다. 기존 환경·앱·Android 모델은 보존했다.
+
+재부팅 후 배포판 목록을 다시 확인하고, Ubuntu가 없을 때만 설치를 마친 뒤 Linux 전용 `.venv-llm`에서 학습 호환성 검증→trainer 구현→최대10-step→adapter 재로드 순서로 이어간다. 상세 설치 반환 코드와 재개 절차는 [보고서의 2026-11-12 갱신](../docs/validation/local-llm-training-report.md)에 있다. 아래 2026-11-11 기록은 최초 점검 당시 상태다.
+
+## 2026-11-11 최초 로컬 실행 상태
 
 실제 Windows PC에서 RTX 4070 SUPER 12GB·RAM 약64GiB를 확인했지만 WSL 미설치로 WSL2/CUDA 학습 환경 검증에 실패했다. 별도 `.venv-llm`에서 점검했고 기존 앱·Android 모델은 변경하지 않았다. 공식 Qwen3.5-2B revision의 메타데이터/라이선스/SHA와 TRL Qwen3.5 전용 mask template 및 pinned llama.cpp 지원 소스를 대조했다. 모델 가중치 로드·10-step·adapter·품질 비교·GGUF·Android 실측은 미실행이다. requirements lock과 train/evaluate/export는 실제 runtime 검증 후 구현할 계약으로 남는다.
 
