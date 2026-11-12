@@ -5,7 +5,7 @@ import android.os.*
 import org.json.JSONObject
 import java.io.File
 import java.util.concurrent.Executors
-internal class LlmNative { init{System.loadLibrary("chloe_llm")};external fun generate(path:ByteArray,messages:ByteArray,schema:ByteArray,prefillThreads:Int):ByteArray }
+internal class LlmNative { init{System.loadLibrary("chloe_llm")};external fun generate(path:ByteArray,messages:ByteArray,schema:ByteArray,prefillThreads:Int,contextTokens:Int):ByteArray }
 class LlmWorker:Service(){
  private val executor=Executors.newSingleThreadExecutor();private var native:LlmNative?=null
  private val messenger=Messenger(Handler(Looper.getMainLooper()){msg->
@@ -17,10 +17,10 @@ class LlmWorker:Service(){
   executor.execute {
    progress("inference")
    val result=runCatching {
-    require(size in listOf("4b","2b") && input.length<=14000 && prefillThreads in listOf(4,6,8))
+    require(size in ConversationModelPolicy.keys && input.length<=14000 && prefillThreads in listOf(4,6,8))
     val file=File(filesDir,"conversation-models/$size.gguf");check(file.isFile){"선택한 GGUF를 가져오세요"}
     val engine=native?:LlmNative().also{native=it}
-    JSONObject(engine.generate(file.path.toByteArray(),input.toByteArray(),assets.open("conversation-schema.json").use{it.readBytes()},prefillThreads).toString(Charsets.UTF_8)).put("llm_pss_kib",Debug.MemoryInfo().also{Debug.getMemoryInfo(it)}.totalPss)
+    JSONObject(engine.generate(file.path.toByteArray(),input.toByteArray(),assets.open("conversation-schema.json").use{it.readBytes()},prefillThreads,ConversationModelPolicy.contextTokens(size)).toString(Charsets.UTF_8)).put("llm_pss_kib",Debug.MemoryInfo().also{Debug.getMemoryInfo(it)}.totalPss)
    }.getOrElse{JSONObject().put("error",it.message?:it.javaClass.simpleName)}
    runCatching{reply.send(Message.obtain(null,3).apply{arg1=serial;data=Bundle().apply{putString("result",result.toString())}})}
   };true
