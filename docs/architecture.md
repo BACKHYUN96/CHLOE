@@ -45,3 +45,7 @@ PersonaManager는 UI 말투 설정을 명시하고 VoiceDirector는 생성 결�
 ## alpha12 입력 처리 비교
 
 ConversationEngine request의 prefillThreads는 기본4, 허용4/6/8이며 LlmRequestClient → Binder payload → LlmWorker → 독립 LLM JNI로 전달한다. 단일 토큰 생성 스레드는4 고정이다. persona compact/alpha11 선택은 추론 설정과 별도 기록한다. 모델/KV/음질을 묵시적으로 바꾸지 않으며, 입력 처리 시간 단축과 생성 품질은 기기에서 각각 검증한다.
+
+## alpha13 고정 비교와 상태 재사용 경계
+
+ConversationProtocol은 공개된 가상 대화 4개와 보조 평가를 제공한다. ViewModel은 실행 설정을 고정하고 case/run을 각 측정에 연결한다. VoiceDirector는 실제 모델 응답을 검증하며 임의 정답으로 대체하지 않는다. native prefix cache는 비활성으로 유지한다. recurrent rollback과 assistant 토큰 정합성 조사/후속 통과 조건은 conversation-cache-investigation.md에 기록했다.
