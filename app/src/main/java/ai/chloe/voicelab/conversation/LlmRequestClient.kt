@@ -23,7 +23,7 @@ internal class LlmRequestClient(
     private var stage="idle"
 
     fun request(messages:String,model:String,prefillThreads:Int=4) {
-        require(prefillThreads in listOf(4,6,8))
+        require(prefillThreads in listOf(4,6,8));require(model in ConversationModelPolicy.keys)
         check(pending==null){"이미 요청을 처리하고 있습니다"}
         val request=LlmRequest(++serial,messages,model,prefillThreads)
         pending=request;stage="binding"
@@ -50,7 +50,7 @@ internal class LlmRequestClient(
         if(pending?.id!=id)return
         if(result.has("progress")){
             stage=result.getString("progress")
-            arm(id,if(stage=="inference")180_000 else 15_000)
+            arm(id,if(stage=="inference")ConversationModelPolicy.inferenceTimeoutMs(pending!!.model) else 15_000)
             event(result);return
         }
         cancelTimeout?.invoke();cancelTimeout=null;pending=null;stage="idle"

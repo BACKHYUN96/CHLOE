@@ -31,4 +31,5 @@ class LlmRequestClientTest {
  @Test fun simulatedTtsReleaseAndResetAllowFurtherTurns(){val f=Fixture();var c=f.request();c.connected();repeat(3){f.finish(c);f.client.request("다음","4b")};f.finish(c);f.client.stop();c=f.request();c.connected();f.finish(c);f.client.stop();c=f.request();c.connected();f.finish(c);assertEquals(6,f.events.size);assertEquals(3,f.channels.size)}
  @Test fun prefillSettingTravelsWithEachRequest(){val f=Fixture();f.client.request("입력","4b",8);val c=f.channels.single();c.connected();assertEquals(8,c.sent.single().prefillThreads);f.finish(c);f.client.request("다음","4b",6);assertEquals(6,c.sent.last().prefillThreads)}
  @Test fun unsupportedThreadsNeverBind(){val f=Fixture();try{f.client.request("입력","4b",32);fail("must reject")}catch(expected:IllegalArgumentException){};assertTrue(f.channels.isEmpty())}
+ @Test fun nineBHasExplicitLongerInferenceBudget(){val f=Fixture();f.client.request("안녕","9b",6);val c=f.channels.single();c.connected();c.reply(c.sent.single().id,JSONObject().put("progress","inference"));assertEquals(600_000L,f.timers.single().first);f.client.stop();assertTrue(c.closed)}
 }

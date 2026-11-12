@@ -49,3 +49,7 @@ ConversationEngine request의 prefillThreads는 기본4, 허용4/6/8이며 LlmRe
 ## alpha13 고정 비교와 상태 재사용 경계
 
 ConversationProtocol은 공개된 가상 대화 4개와 보조 평가를 제공한다. ViewModel은 실행 설정을 고정하고 case/run을 각 측정에 연결한다. VoiceDirector는 실제 모델 응답을 검증하며 임의 정답으로 대체하지 않는다. native prefix cache는 비활성으로 유지한다. recurrent rollback과 assistant 토큰 정합성 조사/후속 통과 조건은 conversation-cache-investigation.md에 기록했다.
+
+## alpha14 모델별 실험 정책
+
+ConversationModelPolicy는 선택 모델과 context/timeout/동시 상주 제한을 명시한다. 9B는별도 저장 키/해시를 사용하고 n_ctx1024를 native에 전달한다. JNI는 실제 llama_n_ctx로 입력 budget을 검증하고 context 크기를 측정에 남긴다. 기존 qwen35/filetype15 검사는 유지한다. 모델 정책이 추론 성공/품질 보장을 의미하지 않는다.

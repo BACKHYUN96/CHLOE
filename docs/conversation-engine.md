@@ -108,3 +108,7 @@ direct-v4 프롬프트는 사용자 이름 질문에 사용자 이름으로 직�
 상태 재사용은 조사 결과 활성화하지 않았다. [실제 API 한계와 필요한 검증](conversation-cache-investigation.md)을 따른다. native 모델/정밀도/CPU/Sohee 라이브러리는 변경하지 않는다. alpha13의 빌드·단위 테스트가 실제 비교/음성 청취/속도 향상/장시간 안정성을 증명하지 않는다. 사용자 입력/생성 대사는 기본 측정 JSON에 추가하지 않는다. 고정 공개 fixture ID만 포함한다. 기기 연결이 없어 새로운 실측은 남아 있다.
 
 최종 빌드 중 디스크 부족으로 Kotlin 쓰기가 실패해, Drive에 보관된 과거 작업 생성 alpha8/9/11 로컬 APK 및 이번 중간 사본을 정리한 뒤 빌드/테스트를 다시 통과했다. alpha12/모델/사용자 파일은 보존했다.
+
+## alpha14 · 9B 추가 실험
+
+ConversationModelPolicy로2B/4B/9B 허용 모델을 관리한다. 9B importer manifest/기기 공간 검사/64bit 파일 크기를 추가하고, 기존2B/4B context와 timeout을 유지한다. 9B의 짧은 context/해제 정책/긴 연산 timeout과 모델 고정 다운로드·실행 한계는 [9B 안내](conversation-9b.md)를 따른다. 실제 모델 가중치 로드/추론/피크RAM/폰 안정성은 미검증이다. 모델 파일은 APK/Git/Drive에 넣지 않았다.

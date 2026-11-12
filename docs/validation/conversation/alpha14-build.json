@@ -1,0 +1,23 @@
+{
+  "version": "0.1.0-alpha14",
+  "apk_bytes": 36499654,
+  "sha256": "49b4a5468751b351f58e7f790a1ca9cef636f5f97ea5af44eb0240d83ee7f7a6",
+  "tests": {
+    "tests": 59,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Error": 0,
+    "Warning": 4
+  },
+  "tts_native_identical_to_alpha13": true,
+  "nine_b_header_architecture": "qwen35",
+  "nine_b_header_file_type": 15,
+  "nine_b_full_sha_recomputed_here": false,
+  "nine_b_device_load_tested": false,
+  "nine_b_inference_tested": false,
+  "device_tested": false,
+  "internet_permission": false
+}
