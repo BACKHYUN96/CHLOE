@@ -2,6 +2,13 @@
 #include "llama.h"
 #include "chat.h"
 #include "sampling.h"
+#include "ggml-backend.h"
+#include "ggml-vulkan.h"
+#include "gpu_policy.h"
+#include <atomic>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
 #include <chrono>
 #include <stdexcept>
 #include <vector>
@@ -10,18 +17,41 @@ static llama_model* model=nullptr;
 static llama_context* ctx=nullptr;
 static std::string loaded;
 static common_chat_templates_ptr templates;
+static std::atomic<int> reportedOffload{-1}, reportedTotal{-1};
+static ggml_backend_dev_t selectedDevices[2]={nullptr,nullptr};
+static std::string gpuDescription;
+// Store only placement counters. Never retain prompt/content logs.
+static void placementLog(enum ggml_log_level, const char* line, void*) {
+ int n,total;if(chloe_offload_report(line,n,total)){reportedOffload=n;reportedTotal=total;}
+}
 using Clock=std::chrono::steady_clock;
 static double ms(Clock::time_point t){return std::chrono::duration<double,std::milli>(Clock::now()-t).count();}
 static std::string bytes(JNIEnv* e,jbyteArray a){std::string s(e->GetArrayLength(a),'\0');e->GetByteArrayRegion(a,0,s.size(),(jbyte*)s.data());return s;}
-extern "C" JNIEXPORT jbyteArray JNICALL Java_ai_chloe_voicelab_conversation_LlmNative_generate(JNIEnv* e,jobject,jbyteArray path,jbyteArray messages,jbyteArray schema,jint prefillThreads,jint contextTokens){
+extern "C" JNIEXPORT jbyteArray JNICALL Java_ai_chloe_voicelab_conversation_LlmNative_generate(JNIEnv* e,jobject,jbyteArray path,jbyteArray messages,jbyteArray schema,jint prefillThreads,jint contextTokens,jint gpuLayers){
  try {
  if(prefillThreads!=4&&prefillThreads!=6&&prefillThreads!=8)throw std::runtime_error("Unsupported prefill threads");
  if(contextTokens!=1024&&contextTokens!=2048)throw std::runtime_error("Unsupported context size");
+ if(gpuLayers!=0&&gpuLayers!=16&&gpuLayers!=-1)throw std::runtime_error("Unsupported GPU mode");
  auto start=Clock::now();double load=0;auto name=bytes(e,path);
- if(name!=loaded){templates.reset();if(ctx)llama_free(ctx);ctx=nullptr;if(model)llama_model_free(model);model=nullptr;loaded.clear();llama_backend_init();auto p=llama_model_default_params();p.n_gpu_layers=0;model=llama_model_load_from_file(name.c_str(),p);if(!model)throw std::runtime_error("GGUF load failed");
+ auto loadKey=name+"#"+std::to_string(gpuLayers)+"#"+std::to_string(contextTokens);
+ if(loadKey!=loaded){
+ templates.reset();if(ctx)llama_free(ctx);ctx=nullptr;if(model)llama_model_free(model);model=nullptr;loaded.clear();
+ reportedOffload=-1;reportedTotal=-1;gpuDescription.clear();selectedDevices[0]=nullptr;
+ // Initialize the CPU registry without probing a GPU. Explicit GPU requests add Vulkan lazily.
+ setenv("GGML_DISABLE_VULKAN","1",1);llama_log_set(placementLog,nullptr);llama_backend_init();
+ if(gpuLayers!=0){
+  if(!ggml_backend_reg_by_name("Vulkan")){auto reg=ggml_backend_vk_reg();if(!reg)throw std::runtime_error("Vulkan initialization failed; select CPU mode explicitly");ggml_backend_register(reg);}
+  for(size_t i=0;i<ggml_backend_dev_count();++i){auto d=ggml_backend_dev_get(i);
+   if(chloe_vulkan_gpu(ggml_backend_dev_type(d),ggml_backend_reg_name(ggml_backend_dev_backend_reg(d)))){
+    selectedDevices[0]=d;gpuDescription=ggml_backend_dev_description(d);break;}}
+  if(!selectedDevices[0])throw std::runtime_error("Vulkan GPU unavailable; select CPU mode explicitly");
+ }
+ auto p=llama_model_default_params();p.n_gpu_layers=gpuLayers;p.devices=selectedDevices;
+ model=llama_model_load_from_file(name.c_str(),p);if(!model)throw std::runtime_error("GGUF load failed for selected backend");
+ if(gpuLayers!=0 && reportedOffload.load()<=0)throw std::runtime_error("GPU placement not confirmed; select CPU mode explicitly");
  char arch[128]{};llama_model_meta_val_str(model,"general.architecture",arch,sizeof(arch));if(std::string(arch)!="qwen35")throw std::runtime_error("Expected Qwen3.5 dense text GGUF");
  char ft[64]{};llama_model_meta_val_str(model,"general.file_type",ft,sizeof(ft));if(std::string(ft)!="15")throw std::runtime_error("Require Q4_K_M file type 15");
- auto c=llama_context_default_params();c.n_ctx=contextTokens;c.n_batch=256;c.n_threads=4;c.n_threads_batch=4;ctx=llama_init_from_model(model,c);if(!ctx)throw std::runtime_error("Context allocation failed");loaded=name;load=ms(start);}
+ auto c=llama_context_default_params();c.n_ctx=contextTokens;c.n_batch=256;c.n_threads=4;c.n_threads_batch=4;c.offload_kqv=gpuLayers!=0;c.op_offload=gpuLayers!=0;ctx=llama_init_from_model(model,c);if(!ctx)throw std::runtime_error("Context allocation failed");loaded=loadKey;load=ms(start);}
  llama_set_n_threads(ctx,4,prefillThreads);
  llama_memory_clear(llama_get_memory(ctx),true);
  auto templateStart=Clock::now();bool templateCached=bool(templates);
@@ -56,6 +86,6 @@ extern "C" JNIEXPORT jbyteArray JNICALL Java_ai_chloe_voicelab_conversation_LlmN
  if(ended){try{content=session.finish(generatedInput).content;parseStatus=content.empty()?"empty_content":"ok";}catch(const std::exception&){parseStatus="template_parse_failed";}}
  size_t debugEnd=std::min<size_t>(output.size(),8192);
  if(debugEnd<output.size())while(debugEnd>0&&(static_cast<unsigned char>(output[debugEnd])&0xc0)==0x80)--debugEnd;
- double total=ms(generation);auto s=common_json{{"context_tokens",llama_n_ctx(ctx)},{"max_generation_tokens",384},{"prefill_threads",prefillThreads},{"decode_threads",4},{"template_cached",templateCached},{"template_ms",templateMs},{"tokenize_ms",tokenizeMs},{"prefill_ms",prefillMs},{"sampler_ms",samplerMs},{"decode_ms",decodeMs},{"decode_tokens_per_second",decodeMs>0?generated*1000.0/decodeMs:0},{"native_request_ms",ms(start)},{"raw",content},{"debug_generated",output.substr(0,debugEnd)},{"native_parse_status",parseStatus},{"generated_bytes",output.size()},{"prompt_tokens",n},{"chat_format",common_chat_format_name(session.format())},{"grammar_lazy",sampling.grammar_lazy},{"grammar_prefill_bytes",sampling.generation_prompt.size()},{"runtime_revision","aa75ff3239f9cc675b081697deda9e1b112345c6"},{"load_ms",load},{"first_token_ms",first},{"generation_ms",total},{"tokens",generated},{"tokens_per_second",generated*1000.0/total},{"truncated",!ended},{"schema_grammar",!session.grammar().empty()}}.dump();auto a=e->NewByteArray(s.size());e->SetByteArrayRegion(a,0,s.size(),(jbyte*)s.data());return a;
- }catch(const std::exception& x){e->ThrowNew(e->FindClass("java/lang/IllegalStateException"),x.what());return nullptr;}
+ double total=ms(generation);auto s=common_json{{"requested_gpu_layers",gpuLayers},{"offloaded_layers_reported",reportedOffload.load()<0?common_json(nullptr):common_json(reportedOffload.load())},{"offloadable_layers_reported",reportedTotal.load()<0?common_json(nullptr):common_json(reportedTotal.load())},{"backend",gpuLayers==0?"cpu":"vulkan"},{"gpu_description",gpuDescription},{"gpu_placement_confirmed",gpuLayers!=0 && reportedOffload.load()>0},{"gpu_execution_utilization_percent",nullptr},{"context_tokens",llama_n_ctx(ctx)},{"max_generation_tokens",384},{"prefill_threads",prefillThreads},{"decode_threads",4},{"template_cached",templateCached},{"template_ms",templateMs},{"tokenize_ms",tokenizeMs},{"prefill_ms",prefillMs},{"sampler_ms",samplerMs},{"decode_ms",decodeMs},{"decode_tokens_per_second",decodeMs>0?generated*1000.0/decodeMs:0},{"native_request_ms",ms(start)},{"raw",content},{"debug_generated",output.substr(0,debugEnd)},{"native_parse_status",parseStatus},{"generated_bytes",output.size()},{"prompt_tokens",n},{"chat_format",common_chat_format_name(session.format())},{"grammar_lazy",sampling.grammar_lazy},{"grammar_prefill_bytes",sampling.generation_prompt.size()},{"runtime_revision","aa75ff3239f9cc675b081697deda9e1b112345c6"},{"load_ms",load},{"first_token_ms",first},{"generation_ms",total},{"tokens",generated},{"tokens_per_second",generated*1000.0/total},{"truncated",!ended},{"schema_grammar",!session.grammar().empty()}}.dump();auto a=e->NewByteArray(s.size());e->SetByteArrayRegion(a,0,s.size(),(jbyte*)s.data());return a;
+ }catch(const std::exception& x){templates.reset();if(ctx)llama_free(ctx);ctx=nullptr;if(model)llama_model_free(model);model=nullptr;loaded.clear();e->ThrowNew(e->FindClass("java/lang/IllegalStateException"),x.what());return nullptr;}
 }

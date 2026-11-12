@@ -25,3 +25,4 @@
 - JSON Schema와 소비 측 검증을 함께 적용하며 사고 과정/불완전 JSON을 음성으로 읽지 않는다. 50개 fixture 계약 검증을 실제 LLM 품질 평가로 보고하지 않는다.
 - llama.cpp 교체/수정 시 chat session의 parser·grammar prefill·lazy trigger·preserved token을 함께 유지한다. 생성 텍스트와 assistant content를 혼동하지 않는다. 안전한 발화가 없는 실패 안내는 대화 기억/자동 TTS에 추가하지 않는다.
 - 측정마다 모델·실행 설정·실패 상태를 기록한다. 최상위 현재 선택값을 과거 회차 모델로 추정하지 않는다. 단위 테스트와 빌드 성공은 기기 추론 성공을 의미하지 않는다.
+- GPU 모드는 요청·장치 탐지·런타임 배치 보고·실제 기기 실행/가속을 구분한다. 오프로딩 레이어 수는 GPU 사용률/모든 op의 GPU 실행 증거가 아니다. 미지원 GPU를 CPU로 조용히 바꿔 성공 처리하지 않는다. Android 통합 GPU(IGPU)도 검토한다.

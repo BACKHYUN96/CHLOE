@@ -5,12 +5,13 @@ import android.os.*
 import org.json.JSONObject
 import java.io.File
 import java.util.concurrent.Executors
-internal class LlmNative { init{System.loadLibrary("chloe_llm")};external fun generate(path:ByteArray,messages:ByteArray,schema:ByteArray,prefillThreads:Int,contextTokens:Int):ByteArray }
+internal class LlmNative { init{System.loadLibrary("chloe_llm")};external fun generate(path:ByteArray,messages:ByteArray,schema:ByteArray,prefillThreads:Int,contextTokens:Int,gpuLayers:Int):ByteArray }
 class LlmWorker:Service(){
  private val executor=Executors.newSingleThreadExecutor();private var native:LlmNative?=null
  private val messenger=Messenger(Handler(Looper.getMainLooper()){msg->
   if(msg.what==2){Process.killProcess(Process.myPid());return@Handler true}
   val reply=msg.replyTo;val serial=msg.arg1;val input=msg.data.getString("messages").orEmpty();val size=msg.data.getString("model").orEmpty()
+  val gpuMode=msg.data.getString("gpu_mode")?:"cpu"
   val prefillThreads=msg.data.getInt("prefill_threads",4)
   fun progress(stage:String){runCatching{reply.send(Message.obtain(null,4).apply{arg1=serial;data=Bundle().apply{putString("result",JSONObject().put("progress",stage).toString())}})}}
   progress("accepted")
@@ -18,10 +19,12 @@ class LlmWorker:Service(){
    progress("inference")
    val result=runCatching {
     require(size in ConversationModelPolicy.keys && input.length<=14000 && prefillThreads in listOf(4,6,8))
+    val layers=LlmComputePolicy.layers(gpuMode)
+    val thermalStart=getSystemService(PowerManager::class.java).currentThermalStatus
     val file=File(filesDir,"conversation-models/$size.gguf");check(file.isFile){"선택한 GGUF를 가져오세요"}
     val engine=native?:LlmNative().also{native=it}
-    JSONObject(engine.generate(file.path.toByteArray(),input.toByteArray(),assets.open("conversation-schema.json").use{it.readBytes()},prefillThreads,ConversationModelPolicy.contextTokens(size)).toString(Charsets.UTF_8)).put("llm_pss_kib",Debug.MemoryInfo().also{Debug.getMemoryInfo(it)}.totalPss)
-   }.getOrElse{JSONObject().put("error",it.message?:it.javaClass.simpleName)}
+    JSONObject(engine.generate(file.path.toByteArray(),input.toByteArray(),assets.open("conversation-schema.json").use{it.readBytes()},prefillThreads,ConversationModelPolicy.contextTokens(size),layers).toString(Charsets.UTF_8)).put("thermal_status_start",thermalStart).put("thermal_status_end",getSystemService(PowerManager::class.java).currentThermalStatus).put("gpu_mode",gpuMode).put("llm_pss_kib",Debug.MemoryInfo().also{Debug.getMemoryInfo(it)}.totalPss)
+   }.getOrElse{JSONObject().put("error",it.message?:it.javaClass.simpleName).put("failure_code",if(gpuMode=="cpu")"llm_native_error" else "gpu_backend_error").put("request_stage","inference")}
    runCatching{reply.send(Message.obtain(null,3).apply{arg1=serial;data=Bundle().apply{putString("result",result.toString())}})}
   };true
  });override fun onBind(intent:Intent)=messenger.binder
@@ -33,7 +36,7 @@ class AndroidLocalLlmEngine(private val context:Context,event:(JSONObject)->Unit
   schedule={delay,action->val task=Runnable{action()};handler.postDelayed(task,delay);{handler.removeCallbacks(task)}},
   event=event
  )
- override fun request(messages:String,model:String,prefillThreads:Int)=client.request(messages,model,prefillThreads)
+ override fun request(messages:String,model:String,prefillThreads:Int,gpuMode:String)=client.request(messages,model,prefillThreads,gpuMode)
  override fun stop()=client.stop()
  override fun close()=client.stop()
 }
@@ -55,7 +58,7 @@ private class AndroidLlmChannel(private val context:Context,receive:(Int,JSONObj
   bound=context.bindService(Intent(context,LlmWorker::class.java),connection,Context.BIND_AUTO_CREATE)
   return bound
  }
- override fun send(request:LlmRequest){check(!closed);val target=checkNotNull(remote){"LLM 서비스 미연결"};target.send(Message.obtain(null,1).apply{arg1=request.id;replyTo=replies;data=Bundle().apply{putString("messages",request.messages);putString("model",request.model);putInt("prefill_threads",request.prefillThreads)}})}
+ override fun send(request:LlmRequest){check(!closed);val target=checkNotNull(remote){"LLM 서비스 미연결"};target.send(Message.obtain(null,1).apply{arg1=request.id;replyTo=replies;data=Bundle().apply{putString("messages",request.messages);putString("model",request.model);putInt("prefill_threads",request.prefillThreads);putString("gpu_mode",request.gpuMode)}})}
  override fun close(){
   if(closed)return
   closed=true

@@ -1,0 +1,77 @@
+{
+  "version": "0.1.0-alpha15",
+  "apk_bytes": 83784426,
+  "sha256": "4d7ecb6da516b4b1d647428c05c13c69985aecae61728cab710a16d4f4e059a7",
+  "tests": {
+    "tests": 63,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Error": 0,
+    "Warning": 4
+  },
+  "native_gpu_policy_test_passed": true,
+  "elf_load_alignments": {
+    "lib/arm64-v8a/libandroidx.graphics.path.so": [
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libc++_shared.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libchloe_voice.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libggml-base.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libggml-cpu.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libggml.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "lib/arm64-v8a/libchloe_llm.so": [
+      16384,
+      16384,
+      16384,
+      16384
+    ]
+  },
+  "llm_needed": [
+    "0x0000000000000001 (NEEDED)       Shared library: [liblog.so]",
+    "0x0000000000000001 (NEEDED)       Shared library: [libm.so]",
+    "0x0000000000000001 (NEEDED)       Shared library: [libdl.so]",
+    "0x0000000000000001 (NEEDED)       Shared library: [libvulkan.so]",
+    "0x0000000000000001 (NEEDED)       Shared library: [libc++_shared.so]",
+    "0x0000000000000001 (NEEDED)       Shared library: [libc.so]"
+  ],
+  "tts_native_identical_to_alpha14": true,
+  "vulkan_compiled": true,
+  "gpu_device_tested": false,
+  "gpu_inference_tested": false,
+  "speed_improvement_measured": false,
+  "gpu_utilization_percent": null,
+  "power_watts": null,
+  "temperature_celsius": null,
+  "llm_tts_residency_verified_on_device": false,
+  "internet_permission": false
+}
