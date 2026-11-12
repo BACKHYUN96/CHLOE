@@ -1,0 +1,22 @@
+{
+  "version": "0.1.0-alpha13",
+  "apk_bytes": 36499534,
+  "sha256": "33c8b03503761371b50f3740991a044624fd7459653b5dfc2d86c452d44c23e9",
+  "tests": {
+    "tests": 56,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Error": 0,
+    "Warning": 3
+  },
+  "native_identical_to_alpha12": true,
+  "device_tested": false,
+  "speed_improvement_measured": false,
+  "quality_improvement_measured": false,
+  "prefix_cache_enabled": false,
+  "internet_permission": false,
+  "build_retry_reason": "Workspace disk exhausted; old task-generated APK copies already in Drive were removed; models/user data preserved"
+}
