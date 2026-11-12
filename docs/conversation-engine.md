@@ -112,3 +112,7 @@ direct-v4 프롬프트는 사용자 이름 질문에 사용자 이름으로 직�
 ## alpha14 · 9B 추가 실험
 
 ConversationModelPolicy로2B/4B/9B 허용 모델을 관리한다. 9B importer manifest/기기 공간 검사/64bit 파일 크기를 추가하고, 기존2B/4B context와 timeout을 유지한다. 9B의 짧은 context/해제 정책/긴 연산 timeout과 모델 고정 다운로드·실행 한계는 [9B 안내](conversation-9b.md)를 따른다. 실제 모델 가중치 로드/추론/피크RAM/폰 안정성은 미검증이다. 모델 파일은 APK/Git/Drive에 넣지 않았다.
+
+## alpha15 LLM GPU·상주 비교
+
+CPU 기준을 보존하면서 Vulkan16/최대 오프로딩, 명시적인 상주 선택, 문맥만 비우기와 cold/warm 측정을 추가했다. 정확한 구현 경계·PocketPal OpenCL과의 차이·설치/재현 및 미측정 항목은 [LLM GPU Lab](llm-gpu-lab.md)을 따른다. prefix cache, streaming, OpenCL, PC 서버는 이번 변경에 구현하지 않았다. 기존 공개 모델/Sohee/JSON 계약은 보존한다.

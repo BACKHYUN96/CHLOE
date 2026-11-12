@@ -133,3 +133,7 @@ adb shell run-as ai.chloe.voicelab ls files/reports
 세부 측정 정의와 저장 정책은 [아키텍처](docs/ARCHITECTURE.ko.md), 완료/미완료 및 다음 단계는 [검증 기록](docs/VALIDATION.ko.md)을 참고하세요.
 
 VoxCPM2 로컬 LoRA 준비: [RTX 4070 SUPER 12GB · KSS 비상업 실험 안내](docs/voxcpm2-lora-local.md). 실제 PC 추론·학습·12GB 적합성은 아직 미검증입니다.
+
+## LLM GPU 비교 · alpha15
+
+CPU 기준과 Vulkan16/최대 오프로딩, 상주 요청/문맥만 비우기를 비교하는 실험 APK다. 실제 기기 가속과 품질은 미검증이다. PocketPal OpenCL 경로와 차이, Vulkan SDK 빌드 준비, 폰 검증 순서는 [docs/llm-gpu-lab.md](docs/llm-gpu-lab.md), 실제 빌드 결과는 [alpha15-build.json](docs/validation/conversation/alpha15-build.json)을 따른다. 기존2B/4B/9B와 Sohee 모델 파일을 재사용한다.

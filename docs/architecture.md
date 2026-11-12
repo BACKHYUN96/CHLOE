@@ -53,3 +53,7 @@ ConversationProtocol은 공개된 가상 대화 4개와 보조 평가를 제공�
 ## alpha14 모델별 실험 정책
 
 ConversationModelPolicy는 선택 모델과 context/timeout/동시 상주 제한을 명시한다. 9B는별도 저장 키/해시를 사용하고 n_ctx1024를 native에 전달한다. JNI는 실제 llama_n_ctx로 입력 budget을 검증하고 context 크기를 측정에 남긴다. 기존 qwen35/filetype15 검사는 유지한다. 모델 정책이 추론 성공/품질 보장을 의미하지 않는다.
+
+## alpha15 독립 LLM Vulkan
+
+llm 모듈에 static Vulkan backend와 embedded SPIR-V shader를 링크한다. 기존 TTS ggml·JNI·backend는 변경하지 않는다. LlmComputePolicy→LlmRequestClient→Binder→LlmWorker→JNI로 모드를 전달한다. CPU는 빈 GPU device 목록과 op/KQV offload off, GPU는 명시적 Vulkan device 목록/레이어 요청을 적용한다. 객체 key에 mode/context를 포함하고 배치 로그 숫자를 측정한다. GPU실패는 오류이며 CPU로 자동 대체하지 않는다. 모드 변경은 worker/문맥 초기화, 문맥만 비우기는 history만 정리하며 다음 full-prefill을 유지한다.
