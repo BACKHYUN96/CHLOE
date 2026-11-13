@@ -1,0 +1,34 @@
+{
+  "created_at": "2026-11-13T16:19:05.423531+00:00",
+  "packet_id": "141357c08de6f67ec59400c4211ce4e8",
+  "cards": 22,
+  "paired_turns": 40,
+  "category_cards": {
+    "반말": 4,
+    "존댓말": 4,
+    "자기소개": 4,
+    "정직성": 8,
+    "문맥 기억": 2
+  },
+  "source_summary_sha256": "48bee8ec9edd464ac382c539209a3624c94716de90b20c3405dd56beb570d806",
+  "plan_lf_sha256": "935cab4839e8bd8b975d9f457ed3454b8d31b026217abb703bd437c12b782029",
+  "key_commitment_sha256": "19cc0462ef6ce2630838af365f736d509a731730a18fa8bafaa53099e691aab1",
+  "reviewer_files_sha256": {
+    "blank-ratings.json": "5934e4b827ed0a43e025d8e2e63eba284991c030b50aeacd2d484bbfc1059266",
+    "CHLOE_Blind_Review.zip": "85487e2dc5e046ddcf3c28f40ce2cc274500cd366e346f39507d73e0c36300d7",
+    "review.html": "94a140eebe8576e88c14ff7d4bb0bb28b18e7cdb3db622ece49dd71b4899c858",
+    "사용방법.txt": "4c4e3e3f7a800e02a39774eda6456b4cc56f901536788d4618be20355ac403d0"
+  },
+  "preserved_models": {
+    "checkpoint_sha256": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+    "adapter_sha256": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+    "training_venv_freeze_unchanged": true,
+    "training_executed": false,
+    "android_changed": false
+  },
+  "additional_inference": false,
+  "human_review_completed": false,
+  "human_scores": null,
+  "raw_responses_committed": false,
+  "key_committed": false
+}
