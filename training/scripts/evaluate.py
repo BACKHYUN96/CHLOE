@@ -2,6 +2,8 @@
 import argparse
 import json
 import random
+import sys
+from pathlib import Path
 
 from data_contract import ROOT, persona
 from llm_runtime import (artifact_output, clear_cuda, infer, load_base, local_path,
@@ -14,9 +16,18 @@ def main():
     parser.add_argument('--compare-base',action='store_true')
     parser.add_argument('--limit',type=int,help='Partial execution only; never report full-suite completion')
     parser.add_argument('--register',choices=['casual','polite','both'],default='both')
+    parser.add_argument('--contract-mode',choices=['legacy','schema','constrained'],default='constrained',
+                        help='schema binds actual app keys/enums; legacy reproduces the old omission')
+    parser.add_argument('--grammar-deps',type=Path,default=ROOT/'artifacts/llm-training/contract-deps-xgrammar-20261114')
+    parser.add_argument('--include-heldout',action='store_true',help='Also retest the previously failing approved test prompt')
+    parser.add_argument('--case-ids',nargs='+',help='Select existing frozen case IDs for focused regression')
     parser.add_argument('--output',help='Fresh artifact directory; default output_dir-evaluation')
     args = parser.parse_args()
     cfg = read_config(args.config)
+    if args.contract_mode=='constrained':
+        if not args.grammar_deps.is_dir():
+            parser.error('Install training/requirements.contract.txt into the separate --grammar-deps folder first')
+        sys.path.insert(0,str(args.grammar_deps.resolve()))
     if args.limit is not None and args.limit < 1:
         parser.error('--limit must be positive')
     setup_seed(cfg['seed'])
@@ -27,7 +38,14 @@ def main():
             raise ValueError('Frozen evaluation/persona source changed')
     original = json.loads((ROOT/'app/src/main/assets/conversation-cases.json').read_text(encoding='utf-8'))['cases']
     cases = original + [dict(row,group=row['category']) for row in plan['supplemental_cases']]
-    selected = cases[:args.limit] if args.limit else cases
+    if args.include_heldout:
+        from data_contract import load_records
+        cases += [{'id':'heldout-'+row['id'],'group':'heldout','input':row['messages'][1]['content']}
+                  for row in load_records(local_path(cfg['data'])) if row['split']=='test']
+    if args.case_ids and not set(args.case_ids)<={row['id'] for row in cases}:
+        parser.error('Unknown case ID')
+    selected=[row for row in cases if not args.case_ids or row['id'] in args.case_ids]
+    selected=selected[:args.limit] if args.limit else selected
     registers = ['casual','polite'] if args.register=='both' else [args.register]
     out = artifact_output(args.output or cfg['output_dir']+'-evaluation')
     out.mkdir(parents=True,exist_ok=False)
@@ -44,7 +62,10 @@ def main():
     summary = {'completed':False,'full_suite_completed':False,'case_count':len(selected),
         'registers':registers,'candidates':candidates,'generation':plan['generation'],
         'human_scores':plan['human_dimensions'],'human_review_completed':False,
-        'quality_improvement_verified':False,'results':[]}
+        'quality_improvement_verified':False,'contract_mode':args.contract_mode,
+        'adapter_sha256':training_result['adapter_sha256'],
+        'schema_sha256':sha256(ROOT/'app/src/main/assets/conversation-schema.json'),
+        'expected_case_count':len(cases),'include_heldout':args.include_heldout,'results':[]}
     try:
         from peft import PeftModel
         for candidate in candidates:
@@ -60,7 +81,8 @@ def main():
                     for user,answer in history:
                         messages.extend([{'role':'user','content':user},{'role':'assistant','content':answer}])
                     messages.append({'role':'user','content':case['input']})
-                    result=infer(model,tokenizer,messages,plan['generation']['seed'],plan['generation']['max_new_tokens'])
+                    result=infer(model,tokenizer,messages,plan['generation']['seed'],plan['generation']['max_new_tokens'],
+                                 contract_mode=args.contract_mode)
                     item={'id':case['id'],'register':register,'candidate':candidate,
                           **{k:v for k,v in result.items() if k not in ('raw','reply')}}
                     summary['results'].append(item)
@@ -73,7 +95,7 @@ def main():
             del model
             clear_cuda()
         summary['completed']=True
-        summary['full_suite_completed']=(len(selected)==54 and len(registers)==2 and len(candidates)==2)
+        summary['full_suite_completed']=(len(selected)==len(cases) and len(registers)==2 and len(candidates)==2)
     except Exception as error:
         summary['error_type']=type(error).__name__
         raise

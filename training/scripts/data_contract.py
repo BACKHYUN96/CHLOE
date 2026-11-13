@@ -53,6 +53,62 @@ def validate_reply(raw, root=ROOT):
     return obj
 
 
+def diagnose_reply(raw, eos_reached, token_count, max_tokens, root=ROOT):
+    """Content-free diagnostics; JSON syntax, schema and consumer checks differ."""
+    errors = []
+    try:
+        obj = json.loads(raw)
+    except (ValueError,TypeError):
+        obj = None
+        errors.append({'code':'json_syntax','path':'$'})
+        syntax_valid = False
+    else:
+        syntax_valid = True
+    schema = json.loads((root/'app/src/main/assets/conversation-schema.json').read_text(encoding='utf-8'))
+
+    def inspect(value, rule, path):
+        if rule.get('type')=='object':
+            if not isinstance(value,dict):
+                errors.append({'code':'object_type','path':path})
+                return
+            for key in rule.get('required',[]):
+                if key not in value:
+                    errors.append({'code':'missing_key','path':path+'.'+key})
+            for key,item in value.items():
+                if key not in rule.get('properties',{}):
+                    errors.append({'code':'additional_key','path':path})
+                else:
+                    inspect(item,rule['properties'][key],path+'.'+key)
+        if rule.get('type')=='string':
+            if not isinstance(value,str):
+                errors.append({'code':'string_type','path':path})
+                return
+            size=len(value.encode('utf-16-le'))//2
+            if size < rule.get('minLength',0):
+                errors.append({'code':'min_length','path':path})
+            if size > rule.get('maxLength',float('inf')):
+                errors.append({'code':'max_length','path':path})
+        if 'enum' in rule and value not in rule['enum']:
+            errors.append({'code':'enum','path':path})
+
+    if syntax_valid:
+        inspect(obj,schema,'$')
+    schema_valid=syntax_valid and not errors
+    if isinstance(obj,dict):
+        spoken=obj.get('spoken_text')
+        if isinstance(spoken,str):
+            if not spoken.strip():
+                errors.append({'code':'blank_spoken_text','path':'$.spoken_text'})
+            if any(ch in spoken for ch in '{}<>'):
+                errors.append({'code':'unsafe_spoken_text','path':'$.spoken_text'})
+        if 'tts_instruction' in obj and obj['tts_instruction']!='':
+            errors.append({'code':'nonempty_tts_instruction','path':'$.tts_instruction'})
+    if not eos_reached:
+        errors.append({'code':'token_limit' if token_count>=max_tokens else 'unfinished','path':'$'})
+    return {'json_syntax_valid':syntax_valid,'schema_valid':schema_valid,
+            'contract_valid':not errors,'errors':errors}
+
+
 def normalized(text):
     return re.sub(r'[^0-9a-z가-힣]', '', text.lower())
 

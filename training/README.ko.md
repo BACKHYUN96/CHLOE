@@ -2,7 +2,26 @@
 
 이 문서를 로컬 Codex에게 읽히고 실제 PC에서 진행한다. 최초 자료는 **학습 인수인계/사전 점검**이었다. 아래 현재 상태는 실제 PC 실행 결과이며 클라우드 학습 결과가 아니다.
 
-## 현재 상태 · WSL2 QLoRA10step 실행, 품질 계약 실패
+## 2026-11-14 JSON 계약 수정
+
+기존 원본/adapter를 재학습하지 않고 PC 추론 조건을 수정했다. 이전 실패16개 중15개는 JSON 문법은 맞았지만 주로 enum을 위반했다. PC는 “주어진 schema”라는 문구만 보내고 실제 schema와 앱의 grammar 제약을 제공하지 않았다. 현재 평가는 실제 enum/필수 키를 전달하고 byte 기반 JSON Schema decoder와 소비자 검증을 함께 사용한다. [원인·수정·비교 보고서](../docs/validation/local-llm-json-contract-report.md)를 따른다. 아래2026-11-12의0/16은 수정 전 조건의 기록이다.
+
+최종 동일 조건의54질문+이전 실패 test1질문×2말투 비교에서 **원본110/110, adapter110/110**, 총220/220 계약 통과를 실제 확인했다. 회귀24개 통과. 원본·adapter SHA와 기존 venv는 그대로다. 이는 생성 조건 수정의 구조적 결과이며 adapter 품질 이득이나 Android 성공으로 승격하지 않는다.
+
+기존 학습 venv를 보존하도록 decoder만 별도 폴더에 설치한다. Linux의 `gcc`/`python3.12-dev`가 필요하며 이번 CHLOE 전용 배포판에만 추가했다. 전체 비교는 새 출력 경로를 지정하고, 반복 실패했던 test 입력도 포함할 수 있다.
+
+```bash
+.venv-llm/bin/python -m pip install --no-deps --require-hashes \
+  --target artifacts/llm-training/contract-deps-xgrammar-20261114 \
+  -r training/requirements.contract.txt
+.venv-llm/bin/python training/scripts/evaluate.py --config training/configs/smoke.json \
+  --compare-base --include-heldout --contract-mode constrained \
+  --output artifacts/llm-training/contract-20261114/xgrammar-final
+```
+
+`--contract-mode legacy`는 이전 schema 누락 조건, `schema`는 schema 전달만 하는 조건, `constrained`는 schema 전달과 생성 제약을 함께 적용하는 기본 조건이다. `--grammar-deps`로 별도 설치 경로를 지정한다. `--case-ids conv35 conv37`처럼 특정 질문을 재현할 수 있다. 형식 통과는 말투/자연스러움 개선이나 Android 검증을 의미하지 않는다. 새 학습 또는 모델 변환은 수행하지 않았다.
+
+## 2026-11-12 기록 · WSL2 QLoRA10step 실행, 수정 전 계약 실패
 
 사용자 재부팅 후 독립 `CHLOE-Training-24.04` 배포판의 Linux 전용 `.venv-llm`에서 GPU/PyTorch·원본 모델 SHA·assistant mask·forward/backward를 검증하고 train/evaluate/export와 고정 requirements를 구현했다. 승인한 합성6개(train4/validation1/test1)로10step, adapter 저장과 새 객체 재로드까지 실행했다. 최종 학습4.09초, trainable417,792개, peak allocated 약4.47GiB / reserved4.78GiB였다. 기존 Windows 환경·Android 모델은 보존했다.
 

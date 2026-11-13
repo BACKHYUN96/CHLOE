@@ -1,5 +1,7 @@
 # 로컬 대화 LLM 학습 사전 검증 · 2026-11-12 갱신
 
+2026-11-14 후속: 아래 JSON 계약 실패를 원문과 대조한 결과 실제 schema/grammar가 누락된 PC 평가 조건이 주요 원인이었다. 기존 원본/adapter를 보존한 수정·재비교는 [JSON 계약 후속 보고서](local-llm-json-contract-report.md)를 따른다. 아래는2026-11-12 당시 실행 기록이며 이후 재학습하지 않았다.
+
 ## 현재 결과 · 재부팅 후 WSL2/CUDA 및 10-step 실행
 
 **WSL2 준비, 고정 Qwen3.5-2B 4-bit forward/backward, 10-step QLoRA, adapter 저장·새 객체 재로드를 실제 실행했다. 그러나 재로드 응답은 384-token 한도에 걸려 JSON 계약을 통과하지 못했고, 부분 원본/adapter 비교도 두 후보 모두 계약 실패다. 품질 개선·Android 적용을 승인하지 않는다.**

@@ -5,7 +5,7 @@ import json
 import os
 from pathlib import Path
 
-from data_contract import ROOT, load_records, validate_reply
+from data_contract import ROOT, load_records, validate_reply, diagnose_reply
 
 os.environ.setdefault('HF_HUB_DISABLE_TELEMETRY', '1')
 os.environ.setdefault('TOKENIZERS_PARALLELISM', 'false')
@@ -140,19 +140,59 @@ def stop_token_ids(model, tokenizer):
     return sorted({item for item in values+[tokenizer.eos_token_id] if item is not None})
 
 
-def infer(model, tokenizer, messages, seed, max_tokens):
+def contract_schema():
+    schema=json.loads((ROOT/'app/src/main/assets/conversation-schema.json').read_text(encoding='utf-8'))
+    schema['properties']['tts_instruction']['enum']=['']
+    return schema
+
+
+def decoding_schema():
+    schema=contract_schema()
+    spoken=schema['properties']['spoken_text']
+    # XGrammar0.2.9 warns that pattern + min/maxLength ignores the length.
+    # Encode their conjunction in one bounded regex instead of weakening it.
+    minimum=spoken.pop('minLength')
+    maximum=spoken.pop('maxLength')
+    spoken['pattern']=r'^[^{}<>]{'+str(minimum)+','+str(maximum)+'}$'
+    return schema
+
+
+def contract_messages(messages, mode='schema'):
+    """Bind the app's actual enums/keys; never mutate persona/history or repair output."""
+    if mode not in ('legacy','schema','constrained'):
+        raise ValueError('Unknown contract mode')
+    copied=[dict(row) for row in messages]
+    if mode=='legacy':
+        return copied
+    if not copied or copied[0]['role']!='system':
+        raise ValueError('Schema conditioning requires an existing app system persona')
+    schema=contract_schema()
+    # These consumer/persona restrictions are stricter than the schema asset.
+    schema['properties']['spoken_text']['pattern']=r'^[^{}<>]+$'
+    copied[0]['content'] += ('\n다음 JSON Schema가 실제 출력 계약이다. 모든 필수 키와 허용 enum을 정확히 지켜라. '
+        'spoken_text는 짧고 완결된 한국어로 쓰고 같은 구절을 반복하지 마라. '
+        'JSON 객체 하나를 완성하면 즉시 종료하라. 마크다운이나 추가 설명은 출력하지 마라.\n'
+        +json.dumps(schema,ensure_ascii=False,separators=(',',':')))
+    return copied
+
+
+def infer(model, tokenizer, messages, seed, max_tokens, contract_mode='legacy'):
     import torch
     from transformers import set_seed
     set_seed(seed)
     model.eval()
-    value = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True,
+    value = tokenizer.apply_chat_template(contract_messages(messages,contract_mode), tokenize=True, add_generation_prompt=True,
         enable_thinking=False, return_dict=True, return_tensors='pt').to('cuda')
     if value['input_ids'].shape[-1] + max_tokens > 2048:
         raise ValueError('Generation would exceed the frozen app-context budget')
     eos_ids = stop_token_ids(model,tokenizer)
+    generation_kwargs={}
+    if contract_mode=='constrained':
+        from json_decoding import processor
+        generation_kwargs['logits_processor']=[processor(model,tokenizer,decoding_schema(),eos_ids)]
     with torch.inference_mode():
         output = model.generate(**value, do_sample=False, max_new_tokens=max_tokens, use_cache=True,
-                                eos_token_id=eos_ids,pad_token_id=tokenizer.eos_token_id)
+                                eos_token_id=eos_ids,pad_token_id=tokenizer.eos_token_id,**generation_kwargs)
     generated = output[0,value['input_ids'].shape[-1]:]
     raw = tokenizer.decode(generated, skip_special_tokens=True)
     # The nothink template pre-fills the empty think block; raw is assistant content.
@@ -161,8 +201,11 @@ def infer(model, tokenizer, messages, seed, max_tokens):
     except (ValueError,TypeError,KeyError):
         reply = None
     ended = int(generated[-1]) in eos_ids
+    diagnostics=diagnose_reply(raw,ended,len(generated),max_tokens)
     return {'raw':raw,'reply':reply,'tokens':len(generated), 'eos_reached':ended,
-            'json_valid':reply is not None and ended,'last_token_id':int(generated[-1]),'eos_token_ids':eos_ids}
+            'json_valid':diagnostics['contract_valid'],'last_token_id':int(generated[-1]),'eos_token_ids':eos_ids,
+            'diagnostics':diagnostics,'contract_mode':contract_mode,
+            'prompt_tokens':value['input_ids'].shape[-1]}
 
 
 def clear_cuda():
