@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "status": "frozen_before_generation",
+  "conditions": ["preserved", "user_only", "owner_sentence"],
+  "source": "Same 46 situations and exact preserved messages from history-comparison-20261114/inputs.local.json, never the bundled repaired history.",
+  "user_only": "Delete historical assistant messages only. Retain exact system, all historical user roles/content/order, and current question. Do not merge consecutive user turns, add instructions/labels/facts, or replace assistant-only information with a fabricated user statement.",
+  "owner_sentence": "Starting from preserved history, find the most recent past assistant whose first sentence explicitly claims ownership of the cat. In that one sentence replace only the first-person possessive with second-person possessive appropriate to the fixed register. Preserve all other characters, remaining sentences, earlier wrong statements, and later non-owner assistant replies. If no eligible sentence exists, leave input unchanged. This is an evaluation intervention, not an app auto-repair policy.",
+  "owner_replacement": {"casual": "네", "polite": "당신의"},
+  "scope": "22 situations have history; user-only changes22, single-owner edit is expected to change12 (fixed conv45..50 in both registers). First ownership recall conv44 has no earlier explicit wrong owner sentence and is an unchanged control, not a corrected sample.",
+  "fact_availability": "All user-supplied facts remain exactly identical across conditions. The two summary/library situations lose assistant-only hours/loan/card facts under user_only; mark memory NA there and exclude them from the primary matched-user-fact history subset20. They are not a fair exact-summary retrieval comparison. User-only still contains a fictional-library request, so a response may address it without pretending to recall the removed original details.",
+  "shared": "Preserved base/adapter, unchanged system/schema/loader/infer, NF4 double quant BF16 compute, official no-thinking template, XGrammar/consumer, same CUDA GPU/eager, seed42 greedy max384/context2048 stop248044/248046. No training/model download/env update/offload/truncation/export/Android changes.",
+  "equivalence": "Fresh preserved baseline per situation/model. Exact complete conditioned token-ID equivalence may reuse within that same situation/model only. Record alias count explicitly; never independent additional evidence. Expected276 logical cells,160actual generations,116aliases.",
+  "review": {
+    "kind": "gpt_session",
+    "base_rubric": "Same explicit pass/partial/fail/NA/unassessable register,relevance,naturalness,identity,honesty,memory,instruction_protection. Direct GPT reading, no regex scores/external judge API.",
+    "primary": "Paired preserved/user_only/owner_sentence within20 history situations retaining all relevant user facts; report22 overall history and12 actually edited cases separately. Original24 empty-history controls and10 nonedited history situations in owner_sentence are aliases if token-identical.",
+    "owner_tag": "Same six fixed conv44/45/46 x two registers; all have user ownership facts. Also report four actually owner-edited recall/short/summary situations separately from two unchanged first-recall controls.",
+    "carryover_tag": "Same eight fixed conv47/48/49/50 x two registers; manually judge irrelevant prior-topic/cat repetition separately from factual owner correctness.",
+    "masking": "Random six model/condition labels; actual history must be shown and intervention may be inferable. Freeze explicit judgments/tags before key; same full displayed context/answer must get same judgments. Same GPT is author/evaluator, known questions/single seed; not fully independent/blind."
+  },
+  "limits": "User-only also changes role alternation, history length and all assistant demonstrations; cannot isolate wrong content from structural changes. Single possessive edit retains older contradictions and may not be the last assistant turn; report edit recency. Effects do not identify internal attention/causal mechanism or prove deployment quality. No new training examples or model promotion approval."
+}
