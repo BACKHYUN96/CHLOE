@@ -2,6 +2,16 @@
 
 이 문서를 로컬 Codex에게 읽히고 실제 PC에서 진행한다. 최초 자료는 **학습 인수인계/사전 점검**이었다. 아래 현재 상태는 실제 PC 실행 결과이며 클라우드 학습 결과가 아니다.
 
+## GPT 품질 평가 허용과 PC prompt 비교
+
+2026-11-14 사용자는 이후 대화/문맥 품질 평가를 GPT가 직접 수행하는 것을 허용했다. 이후 비교는 GPT 판정을 사용할 수 있으며, 평가 주체·rubric·판정 대상·한계와 원본 응답 provenance를 남긴다. GPT 평가를 사람 평가라고 기록하지 않으며 기존 사용자22카드 평가와 섞어 집계하지 않는다. prompt 작성자와 평가자가 같다는 한계도 명시한다. 이 허용은 현재의 **재학습 금지**나 새 학습 데이터/모델 배포 승인 범위를 바꾸지 않는다.
+
+`prompt-comparison-plan.json`은 기존54질문의 두 고정 말투와, 이전 설명이 있는 요약/사용자 말투 전환 허용 조건을 먼저 고정한다. `compare_prompts.py`는 원본/기존 adapter×기존/수정 PC prompt의2×2 비교만 실행하며 앱 persona와 모델은 바꾸지 않는다. `gpt_prompt_review.py`는 익명 자료를 준비하고 GPT가 직접 남긴 판정을 집계하는 도구이며 자체적으로 내용 점수를 계산하거나 평가 API를 호출하지 않는다. [비교 방법·실행 결과](../docs/validation/local-llm-prompt-comparison-report.md)에 진행/완료 상태를 기록한다.
+
+실제 1차456회와 후속 간결안92회, 총548/548 JSON 계약·종료 통과를 확인했다. 같은46상황에서 GPT 엄격 통과는 기존 prompt 원본6/adapter7, 긴 수정안2/2, 간결안5/6이다. 자기소개 일부 개선에도 전체 품질은 좋아지지 않아 두 수정안은 기본값으로 채택하지 않고 실험 설정으로만 보존한다. 기존 prompt/모델·학습 venv·Android·사용자 평가 원본은 그대로다. 재학습 없이 수행했고 회귀51개가 통과했다. 사용자 평가22표와 GPT 판정276개는 별도 집계다.
+
+`compare_prompt_concise.py`는 `prompt-comparison-concise.json`의 후속 prompt로 같은46상황만 두 모델에서 실행한다. 이 후속은 첫 결과를 보고 추가했으므로 독립 holdout이나 처음부터 사전 등록된 성공 실험으로 보고하지 않는다.
+
 ## 2026-11-14 JSON 계약 수정
 
 기존 원본/adapter를 재학습하지 않고 PC 추론 조건을 수정했다. 이전 실패16개 중15개는 JSON 문법은 맞았지만 주로 enum을 위반했다. PC는 “주어진 schema”라는 문구만 보내고 실제 schema와 앱의 grammar 제약을 제공하지 않았다. 현재 평가는 실제 enum/필수 키를 전달하고 byte 기반 JSON Schema decoder와 소비자 검증을 함께 사용한다. [원인·수정·비교 보고서](../docs/validation/local-llm-json-contract-report.md)를 따른다. 아래2026-11-12의0/16은 수정 전 조건의 기록이다.
@@ -88,7 +98,7 @@ python -m unittest discover -s training/tests -v
 6. 평가 질문을 먼저 고정하고 train/validation/test를 대화 단위로 분리한다. 질문을 조금만 바꾼 중복도 분리한다. 실제 개인정보 대신 가상 이름 사용. 아래 데이터 계약을 따른다.
 7. `training/scripts/train.py`, `evaluate.py`, `export.py`와 고정 requirements를 실제 선택한 API에 맞춰 구현한다. 목표 명령은 아래 계약을 따른다. 처음에는 최대 10 step / microbatch1 / gradient checkpointing / 짧은 context512 / LoRA rank8 정도를 후보로 삼는다. target module은 모델의 실제 named_modules를 검사해서 선택하며 전체 linear 일괄 적용하지 않는다. OOM이면 batch/context/target 범위를 줄이고, 묵시적인 CPU offload나 모델 변경은 결과에 기록한다.
 8. loss가 유한하고 adapter가 저장되며 재로드 후 추론 가능함을 확인한다. trainable parameter 수·학습 시간·최대 GPU allocated/reserved·오류를 기록. 10 step 성공은 말투 개선 증거가 아니다. 필요 없는 대형 모델을 동시에 받지 않는다.
-9. 원본/adapter에 동일 평가 입력·생성 조건·seed를 적용한다. 한국어 자연스러움, 말투 일관성, 자기소개, 과잉 공감, 지시문 노출, 문맥 기억, 정직성, JSON 유효성을 따로 평가한다. style enum/tts_instruction 빈 문자열 등 현재 앱 계약과 비교한다. 자동 점수만으로 승격하지 않는다. 질문 50개 이상을 고정하고 사람 검토를 남긴다.
+9. 원본/adapter에 동일 평가 입력·생성 조건·seed를 적용한다. 한국어 자연스러움, 말투 일관성, 자기소개, 과잉 공감, 지시문 노출, 문맥 기억, 정직성, JSON 유효성을 따로 평가한다. style enum/tts_instruction 빈 문자열 등 현재 앱 계약과 비교한다. 자동 점수만으로 승격하지 않는다. 질문 50개 이상을 고정하고 평가 주체가 명시된 품질 검토를 남긴다. 2026-11-14 사용자 허용에 따라 GPT가 직접 수행할 수 있으며 사람 평가로 표시하지 않는다.
 10. 품질 이득이 있을 때만 더 긴 학습을 진행한다. adapter를 기반 모델과 merge하는 과정은 새 디렉터리에서 수행하고 GGUF 변환→Q4_K_M 후 다시 평가한다. llama.cpp Qwen3.5 지원과 CHLOE pinned runtime 호환성을 확인한다. 모바일 모델 importer는 현재 크기/SHA allowlist가 있으므로 새 모델을 그대로 가져올 수 있다고 가정하지 않는다. 새 모델 ID/해시 등록은 별도 Android PR로 준비한다.
 11. docs/validation/local-llm-training-report.md를 작성해 재현 명령/버전/학습 여부/비교/남은 작업을 기록하고 코드·비민감 보고서만 PR 생성. main 자동 병합 없음. 실패 결과도 성공으로 표시하지 않는다.
 
