@@ -1,0 +1,421 @@
+{
+  "cases": [
+    {
+      "situation_id": "fixed:casual:conv01",
+      "official_tokens": 477,
+      "training_tokens": 477,
+      "token_ids_identical": true,
+      "official_ids_sha256": "c624f0290ee2556abe44f29bc2f9976e614b01c7e15c409c6bbf127299aeecf2",
+      "training_ids_sha256": "c624f0290ee2556abe44f29bc2f9976e614b01c7e15c409c6bbf127299aeecf2",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv17",
+      "official_tokens": 479,
+      "training_tokens": 479,
+      "token_ids_identical": true,
+      "official_ids_sha256": "3b20a656a36795a4af9b154013ff9daa70a07d29231de64c1f970f81f8ef7939",
+      "training_ids_sha256": "3b20a656a36795a4af9b154013ff9daa70a07d29231de64c1f970f81f8ef7939",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv30",
+      "official_tokens": 480,
+      "training_tokens": 480,
+      "token_ids_identical": true,
+      "official_ids_sha256": "4ed209b533ae2848091935a6704ec49f9a0125f748403bf844408e4e0cd58c02",
+      "training_ids_sha256": "4ed209b533ae2848091935a6704ec49f9a0125f748403bf844408e4e0cd58c02",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv31",
+      "official_tokens": 476,
+      "training_tokens": 476,
+      "token_ids_identical": true,
+      "official_ids_sha256": "4227ef8a0fa4d2e8e68f28218b9008424e7773bba884cf536402a3ac97f17f99",
+      "training_ids_sha256": "4227ef8a0fa4d2e8e68f28218b9008424e7773bba884cf536402a3ac97f17f99",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv32",
+      "official_tokens": 478,
+      "training_tokens": 478,
+      "token_ids_identical": true,
+      "official_ids_sha256": "faa68f3f5a14dce528ce606c72b6372949ef45a031cff1850b0ba6b1fdf1a1a9",
+      "training_ids_sha256": "faa68f3f5a14dce528ce606c72b6372949ef45a031cff1850b0ba6b1fdf1a1a9",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv35",
+      "official_tokens": 477,
+      "training_tokens": 477,
+      "token_ids_identical": true,
+      "official_ids_sha256": "f6e023b70acb6db506402b9eab1d814fc159637dbd25b9f7208d64dfa295e43d",
+      "training_ids_sha256": "f6e023b70acb6db506402b9eab1d814fc159637dbd25b9f7208d64dfa295e43d",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv38",
+      "official_tokens": 478,
+      "training_tokens": 478,
+      "token_ids_identical": true,
+      "official_ids_sha256": "24e7ab8e08c9b24a85a43b02f4aeb5d5d17a7a9d6ebc461211a6b3846cbaac1d",
+      "training_ids_sha256": "24e7ab8e08c9b24a85a43b02f4aeb5d5d17a7a9d6ebc461211a6b3846cbaac1d",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv41",
+      "official_tokens": 481,
+      "training_tokens": 481,
+      "token_ids_identical": true,
+      "official_ids_sha256": "37aaa0bc991f992f9a9b2c19a86b1708f4a320dd46962fd100a112fe28526143",
+      "training_ids_sha256": "37aaa0bc991f992f9a9b2c19a86b1708f4a320dd46962fd100a112fe28526143",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv42",
+      "official_tokens": 509,
+      "training_tokens": 513,
+      "token_ids_identical": false,
+      "official_ids_sha256": "9da649bedab03db04acbf198200861aa197ba8b1eb5307b6f2182f26b4c9b049",
+      "training_ids_sha256": "7e86575b72873d6faa6142145e73217a0e4bc7f611c7bb8f081a3e43fd6fc9a9",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv43",
+      "official_tokens": 541,
+      "training_tokens": 549,
+      "token_ids_identical": false,
+      "official_ids_sha256": "8cfb56811b580b17bd9660bb6a35f678c3ea66d7543a10b9cec1f576253489f0",
+      "training_ids_sha256": "cfa1ad3b77b7b3eb9624c847f672a56e9a1d7f5eaa97234c40fec5de0c6a4217",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv44",
+      "official_tokens": 578,
+      "training_tokens": 590,
+      "token_ids_identical": false,
+      "official_ids_sha256": "9c49f7e8c48af9943426642432fed95208f2a1dfd7a473f7dedf33bdcf8811a3",
+      "training_ids_sha256": "da08a6b0ddca250fb419fc865e8c35e7762874be712f10c8374beef0e3bda71c",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv45",
+      "official_tokens": 607,
+      "training_tokens": 623,
+      "token_ids_identical": false,
+      "official_ids_sha256": "f6db2f4f005daa286b889b49e8eeb678b110298a8a50af32601fbdaa56c5a368",
+      "training_ids_sha256": "1190afa3cb78bfc31e90647c76455e4b8fffe650b2573e9de72b22f1a27088f5",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv46",
+      "official_tokens": 604,
+      "training_tokens": 620,
+      "token_ids_identical": false,
+      "official_ids_sha256": "c3822e739d89940d70feb939f724ac4e9964bc829b2e8d2bb2aff2f89acdc9e8",
+      "training_ids_sha256": "506e425b92c76f618b99e889d535112b87f3da129dd6d14fd455e92814ddcd6e",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv47",
+      "official_tokens": 601,
+      "training_tokens": 617,
+      "token_ids_identical": false,
+      "official_ids_sha256": "6cc9d71800e7c84c860fc8ddf0f704f8fff0e050e754749a1d30543b665ae061",
+      "training_ids_sha256": "67b6a06eb6e9221d8e184d5645ff9f53b20084a10f249099b3289dd5c197809f",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv48",
+      "official_tokens": 595,
+      "training_tokens": 611,
+      "token_ids_identical": false,
+      "official_ids_sha256": "67a160705d56ea2ca1de33270f4b6676022bf0d7403aed01d754a30b36703773",
+      "training_ids_sha256": "51e09a70b10a124facfb55f4c2381a623e12a50c505ab98c87b3fa32dc12ed6d",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv49",
+      "official_tokens": 597,
+      "training_tokens": 613,
+      "token_ids_identical": false,
+      "official_ids_sha256": "988e0d39fcb0992835cce4f5ac708868d7dbdd90dcb8859c92c63bf7a3c5af1e",
+      "training_ids_sha256": "191ef4c95487b8d15b729c59cb135ab133caa16d22ab41843216cd133d6e232e",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:conv50",
+      "official_tokens": 604,
+      "training_tokens": 620,
+      "token_ids_identical": false,
+      "official_ids_sha256": "26b25c23e5f466149e2cf5abaefd3d7847cc7885d34b15e3f9da8cb7b55b0ad4",
+      "training_ids_sha256": "f4b3ab9b9796539ac7a979386bcdfc013af524138c64c436b9a8f9b272d876c4",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:identity01",
+      "official_tokens": 479,
+      "training_tokens": 479,
+      "token_ids_identical": true,
+      "official_ids_sha256": "2a9865e53006119967fc5dc71d9d397145a9e2f28d117388222b0709a4fcc01d",
+      "training_ids_sha256": "2a9865e53006119967fc5dc71d9d397145a9e2f28d117388222b0709a4fcc01d",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:identity02",
+      "official_tokens": 487,
+      "training_tokens": 487,
+      "token_ids_identical": true,
+      "official_ids_sha256": "e49223a42f99f54cec79762c30342d2b3f2331775952a99e02ade2dde4c7932c",
+      "training_ids_sha256": "e49223a42f99f54cec79762c30342d2b3f2331775952a99e02ade2dde4c7932c",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:casual:register01",
+      "official_tokens": 481,
+      "training_tokens": 481,
+      "token_ids_identical": true,
+      "official_ids_sha256": "7fa10fb2eeadd530071067eba86a086fd353970e12f7fe7610ae3ef60e5187a1",
+      "training_ids_sha256": "7fa10fb2eeadd530071067eba86a086fd353970e12f7fe7610ae3ef60e5187a1",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "summary:casual:conv30",
+      "official_tokens": 543,
+      "training_tokens": 547,
+      "token_ids_identical": false,
+      "official_ids_sha256": "cc62021f79990f3dced81b6e053e5e70ac30567057b79476628baf455c6dbfc4",
+      "training_ids_sha256": "11903ba5a0f1ff71cfc7af23148643f870a17f3d5de7551b3923d2cb3e415566",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "follow:casual:conv41",
+      "official_tokens": 557,
+      "training_tokens": 557,
+      "token_ids_identical": true,
+      "official_ids_sha256": "6c23bcfc69f8724763bf947b7c0352f6419ca30a5b1271f4f60b64bd2eb1eacb",
+      "training_ids_sha256": "6c23bcfc69f8724763bf947b7c0352f6419ca30a5b1271f4f60b64bd2eb1eacb",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "follow:casual:conv42",
+      "official_tokens": 588,
+      "training_tokens": 592,
+      "token_ids_identical": false,
+      "official_ids_sha256": "f78a12e4419a23e793fe2559b348b843521a2458cdb546137fc33e6f0d685342",
+      "training_ids_sha256": "9d59ddab2694b570f9cb38433b56ed9d9197ccb63b55ba25cc87bfe88c233606",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv01",
+      "official_tokens": 440,
+      "training_tokens": 440,
+      "token_ids_identical": true,
+      "official_ids_sha256": "bc586938ddc452a1ee4d651169825362e82fd61039149b78960b9cc2b40ffce6",
+      "training_ids_sha256": "bc586938ddc452a1ee4d651169825362e82fd61039149b78960b9cc2b40ffce6",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv17",
+      "official_tokens": 442,
+      "training_tokens": 442,
+      "token_ids_identical": true,
+      "official_ids_sha256": "911958b263dd8f0c6eafbc0ddc63192d7b4129ec9e0697551f5d3c0a764d52b5",
+      "training_ids_sha256": "911958b263dd8f0c6eafbc0ddc63192d7b4129ec9e0697551f5d3c0a764d52b5",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv30",
+      "official_tokens": 443,
+      "training_tokens": 443,
+      "token_ids_identical": true,
+      "official_ids_sha256": "4445560e75a1433078b5f76ba1bf8adbdbf5818d9a8e7ffb22e2eae6d635da98",
+      "training_ids_sha256": "4445560e75a1433078b5f76ba1bf8adbdbf5818d9a8e7ffb22e2eae6d635da98",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv31",
+      "official_tokens": 439,
+      "training_tokens": 439,
+      "token_ids_identical": true,
+      "official_ids_sha256": "9bfbba16801a90e553020a0c8f9ab1644b64a191210f12e0fb0521520628761e",
+      "training_ids_sha256": "9bfbba16801a90e553020a0c8f9ab1644b64a191210f12e0fb0521520628761e",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv32",
+      "official_tokens": 441,
+      "training_tokens": 441,
+      "token_ids_identical": true,
+      "official_ids_sha256": "03dd4cfae27d47ba2adaa073b9b449284f8387cfda8da4c54c747c07275de0cc",
+      "training_ids_sha256": "03dd4cfae27d47ba2adaa073b9b449284f8387cfda8da4c54c747c07275de0cc",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv35",
+      "official_tokens": 440,
+      "training_tokens": 440,
+      "token_ids_identical": true,
+      "official_ids_sha256": "7fafcb9aef5865ee50ea1036c7183fcd35ca4d79408be9569d36e9e964e9e94f",
+      "training_ids_sha256": "7fafcb9aef5865ee50ea1036c7183fcd35ca4d79408be9569d36e9e964e9e94f",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv38",
+      "official_tokens": 441,
+      "training_tokens": 441,
+      "token_ids_identical": true,
+      "official_ids_sha256": "4c94ea447548372e54962203ec26f170e90bd17d3e5ccd445745c2030efa07f3",
+      "training_ids_sha256": "4c94ea447548372e54962203ec26f170e90bd17d3e5ccd445745c2030efa07f3",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv41",
+      "official_tokens": 444,
+      "training_tokens": 444,
+      "token_ids_identical": true,
+      "official_ids_sha256": "a6de8ffb45531d8a1cae1659cf984d0d53b63222dfbac8e36d94fae9769c6e26",
+      "training_ids_sha256": "a6de8ffb45531d8a1cae1659cf984d0d53b63222dfbac8e36d94fae9769c6e26",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv42",
+      "official_tokens": 475,
+      "training_tokens": 479,
+      "token_ids_identical": false,
+      "official_ids_sha256": "b9fc617001ccef7ef02b9638ddbbaa735a8ad70beb5307cf98e980202069e20a",
+      "training_ids_sha256": "42529909c7d29c21216897c1483162c768e593f376ea6800bdceed143c3cd996",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv43",
+      "official_tokens": 502,
+      "training_tokens": 510,
+      "token_ids_identical": false,
+      "official_ids_sha256": "120bbddd687a232c8e6a5ee50b158aff6728d7bac664b9ebf60c39b02286a964",
+      "training_ids_sha256": "4d8f870968b4f2f6cf038da2ca907f9324430950ece864ed0f808138af53ad69",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv44",
+      "official_tokens": 540,
+      "training_tokens": 552,
+      "token_ids_identical": false,
+      "official_ids_sha256": "e6d62bf1aa6a0e414d4486093eace7f8b70387f6ba43f714a9a738d6ab910f99",
+      "training_ids_sha256": "5ee5900d4dee5a89f3157723935cc31660540fb1c5dba9e762b0bff0cb28fd70",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv45",
+      "official_tokens": 569,
+      "training_tokens": 585,
+      "token_ids_identical": false,
+      "official_ids_sha256": "5d9dd6d818289d47f472453606999a42a68912445280e5b202f585d559f885fa",
+      "training_ids_sha256": "e5dfd49bcca748c908f6d01290272da6550fcf783f447a1b3e9b158ed6f96d18",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv46",
+      "official_tokens": 563,
+      "training_tokens": 579,
+      "token_ids_identical": false,
+      "official_ids_sha256": "9a3f06d25aee7ec24d8379c726992dee1c7337758175476f74f36db4ea633d37",
+      "training_ids_sha256": "3434999d74ecbfbd9b17702f9fe7c6708c21a47f60ea53cec4717b6737a67b8c",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv47",
+      "official_tokens": 565,
+      "training_tokens": 581,
+      "token_ids_identical": false,
+      "official_ids_sha256": "4e3ad2f27d426720afcd327c6958bed15bd5d008259b5b1c3aa5b29445f7b568",
+      "training_ids_sha256": "cff0f8db4eba10bfe96452656e1f14e013549b8f0c3ee3f8d3e1d3897b7a9388",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv48",
+      "official_tokens": 558,
+      "training_tokens": 574,
+      "token_ids_identical": false,
+      "official_ids_sha256": "fcdd9d5db4f18c6e47ea7f9aa5b07b5e405dbd20c6a1d53fc0cf37ad862b9c00",
+      "training_ids_sha256": "8eebab5beaafc91029fa519fea4348522ca5bc5b3beb1714b6eab7ea46b2ae95",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv49",
+      "official_tokens": 560,
+      "training_tokens": 576,
+      "token_ids_identical": false,
+      "official_ids_sha256": "07fe7b0cd30c5163948929a5b61d203c32af48d9b75c2a93d5aaac6a64aa4fde",
+      "training_ids_sha256": "b7405318816fc21d1138dd31450c31c31e89ddae7c5b2f373934487e193588fa",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:conv50",
+      "official_tokens": 565,
+      "training_tokens": 581,
+      "token_ids_identical": false,
+      "official_ids_sha256": "2393b4b41221080ab94811c58105813d12fca8599fc5842c915b893300231182",
+      "training_ids_sha256": "0fbd94edc089ff2acab26468198a7607d6da64c7e282d6b835721fbc6b81ea85",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:identity01",
+      "official_tokens": 442,
+      "training_tokens": 442,
+      "token_ids_identical": true,
+      "official_ids_sha256": "43af3adb7190e1b0a86746e0e3f36033de7378539854ed8611cb1469c7e14298",
+      "training_ids_sha256": "43af3adb7190e1b0a86746e0e3f36033de7378539854ed8611cb1469c7e14298",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:identity02",
+      "official_tokens": 450,
+      "training_tokens": 450,
+      "token_ids_identical": true,
+      "official_ids_sha256": "1f18123d8e42f9f7a74840c74b6fadac1ef1c59e7e3a286004feef29e249ec3f",
+      "training_ids_sha256": "1f18123d8e42f9f7a74840c74b6fadac1ef1c59e7e3a286004feef29e249ec3f",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "fixed:polite:register01",
+      "official_tokens": 444,
+      "training_tokens": 444,
+      "token_ids_identical": true,
+      "official_ids_sha256": "981881f50c3baff5a39fde2c090ad0786634425b78aa56eebc7aab74369530fb",
+      "training_ids_sha256": "981881f50c3baff5a39fde2c090ad0786634425b78aa56eebc7aab74369530fb",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "summary:polite:conv30",
+      "official_tokens": 506,
+      "training_tokens": 510,
+      "token_ids_identical": false,
+      "official_ids_sha256": "763843c5ff282112e11af2ff9ea6fffba5b00cb8cdf1244bbbea936eeb096caf",
+      "training_ids_sha256": "0bf75b0a47d3870b43561b9c240f5c7c491fb0917b019b5c7fb8d1da9a3d8d6a",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "follow:polite:conv41",
+      "official_tokens": 520,
+      "training_tokens": 520,
+      "token_ids_identical": true,
+      "official_ids_sha256": "7f99ae193ec903e5e7f341ed6a2b93841581d3ceea8d93390fb66ba19713abf8",
+      "training_ids_sha256": "7f99ae193ec903e5e7f341ed6a2b93841581d3ceea8d93390fb66ba19713abf8",
+      "manual_encoding_identical": true
+    },
+    {
+      "situation_id": "follow:polite:conv42",
+      "official_tokens": 547,
+      "training_tokens": 551,
+      "token_ids_identical": false,
+      "official_ids_sha256": "21a06e9304712987c0052127b806db04825c791ccc89c03625d4196a8c46eedf",
+      "training_ids_sha256": "dd31913797b641889a177c88a6a8661a5dc9b12c0bcfc32ba37a0048e0c12baa",
+      "manual_encoding_identical": true
+    }
+  ],
+  "trl_does_not_mutate_tokenizer": true,
+  "official_template_sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+  "training_template_sha256": "a75169fb80890805569f8f8e9f82c4044f9b73eac90ffa089dd708c1af90c85f"
+}

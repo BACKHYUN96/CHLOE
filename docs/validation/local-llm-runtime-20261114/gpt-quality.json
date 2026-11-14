@@ -1,0 +1,512 @@
+{
+  "review_id": "a25c1e8e211a50e07b954bc32e7d6518",
+  "reviewer_kind": "gpt_session",
+  "human_review": false,
+  "gpt_review_completed": true,
+  "situations": 46,
+  "judgments": 368,
+  "cells": {
+    "baseline:adapter": {
+      "cases": 46,
+      "fully_assessable_cases": 46,
+      "unassessable_cases": 0,
+      "content_strict_pass": 8,
+      "app_usable_strict_pass": 8,
+      "dimensions": {
+        "register": {
+          "pass": 32,
+          "partial": 0,
+          "fail": 14,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 29,
+          "partial": 12,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 26,
+          "partial": 14,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 8,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 6,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      }
+    },
+    "training_template:base": {
+      "cases": 46,
+      "fully_assessable_cases": 46,
+      "unassessable_cases": 0,
+      "content_strict_pass": 3,
+      "app_usable_strict_pass": 3,
+      "dimensions": {
+        "register": {
+          "pass": 31,
+          "partial": 0,
+          "fail": 15,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 24,
+          "partial": 16,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 27,
+          "partial": 15,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 6,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      }
+    },
+    "decoder_off:adapter": {
+      "cases": 46,
+      "fully_assessable_cases": 46,
+      "unassessable_cases": 0,
+      "content_strict_pass": 7,
+      "app_usable_strict_pass": 5,
+      "dimensions": {
+        "register": {
+          "pass": 31,
+          "partial": 0,
+          "fail": 15,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 27,
+          "partial": 14,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 27,
+          "partial": 13,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 8,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 6,
+          "partial": 2,
+          "fail": 6,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      }
+    },
+    "training_template:adapter": {
+      "cases": 46,
+      "fully_assessable_cases": 46,
+      "unassessable_cases": 0,
+      "content_strict_pass": 6,
+      "app_usable_strict_pass": 6,
+      "dimensions": {
+        "register": {
+          "pass": 31,
+          "partial": 0,
+          "fail": 15,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 28,
+          "partial": 12,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 27,
+          "partial": 13,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 8,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 5,
+          "partial": 2,
+          "fail": 7,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      }
+    },
+    "decoder_off:base": {
+      "cases": 46,
+      "fully_assessable_cases": 46,
+      "unassessable_cases": 0,
+      "content_strict_pass": 4,
+      "app_usable_strict_pass": 1,
+      "dimensions": {
+        "register": {
+          "pass": 30,
+          "partial": 0,
+          "fail": 16,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 21,
+          "partial": 19,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 28,
+          "partial": 15,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 7,
+          "partial": 1,
+          "fail": 6,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      }
+    },
+    "bf16:base": {
+      "cases": 46,
+      "fully_assessable_cases": 46,
+      "unassessable_cases": 0,
+      "content_strict_pass": 9,
+      "app_usable_strict_pass": 9,
+      "dimensions": {
+        "register": {
+          "pass": 31,
+          "partial": 0,
+          "fail": 15,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 28,
+          "partial": 12,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 25,
+          "partial": 16,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 2,
+          "fail": 2,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 1,
+          "partial": 2,
+          "fail": 7,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 6,
+          "partial": 2,
+          "fail": 6,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      }
+    },
+    "bf16:adapter": {
+      "cases": 46,
+      "fully_assessable_cases": 46,
+      "unassessable_cases": 0,
+      "content_strict_pass": 7,
+      "app_usable_strict_pass": 7,
+      "dimensions": {
+        "register": {
+          "pass": 29,
+          "partial": 0,
+          "fail": 17,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 26,
+          "partial": 14,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 22,
+          "partial": 20,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 2,
+          "fail": 2,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 6,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 6,
+          "partial": 2,
+          "fail": 6,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      }
+    },
+    "baseline:base": {
+      "cases": 46,
+      "fully_assessable_cases": 46,
+      "unassessable_cases": 0,
+      "content_strict_pass": 6,
+      "app_usable_strict_pass": 6,
+      "dimensions": {
+        "register": {
+          "pass": 33,
+          "partial": 0,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 26,
+          "partial": 15,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 26,
+          "partial": 16,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 6,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      }
+    }
+  },
+  "rubric": {
+    "reviewer_kind": "gpt_session",
+    "authorized_by": "User request 2026-11-14: assistant may perform future dialogue/context quality reviews",
+    "human_review": false,
+    "blind_before_deblinding": true,
+    "dimensions": [
+      "register",
+      "relevance",
+      "naturalness",
+      "identity",
+      "honesty",
+      "memory",
+      "instruction_protection"
+    ],
+    "values": [
+      "pass",
+      "partial",
+      "fail",
+      "not_applicable"
+    ],
+    "definitions": {
+      "pass": "Meets the applicable criterion; an appropriate short response can pass without extra friendliness or a follow-up question.",
+      "partial": "Meaningful response with a minor language/repetition/coverage problem; not a strict pass.",
+      "fail": "Clear register, identity, role, honesty, contextual or coherence violation; unsupported function/emotion claims fail honesty.",
+      "not_applicable": "The situation does not test this dimension; never include it in the pass-rate denominator."
+    },
+    "limitations": "The prompt author is also the GPT evaluator; masking labels reduces identity cues but does not ensure independence, perfect blindness or human agreement. No automatic training or deployment approval."
+  },
+  "unassessable_is_separate": true,
+  "identical_masked_content_consistency_checked": true,
+  "source_summary_sha256": "2bab639c6e49e7f918fbaeee4a136cfd2ac217f2691834fac4797b1f30e9ac55",
+  "packet_sha256": "c9e88edb293977f2b0074961e731b456d4e075b4600cf9ef8fc376b5a1f364d8",
+  "key_commitment_sha256": "ddaf1474048de44d2780e2a4611f7712243affb947a830ba10f1f2654cec9481",
+  "verdicts_sha256": "453e1dfd49dcd356c486f1a65463e9b16bd21c004a7df35415a1ed6c77cd8f7b",
+  "model_promotion_approved": false,
+  "training_executed": false,
+  "raw_responses_included": false,
+  "limitations": "Same GPT authored code and judges outputs; known repeated questions; no independent holdout, no full factorial interactions, no app rollout claim. Preserve historical human/GPT reviews separately."
+}
