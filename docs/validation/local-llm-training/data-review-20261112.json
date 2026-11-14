@@ -1,0 +1,14 @@
+{
+  "source": "synthetic-codex-2026-11-12",
+  "approval": "user explicitly approved all six listed samples for the 10-step smoke test in this chat",
+  "scope": "10-step mechanical smoke only",
+  "split_counts": {
+    "train": 4,
+    "validation": 1,
+    "test": 1
+  },
+  "dataset_sha256": "95eb8d42a3b5b258e8336b1c26ef4826e251e8320669f67993e1da9a7f6099e5",
+  "raw_dataset_committed": false,
+  "split_family_check": "six distinct conversation families; lexical near-duplicate checks passed; no reserved evaluation input in train/validation",
+  "semantic_paraphrase_detection": "agent family assignment; automated lexical checks are not semantic proof"
+}

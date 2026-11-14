@@ -1,0 +1,522 @@
+{
+  "review_id": "c77e69c490db09d430d764b6cc115180",
+  "reviewer_kind": "gpt_session",
+  "human_review": false,
+  "gpt_review_completed": true,
+  "situations": 46,
+  "logical_judgments": 276,
+  "cells": {
+    "no_history:base": {
+      "cases": 46,
+      "all_applicable_strict_pass": 3,
+      "common_three_strict_pass": 5,
+      "app_usable_strict_pass": 3,
+      "unassessable_cases": 0,
+      "original_history_subset": {
+        "cases": 22,
+        "all_applicable_strict_pass": 1,
+        "common_three_strict_pass": 1
+      },
+      "dimensions": {
+        "register": {
+          "pass": 27,
+          "partial": 0,
+          "fail": 19,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 21,
+          "partial": 14,
+          "fail": 11,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 24,
+          "partial": 16,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 1,
+          "partial": 5,
+          "fail": 4,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      },
+      "tags": {
+        "owner_confusion": {
+          "not_applicable": 46
+        },
+        "off_topic_carryover": {
+          "not_applicable": 38,
+          "no": 8
+        },
+        "missing_context": {
+          "not_applicable": 40,
+          "invented": 2,
+          "other": 4
+        }
+      }
+    },
+    "preserved:base": {
+      "cases": 46,
+      "all_applicable_strict_pass": 6,
+      "common_three_strict_pass": 10,
+      "app_usable_strict_pass": 6,
+      "unassessable_cases": 0,
+      "original_history_subset": {
+        "cases": 22,
+        "all_applicable_strict_pass": 4,
+        "common_three_strict_pass": 6
+      },
+      "dimensions": {
+        "register": {
+          "pass": 33,
+          "partial": 0,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 25,
+          "partial": 13,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 25,
+          "partial": 16,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 5,
+          "partial": 3,
+          "fail": 6,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      },
+      "tags": {
+        "owner_confusion": {
+          "not_applicable": 40,
+          "yes": 6
+        },
+        "off_topic_carryover": {
+          "not_applicable": 38,
+          "yes": 4,
+          "no": 4
+        },
+        "missing_context": {
+          "not_applicable": 46
+        }
+      }
+    },
+    "repaired:adapter": {
+      "cases": 46,
+      "all_applicable_strict_pass": 14,
+      "common_three_strict_pass": 16,
+      "app_usable_strict_pass": 14,
+      "unassessable_cases": 0,
+      "original_history_subset": {
+        "cases": 22,
+        "all_applicable_strict_pass": 10,
+        "common_three_strict_pass": 10
+      },
+      "dimensions": {
+        "register": {
+          "pass": 30,
+          "partial": 0,
+          "fail": 16,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 31,
+          "partial": 10,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 33,
+          "partial": 7,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 6,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 10,
+          "partial": 3,
+          "fail": 1,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      },
+      "tags": {
+        "owner_confusion": {
+          "not_applicable": 40,
+          "no": 5,
+          "yes": 1
+        },
+        "off_topic_carryover": {
+          "not_applicable": 38,
+          "yes": 2,
+          "no": 6
+        },
+        "missing_context": {
+          "not_applicable": 46
+        }
+      }
+    },
+    "repaired:base": {
+      "cases": 46,
+      "all_applicable_strict_pass": 13,
+      "common_three_strict_pass": 15,
+      "app_usable_strict_pass": 13,
+      "unassessable_cases": 0,
+      "original_history_subset": {
+        "cases": 22,
+        "all_applicable_strict_pass": 11,
+        "common_three_strict_pass": 11
+      },
+      "dimensions": {
+        "register": {
+          "pass": 31,
+          "partial": 0,
+          "fail": 15,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 30,
+          "partial": 11,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 30,
+          "partial": 12,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 9,
+          "partial": 3,
+          "fail": 2,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      },
+      "tags": {
+        "owner_confusion": {
+          "not_applicable": 40,
+          "no": 5,
+          "yes": 1
+        },
+        "off_topic_carryover": {
+          "not_applicable": 38,
+          "yes": 2,
+          "no": 6
+        },
+        "missing_context": {
+          "not_applicable": 46
+        }
+      }
+    },
+    "no_history:adapter": {
+      "cases": 46,
+      "all_applicable_strict_pass": 5,
+      "common_three_strict_pass": 7,
+      "app_usable_strict_pass": 5,
+      "unassessable_cases": 0,
+      "original_history_subset": {
+        "cases": 22,
+        "all_applicable_strict_pass": 1,
+        "common_three_strict_pass": 1
+      },
+      "dimensions": {
+        "register": {
+          "pass": 27,
+          "partial": 0,
+          "fail": 19,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 22,
+          "partial": 14,
+          "fail": 10,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 23,
+          "partial": 14,
+          "fail": 9,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 6,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 2,
+          "partial": 3,
+          "fail": 5,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      },
+      "tags": {
+        "owner_confusion": {
+          "not_applicable": 46
+        },
+        "off_topic_carryover": {
+          "not_applicable": 38,
+          "no": 8
+        },
+        "missing_context": {
+          "not_applicable": 40,
+          "invented": 3,
+          "other": 3
+        }
+      }
+    },
+    "preserved:adapter": {
+      "cases": 46,
+      "all_applicable_strict_pass": 8,
+      "common_three_strict_pass": 12,
+      "app_usable_strict_pass": 8,
+      "unassessable_cases": 0,
+      "original_history_subset": {
+        "cases": 22,
+        "all_applicable_strict_pass": 4,
+        "common_three_strict_pass": 6
+      },
+      "dimensions": {
+        "register": {
+          "pass": 32,
+          "partial": 0,
+          "fail": 14,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 24,
+          "partial": 14,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 27,
+          "partial": 12,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 6,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 5,
+          "partial": 3,
+          "fail": 6,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      },
+      "tags": {
+        "owner_confusion": {
+          "not_applicable": 40,
+          "yes": 6
+        },
+        "off_topic_carryover": {
+          "not_applicable": 38,
+          "yes": 4,
+          "no": 4
+        },
+        "missing_context": {
+          "not_applicable": 46
+        }
+      }
+    }
+  },
+  "paired_22_history_transitions": {
+    "repaired:base": {
+      "strict:pass->nonpass": 2,
+      "common:pass->nonpass": 2,
+      "strict:nonpass->nonpass": 9,
+      "common:nonpass->nonpass": 9,
+      "strict:nonpass->pass": 9,
+      "common:nonpass->pass": 7,
+      "common:pass->pass": 4,
+      "strict:pass->pass": 2
+    },
+    "no_history:base": {
+      "strict:pass->nonpass": 4,
+      "common:pass->nonpass": 6,
+      "strict:nonpass->nonpass": 17,
+      "common:nonpass->nonpass": 15,
+      "strict:nonpass->pass": 1,
+      "common:nonpass->pass": 1
+    },
+    "repaired:adapter": {
+      "strict:pass->nonpass": 2,
+      "common:pass->nonpass": 2,
+      "strict:nonpass->nonpass": 10,
+      "common:nonpass->nonpass": 10,
+      "strict:nonpass->pass": 8,
+      "common:nonpass->pass": 6,
+      "common:pass->pass": 4,
+      "strict:pass->pass": 2
+    },
+    "no_history:adapter": {
+      "strict:pass->nonpass": 4,
+      "common:pass->nonpass": 6,
+      "strict:nonpass->nonpass": 17,
+      "common:nonpass->nonpass": 15,
+      "strict:nonpass->pass": 1,
+      "common:nonpass->pass": 1
+    }
+  },
+  "limitations": "Fixed authored correct histories include useful desired behavior and change wording/style/length together; not natural self-generated rollout or isolated causal attribution to one error. Same GPT authors fixtures/code and judges known repeated questions, single seed, same shared runtime; no independent human/holdout claim. Preserve historical reviews separately.",
+  "no_history_has_different_information_and_memory_applicability": true,
+  "identical_full_context_content_consistency_checked": true,
+  "source_summary_sha256": "f4984a179ba8202961695da40b9b0494f4198a825c19b5fe73309bc41d5b74bb",
+  "packet_sha256": "f6f43cf2622641ee2594b82cc6d6221cefea420cae3b4ad51d4c615eac9309cc",
+  "key_commitment_sha256": "68a5c26d26096fb950ca93602abb4b08778bce04aed4eff1cd650b93e1a9c012",
+  "verdicts_sha256": "1b42ffa73cb0412cf3dcf09d0c2974c5a35649a9b46df63cfcb2af44734aa0f1",
+  "model_promotion_approved": false,
+  "training_executed": false,
+  "raw_responses_included": false
+}

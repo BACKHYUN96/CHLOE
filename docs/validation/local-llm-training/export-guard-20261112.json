@@ -1,0 +1,6 @@
+{
+  "returncode": 1,
+  "merge_executed": false,
+  "gguf_conversion_executed": false,
+  "blocked_reason": "human-reviewed quality improvement not verified"
+}

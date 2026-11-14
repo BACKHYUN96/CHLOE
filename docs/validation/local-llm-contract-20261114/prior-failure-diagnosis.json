@@ -1,0 +1,448 @@
+{
+  "prior_evaluation": [
+    {
+      "id": "conv01",
+      "candidate": "base",
+      "register": "casual",
+      "json_syntax_valid": false,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "json_syntax",
+          "path": "$"
+        }
+      ]
+    },
+    {
+      "id": "conv02",
+      "candidate": "base",
+      "register": "casual",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "missing_key",
+          "path": "$.tts_instruction"
+        },
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.emotion"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.pace"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.energy"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.expressiveness"
+        }
+      ]
+    },
+    {
+      "id": "conv03",
+      "candidate": "base",
+      "register": "casual",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.emotion"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.energy"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.expressiveness"
+        }
+      ]
+    },
+    {
+      "id": "conv04",
+      "candidate": "base",
+      "register": "casual",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.emotion"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.energy"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.expressiveness"
+        }
+      ]
+    },
+    {
+      "id": "conv01",
+      "candidate": "base",
+      "register": "polite",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.emotion"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.pace"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.energy"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.expressiveness"
+        }
+      ]
+    },
+    {
+      "id": "conv02",
+      "candidate": "base",
+      "register": "polite",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.emotion"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.pace"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.energy"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.expressiveness"
+        }
+      ]
+    },
+    {
+      "id": "conv03",
+      "candidate": "base",
+      "register": "polite",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "missing_key",
+          "path": "$.tts_instruction"
+        },
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.energy"
+        }
+      ]
+    },
+    {
+      "id": "conv04",
+      "candidate": "base",
+      "register": "polite",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.emotion"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.pace"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.energy"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.expressiveness"
+        }
+      ]
+    },
+    {
+      "id": "conv01",
+      "candidate": "adapter",
+      "register": "casual",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.emotion"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.energy"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.expressiveness"
+        }
+      ]
+    },
+    {
+      "id": "conv02",
+      "candidate": "adapter",
+      "register": "casual",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.pace"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.expressiveness"
+        }
+      ]
+    },
+    {
+      "id": "conv03",
+      "candidate": "adapter",
+      "register": "casual",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.emotion"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.pace"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.energy"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.expressiveness"
+        }
+      ]
+    },
+    {
+      "id": "conv04",
+      "candidate": "adapter",
+      "register": "casual",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.emotion"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.pace"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.energy"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.expressiveness"
+        }
+      ]
+    },
+    {
+      "id": "conv01",
+      "candidate": "adapter",
+      "register": "polite",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.emotion"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.pace"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.energy"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.expressiveness"
+        }
+      ]
+    },
+    {
+      "id": "conv02",
+      "candidate": "adapter",
+      "register": "polite",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.pace"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.expressiveness"
+        }
+      ]
+    },
+    {
+      "id": "conv03",
+      "candidate": "adapter",
+      "register": "polite",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.emotion"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.energy"
+        }
+      ]
+    },
+    {
+      "id": "conv04",
+      "candidate": "adapter",
+      "register": "polite",
+      "json_syntax_valid": true,
+      "schema_valid": false,
+      "contract_valid": false,
+      "errors": [
+        {
+          "code": "enum",
+          "path": "$.intent"
+        },
+        {
+          "code": "enum",
+          "path": "$.emotion"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.energy"
+        },
+        {
+          "code": "enum",
+          "path": "$.delivery.expressiveness"
+        }
+      ]
+    }
+  ],
+  "reload": {
+    "json_syntax_valid": false,
+    "schema_valid": false,
+    "contract_valid": false,
+    "errors": [
+      {
+        "code": "json_syntax",
+        "path": "$"
+      },
+      {
+        "code": "token_limit",
+        "path": "$"
+      }
+    ]
+  },
+  "aggregate_errors": {
+    "json_syntax:$": 1,
+    "missing_key:$.tts_instruction": 2,
+    "enum:$.intent": 15,
+    "enum:$.emotion": 12,
+    "enum:$.delivery.pace": 9,
+    "enum:$.delivery.energy": 13,
+    "enum:$.delivery.expressiveness": 13
+  }
+}

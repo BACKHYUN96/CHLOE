@@ -1,0 +1,26 @@
+{
+  "version":1,
+  "status":"frozen_before_generation",
+  "registers":["casual","polite"],
+  "neutral":"확인.",
+  "history_formats":["user_only","neutral"],
+  "role_preface":"다음 한 문장은 실제 소유 사실이 아니라 발화 주체를 구분하기 위한 가상 메모야.",
+  "fixtures":[
+    {"id":"cat_nabi","domain":"animal","person":"지연","self":"나는 지연이야.","reporter":"지연이","fact":"{owner} 고양이 이름은 나비야.","question":"앞선 발화에서 나비는 누구의 고양이라고 했지?"},
+    {"id":"dog_choco","domain":"animal","person":"도윤","self":"나는 도윤이야.","reporter":"도윤이","fact":"{owner} 강아지 이름은 초코야.","question":"앞선 발화에서 초코는 누구의 강아지라고 했지?"},
+    {"id":"bag_blue","domain":"object","person":"수진","self":"나는 수진이야.","reporter":"수진이","fact":"파란 가방은 {owner} 물건이야.","question":"앞선 발화에서 파란 가방은 누구의 물건이라고 했지?"},
+    {"id":"book_red","domain":"object","person":"현우","self":"나는 현우야.","reporter":"현우가","fact":"빨간 책은 {owner} 물건이야.","question":"앞선 발화에서 빨간 책은 누구의 물건이라고 했지?"}
+  ],
+  "main_forms":["deictic","explicit_user","named_deictic","named_explicit","third_quoted","third_explicit"],
+  "role_forms":["first_person","second_person","explicit_user","third_explicit"],
+  "source_roles":["user","assistant"],
+  "reference_ids":["user:casual:named_deictic:neutral:explicit","user:casual:named_explicit:neutral:explicit","user:polite:named_deictic:neutral:explicit","user:polite:named_explicit:neutral:explicit"],
+  "execution":"96 main cases (4 fixtures x6 forms x2 history formats x2 registers),64 hypothetical role cases (4 fixtures x4 forms x2 source roles x2 registers),4 old Minsu/Bori replay references.164 cases x2 preserved models=328 fresh calls,0 aliases. Use explicit ownership recall question only, fixed within fixture. Same original system/schema/wrapper/decoder/NF4 double quant BF16 compute/official no-thinking/eager CUDA/seed42 greedy/max384 context2048/stop248044 248046. Frozen parameters,no truncation/offload/download/env update/training/merge/export/Android change.",
+  "review":{
+    "kind":"gpt_session","dimensions":["register","relevance","naturalness","memory","honesty"],
+    "owner_tags":["user","assistant","third_party","other"],
+    "anchors":"Same direct first-recall rubric. Named self denotes user, quoted or explicit third party denotes fixture person. Model first person means assistant unless clearly reported/quoted. Ambiguous household/omitted owner is other, not success. Memory pass requires correct owner AND object/animal-name relationship without invented source facts. In role block hypothetical possession is not real AI pet/property experience. Condition/expected owner visible,model identity masked. Freeze direct judgments before key; no regex/API content scoring.",
+    "analysis":"Primary paired contrast named_deictic->named_explicit holds self identification and fact constant except possessive; report per fixture and animal/object domains,across2 registers/formats n4 pairs per fixture,16 overall per model. Also deictic->explicit_user,third_quoted->third_explicit,neutral vs user-only. Role swaps hold all text constant except source role; deictic referents change so not invariant-fact comparisons. Report96/64/4 separately; old4 reference cases not pooled with new fixtures. Explicit question only; no new original-versus-explicit question experiment. No holdout/independent judge/promotion claim."
+  },
+  "limits":"Prospectively fixed extension after prior known result,not an untouched benchmark. Four synthetic fixtures,2 pet species/names and2 ordinary object descriptions,one person per fixture,not full crossed name/species factorial. Animal facts concern pet names,object facts direct possession,so domain differences also vary syntax. Same GPT author/judge and greedy seed. Current persona/runtime fixed; output evidence does not uniquely identify hidden mechanisms. No product prompt/history change or retraining. PocketPal source review separate; do not change inference to match it in this experiment."
+}

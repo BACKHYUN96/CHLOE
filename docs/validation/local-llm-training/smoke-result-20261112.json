@@ -1,0 +1,150 @@
+{
+  "config": {
+    "model_id": "Qwen/Qwen3.5-2B",
+    "revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+    "checkpoint_sha256": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+    "base_dir": "artifacts/llm-training/base-Qwen3.5-2B",
+    "data": "artifacts/llm-training/data/smoke-approved.jsonl",
+    "output_dir": "artifacts/llm-training/runs/smoke-20261112-final",
+    "max_steps": 10,
+    "microbatch": 1,
+    "context_tokens": 512,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "learning_rate": 0.0001,
+    "seed": 42,
+    "max_new_tokens": 384,
+    "gradient_checkpointing": true,
+    "cpu_offload": false
+  },
+  "data_sha256": "95eb8d42a3b5b258e8336b1c26ef4826e251e8320669f67993e1da9a7f6099e5",
+  "split_counts": {
+    "train": 4,
+    "validation": 1,
+    "test": 1
+  },
+  "completed": true,
+  "steps": [
+    {
+      "step": 1,
+      "loss": 1.9721177816390991,
+      "gradient_norm": 1.3318028450012207
+    },
+    {
+      "step": 2,
+      "loss": 2.128836154937744,
+      "gradient_norm": 1.5726910829544067
+    },
+    {
+      "step": 3,
+      "loss": 2.211163282394409,
+      "gradient_norm": 1.6619741916656494
+    },
+    {
+      "step": 4,
+      "loss": 1.8413914442062378,
+      "gradient_norm": 1.6046340465545654
+    },
+    {
+      "step": 5,
+      "loss": 1.8881860971450806,
+      "gradient_norm": 1.1863932609558105
+    },
+    {
+      "step": 6,
+      "loss": 2.0176944732666016,
+      "gradient_norm": 1.4882782697677612
+    },
+    {
+      "step": 7,
+      "loss": 2.0997812747955322,
+      "gradient_norm": 1.5179296731948853
+    },
+    {
+      "step": 8,
+      "loss": 1.739992618560791,
+      "gradient_norm": 1.6977030038833618
+    },
+    {
+      "step": 9,
+      "loss": 1.7980194091796875,
+      "gradient_norm": 1.293973445892334
+    },
+    {
+      "step": 10,
+      "loss": 1.9073114395141602,
+      "gradient_norm": 1.6541743278503418
+    }
+  ],
+  "cpu_offload": false,
+  "kernel_path": "reference PyTorch; no hub kernels",
+  "quality_improvement_verified": false,
+  "adapter_reloaded": true,
+  "token_masks": [
+    {
+      "id": "smoke-01",
+      "tokens": 287,
+      "supervised_tokens": 57
+    },
+    {
+      "id": "smoke-02",
+      "tokens": 317,
+      "supervised_tokens": 57
+    },
+    {
+      "id": "smoke-03",
+      "tokens": 294,
+      "supervised_tokens": 66
+    },
+    {
+      "id": "smoke-04",
+      "tokens": 316,
+      "supervised_tokens": 55
+    },
+    {
+      "id": "smoke-05",
+      "tokens": 280,
+      "supervised_tokens": 59
+    },
+    {
+      "id": "smoke-06",
+      "tokens": 321,
+      "supervised_tokens": 60
+    }
+  ],
+  "targets": [
+    "model.layers.3.self_attn.q_proj",
+    "model.layers.3.self_attn.v_proj",
+    "model.layers.7.self_attn.q_proj",
+    "model.layers.7.self_attn.v_proj",
+    "model.layers.11.self_attn.q_proj",
+    "model.layers.11.self_attn.v_proj",
+    "model.layers.15.self_attn.q_proj",
+    "model.layers.15.self_attn.v_proj",
+    "model.layers.19.self_attn.q_proj",
+    "model.layers.19.self_attn.v_proj",
+    "model.layers.23.self_attn.q_proj",
+    "model.layers.23.self_attn.v_proj"
+  ],
+  "trainable_parameters": 417792,
+  "training_seconds": 4.094640643000048,
+  "peak_gpu_allocated_bytes": 4795348992,
+  "peak_gpu_reserved_bytes": 5133828096,
+  "heldout_loss": {
+    "validation": 2.0130364894866943,
+    "test": 1.963674783706665
+  },
+  "adapter_sha256": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+  "reload_inference": {
+    "tokens": 384,
+    "eos_reached": false,
+    "json_valid": false,
+    "last_token_id": 231335,
+    "eos_token_ids": [
+      248044,
+      248046
+    ]
+  },
+  "reload_inference_contract_passed": false,
+  "training_mechanics_completed": true
+}

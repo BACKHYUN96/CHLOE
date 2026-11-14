@@ -1,0 +1,34 @@
+{
+  "observed_at": "2026-11-14T11:28:30.543630+00:00",
+  "tests": {
+    "run": 115,
+    "passed": 115,
+    "skipped": 0
+  },
+  "actual_input_pair_checks": {
+    "neutral_only": 48,
+    "named_possessive_only": 16,
+    "role_only": 32
+  },
+  "main96_and_role64_and_references4_separate": true,
+  "animal_and_object_main48_each": true,
+  "source_role_swaps_text_identical": true,
+  "named_possessive_pairs_same_facts_except_possessive": true,
+  "all164_unique_input_hashes_verified": true,
+  "gpt_judgments_frozen_before_key": true,
+  "owner_omission_not_correct": true,
+  "all328_response_hashes_unchanged": true,
+  "base_hash_verified": true,
+  "adapter_hash_verified": true,
+  "venv_freeze_unchanged": true,
+  "app_persona_schema_cases_unchanged": true,
+  "original_user_ratings_unchanged": true,
+  "wrapper_decoder_source_unchanged": true,
+  "training_executed": false,
+  "model_downloaded": false,
+  "android_changed": false,
+  "android_tested": false,
+  "model_promotion_approved": false,
+  "raw_responses_committed": false,
+  "key_committed": false
+}

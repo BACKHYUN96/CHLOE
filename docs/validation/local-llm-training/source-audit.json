@@ -1,0 +1,52 @@
+{
+  "source_inspection_only": true,
+  "runtime_imported": false,
+  "sources": {
+    "transformers-model": {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/a72a1c385297bfaf1c8a07b5f4e689a315b90b77/src/transformers/models/qwen3_5/modeling_qwen3_5.py",
+      "sha256": "1a475c45d900e0bfb06b9b245257d7f3234fd247474fcbd3363b03430e504a68",
+      "bytes": 87255
+    },
+    "transformers-version": {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/a72a1c385297bfaf1c8a07b5f4e689a315b90b77/src/transformers/__init__.py",
+      "sha256": "cd3038efcb15c7eba3396c60b0277601f8c4c98130a1d199e8aaa471fba2e3ba",
+      "bytes": 39039
+    },
+    "peft": {
+      "url": "https://raw.githubusercontent.com/huggingface/peft/34d342a6156bd77a83f093b5be21fd8396edc451/src/peft/utils/other.py",
+      "sha256": "74da409bd8a9555f86b6b7d1cc35a6e87b46e35b8daaafbe75f4512d16d09a86",
+      "bytes": 91340
+    },
+    "trl-template": {
+      "url": "https://raw.githubusercontent.com/huggingface/trl/6a7764ac47291f290521e5e6f8ef1176d068281c/trl/chat_template_utils.py",
+      "sha256": "89421618b97affee8fe1f5db635281560a192dccf2260dbcda29c453748ef833",
+      "bytes": 75526
+    },
+    "llama-converter": {
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/aa75ff3239f9cc675b081697deda9e1b112345c6/convert_hf_to_gguf.py",
+      "sha256": "297502d115010e97b996e20dc9cdcfc90ee293df9b616259e5a646b64f410630",
+      "bytes": 14871
+    },
+    "llama-runtime": {
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/aa75ff3239f9cc675b081697deda9e1b112345c6/src/models/qwen35.cpp",
+      "sha256": "17f1523b2490d99c9f3c14f810adeaf7e68b2807ca24537808383d4a5e719080",
+      "bytes": 27732
+    },
+    "qwen3_5_nothink.jinja": {
+      "url": "https://raw.githubusercontent.com/huggingface/trl/6a7764ac47291f290521e5e6f8ef1176d068281c/trl/chat_templates/qwen3_5_nothink.jinja",
+      "sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+      "matches_model_template": true,
+      "has_generation_markers": false
+    },
+    "qwen3_5_nothink_training.jinja": {
+      "url": "https://raw.githubusercontent.com/huggingface/trl/6a7764ac47291f290521e5e6f8ef1176d068281c/trl/chat_templates/qwen3_5_nothink_training.jinja",
+      "sha256": "a75169fb80890805569f8f8e9f82c4044f9b73eac90ffa089dd708c1af90c85f",
+      "matches_model_template": false,
+      "has_generation_markers": true
+    },
+    "conversion/qwen.py": {
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/aa75ff3239f9cc675b081697deda9e1b112345c6/conversion/qwen.py",
+      "sha256": "4b0f63a0286bc78972c41476584a48cd51b92d0ecc1cbe179bb06403f92e15fd"
+    }
+  }
+}

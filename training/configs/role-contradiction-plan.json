@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "status": "frozen_before_generation",
+  "conditions": ["preserved", "user_only", "neutral", "newest1", "oldest1", "newest2", "oldest2", "newest3", "oldest3", "newest4", "oldest4"],
+  "source": "Same46 situations and exact preserved messages from source-histories-20261114/inputs.local.json. Start from preserved, never the bundled corrected history.",
+  "neutral_text": "확인.",
+  "neutral": "Replace every historical assistant content with the same short acknowledgment, retain exact roles/count/order/system/all user messages/current question. No factual owner/name/rule answer is inserted. The filler is evaluation-only, not a desired production conversation. User-only is repeated as a fresh same-run reference.",
+  "corrections": "Use the same reviewed first-sentence explicit first-person cat-ownership possessive span as source-history-plan. Correct one additional eligible sentence per step, newest-first and oldest-first, up to4. Change only that possessive, retaining every other character, role and later non-owner reply. Applied count is min(requested step,available errors); saturated/equivalent states are aliases, not extra corrections.",
+  "owner_replacement": {"casual":"네", "polite":"당신의"},
+  "coverage": "22 history situations,20 matched-user-fact situations excluding2 library assistant-only facts.12 histories have1..4 explicit owner errors: exact-m cohorts m1=2,m2=2,m3=4,m4=4. First owner recall2 has no eligible prior owner error and remains an unchanged control.",
+  "information": "User-only and neutral both lose assistant-only library hours/loan/card facts, mark memory NA in those two cases and exclude them from primary20. All user roles/content/order unchanged in every condition. Never invent a user statement to restore removed assistant facts.",
+  "execution": "Same frozen base/adapter/system/schema/unchanged loader/infer/NF4 double quant BF16 compute/official no-thinking template/XGrammar/consumer/eager CUDA/seed42 greedy/max384 context2048/stop248044 248046. No truncation/offload/new model/env update/training/merge/export/Android change. Expected1012 logical cells,292 actual generate calls,720 exact-input aliases within same situation/model only.",
+  "review": {
+    "kind":"gpt_session",
+    "rubric":"Same explicit register,relevance,naturalness,identity,honesty,memory,instruction_protection pass/partial/fail/NA/unassessable. Direct GPT reading, no regex/API-generated quality scores.",
+    "primary":"Within20 matched-user-fact situations compare preserved,user-only,neutral and max4 full owner correction. Also separately report22 history,12 eligible edit histories and4 eligible owner short/summary cases.",
+    "dose":"Report actual edit count and exact available-error cohort, never compare heterogeneous min-step cohorts as one dose curve. For fixed12 show saturated max-step policy explicitly. Exact-m2 pair (casual/polite same one-line cat summary) compares none,newest one,oldest one,both; this controls question/facts/role structure within each situation.",
+    "owner_resolution":"For six fixed conv44/45/46 x two registers, explicit GPT tag correct_user_owner,wrong_owner,other. Other/omission is not correct memory. wrong_owner must agree with existing owner_confusion yes. Also retain previous eight-case off_topic_carryover tag; not keyword counts.",
+    "masking":"Random22 model/condition labels; actual history is visible and treatment may be inferred. Show exact preserved context plus exact per-message differences to reduce repeated display; packet retains full actual histories. Freeze all explicit judgments/tags before key. Identical full context/answer must have consistent judgments."
+  },
+  "limits":"Neutral versus user-only changes assistant role boundaries plus acknowledgment tokens,length and role alternation; not a pure role-label-only causal identification. Cumulative fixes retain other errors/wording and are counterfactual fixed histories, not self-generated rollout. Same GPT author/judge,known repeated questions,single seed. No general quality win,independent human/holdout or model promotion claim."
+}

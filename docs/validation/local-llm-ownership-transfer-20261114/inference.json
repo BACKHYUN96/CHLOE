@@ -1,0 +1,111 @@
+{
+  "completed": true,
+  "started_at": "2026-11-14T11:01:41.186761+00:00",
+  "finished_at": "2026-11-14T11:21:32.921913+00:00",
+  "generation": {
+    "seed": 42,
+    "do_sample": false,
+    "max_new_tokens": 384,
+    "context_tokens": 2048,
+    "enable_thinking": false
+  },
+  "plan_sha256": "6e0e18aa052c28390e64cb1e8de6ed0f87b039764b2a7de95c266846227c0b68",
+  "inputs_sha256": "a1e0fd846579a641e2031c5fbd1378f6abf798db48af069568bdea5d1a54ea7f",
+  "source_summary_sha256": "5fb08398f0a237763de2c3e0b3218cc173a70584eb3cd30f576ff48ce6f24378",
+  "base_sha256": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+  "adapter_sha256": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+  "load_metadata": [
+    {
+      "candidate": "base",
+      "all_cuda": true,
+      "all_frozen": true,
+      "dtypes": {
+        "torch.bfloat16": 134,
+        "torch.uint8": 186
+      }
+    },
+    {
+      "candidate": "adapter",
+      "all_cuda": true,
+      "all_frozen": true,
+      "dtypes": {
+        "torch.bfloat16": 134,
+        "torch.uint8": 186,
+        "torch.float32": 24
+      }
+    }
+  ],
+  "cases": 164,
+  "actual_generate_calls": 328,
+  "equivalent_reuses": 0,
+  "block_results": {
+    "base:user": {
+      "cases": 96,
+      "json_syntax_valid": 96,
+      "schema_valid": 96,
+      "consumer_valid": 96,
+      "eos_reached": 96,
+      "max_prompt_tokens": 518,
+      "max_generated_tokens": 95
+    },
+    "adapter:user": {
+      "cases": 96,
+      "json_syntax_valid": 96,
+      "schema_valid": 96,
+      "consumer_valid": 96,
+      "eos_reached": 96,
+      "max_prompt_tokens": 518,
+      "max_generated_tokens": 88
+    },
+    "base:role": {
+      "cases": 64,
+      "json_syntax_valid": 64,
+      "schema_valid": 64,
+      "consumer_valid": 64,
+      "eos_reached": 64,
+      "max_prompt_tokens": 528,
+      "max_generated_tokens": 113
+    },
+    "adapter:role": {
+      "cases": 64,
+      "json_syntax_valid": 64,
+      "schema_valid": 64,
+      "consumer_valid": 64,
+      "eos_reached": 64,
+      "max_prompt_tokens": 528,
+      "max_generated_tokens": 100
+    },
+    "base:reference": {
+      "cases": 4,
+      "json_syntax_valid": 4,
+      "schema_valid": 4,
+      "consumer_valid": 4,
+      "eos_reached": 4,
+      "max_prompt_tokens": 510,
+      "max_generated_tokens": 75
+    },
+    "adapter:reference": {
+      "cases": 4,
+      "json_syntax_valid": 4,
+      "schema_valid": 4,
+      "consumer_valid": 4,
+      "eos_reached": 4,
+      "max_prompt_tokens": 510,
+      "max_generated_tokens": 70
+    }
+  },
+  "preserved_reference_raw_exact": {
+    "base:user:casual:named_deictic:neutral:explicit": true,
+    "adapter:user:casual:named_deictic:neutral:explicit": true,
+    "base:user:casual:named_explicit:neutral:explicit": true,
+    "adapter:user:casual:named_explicit:neutral:explicit": true,
+    "base:user:polite:named_deictic:neutral:explicit": true,
+    "adapter:user:polite:named_deictic:neutral:explicit": true,
+    "base:user:polite:named_explicit:neutral:explicit": true,
+    "adapter:user:polite:named_explicit:neutral:explicit": true
+  },
+  "executed_runner_sha256": "7531fb2c0a8dbee11853caf5e1bea9a8901adb8a8c2e1d26e69b751ce9f6d2e3",
+  "summary_sha256": "24082be758768bec1717cf8c410de754b550b3ddeca8097a775b3543749248e8",
+  "training_executed": false,
+  "raw_responses_included": false
+}

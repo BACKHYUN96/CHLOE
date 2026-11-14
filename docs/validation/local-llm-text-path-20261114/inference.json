@@ -1,0 +1,152 @@
+{
+  "completed": true,
+  "started_at": "2026-11-14T02:50:18.633421+00:00",
+  "finished_at": "2026-11-14T03:01:03.069935+00:00",
+  "situations": 46,
+  "actual_generate_calls": 184,
+  "response_aliases": 0,
+  "generation": {
+    "seed": 42,
+    "do_sample": false,
+    "max_new_tokens": 384,
+    "context_tokens": 2048,
+    "enable_thinking": false
+  },
+  "cells": {
+    "wrapper:base": {
+      "count": 46,
+      "actual_generate_calls": 46,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "consumer_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 104
+    },
+    "wrapper:adapter": {
+      "count": 46,
+      "actual_generate_calls": 46,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "consumer_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 93
+    },
+    "official:base": {
+      "count": 46,
+      "actual_generate_calls": 46,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "consumer_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 104
+    },
+    "official:adapter": {
+      "count": 46,
+      "actual_generate_calls": 46,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "consumer_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 93
+    }
+  },
+  "load_metadata": [
+    {
+      "path": "wrapper",
+      "candidate": "base",
+      "class": "Qwen3_5ForCausalLM",
+      "config_class": "Qwen3_5TextConfig",
+      "official_loading_info": null,
+      "all_cuda": true,
+      "all_frozen": true,
+      "parameter_dtypes": {
+        "torch.bfloat16": 134,
+        "torch.uint8": 186
+      },
+      "lora_dtypes": {},
+      "embedding_head_tied": true
+    },
+    {
+      "path": "official",
+      "candidate": "base",
+      "class": "Qwen3_5ForCausalLM",
+      "config_class": "Qwen3_5TextConfig",
+      "official_loading_info": {
+        "missing_keys": [],
+        "unexpected_keys": [],
+        "mismatched_keys": [],
+        "error_msgs": []
+      },
+      "all_cuda": true,
+      "all_frozen": true,
+      "parameter_dtypes": {
+        "torch.bfloat16": 134,
+        "torch.uint8": 186
+      },
+      "lora_dtypes": {},
+      "embedding_head_tied": true
+    },
+    {
+      "path": "wrapper",
+      "candidate": "adapter",
+      "class": "PeftModelForCausalLM",
+      "config_class": "Qwen3_5TextConfig",
+      "official_loading_info": null,
+      "all_cuda": true,
+      "all_frozen": true,
+      "parameter_dtypes": {
+        "torch.bfloat16": 134,
+        "torch.uint8": 186,
+        "torch.float32": 24
+      },
+      "lora_dtypes": {
+        "torch.float32": 24
+      },
+      "embedding_head_tied": true
+    },
+    {
+      "path": "official",
+      "candidate": "adapter",
+      "class": "PeftModelForCausalLM",
+      "config_class": "Qwen3_5TextConfig",
+      "official_loading_info": {
+        "missing_keys": [],
+        "unexpected_keys": [],
+        "mismatched_keys": [],
+        "error_msgs": []
+      },
+      "all_cuda": true,
+      "all_frozen": true,
+      "parameter_dtypes": {
+        "torch.bfloat16": 134,
+        "torch.uint8": 186,
+        "torch.float32": 24
+      },
+      "lora_dtypes": {
+        "torch.float32": 24
+      },
+      "embedding_head_tied": true
+    }
+  ],
+  "base_sha256": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+  "adapter_sha256": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+  "input_messages_sha256": "28ff292c886b9130ec789a65c06f190c3799f22dc3a1c6fc4f1f76ee3dc47b37",
+  "plan_sha256": "fd2135bebf5aefd90c75fdb6245cc3a0e3e40fbaafeb3063658eb852a839e331",
+  "summary_sha256": "c5e27c455d1f84bd4f9d33be5d6a5d4fb9ac090b2602811c051a5100ecf331a2",
+  "execution_source_sha256": {
+    "training/scripts/compare_text_paths.py": "3eef7d1263054f5780e13ef38c9b01811e510673078bb1d7441a8cbe3280993b",
+    "training/scripts/llm_runtime.py": "578f2e0e592dc5a814b1f6cc2a9d46d8d16912470df7a1b5344c89cb99b9f896",
+    "training/scripts/json_decoding.py": "5b565f0501154341bcdde96a9229a5ae378fe549ba0887c61fb2277101126b16"
+  },
+  "installed_official_source": {
+    "transformers_version": "5.23.0.dev0",
+    "modeling_source_sha256": "1a475c45d900e0bfb06b9b245257d7f3234fd247474fcbd3363b03430e504a68",
+    "conversion_source_sha256": "85e9011b13e90860c6f10c896b7d3fa97f5cd9541cf855b5b747412599ad23d8"
+  },
+  "training_executed": false,
+  "raw_responses_included": false
+}

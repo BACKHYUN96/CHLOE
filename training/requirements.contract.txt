@@ -1,0 +1,3 @@
+# Verified Linux x86_64 / Python3.12 isolated decoder wheels; base venv remains unchanged.
+xgrammar==0.2.9 --hash=sha256:3326c9fb5864922fde7b52efea9c7e83b91a8f5bf81dbb5f5164d23410dfdae4
+apache-tvm-ffi==0.1.11 --hash=sha256:2843f084cdc94dedacd8b257a395a2b71b8a3dc7fc99711b148bf1d161983128

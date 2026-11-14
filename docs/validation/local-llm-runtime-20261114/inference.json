@@ -1,0 +1,251 @@
+{
+  "completed": true,
+  "started_at": "2026-11-14T02:04:44.620054+00:00",
+  "finished_at": "2026-11-14T02:19:25.377600+00:00",
+  "logical_comparisons": 368,
+  "actual_generate_calls": 320,
+  "equivalent_input_reuses": 48,
+  "situations": 46,
+  "conditions": {
+    "baseline": {
+      "precision": "nf4",
+      "template": "official",
+      "decoder": "constrained"
+    },
+    "training_template": {
+      "precision": "nf4",
+      "template": "training",
+      "decoder": "constrained"
+    },
+    "bf16": {
+      "precision": "bf16",
+      "template": "official",
+      "decoder": "constrained"
+    },
+    "decoder_off": {
+      "precision": "nf4",
+      "template": "official",
+      "decoder": "off"
+    }
+  },
+  "generation": {
+    "seed": 42,
+    "do_sample": false,
+    "max_new_tokens": 384,
+    "context_tokens": 2048,
+    "enable_thinking": false
+  },
+  "cells": {
+    "baseline:base": {
+      "count": 46,
+      "actual_generate_calls": 46,
+      "equivalent_reuses": 0,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "contract_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 104,
+      "diagnostic_error_counts": {}
+    },
+    "baseline:adapter": {
+      "count": 46,
+      "actual_generate_calls": 46,
+      "equivalent_reuses": 0,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "contract_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 93,
+      "diagnostic_error_counts": {}
+    },
+    "training_template:base": {
+      "count": 46,
+      "actual_generate_calls": 22,
+      "equivalent_reuses": 24,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "contract_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 623,
+      "max_generated_tokens": 98,
+      "diagnostic_error_counts": {}
+    },
+    "training_template:adapter": {
+      "count": 46,
+      "actual_generate_calls": 22,
+      "equivalent_reuses": 24,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "contract_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 623,
+      "max_generated_tokens": 92,
+      "diagnostic_error_counts": {}
+    },
+    "bf16:base": {
+      "count": 46,
+      "actual_generate_calls": 46,
+      "equivalent_reuses": 0,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "contract_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 103,
+      "diagnostic_error_counts": {}
+    },
+    "bf16:adapter": {
+      "count": 46,
+      "actual_generate_calls": 46,
+      "equivalent_reuses": 0,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "contract_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 103,
+      "diagnostic_error_counts": {}
+    },
+    "decoder_off:base": {
+      "count": 46,
+      "actual_generate_calls": 46,
+      "equivalent_reuses": 0,
+      "json_syntax_valid": 31,
+      "schema_valid": 17,
+      "contract_valid": 17,
+      "eos_reached": 46,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 104,
+      "diagnostic_error_counts": {
+        "json_syntax": 15,
+        "missing_key": 10,
+        "object_type": 4
+      }
+    },
+    "decoder_off:adapter": {
+      "count": 46,
+      "actual_generate_calls": 46,
+      "equivalent_reuses": 0,
+      "json_syntax_valid": 38,
+      "schema_valid": 34,
+      "contract_valid": 34,
+      "eos_reached": 46,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 85,
+      "diagnostic_error_counts": {
+        "json_syntax": 8,
+        "object_type": 4
+      }
+    }
+  },
+  "response_changes": {
+    "baseline:base": {
+      "raw_changed_vs_baseline": 0,
+      "literal_spoken_field_changed_vs_baseline": 0,
+      "both_have_literal_spoken_field": 46
+    },
+    "baseline:adapter": {
+      "raw_changed_vs_baseline": 0,
+      "literal_spoken_field_changed_vs_baseline": 0,
+      "both_have_literal_spoken_field": 46
+    },
+    "training_template:base": {
+      "raw_changed_vs_baseline": 19,
+      "literal_spoken_field_changed_vs_baseline": 15,
+      "both_have_literal_spoken_field": 46
+    },
+    "training_template:adapter": {
+      "raw_changed_vs_baseline": 21,
+      "literal_spoken_field_changed_vs_baseline": 14,
+      "both_have_literal_spoken_field": 46
+    },
+    "bf16:base": {
+      "raw_changed_vs_baseline": 45,
+      "literal_spoken_field_changed_vs_baseline": 36,
+      "both_have_literal_spoken_field": 46
+    },
+    "bf16:adapter": {
+      "raw_changed_vs_baseline": 43,
+      "literal_spoken_field_changed_vs_baseline": 34,
+      "both_have_literal_spoken_field": 46
+    },
+    "decoder_off:base": {
+      "raw_changed_vs_baseline": 29,
+      "literal_spoken_field_changed_vs_baseline": 0,
+      "both_have_literal_spoken_field": 27
+    },
+    "decoder_off:adapter": {
+      "raw_changed_vs_baseline": 13,
+      "literal_spoken_field_changed_vs_baseline": 1,
+      "both_have_literal_spoken_field": 34
+    }
+  },
+  "baseline_base_replay_vs_preserved_prior": {
+    "count": 46,
+    "raw_exactly_equal": 46
+  },
+  "common_history": "Exact preserved original-base messages from prompt-20261114-v1, frozen identically for both models and all conditions. Includes previous baseline errors. This measures direct conditional effects, not self-generated rollout quality.",
+  "load_metadata": [
+    {
+      "precision": "nf4",
+      "candidate": "base",
+      "parameter_dtypes": {
+        "torch.bfloat16": 134,
+        "torch.uint8": 186
+      },
+      "lora_dtypes": {},
+      "linear4bit_count": 186,
+      "all_cuda": true,
+      "all_frozen": true
+    },
+    {
+      "precision": "nf4",
+      "candidate": "adapter",
+      "parameter_dtypes": {
+        "torch.bfloat16": 134,
+        "torch.uint8": 186,
+        "torch.float32": 24
+      },
+      "lora_dtypes": {
+        "torch.float32": 24
+      },
+      "linear4bit_count": 198,
+      "all_cuda": true,
+      "all_frozen": true
+    },
+    {
+      "precision": "bf16",
+      "candidate": "base",
+      "parameter_dtypes": {
+        "torch.bfloat16": 320
+      },
+      "lora_dtypes": {},
+      "linear4bit_count": 0,
+      "all_cuda": true,
+      "all_frozen": true
+    },
+    {
+      "precision": "bf16",
+      "candidate": "adapter",
+      "parameter_dtypes": {
+        "torch.bfloat16": 320,
+        "torch.float32": 24
+      },
+      "lora_dtypes": {
+        "torch.float32": 24
+      },
+      "linear4bit_count": 0,
+      "all_cuda": true,
+      "all_frozen": true
+    }
+  ],
+  "base_sha256": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+  "adapter_sha256": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+  "input_messages_sha256": "28ff292c886b9130ec789a65c06f190c3799f22dc3a1c6fc4f1f76ee3dc47b37",
+  "plan_sha256": "e07d9947bf1308ce3d943595e1a3ac3efd312aafdd2192d56219066c7fdf1164",
+  "summary_sha256": "2bab639c6e49e7f918fbaeee4a136cfd2ac217f2691834fac4797b1f30e9ac55",
+  "training_executed": false,
+  "raw_responses_included": false
+}

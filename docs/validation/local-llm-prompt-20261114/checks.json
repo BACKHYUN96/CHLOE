@@ -1,0 +1,24 @@
+{
+  "observed_at": "2026-11-14T01:43:47.783080+00:00",
+  "tests": {
+    "run": 51,
+    "passed": 51,
+    "skipped": 0
+  },
+  "base_weight_hash_verified": true,
+  "adapter_hash_verified": true,
+  "training_venv_freeze_unchanged": true,
+  "original_app_persona_schema_cases_unchanged": true,
+  "original_human_review_file_unchanged": true,
+  "original_blind_html_unchanged": true,
+  "review_plan_frozen_before_inference": true,
+  "gpt_judgments_written_before_deblinding": true,
+  "human_review_for_this_experiment": false,
+  "raw_responses_committed": false,
+  "key_committed": false,
+  "additional_training": false,
+  "android_tested": false,
+  "gguf_exported": false,
+  "model_promotion_approved": false,
+  "preflight_wrapper_return_shape_error_corrected": true
+}
