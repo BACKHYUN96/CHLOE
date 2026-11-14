@@ -1,0 +1,32 @@
+{
+  "observed_at": "2026-11-14T03:06:09.039240+00:00",
+  "tests": {
+    "run": 69,
+    "passed": 69,
+    "skipped": 0
+  },
+  "all_184_cells_actually_generated": true,
+  "no_response_aliases": true,
+  "common_inputs_identical": true,
+  "full_loaded_state_including_quantization_equal": true,
+  "all_prefill_logits_bitwise_equal": true,
+  "nonquantized_weights_match_original_checkpoint": true,
+  "actual_generate_inputs_kwargs_and_output_tokens_equal": true,
+  "same_gpu_no_offload": true,
+  "all_model_parameters_frozen": true,
+  "gpt_judgments_frozen_before_deblinding": true,
+  "identical_displayed_content_judgments_consistent": true,
+  "base_weight_hash_verified": true,
+  "adapter_hash_verified": true,
+  "venv_freeze_unchanged": true,
+  "app_persona_schema_cases_unchanged": true,
+  "original_user_ratings_unchanged": true,
+  "wrapper_decoder_source_unchanged": true,
+  "training_executed": false,
+  "model_downloaded": false,
+  "android_changed": false,
+  "android_tested": false,
+  "model_promotion_approved": false,
+  "raw_responses_committed": false,
+  "key_committed": false
+}

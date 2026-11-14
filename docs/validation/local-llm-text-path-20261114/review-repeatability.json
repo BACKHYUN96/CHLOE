@@ -1,0 +1,25 @@
+{
+  "comparison": "Fresh direct masked GPT review versus preserved previous runtime baseline review; same actual response content/context.",
+  "cells": {
+    "base": {
+      "situations": 46,
+      "all_dimension_judgments_identical": 29,
+      "changed_dimension_judgments": 17,
+      "strict_status_changed": 2,
+      "old_strict_pass": 6,
+      "new_strict_pass": 6
+    },
+    "adapter": {
+      "situations": 46,
+      "all_dimension_judgments_identical": 28,
+      "changed_dimension_judgments": 19,
+      "strict_status_changed": 2,
+      "old_strict_pass": 8,
+      "new_strict_pass": 8
+    }
+  },
+  "historical_verdicts_modified": false,
+  "old_verdicts_sha256": "453e1dfd49dcd356c486f1a65463e9b16bd21c004a7df35415a1ed6c77cd8f7b",
+  "new_verdicts_sha256": "a4c830c86494d3df703eb0879da8589c795d0ede929399e16f12b1399d72c4e4",
+  "interpretation": "Stable totals do not imply identical item ratings or judge independence. Path equivalence rests on objective state/input/logits/output equality, not GPT score repeatability."
+}
