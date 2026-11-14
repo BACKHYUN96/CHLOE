@@ -1,0 +1,71 @@
+{
+  "review_date": "2026-11-14",
+  "repository": "a-ghorbani/pocketpal-ai",
+  "commit": "33aca612c793dcaa728a5bb4f2243ac3371c6e6a",
+  "license": "MIT",
+  "source_version": "1.23.0",
+  "sources": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha": "e7eb7856d5b9c14bf66f1de361acbe62634fa757",
+      "url": "https://github.com/a-ghorbani/pocketpal-ai/blob/33aca612c793dcaa728a5bb4f2243ac3371c6e6a/LICENSE"
+    },
+    {
+      "path": "package.json",
+      "git_blob_sha": "172b801f0c86537133b19fb532b4f461e976a94b",
+      "url": "https://github.com/a-ghorbani/pocketpal-ai/blob/33aca612c793dcaa728a5bb4f2243ac3371c6e6a/package.json"
+    },
+    {
+      "path": "src/utils/completionSettingsVersions.ts",
+      "git_blob_sha": "222d6de7bcd24f23c98cb085e9f5e45b6b1d079a",
+      "url": "https://github.com/a-ghorbani/pocketpal-ai/blob/33aca612c793dcaa728a5bb4f2243ac3371c6e6a/src/utils/completionSettingsVersions.ts"
+    },
+    {
+      "path": "src/utils/contextInitParamsVersions.ts",
+      "git_blob_sha": "c6950a116111d3e125c34213df1c376ec840e5bc",
+      "url": "https://github.com/a-ghorbani/pocketpal-ai/blob/33aca612c793dcaa728a5bb4f2243ac3371c6e6a/src/utils/contextInitParamsVersions.ts"
+    },
+    {
+      "path": "src/api/completionEngines.ts",
+      "git_blob_sha": "ab954e85d872f9ec3eaa9679f49ab9515c7343ac",
+      "url": "https://github.com/a-ghorbani/pocketpal-ai/blob/33aca612c793dcaa728a5bb4f2243ac3371c6e6a/src/api/completionEngines.ts"
+    },
+    {
+      "path": "src/hooks/useChatSession.ts",
+      "git_blob_sha": "67c00ae6b3f7e002c0c2394d3648f4efc76eabef",
+      "url": "https://github.com/a-ghorbani/pocketpal-ai/blob/33aca612c793dcaa728a5bb4f2243ac3371c6e6a/src/hooks/useChatSession.ts"
+    },
+    {
+      "path": "src/utils/chat.ts",
+      "git_blob_sha": "457b193854abc75473ded0ae73f8fcd272fef9ed",
+      "url": "https://github.com/a-ghorbani/pocketpal-ai/blob/33aca612c793dcaa728a5bb4f2243ac3371c6e6a/src/utils/chat.ts"
+    },
+    {
+      "path": "src/utils/systemPromptResolver.ts",
+      "git_blob_sha": "185085fd58192d492879a632d38ec1309d857f2d",
+      "url": "https://github.com/a-ghorbani/pocketpal-ai/blob/33aca612c793dcaa728a5bb4f2243ac3371c6e6a/src/utils/systemPromptResolver.ts"
+    },
+    {
+      "path": "src/store/ModelStore.ts",
+      "git_blob_sha": "0d096326928468b652ffd5a5a3831047f14d12b2",
+      "url": "https://github.com/a-ghorbani/pocketpal-ai/blob/33aca612c793dcaa728a5bb4f2243ac3371c6e6a/src/store/ModelStore.ts"
+    }
+  ],
+  "reported_phone": {
+    "model_filename": "Qwen3.5-4B-Q4_0",
+    "settings_change": "Only increased GPU usage; other values reported as defaults",
+    "app_version": null,
+    "model_sha256": null,
+    "actual_n_predict": null,
+    "actual_system_prompt": null,
+    "settings_export_verified": false
+  },
+  "boundaries": {
+    "source_only": true,
+    "pocketpal_runtime_tested": false,
+    "phone_inspected": false,
+    "models_downloaded": false,
+    "app_changed": false,
+    "third_party_code_copied": false
+  }
+}
