@@ -1,0 +1,34 @@
+{
+  "observed_at": "2026-11-14T10:39:57.001497+00:00",
+  "tests": {
+    "run": 105,
+    "passed": 105,
+    "skipped": 0
+  },
+  "actual_input_pair_checks": {
+    "question_only": 40,
+    "neutral_vs_user_only": 24,
+    "role_swap_content_identical": 16
+  },
+  "one_fact_first_recall_main48": true,
+  "no_erroneous_assistant_fact_in_short_main": true,
+  "hypothetical_role32_separate_from_factual_user48": true,
+  "named_self_and_third_party_owner_targets_distinct": true,
+  "all82_inputs_unique_same_system_by_register": true,
+  "gpt_direct_judgments_frozen_before_key": true,
+  "memory_pass_requires_correct_explicit_owner": true,
+  "all_source_response_hashes_preserved": true,
+  "base_hash_verified": true,
+  "adapter_hash_verified": true,
+  "venv_freeze_unchanged": true,
+  "app_persona_schema_cases_unchanged": true,
+  "original_user_ratings_unchanged": true,
+  "wrapper_decoder_source_unchanged": true,
+  "training_executed": false,
+  "model_downloaded": false,
+  "android_changed": false,
+  "android_tested": false,
+  "model_promotion_approved": false,
+  "raw_responses_committed": false,
+  "key_committed": false
+}

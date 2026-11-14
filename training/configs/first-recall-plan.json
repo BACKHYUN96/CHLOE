@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "status": "frozen_before_generation",
+  "registers": ["casual", "polite"],
+  "questions": {"original":"보리는 누구라고 했지?", "explicit":"앞선 발화에서 보리는 누구의 고양이라고 했지?"},
+  "neutral": "확인.",
+  "user_facts": [
+    {"id":"deictic", "text":"내 고양이 이름은 보리야.", "expected_owner":"user", "pair":"user_deictic_vs_explicit"},
+    {"id":"explicit_user", "text":"사용자의 고양이 이름은 보리야.", "expected_owner":"user", "pair":"user_deictic_vs_explicit"},
+    {"id":"named_deictic", "text":"나는 민수야. 내 고양이 이름은 보리야.", "expected_owner":"user", "pair":"named_deictic_vs_explicit"},
+    {"id":"named_explicit", "text":"나는 민수야. 민수의 고양이 이름은 보리야.", "expected_owner":"user", "pair":"named_deictic_vs_explicit"},
+    {"id":"third_quoted", "text":"민수가 \"내 고양이 이름은 보리야.\"라고 말했어.", "expected_owner":"third_minsu", "pair":"third_quoted_vs_explicit"},
+    {"id":"third_explicit", "text":"민수의 고양이 이름은 보리야.", "expected_owner":"third_minsu", "pair":"third_quoted_vs_explicit"}
+  ],
+  "user_history_formats": ["user_only", "neutral"],
+  "role_preface": "다음 한 문장은 실제 소유 사실이 아니라 발화 주체를 구분하기 위한 가상 메모야.",
+  "role_facts": [
+    {"id":"first_person", "text":"내 고양이 이름은 보리야.", "expected_owner_by_role":{"user":"user", "assistant":"assistant"}},
+    {"id":"second_person", "text":"네 고양이 이름은 보리야.", "expected_owner_by_role":{"user":"assistant", "assistant":"user"}},
+    {"id":"explicit_user", "text":"사용자의 고양이 이름은 보리야.", "expected_owner_by_role":{"user":"user", "assistant":"user"}},
+    {"id":"third_explicit", "text":"민수의 고양이 이름은 보리야.", "expected_owner_by_role":{"user":"third_minsu", "assistant":"third_minsu"}}
+  ],
+  "source_roles": ["user", "assistant"],
+  "reference": "Fresh unchanged fixed casual/polite conv44 from role-contradictions-20261114 inputs; not included in new short-pair denominators. Verify exact replay against prior preserved raw.",
+  "execution": "82 cases x2 models=164 fresh calls, no aliases. Main48 short user-source cases, separate32 hypothetical role-swapped cases,2 preserved references. Keep original system/schema/wrapper/decoder/NF4 double quant BF16 compute/eager CUDA/official no-thinking/seed42 greedy/max384 context2048/stop248044 248046. No truncation/offload/model download/env update/training/merge/export/Android changes.",
+  "review": {
+    "kind":"gpt_session", "dimensions":["register","relevance","naturalness","memory","honesty"],
+    "owner_tags":["user","assistant","third_minsu","other"],
+    "anchors":"Read actual source role/content and answer directly. First person in user facts belongs to user; in quoted third-party speech belongs to Minsu. In role block first/second person resolve against source role, explicit user/Minsu do not flip. Current model first person refers to assistant unless clearly quoted/reported. Name-only/omitted/ambiguous owner is other, never correct ownership. Named-self Minsu denotes user; bare third-party Minsu denotes third_minsu. memory pass requires correct owner and cat/name relationship without fabricated source facts; relevance and fluent wording assessed separately. In hypothetical block report fictional attribution rather than treating it as proof of real AI pet ownership; ordinary user-source block must not invent actual personal AI pet experience.",
+    "masking":"Mask only model identity with two shuffled labels; condition and expected source attribution visible. Exact full context/criteria/answer duplicates may share direct annotation. Freeze explicit judgments before reading key; no regex/API content scoring. Same GPT author and judge, known Bori, single seed.",
+    "analysis":"Separate48 main,32 hypothetical,2 references. Report paired wording contrasts within same register/question/history; user-only vs neutral; original vs explicit question; role swaps holding all text except source role constant. Role swaps alter the owner referent of deictic statements, so not invariant-fact comparisons. Do not pool hypothetical AI ownership with factual user-memory gains. No independent holdout/generalization/promotion claim."
+  },
+  "limits":"Minimal dialogues are evaluation fixtures, not training data or app policy. Main examples use same name Bori and a small set of possession forms; naming/quoting manipulations alter length/syntax. Role block includes a shared fictional preface and differs from ordinary user-source block. No attribution to hidden attention states, a particular runtime defect, or training fault solely from outputs. No more prompt/decoder/runtime changes in this experiment."
+}
