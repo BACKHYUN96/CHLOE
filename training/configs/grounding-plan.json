@@ -45,5 +45,7 @@
   "policy_source_hash_format": "LF-normalized SHA256; same source compiled into instrumentation and production manager",
   "generation_policy_source_sha256": "4afbcc773eb076c13abd39e3d23b111ca8d79aa1c629b8789f44381a1c458e23",
   "post_generation_review": "After raw drafts, negative/acknowledgement request guards tightened and polite fact recall made explicit about reported user ownership. Final actual Java audit proves model messages and decision action identical54/54; consumer replies replayed without new model generation. Final template is exploratory development, not frozen before draft review.",
-  "final_retraction_review": "Explicit retraction and ambiguous name-update invalidation added with edge tests. Actual final on-device policy audit exactly equals prior final54/54 including all messages/actions/replies; no inference or score changed."
+  "final_retraction_review": "Explicit retraction and ambiguous name-update invalidation added with edge tests. Actual final on-device policy audit exactly equals prior final54/54 including all messages/actions/replies; no inference or score changed.",
+  "policy_source": "training/snapshots/grounding-policy-20261115/GroundedConversationPolicy.java.txt",
+  "snapshot_note": "Prior v1 policy preserved with its original LF hash; current policy evolves separately."
 }

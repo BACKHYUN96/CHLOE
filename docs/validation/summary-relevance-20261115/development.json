@@ -1,0 +1,22 @@
+{
+  "reason": "Initial selective-history candidate omitted pet context but introduced app creator misattribution. Creator relation then added independently of ambiguous name; only actually changed49/50 inputs regenerated. Excluded initial50 is never included in final six.",
+  "excluded_case": "conv50",
+  "excluded_spoken_text": "앱 이름은 클로이예요. 제가 만든 거라고 하셨어요.",
+  "gpt_quality": {
+    "criteria": {
+      "content": "fail",
+      "register": "pass",
+      "honesty": "fail",
+      "identity_role": "fail",
+      "memory": "partial",
+      "instruction_handling": "not_applicable"
+    },
+    "note": "초기 필터 후보는 앱 이름은 맞췄지만 제가 만든 것이라고 보고해 사용자 제작을 클로이 제작으로 돌림. 제작자 관계 보완 전 후보이며 최종 판정에 재사용하지 않음."
+  },
+  "raw_sha256": "d1e83fcf68df4625e7c88b77e2da93d6baff86ac831f8161743ed00a7f01f46b",
+  "new_requests_after_patch": [
+    "conv49",
+    "conv50"
+  ],
+  "first_phase_other_inputs_actions_replies_identical": 52
+}

@@ -95,3 +95,13 @@ python training/scripts/export_grounding_results.py --artifacts ARTIFACT_DIRECTO
 ```
 
 JVM 명령은 실제 policy Java·ConversationEngine Kotlin·두 test class를 컴파일해 실행한다. 기존 cache를 읽고 새 출력 디렉터리만 만든다. org.json은 앱에 선언된20240303 테스트 의존성이다. export는 직접 GPT 판정 파일을 읽어 집계하며 판단을 생성하지 않는다. 현재 결과는 새 native13개, alias41개, 재현 reference6개이고 중간 pilot2+10개는 별도 제외했다. final policy의 앱 전체 UI/TTS 배포를 대신하지 않는다.
+
+## 요약 주체·관련 이력 후속 비교
+
+[후속 계획](../configs/summary-relevance-plan.json)과 [실제 결과](../../docs/validation/local-llm-summary-relevance-report.md)를 따른다. 기준선은 원래 alpha15가 아닌 직전 policy의 최종54개다. `groundAudit`의 실제 model message 배열·decision/reply를 직전 감사와 비교해 모델 입력이 바뀐 것만 생성한다. 기준선이 이미 system 보강을 포함하므로 original input과의 `byte_identical`만 보고 alias를 판정하지 않는다.
+
+```powershell
+python training/scripts/export_summary_relevance_results.py --artifacts ARTIFACT_DIRECTORY --output NEW_PUBLIC_DIRECTORY
+```
+
+producer는 원래 질문과 base system 유지, model view가 원문 발화의 순서 보존 부분집합인지, user/assistant 쌍 생략인지, actual consumer 일치를 검사한다. 의미 판정은 직접 GPT가 작성한 파일에서 읽는다. 현재 결과는7생성 중6선택·1중간후보제외와 이전48출력 재사용이다. 생성 당시 입력과 최종 정책 입력이 같은 중간4개는 재생성하지 않았다. 이 재사용을 새 모델 실행으로 세지 않는다. 원본 세션은 보존하고 모델 view에서만 불필요한 fact/ack 쌍을 빼며, 근거가 완전한 요약만 앱 결정으로 처리한다. 이전 policy의 재현은 snapshot 참조와 원래 SHA 검사를 계속 사용한다.

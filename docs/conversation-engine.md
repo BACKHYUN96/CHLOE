@@ -90,3 +90,9 @@ alpha10 사용자 제공 4B 결과 3회는 모두 parser ok/fallback false/한�
 `ConversationManager`는 현재 bounded user 이력의 명시적 사실과 앱의 사용 불가 기능을 `GroundedConversationPolicy`에서 다룬다. 관련 사실/요청이 있을 때만 system에 출처 데이터를 추가하고, 소비 가능한 답변에 한해 명확한 회상/불가 기능 요청을 앱 응답으로 처리한다. 보정 답변이 이력/TTS에 전달되고 `evaluation.policy_action`이 모델 답변과 앱 결정을 구분한다. 불완전 JSON/빈 출력은 이 경로로 성공 처리하지 않는다. 기존 PersonaManager·모델·native decoder·TTS 엔진은 유지한다.
 
 당시 smoke persona와 평가 소스는 별도 snapshot의 원래 해시로 동결했다. 새 정책을 기존 승인 데이터에 묵시적으로 적용해 학습하지 않는다. 실제 alpha15 별도 패키지의 동일4B 추론+같은 production policy를 계측했으며 현재 체크아웃의 Kotlin 연결은 JVM에서 검사했다. 원본 앱 업데이트/변경 제품 APK 전체 UI·TTS 검증은 하지 않았다. 개발 질문의 일부 손해가 남아 일반 품질 승격을 확정하지 않는다. [구현·비교·검증·남은 범위](validation/local-llm-grounding-policy-report.md)를 따른다.
+
+## 2026-11-15 요약과 모델 view의 사실 범위
+
+GroundedConversationPolicy는 세션과 모델 view를 구분한다. 무관한 독립 user 사실+중립 assistant 확인 쌍만 view에서 생략하고 원래4턴/1200자 세션은 그대로 둔다. 다음 회상 때 원래 사실을 다시 사용할 수 있다. 의미 있는 assistant 정보/알 수 없는 이력은 함부로 제거하지 않는다. user 사실만으로 완전히 요약 가능한 경우는 grounded_fact_summary로 주체를 보고하고, 그 외 요약은 전체 이력/역할 지시를 모델에 전달한다. 명시적 제작자와 소유자의 관계도 분리한다.
+
+이 변경은 source/UI metadata와 계측 후보이며 원본 앱을 덮어쓰지 않았다. [같은54질문·새6선택/48재사용·직접 평가·회귀](validation/local-llm-summary-relevance-report.md)를 따른다. 전체 제품 UI/TTS와 장기 대화는 별도 검증이 필요하다.

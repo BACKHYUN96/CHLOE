@@ -13,7 +13,7 @@ def main():
  root=Path(__file__).resolve().parents[2];plan=read(root/'training/configs/grounding-plan.json');suite=build_suite(root);previous=read(root/'docs/validation/matched-apps-20261115/responses.json');baseline={r['id']:r for r in previous}
  rows=[json.loads(x) for x in (a.artifacts/'scoped-final.local.jsonl').read_text(encoding='utf-8').splitlines()];assert len(rows)==len({r['id'] for r in rows})==plan['fresh_final_policy_generations']
  judgments=read(a.artifacts/'gpt-judgments.local.json');assert set(judgments['raw'])==set(judgments['delivered'])==set(baseline)
- policy=root/'app/src/main/java/ai/chloe/voicelab/conversation/GroundedConversationPolicy.java';assert hashlib.sha256(policy.read_bytes().replace(b'\r\n',b'\n')).hexdigest()==plan['policy_source_sha256']
+ policy=root/plan.get('policy_source','app/src/main/java/ai/chloe/voicelab/conversation/GroundedConversationPolicy.java');assert hashlib.sha256(policy.read_bytes().replace(b'\r\n',b'\n')).hexdigest()==plan['policy_source_sha256']
  indexed={r['id']:r for r in rows};output=[];trans=Counter();raw_trans=Counter()
  consumed={r['id']:r for r in read(a.artifacts/'actual-consumer.local.json')}
  audits={r['id']:r for r in read(a.artifacts/'scope-final-audit.local.json')}

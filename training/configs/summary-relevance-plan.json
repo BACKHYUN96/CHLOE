@@ -1,0 +1,43 @@
+{
+  "status": "implementation_and_questions_fixed_before_new_inference",
+  "baseline_commit": "67e6deff93847381851478f4916f69b55d10c9db",
+  "baseline_responses": "docs/validation/grounding-policy-20261115/responses.json",
+  "baseline_responses_lf_sha256": "96c2b8baeaf16ebabf3ab6a4c3030dedb1ef7ce50b0aa4c62ce15741357fd2a8",
+  "policy_source_lf_sha256": "b0adc893c6cff35bc898867eba7879d155eb736a0ee4637218760cb96146094f",
+  "source_questions": "matched-apps-plan.json",
+  "comparison_cells": 108,
+  "baseline_reused": 54,
+  "selection": "On-device actual Java audit compares all54 model message arrays to previous final policy audit. Generate only changed model inputs. Same inputs explicitly reuse old raw. Apply final new decision separately; reuse quality labels only for same evaluated source/question/response/rubric.",
+  "intervention": "Only relevant structured facts go to system. Omit unrelated standalone fact+neutral acknowledgement pairs in model view, never delete source session. Preserve summaries and meaningful/unknown history. Source-complete facts-only summary uses app-reported user ownership; complex summaries remain model tasks with role rule.",
+  "generation": "same installed alpha15 Qwen3.5-4B Q4_K_M CPU runtime aa75ff; temp0 seed42 max384 ctx2048 threads4",
+  "model_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+  "evaluation": "GPT direct; known development questions/conditions, not blind or independent. Raw vs app-consumed judgments separated. No retraining/model improvement claim.",
+  "unit_checks": 53,
+  "no_model_download_or_training": true,
+  "input_aliases": 48,
+  "fresh_case_ids": [
+    "conv45",
+    "conv46",
+    "conv47",
+    "conv48",
+    "conv50"
+  ],
+  "decision_changed_case_ids": [
+    "conv46"
+  ],
+  "initial_policy_source_lf_sha256": "ebf54682b969ff64c3477017ca0d97557a3a3fd86c93dd0ddb3d05d48f9d4bc1",
+  "selected_new_outputs": 6,
+  "new_generate_completions": 7,
+  "excluded_candidate_outputs": 1,
+  "final_changed_case_ids": [
+    "conv45",
+    "conv46",
+    "conv47",
+    "conv48",
+    "conv49",
+    "conv50"
+  ],
+  "creator_patch_new_generations": 2,
+  "unchanged_first_phase_outputs_reused": 4,
+  "development_note": "Initial five outputs exposed app creator misattribution in conv50. Added creator relation independently of uncertain name; ownership alone never implies creation. Final53-test policy audited before new49/50 calls. Prior45/46/47/48 actual inputs/actions/replies identical and retained; initial50 excluded. Known-question exploratory development, not preregistration."
+}
