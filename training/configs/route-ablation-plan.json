@@ -1,0 +1,43 @@
+{
+  "base_commit": "6b2ebf0a98fa4c7015cdcc58ccb198ce0a78c470",
+  "model_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+  "model_bytes": 2740937888,
+  "training_steps": 0,
+  "runtime_revision": "aa75ff3239f9cc675b081697deda9e1b112345c6",
+  "generation": {
+    "temperature": 0,
+    "seed": 42,
+    "context_tokens": 2048,
+    "max_generation_tokens": 384,
+    "thinking": false,
+    "threads": 4,
+    "gpu_layers": 99
+  },
+  "routes": {
+    "minimal": "Same persona/schema/template/register, original history, VoiceDirector only; no semantic reply edits.",
+    "current": "Production input grounding/relevance, grounded reply, conversation act, economy, integrity."
+  },
+  "cohorts": {
+    "known": 54,
+    "new_single": 20,
+    "dialogues": 5,
+    "dialogue_turns": 30
+  },
+  "native_requests": 208,
+  "stage_audit": "Deterministic cumulative output-stage replay of each fresh raw response on its actual original history; not extra model generations or full factorial causal evidence.",
+  "dialogue_history": "Each route adds its own actual delivered speech via production DialogueContextManager: max4 pairs/1200 UTF16 chars; blocked turn is not added. Same scripted user turns, not adaptive user dialogue.",
+  "quality": "GPT directly reads all raw/stage/final speech against provided context and expectation. Same author, conditions visible, development set; new wording not independent blind/holdout.",
+  "prior_final_parity": 54,
+  "source_hashes": {
+    "app/src/main/java/ai/chloe/voicelab/conversation/ConversationEngine.kt": "01f9d0583ebc44218b7e1e50b33c39a5d777dbf38c980496baa29af2d3827cd2",
+    "app/src/main/java/ai/chloe/voicelab/conversation/GroundedConversationPolicy.java": "3f0afefc11bec9e5b466a5df403eee9f4b73a3998cc442a7dddd1dc3a4b848da",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ConversationActPolicy.java": "af92cb42b5c7c25c7b26cad77eb696821debb2b16db7b7a66dd99557941927ac",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ReplyEconomyPolicy.java": "1a6a780d7fb32454500e0c9e618a7c404d09c2712a887cbd9c2841b1b43c5ac6",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ReplyIntegrityPolicy.java": "75d3fe22278bdac6749374cf23713fbc6947b23eddc999c20fd928af01366403",
+    "training/pc-match/RouteBridge.java": "4cde33ad1bae513a64aa786f2cb10e98fa0f11591d8d3af58f80ecd6816e6f79",
+    "training/pc-match/compare_routes.py": "721bf8a4fa64463a33c04b8ef0f577a86e4561e203ee2183eec79919b72586a0",
+    "training/pc-match/worker.cpp": "097a1798722568579d0729a0a6396f0920ab7abddc3ec60a0ddd146c95141303",
+    "training/configs/route-ablation-new-cases.json": "662bd70de2bcfbd744df1d0abfbb8ea45445989211ef901b8bf04887260fbb37",
+    "app/src/main/assets/conversation-schema.json": "09e648dfdcada8cdf27b51473ac580327fbe5850e13f1ce4146fc98c8744cfcb"
+  }
+}

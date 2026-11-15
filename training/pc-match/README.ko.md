@@ -1,5 +1,18 @@
 # 별도 PC 4B 실행 도구
 
+## 최소 경로 / 현재 처리 비교 후속
+
+[208개 새 응답과 직접 평가](../../docs/validation/local-llm-route-ablation-report.md)를 추가했다. `RouteBridge.java`, `compare_routes.py`, `training/configs/route-ablation-new-cases.json`은 실험 전용이며 제품 코드는 바꾸지 않는다. 기존54개 고정 system과 새20개/대화5개의 실제 PersonaManager system은 집단별로 구분한다. 경로 사이에는 같은 system/schema/예산/모델을 쓴다. 새 대화는 실제 manager의 최대4쌍/1200 UTF-16자 제한과 자신의 최종 응답을 사용한다. 모든 단계의 반사실적 결과를 최소 경로의 이력에 넣지 않는다.
+
+```powershell
+python -X utf8 training/pc-match/compare_routes.py --output NEW_ARTIFACT_DIRECTORY --previous artifacts/llm-training/pc-4b-20261115 --jdk JDK_DIRECTORY --model EXISTING_SAME_4B.gguf --schema app/src/main/assets/conversation-schema.json
+python -X utf8 training/scripts/export_route_ablation.py --artifacts NEW_ARTIFACT_DIRECTORY --output NEW_PUBLIC_DIRECTORY
+```
+
+runner는 이전 최종 bridge classpath와 소스가 같은 `6b2ebf0` 기준의 production classes/ordered JSON shim을 재사용하고 실험 bridge만 새로 컴파일한다. 기존54개 입력/소비 동등성을 먼저 확인하고, 요청 순서/소스/모델 해시를 실행 전에 고정한다. **제품 소스를 바꾼 후에는 이전 compiled classes를 그대로 재사용하면 안 된다.** 실제 정책/manager를 새로 컴파일하고 classpath와 동등성 근거를 갱신해야 한다. 이번 실행은 production 소스가 바뀌지 않은 조건이다.
+
+export 전에 `judgments.local.json`에 실제 각 단계 발화에 대한 GPT 직접 판정(6criteria/이유/출처)을 제공해야 한다. `verification.local.json`이 있으면 보존 검사/고의 오류 대조 결과도 포함한다. exporter는 의미 점수를 만들어내지 않고, 누락·설정·이력 혼입·계약·판정 범위와 고정 소스 해시를 검증한다. 소스 해시는 실행 당시 바이트이며 Git의 LF/CRLF 변환만 동등하게 허용한다. 새 출력 폴더만 허용하고 이전 응답은 덮어쓰지 않는다. 이 실험은 JSON/220자 제한을 없앤 자유 출력이나 PocketPal 제품 전체의 재현이 아니다.
+
 [실제 실행/품질/미완료 경계](../../docs/validation/local-llm-pc-4b-report.md)를 먼저 읽는다. 기존 GGUF를 읽기 전용으로 사용하며 학습/변환/adapter 적용 도구가 아니다. 원본 폰 앱과 학습 venv에 설치하지 않는다.
 
 ## 구성
