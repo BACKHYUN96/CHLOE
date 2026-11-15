@@ -41,6 +41,7 @@ def main():
     sources.append(Path(__file__).resolve().parents[2] / 'app/src/main/java/ai/chloe/voicelab/conversation/GroundedConversationPolicy.java')
     sources.append(Path(__file__).resolve().parents[2] / 'app/src/main/java/ai/chloe/voicelab/conversation/ReplyEconomyPolicy.java')
     sources.append(Path(__file__).resolve().parents[2] / 'app/src/main/java/ai/chloe/voicelab/conversation/ReplyIntegrityPolicy.java')
+    sources.append(Path(__file__).resolve().parents[2] / 'app/src/main/java/ai/chloe/voicelab/conversation/ConversationActPolicy.java')
     def run(command):
         subprocess.run(command, cwd=directory, check=True)
     run([str(jdk / 'javac.exe'), '-encoding', 'UTF-8', '-source', '8', '-target', '8', '-classpath', str(android), '-d', 'classes', *map(str, sources)])

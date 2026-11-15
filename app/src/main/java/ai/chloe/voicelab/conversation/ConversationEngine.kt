@@ -2,7 +2,7 @@ package ai.chloe.voicelab.conversation
 
 import org.json.JSONObject
 
-data class DirectedReply(val spokenText:String,val intent:String="chat",val emotion:String="neutral",val pace:String="normal",val energy:String="medium",val expressiveness:String="restrained",val instruction:String="",val fallback:Boolean=false,val failureCode:String="none",val policyAction:String="none",val economyAction:String="none",val integrityAction:String="none")
+data class DirectedReply(val spokenText:String,val intent:String="chat",val emotion:String="neutral",val pace:String="normal",val energy:String="medium",val expressiveness:String="restrained",val instruction:String="",val fallback:Boolean=false,val failureCode:String="none",val policyAction:String="none",val economyAction:String="none",val integrityAction:String="none",val dialogueAction:String="none")
 interface ConversationEngine { fun request(messages:String,model:String); fun stop() }
 interface LocalLlmEngine:ConversationEngine
 class PersonaManager {
@@ -57,7 +57,12 @@ class ConversationManager {
         // Rebuild from current bounded history: clearing context also clears facts.
         // Unrecoverable/empty generation remains failure; policy needs usable speech.
         val decision=if(parsed.failureCode in setOf("none","invalid_direction","plain_text"))GroundedConversationPolicy.resolve(context.messages(persona.system(requestedPolite),input),requestedPolite) else null
-        val grounded=if(decision==null)parsed else director.parse(decision.reply).copy(policyAction=decision.action)
+        val act=if(decision==null && parsed.failureCode in setOf("none","invalid_direction","plain_text"))ConversationActPolicy.resolve(context.messages(persona.system(requestedPolite),input),requestedPolite) else null
+        val grounded=when {
+            decision!=null -> director.parse(decision.reply).copy(policyAction=decision.action)
+            act!=null -> director.parse(act.reply).copy(dialogueAction=act.action)
+            else -> parsed
+        }
         val economy=if(grounded.failureCode in setOf("none","invalid_direction","plain_text"))ReplyEconomyPolicy.apply(input,grounded.spokenText) else null
         val economical=if(economy==null)grounded else grounded.copy(spokenText=economy.text,economyAction=economy.action)
         val integrity=if(economical.failureCode in setOf("none","invalid_direction","plain_text"))ReplyIntegrityPolicy.apply(input,economical.spokenText) else null
@@ -75,5 +80,5 @@ class SpeechRegisterCheck {
     fun suspectedPoliteEnding(text:String):Boolean = Regex("(?:[가-힣]+(?:요|습니다|습니까|십시오)|개발자님)(?=[.!?…\\s]|$)").containsMatchIn(text)
 }
 class ConversationEvaluator {
-    fun structural(reply:DirectedReply,polite:Boolean?=null)=JSONObject().put("fallback",reply.fallback).put("failure_code",reply.failureCode).put("policy_action",reply.policyAction).put("economy_action",reply.economyAction).put("reply_economy_version",ReplyEconomyPolicy.VERSION).put("integrity_action",reply.integrityAction).put("reply_integrity_version",ReplyIntegrityPolicy.VERSION).put("length",reply.spokenText.length).put("register_warning",if(polite==false)SpeechRegisterCheck().suspectedPoliteEnding(reply.spokenText) else JSONObject.NULL).put("human_naturalness",JSONObject.NULL).put("factual_accuracy",JSONObject.NULL)
+    fun structural(reply:DirectedReply,polite:Boolean?=null)=JSONObject().put("fallback",reply.fallback).put("failure_code",reply.failureCode).put("policy_action",reply.policyAction).put("economy_action",reply.economyAction).put("reply_economy_version",ReplyEconomyPolicy.VERSION).put("integrity_action",reply.integrityAction).put("reply_integrity_version",ReplyIntegrityPolicy.VERSION).put("dialogue_action",reply.dialogueAction).put("conversation_act_version",ConversationActPolicy.VERSION).put("length",reply.spokenText.length).put("register_warning",if(polite==false)SpeechRegisterCheck().suspectedPoliteEnding(reply.spokenText) else JSONObject.NULL).put("human_naturalness",JSONObject.NULL).put("factual_accuracy",JSONObject.NULL)
 }

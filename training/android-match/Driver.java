@@ -11,6 +11,8 @@ import java.util.concurrent.*;
 import ai.chloe.voicelab.conversation.GroundedConversationPolicy;
 import ai.chloe.voicelab.conversation.ReplyEconomyPolicy;
 import ai.chloe.voicelab.conversation.ReplyIntegrityPolicy;
+import ai.chloe.voicelab.conversation.TurnGuidancePolicy;
+import ai.chloe.voicelab.conversation.ConversationActPolicy;
 
 /** Framework-only driver, installed only against isolated comparison packages. */
 public class Driver extends Instrumentation {
@@ -30,6 +32,7 @@ public class Driver extends Instrumentation {
             else if(op.equals("groundAudit")) groundAudit();
             else if(op.equals("economyAudit")) economyAudit();
             else if(op.equals("integrityAudit")) integrityAudit();
+            else if(op.equals("actsAudit")) actsAudit();
             else if(op.equals("persona")) {
                 Class<?> c=getTargetContext().getClassLoader().loadClass("ai.chloe.voicelab.conversation.PersonaManager");
                 Object obj=c.getDeclaredConstructor().newInstance();
@@ -49,6 +52,20 @@ public class Driver extends Instrumentation {
             } else throw new Exception("Unknown op");
             finish(-1,result);
         } catch(Throwable e) { result.putString("error",android.util.Log.getStackTraceString(e)); finish(0,result); }
+    }
+    void actsAudit() throws Exception {
+        Context ctx=getTargetContext();
+        JSONArray rows=new JSONArray(new String(java.nio.file.Files.readAllBytes(new File(ctx.getFilesDir(),args.getString("input")).toPath()),StandardCharsets.UTF_8));
+        JSONArray output=new JSONArray();
+        for(int i=0;i<rows.length();i++) {
+            JSONObject row=rows.getJSONObject(i);String original=row.getJSONArray("messages").toString();
+            GroundedConversationPolicy.Decision grounded=GroundedConversationPolicy.resolve(original,row.getString("register").equals("polite"));
+            ConversationActPolicy.Decision act=grounded==null?ConversationActPolicy.resolve(original,row.getString("register").equals("polite")):null;
+            output.put(new JSONObject().put("id",row.getString("source_id")).put("actual_messages",new JSONArray(GroundedConversationPolicy.ground(original)))
+                .put("dialogue_action",act==null?"none":act.action).put("dialogue_reply",act==null?JSONObject.NULL:act.reply));
+        }
+        File dest=new File(ctx.getFilesDir(),args.getString("output"));if(dest.exists())throw new Exception("Refusing overwrite");
+        java.nio.file.Files.write(dest.toPath(),output.toString().getBytes(StandardCharsets.UTF_8));
     }
     void integrityAudit() throws Exception {
         Context ctx=getTargetContext();
@@ -264,6 +281,7 @@ public class Driver extends Instrumentation {
                 String original=row.getJSONArray("messages").toString();
                 boolean grounded=row.optBoolean("grounded",false);
                 String actual=grounded?GroundedConversationPolicy.ground(original):original;
+                if(row.optBoolean("turn_guidance",false))actual=TurnGuidancePolicy.apply(actual);
                 Bundle b=new Bundle();b.putString("messages",actual);b.putString("model","4b");b.putInt("prefill_threads",4);b.putString("gpu_mode","cpu");m.setData(b);
                 long start=SystemClock.elapsedRealtime();remote[0].send(m);
                 boolean ok=done.await(240,TimeUnit.SECONDS);
@@ -279,6 +297,24 @@ public class Driver extends Instrumentation {
                     boolean usable=failure.equals("none")||failure.equals("invalid_direction")||failure.equals("plain_text");
                     record.put("policy_action",usable&&decision!=null?decision.action:"none");
                     record.put("delivered_raw",usable&&decision!=null?decision.reply:raw);
+                    if(row.optBoolean("finalize_reply",false)&&usable) {
+                        String selected=record.getString("delivered_raw");
+                        ConversationActPolicy.Decision act=row.optBoolean("conversation_acts",false)&&decision==null?ConversationActPolicy.resolve(original,row.getString("register").equals("polite")):null;
+                        if(act!=null)selected=act.reply;
+                        record.put("dialogue_action",act==null?"none":act.action);
+                        Object parsedFinal=director.getMethod("parse",String.class).invoke(director.getDeclaredConstructor().newInstance(),selected);
+                        String speech=(String)parsedFinal.getClass().getMethod("getSpokenText").invoke(parsedFinal);
+                        ReplyEconomyPolicy.Result economy=ReplyEconomyPolicy.apply(row.getString("input"),speech);
+                        ReplyIntegrityPolicy.Result integrity=ReplyIntegrityPolicy.apply(row.getString("input"),economy.text);
+                        record.put("economy_action",economy.action).put("integrity_action",integrity.action).put("blocked",integrity.blocked);
+                        if(integrity.blocked)record.put("delivered_raw",JSONObject.NULL).put("delivered_spoken","").put("consumer_failure_code","unusable_reply");
+                        else {
+                            String edited=new JSONObject(selected).put("spoken_text",integrity.text).toString();
+                            Object consumed=director.getMethod("parse",String.class).invoke(director.getDeclaredConstructor().newInstance(),edited);
+                            record.put("delivered_raw",edited).put("delivered_spoken",consumed.getClass().getMethod("getSpokenText").invoke(consumed))
+                                .put("consumer_failure_code",consumed.getClass().getMethod("getFailureCode").invoke(consumed));
+                        }
+                    }
                 }
                 try(FileOutputStream out=new FileOutputStream(output,true)){out.write((record.toString()+"\n").getBytes(StandardCharsets.UTF_8));out.getFD().sync();}
                 if(!ok)break;

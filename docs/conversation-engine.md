@@ -104,3 +104,7 @@ JSON 소비와 기존 grounding 뒤 `ReplyEconomyPolicy`로 삭제만 수행한�
 ## 발화 무결성 후속 · 2026-11-15
 
 기존 정리 뒤 `ReplyIntegrityPolicy`를 적용해 한정된 질문 echo/미완성 꼬리/이름 처리 지시 노출을 삭제한다. 실질 답이 남지 않으면 `unusable_reply` 실패 안내만 반환하고 이력/TTS 대상에서 제외한다. 새 정답을 만들지 않으며 `integrity_action`/`reply_integrity_version`을 분리한다. [실제 비교와 미검증 범위](validation/local-llm-reply-integrity-report.md)를 따른다.
+
+## 경청·주체·불확실성 대화 동작 · 2026-11-15
+
+기존 grounding 뒤 `ConversationActPolicy`로 좁은 요청의 경청 수락, 불확실한 정보 답변 방법, AI 경험 한계, 빈 이력의 생일 정보 부재, 앱 이름 확인을 처리한다. 인용/부정/가정/지원하지 않는 이력에는 새 답을 가정하지 않는다. 3인칭 클로이는 다른 객체일 수 있어 AI로 단정하지 않는다. `dialogue_action`/`conversation_act_version`은 prompt version과 분리한다. 새로운 세계 지식/생일/사용자 이름을 만들지 않으며 malformed/empty 출력 복구용도 아니다. [PC실행/125검사/54질문 직접 평가와 남은 문제](validation/local-llm-pc-4b-report.md)를 따른다. 실제 제품 APK/UI/TTS는 아직 검증하지 않았다.
