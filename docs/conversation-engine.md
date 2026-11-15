@@ -84,3 +84,9 @@ alpha10 사용자 제공 4B 결과 3회는 모두 parser ok/fallback false/한�
 메모리는 worker 자체 llm_pss_kib를 완료 시점 값으로 별도 표시한다. UI 측 Android PSS 합산은 누락/캐시/권한 제한을 배제할 수 없어 전체/진짜 최대값으로 부르지 않는다. app_total_peak_pss_kib는 null로 기록한다. 이전 alpha10의 UI 252MiB와 worker 약2.8GiB가 충돌한 문제를 숫자 보정이나 추정 합계로 가리지 않는다. 요청마다 history_turns를 기록해 초기화/문맥 유지 상태도 확인한다.
 
 코드 회귀는 요청 완료 후 release/reset을 모사한 재연결을 확인하지만 실제 TTS 재생/Binder/기기 테스트는 아니다. 검증 순서: 업데이트 후 4B(또는 이미 준비한 2B)로 초기화 1번 → 인사/개발자 소개/이름 기억 질문을 초기화 없이 연속 입력 → 스타일 음성 재생 후 재요청 → 대화 초기화 후 재요청. history_turns=0/1/2, 말투, worker PSS와 각 지연 단계를 확인한다. 신규 기기 결과와 음성 청취, 10·30분은 미측정이다. 모델/양자화/CPU4/Sohee와 기존 TTS native는 유지한다.
+
+## 2026-11-15 주체·기능 한계 정책 후보
+
+`ConversationManager`는 현재 bounded user 이력의 명시적 사실과 앱의 사용 불가 기능을 `GroundedConversationPolicy`에서 다룬다. 관련 사실/요청이 있을 때만 system에 출처 데이터를 추가하고, 소비 가능한 답변에 한해 명확한 회상/불가 기능 요청을 앱 응답으로 처리한다. 보정 답변이 이력/TTS에 전달되고 `evaluation.policy_action`이 모델 답변과 앱 결정을 구분한다. 불완전 JSON/빈 출력은 이 경로로 성공 처리하지 않는다. 기존 PersonaManager·모델·native decoder·TTS 엔진은 유지한다.
+
+당시 smoke persona와 평가 소스는 별도 snapshot의 원래 해시로 동결했다. 새 정책을 기존 승인 데이터에 묵시적으로 적용해 학습하지 않는다. 실제 alpha15 별도 패키지의 동일4B 추론+같은 production policy를 계측했으며 현재 체크아웃의 Kotlin 연결은 JVM에서 검사했다. 원본 앱 업데이트/변경 제품 APK 전체 UI·TTS 검증은 하지 않았다. 개발 질문의 일부 손해가 남아 일반 품질 승격을 확정하지 않는다. [구현·비교·검증·남은 범위](validation/local-llm-grounding-policy-report.md)를 따른다.

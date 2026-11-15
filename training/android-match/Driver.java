@@ -8,6 +8,7 @@ import org.json.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.*;
+import ai.chloe.voicelab.conversation.GroundedConversationPolicy;
 
 /** Framework-only driver, installed only against isolated comparison packages. */
 public class Driver extends Instrumentation {
@@ -24,6 +25,7 @@ public class Driver extends Instrumentation {
             if(op.equals("serve")) serve();
             else if(op.equals("chloe")) runChloe();
             else if(op.equals("auditApp")) auditApp();
+            else if(op.equals("groundAudit")) groundAudit();
             else if(op.equals("persona")) {
                 Class<?> c=getTargetContext().getClassLoader().loadClass("ai.chloe.voicelab.conversation.PersonaManager");
                 Object obj=c.getDeclaredConstructor().newInstance();
@@ -43,6 +45,19 @@ public class Driver extends Instrumentation {
             } else throw new Exception("Unknown op");
             finish(-1,result);
         } catch(Throwable e) { result.putString("error",android.util.Log.getStackTraceString(e)); finish(0,result); }
+    }
+    void groundAudit() throws Exception {
+        Context ctx=getTargetContext();
+        JSONArray rows=new JSONArray(new String(java.nio.file.Files.readAllBytes(new File(ctx.getFilesDir(),args.getString("input")).toPath()),StandardCharsets.UTF_8));
+        JSONArray audits=new JSONArray();
+        for(int i=0;i<rows.length();i++) {
+            JSONObject row=rows.getJSONObject(i);String original=row.getJSONArray("messages").toString();
+            String actual=GroundedConversationPolicy.ground(original);
+            GroundedConversationPolicy.Decision d=GroundedConversationPolicy.resolve(original,row.getString("register").equals("polite"));
+            audits.put(new JSONObject().put("id",row.getString("source_id")).put("actual_messages",new JSONArray(actual)).put("byte_identical",original.equals(actual)).put("policy_action",d==null?"none":d.action).put("policy_reply",d==null?JSONObject.NULL:d.reply));
+        }
+        File output=new File(ctx.getFilesDir(),args.getString("output"));if(output.exists())throw new Exception("Refusing overwrite");
+        java.nio.file.Files.write(output.toPath(),audits.toString().getBytes(StandardCharsets.UTF_8));
     }
     void auditApp() throws Exception {
         Context ctx=getTargetContext();
@@ -195,10 +210,25 @@ public class Driver extends Instrumentation {
                 JSONObject row=cases.getJSONObject(i); CountDownLatch done=new CountDownLatch(1);String[] answer=new String[1];
                 Messenger reply=new Messenger(new Handler(Looper.getMainLooper(),m->{if(m.what==3){answer[0]=m.getData().getString("result");done.countDown();}return true;}));
                 Message m=Message.obtain(null,1);m.arg1=i+1;m.replyTo=reply;
-                Bundle b=new Bundle();b.putString("messages",row.getJSONArray("messages").toString());b.putString("model","4b");b.putInt("prefill_threads",4);b.putString("gpu_mode","cpu");m.setData(b);
+                String original=row.getJSONArray("messages").toString();
+                boolean grounded=row.optBoolean("grounded",false);
+                String actual=grounded?GroundedConversationPolicy.ground(original):original;
+                Bundle b=new Bundle();b.putString("messages",actual);b.putString("model","4b");b.putInt("prefill_threads",4);b.putString("gpu_mode","cpu");m.setData(b);
                 long start=SystemClock.elapsedRealtime();remote[0].send(m);
                 boolean ok=done.await(240,TimeUnit.SECONDS);
                 JSONObject record=new JSONObject().put("id",row.getString("id")).put("elapsed_ms",SystemClock.elapsedRealtime()-start).put("result",ok?new JSONObject(answer[0]):new JSONObject().put("error","timeout"));
+                record.put("actual_messages",new JSONArray(actual));
+                if(grounded && ok) {
+                    JSONObject nativeResult=record.getJSONObject("result");
+                    String raw=nativeResult.optString("raw");
+                    Class<?> director=ctx.getClassLoader().loadClass("ai.chloe.voicelab.conversation.VoiceDirector");
+                    Object parsed=director.getMethod("parse",String.class).invoke(director.getDeclaredConstructor().newInstance(),raw);
+                    String failure=(String)parsed.getClass().getMethod("getFailureCode").invoke(parsed);
+                    GroundedConversationPolicy.Decision decision=GroundedConversationPolicy.resolve(original,row.getString("register").equals("polite"));
+                    boolean usable=failure.equals("none")||failure.equals("invalid_direction")||failure.equals("plain_text");
+                    record.put("policy_action",usable&&decision!=null?decision.action:"none");
+                    record.put("delivered_raw",usable&&decision!=null?decision.reply:raw);
+                }
                 try(FileOutputStream out=new FileOutputStream(output,true)){out.write((record.toString()+"\n").getBytes(StandardCharsets.UTF_8));out.getFD().sync();}
                 if(!ok)break;
             }

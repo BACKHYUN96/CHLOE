@@ -10,7 +10,8 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def persona(polite, root=ROOT):
-    source = (root / 'app/src/main/java/ai/chloe/voicelab/conversation/ConversationEngine.kt').read_text(encoding='utf-8')
+    plan = json.loads((root / 'training/configs/evaluation-plan.json').read_text(encoding='utf-8'))
+    source = (root / plan['persona_source']).read_text(encoding='utf-8')
     text = re.search(r'fun system\(polite:Boolean\)="""(.*?)"""', source, re.S)
     if not text:
         raise ValueError('App persona source changed; review extraction')
@@ -145,7 +146,7 @@ def load_records(path, root=ROOT):
         if [m['role'] for m in messages] != ['system', 'user', 'assistant']:
             raise ValueError('Smoke records must contain one complete system/user/assistant turn')
         if row['register'] not in ('casual', 'polite') or messages[0]['content'] != persona(row['register']=='polite', root):
-            raise ValueError('System persona differs from app')
+            raise ValueError('System persona differs from frozen smoke baseline')
         prompt = normalized(messages[1]['content'])
         if not prompt:
             raise ValueError('Empty user input')

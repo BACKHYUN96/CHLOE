@@ -12,9 +12,10 @@
       "git_blob_oid": "dee404e41ac0a9357d2dc038b5853ba03b5920de",
       "lf_normalized_sha256": "844294881ddde5d22d03f64aa52b711364d818197d13300379c599aaa64cf2a5"
     },
-    "app/src/main/java/ai/chloe/voicelab/conversation/ConversationEngine.kt": {
+    "training/snapshots/smoke-20261112/ConversationEngine.kt.txt": {
       "git_blob_oid": "4f13acddbc344cd004db8a47a8a1fed8f0a7815d",
-      "lf_normalized_sha256": "f2d0d29da78ec1e3c12caa4b5192d46a7ddbbbfc35903e2464f751ac09afc676"
+      "lf_normalized_sha256": "f2d0d29da78ec1e3c12caa4b5192d46a7ddbbbfc35903e2464f751ac09afc676",
+      "original_source_path": "app/src/main/java/ai/chloe/voicelab/conversation/ConversationEngine.kt"
     }
   },
   "base_case_ids": [
@@ -129,5 +130,7 @@
   "tts_instruction_empty": null,
   "human_review_completed": false,
   "split_policy": "reserve all evaluation conversations and paraphrase families from train/validation; human-review families before training",
-  "blind_review": "randomize base/adapter labels and store local mapping; no promotion from automatic scores"
+  "blind_review": "randomize base/adapter labels and store local mapping; no promotion from automatic scores",
+  "persona_source": "training/snapshots/smoke-20261112/ConversationEngine.kt.txt",
+  "snapshot_note": "Original approved smoke/evaluation source bytes preserved with the same LF SHA and git blob. Current Android policy evolves separately; past personas, fixtures and generation conditions are not rewritten."
 }

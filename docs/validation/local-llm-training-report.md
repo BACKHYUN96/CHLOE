@@ -1,5 +1,7 @@
 # 로컬 대화 LLM 학습 사전 검증 · 2026-11-12 갱신
 
+2026-11-15 후속: 아래 기록 뒤 [사용자 사실 주체·기능 한계 정책](local-llm-grounding-policy-report.md)을 앱 소스에 구현하고 같은54질문으로 대조했다. 새 추론13+무변경41재사용, 최종 엄격 통과15→21이며 재학습/원본 앱 업데이트는 없었다. 아래는 해당 실험 당시 기록이다.
+
 2026-11-15 후속: 기존 모델/adapter를 보존하고 재학습 없이 같은4B GGUF의 실제 Android 앱 경로를 비교했다. strict JSON에서 PocketPal의 grammar/prefill 연결에 의한 본문 미전달을 분리했고 root-only 보정 후에도 소유자·정직성·반복 오류가 남았다. [최신 기기 비교 보고서](local-llm-matched-apps-report.md)를 따른다. 아래10-step 당시 기록과 별도 실험이며4B에 adapter를 적용하지 않았다.
 
 2026-11-14 후속: 아래 JSON 계약 실패를 원문과 대조한 결과 실제 schema/grammar가 누락된 PC 평가 조건이 주요 원인이었다. 기존 원본/adapter를 보존한 수정·재비교는 [JSON 계약 후속 보고서](local-llm-json-contract-report.md)를 따른다. 아래는2026-11-12 당시 실행 기록이며 이후 재학습하지 않았다.

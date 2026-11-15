@@ -1,5 +1,13 @@
 # 로컬 Codex 작업 지시: CHLOE 한국어 대화 LLM 학습
 
+## 2026-11-15 사용자 사실·기능 한계 정책 구현/비교
+
+모델·adapter와 원본 앱을 보존하고 재학습 없이 `GroundedConversationPolicy`를 대화 관리자에 연결했다. 사용자 발화에서 명시적으로 확인한 소유 사실만 구조화하고, 현재 없는 조회/일정/전화 기능은 앱 결정으로 실행 약속을 막는다. 무관한 입력은 바꾸지 않는다. 과거 승인 smoke persona는 같은 blob/SHA의 snapshot으로 보존했으며 새 정책의 학습 데이터로 전환하지 않았다.
+
+같은54질문 비교는 기준선54개 보존, 새 draft13개+바이트 동등 재사용41개다. 별도 새 기준선6개는 raw6/6 재현. GPT 직접 평가의 엄격 통과는15→21/54(상승7·하락2), model draft만은16/54라 앱 보정 효과를 모델 학습 개선으로 부르지 않는다. 기기 input/action/consumer54개 감사·JVM36개·Python121개 중118통과/3환경skip. 제품 전체 APK/TTS와 보지 않은 표현 일반화는 미검증이다.
+
+[최신 구현/직접 평가/회귀/미완료](../docs/validation/local-llm-grounding-policy-report.md)를 따른다. 원본 폰 앱을 업데이트하거나 PR을 병합하지 않았다.
+
 ## 2026-11-15 같은4B GGUF의 Android 앱 경로 비교 완료
 
 기존2B 원본·10-step adapter와 원본 Android 앱을 보존하고 재학습 없이 S26 Ultra에서 같은4B Q4_K_M 복사본·54질문·system/history·strict JSON 요청으로 비교했다. CHLOE54개는 실제 prompt builder/consumer와 공통 계약 모두 통과했고 GPT 엄격 통과15·부분20·실패19였다.

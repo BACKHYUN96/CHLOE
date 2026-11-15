@@ -76,3 +76,22 @@ python training/scripts/export_matched_app_results.py --artifacts ARTIFACT_DIREC
 ```
 
 export는 54개 보정 출력과 판정이 준비됐는지 검사하고 새 디렉터리만 생성한다. 평가 과정의 Python API 호출은 판정을 생성하지 않고, GPT가 직접 읽고 기록한 판정의 개수만 집계한다. 기기 화면 회전 등을 임시 변경했다면 기록한 원래 상태로 복구한다. 중단 시에는 캡처와 대기 중인 후속 controller도 모두 정지해 사용자 지시 없이 재시작되지 않게 한다.
+
+## 사용자 사실·기능 제한 후속 비교
+
+[정책 보고서](../../docs/validation/local-llm-grounding-policy-report.md)와 [탐색 과정/최종 계획](../configs/grounding-plan.json)을 따른다. 이 경로는 PocketPal grammar 보정과 별개다. production Java policy를 계측 빌드에도 포함하므로 원본 앱 재설치 없이 같은 native 모델에서 prompt/소비 정책을 검증한다.
+
+새 artifact 디렉터리에 `matched_app_suite.build_suite()`의 각 row를 복사해 `source_id=원래id`, `id=grounded-원래id`, `grounded=true`를 추가한다. JSON의 messages/input/register는 바꾸지 않는다. 그54개 입력을 격리 패키지 files에 복사하고 다음 작업을 쓴다.
+
+```powershell
+adb -s DEVICE shell am instrument -w -e op groundAudit -e input SUITE.json -e output NEW_AUDIT.json ai.chloe.match.driver/ai.chloe.match.driver.Driver
+```
+
+actual audit의 `byte_identical=false` 또는 `policy_action!=none`인 row만 별도 새 suite로 선택해 기존 `op chloe`에서 생성한다. 나머지는 원래 메시지 바이트/결정 동등성을 감사하고 baseline raw를 명시적으로 재사용한다. model output을 다시 만들었다고 집계하지 않는다. 최종 정책의 소비 응답을 변경했으면 새 audit으로 모델 입력/action 동등성을 다시 확인하고, 정책 reply를 새 native 생성 없이 replay한다. `op auditApp`은 기존 base builder와 최종 raw의 실제 consumer를 생성 없이 검증한다. 최종 CSV 대신 JSON은 raw draft·앱 보정·판정/alias를 구분해 남긴다.
+
+```powershell
+python training/scripts/test_grounding_policy.py --gradle-cache GRADLE_MODULE_CACHE --jdk JDK_DIRECTORY --json-jar JSON_20240303.jar --output NEW_JVM_TEST_DIRECTORY
+python training/scripts/export_grounding_results.py --artifacts ARTIFACT_DIRECTORY --output NEW_PUBLIC_DIRECTORY
+```
+
+JVM 명령은 실제 policy Java·ConversationEngine Kotlin·두 test class를 컴파일해 실행한다. 기존 cache를 읽고 새 출력 디렉터리만 만든다. org.json은 앱에 선언된20240303 테스트 의존성이다. export는 직접 GPT 판정 파일을 읽어 집계하며 판단을 생성하지 않는다. 현재 결과는 새 native13개, alias41개, 재현 reference6개이고 중간 pilot2+10개는 별도 제외했다. final policy의 앱 전체 UI/TTS 배포를 대신하지 않는다.

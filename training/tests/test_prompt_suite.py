@@ -23,7 +23,7 @@ class PromptSuiteTests(unittest.TestCase):
                 rows = [s for s in situations if s['case_id']==ident and s['register']==register]
                 self.assertEqual(len({r['input'] for r in rows}), 1)
 
-    def test_original_prompt_and_app_are_unchanged(self):
+    def test_original_prompt_uses_preserved_smoke_snapshot(self):
         for register in ('casual','polite'):
             self.assertEqual(system_prompt('original',register), persona(register=='polite'))
         self.assertIn("'클로이'", system_prompt('revised','casual'))
