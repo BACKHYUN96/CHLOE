@@ -1,5 +1,20 @@
 # 별도 PC 4B 실행 도구
 
+## 관련성 필터 수정 전후 비교
+
+[실제212개 생성·직접 평가](../../docs/validation/local-llm-relevance-filter-report.md), [고정 계획](../configs/relevance-filter-plan.json)을 추가했다. `compare_relevance.py`는 수정 전/후를 **서로 다른 compiled classes/JVM bridge**로 실행한다. 같은 모델/schema/worker·최종 정책을 유지하며 실제 manager로 각 조건의 다음 턴 이력을 만든다. 직전104개 입력/소비를 사전 검사한 뒤 주208개와 오답 고정 이력4개를 새로 생성한다. 과거 응답을 새 추론 결과로 재생하지 않는다.
+
+1. `test_grounding_policy.py`로 실제 수정 후 Java 정책/Kotlin manager를 **새 폴더에 컴파일**하고 테스트한다. 기존 Gradle cache와 ordered JSON shim을 읽기 전용으로 사용한다.
+2. 수정 전은 `4d2e488` 기준의 보존된 `route-ablation-20261115-final/bridge/classpath.local.txt`를 사용한다. 이전 정책 snapshot은 `training/snapshots/relevance-filter-20261115/`에 있다. 현재 소스로 baseline classes를 덮어쓰지 않는다.
+3. 새 출력 폴더와 방금 만든 classes를 인자로 전달한다.
+
+```powershell
+python -X utf8 training/pc-match/compare_relevance.py --output NEW_ARTIFACT_DIRECTORY --previous artifacts/llm-training/route-ablation-20261115-final --policy-classes NEW_COMPILED_CLASSES --jdk JDK_DIRECTORY --model EXISTING_SAME_4B.gguf --schema app/src/main/assets/conversation-schema.json
+python -X utf8 training/scripts/export_relevance_results.py --artifacts NEW_ARTIFACT_DIRECTORY --output NEW_PUBLIC_DIRECTORY
+```
+
+runner는 필터 외 source 영역이 baseline snapshot과 같은지, 동일 이력의 system 내용이 그대로인지 실행 전에 검사한다. 소스 해시는 LF로 정규화한다. 품질 exporter에는 `judgments.local.json`의 raw/final 직접 GPT6기준 판정/이유/출처가 필요하다. 선택적 `verification.local.json`은 JVM/보존/고의 오류 대조 결과를 담는다. 도구는 의미 점수를 생성하지 않는다. 더 제품 소스를 바꿀 때는 old classes를 현재 모델 정책이라고 부르지 말고 새로 컴파일해야 한다. 이번 작업의 수정 후 bridge pointer는 새 결과 폴더의 `bridge-after/classpath.local.txt`이며 예전 포인터는 보존했다.
+
 ## 최소 경로 / 현재 처리 비교 후속
 
 [208개 새 응답과 직접 평가](../../docs/validation/local-llm-route-ablation-report.md)를 추가했다. `RouteBridge.java`, `compare_routes.py`, `training/configs/route-ablation-new-cases.json`은 실험 전용이며 제품 코드는 바꾸지 않는다. 기존54개 고정 system과 새20개/대화5개의 실제 PersonaManager system은 집단별로 구분한다. 경로 사이에는 같은 system/schema/예산/모델을 쓴다. 새 대화는 실제 manager의 최대4쌍/1200 UTF-16자 제한과 자신의 최종 응답을 사용한다. 모든 단계의 반사실적 결과를 최소 경로의 이력에 넣지 않는다.

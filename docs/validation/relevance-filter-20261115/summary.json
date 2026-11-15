@@ -1,0 +1,137 @@
+{
+  "fresh_requests": 212,
+  "main_requests": 208,
+  "supplemental_fixed_history_requests": 4,
+  "training_steps": 0,
+  "cohorts": {
+    "known": {
+      "questions": 54,
+      "scores": {
+        "before": {
+          "fail": 7,
+          "partial": 14,
+          "pass": 33
+        },
+        "after": {
+          "fail": 7,
+          "partial": 14,
+          "pass": 33
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "fail": 17,
+          "partial": 17,
+          "pass": 20
+        },
+        "after": {
+          "fail": 17,
+          "partial": 17,
+          "pass": 20
+        }
+      },
+      "improved": 0,
+      "regressed": 0,
+      "model_input_equal": 54,
+      "raw_equal": 54,
+      "original_history_equal": 54
+    },
+    "new_single": {
+      "questions": 20,
+      "scores": {
+        "before": {
+          "pass": 6,
+          "partial": 9,
+          "fail": 5
+        },
+        "after": {
+          "pass": 6,
+          "partial": 9,
+          "fail": 5
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "pass": 6,
+          "partial": 9,
+          "fail": 5
+        },
+        "after": {
+          "pass": 6,
+          "partial": 9,
+          "fail": 5
+        }
+      },
+      "improved": 0,
+      "regressed": 0,
+      "model_input_equal": 20,
+      "raw_equal": 20,
+      "original_history_equal": 20
+    },
+    "dialogue": {
+      "questions": 30,
+      "scores": {
+        "before": {
+          "pass": 13,
+          "partial": 8,
+          "fail": 9
+        },
+        "after": {
+          "pass": 15,
+          "partial": 9,
+          "fail": 6
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "pass": 11,
+          "fail": 10,
+          "partial": 9
+        },
+        "after": {
+          "pass": 13,
+          "fail": 7,
+          "partial": 10
+        }
+      },
+      "improved": 3,
+      "regressed": 0,
+      "model_input_equal": 25,
+      "raw_equal": 25,
+      "original_history_equal": 26
+    },
+    "fixed_history_probe": {
+      "questions": 2,
+      "scores": {
+        "before": {
+          "fail": 2
+        },
+        "after": {
+          "fail": 1,
+          "pass": 1
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "fail": 2
+        },
+        "after": {
+          "fail": 1,
+          "pass": 1
+        }
+      },
+      "improved": 1,
+      "regressed": 0,
+      "model_input_equal": 0,
+      "raw_equal": 0,
+      "original_history_equal": 2
+    }
+  },
+  "raw_contract_pass": 212,
+  "final_contract_pass": 212,
+  "normal_native_finish": 212,
+  "blocked": 0,
+  "truncated": 0,
+  "max_prompt_tokens": 531,
+  "judge": "GPT direct six-criterion review. Six unmatched context/speech groups read directly; exact prior question/original history/speech judgments reused with explicit provenance. Same author, visible conditions, known development set; not independent/blind/human/holdout. No automated meaning score."
+}

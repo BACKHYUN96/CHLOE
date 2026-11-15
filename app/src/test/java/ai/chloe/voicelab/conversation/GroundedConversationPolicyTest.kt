@@ -55,4 +55,38 @@ class GroundedConversationPolicyTest {
  @Test fun quotedOwningAppDoesNotEstablishCreator(){val m=messages("앱 이름이 뭐라고 했지?","user" to "제 앱 이름은 “하루”예요.","assistant" to "확인.");assertFalse(speech(m,true).contains("만드신"));assertFalse(GroundedConversationPolicy.ground(m).contains("앱 제작자는 사용자다"))}
  @Test fun irrelevantCreatorRelationIsNotInjected(){val m=messages("날씨는 어떻게 예측해?","user" to "내가 만든 앱 이름은 반짝이야.","assistant" to "확인.");assertEquals(2,JSONArray(GroundedConversationPolicy.ground(m)).length());assertFalse(GroundedConversationPolicy.ground(m).contains("앱 제작자는 사용자다"))}
  @Test fun creatorRetractionOrOwnershipOnlyUpdateInvalidatesCreatorHint(){for(update in listOf("그 앱은 내가 만든 게 아니야.","내 앱 이름은 단비야.")){val m=messages("앱 이름이 뭐라고 했지?","user" to "내가 만든 앱 이름은 반짝이야.","assistant" to "확인.","user" to update,"assistant" to "확인.");assertFalse(GroundedConversationPolicy.ground(m).contains("앱 제작자는 사용자다"))}}
+ @Test fun ambiguousNamedCreatorRecallKeepsOriginalWithoutGuessingName(){
+  for(q in listOf("달빛을 만든 사람은 누구인가요?","달빛으로 만든 것과 소유한 것을 구분해 주세요.")) {
+   val m=messages(q,"user" to "제가 만든 앱 이름은 달빛이에요.","assistant" to "앱 이름을 알려 주셔서 감사합니다.")
+   val view=JSONArray(GroundedConversationPolicy.ground(m));assertEquals(4,view.length())
+   assertEquals("제가 만든 앱 이름은 달빛이에요.",view.getJSONObject(1).getString("content"));assertNull(answer(m))
+  }
+ }
+ @Test fun uncertainSuffixBothReferencesKeepVerbatimSource(){
+  for(q in listOf("몽실을 부르는 짧은 말을 써 줘.","몽실이를 부르는 짧은 말을 써 줘.")) {
+   val m=messages(q,"user" to "내 강아지 이름은 몽실이야.","assistant" to "확인.")
+   assertTrue(GroundedConversationPolicy.ground(m).contains("내 강아지 이름은 몽실이야."));assertNull(answer(m))
+  }
+ }
+ @Test fun opaqueOwnershipRecallKeepsEvidence(){
+  val m=messages("그건 누구 거였지?","user" to "노란 가방은 내 거야.","assistant" to "확인.")
+  assertEquals(4,JSONArray(GroundedConversationPolicy.ground(m)).length());assertNull(answer(m))
+ }
+ @Test fun crossTopicOrganizationKeepsAllSourcesAndRoleOrder(){
+  val m=messages("제가 만든 것과 제가 소유한 물건을 구분해서 정리해 주세요.","user" to "제가 만든 앱 이름은 달빛이에요.","assistant" to "확인.","user" to "파란 수첩은 제 거예요.","assistant" to "확인.")
+  val view=JSONArray(GroundedConversationPolicy.ground(m));assertEquals(6,view.length())
+  assertEquals("제가 만든 앱 이름은 달빛이에요.",view.getJSONObject(1).getString("content"));assertEquals("assistant",view.getJSONObject(2).getString("role"));assertEquals("파란 수첩은 제 거예요.",view.getJSONObject(3).getString("content"))
+ }
+ @Test fun uncertaintyIsNotEvidenceOfIrrelevance(){
+  val m=messages("나중에 다시 생각해 볼까?","user" to "내 강아지 이름은 하루야.","assistant" to "확인.")
+  assertEquals(4,JSONArray(GroundedConversationPolicy.ground(m)).length());assertEquals(4,JSONArray(m).length())
+ }
+ @Test fun exclusionAppliesOnlyToNamedFactTopic(){
+  val m=messages("앱 얘기는 빼고 고양이 이름이 뭐라고 했지?","user" to "내 고양이 이름은 하루야.","assistant" to "확인.","user" to "내가 만든 앱 이름은 단비야.","assistant" to "확인.")
+  val view=JSONArray(GroundedConversationPolicy.ground(m));assertEquals(4,view.length());assertTrue(view.toString().contains("고양이 이름은 하루야"));assertFalse(view.toString().contains("앱 이름은 단비야"));assertEquals(6,JSONArray(m).length())
+ }
+ @Test fun genericSummaryKeepsAmbiguousNamesEvenWithOtherTopicWords(){
+  val m=messages("물건과 이름을 아까 말한 순서로 정리해 주세요.","user" to "제 고양이 이름은 몽실이에요.","assistant" to "확인.")
+  assertTrue(GroundedConversationPolicy.ground(m).contains("제 고양이 이름은 몽실이에요."));assertNull(answer(m))
+ }
 }

@@ -95,6 +95,8 @@ alpha10 사용자 제공 4B 결과 3회는 모두 parser ok/fallback false/한�
 
 GroundedConversationPolicy는 세션과 모델 view를 구분한다. 무관한 독립 user 사실+중립 assistant 확인 쌍만 view에서 생략하고 원래4턴/1200자 세션은 그대로 둔다. 다음 회상 때 원래 사실을 다시 사용할 수 있다. 의미 있는 assistant 정보/알 수 없는 이력은 함부로 제거하지 않는다. user 사실만으로 완전히 요약 가능한 경우는 grounded_fact_summary로 주체를 보고하고, 그 외 요약은 전체 이력/역할 지시를 모델에 전달한다. 명시적 제작자와 소유자의 관계도 분리한다.
 
+관련성 필터 `preserve-uncertain-source-v1`은 불확실성을 생략 근거로 쓰지 않는다. 이름을 지칭한 제작자/소유자 질문과 여러 사실 정리에서 원문을 보존하고, 명확한 제외는 해당 화제에 한정한다. 모호한 이름 후보는 검색 단서일 뿐 정답/구조화 사실로 확정하지 않는다. 사실 추출·creator hint·최종 답변 정책은 그대로다. [PC212개 실제 전후 비교](validation/local-llm-relevance-filter-report.md)에서 연속30턴13/8/9→15/9/6, 기존74독립 질문은 유지됐다. 첫 제작자 회상과 이름 되묻기·폰 UI/TTS는 미해결/미검증으로 남는다.
+
 이 변경은 source/UI metadata와 계측 후보이며 원본 앱을 덮어쓰지 않았다. [같은54질문·새6선택/48재사용·직접 평가·회귀](validation/local-llm-summary-relevance-report.md)를 따른다. 전체 제품 UI/TTS와 장기 대화는 별도 검증이 필요하다.
 
 ## 발화 정리 후속 · 2026-11-15

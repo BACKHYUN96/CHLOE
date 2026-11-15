@@ -1,0 +1,42 @@
+{
+  "base_commit": "4d2e4881f1569a6533bf3c272f75fd7d3b45ab1a",
+  "model_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+  "training_steps": 0,
+  "native_requests": 212,
+  "main_requests": 208,
+  "fixed_history_probes": 4,
+  "change": "Only relevanceHistory/helpers. Fact extraction, reply resolution, system construction, persona, schema, native worker and all output policies unchanged.",
+  "cohorts": {
+    "known": 54,
+    "new_single": 20,
+    "dialogue_turns": 30,
+    "fixed_history_probe_questions": 2
+  },
+  "system": "Known54 retains prior frozen system; new20/dialogues use actual PersonaManager. Compare conditions only within cohort.",
+  "generation": {
+    "temperature": 0,
+    "seed": 42,
+    "context_tokens": 2048,
+    "max_generation_tokens": 384,
+    "threads": 4,
+    "thinking": false,
+    "gpu_layers": 99
+  },
+  "dialogue_history": "Each independent bridge uses actual manager and own delivered speech, max4 pairs/1200 UTF16 chars; scripted same user turns. No prior outputs added.",
+  "source_hashes": {
+    "app/src/main/java/ai/chloe/voicelab/conversation/GroundedConversationPolicy.java": "e2fe90a5ffe98d0a66675db445d8fb2fac2444b8f879f6117350885245b78f1d",
+    "training/snapshots/relevance-filter-20261115/GroundedConversationPolicy.before.java.txt": "b0adc893c6cff35bc898867eba7879d155eb736a0ee4637218760cb96146094f",
+    "training/pc-match/compare_relevance.py": "e9146c349262995555f780965abcfe9e1ea85ae45e318648ad9283e30f0372c2",
+    "training/pc-match/RouteBridge.java": "4cde33ad1bae513a64aa786f2cb10e98fa0f11591d8d3af58f80ecd6816e6f79",
+    "training/pc-match/worker.cpp": "097a1798722568579d0729a0a6396f0920ab7abddc3ec60a0ddd146c95141303",
+    "app/src/main/assets/conversation-schema.json": "844294881ddde5d22d03f64aa52b711364d818197d13300379c599aaa64cf2a5",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ConversationActPolicy.java": "81cb849050a0f9d6cab5c8b463c7bf2b3e2a82932ed79f25ad4e9a43248e11df",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ReplyEconomyPolicy.java": "02b6088fd9f4561bdf20f6e47cbc14c88ad57b460252147a65049cdf60d5c50c",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ReplyIntegrityPolicy.java": "75d3fe22278bdac6749374cf23713fbc6947b23eddc999c20fd928af01366403",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ConversationEngine.kt": "0ff49af58d57b6a4a10a07d0e9614d5801a3a690ce20a908723fcab25471e03c",
+    "training/configs/route-ablation-new-cases.json": "662bd70de2bcfbd744df1d0abfbb8ea45445989211ef901b8bf04887260fbb37"
+  },
+  "baseline_input_and_consumption_parity": 104,
+  "common_history_system_bytes_unchanged": 104,
+  "judge": "Direct GPT six-criterion review; exact context/speech labels may be reused with provenance. Known development questions, same author, visible conditions; not blind/independent/human/holdout."
+}

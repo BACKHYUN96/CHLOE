@@ -111,16 +111,37 @@ public final class GroundedConversationPolicy {
         if(has(q,"(?:빼고|제외|얘기하지|말하지|이야기하지)")) return false;
         return mentions(q,f.value) || (q.contains(f.type)&&has(q,"(?:이름|누구|주인|소유|내 ?거|내 ?꺼)"));
     }
+    public static final String RELEVANCE_VERSION="preserve-uncertain-source-v1";
+    private static boolean excludesTopic(String q,String topic) {
+        return has(q,Pattern.quote(topic)+"(?:은|는|이|가|을|를|에 관한)?\\s*(?:(?:얘기|이야기|내용)(?:은|는|을|를)?\\s*)?(?:잠깐\\s*)?(?:빼고|제외|없이|(?:얘기|이야기|말)하지\\s*(?:마|말))");
+    }
+    /** Retrieval hints only: ambiguous copulas never become asserted name facts. */
+    private static List<String> sourceNames(String text) {
+        List<String> names=new ArrayList<>();
+        for(Pattern pattern:Arrays.asList(PET,APP,QUOTED_PET,QUOTED_APP)) {
+            Matcher m=pattern.matcher(text.trim());if(!m.matches()) continue;
+            String name=m.group(pattern==PET||pattern==QUOTED_PET?2:1);names.add(name);
+            if((pattern==PET||pattern==APP)&&has(text,"(?:이야|이에요)[.!。]?$")) names.add(name+"이");
+        }
+        return names;
+    }
     private static boolean relevantHistory(JSONArray original,int i,String q,List<Fact> known) throws Exception {
-        if(has(q,"(?:빼고|제외|얘기하지|말하지|이야기하지)")) return false;
         String text=original.getJSONObject(i).getString("content"),topic=factTopic(text);
+        // Exclusion applies to its named topic, not every fact in the session.
+        if(topic!=null && excludesTopic(q,topic)) return false;
+        for(String name:sourceNames(text)) if(excludesTopic(q,name)) return false;
         if(topic!=null && q.contains(topic)) return true;
         for(Fact f:known) if(f.source==i && mentions(q,f.value)) return true;
-        // Retrieval can preserve an uncertain name verbatim without promoting it
-        // into a resolved fact. Do not strip a possibly meaningful name suffix.
-        Matcher name=Pattern.compile("^([가-힣A-Za-z0-9]{1,20}?)(?:은|는|이|가) (?:누구|뭐)").matcher(q);
-        if(name.find() && text.contains(name.group(1))) return true;
-        return q.contains("이름")&&!has(q,"(?:고양이|강아지|앱|물건)");
+        for(String name:sourceNames(text)) if(mentions(q,name)) return true;
+        // Cross-topic organization and opaque references need their original evidence.
+        if(has(q,"(?:요약|정리|구분|비교|만든 것|만든것|소유한|말한 내용|말씀드린 내용)")) return true;
+        if(topic!=null && has(q,"(?:고양이|강아지|앱|물건)") && !q.contains(topic)) return false;
+        if(q.trim().matches("^[A-Za-z][A-Za-z0-9_+\\-]{1,15}(?:가|이|은|는|란)?\\s*(?:뭐야|무엇인가요|무슨 뜻이야|설명해 ?(?:줘|주세요))[.!?]?$")) return false;
+        if(has(q,"(?:누구|누가|어느|무엇|뭐|기억|이름|주인|소유|만들|만든|제작|개발|아까|방금|앞서|정정|바뀐|바꾼|그거|그것)")) return true;
+        // Positive evidence of an independent turn; uncertainty alone is not deletion.
+        if(q.trim().matches("^(?:안녕(?:하세요)?|잘 자(?:요)?|(?:같이 )?수다 떨자|(?:짧게|간단히) 말해 ?(?:줘|주세요))[.!?]?$")) return false;
+        if(has(q,"(?:사고 과정|내부 규칙|시스템 지시|날씨|환율|주가)")) return false;
+        return true;
     }
     private static JSONArray modelView(JSONArray original,String q,List<Fact> known,boolean summary) throws Exception {
         if(summary) return original;
