@@ -100,3 +100,7 @@ GroundedConversationPolicy는 세션과 모델 view를 구분한다. 무관한 �
 ## 발화 정리 후속 · 2026-11-15
 
 JSON 소비와 기존 grounding 뒤 `ReplyEconomyPolicy`로 삭제만 수행한다. 정리한 발화를 이력과 TTS 호출자에게 반환하며 `economy_action`/`reply_economy_version`으로 구분한다. 오류 출력을 복구하지 않는다. [직접 평가/검증 경계](validation/local-llm-reply-economy-report.md)를 따른다.
+
+## 발화 무결성 후속 · 2026-11-15
+
+기존 정리 뒤 `ReplyIntegrityPolicy`를 적용해 한정된 질문 echo/미완성 꼬리/이름 처리 지시 노출을 삭제한다. 실질 답이 남지 않으면 `unusable_reply` 실패 안내만 반환하고 이력/TTS 대상에서 제외한다. 새 정답을 만들지 않으며 `integrity_action`/`reply_integrity_version`을 분리한다. [실제 비교와 미검증 범위](validation/local-llm-reply-integrity-report.md)를 따른다.

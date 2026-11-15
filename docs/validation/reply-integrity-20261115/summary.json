@@ -1,0 +1,38 @@
+{
+  "questions": 54,
+  "fresh_model_generations": 0,
+  "frozen_device_replays": 54,
+  "before": {
+    "fail": 10,
+    "partial": 19,
+    "pass": 25
+  },
+  "after": {
+    "fail": 8,
+    "partial": 20,
+    "pass": 26
+  },
+  "raw_model_unchanged": {
+    "fail": 17,
+    "partial": 20,
+    "pass": 17
+  },
+  "actions": {
+    "none": 50,
+    "strip_rule_leak": 2,
+    "strip_question_echo": 1,
+    "strip_question_echo+strip_dangling_fragment+abstain": 1
+  },
+  "transitions": {
+    "fail->fail": 8,
+    "partial->partial": 19,
+    "pass->pass": 25,
+    "fail->partial": 1,
+    "fail->pass": 1
+  },
+  "changed": 4,
+  "actual_consumer_accepted": 53,
+  "explicitly_suppressed": 1,
+  "method": "Direct GPT assessment of four changed outcomes, including one abstention as failure; exact previous labels reused for 50 unchanged outputs. Known development questions/conditions; not blind or independent.",
+  "limitations": "Lexical guards only, not general semantic entailment/completeness or leak detector. Abstention is not a successful answer. Next-turn quality and full APK/UI/TTS unverified."
+}

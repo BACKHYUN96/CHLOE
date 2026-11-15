@@ -10,6 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.concurrent.*;
 import ai.chloe.voicelab.conversation.GroundedConversationPolicy;
 import ai.chloe.voicelab.conversation.ReplyEconomyPolicy;
+import ai.chloe.voicelab.conversation.ReplyIntegrityPolicy;
 
 /** Framework-only driver, installed only against isolated comparison packages. */
 public class Driver extends Instrumentation {
@@ -28,6 +29,7 @@ public class Driver extends Instrumentation {
             else if(op.equals("auditApp")) auditApp();
             else if(op.equals("groundAudit")) groundAudit();
             else if(op.equals("economyAudit")) economyAudit();
+            else if(op.equals("integrityAudit")) integrityAudit();
             else if(op.equals("persona")) {
                 Class<?> c=getTargetContext().getClassLoader().loadClass("ai.chloe.voicelab.conversation.PersonaManager");
                 Object obj=c.getDeclaredConstructor().newInstance();
@@ -47,6 +49,30 @@ public class Driver extends Instrumentation {
             } else throw new Exception("Unknown op");
             finish(-1,result);
         } catch(Throwable e) { result.putString("error",android.util.Log.getStackTraceString(e)); finish(0,result); }
+    }
+    void integrityAudit() throws Exception {
+        Context ctx=getTargetContext();
+        JSONArray rows=new JSONArray(new String(java.nio.file.Files.readAllBytes(new File(ctx.getFilesDir(),args.getString("input")).toPath()),StandardCharsets.UTF_8));
+        Class<?> director=ctx.getClassLoader().loadClass("ai.chloe.voicelab.conversation.VoiceDirector");
+        Object parser=director.getDeclaredConstructor().newInstance();JSONArray output=new JSONArray();
+        for(int i=0;i<rows.length();i++) {
+            JSONObject row=rows.getJSONObject(i);String raw=row.getString("raw");
+            Object before=director.getMethod("parse",String.class).invoke(parser,raw);
+            String spoken=(String)before.getClass().getMethod("getSpokenText").invoke(before);
+            if(!before.getClass().getMethod("getFailureCode").invoke(before).equals("none"))throw new Exception("Invalid baseline");
+            ReplyIntegrityPolicy.Result result=ReplyIntegrityPolicy.apply(row.getString("input"),spoken);
+            JSONObject record=new JSONObject().put("id",row.getString("id")).put("before_spoken",spoken)
+                .put("after_spoken",result.text).put("integrity_action",result.action).put("blocked",result.blocked);
+            if(!result.blocked) {
+                String finalRaw=result.action.equals("none")?raw:new JSONObject(raw).put("spoken_text",result.text).toString();
+                Object after=director.getMethod("parse",String.class).invoke(parser,finalRaw);
+                record.put("final_raw",finalRaw).put("after_failure_code",after.getClass().getMethod("getFailureCode").invoke(after))
+                    .put("after_fallback",after.getClass().getMethod("getFallback").invoke(after));
+            } else record.put("final_raw",JSONObject.NULL).put("after_failure_code","unusable_reply").put("after_fallback",true);
+            output.put(record);
+        }
+        File dest=new File(ctx.getFilesDir(),args.getString("output"));if(dest.exists())throw new Exception("Refusing overwrite");
+        java.nio.file.Files.write(dest.toPath(),output.toString().getBytes(StandardCharsets.UTF_8));
     }
     void economyAudit() throws Exception {
         Context ctx=getTargetContext();

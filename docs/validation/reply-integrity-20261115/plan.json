@@ -1,0 +1,16 @@
+{
+  "baseline_commit": "35fee4a45a53769c7d02db1aef4a18231e8a2144",
+  "baseline_responses": "docs/validation/reply-economy-20261115/responses.json",
+  "questions": 54,
+  "fresh_model_generations": 0,
+  "method": "Frozen same-question final JSON replay, actual alpha15 VoiceDirector before/after and current production Java integrity policy. Kotlin manager/history/TTS eligibility checked separately on JVM. No model regeneration or prompt changes.",
+  "rubric": "Same six criteria, direct GPT reads edited outputs, unchanged labels reused. Known development questions/conditions, not independent or blind.",
+  "rules": "Bounded exact current-question echo deletion; narrow leaked name-handling directives removed; dangling tail removed. Explicit repetition/quotes/code/URLs, decimal/structured text and sentence floors protected. Abstain if no substantive answer remains; no TTS/history for unusable_reply. No replacement facts or invented answer.",
+  "limitations": "Lexical guards only, not general semantic entailment/completeness or leak detector. Abstention is not a successful answer. Next-turn quality and full APK/UI/TTS unverified.",
+  "source_hashes": {
+    "docs/validation/reply-economy-20261115/responses.json": "163ce9366ef4980570a8853902834a9a2ce036588e62f83d2048a05acd40d6c0",
+    "app/src/main/java/ai/chloe/voicelab/conversation/GroundedConversationPolicy.java": "b0adc893c6cff35bc898867eba7879d155eb736a0ee4637218760cb96146094f",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ReplyEconomyPolicy.java": "02b6088fd9f4561bdf20f6e47cbc14c88ad57b460252147a65049cdf60d5c50c",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ReplyIntegrityPolicy.java": "75d3fe22278bdac6749374cf23713fbc6947b23eddc999c20fd928af01366403"
+  }
+}

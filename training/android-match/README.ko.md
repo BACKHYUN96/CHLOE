@@ -115,3 +115,13 @@ python training/scripts/export_reply_economy_results.py --artifacts ARTIFACT_DIR
 ```
 
 export는 동결된 입력/기존 판정/실제 소비/비발화 JSON 메타데이터/삭제 전용 관계를 검사한다. 품질 판정은 GPT가 작성한 파일에서 읽고 자동 생성하지 않는다. [결과와 제한](../../docs/validation/local-llm-reply-economy-report.md)을 따른다.
+
+## 질문 echo·미완성·규칙 노출 replay
+
+production `ReplyIntegrityPolicy.java`도 driver에 컴파일한다. `op integrityAudit`, `input`=직전 economy 최종 JSON 배열, `output`=새 파일명으로 처리한다. 유지된 응답은 alpha15 실제 VoiceDirector로 전후 parse하고, `blocked`는 final_raw=null/unusable_reply로 구분한다. Kotlin manager의 실패 안내/이력/TTS eligibility는 JVM97개(4 test class)에서 별도 검증한다. 제품 전체 UI/TTS 검증을 대신하지 않는다.
+
+```powershell
+python training/scripts/export_reply_integrity_results.py --artifacts ARTIFACT_DIRECTORY --output NEW_PUBLIC_DIRECTORY
+```
+
+export는 동결 요청·실제 전후 소비·삭제 관계·차단 상태를 검사하고, 차단을 성공 점수로 올리는 판정을 거부한다. GPT 직접 판정과 무변경50개 재사용을 구분한다. [실제 결과/경계](../../docs/validation/local-llm-reply-integrity-report.md)를 따른다.
