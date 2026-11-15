@@ -2,7 +2,7 @@ package ai.chloe.voicelab.conversation
 
 import org.json.JSONObject
 
-data class DirectedReply(val spokenText:String,val intent:String="chat",val emotion:String="neutral",val pace:String="normal",val energy:String="medium",val expressiveness:String="restrained",val instruction:String="",val fallback:Boolean=false,val failureCode:String="none",val policyAction:String="none")
+data class DirectedReply(val spokenText:String,val intent:String="chat",val emotion:String="neutral",val pace:String="normal",val energy:String="medium",val expressiveness:String="restrained",val instruction:String="",val fallback:Boolean=false,val failureCode:String="none",val policyAction:String="none",val economyAction:String="none")
 interface ConversationEngine { fun request(messages:String,model:String); fun stop() }
 interface LocalLlmEngine:ConversationEngine
 class PersonaManager {
@@ -57,7 +57,9 @@ class ConversationManager {
         // Rebuild from current bounded history: clearing context also clears facts.
         // Unrecoverable/empty generation remains failure; policy needs usable speech.
         val decision=if(parsed.failureCode in setOf("none","invalid_direction","plain_text"))GroundedConversationPolicy.resolve(context.messages(persona.system(requestedPolite),input),requestedPolite) else null
-        val reply=if(decision==null)parsed else director.parse(decision.reply).copy(policyAction=decision.action)
+        val grounded=if(decision==null)parsed else director.parse(decision.reply).copy(policyAction=decision.action)
+        val economy=if(grounded.failureCode in setOf("none","invalid_direction","plain_text"))ReplyEconomyPolicy.apply(input,grounded.spokenText) else null
+        val reply=if(economy==null)grounded else grounded.copy(spokenText=economy.text,economyAction=economy.action)
         if(reply.failureCode in setOf("none","invalid_direction","plain_text"))context.add(input,reply.spokenText)
         return reply
     }
@@ -67,5 +69,5 @@ class SpeechRegisterCheck {
     fun suspectedPoliteEnding(text:String):Boolean = Regex("(?:[가-힣]+(?:요|습니다|습니까|십시오)|개발자님)(?=[.!?…\\s]|$)").containsMatchIn(text)
 }
 class ConversationEvaluator {
-    fun structural(reply:DirectedReply,polite:Boolean?=null)=JSONObject().put("fallback",reply.fallback).put("failure_code",reply.failureCode).put("policy_action",reply.policyAction).put("length",reply.spokenText.length).put("register_warning",if(polite==false)SpeechRegisterCheck().suspectedPoliteEnding(reply.spokenText) else JSONObject.NULL).put("human_naturalness",JSONObject.NULL).put("factual_accuracy",JSONObject.NULL)
+    fun structural(reply:DirectedReply,polite:Boolean?=null)=JSONObject().put("fallback",reply.fallback).put("failure_code",reply.failureCode).put("policy_action",reply.policyAction).put("economy_action",reply.economyAction).put("reply_economy_version",ReplyEconomyPolicy.VERSION).put("length",reply.spokenText.length).put("register_warning",if(polite==false)SpeechRegisterCheck().suspectedPoliteEnding(reply.spokenText) else JSONObject.NULL).put("human_naturalness",JSONObject.NULL).put("factual_accuracy",JSONObject.NULL)
 }

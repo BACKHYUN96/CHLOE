@@ -9,6 +9,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.*;
 import ai.chloe.voicelab.conversation.GroundedConversationPolicy;
+import ai.chloe.voicelab.conversation.ReplyEconomyPolicy;
 
 /** Framework-only driver, installed only against isolated comparison packages. */
 public class Driver extends Instrumentation {
@@ -26,6 +27,7 @@ public class Driver extends Instrumentation {
             else if(op.equals("chloe")) runChloe();
             else if(op.equals("auditApp")) auditApp();
             else if(op.equals("groundAudit")) groundAudit();
+            else if(op.equals("economyAudit")) economyAudit();
             else if(op.equals("persona")) {
                 Class<?> c=getTargetContext().getClassLoader().loadClass("ai.chloe.voicelab.conversation.PersonaManager");
                 Object obj=c.getDeclaredConstructor().newInstance();
@@ -45,6 +47,29 @@ public class Driver extends Instrumentation {
             } else throw new Exception("Unknown op");
             finish(-1,result);
         } catch(Throwable e) { result.putString("error",android.util.Log.getStackTraceString(e)); finish(0,result); }
+    }
+    void economyAudit() throws Exception {
+        Context ctx=getTargetContext();
+        JSONArray rows=new JSONArray(new String(java.nio.file.Files.readAllBytes(new File(ctx.getFilesDir(),args.getString("input")).toPath()),StandardCharsets.UTF_8));
+        Class<?> director=ctx.getClassLoader().loadClass("ai.chloe.voicelab.conversation.VoiceDirector");
+        Object parser=director.getDeclaredConstructor().newInstance();JSONArray output=new JSONArray();
+        for(int i=0;i<rows.length();i++) {
+            JSONObject row=rows.getJSONObject(i);String raw=row.getString("raw");
+            Object before=director.getMethod("parse",String.class).invoke(parser,raw);
+            String spoken=(String)before.getClass().getMethod("getSpokenText").invoke(before);
+            String failure=(String)before.getClass().getMethod("getFailureCode").invoke(before);
+            if(!failure.equals("none"))throw new Exception("Expected valid frozen app input");
+            ReplyEconomyPolicy.Result result=ReplyEconomyPolicy.apply(row.getString("input"),spoken);
+            String finalRaw=result.action.equals("none")?raw:new JSONObject(raw).put("spoken_text",result.text).toString();
+            Object after=director.getMethod("parse",String.class).invoke(parser,finalRaw);
+            output.put(new JSONObject().put("id",row.getString("id")).put("before_spoken",spoken)
+                .put("after_spoken",after.getClass().getMethod("getSpokenText").invoke(after))
+                .put("economy_action",result.action).put("final_raw",finalRaw)
+                .put("after_fallback",after.getClass().getMethod("getFallback").invoke(after))
+                .put("after_failure_code",after.getClass().getMethod("getFailureCode").invoke(after)));
+        }
+        File dest=new File(ctx.getFilesDir(),args.getString("output"));if(dest.exists())throw new Exception("Refusing overwrite");
+        java.nio.file.Files.write(dest.toPath(),output.toString().getBytes(StandardCharsets.UTF_8));
     }
     void groundAudit() throws Exception {
         Context ctx=getTargetContext();

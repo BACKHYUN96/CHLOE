@@ -96,3 +96,7 @@ alpha10 사용자 제공 4B 결과 3회는 모두 parser ok/fallback false/한�
 GroundedConversationPolicy는 세션과 모델 view를 구분한다. 무관한 독립 user 사실+중립 assistant 확인 쌍만 view에서 생략하고 원래4턴/1200자 세션은 그대로 둔다. 다음 회상 때 원래 사실을 다시 사용할 수 있다. 의미 있는 assistant 정보/알 수 없는 이력은 함부로 제거하지 않는다. user 사실만으로 완전히 요약 가능한 경우는 grounded_fact_summary로 주체를 보고하고, 그 외 요약은 전체 이력/역할 지시를 모델에 전달한다. 명시적 제작자와 소유자의 관계도 분리한다.
 
 이 변경은 source/UI metadata와 계측 후보이며 원본 앱을 덮어쓰지 않았다. [같은54질문·새6선택/48재사용·직접 평가·회귀](validation/local-llm-summary-relevance-report.md)를 따른다. 전체 제품 UI/TTS와 장기 대화는 별도 검증이 필요하다.
+
+## 발화 정리 후속 · 2026-11-15
+
+JSON 소비와 기존 grounding 뒤 `ReplyEconomyPolicy`로 삭제만 수행한다. 정리한 발화를 이력과 TTS 호출자에게 반환하며 `economy_action`/`reply_economy_version`으로 구분한다. 오류 출력을 복구하지 않는다. [직접 평가/검증 경계](validation/local-llm-reply-economy-report.md)를 따른다.

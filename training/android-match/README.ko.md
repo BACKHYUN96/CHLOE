@@ -105,3 +105,13 @@ python training/scripts/export_summary_relevance_results.py --artifacts ARTIFACT
 ```
 
 producer는 원래 질문과 base system 유지, model view가 원문 발화의 순서 보존 부분집합인지, user/assistant 쌍 생략인지, actual consumer 일치를 검사한다. 의미 판정은 직접 GPT가 작성한 파일에서 읽는다. 현재 결과는7생성 중6선택·1중간후보제외와 이전48출력 재사용이다. 생성 당시 입력과 최종 정책 입력이 같은 중간4개는 재생성하지 않았다. 이 재사용을 새 모델 실행으로 세지 않는다. 원본 세션은 보존하고 모델 view에서만 불필요한 fact/ack 쌍을 빼며, 근거가 완전한 요약만 앱 결정으로 처리한다. 이전 policy의 재현은 snapshot 참조와 원래 SHA 검사를 계속 사용한다.
+
+## 발화 정리 replay
+
+production `ReplyEconomyPolicy.java`도 driver에 컴파일한다. `op economyAudit`, `input`=직전 최종 JSON 배열 파일, `output`=새 파일명으로 actual VoiceDirector의 before/after를 검사한다. native 생성은0회다. `groundAudit` 결과는 직전과 완전히 같은지 확인한다. Kotlin manager 통합은 JVM81개(3 test class)로 별도 검사하며 전체 APK/UI/TTS 증거로 쓰지 않는다.
+
+```powershell
+python training/scripts/export_reply_economy_results.py --artifacts ARTIFACT_DIRECTORY --output NEW_PUBLIC_DIRECTORY
+```
+
+export는 동결된 입력/기존 판정/실제 소비/비발화 JSON 메타데이터/삭제 전용 관계를 검사한다. 품질 판정은 GPT가 작성한 파일에서 읽고 자동 생성하지 않는다. [결과와 제한](../../docs/validation/local-llm-reply-economy-report.md)을 따른다.
