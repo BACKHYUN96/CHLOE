@@ -1,5 +1,13 @@
 # 로컬 Codex 작업 지시: CHLOE 한국어 대화 LLM 학습
 
+## 2026-11-15 같은4B GGUF의 Android 앱 경로 비교 완료
+
+기존2B 원본·10-step adapter와 원본 Android 앱을 보존하고 재학습 없이 S26 Ultra에서 같은4B Q4_K_M 복사본·54질문·system/history·strict JSON 요청으로 비교했다. CHLOE54개는 실제 prompt builder/consumer와 공통 계약 모두 통과했고 GPT 엄격 통과15·부분20·실패19였다.
+
+실제 설치 PocketPal1.22.0 경로는 요청 감사54/54였으나 grammar/prefill 시작점 문제로 본문0/54였다. 사전 지정한4개 gate 뒤 확장한 root-only 보정54개는 본문/계약54/54·사고 블록0, GPT 통과18·부분16·실패20이다. 등급 상승9·하락7·동일38로 일반적인 품질 우승이나 제품 패치 성공을 선언하지 않는다. 보정 진단4개를 다시 더하지 않은 총162개 기록이다. 소유자/이름·기능 한계·반복 오류가 공통으로 남았다.
+
+[기기 실측/직접 평가/원인 범위/보존](../docs/validation/local-llm-matched-apps-report.md), [계획](configs/matched-apps-plan.json), [계측 안내](android-match/README.ko.md)를 따른다. 사용자의 평소 PocketPal Q4_0 기본값 비교와 제품 native 수정·TTS 검증은 별도다. 임시 화면 회전은 복구했고 원본 APK5개·클로이4B·설정/로그·WSL 원본/adapter 해시는 재확인했다.
+
 이 문서를 로컬 Codex에게 읽히고 실제 PC에서 진행한다. 최초 자료는 **학습 인수인계/사전 점검**이었다. 아래 현재 상태는 실제 PC 실행 결과이며 클라우드 학습 결과가 아니다.
 
 ## 2026-11-14 다른 이름·동물·물건의 소유자 귀속 확장 완료

@@ -1,0 +1,74 @@
+{
+  "fail -> fail": [
+    "conv01",
+    "conv13",
+    "conv17",
+    "conv19",
+    "conv29",
+    "conv31",
+    "conv32",
+    "conv33",
+    "conv35",
+    "conv39",
+    "conv41",
+    "conv44",
+    "conv45",
+    "register01"
+  ],
+  "partial -> partial": [
+    "conv02",
+    "conv05",
+    "conv06",
+    "conv09",
+    "conv11",
+    "conv15",
+    "conv18",
+    "conv20",
+    "conv26",
+    "conv34",
+    "conv47",
+    "conv49"
+  ],
+  "fail -> pass": [
+    "conv03",
+    "conv27"
+  ],
+  "pass -> pass": [
+    "conv04",
+    "conv12",
+    "conv16",
+    "conv22",
+    "conv28",
+    "conv30",
+    "conv36",
+    "conv40",
+    "conv46",
+    "conv50",
+    "identity02",
+    "rules01"
+  ],
+  "partial -> fail": [
+    "conv07",
+    "conv08",
+    "conv24",
+    "conv37"
+  ],
+  "pass -> fail": [
+    "conv10",
+    "conv23"
+  ],
+  "partial -> pass": [
+    "conv14",
+    "conv21",
+    "conv38",
+    "conv42"
+  ],
+  "pass -> partial": [
+    "conv25"
+  ],
+  "fail -> partial": [
+    "conv43",
+    "conv48",
+    "identity01"
+  ]
+}

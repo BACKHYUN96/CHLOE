@@ -1,5 +1,7 @@
 # 2026-11-14 PocketPal 공개 소스와 CHLOE 비교
 
+2026-11-15 후속: 이 문서의1.23.0 공개 소스 조사는 당시 기록이다. 이후 연결된 실제 설치 버전은1.22.0이었으며 같은4B Q4_K_M·질문·strict JSON 조건의 [기기 비교와 grammar 진단](local-llm-matched-apps-report.md)을 완료했다. 사용자의 평소4B Q4_0 기본 사용 조건과는 구분한다.
+
 **PocketPal은 참고할 가치가 있다.** 특히 모델별 템플릿/중단 조건, 유효 생성 설정 전달, content와 reasoning 분리, 종료/문맥 포화 표시가 CHLOE의 후속 검증에 도움이 된다. 다만 사용자가 경험한 긴 답변을 특정 엔진의 우월함으로 확정할 수는 없다. PocketPal의 모델/기본 생성 정책과 CHLOE의 음성용 제약부터 다르다. 이번에는 공개 소스 분석만 수행하고 앱/모델/기본값을 변경하지 않았다.
 
 공식 `a-ghorbani/pocketpal-ai`의 커밋 [`33aca612c793dcaa728a5bb4f2243ac3371c6e6a`](https://github.com/a-ghorbani/pocketpal-ai/commit/33aca612c793dcaa728a5bb4f2243ac3371c6e6a)을 고정해 확인했다. 소스 package 버전은1.23.0이고 `llama.rn`0.13.0-rc.9를 사용한다. 공개 앱 코드는 [MIT](https://github.com/a-ghorbani/pocketpal-ai/blob/33aca612c793dcaa728a5bb4f2243ac3371c6e6a/LICENSE)다. 코드 복사/포팅은 하지 않았다. 나중에 코드를 가져올 경우 해당 저작권/라이선스 고지와 별도 의존성/모델 라이선스를 각각 유지해야 한다. [package.json](https://github.com/a-ghorbani/pocketpal-ai/blob/33aca612c793dcaa728a5bb4f2243ac3371c6e6a/package.json), [조사 파일/버전/경계](pocketpal-source-review-20261114/sources.json).

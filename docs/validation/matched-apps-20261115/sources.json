@@ -1,0 +1,68 @@
+[
+  {
+    "label": "PocketPal package",
+    "blob_sha": "b9b216792c3e054e0181bd516d5a41dcb22cd643",
+    "url": "https://github.com/a-ghorbani/pocketpal-ai/blob/8932367e9f4a373945993ae0a472c8768d5c0578/package.json",
+    "content_sha256_note": "Reference source at the linked commit; actual installed binaries independently fingerprinted."
+  },
+  {
+    "label": "PocketPal completion adapter",
+    "blob_sha": "ab954e85d872f9ec3eaa9679f49ab9515c7343ac",
+    "url": "https://github.com/a-ghorbani/pocketpal-ai/blob/8932367e9f4a373945993ae0a472c8768d5c0578/src/api/completionEngines.ts",
+    "content_sha256_note": "Reference source at the linked commit; actual installed binaries independently fingerprinted."
+  },
+  {
+    "label": "PocketPal chat handler",
+    "blob_sha": "67c00ae6b3f7e002c0c2394d3648f4efc76eabef",
+    "url": "https://github.com/a-ghorbani/pocketpal-ai/blob/8932367e9f4a373945993ae0a472c8768d5c0578/src/hooks/useChatSession.ts",
+    "content_sha256_note": "Reference source at the linked commit; actual installed binaries independently fingerprinted."
+  },
+  {
+    "label": "llama.rn version",
+    "blob_sha": "72764d4f05ac00ed2c707a97fbd37538bf14d815",
+    "url": "https://github.com/mybigday/llama.rn/blob/27783c86cea93ac534fba303d9be5cf335d2e945/src/version.ts",
+    "content_sha256_note": "Reference source at the linked commit; actual installed binaries independently fingerprinted."
+  },
+  {
+    "label": "llama.rn parameter conversion",
+    "blob_sha": "4d2952a94fa8bae00f1b14a137606698484580e8",
+    "url": "https://github.com/mybigday/llama.rn/blob/27783c86cea93ac534fba303d9be5cf335d2e945/cpp/jsi/JSIParams.cpp",
+    "content_sha256_note": "Reference source at the linked commit; actual installed binaries independently fingerprinted."
+  },
+  {
+    "label": "llama.rn sampling",
+    "blob_sha": "963397b83e22f23a4eaad48d436de21b31429e5c",
+    "url": "https://github.com/mybigday/llama.rn/blob/27783c86cea93ac534fba303d9be5cf335d2e945/vendor/llama.cpp/common/sampling.cpp",
+    "content_sha256_note": "Reference source at the linked commit; actual installed binaries independently fingerprinted."
+  },
+  {
+    "label": "llama.rn completion parser",
+    "blob_sha": "11141fd2ce1a0b68ec496541db652054d08335b4",
+    "url": "https://github.com/mybigday/llama.rn/blob/27783c86cea93ac534fba303d9be5cf335d2e945/cpp/rn-completion.cpp",
+    "content_sha256_note": "Reference source at the linked commit; actual installed binaries independently fingerprinted."
+  },
+  {
+    "label": "llama.rn JSI",
+    "blob_sha": "ffd7942d1e897e036f7952a223a809a351000e46",
+    "url": "https://github.com/mybigday/llama.rn/blob/27783c86cea93ac534fba303d9be5cf335d2e945/cpp/jsi/RNLlamaJSI.cpp",
+    "content_sha256_note": "Reference source at the linked commit; actual installed binaries independently fingerprinted."
+  },
+  {
+    "label": "llama.rn TypeScript path",
+    "blob_sha": "039933f442016a0c5d549c9fa1203266b2801313",
+    "url": "https://github.com/mybigday/llama.rn/blob/27783c86cea93ac534fba303d9be5cf335d2e945/src/index.ts",
+    "content_sha256_note": "Reference source at the linked commit; actual installed binaries independently fingerprinted."
+  },
+  {
+    "label": "CHLOE installed-version reference",
+    "blob_sha": "6cc25d3402bf65c829ba1e6b375f407125199359",
+    "url": "https://github.com/BACKHYUN96/CHLOE/blob/f7870d935a698d8eadf7c06373a19ff7e75ec33c/llm/src/main/cpp/llm_jni.cpp",
+    "content_sha256_note": "Reference source at the linked commit; actual installed binaries independently fingerprinted."
+  },
+  {
+    "label": "CHLOE builder and consumer reference",
+    "blob_sha": "99f24b21821d13de56dbabacdc74569b0263473d",
+    "url": "https://github.com/BACKHYUN96/CHLOE/blob/f7870d935a698d8eadf7c06373a19ff7e75ec33c/app/src/main/java/ai/chloe/voicelab/conversation/ConversationEngine.kt",
+    "content_sha256_note": "Reference source at the linked commit; actual installed binaries independently fingerprinted."
+  }
+]

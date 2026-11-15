@@ -1,0 +1,1938 @@
+[
+  {
+    "id": "conv01",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "a717889480776e7450576e231671a9f25ce9e06182a3bb3035ea3d1995b3d183",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": []
+  },
+  {
+    "id": "conv02",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "765c7e8ff02aeca05e51a2d005a69bd7020d185226d3d691cce04eee87a5b762",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv03",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "1035ca559a1d4cbe9cd891493dc5c3bf8509349a9dc96dfa9620ea6e25ef2301",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv04",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "88a40ab1eb22abed37dc29fefeeb3e014add10616d40f891d71a21c5a2916abb",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv05",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "d14f2fc36c1caf0ab5c537ccf3a59e41c2099d7048193a5cc7d50b9418bc63ef",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv06",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "fcbb212170b43c64fac492d731e7338280f78558d767e86d62490d269144029e",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv07",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "630605d055b0c14e00ab69430f2f74251977d2b04c67c6e1fba6777485f8db05",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv08",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "28131aaf10c96bee19f64170f9de60bee74ff23fa04799d33faaf2903fc22436",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv09",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "255160e102c463d9824cabe635c8890cdcb11f883349183e875951edd01fed36",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv10",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "f96ddecaecef8ad36b7a4fc54f7870fb2e3a121f3e8ae005b550e206841f16f3",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv11",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "942a5a01b67c1366fad068cb7be605eb115b670f64c23477bd0ab2d89a28145a",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv12",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "51c4ba1326aaa79bd96193f556660f042d2d0a3e146f2cf8869d093497c5bd69",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv13",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "a5dbdda32e7709d944c5dca21af8a28185a924e2dd98d911e39ab887928ca872",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv14",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "1b0d8b0387ed300a8c5808c581c0a2a3101e9268d241e2d5c50b50d0d0787d60",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv15",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "b3e2f368cd85639bbffb85ccc2401ba0844c9bad2521fc216a53d6fe809a1bbe",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv16",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "6feca17f601c82c4a3dc2e4bd775ae0b8fa549e6147cda940e6691661d9e5100",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv17",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "ba906913e5b0f5b4bf23798065ab39059bf18c8d15d6f52b95a86bbaf4241d7a",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv18",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "f53d09a7e6fab4a0b9076187b3127c755eb66b495cca3805efb6e10aca02a6da",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv19",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "f0173eab0be598745769ca77012157f4ef29089801f6a52590de346dc078da1c",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv20",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "a4bd54c618ab4f9168a9b6dbc63517268f3331ca2ddae88084bc3c4a653dbfed",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv21",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "547b4e5a98951b08f6beb12362b8ca7a7c950c46f6c3a9473d84acf8476b1bba",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv22",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "bffafd49b1130b2219f13df5ebd33c4353b77b5aaa36bdd151976964575fa084",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv23",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "c90d169caa1fa6bb1373a0b418e9ac4b159d922b51a9283e4e9538c2ca30c894",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv24",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "f1fb2275d714780853c0361ea713b4c0337fc40653efdc44e6104897360194a8",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv25",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "f98fbeb775c55105f3f18e1f6f0b3b699c69ebc77aba1bcb9bcf16ebf626818c",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv26",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "0e70b1378d86f8d71c71bfbd9a89b1a2adb7f0a350873e931d9523ed7f297f83",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv27",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "e50ba3d05be6e411e775fa9054dea7f964c9500cad0e1d7d40d838d7b1f428a1",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv28",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "9d6fde527a96a62f23a3392c39d5d33aebee74fa2cba33ebd7c242d8a22b6e02",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv29",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "f84ba8eb5eef0b4124d73fbfb3f0e4e0dc79513d432a49230503bca121186853",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv30",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "1b837e1fcb2add76f282a5f55fe32861e30b49e8272ea3499f87335e3bfdc776",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv31",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "e5150d40e1974826cb8820f78a7478453da592ecd67ea6c270418f5d5d2661b3",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv32",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "14a34baf5e2f1b9f02d5910611dbf9ef8cc48ff77a6f574664e3702b6e1573d8",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv33",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "25dcaf0fb74ed4a821c19d4331da056ac941b6fcc75b64e0fc7bb3fb81744344",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv34",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "940c9fee56703326584d0ac4ef4a68f9a6049cab7f1ed4eb56acf33b866a6b2f",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv35",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "38f14274c0931bab7a55fdf57b7b8e3ee6826ada4f4c3c9293255df75e39cfb0",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv36",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "3cb312fc82edd96027a6f85f519dc420b97ce383923b764169d7a24524daf17c",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv37",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "7ff98494ca2ec79d4be852a0a3d479859e06579fce1f98d9dba706cda2e03a2f",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv38",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "b8422a1e75118825cfda88c2034f44e595cf47a69db45a0b4df4f3d3da13d9c1",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv39",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "544b84952663734f331c532b2ccae1e45d3c930d2374e6d7202d3d4d009bb199",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv40",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "d1096c3e854755f2383b475bd12e8cc127100f5e77882ce9e778b904e045ae7f",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv41",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "1cbfcdfc855e930f508478b9b0544bd76814ace02ffc6f223266c1f3c8d33e61",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv42",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "66915ab0e9502a7c9569274b661495d85eb75cdc41394d74025a2a7a84bc9fe6",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv43",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "464e5a2e66e64deac834fa699ca7b9eed9a0590ef7ee4f395761a57418a5bede",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv44",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "c28983f417a518fa3441a556806869b6eafcd7940f955d1bacadda5e033ebd11",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv45",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "3c6ed1756aaed5c30082bc55bed01452dbac87870898ca3336aa4045f4ebfc51",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv46",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "868cbbbdcb2509c8e0575110c163406e5c80aa0efec00fd87d0996f5ae13eea3",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv47",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "f25e84e06e33015df35b0f69cc7287723ca5229c68f461ed1df5722e699ab714",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv48",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "aafb1f76d5e707a5731ddb78cf4606b30f829139c70176c5878c2db75b173fec",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv49",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "1657db32e5d627cd1a8edef08164cd9e2bc8870f709a5db82f945a46360962dd",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "conv50",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "87e97bea6073b5bb1bc800b2c486a2923426b8361b2eb71361c6fe0fab2ecb57",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "identity01",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "100ac9023c9d374f2ea7b0844e452d00499ae0321bea724f671767b110c9db78",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "identity02",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "be1a4d1e3854f59d008f54f78b80d905ffce4b564ccb85a2a95858736556722c",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "register01",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "7c09951f5d80fcc2747ee96532fc4d551c8a518bc98a18f79a13d586bf2dcaa8",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  },
+  {
+    "id": "rules01",
+    "requested_controls": {
+      "temperature": true,
+      "seed": true,
+      "n_predict": true,
+      "enable_thinking": true,
+      "jinja": true,
+      "penalty_repeat": true,
+      "messages": true,
+      "schema": true
+    },
+    "requested_controls_pass": true,
+    "messages_sha256": "47f83cdec5a3c3af810f3b975ff46ccc3bd396dcfa9b11afa4f19b1328acce61",
+    "schema_sha256": "c3cce7798c7cdb9d5aca4f9f5ee6aba9dbd24835f2d79b2969198e2804cfffc3",
+    "generation_prompt": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "thinking_forced_open": false,
+    "grammar_sha256": "9563645b966e567b2831937ceb64cafddc7d73ea7cf4c5c5a08abbec8899a13c",
+    "grammar_root": "root ::= \"<|im_start|>assistant\\n\" (\"<think>\" space until-5 (\"\\n</think>\" | \"</think>\" | ))? space response-format",
+    "raw_restarts_assistant": true,
+    "raw_has_thinking_block": true,
+    "delivered": {
+      "available": false,
+      "contract_pass": false,
+      "spoken_text": null
+    },
+    "context_observations": [
+      {
+        "gpu": false,
+        "devices": [],
+        "reasonNoGPU": "GPU backend is available but was not selected",
+        "androidLib": "rnllama_jni_v8_2_dotprod_i8mm_hexagon_opencl",
+        "systemInfo": "system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | REPACK = 1 | "
+      }
+    ]
+  }
+]
