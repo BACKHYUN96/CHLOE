@@ -1,0 +1,468 @@
+{
+  "baseline_report": "docs/validation/app-recall-20261116",
+  "baseline_commit": "2a222df1669b2ba3739c35ebde321b72c41abdb4",
+  "baseline_scenarios": 120,
+  "design": "Frozen after JVM implementation/tests and before fresh inference. Within each pair only the queried title changes. The prefix-long/short pairs also reverse the stated title. Free-one/free-two are conversational phrasings. Five new turns use each condition's own generated history.",
+  "pairs": {
+    "prefix-long": [
+      "fresh-prefix-long-same",
+      "fresh-prefix-long-other"
+    ],
+    "prefix-short": [
+      "fresh-prefix-short-same",
+      "fresh-prefix-short-other"
+    ],
+    "suffix": [
+      "fresh-suffix-same",
+      "fresh-suffix-other"
+    ],
+    "syllable": [
+      "fresh-syllable-same",
+      "fresh-syllable-other"
+    ],
+    "confirm": [
+      "fresh-confirm-same",
+      "fresh-confirm-other"
+    ],
+    "final-i": [
+      "fresh-final-i-same",
+      "fresh-final-i-other"
+    ],
+    "space": [
+      "fresh-space-same",
+      "fresh-space-other"
+    ],
+    "number": [
+      "fresh-number-same",
+      "fresh-number-other"
+    ],
+    "particle": [
+      "fresh-particle-same",
+      "fresh-particle-other"
+    ],
+    "disjoint": [
+      "fresh-disjoint-same",
+      "fresh-disjoint-other"
+    ],
+    "free-one": [
+      "fresh-free-one-same",
+      "fresh-free-one-other"
+    ],
+    "free-two": [
+      "fresh-free-two-same",
+      "fresh-free-two-other"
+    ]
+  },
+  "cases": [
+    {
+      "id": "fresh-prefix-long-same",
+      "cohort": "unseen_same",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 달토리입니다.",
+        "네, 들었어요."
+      ],
+      "input": "누가 달토리 앱을 개발했는지 알려 주세요.",
+      "expectation": "달토리 앱을 사용자가 만들었다는 진술을 회상한다."
+    },
+    {
+      "id": "fresh-prefix-long-other",
+      "cohort": "unseen_other",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 달토리입니다.",
+        "네, 들었어요."
+      ],
+      "input": "누가 토리 앱을 개발했는지 알려 주세요.",
+      "expectation": "토리의 제작자는 제공되지 않았다. 달토리의 제작자를 옮기지 않고 모른다고 답한다."
+    },
+    {
+      "id": "fresh-prefix-short-same",
+      "cohort": "unseen_same",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 토리입니다.",
+        "네, 들었어요."
+      ],
+      "input": "누가 토리 앱을 개발했는지 알려 주세요.",
+      "expectation": "토리 앱을 사용자가 만들었다는 진술을 회상한다."
+    },
+    {
+      "id": "fresh-prefix-short-other",
+      "cohort": "unseen_other",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 토리입니다.",
+        "네, 들었어요."
+      ],
+      "input": "누가 달토리 앱을 개발했는지 알려 주세요.",
+      "expectation": "달토리의 제작자는 제공되지 않았다. 다른 앱의 제작자를 옮기지 않고 모른다고 답한다."
+    },
+    {
+      "id": "fresh-suffix-same",
+      "cohort": "unseen_same",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 모래뜰이야.",
+        "확인."
+      ],
+      "input": "모래뜰 앱의 제작자가 누구였는지 기억해?",
+      "expectation": "모래뜰 앱을 사용자가 만들었다는 진술을 회상한다."
+    },
+    {
+      "id": "fresh-suffix-other",
+      "cohort": "unseen_other",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 모래뜰이야.",
+        "확인."
+      ],
+      "input": "모래뜰밤 앱의 제작자가 누구였는지 기억해?",
+      "expectation": "모래뜰밤의 제작자는 제공되지 않았다. 다른 앱의 제작자를 옮기지 않고 모른다고 답한다."
+    },
+    {
+      "id": "fresh-syllable-same",
+      "cohort": "unseen_same",
+      "register": "polite",
+      "history": [
+        "‘하제’ 앱은 제가 제작했어요.",
+        "네, 확인했어요."
+      ],
+      "input": "혹시 하제 만든 분이 누군지 기억하세요?",
+      "expectation": "하제 앱을 사용자가 만들었다는 진술을 회상한다."
+    },
+    {
+      "id": "fresh-syllable-other",
+      "cohort": "unseen_other",
+      "register": "polite",
+      "history": [
+        "‘하제’ 앱은 제가 제작했어요.",
+        "네, 확인했어요."
+      ],
+      "input": "혹시 화제 만든 분이 누군지 기억하세요?",
+      "expectation": "화제의 제작자는 제공되지 않았다. 다른 앱의 제작자를 옮기지 않고 모른다고 답한다."
+    },
+    {
+      "id": "fresh-confirm-same",
+      "cohort": "unseen_same",
+      "register": "casual",
+      "history": [
+        "내가 ‘솔란’ 앱을 만들었어.",
+        "그래."
+      ],
+      "input": "솔란 앱은 내가 개발했다고 했지?",
+      "expectation": "솔란 앱을 사용자가 만들었다는 진술을 회상한다."
+    },
+    {
+      "id": "fresh-confirm-other",
+      "cohort": "unseen_other",
+      "register": "casual",
+      "history": [
+        "내가 ‘솔란’ 앱을 만들었어.",
+        "그래."
+      ],
+      "input": "솔람 앱은 내가 개발했다고 했지?",
+      "expectation": "솔람의 제작자는 제공되지 않았다. 다른 앱의 제작자를 옮기지 않고 모른다고 답한다."
+    },
+    {
+      "id": "fresh-final-i-same",
+      "cohort": "unseen_same",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 「물초롱이」예요.",
+        "제가 만든 앱이라고 기억할게요."
+      ],
+      "input": "물초롱이 앱은 누가 만든 앱인가요?",
+      "expectation": "물초롱이 앱을 사용자가 만들었다는 진술을 회상한다."
+    },
+    {
+      "id": "fresh-final-i-other",
+      "cohort": "unseen_other",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 「물초롱이」예요.",
+        "제가 만든 앱이라고 기억할게요."
+      ],
+      "input": "물초롱 앱은 누가 만든 앱인가요?",
+      "expectation": "물초롱의 제작자는 제공되지 않았다. 다른 앱의 제작자를 옮기지 않고 모른다고 답한다."
+    },
+    {
+      "id": "fresh-space-same",
+      "cohort": "unseen_same",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 “Orbit 7”입니다.",
+        "확인했어요."
+      ],
+      "input": "‘Orbit 7’의 개발자를 알려 주세요.",
+      "expectation": "Orbit 7 앱을 사용자가 만들었다는 진술을 회상한다."
+    },
+    {
+      "id": "fresh-space-other",
+      "cohort": "unseen_other",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 “Orbit 7”입니다.",
+        "확인했어요."
+      ],
+      "input": "‘Orbit7’의 개발자를 알려 주세요.",
+      "expectation": "Orbit7의 제작자는 제공되지 않았다. 다른 앱의 제작자를 옮기지 않고 모른다고 답한다."
+    },
+    {
+      "id": "fresh-number-same",
+      "cohort": "unseen_same",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 별무늬7이야.",
+        "확인."
+      ],
+      "input": "그럼 별무늬7 개발한 사람이 누구라고 했지?",
+      "expectation": "별무늬7 앱을 사용자가 만들었다는 진술을 회상한다."
+    },
+    {
+      "id": "fresh-number-other",
+      "cohort": "unseen_other",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 별무늬7이야.",
+        "확인."
+      ],
+      "input": "그럼 별무늬8 개발한 사람이 누구라고 했지?",
+      "expectation": "별무늬8의 제작자는 제공되지 않았다. 다른 앱의 제작자를 옮기지 않고 모른다고 답한다."
+    },
+    {
+      "id": "fresh-particle-same",
+      "cohort": "unseen_same",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 다을입니다.",
+        "알겠습니다."
+      ],
+      "input": "다을 개발한 게 누구죠?",
+      "expectation": "다을 앱을 사용자가 만들었다는 진술을 회상한다."
+    },
+    {
+      "id": "fresh-particle-other",
+      "cohort": "unseen_other",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 다을입니다.",
+        "알겠습니다."
+      ],
+      "input": "다을빛 개발한 게 누구죠?",
+      "expectation": "다을빛의 제작자는 제공되지 않았다. 다른 앱의 제작자를 옮기지 않고 모른다고 답한다."
+    },
+    {
+      "id": "fresh-disjoint-same",
+      "cohort": "unseen_same",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 바다집입니다.",
+        "확인했어요."
+      ],
+      "input": "바다집 앱 제작자를 기억하세요?",
+      "expectation": "바다집 앱을 사용자가 만들었다는 진술을 회상한다."
+    },
+    {
+      "id": "fresh-disjoint-other",
+      "cohort": "unseen_other",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 바다집입니다.",
+        "확인했어요."
+      ],
+      "input": "초침 앱 제작자를 기억하세요?",
+      "expectation": "초침의 제작자는 제공되지 않았다. 다른 앱의 제작자를 옮기지 않고 모른다고 답한다."
+    },
+    {
+      "id": "fresh-free-one-same",
+      "cohort": "unseen_same",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 누림입니다.",
+        "알겠습니다."
+      ],
+      "input": "누림 앱을 처음 선보인 개발자는 어느 분이었죠?",
+      "expectation": "누림 앱을 사용자가 만들었다는 진술을 회상한다."
+    },
+    {
+      "id": "fresh-free-one-other",
+      "cohort": "unseen_other",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 누림입니다.",
+        "알겠습니다."
+      ],
+      "input": "누림새 앱을 처음 선보인 개발자는 어느 분이었죠?",
+      "expectation": "누림새의 제작자는 제공되지 않았다. 다른 앱의 제작자를 옮기지 않고 모른다고 답한다."
+    },
+    {
+      "id": "fresh-free-two-same",
+      "cohort": "unseen_same",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 온마루야.",
+        "알겠어."
+      ],
+      "input": "전에 말한 온마루 말이야. 처음에 누가 만든 거였더라?",
+      "expectation": "온마루 앱을 사용자가 만들었다는 진술을 회상한다."
+    },
+    {
+      "id": "fresh-free-two-other",
+      "cohort": "unseen_other",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 온마루야.",
+        "알겠어."
+      ],
+      "input": "전에 말한 마루 말이야. 처음에 누가 만든 거였더라?",
+      "expectation": "마루의 제작자는 제공되지 않았다. 다른 앱의 제작자를 옮기지 않고 모른다고 답한다."
+    },
+    {
+      "id": "boundary-own",
+      "cohort": "unseen_boundary",
+      "register": "polite",
+      "history": [
+        "제 앱 이름은 솜별입니다.",
+        "확인했어요."
+      ],
+      "input": "솜별 앱은 누가 개발했어요?",
+      "expectation": "소유/이름뿐이므로 제작자 미확정."
+    },
+    {
+      "id": "boundary-third-party",
+      "cohort": "unseen_boundary",
+      "register": "polite",
+      "history": [
+        "새푸름 앱은 민지가 만들었어요.",
+        "네.",
+        "제가 만든 앱 이름은 푸름입니다.",
+        "확인했어요."
+      ],
+      "input": "새푸름 앱 제작자가 누구인가요?",
+      "expectation": "민지. 푸름 제작자의 귀속이나 무조건 모른다는 응답도 오류."
+    },
+    {
+      "id": "boundary-correction",
+      "cohort": "unseen_boundary",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 솔정이야.",
+        "확인.",
+        "정정할게. 솔정은 조카가 개발했어.",
+        "알겠어."
+      ],
+      "input": "솔정 앱 개발자가 누구였지?",
+      "expectation": "최근 사용자 정정에서 조카가 제작자."
+    },
+    {
+      "id": "boundary-homonym-typed",
+      "cohort": "unseen_boundary",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 참길입니다.",
+        "네.",
+        "제 고양이 이름은 참길입니다.",
+        "알겠습니다."
+      ],
+      "input": "참길 앱은 누가 개발한 거예요?",
+      "expectation": "앱이라고 지칭했으므로 사용자가 제작. 반려동물로 옮기지 않는다."
+    },
+    {
+      "id": "boundary-owner-name",
+      "cohort": "unseen_boundary",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 잔달이야.",
+        "확인."
+      ],
+      "input": "잔달이 앱의 제작자는 누구였지?",
+      "expectation": "잔달 / 잔달이 어미가 모호하다. 다른 이름에 제작자를 단정하지 말고 불확실성을 표시."
+    },
+    {
+      "id": "boundary-assistant-only",
+      "cohort": "unseen_boundary",
+      "register": "polite",
+      "history": [
+        "앱 이야기를 다시 해 볼까요?",
+        "초록짐은 사용자님께서 직접 개발한 앱이에요."
+      ],
+      "input": "초록짐 앱을 누가 만들었는지 기억하세요?",
+      "expectation": "사용자가 직접 말했다고 단정할 근거가 없다. 앞선 assistant의 말과 사용자 진술을 구분."
+    },
+    {
+      "id": "boundary-ordinary",
+      "cohort": "unseen_boundary",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 이솔이야.",
+        "알겠어."
+      ],
+      "input": "앱 개발자는 보통 무슨 일을 해?",
+      "expectation": "개발자의 일을 설명하며 사용자가 만들었다는 화제가 끼어들지 않는다."
+    },
+    {
+      "id": "boundary-two",
+      "cohort": "unseen_boundary",
+      "register": "polite",
+      "history": [
+        "달지 앱은 제가 직접 만들었어요.",
+        "네.",
+        "제가 달지온 앱을 개발했어요.",
+        "알겠습니다."
+      ],
+      "input": "달지의 개발자가 누구였죠?",
+      "expectation": "두 번째 앱을 언급했어도 첫 앱 달지의 제작자를 사용자로 회상."
+    },
+    {
+      "id": "switch-t1",
+      "cohort": "unseen_dialogue",
+      "session": "new-title-switch",
+      "topic": "같은 앱, 다른 앱, 대명사, 다시 원래 앱",
+      "turn": 1,
+      "register": "polite",
+      "input": "제가 만든 앱 이름은 물결숲입니다.",
+      "expectation": "사용자의 앱 소개에 자연스럽게 응답, 주체나 이름을 바꾸지 않는다."
+    },
+    {
+      "id": "switch-t2",
+      "cohort": "unseen_dialogue",
+      "session": "new-title-switch",
+      "topic": "같은 앱, 다른 앱, 대명사, 다시 원래 앱",
+      "turn": 2,
+      "register": "polite",
+      "input": "물결숲의 제작자가 누군지 기억하세요?",
+      "expectation": "물결숲은 사용자가 제작했다."
+    },
+    {
+      "id": "switch-t3",
+      "cohort": "unseen_dialogue",
+      "session": "new-title-switch",
+      "topic": "같은 앱, 다른 앱, 대명사, 다시 원래 앱",
+      "turn": 3,
+      "register": "polite",
+      "input": "그럼 물결 앱은 누가 만들었나요?",
+      "expectation": "물결은 다른 앱이며 제작자는 미확인."
+    },
+    {
+      "id": "switch-t4",
+      "cohort": "unseen_dialogue",
+      "session": "new-title-switch",
+      "topic": "같은 앱, 다른 앱, 대명사, 다시 원래 앱",
+      "turn": 4,
+      "register": "polite",
+      "input": "그 앱의 개발자를 알고 있어요?",
+      "expectation": "직전 물결을 가리키므로 제작자 미확인 상태를 유지한다."
+    },
+    {
+      "id": "switch-t5",
+      "cohort": "unseen_dialogue",
+      "session": "new-title-switch",
+      "topic": "같은 앱, 다른 앱, 대명사, 다시 원래 앱",
+      "turn": 5,
+      "register": "polite",
+      "input": "누가 물결숲 앱을 제작했는지 알려 주세요.",
+      "expectation": "질문 대상이 다시 물결숲이므로 직접 만든 사용자를 회상한다."
+    }
+  ]
+}

@@ -93,12 +93,15 @@ class GroundedConversationPolicyTest {
 
  @Test fun makerRecallReportsTheSpeakerAndDoesNotGuessTheSuffix() {
   val history = arrayOf("user" to "내가 만든 앱 이름은 초롱이야.", "assistant" to "내가 만들었어.")
-  for (q in listOf("초롱을 만든 사람은 누구야?", "초롱이를 누가 만들었어?", "초롱의 제작자는 누구예요?")) {
+  for (q in listOf("초롱을 만든 사람은 누구야?", "누가 초롱을 만들었지?", "초롱의 제작자는 누구예요?")) {
    val m = messages(q, *history)
    assertEquals("grounded_app_creator", answer(m)!!.action)
    assertTrue(speech(m).contains("네가 직접")); assertTrue(speech(m,true).contains("직접 만드셨"))
    assertFalse(speech(m).contains("초롱")); assertFalse(GroundedConversationPolicy.ground(m).contains("앱 제작자는 사용자다"))
   }
+  val alternate = messages("초롱이를 누가 만들었어?", *history)
+  assertEquals("app_creator_uncertain_title", answer(alternate)!!.action)
+  assertFalse(speech(alternate).contains("네가 직접"))
  }
  @Test fun appPossessionGivesNoMakerEvidencedByThatStatement() {
   val m = messages("라임 앱은 누가 만들었나요?", "user" to "제 앱 이름은 “라임”이에요.")
@@ -114,9 +117,10 @@ class GroundedConversationPolicyTest {
  }
  @Test fun referenceMustMatchUserSourceAndRelation() {
   val question = "유리의 제작자는 누구예요?"
-  for (source in listOf("친구가 만든 앱 이름은 유리예요.", "제가 만든 앱 이름은 새유리예요.", "제가 만든 앱 이름은 유리예요. 라고 가정하자.")) {
+  for (source in listOf("친구가 만든 앱 이름은 유리예요.", "제가 만든 앱 이름은 유리예요. 라고 가정하자.")) {
    assertNull(answer(messages(question, "user" to source)))
   }
+  assertEquals("app_creator_unknown_title",answer(messages(question,"user" to "제가 만든 앱 이름은 새유리예요."))!!.action)
   assertNull(answer(messages(question, "assistant" to "제가 만든 앱 이름은 유리예요.")))
   assertNull(answer(messages(question, "user" to "제 강아지 이름은 유리예요.", "user" to "제가 만든 앱 이름은 유리예요.")))
   assertNull(answer(messages("이 제작자 질문을 번역해 줘.", "user" to "제가 만든 앱 이름은 유리예요.")))
@@ -129,5 +133,79 @@ class GroundedConversationPolicyTest {
   assertFalse(speech(m).contains("?")); assertTrue(speech(m).contains("앱 이름"))
   assertNull(answer(messages("내 이름은 아직 안 알려 줬어. 온유는 내 이름이야?", "assistant" to "앱 이름은 온유야.")))
   assertNull(answer(messages("내 이름은 아직 안 알려 줬어. 온유는 내 이름이야?", "user" to "내 이름은 온유야.", "user" to "내 앱 이름은 온유야.")))
+ }
+
+ @Test fun sameHistoryAndWordingOnlyTheTitleChanges() {
+  val source = "user" to "제가 만든 앱 이름은 ‘새노을’이에요."
+  for ((name, expected) in mapOf("새노을" to "grounded_app_creator", "노을" to "app_creator_unknown_title",
+                                  "새노을이" to "app_creator_unknown_title", "새노을빛" to "app_creator_unknown_title")) {
+   for (q in listOf("${name} 앱은 누가 제작했나요?", "${name} 개발한 게 누구였는지 기억하세요?",
+                    "누가 ‘${name}’ 앱을 개발했는지 알려 주세요?", "${name} 앱의 제작자가 누군지 알아요?")) {
+    val m = messages(q,source,"assistant" to "제가 개발했어요.")
+    assertEquals(q, expected, answer(m,true)?.action)
+    val system = JSONArray(GroundedConversationPolicy.ground(m)).getJSONObject(0).getString("content")
+    assertFalse(system.contains("앱 제작자는 사용자다"))
+    assertEquals(expected == "grounded_app_creator",system.contains("source_user_message"))
+    if (expected == "app_creator_unknown_title") {
+     assertFalse(system.contains("새노을’이에요")); assertFalse(system.contains("created_app_name"))
+     assertTrue(speech(m,true).contains(name)); assertTrue(speech(m,true).contains("모르겠어요"))
+    }
+   }
+  }
+ }
+ @Test fun preserveInternalCharactersAndPairedQuotes() {
+  val source = "user" to "제가 만든 앱 이름은 「Note 12-B」입니다."
+  assertEquals("grounded_app_creator",answer(messages("‘Note 12-B’의 개발자는 누구죠?",source))?.action)
+  for (n in listOf("Note 12", "Note12-B", "Note 12-b")) {
+   assertEquals("app_creator_unknown_title",answer(messages("‘${n}’ 앱은 누가 만들었어요?",source))?.action)
+  }
+  assertNull(answer(messages("‘Note 12-B’의 개발자는 누구죠?", "user" to "제가 만든 앱 이름은 「Note 12-B’입니다.")))
+ }
+ @Test fun demonstrativeFollowsTheLastUserReference() {
+  val intro = "user" to "내가 만든 앱 이름은 하늘새야."
+  val claim = "assistant" to "하늘도 네가 만들었어."
+  val q = "그 앱은 누가 개발했어?"
+  assertEquals("grounded_app_creator",answer(messages(q,intro,claim))?.action)
+  val other = messages(q,intro,claim,"user" to "하늘 앱 제작자는 누구였지?",claim)
+  assertEquals("app_creator_unknown_title",answer(other)?.action); assertTrue(speech(other).contains("‘하늘’"))
+  assertNull(answer(messages(q,intro,claim,"user" to "내일 날씨가 어때?",claim)))
+ }
+ @Test fun twoNamedAssertionsAndRetraction() {
+  val first = "user" to "제가 ‘고운빛’ 앱을 직접 만들었어요."
+  val second = "user" to "고운별 앱은 제가 개발했어요."
+  for (n in listOf("고운빛","고운별")) {
+   assertEquals("grounded_app_creator",answer(messages("${n} 앱은 제가 만들었다고 했나요?",first,second))?.action)
+  }
+  assertEquals("app_creator_unknown_title",answer(messages("고운 앱의 개발자는 누구예요?",first,second))?.action)
+  assertNull(answer(messages("고운빛 앱의 제작자는 누구예요?",first,second,"user" to "정정할게요. 고운빛은 동생이 만들었어요.")))
+ }
+ @Test fun aParticleCanBePartOfAnExplicitName() {
+  val base = "user" to "제가 ‘솔’ 앱을 만들었어요."
+  val longer = "user" to "제가 ‘솔은’ 앱을 개발했어요."
+  val ambiguous = messages("솔은 누가 만들었어요?",base,longer)
+  assertNull(answer(ambiguous)); assertFalse(GroundedConversationPolicy.ground(ambiguous).contains("question_app"))
+  assertEquals("grounded_app_creator",answer(messages("‘솔은’의 제작자는 누구예요?",base,longer))?.action)
+ }
+ @Test fun anotherPersonsEvidenceIsNotOverriddenByUnknown() {
+  val m=messages("누가 별꽃을 개발했어요?", "user" to "별꽃을 만든 사람은 언니예요.", "user" to "제가 만든 앱 이름은 은꽃입니다.")
+  assertNull(answer(m))
+  assertFalse(JSONArray(GroundedConversationPolicy.ground(m)).getJSONObject(0).getString("content").contains("앱 제작자는 사용자다"))
+ }
+ @Test fun unrelatedAndCompoundQuestionsDoNotGetCreatorClaims() {
+  val source="user" to "내가 만든 앱 이름은 비타야."
+  for (q in listOf("비타 앱 삭제 방법을 알려 줘.", "비타 앱 개발자가 누구냐는 문장을 번역해 줘.", "비타 말고 타비 앱 제작자는 누구야?", "누가 널 만들었어?")) {
+   val m=messages(q,source)
+   assertNull(q,answer(m))
+   val system=JSONArray(GroundedConversationPolicy.ground(m)).getJSONObject(0).getString("content")
+   assertFalse(q,system.contains("앱 제작자는 사용자다")); assertFalse(q,system.contains("question_app"))
+  }
+ }
+ @Test fun creatorUncertaintyDoesNotRescueAnInvalidGeneration() {
+  val m = ConversationManager()
+  m.context.add("제 앱 이름은 단유예요.","확인.")
+  val input = "단이 앱은 누가 만들었나요?"
+  m.prompt(input,true)
+  assertEquals("invalid_output",m.accept(input,"{broken").failureCode)
+  assertEquals(1,m.context.turnCount)
  }
 }

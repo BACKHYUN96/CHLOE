@@ -22,12 +22,16 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("output", "baseline-classpath", "policy-classes", "jdk", "model", "schema"):
         parser.add_argument("--" + name, type=Path, required=True)
+    parser.add_argument("--suite", type=Path, help="Frozen follow-up cases and their baseline report")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
-    previous = root / "docs/validation/relevance-filter-20261115"
-    controls = root / "training/configs/app-recall-probes.json"
+    suite = read(args.suite) if args.suite else None
+    previous = root / (suite["baseline_report"] if suite else "docs/validation/relevance-filter-20261115")
+    controls = suite["cases"] if suite else read(root / "training/configs/app-recall-probes.json")
     old = [r for r in read(previous / "responses.json") if r["condition"] == "after"]
-    assert len(old) == 106
+    assert len(old) == (suite["baseline_scenarios"] if suite else 106)
+    if suite:
+        assert not ({case["input"] for case in controls} & {r["input"] for r in old})
     digest = hashlib.sha256()
     with args.model.open("rb") as model:
         for block in iter(lambda: model.read(8 * 1024 * 1024), b""):
@@ -61,24 +65,35 @@ def main():
             return result
 
         scenarios = []
-        for case in read(controls):
+        for case in controls:
             register = case["register"]
+            scenario = dict(source_id=case["id"], cohort=case.get("cohort", "control"),
+                            input=case["input"], register=register, expectation=case["expectation"])
+            if "session" in case:
+                assert "history" not in case
+                scenario.update(session=case["session"], turn=case["turn"], topic=case["topic"])
+                scenarios.append(scenario)
+                continue
             system = call("before", dict(op="system", register=register))["system"]
             assert system == call("after", dict(op="system", register=register))["system"]
             messages = [dict(role="system", content=system)]
             for i, line in enumerate(case["history"]):
                 messages.append(dict(role=("user", "assistant")[i % 2], content=line))
             messages.append(dict(role="user", content=case["input"]))
-            scenarios.append(dict(source_id=case["id"], cohort="control", messages=messages,
-                                  input=case["input"], register=register, expectation=case["expectation"]))
+            scenarios.append(dict(scenario, messages=messages))
+        input_audit = []
         for row in old:
             fields = ("source_id", "cohort", "input", "register", "session", "turn", "topic", "expectation")
             scenario = {k: row[k] for k in fields if k in row}
             replay = dict(scenario, route="current", messages=row["messages"])
             replay.pop("session", None)
-            for side in bridges:
-                prepared = call(side, dict(replay, op="prepare"))
-                assert prepared["actual_messages"] == row["actual_messages"], (side, row["id"])
+            before = call("before", dict(replay, op="prepare"))["actual_messages"]
+            after = call("after", dict(replay, op="prepare"))["actual_messages"]
+            assert before == row["actual_messages"], row["id"]
+            if not suite:
+                assert before == after, row["id"]
+            input_audit.append(dict(id=row["source_id"], model_input_equal=before == after,
+                                    original_turns_equal=before[1:] == after[1:]))
             baseline = call("before", dict(replay, op="consume", raw=row["raw"]))
             assert baseline["delivered_spoken"] == row["delivered_speech"]
             if "session" not in scenario:
@@ -91,11 +106,22 @@ def main():
         assert len(tasks) == len({t["id"] for t in tasks})
         save(args.output / "tasks.local.json", tasks)
         policy = root / "app/src/main/java/ai/chloe/voicelab/conversation/GroundedConversationPolicy.java"
-        save(args.output / "plan.local.json", dict(
-            baseline="7068619f497e0a2ef4eb92fa3150e9b8226bf478", model_sha256=digest.hexdigest(),
+        plan = dict(
+            baseline=suite["baseline_commit"] if suite else "7068619f497e0a2ef4eb92fa3150e9b8226bf478",
+            model_sha256=digest.hexdigest(),
             generation=read(previous / "plan.json")["generation"], native_requests=len(tasks), training_steps=0,
             policy_sha256=hashlib.sha256(policy.read_bytes().replace(b"\r\n", b"\n")).hexdigest(),
-            baseline_input_and_consumer_parity=len(old), identical_input_on_common_history=len(old)))
+            baseline_input_and_consumer_parity=len(old),
+            identical_input_on_common_history=sum(r["model_input_equal"] for r in input_audit))
+        if suite:
+            sources = [args.suite.resolve(), Path(__file__), root/"training/pc-match/compare_relevance.py",
+                       root/"training/pc-match/RouteBridge.java", root/"training/pc-match/worker.cpp", args.schema.resolve()]
+            sources += [policy.with_name(name) for name in ("AppCreatorRecall.java", "GroundedConversationPolicy.java",
+                        "ConversationActPolicy.java", "ReplyEconomyPolicy.java", "ReplyIntegrityPolicy.java", "ConversationEngine.kt")]
+            plan["source_hashes"] = {p.relative_to(root).as_posix(): hashlib.sha256(
+                p.read_bytes().replace(b"\r\n", b"\n")).hexdigest() for p in sources}
+            save(args.output / "preflight.local.json", input_audit)
+        save(args.output / "plan.local.json", plan)
         generate(args, tasks, call, bridges)
 
 
