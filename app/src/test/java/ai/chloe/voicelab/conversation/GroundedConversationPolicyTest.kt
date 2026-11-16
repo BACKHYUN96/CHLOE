@@ -208,4 +208,20 @@ class GroundedConversationPolicyTest {
   assertEquals("invalid_output",m.accept(input,"{broken").failureCode)
   assertEquals(1,m.context.turnCount)
  }
+ @Test fun topicFrameBindsOnlyOneTitle() {
+  val source = "user" to "제가 만든 앱 이름은 예솔입니다."
+  assertEquals("grounded_app_creator",answer(messages("방금 말씀드린 예솔 말인데요, 원래 누가 만든 거였죠?",source))?.action)
+  assertEquals("app_creator_unknown_title",answer(messages("예솔빛 앱을 처음 선보인 제작자는 어느 분인가요?",source))?.action)
+  for (q in listOf("예솔 말인데, 예솔빛은 누가 만들었지?", "예솔 말이야. 누가 만든 거였더라? 이 문장을 번역해 줘.")) {
+   assertNull(answer(messages(q,source)))
+  }
+ }
+ @Test fun generalJobQuestionSkipsOnlyTheMatchedNeutralAppPair() {
+  val source = "user" to "제가 만든 앱 이름은 예솔입니다."
+  val q="앱 개발자는 보통 어떤 일을 하나요?"
+  assertEquals(2,JSONArray(GroundedConversationPolicy.ground(messages(q,source,"assistant" to "확인."))).length())
+  assertEquals(4,JSONArray(GroundedConversationPolicy.ground(messages(q,source,"assistant" to "담당 개발자가 번역도 맡았어요."))).length())
+  val specific = "앱 개발자는 보통 어떤 일을 하나요? 예솔 사례와 비교해 주세요."
+  assertEquals(4,JSONArray(GroundedConversationPolicy.ground(messages(specific,source,"assistant" to "확인."))).length())
+ }
 }

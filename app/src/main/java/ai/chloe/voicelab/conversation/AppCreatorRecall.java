@@ -15,22 +15,28 @@ final class AppCreatorRecall {
     static final String QUOTED_TITLE = "(?:\"" + TEXT + "\"|“" + TEXT + "”|‘" + TEXT + "’|'" + TEXT + "'|「" + TEXT + "」)";
     private static final String NAME = "(?<title>" + QUOTED_TITLE + "|" + BARE + ")";
     private static final String TITLE = NAME + "(?<app>(?:이?라는)? 앱)?";
-    private static final String PREFIX = "^(?:(?:그럼|그러면|혹시|아까 말한|아까 말씀드린) )?";
+    private static final String PREFIX = "^(?:(?:그럼|그러면|혹시|(?:전에|아까|방금) (?:말한|말씀드린)) )?";
+    // Only a topic marker may intervene. A quoted request, a second title or a
+    // correction between the reference and the predicate cannot bind by accident.
+    private static final String TOPIC_FRAME = "(?:(?:말이야|말이에요|말인데(?:요)?|얘긴데(?:요)?|있잖아(?:요)?)[.,!?]? +)?";
+    private static final String ADVERB = "(?:(?:처음(?:에)?|원래|직접|혹시) +)?";
     private static final String END = "[?？.!]?$";
     private static final String MAKER_VERB = "(?:만들었|개발했|제작했)";
     private static final String ASK = "(?:어|어요|나요|니|지|죠|더라|더라구요|더라고요|던가요)";
     private static final String RECALL = "(?:기억(?:나|나요|해|하세요)|알(?:아|아요|고 있(?:어|어요|나요))|알려 ?(?:줘|주세요|줄래|줄래요))";
     private static final String WHO = "(?:누구(?:야|예요|에요|인가요|지|죠|였지|였죠|였나요|였더라)"
-        + "|(?:누구(?:인지|였는지)|누군지) " + RECALL + "|누구라고 했(?:지|죠|나요))";
+        + "|(?:누구(?:인지|였는지)|누군지) " + RECALL + "|누구라고 했(?:지|죠|나요)"
+        + "|어느 (?:분|사람)(?:이었(?:지|죠|나요)|인가요|이야|이에요))";
     private static final String MADE = "(?:만든|개발한|제작한)";
-    private static final String MAKER = "(?:개발자|제작자|" + MADE + " (?:사람|분|게|건))";
+    private static final String MAKER = "(?:개발자|제작자|선보인 (?:개발자|제작자)|"
+        + "(?:개발|제작)을 맡은 (?:사람|분)|" + MADE + " (?:사람|분|게|건))";
     private static final String TARGET_FIRST = TITLE + "(?<post>은|는|을|를|의|,)? +";
-    private static final Pattern BY_TITLE = Pattern.compile(PREFIX + TARGET_FIRST + "(?:"
+    private static final Pattern BY_TITLE = Pattern.compile(PREFIX + TARGET_FIRST + TOPIC_FRAME + ADVERB + "(?:"
         + MAKER + "(?:은|는|이|가)? " + WHO
         + "|누가 " + MAKER_VERB + "(?:" + ASK + "|는지 " + RECALL + ")"
-        + "|누가 " + MADE + " (?:앱|거)(?:이야|야|예요|인가요|였지|였나요)"
+        + "|누가 " + MADE + " (?:앱|거)(?:이야|야|예요|인가요|였지|였죠|였나요|였더라|였어|였어요)"
         + "|(?:내가|제가) " + MAKER_VERB + "(?:지|나요|다고 했(?:지|죠|나요))"
-        + "|(?:개발자|제작자)(?:를|가)? " + RECALL + ")" + END);
+        + "|" + MAKER + "(?:를|을|가)? " + RECALL + ")" + END);
     private static final Pattern BY_PERSON = Pattern.compile(PREFIX + "누가 " + TITLE
         + "(?<post>을|를)? " + MAKER_VERB + "(?:" + ASK + "|는지 " + RECALL + ")" + END);
     private static final Pattern[] QUESTIONS = {BY_TITLE, BY_PERSON};

@@ -120,6 +120,10 @@ public final class GroundedConversationPolicy {
         return mentions(q,f.value) || (q.contains(f.type)&&has(q,"(?:이름|누구|주인|소유|내 ?거|내 ?꺼)"));
     }
     public static final String RELEVANCE_VERSION="preserve-uncertain-source-v1";
+    private static final Pattern GENERAL_APP_WORK = Pattern.compile(
+        "^(?:(?:보통|일반적으로) )?앱 (?:개발자|제작자)(?:들)?(?:는|가|의)? (?:(?:보통|일반적으로) )?" +
+        "(?:(?:무슨|어떤) (?:일|역할)(?:을)? (?:해|해요|하나요|하죠|하는 거야)|" +
+        "(?:주요 )?업무(?:가|는)? (?:뭐야|뭔가요|무엇인가요))[.!?？]?$");
     private static boolean excludesTopic(String q,String topic) {
         return has(q,Pattern.quote(topic)+"(?:은|는|이|가|을|를|에 관한)?\\s*(?:(?:얘기|이야기|내용)(?:은|는|을|를)?\\s*)?(?:잠깐\\s*)?(?:빼고|제외|없이|(?:얘기|이야기|말)하지\\s*(?:마|말))");
     }
@@ -139,6 +143,7 @@ public final class GroundedConversationPolicy {
         // Exclusion applies to its named topic, not every fact in the session.
         if(topic!=null && excludesTopic(q,topic)) return false;
         for(String name:sourceNames(text)) if(excludesTopic(q,name)) return false;
+        if("앱".equals(topic) && GENERAL_APP_WORK.matcher(q.trim()).matches()) return false;
         if(topic!=null && q.contains(topic)) return true;
         for(Fact f:known) if(f.source==i && mentions(q,f.value)) return true;
         for(String name:sourceNames(text)) if(mentions(q,name)) return true;

@@ -1,0 +1,219 @@
+{
+  "design": "Fresh confirmatory wording and titles, authored only after the final 147 JVM tests. Paired histories and questions differ only in the referenced title. No product retuning against these outputs.",
+  "pairs": {
+    "frame": [
+      "confirm-frame-same",
+      "confirm-frame-other"
+    ],
+    "word-order": [
+      "confirm-word-order-same",
+      "confirm-word-order-other"
+    ],
+    "called": [
+      "confirm-called-same",
+      "confirm-called-other"
+    ],
+    "punctuation": [
+      "confirm-punctuation-same",
+      "confirm-punctuation-other"
+    ],
+    "digits": [
+      "confirm-digits-same",
+      "confirm-digits-other"
+    ],
+    "after-other-fact": [
+      "confirm-after-other-fact-same",
+      "confirm-after-other-fact-other"
+    ],
+    "natural-memory": [
+      "confirm-natural-memory-same",
+      "confirm-natural-memory-other"
+    ],
+    "natural-team": [
+      "confirm-natural-team-same",
+      "confirm-natural-team-other"
+    ]
+  },
+  "cases": [
+    {
+      "id": "confirm-frame-same",
+      "cohort": "confirmation_same",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 나빌입니다.",
+        "확인했어요."
+      ],
+      "input": "나빌 있잖아요. 제작을 맡은 분은 누구인가요?",
+      "expectation": "사용자가 나빌 제작자임을 회상한다."
+    },
+    {
+      "id": "confirm-frame-other",
+      "cohort": "confirmation_other",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 나빌입니다.",
+        "확인했어요."
+      ],
+      "input": "나빌꽃 있잖아요. 제작을 맡은 분은 누구인가요?",
+      "expectation": "나빌꽃의 제작 근거는 없다. 나빌의 제작자를 옮기거나 질문 대상을 바꾸지 않고 모른다고 말한다."
+    },
+    {
+      "id": "confirm-word-order-same",
+      "cohort": "confirmation_same",
+      "register": "polite",
+      "history": [
+        "제가 ‘고리판’ 앱을 직접 제작했어요.",
+        "네, 들었습니다."
+      ],
+      "input": "누가 ‘고리판’ 앱을 만들었는지 알아요?",
+      "expectation": "사용자가 고리판 제작자임을 회상한다."
+    },
+    {
+      "id": "confirm-word-order-other",
+      "cohort": "confirmation_other",
+      "register": "polite",
+      "history": [
+        "제가 ‘고리판’ 앱을 직접 제작했어요.",
+        "네, 들었습니다."
+      ],
+      "input": "누가 ‘고리’ 앱을 만들었는지 알아요?",
+      "expectation": "고리의 제작 근거는 없다. 고리판의 제작자를 옮기거나 질문 대상을 바꾸지 않고 모른다고 말한다."
+    },
+    {
+      "id": "confirm-called-same",
+      "cohort": "confirmation_same",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 가람돌이야.",
+        "확인했어."
+      ],
+      "input": "가람돌이라는 앱의 개발자를 기억해?",
+      "expectation": "사용자가 가람돌 제작자임을 회상한다."
+    },
+    {
+      "id": "confirm-called-other",
+      "cohort": "confirmation_other",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 가람돌이야.",
+        "확인했어."
+      ],
+      "input": "가람솔이라는 앱의 개발자를 기억해?",
+      "expectation": "가람솔의 제작 근거는 없다. 가람돌의 제작자를 옮기거나 질문 대상을 바꾸지 않고 모른다고 말한다."
+    },
+    {
+      "id": "confirm-punctuation-same",
+      "cohort": "confirmation_same",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 ‘한줌’이야.",
+        "네가 맡았구나."
+      ],
+      "input": "한줌 앱, 처음에 제작한 분이 누구였더라?",
+      "expectation": "사용자가 한줌 제작자임을 회상한다."
+    },
+    {
+      "id": "confirm-punctuation-other",
+      "cohort": "confirmation_other",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 ‘한줌’이야.",
+        "네가 맡았구나."
+      ],
+      "input": "햇한줌 앱, 처음에 제작한 분이 누구였더라?",
+      "expectation": "햇한줌의 제작 근거는 없다. 한줌의 제작자를 옮기거나 질문 대상을 바꾸지 않고 모른다고 말한다."
+    },
+    {
+      "id": "confirm-digits-same",
+      "cohort": "confirmation_same",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 ‘Pico 9’예요.",
+        "알겠습니다."
+      ],
+      "input": "‘Pico 9’ 개발자가 누구인지 알고 있나요?",
+      "expectation": "사용자가 Pico 9 제작자임을 회상한다."
+    },
+    {
+      "id": "confirm-digits-other",
+      "cohort": "confirmation_other",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 ‘Pico 9’예요.",
+        "알겠습니다."
+      ],
+      "input": "‘Pico 19’ 개발자가 누구인지 알고 있나요?",
+      "expectation": "Pico 19의 제작 근거는 없다. Pico 9의 제작자를 옮기거나 질문 대상을 바꾸지 않고 모른다고 말한다."
+    },
+    {
+      "id": "confirm-after-other-fact-same",
+      "cohort": "confirmation_same",
+      "register": "polite",
+      "history": [
+        "도란새 앱은 제가 개발했어요.",
+        "네.",
+        "이 초록 우산은 제 거예요.",
+        "알겠습니다."
+      ],
+      "input": "도란새 앱의 제작자는 어느 분인가요?",
+      "expectation": "사용자가 도란새 제작자임을 회상한다."
+    },
+    {
+      "id": "confirm-after-other-fact-other",
+      "cohort": "confirmation_other",
+      "register": "polite",
+      "history": [
+        "도란새 앱은 제가 개발했어요.",
+        "네.",
+        "이 초록 우산은 제 거예요.",
+        "알겠습니다."
+      ],
+      "input": "도란 앱의 제작자는 어느 분인가요?",
+      "expectation": "도란의 제작 근거는 없다. 도란새의 제작자를 옮기거나 질문 대상을 바꾸지 않고 모른다고 말한다."
+    },
+    {
+      "id": "confirm-natural-memory-same",
+      "cohort": "confirmation_same",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 들솔이야.",
+        "알겠어."
+      ],
+      "input": "앞에서 이야기한 들솔 만든 이가 누군지 떠올라?",
+      "expectation": "사용자가 들솔 제작자임을 회상한다."
+    },
+    {
+      "id": "confirm-natural-memory-other",
+      "cohort": "confirmation_other",
+      "register": "casual",
+      "history": [
+        "내가 만든 앱 이름은 들솔이야.",
+        "알겠어."
+      ],
+      "input": "앞에서 이야기한 들솔담 만든 이가 누군지 떠올라?",
+      "expectation": "들솔담의 제작 근거는 없다. 들솔의 제작자를 옮기거나 질문 대상을 바꾸지 않고 모른다고 말한다."
+    },
+    {
+      "id": "confirm-natural-team-same",
+      "cohort": "confirmation_same",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 ‘하늬온’입니다.",
+        "확인했어요."
+      ],
+      "input": "하늬온 앱은 어느 개발자 손에서 나왔나요?",
+      "expectation": "사용자가 하늬온 제작자임을 회상한다."
+    },
+    {
+      "id": "confirm-natural-team-other",
+      "cohort": "confirmation_other",
+      "register": "polite",
+      "history": [
+        "제가 만든 앱 이름은 ‘하늬온’입니다.",
+        "확인했어요."
+      ],
+      "input": "하늬 앱은 어느 개발자 손에서 나왔나요?",
+      "expectation": "하늬의 제작 근거는 없다. 하늬온의 제작자를 옮기거나 질문 대상을 바꾸지 않고 모른다고 말한다."
+    }
+  ]
+}

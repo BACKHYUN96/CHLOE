@@ -1,5 +1,22 @@
 # 별도 PC 4B 실행 도구
 
+## 비슷한 앱 이름과 제작자 회상
+
+기준은 `2a222df`에서 컴파일한 정책이다. 기존 RouteBridge와 Android JSON shim을 양쪽에서 공유하고, 수정 후 Java 정책과 Kotlin 대화 관리자는 새 디렉터리에 컴파일한다. `BASELINE_RUN/after-classpath.local.txt`는 직전 제작자 회상 실험에서 나온 **수정 후** classpath다.
+
+```powershell
+python -X utf8 training/pc-match/compare_app_recall.py --suite training/configs/app-title-binding-suite.json --extra-probes training/configs/app-title-confirmation.json --baseline-classpath BASELINE_RUN/after-classpath.local.txt --policy-classes NEW_JVM/classes --output NEW_RUN --jdk JDK_DIRECTORY --model EXISTING_SAME_4B.gguf --schema app/src/main/assets/conversation-schema.json
+```
+
+직접 평가 파일을 넣어 `export_relevance_results.py`로 응답을 내보낸 뒤 아래 명령으로 같은 이력·말투에서 앱 이름만 바꾼 쌍을 검사한다. 추가 문항이 이전 질문과 겹치거나 기존 120개 기준 응답이 재현되지 않으면 검사가 실패한다. `maker_reading`은 평가자가 실제 답을 읽고 기록한다. 단순히 고정 답변 처리가 실행됐는지로 정답을 판정하지 않는다.
+
+```powershell
+python -X utf8 training/scripts/export_relevance_results.py --artifacts NEW_RUN --output NEW_PUBLIC_DIRECTORY
+python -X utf8 training/scripts/audit_app_title_pairs.py --report NEW_PUBLIC_DIRECTORY --suite training/configs/app-title-binding-suite.json --suite training/configs/app-title-confirmation.json
+```
+
+첫 후보 `15f71a6`의 실행에서는 추가 확인 문항을 제외한다. [실험 결과와 경계 사례](../../docs/validation/local-llm-app-title-binding-report.md)
+
 ## 제작자 회상과 사용자 이름 구분
 
 `compare_app_recall.py`는 직전 필터 수정 버전의 RouteBridge classpath와 이번 `test_grounding_policy.py`가 컴파일한 정책 클래스를 분리해 실행한다. 이전 공개 응답의 합성 질문과 고정 이력, 추가 14개 대조를 읽고 각 연속 대화의 이력을 새로 생성한다. 결과 폴더는 새 경로를 지정한다.

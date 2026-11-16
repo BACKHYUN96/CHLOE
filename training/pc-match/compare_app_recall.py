@@ -23,11 +23,18 @@ def main():
     for name in ("output", "baseline-classpath", "policy-classes", "jdk", "model", "schema"):
         parser.add_argument("--" + name, type=Path, required=True)
     parser.add_argument("--suite", type=Path, help="Frozen follow-up cases and their baseline report")
+    parser.add_argument("--extra-probes", type=Path, help="Additional unseen pairs frozen after development")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
     suite = read(args.suite) if args.suite else None
     previous = root / (suite["baseline_report"] if suite else "docs/validation/relevance-filter-20261115")
     controls = suite["cases"] if suite else read(root / "training/configs/app-recall-probes.json")
+    if args.extra_probes:
+        if not suite:
+            parser.error("--extra-probes requires --suite")
+        extra = read(args.extra_probes)["cases"]
+        assert not ({case["input"] for case in extra} & {case["input"] for case in controls})
+        controls = controls + extra
     old = [r for r in read(previous / "responses.json") if r["condition"] == "after"]
     assert len(old) == (suite["baseline_scenarios"] if suite else 106)
     if suite:
@@ -118,6 +125,8 @@ def main():
                        root/"training/pc-match/RouteBridge.java", root/"training/pc-match/worker.cpp", args.schema.resolve()]
             sources += [policy.with_name(name) for name in ("AppCreatorRecall.java", "GroundedConversationPolicy.java",
                         "ConversationActPolicy.java", "ReplyEconomyPolicy.java", "ReplyIntegrityPolicy.java", "ConversationEngine.kt")]
+            if args.extra_probes:
+                sources.append(args.extra_probes.resolve())
             plan["source_hashes"] = {p.relative_to(root).as_posix(): hashlib.sha256(
                 p.read_bytes().replace(b"\r\n", b"\n")).hexdigest() for p in sources}
             save(args.output / "preflight.local.json", input_audit)

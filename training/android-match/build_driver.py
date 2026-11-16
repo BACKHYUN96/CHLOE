@@ -38,10 +38,9 @@ def main():
     sources = list(Path(__file__).resolve().parent.glob('*.java'))
     # Compile the SAME production policy into instrumentation; the installed
     # alpha15 app/native payload and original user package remain untouched.
-    sources.append(Path(__file__).resolve().parents[2] / 'app/src/main/java/ai/chloe/voicelab/conversation/GroundedConversationPolicy.java')
-    sources.append(Path(__file__).resolve().parents[2] / 'app/src/main/java/ai/chloe/voicelab/conversation/ReplyEconomyPolicy.java')
-    sources.append(Path(__file__).resolve().parents[2] / 'app/src/main/java/ai/chloe/voicelab/conversation/ReplyIntegrityPolicy.java')
-    sources.append(Path(__file__).resolve().parents[2] / 'app/src/main/java/ai/chloe/voicelab/conversation/ConversationActPolicy.java')
+    policies = Path(__file__).resolve().parents[2] / 'app/src/main/java/ai/chloe/voicelab/conversation'
+    sources.extend(policies / name for name in ('AppCreatorRecall.java', 'GroundedConversationPolicy.java',
+                   'ReplyEconomyPolicy.java', 'ReplyIntegrityPolicy.java', 'ConversationActPolicy.java'))
     def run(command):
         subprocess.run(command, cwd=directory, check=True)
     run([str(jdk / 'javac.exe'), '-encoding', 'UTF-8', '-source', '8', '-target', '8', '-classpath', str(android), '-d', 'classes', *map(str, sources)])
