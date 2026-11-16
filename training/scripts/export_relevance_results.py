@@ -16,8 +16,8 @@ from export_route_ablation import bounded_add
 def read(p):return json.loads(p.read_text(encoding='utf-8'))
 
 
-def audit(rows,tasks):
-    assert len(rows)==len(tasks)==len({r['id'] for r in rows})==212
+def audit(rows,tasks,expected_count=212):
+    assert len(rows)==len(tasks)==len({r['id'] for r in rows})==expected_count
     histories=defaultdict(list)
     for r,t in zip(rows,tasks):
         assert all(r[k]==v for k,v in t.items()),r['id']
@@ -35,7 +35,7 @@ def audit(rows,tasks):
         assert r['messages']==expected,(r['id'],'history contamination')
         if not a['blocked']:bounded_add(histories[key],r['input'],a['delivered_spoken'])
         assert a['retained_history_pairs']==len(histories[key])
-    return dict(fresh_requests=212,independent_actual_history_reconstructed=True,exact_scripted_inputs=True,settings_verified=True)
+    return dict(fresh_requests=len(rows),independent_actual_history_reconstructed=True,exact_scripted_inputs=True,settings_verified=True)
 
 
 def main():
@@ -43,10 +43,13 @@ def main():
     p.add_argument('--artifacts',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
     a=p.parse_args();root=Path(__file__).resolve().parents[2]
     plan=read(a.artifacts/'plan.local.json');tasks=read(a.artifacts/'tasks.local.json')
-    for path,value in plan['source_hashes'].items():
+    hashes = plan.get('source_hashes')
+    if hashes is None:
+        hashes = {'app/src/main/java/ai/chloe/voicelab/conversation/GroundedConversationPolicy.java':plan['policy_sha256']}
+    for path,value in hashes.items():
         assert hashlib.sha256((root/path).read_bytes().replace(b'\r\n',b'\n')).hexdigest()==value,path
     rows=[json.loads(s) for s in (a.artifacts/'results.local.jsonl').read_text(encoding='utf-8').splitlines()]
-    checks=audit(rows,tasks);labels=read(a.artifacts/'judgments.local.json')
+    checks=audit(rows,tasks,plan['native_requests']);labels=read(a.artifacts/'judgments.local.json')
     assert set(labels['raw'])==set(labels['final'])=={r['id'] for r in rows}
     exported=[];pairs=defaultdict(dict)
     for r in rows:
@@ -75,8 +78,11 @@ def main():
         paired.append(dict(id=ident,cohort=b['cohort'],before=b['final_gpt_overall'],after=c['final_gpt_overall'],
                            original_history_equal=b['messages']==c['messages'],model_input_equal=b['actual_messages']==c['actual_messages'],
                            raw_equal=b['raw']==c['raw'],final_speech_equal=b['delivered_speech']==c['delivered_speech']))
-    summary=dict(fresh_requests=len(rows),main_requests=208,supplemental_fixed_history_requests=4,training_steps=0,cohorts={})
-    for cohort in ['known','new_single','dialogue','fixed_history_probe']:
+    summary=dict(fresh_requests=len(rows),main_requests=sum(r['cohort'] in ('known','new_single','dialogue') for r in rows),
+                 supplemental_fixed_history_requests=sum(r['cohort']=='fixed_history_probe' for r in rows),training_steps=0,cohorts={})
+    if any(r['cohort']=='control' for r in paired):
+        summary['supplemental_control_requests']=sum(r['cohort']=='control' for r in rows)
+    for cohort in dict.fromkeys(r['cohort'] for r in paired):
         group=[r for r in paired if r['cohort']==cohort]
         summary['cohorts'][cohort]=dict(questions=len(group),scores={c:dict(Counter(r[c] for r in group)) for c in ['before','after']},
             raw_scores={c:dict(Counter(r['raw_gpt_overall'] for r in exported if r['cohort']==cohort and r['condition']==c)) for c in ['before','after']},
@@ -86,7 +92,10 @@ def main():
                    normal_native_finish=sum(r['native_parse_status']=='ok' for r in exported),blocked=sum(r['blocked'] for r in exported),truncated=sum(r['truncated'] for r in exported),max_prompt_tokens=max(r['prompt_tokens'] for r in exported),judge=labels['method'])
     if (a.artifacts/'verification.local.json').exists():checks.update(read(a.artifacts/'verification.local.json'))
     a.output.mkdir(parents=True,exist_ok=False)
-    for name,data in [('summary.json',summary),('responses.json',exported),('paired.json',paired),('checks.json',checks),('plan.json',plan),('input-audit.json',read(a.artifacts/'preflight.local.json'))]:
+    files=[('summary.json',summary),('responses.json',exported),('paired.json',paired),('checks.json',checks),('plan.json',plan)]
+    if 'source_hashes' in plan or (a.artifacts/'preflight.local.json').is_file():
+        files.append(('input-audit.json',read(a.artifacts/'preflight.local.json')))
+    for name,data in files:
         (a.output/name).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(summary,ensure_ascii=False))
 

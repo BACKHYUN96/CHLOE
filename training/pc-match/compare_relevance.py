@@ -93,6 +93,10 @@ def main():
               judge='Direct GPT six-criterion review; exact context/speech labels may be reused with provenance. Known development questions, same author, visible conditions; not blind/independent/human/holdout.')
     for name,data in [('plan.local.json',plan),('tasks.local.json',tasks),('preflight.local.json',gates)]:
         (a.output/name).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    generate(a,tasks,call,bridges)
+
+
+def generate(a,tasks,call,bridges):
     runtime='/home/chloetrain/chloe-pc-4b-20261115'
     libraries='/home/chloetrain/CHLOE/.venv-llm/lib/python3.12/site-packages/nvidia/cublas/lib:'+runtime+'/cuda/lib64:/usr/lib/wsl/lib'
     with (a.output/'results.local.jsonl').open('x',encoding='utf-8') as output,(a.output/'native.stderr.log').open('xb') as errors:
@@ -119,7 +123,7 @@ def main():
             worker.stdin.close();worker.wait(timeout=30)
             for bridge in bridges.values():bridge.stdin.close();bridge.wait(timeout=30)
         assert worker.returncode==0 and all(b.returncode==0 for b in bridges.values())
-    (a.output/'GENERATION-COMPLETE.local.json').write_text(json.dumps(dict(generations=212,worker_exit_code=0,bridge_exit_codes=[b.returncode for b in bridges.values()])),encoding='utf-8')
+    (a.output/'GENERATION-COMPLETE.local.json').write_text(json.dumps(dict(generations=len(tasks),worker_exit_code=0,bridge_exit_codes=[b.returncode for b in bridges.values()])),encoding='utf-8')
 
 
 if __name__=='__main__':main()

@@ -1,0 +1,16 @@
+[
+  {"id":"maker-pol","register":"polite","history":["제가 만든 앱 이름은 은결이에요.","은결은 제가 개발했어요."],"input":"은결을 만든 사람은 누구인가요?","expectation":"사용자가 제작했다는 사용자 발화를 우선","grounded_action":"grounded_app_creator"},
+  {"id":"maker-cas","register":"casual","history":["내가 만든 앱 이름은 토리야.","확인."],"input":"토리의 개발자는 누구야?","expectation":"사용자 제작, 반말","grounded_action":"grounded_app_creator"},
+  {"id":"maker-quoted","register":"polite","history":["제가 만든 앱 이름은 “도담이”예요.","확인."],"input":"도담이 앱은 누가 만들었어요?","expectation":"인용된 이름이 정확히 맞고 사용자 제작","grounded_action":"grounded_app_creator"},
+  {"id":"own-only","register":"polite","history":["제 앱 이름은 아라예요.","확인."],"input":"아라를 누가 만들었나요?","expectation":"소유 표현만으로 제작자 미확정","grounded_action":"app_creator_unspecified"},
+  {"id":"third-party","register":"casual","history":["보미가 만든 앱 이름은 모아야.","확인."],"input":"모아의 제작자는 누구야?","expectation":"보미, 사용자나 AI 제작 아님","grounded_action":null},
+  {"id":"retracted","register":"polite","history":["제가 만든 앱 이름은 은결이에요.","알겠습니다.","정정할게요. 은결은 동생이 만들었어요.","확인."],"input":"은결을 만든 사람은 누구인가요?","expectation":"동생이라는 최신 정정 우선","grounded_action":null},
+  {"id":"homonym","register":"casual","history":["내가 만든 앱 이름은 토리야.","확인.","내 강아지 이름은 토리야.","확인."],"input":"토리를 누가 만들었어?","expectation":"앱을 뜻한다면 사용자 제작, 강아지를 만든 것으로 단정 금지","grounded_action":null},
+  {"id":"assistant-only","register":"casual","history":["앱 하나에 관해 이야기하자.","네가 만든 앱 이름은 모아야."],"input":"모아의 개발자는 누구야?","expectation":"사용자 제작으로 확인되지 않음","grounded_action":null},
+  {"id":"different-title","register":"polite","history":["제가 만든 앱 이름은 새아라예요.","알겠습니다."],"input":"아라 앱은 누가 만들었나요?","expectation":"다른 앱, 제작자 미확인","grounded_action":null},
+  {"id":"identity-pol","register":"polite","history":["제 앱 이름은 아라예요.","아라라고 불러 드릴게요."],"input":"제 이름은 아직 말씀드리지 않았어요. 아라는 제 이름인가요?","expectation":"앱 이름으로 제시, 사용자 이름 미제공, 되묻지 않음","grounded_action":"grounded_app_personal_name"},
+  {"id":"identity-cas","register":"casual","history":["내가 만든 앱 이름은 토리야.","확인."],"input":"내 이름은 아직 안 알려 줬어. 토리는 내 이름이야?","expectation":"앱 이름과 미제공인 사용자 이름 구분","grounded_action":"grounded_app_personal_name"},
+  {"id":"identity-known","register":"casual","history":["내 이름은 아라야.","확인.","내 앱 이름은 아라야.","확인."],"input":"아라는 내 이름이기도 해?","expectation":"사용자와 앱에 같은 이름을 명시, 양쪽 사실 보존","grounded_action":null},
+  {"id":"uncovered","register":"polite","history":["제가 만든 앱 이름은 은결이에요.","확인."],"input":"은결 개발한 게 누구였는지 기억하세요?","expectation":"다른 표현에서도 제작자는 사용자","grounded_action":null},
+  {"id":"owner-item","register":"casual","history":["빨간 우산은 내 거야.","그건 내 우산이야."],"input":"빨간 우산은 누구 거야?","expectation":"사용자 물건. 기존 물건 회상 회귀 대조","grounded_action":"grounded_fact_recall"}
+]

@@ -166,7 +166,7 @@ public final class GroundedConversationPolicy {
             JSONArray creators=relevantCreators(source,q,summary);
             for(Fact fact:known) if(relevantFact(fact,q,last,summary)) data.put(fact.json());
             JSONArray rows=modelView(source,q,known,summary);
-            if(data.length()==0 && creators.length()==0 && resolve(original,false)==null && !summary)
+            if(data.length()==0 && creators.length()==0 && promptDecision(source,false)==null && !summary)
                 return rows.length()==source.length()?original:rows.toString();
             JSONObject system=rows.getJSONObject(0);
             if(!system.getString("role").equals("system")) throw new IllegalArgumentException("Missing system");
@@ -214,10 +214,68 @@ public final class GroundedConversationPolicy {
         if(f.kind.equals("app_name")) return (polite?"말씀하신":"네가 말한")+" 앱 이름은 "+named(f.value,polite);
         return f.value+(consonant(f.value)?"은 ":"는 ")+(polite?"사용자님의 물건이에요.":"네 물건이야.");
     }
-    /** Returns null unless a narrow, unambiguous request has app-owned evidence. */
+    private static final Pattern MAKER_QUESTION = Pattern.compile(
+        "^" + NAME + "(?:(?:을|를) 만든 사람은 누구(?:야|예요|인가요|였지|였죠)" +
+        "|(?:의 | 앱의 )(?:제작자|개발자)는 누구(?:야|예요|인가요|였지|였죠)" +
+        "|(?:을|를| 앱은) 누가 만들었(?:어|어요|나요|지|죠|니))[?？.!]?$");
+    private static final Pattern PERSONAL_NAME_QUESTION = Pattern.compile(
+        "^(?:제|내) 이름은 아직 (?:말씀드리지 않았어요|말하지 않았어요|말하지 않았어|안 알려 줬어|안 알려 드렸어요)[.!] " +
+        NAME + "(?:은|는) (?:제|내) 이름(?:인가요|이야|이에요)[?？.!]?$");
+
+    /** Link the reference supplied by the question, without inferring a canonical name
+     * from an ambiguous copula. Unrecognised intervening user turns can be corrections. */
+    private static String supportingAppStatement(JSONArray rows, String target, boolean asksMaker) throws Exception {
+        String statement = null;
+        int userTurns = 0;
+        for (int i = 1; i < rows.length() - 1; i++) {
+            JSONObject row = rows.getJSONObject(i);
+            if (!row.getString("role").equals("user")) continue;
+            userTurns++;
+            String text = row.getString("content").trim();
+            if (!asksMaker && has(text, "(?:내|제) 이름(?:은|이) ")) return null;
+            String topic = factTopic(text);
+            if ("앱".equals(topic)) {
+                statement = sourceNames(text).contains(target) ? text : null;
+            } else if (topic != null) {
+                if (sourceNames(text).contains(target) ||
+                    ("물건".equals(topic) && mentions(text, target))) return null;
+            } else if (!MAKER_QUESTION.matcher(text).matches()) {
+                statement = null;
+            }
+        }
+        // An ownership-only statement cannot dismiss other testimony about the creator.
+        if (asksMaker && statement != null && !explicitCreator(statement) && userTurns > 1) return null;
+        return statement;
+    }
+
+    /** Delivery only. Keep the same model input on identical histories. */
     public static Decision resolve(String original, boolean polite) {
         try {
-            JSONArray rows=new JSONArray(original);
+            JSONArray rows = new JSONArray(original);
+            JSONObject last = rows.getJSONObject(rows.length() - 1);
+            if (!last.getString("role").equals("user")) return null;
+            String question = last.getString("content").trim();
+            Matcher maker = MAKER_QUESTION.matcher(question);
+            Matcher name = PERSONAL_NAME_QUESTION.matcher(question);
+            boolean asksMaker = maker.matches();
+            if (!asksMaker && !name.matches()) return promptDecision(rows, polite);
+            String target = asksMaker ? maker.group(1) : name.group(1);
+            String source = supportingAppStatement(rows, target, asksMaker);
+            if (source == null) return null;
+            if (!asksMaker) return new Decision("grounded_app_personal_name", polite
+                ? "앞서 말씀하신 건 앱 이름이에요. 본인 이름은 아직 알려 주지 않으셨어요."
+                : "앞서 말한 건 앱 이름이야. 네 이름은 아직 알려 주지 않았어.");
+            if (explicitCreator(source)) return new Decision("grounded_app_creator", polite
+                ? "그 앱은 직접 만드셨다고 말씀하셨어요."
+                : "그 앱은 네가 직접 만들었다고 했어.");
+            return new Decision("app_creator_unspecified", polite
+                ? "앱 이름은 알려 주셨지만, 누가 만들었는지는 그 말씀만으로 알 수 없어요."
+                : "앱 이름은 알려 줬지만, 누가 만들었는지는 그 말만으로 알 수 없어.");
+        } catch(Exception e) { throw new IllegalArgumentException("Invalid policy messages",e); }
+    }
+
+    // These existing decisions also participate in input grounding.
+    private static Decision promptDecision(JSONArray rows, boolean polite) throws Exception {
             JSONObject last=rows.getJSONObject(rows.length()-1);
             if(!last.getString("role").equals("user")) return null;
             String q=last.getString("content").trim();
@@ -249,7 +307,6 @@ public final class GroundedConversationPolicy {
             }
             // Unsupported summaries and ambiguous references remain model tasks.
             return null;
-        } catch(Exception e) { throw new IllegalArgumentException("Invalid policy messages",e); }
     }
     private GroundedConversationPolicy() {}
 }

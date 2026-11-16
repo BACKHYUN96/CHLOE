@@ -59,7 +59,8 @@ class GroundedConversationPolicyTest {
   for(q in listOf("달빛을 만든 사람은 누구인가요?","달빛으로 만든 것과 소유한 것을 구분해 주세요.")) {
    val m=messages(q,"user" to "제가 만든 앱 이름은 달빛이에요.","assistant" to "앱 이름을 알려 주셔서 감사합니다.")
    val view=JSONArray(GroundedConversationPolicy.ground(m));assertEquals(4,view.length())
-   assertEquals("제가 만든 앱 이름은 달빛이에요.",view.getJSONObject(1).getString("content"));assertNull(answer(m))
+   assertEquals("제가 만든 앱 이름은 달빛이에요.",view.getJSONObject(1).getString("content"))
+   if(q.endsWith("누구인가요?")) assertEquals("grounded_app_creator",answer(m)!!.action) else assertNull(answer(m))
   }
  }
  @Test fun uncertainSuffixBothReferencesKeepVerbatimSource(){
@@ -88,5 +89,45 @@ class GroundedConversationPolicyTest {
  @Test fun genericSummaryKeepsAmbiguousNamesEvenWithOtherTopicWords(){
   val m=messages("물건과 이름을 아까 말한 순서로 정리해 주세요.","user" to "제 고양이 이름은 몽실이에요.","assistant" to "확인.")
   assertTrue(GroundedConversationPolicy.ground(m).contains("제 고양이 이름은 몽실이에요."));assertNull(answer(m))
+ }
+
+ @Test fun makerRecallReportsTheSpeakerAndDoesNotGuessTheSuffix() {
+  val history = arrayOf("user" to "내가 만든 앱 이름은 초롱이야.", "assistant" to "내가 만들었어.")
+  for (q in listOf("초롱을 만든 사람은 누구야?", "초롱이를 누가 만들었어?", "초롱의 제작자는 누구예요?")) {
+   val m = messages(q, *history)
+   assertEquals("grounded_app_creator", answer(m)!!.action)
+   assertTrue(speech(m).contains("네가 직접")); assertTrue(speech(m,true).contains("직접 만드셨"))
+   assertFalse(speech(m).contains("초롱")); assertFalse(GroundedConversationPolicy.ground(m).contains("앱 제작자는 사용자다"))
+  }
+ }
+ @Test fun appPossessionGivesNoMakerEvidencedByThatStatement() {
+  val m = messages("라임 앱은 누가 만들었나요?", "user" to "제 앱 이름은 “라임”이에요.")
+  assertEquals("app_creator_unspecified",answer(m,true)!!.action)
+  assertTrue(speech(m,true).contains("그 말씀만으로"))
+  assertNull(answer(messages("라임 앱은 누가 만들었나요?", "user" to "라임은 언니가 개발했어요.", "user" to "제 앱 이름은 라임입니다.")))
+ }
+ @Test fun aChangedOrRetractedSourceIsNeverAForcedCreatorAnswer() {
+  for (later in listOf("그건 친구가 만들었어.", "앞에서 한 말은 정정할게.", "내 앱 이름은 단비야.",
+                        "초롱은 내가 만든 게 아니야.", "이름이 같은 앱이 두 개야.")) {
+   assertNull(answer(messages("초롱의 개발자는 누구야?", "user" to "내가 만든 앱 이름은 초롱이야.", "user" to later)))
+  }
+ }
+ @Test fun referenceMustMatchUserSourceAndRelation() {
+  val question = "유리의 제작자는 누구예요?"
+  for (source in listOf("친구가 만든 앱 이름은 유리예요.", "제가 만든 앱 이름은 새유리예요.", "제가 만든 앱 이름은 유리예요. 라고 가정하자.")) {
+   assertNull(answer(messages(question, "user" to source)))
+  }
+  assertNull(answer(messages(question, "assistant" to "제가 만든 앱 이름은 유리예요.")))
+  assertNull(answer(messages(question, "user" to "제 강아지 이름은 유리예요.", "user" to "제가 만든 앱 이름은 유리예요.")))
+  assertNull(answer(messages("이 제작자 질문을 번역해 줘.", "user" to "제가 만든 앱 이름은 유리예요.")))
+ }
+ @Test fun appAndPersonalNameClarificationNeedsBothClaims() {
+  val m = messages("내 이름은 아직 안 알려 줬어. 온유는 내 이름이야?", "user" to "내가 만든 앱 이름은 온유야.",
+                   "assistant" to "온유라고 부를게.", "user" to "온유를 누가 만들었어?", "assistant" to "모르겠어.",
+                   "user" to "노란 가방은 내 거야.")
+  assertEquals("grounded_app_personal_name",answer(m)!!.action)
+  assertFalse(speech(m).contains("?")); assertTrue(speech(m).contains("앱 이름"))
+  assertNull(answer(messages("내 이름은 아직 안 알려 줬어. 온유는 내 이름이야?", "assistant" to "앱 이름은 온유야.")))
+  assertNull(answer(messages("내 이름은 아직 안 알려 줬어. 온유는 내 이름이야?", "user" to "내 이름은 온유야.", "user" to "내 앱 이름은 온유야.")))
  }
 }

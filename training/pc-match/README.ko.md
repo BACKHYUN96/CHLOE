@@ -1,5 +1,15 @@
 # 별도 PC 4B 실행 도구
 
+## 제작자 회상과 사용자 이름 구분
+
+`compare_app_recall.py`는 직전 필터 수정 버전의 RouteBridge classpath와 이번 `test_grounding_policy.py`가 컴파일한 정책 클래스를 분리해 실행한다. 이전 공개 응답의 합성 질문과 고정 이력, 추가 14개 대조를 읽고 각 연속 대화의 이력을 새로 생성한다. 결과 폴더는 새 경로를 지정한다.
+
+```powershell
+python -X utf8 training/pc-match/compare_app_recall.py --output NEW_RUN --baseline-classpath BASELINE_RUN/bridge-after/classpath.local.txt --policy-classes NEW_JVM/classes --jdk JDK_DIRECTORY --model EXISTING_SAME_4B.gguf --schema app/src/main/assets/conversation-schema.json
+```
+
+직접 평가한 원문·최종 6기준 판정을 `NEW_RUN/judgments.local.json`에 넣으면 `training/scripts/export_relevance_results.py --artifacts NEW_RUN --output NEW_PUBLIC_DIRECTORY`로 검사·집계할 수 있다. [244개 실제 응답과 결과](../../docs/validation/local-llm-app-recall-report.md)
+
 ## 관련성 필터 수정 전후 비교
 
 [실제212개 생성·직접 평가](../../docs/validation/local-llm-relevance-filter-report.md), [고정 계획](../configs/relevance-filter-plan.json)을 추가했다. `compare_relevance.py`는 수정 전/후를 **서로 다른 compiled classes/JVM bridge**로 실행한다. 같은 모델/schema/worker·최종 정책을 유지하며 실제 manager로 각 조건의 다음 턴 이력을 만든다. 직전104개 입력/소비를 사전 검사한 뒤 주208개와 오답 고정 이력4개를 새로 생성한다. 과거 응답을 새 추론 결과로 재생하지 않는다.
