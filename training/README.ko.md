@@ -1,6 +1,184 @@
 # 로컬 Codex 작업 지시: CHLOE 한국어 대화 LLM 학습
 
-이 문서를 로컬 Codex에게 읽히고 실제 PC에서 진행한다. 현재 자료는 **학습 인수인계/사전 점검**이다. GPU 학습·Qwen3.5 QLoRA·Android 변환을 클라우드에서 성공시켰다는 결과가 아니다. 실행 가능한 trainer는 로컬 호환성 조사 후 구현하는 작업이다.
+## 2026-11-16 비슷한 앱 이름의 제작자 구분
+
+사용자가 새아라를 만들었다고 한 뒤 아라의 제작자를 물으면 이제 **“‘아라’의 제작자는 아직 모르겠어요.”**라고 답한다. 사용자가 직접 만든 은결을 다른 표현으로 물으면 제작 진술을 기억한다. PC 4B로 최종 173개 상황의 전후 응답 346개를 새로 생성했다. 같은 앱과 다른 앱의 답이 모두 평가 기준을 통과한 쌍은 개발용 0/12→12/12, 최종 코드를 고정한 뒤 추가한 질문은 1/8→6/8이었다. “어느 개발자 손에서 나왔나요?”처럼 간접적으로 묻는 표현은 여전히 놓친다. 기존 모델과 adapter를 보존했고 재학습은 0회였다. [실제 발화·직접 평가·남은 오답](../docs/validation/local-llm-app-title-binding-report.md)
+
+## 2026-11-16 제작자 회상과 사용자 이름 구분
+
+기존 4B로 PC에서 전후 240개와 제작자 힌트 진단 4개를 새로 생성했다. 연속 대화 30턴의 최종 통과는 15→17, 새 대조 14문항은 6→8이었다. 별담 대화는 6턴 모두 통과했다. 비슷한 다른 앱 이름에 제작자를 옮기는 문제와 S26 Ultra의 이번 버전·음성 검증이 남아 있다. [실제 답변·판정·힌트 진단](../docs/validation/local-llm-app-recall-report.md)
+
+## 2026-11-15 필요한 사용자 사실을 보존하는 관련성 필터
+
+기존 모델·adapter와 폰 기록을 보존하고 재학습 없이 필터 전후212개를 새로 생성했다(주208+오답 고정 이력 보조4). 관련성이 불확실하면 user 원문을 보존하고 이름 지칭·제작/소유 구분을 놓치지 않도록 했다. 변경은 model view 생략 판정/보조 함수이며 사실 추출·고정 답변·기본 prompt·다른 정책은 같다.
+
+같은 기존54개는33/14/7, 독립20개는6/9/5로 유지됐다. 이어지는30턴은13/8/9→15/9/6(통과/부분/실패), 상승3·하락0이다. 이전 오답을 그대로 둔 보조2상황은2실패→1통과/1실패다. 제작/소유 정리는 개선됐지만 제작자를 알려 주었는데도 모른다는 첫 회상과 이름 되묻기는 남았다. 계약·정상 종료212/212, 차단/잘림0, JVM132/132. 원본4B·2B·adapter/환경·폰79개 기록의 해시/목록이 그대로다. 실제 Android APK/UI/TTS와 더 긴 대화·보지 않은 화제의 회귀는 미검증이다. [실제 결과·변경 범위·한계](../docs/validation/local-llm-relevance-filter-report.md)를 따른다.
+
+## 2026-11-15 PC 최소 대화 경로 / 현재 처리 분리 비교
+
+기존 모델·adapter와 폰 기록을 보존하고 재학습 없이208개를 새로 생성했다. 같은 집단 내 system/schema/모델/설정을 유지하며 최소 경로(VoiceDirector만)와 현재 grounding/act/economy/integrity를 비교했다. 기존54질문은17/20/17→33/14/7, 새20질문은6/9/5→동일, 새5대화×6턴은12/8/10→13/8/9(통과/부분/실패)다. 새 대화는 각 경로의 실제 응답을 실제4쌍/1200자 제한 이력에 넘겼다. 기존54개는 이전 고정 system, 새 질문/대화는 실제 PersonaManager system이므로 집단 간 점수를 단순 비교하지 않는다.
+
+원문/최종 계약·정상 종료208/208, 차단/잘림0, 최대 prompt531토큰이다. 근거 회상·기능 한계는 유지할 가치가 있지만, 새 표현에서 보정 이득0이며 앱 이름을 지칭한 회상/정리 질문에서 **필요한 사용자 제작자 문장을 model view에서 빼는 관련성 필터 오류**를 확인했다. 다음 개선은 이 필터와 assistant 오답 전파를 따로 검증하는 것이다. 제품 코드/prompt·폰 앱은 이번에 바꾸지 않았다. [직접 평가·유지/축소 판단·미완료](../docs/validation/local-llm-route-ablation-report.md), [PC 실행 안내](pc-match/README.ko.md)를 따른다.
+
+## 2026-11-15 별도 PC 4B GPU 실행·실제 새 응답 비교
+
+모델·adapter와 폰79개 기록을 보존하고 별도 WSL 도구 폴더를 준비했다. 같은4B SHA/엔진으로 CPU/CUDA 호환성6개와 PC 전후108개를 실제 새로 생성했다. 혼합 연산 준비 시험3개는 별도 제외해 PC 총117완료다. PC 최종26/15/13→33/14/7(통과/부분/실패), 상승7·하락0이며 원문20/17/17은 그대로다. 54쌍 모두 새 추론했지만 원문이 같았고 차이는 앱의 제한된 경청/불확실성/경험 한계/기록 없음/앱 이름 확인 처리다. 모델의 일반 이해력 개선으로 세지 않는다.
+
+GPU 추론 중앙값1.872초(첫 로드 제외),108요청 경과 합계약3분50초다. 폰 후보79개는39쌍+단독1개/29미실행으로 별도 공개했고 생성 지침은 회귀로 채택하지 않았다. JVM125통과(후보10포함),Python126중123통과/3skip. 원본4B·2B·adapter SHA와 기존 training freeze/dpkg 목록 일치. 원본 폰 UI/TTS·제품 전체 APK·긴 자기 생성 대화는 미검증이다. [최신 결과/직접 평가/경계](../docs/validation/local-llm-pc-4b-report.md), [PC 도구](pc-match/README.ko.md)를 따른다.
+
+## 2026-11-15 질문 echo·미완성·규칙 노출 보완
+
+모델·adapter 보존, 재학습/새 모델 생성0회. 같은54개 저장 응답 replay에서4개 변경/50개 동일, 최종25/19/10→26/20/8(통과/부분/실패), 상승2/하락0이다. 순수 echo+잘린 조각1개는 답이 없어 실패로 차단하고 음성/기억 대상에서 제외했다. 차단을 성공으로 세지 않는다. JVM97통과, Python126중123통과/3skip, actual consumer53통과+의도적 억제1개다. 전체 제품 APK/UI/TTS와 다음 턴 생성은 미검증이다. [최신 구현·직접 평가·한계](../docs/validation/local-llm-reply-integrity-report.md)를 따른다.
+
+## 2026-11-15 짧은 답변 반복·불필요한 되묻기 보완
+
+기존 모델·adapter 보존, 재학습/새 모델 생성0회. 같은54개의 직전 최종 JSON을 실제 기기 소비 경로에 재생해 연속 중복과 제한된 상투적 끝질문을 삭제했다. 최종23/18/13→25/19/10(통과/부분/실패),19수정·35동일·등급 상승3/하락0이다. 모델 원문17/20/17은 변화 없다. JVM81통과, Python126중123통과/3skip, actual consumer54통과. 의미 반복·질문 echo·잘린 답·규칙 노출은 남으며 제품 전체 APK/UI/TTS와 다음 턴 생성은 미검증이다. [최신 구현/직접 평가/한계](../docs/validation/local-llm-reply-economy-report.md)를 따른다.
+
+## 2026-11-15 요약 주체·무관한 사실 전달 조건 보완
+
+원래 세션을 보존하며 모델 view에서만 무관한 사실/중립 확인 쌍을 생략하고, 근거가 완전한 단순 사용자 사실 요약은 출처 보고형으로 처리했다. 명시적 앱 제작자 관계는 이름 어미와 분리하며 소유만으로 제작을 가정하지 않는다. 모델·adapter 보존, 재학습 없음.
+
+같은54질문은 직전21/19/14→이번23/18/13(통과/부분/실패), 등급 상승3·하락1이다. 새 생성7개 중 중간 후보1개를 제외한6개와 무변경48개 재사용을 구분한다. 요약 모델 원문은 여전히 주체를 틀렸으며 앱 처리 효과를 모델 학습 개선으로 세지 않는다. 짧게 말하기 반복과 앱 이름/호칭 혼동은 남는다. JVM53통과, Python126중123통과/3환경skip, 실제 consumer54개 nonfallback. [최신 구현/평가/검증 경계](../docs/validation/local-llm-summary-relevance-report.md)를 따른다. 원본 폰 앱과 전체 제품 APK/TTS는 이번에도 업데이트/검증하지 않았다.
+
+## 2026-11-15 사용자 사실·기능 한계 정책 구현/비교
+
+모델·adapter와 원본 앱을 보존하고 재학습 없이 `GroundedConversationPolicy`를 대화 관리자에 연결했다. 사용자 발화에서 명시적으로 확인한 소유 사실만 구조화하고, 현재 없는 조회/일정/전화 기능은 앱 결정으로 실행 약속을 막는다. 무관한 입력은 바꾸지 않는다. 과거 승인 smoke persona는 같은 blob/SHA의 snapshot으로 보존했으며 새 정책의 학습 데이터로 전환하지 않았다.
+
+같은54질문 비교는 기준선54개 보존, 새 draft13개+바이트 동등 재사용41개다. 별도 새 기준선6개는 raw6/6 재현. GPT 직접 평가의 엄격 통과는15→21/54(상승7·하락2), model draft만은16/54라 앱 보정 효과를 모델 학습 개선으로 부르지 않는다. 기기 input/action/consumer54개 감사·JVM36개·Python121개 중118통과/3환경skip. 제품 전체 APK/TTS와 보지 않은 표현 일반화는 미검증이다.
+
+[최신 구현/직접 평가/회귀/미완료](../docs/validation/local-llm-grounding-policy-report.md)를 따른다. 원본 폰 앱을 업데이트하거나 PR을 병합하지 않았다.
+
+## 2026-11-15 같은4B GGUF의 Android 앱 경로 비교 완료
+
+기존2B 원본·10-step adapter와 원본 Android 앱을 보존하고 재학습 없이 S26 Ultra에서 같은4B Q4_K_M 복사본·54질문·system/history·strict JSON 요청으로 비교했다. CHLOE54개는 실제 prompt builder/consumer와 공통 계약 모두 통과했고 GPT 엄격 통과15·부분20·실패19였다.
+
+실제 설치 PocketPal1.22.0 경로는 요청 감사54/54였으나 grammar/prefill 시작점 문제로 본문0/54였다. 사전 지정한4개 gate 뒤 확장한 root-only 보정54개는 본문/계약54/54·사고 블록0, GPT 통과18·부분16·실패20이다. 등급 상승9·하락7·동일38로 일반적인 품질 우승이나 제품 패치 성공을 선언하지 않는다. 보정 진단4개를 다시 더하지 않은 총162개 기록이다. 소유자/이름·기능 한계·반복 오류가 공통으로 남았다.
+
+[기기 실측/직접 평가/원인 범위/보존](../docs/validation/local-llm-matched-apps-report.md), [계획](configs/matched-apps-plan.json), [계측 안내](android-match/README.ko.md)를 따른다. 사용자의 평소 PocketPal Q4_0 기본값 비교와 제품 native 수정·TTS 검증은 별도다. 임시 화면 회전은 복구했고 원본 APK5개·클로이4B·설정/로그·WSL 원본/adapter 해시는 재확인했다.
+
+이 문서를 로컬 Codex에게 읽히고 실제 PC에서 진행한다. 최초 자료는 **학습 인수인계/사전 점검**이었다. 아래 현재 상태는 실제 PC 실행 결과이며 클라우드 학습 결과가 아니다.
+
+## 2026-11-14 다른 이름·동물·물건의 소유자 귀속 확장 완료
+
+기존 모델·adapter와 실행 설정을 보존하고 재학습 없이 새4사례의 주 비교96·가상 role64·기존 기준4상황을 두 모델에서328회 새로 생성했다. GPT가254개의 서로 다른 문맥/응답 그룹을 직접 읽고328판정을 고정한 뒤 모델 구분을 열었다.
+
+같은 자기소개에서 `내`만 이름 소유격으로 바꾼16쌍은 두 모델 모두 소유자 정답0→10/16이다. 나비/지연0→0, 초코/도윤0→4, 파란 가방/수진0→4, 빨간 책/현우0→2(각4)로 일부 새 소재에서 재현됐지만 모든 이름에 유지되지는 않았다. 새 주 비교96상황 전체 소유자 정답은 원본41·adapter42, 엄격 통과10·18이며 일반 모델 승격 근거로 삼지 않는다. JSON/EOS328/328·WSL 회귀115개 통과. [실제 결과·한계·재현](../docs/validation/local-llm-ownership-transfer-report.md)을 따른다.
+
+PocketPal은 공식 공개 소스의 커밋을 고정해 별도로 [CHLOE와 비교](../docs/validation/pocketpal-source-review-report.md)했다. 사용자가 보고한4B Q4_0·GPU 설정과 PC2B NF4, CHLOE의220자 발화/384토큰 정책과 PocketPal 조사 소스의 기본 생성 정책을 구분했다. 실제 설치 앱/동일 GGUF 양 앱 실측·포팅은 수행하지 않았다. 이 조사로 실험 조건·앱 기본값을 바꾸지 않았다.
+
+## 2026-11-14 첫 사실·첫 회상 / 발화 주체·소유어 대조 완료
+
+원본·adapter·system·실행 설정을 보존하고 재학습 없이 짧은 사용자 사실48상황, 별도 가상 역할 교환32상황, 기존 기준선2상황을 두 모델에서164회 새로 생성했다. GPT가121개의 서로 다른 문맥/응답 그룹을 직접 평가한 후164판정을 고정하고 모델 구분을 열었다.
+
+주 비교의 소유자 정답은 원본18/48·adapter20/48, 엄격 통과5/48·7/48이다. 선행 assistant 오답 없이도 `내`8상황은 두 모델 모두 소유자 정답0/8이었다. 같은 자기소개/사실에서 `내`만 `민수의`로 바꾸면 원본0→7/8·adapter1→8/8이지만 `사용자의`는0/8이다. 역할 대조도 인칭 귀속을 안정적으로 바꾸지 못해, 발화자 연결과 표현 처리의 취약성으로 범위를 좁혔다. 구체 이름 표현을 자동 정책으로 채택하지 않는다. JSON/EOS164/164·WSL 회귀105개 통과. [대조·직접 평가·원인 범위·남은 검증](../docs/validation/local-llm-first-recall-report.md)을 따른다.
+
+## 2026-11-14 역할 교대 중립 / 소유자 누적 모순 대조 완료
+
+기존 모델·adapter·사용자 사실·system·실행 조건을 보존하고 재학습 없이 같은46상황을11이력 조건에서 비교했다. 중립은 assistant 내용을 `확인.`으로 바꾸되 역할 교대를 유지한다. 누적 교정은 과거 소유자 오답의 소유어만 최신순/오래된순으로 한 개씩 고치며 포화된 동일 입력은 별도 성공으로 세지 않는다. 실제292생성+토큰 동등720재사용의1012셀을 GPT가 직접 판정했다.
+
+동일 사용자 사실20상황 엄격 통과는 보존4/4·user-only1/1·중립5/4·전체 소유어 교정8/8(원본/adapter)이다. 중립도 소유자 정답0/6으로 역할 교대만으로 귀속 오류가 해결되지 않았다. 같은 요약 질문의 반말은 두 오답을 모두 교정해야 성공했고, 존댓말은 최신 한 문장 교정만으로 성공해 누적 모순과 위치 효과를 함께 확인했다. 전체 교정 후에도 첫 소유자 회상과 화제 침입은 남아 기본 정책/모델을 바꾸지 않는다. JSON/EOS1012/1012·WSL 회귀95개 통과. [조건·직접 평가·원인 범위·기록 수정](../docs/validation/local-llm-role-contradictions-report.md)을 따른다.
+
+## 2026-11-14 user-only / 소유자 한 문장 최소 대조 완료
+
+원본/adapter·system·실행 설정을 보존하고 재학습 없이 같은46상황의 보존 이력/user-only/소유자 한 문장 조건을 비교했다. user-only는 사용자 발화 내용/역할/순서를 그대로 두고 assistant만 제거한다. 최소 수정은12상황에서 가장 최근의 잘못된 소유자 문장 한 부분만 바꾸고 더 이전 오답과 다른 답변은 유지했다. 실제160생성+토큰 동등116재사용의276셀을 GPT가 직접 판정했다.
+
+동일 사용자 사실20상황의 엄격 통과는 두 모델 모두 보존4·user-only1·한 문장 수정7이다. 실제 수정된 소유자 평가4개는 오류4→1이지만 첫 회상2개는 수정 대상이 없어 별도 대조다. user-only에도 소유자/주제 오류가 남아 assistant 제거를 채택하지 않는다. 단일 수정도 전체 품질 해결이 아니다. 도서관 assistant 전용 정보가 사라지는2상황은 주요 비교에서 제외했다. JSON/EOS276/276·WSL 회귀85개 통과, 기존 모델·환경·사용자 평가 보존. [방법·실제 결과·원인 범위](../docs/validation/local-llm-source-history-report.md)를 따른다. 앱 이력 정책/모델/prompt 기본값은 바꾸지 않는다.
+
+## 2026-11-14 보존·정제·무이력 문맥 대조 완료
+
+같은46상황/원래 system을 유지하고 기존 보존 이력·정제 assistant 이력·이력 없음 세 조건을 두 모델에서 비교했다. 실제178생성과 완전한 입력 토큰 동등98재사용으로276셀을 만들고 GPT가 각 답변에 제공된 이력에 맞춰 직접 판정했다. 평가용 정제 합성 fixture는 학습 데이터가 아니다. 원본·adapter·환경을 보존하고 재학습하지 않았다.
+
+과거가 있던22상황의 엄격 통과는 보존→정제에서 원본4→11·adapter4→10, 지정6소유자 오류는 양쪽6→1, 지정8주제 반복은4→2였다. 말투 퇴행도 남아 자동 채택하지 않는다. 무이력은 고양이 반복이0/8이지만 필요한 과거가 없는6질문에서 적절한 확인/유보는 양쪽0/6이고 사실 조작도 있었다. 정보를 지운 것을 기억 개선으로 세지 않는다. 자기소개/정직성 질문은 본래 무이력이라 해당 오류 전체를 과거 탓으로 설명할 수 없다. JSON/EOS276/276·WSL 회귀77개 통과. [조건·직접 평가·원인 범위·남은 개선](../docs/validation/local-llm-history-report.md)을 따른다. 앱 모델·system·이력 저장 정책은 바꾸지 않았다.
+
+## 2026-11-14 공식 text-only API / wrapper 대조 완료
+
+기존 prompt·모델·adapter를 보존하고 재학습 없이 같은46상황/정확히 같은 과거를 두 경로·두 모델에서184회 새로 생성했다. 현재 wrapper도 공식 `Qwen3_5ForCausalLM`을 사용한다. 공식 경로는 수동 config/key mapping 없이 로드하고 입력 렌더링·generate·decode를 별도 직접 호출했다. 원본/adapter 각각46/46에서 전체 상태 텐서·실제 입력/인수·출력 토큰·raw 응답이 같았으며 마지막 입력 위치 전체 vocabulary logits 차이도0이었다. 원본 비양자화 상태135항목도 checkpoint와 일치했다.
+
+JSON/소비 계약/EOS는184/184, GPT 내용 엄격 통과는 양쪽 경로 모두 원본6/46·adapter8/46이었다. wrapper만의 변환/입출력 결함은 이번 공통 오류를 설명하지 못한다. 앱 prompt와 모델 적합성·오류 과거의 영향·공유 core 구현 문제는 여전히 구분되지 않았다. GPT 새 판정 합계는 이전과 같지만 세부 판정 변동도 따로 기록했다. WSL 회귀69개가 통과했고 기존 환경·사용자 평가도 보존했다. [방법·실제 결과·원인 범위·남은 검증](../docs/validation/local-llm-text-path-report.md)을 따른다. 기본 모델/prompt/설정은 바꾸지 않는다.
+
+## 2026-11-14 runtime 단일요인 대조 완료
+
+prompt를 더 바꾸지 않고 채팅 템플릿·NF4/전체 BF16·JSON decoder를 한 요소씩 분리했다. 같은46상황의 메시지/과거를 두 모델·모든 조건에 고정해320회 실제 추론과 토큰 동등48개 재사용, 총368비교를 GPT가 직접 판정했다. 내용 엄격 통과는 기존 NF4/공식/제약 기준선 원본6·adapter8, 학습 템플릿3·6, BF16 9·7, decoder 해제4·7이다. 각 분모는46이다. decoder 해제의 앱 계약 통과는17/46·34/46이고 앱 사용 가능 엄격 통과는1/46·5/46이다.
+
+공식/학습 템플릿은 과거 assistant 턴22상황에서 실제 토큰 차이가 있었으나 교체가 개선책은 아니었다. BF16은 같은 GPU에서 offload 없이 실행했지만 양쪽 모델에서 일관된 개선은 없었다. JSON 제약을 제거해 공통 내용 오류가 해결되지 않았고 형식 사용 가능성만 낮아졌다. 기본 모델·prompt·NF4/공식/제약 설정은 유지한다. 재학습 없이 원본/adapter·환경·이전 평가를 보존했고 회귀62개가 통과했다. [방법·실제 결과·한계](../docs/validation/local-llm-runtime-ablation-report.md)를 따른다. 이전 자체 생성 문맥의 GPT 점수와 이번 고정 공통 문맥의 점수는 직접 비교하지 않는다.
+
+## GPT 품질 평가 허용과 PC prompt 비교
+
+2026-11-14 사용자는 이후 대화/문맥 품질 평가를 GPT가 직접 수행하는 것을 허용했다. 이후 비교는 GPT 판정을 사용할 수 있으며, 평가 주체·rubric·판정 대상·한계와 원본 응답 provenance를 남긴다. GPT 평가를 사람 평가라고 기록하지 않으며 기존 사용자22카드 평가와 섞어 집계하지 않는다. prompt 작성자와 평가자가 같다는 한계도 명시한다. 이 허용은 현재의 **재학습 금지**나 새 학습 데이터/모델 배포 승인 범위를 바꾸지 않는다.
+
+`prompt-comparison-plan.json`은 기존54질문의 두 고정 말투와, 이전 설명이 있는 요약/사용자 말투 전환 허용 조건을 먼저 고정한다. `compare_prompts.py`는 원본/기존 adapter×기존/수정 PC prompt의2×2 비교만 실행하며 앱 persona와 모델은 바꾸지 않는다. `gpt_prompt_review.py`는 익명 자료를 준비하고 GPT가 직접 남긴 판정을 집계하는 도구이며 자체적으로 내용 점수를 계산하거나 평가 API를 호출하지 않는다. [비교 방법·실행 결과](../docs/validation/local-llm-prompt-comparison-report.md)에 진행/완료 상태를 기록한다.
+
+실제 1차456회와 후속 간결안92회, 총548/548 JSON 계약·종료 통과를 확인했다. 같은46상황에서 GPT 엄격 통과는 기존 prompt 원본6/adapter7, 긴 수정안2/2, 간결안5/6이다. 자기소개 일부 개선에도 전체 품질은 좋아지지 않아 두 수정안은 기본값으로 채택하지 않고 실험 설정으로만 보존한다. 기존 prompt/모델·학습 venv·Android·사용자 평가 원본은 그대로다. 재학습 없이 수행했고 회귀51개가 통과했다. 사용자 평가22표와 GPT 판정276개는 별도 집계다.
+
+`compare_prompt_concise.py`는 `prompt-comparison-concise.json`의 후속 prompt로 같은46상황만 두 모델에서 실행한다. 이 후속은 첫 결과를 보고 추가했으므로 독립 holdout이나 처음부터 사전 등록된 성공 실험으로 보고하지 않는다.
+
+## 2026-11-14 JSON 계약 수정
+
+기존 원본/adapter를 재학습하지 않고 PC 추론 조건을 수정했다. 이전 실패16개 중15개는 JSON 문법은 맞았지만 주로 enum을 위반했다. PC는 “주어진 schema”라는 문구만 보내고 실제 schema와 앱의 grammar 제약을 제공하지 않았다. 현재 평가는 실제 enum/필수 키를 전달하고 byte 기반 JSON Schema decoder와 소비자 검증을 함께 사용한다. [원인·수정·비교 보고서](../docs/validation/local-llm-json-contract-report.md)를 따른다. 아래2026-11-12의0/16은 수정 전 조건의 기록이다.
+
+최종 동일 조건의54질문+이전 실패 test1질문×2말투 비교에서 **원본110/110, adapter110/110**, 총220/220 계약 통과를 실제 확인했다. 회귀24개 통과. 원본·adapter SHA와 기존 venv는 그대로다. 이는 생성 조건 수정의 구조적 결과이며 adapter 품질 이득이나 Android 성공으로 승격하지 않는다.
+
+사용자 말투·내용 평가용 [블라인드 평가 자료 생성·검증 보고서](../docs/validation/local-llm-blind-review-report.md)를 추가했다. 같은 실제 응답 중 반말·존댓말·자기소개·정직성·문맥 기억을 사전 고정해22카드/40쌍으로 구성했다. 이후 사용자가 평가 JSON을 제출해 [집계·분석](../docs/validation/local-llm-human-review-report.md)을 완료했다. **adapter 선호2, 원본 선호0, 비슷함4, 둘 다 부적합13, 보류3**이다. 모든 카드를 검토했고 보류는 그대로 유지한다. 상세 점수132개는 모두 null이며 품질 이득·모델 승격은 미승인이다. 원문 평가지·응답·대응표는 Git 제외 경로에 보관하고 PR에는 생성기·합성 테스트·비민감 집계·분석만 포함한다. 추가 학습·추론·모델 변경은 수행하지 않았다.
+
+기존 학습 venv를 보존하도록 decoder만 별도 폴더에 설치한다. Linux의 `gcc`/`python3.12-dev`가 필요하며 이번 CHLOE 전용 배포판에만 추가했다. 전체 비교는 새 출력 경로를 지정하고, 반복 실패했던 test 입력도 포함할 수 있다.
+
+```bash
+.venv-llm/bin/python -m pip install --no-deps --require-hashes \
+  --target artifacts/llm-training/contract-deps-xgrammar-20261114 \
+  -r training/requirements.contract.txt
+.venv-llm/bin/python training/scripts/evaluate.py --config training/configs/smoke.json \
+  --compare-base --include-heldout --contract-mode constrained \
+  --output artifacts/llm-training/contract-20261114/xgrammar-final
+```
+
+`--contract-mode legacy`는 이전 schema 누락 조건, `schema`는 schema 전달만 하는 조건, `constrained`는 schema 전달과 생성 제약을 함께 적용하는 기본 조건이다. `--grammar-deps`로 별도 설치 경로를 지정한다. `--case-ids conv35 conv37`처럼 특정 질문을 재현할 수 있다. 형식 통과는 말투/자연스러움 개선이나 Android 검증을 의미하지 않는다. 새 학습 또는 모델 변환은 수행하지 않았다.
+
+## 2026-11-12 기록 · WSL2 QLoRA10step 실행, 수정 전 계약 실패
+
+사용자 재부팅 후 독립 `CHLOE-Training-24.04` 배포판의 Linux 전용 `.venv-llm`에서 GPU/PyTorch·원본 모델 SHA·assistant mask·forward/backward를 검증하고 train/evaluate/export와 고정 requirements를 구현했다. 승인한 합성6개(train4/validation1/test1)로10step, adapter 저장과 새 객체 재로드까지 실행했다. 최종 학습4.09초, trainable417,792개, peak allocated 약4.47GiB / reserved4.78GiB였다. 기존 Windows 환경·Android 모델은 보존했다.
+
+**재로드 응답은384토큰 한도에 걸려 JSON 미완성이고, 첫4질문×2말투×원본/adapter의16회 부분 비교는 엄격한 앱 JSON/enum 계약 통과0회다.** 전체54입력·사람 평가·품질 이득·GGUF·Android는 미검증이다. 원본/adapter 모두의 실패를 그대로 기록했으며 기본 모델을 교체하지 않는다.
+
+실제 지표·실패·재현 명령은 [최신 보고서](../docs/validation/local-llm-training-report.md), 실제 선택 버전은 [requirements.lock.txt](requirements.lock.txt)에 있다. Linux clone에서 다음 명령을 사용한다. 승인 데이터·가중치·adapter는 Git 제외 로컬 artifact에 보존한다. 출력 경로가 존재하면 덮어쓰지 않으므로 재실행은 config의 output_dir을 새 경로로 지정한다.
+
+```bash
+.venv-llm/bin/python -m pip install -r training/requirements.lock.txt
+.venv-llm/bin/python training/scripts/prepare_model.py --config training/configs/smoke.json
+.venv-llm/bin/python training/scripts/train.py --config training/configs/smoke.json
+# 기본은 전체54입력×2말투 비교. 이번 실제 실행은 --limit 4를 붙인 부분 비교다.
+.venv-llm/bin/python training/scripts/evaluate.py --config training/configs/smoke.json --compare-base
+.venv-llm/bin/python -m unittest discover -s training/tests -v
+```
+
+`export.py --config training/configs/smoke.json --format gguf --quality-approval <receipt.json>`은 사람 품질 이득 승인과 일치하는 adapter hash, clean pinned llama.cpp 및 준비된 quantizer를 요구한다. 이번에는 승인 누락 거부만 확인했고 merge/GGUF 정상 경로는 미실행이다.
+
+## 앞선 기록 · 재부팅 전 설치 상태
+
+이하 기록은 최초 설치/점검 당시 상태다. 현재 실행 결과는 위 항목을 따른다.
+
+사용자 요청으로 관리자 승인 후 WSL 설치를 실행했다. WSL 3.0.5 / kernel 6.18.58.1-1 설치와 VirtualMachinePlatform 기능 추가는 완료했으며 **변경 사항 적용을 위한 Windows 재부팅이 필요하다.** 자동 재부팅은 하지 않았다. Ubuntu 배포판은 아직 등록되지 않았고 WSL2 내부 GPU/CUDA 실행도 미검증이다. 기존 환경·앱·Android 모델은 보존했다.
+
+재부팅 후 배포판 목록을 다시 확인하고, Ubuntu가 없을 때만 설치를 마친 뒤 Linux 전용 `.venv-llm`에서 학습 호환성 검증→trainer 구현→최대10-step→adapter 재로드 순서로 이어간다. 상세 설치 반환 코드와 재개 절차는 [보고서의 2026-11-12 갱신](../docs/validation/local-llm-training-report.md)에 있다. 아래 2026-11-11 기록은 최초 점검 당시 상태다.
+
+## 2026-11-11 최초 로컬 실행 상태
+
+실제 Windows PC에서 RTX 4070 SUPER 12GB·RAM 약64GiB를 확인했지만 WSL 미설치로 WSL2/CUDA 학습 환경 검증에 실패했다. 별도 `.venv-llm`에서 점검했고 기존 앱·Android 모델은 변경하지 않았다. 공식 Qwen3.5-2B revision의 메타데이터/라이선스/SHA와 TRL Qwen3.5 전용 mask template 및 pinned llama.cpp 지원 소스를 대조했다. 모델 가중치 로드·10-step·adapter·품질 비교·GGUF·Android 실측은 미실행이다. requirements lock과 train/evaluate/export는 실제 runtime 검증 후 구현할 계약으로 남는다.
+
+실제 결과와 재개 조건: [로컬 학습 보고서](../docs/validation/local-llm-training-report.md). [평가 계획](configs/evaluation-plan.json)은 기존50개+보강4개 입력을 고정하며 모든 품질 점수는 미평가다.
+
+현재 실행 가능한 stdlib 점검 CLI:
+
+```bash
+# 기본은 설치/모델 다운로드 없는 inventory이며 환경 미준비여도 0을 반환할 수 있다.
+python training/scripts/preflight.py --output artifacts/llm-training/preflight-new.json
+# WSL2 환경이 아니면 기록 후 1 반환. 런타임 옵션은 import와 작은 CUDA tensor 연산만 수행한다.
+python training/scripts/preflight.py --output artifacts/llm-training/runtime-new.json --require-wsl2 --require-runtime
+# 공식 고정 revision의 소형 메타데이터만 HTTPS로 읽고 SHA를 기록. 가중치/remote code 실행 없음.
+python training/scripts/inspect_model.py --output artifacts/llm-training/model-metadata-new.json
+python -m unittest discover -s training/tests -v
+```
+
+`--probe-runtime`은 import/CUDA probe만 추가하며, `--require-runtime`은 이를 포함하고 실패 시1을 반환한다. 이 검사도 Qwen3.5 모델 forward나 QLoRA 성공을 인증하지 않는다. 모든 출력 파일은 기존 경로가 있으면 거부한다. Windows에서 만든 venv는 WSL에서 재사용하지 않는다.
 
 ## 목표와 보존 범위
 
@@ -20,7 +198,7 @@
 6. 평가 질문을 먼저 고정하고 train/validation/test를 대화 단위로 분리한다. 질문을 조금만 바꾼 중복도 분리한다. 실제 개인정보 대신 가상 이름 사용. 아래 데이터 계약을 따른다.
 7. `training/scripts/train.py`, `evaluate.py`, `export.py`와 고정 requirements를 실제 선택한 API에 맞춰 구현한다. 목표 명령은 아래 계약을 따른다. 처음에는 최대 10 step / microbatch1 / gradient checkpointing / 짧은 context512 / LoRA rank8 정도를 후보로 삼는다. target module은 모델의 실제 named_modules를 검사해서 선택하며 전체 linear 일괄 적용하지 않는다. OOM이면 batch/context/target 범위를 줄이고, 묵시적인 CPU offload나 모델 변경은 결과에 기록한다.
 8. loss가 유한하고 adapter가 저장되며 재로드 후 추론 가능함을 확인한다. trainable parameter 수·학습 시간·최대 GPU allocated/reserved·오류를 기록. 10 step 성공은 말투 개선 증거가 아니다. 필요 없는 대형 모델을 동시에 받지 않는다.
-9. 원본/adapter에 동일 평가 입력·생성 조건·seed를 적용한다. 한국어 자연스러움, 말투 일관성, 자기소개, 과잉 공감, 지시문 노출, 문맥 기억, 정직성, JSON 유효성을 따로 평가한다. style enum/tts_instruction 빈 문자열 등 현재 앱 계약과 비교한다. 자동 점수만으로 승격하지 않는다. 질문 50개 이상을 고정하고 사람 검토를 남긴다.
+9. 원본/adapter에 동일 평가 입력·생성 조건·seed를 적용한다. 한국어 자연스러움, 말투 일관성, 자기소개, 과잉 공감, 지시문 노출, 문맥 기억, 정직성, JSON 유효성을 따로 평가한다. style enum/tts_instruction 빈 문자열 등 현재 앱 계약과 비교한다. 자동 점수만으로 승격하지 않는다. 질문 50개 이상을 고정하고 평가 주체가 명시된 품질 검토를 남긴다. 2026-11-14 사용자 허용에 따라 GPT가 직접 수행할 수 있으며 사람 평가로 표시하지 않는다.
 10. 품질 이득이 있을 때만 더 긴 학습을 진행한다. adapter를 기반 모델과 merge하는 과정은 새 디렉터리에서 수행하고 GGUF 변환→Q4_K_M 후 다시 평가한다. llama.cpp Qwen3.5 지원과 CHLOE pinned runtime 호환성을 확인한다. 모바일 모델 importer는 현재 크기/SHA allowlist가 있으므로 새 모델을 그대로 가져올 수 있다고 가정하지 않는다. 새 모델 ID/해시 등록은 별도 Android PR로 준비한다.
 11. docs/validation/local-llm-training-report.md를 작성해 재현 명령/버전/학습 여부/비교/남은 작업을 기록하고 코드·비민감 보고서만 PR 생성. main 자동 병합 없음. 실패 결과도 성공으로 표시하지 않는다.
 
@@ -52,15 +230,15 @@ source .venv-llm/bin/activate
 # python -m pip install -r training/requirements.lock.txt
 ```
 
-아래는 **로컬 Codex가 구현·검증해야 하는 CLI 계약**이며 현재 실행 가능한 학습 명령이 아니다:
+아래는 최초 인수인계의 CLI 계약이다. 현재는 위 설정과 승인 데이터로 train/evaluate를 실제 실행했으며 export는 추가 품질 승인과 변환 도구가 필요한 제한 경로다:
 
 ```bash
 python training/scripts/train.py --config training/configs/smoke.json
 python training/scripts/evaluate.py --config training/configs/smoke.json --compare-base
-python training/scripts/export.py --config training/configs/smoke.json --format gguf
+python training/scripts/export.py --config training/configs/smoke.json --format gguf --quality-approval <receipt.json>
 ```
 
-옵션/실제 재현 명령은 구현 후 이 문서에 갱신한다. 패키지 버전이나 모델 지원을 추정해 빈 trainer를 성공 처리하지 않는다.
+실제 실행 범위와 미실행 경로는 최신 보고서를 따른다. 패키지 버전이나 모델 지원을 추정해 성공 처리하지 않는다.
 
 ## 데이터 계약과 완료 기준
 

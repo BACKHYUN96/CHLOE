@@ -1,0 +1,18 @@
+{
+  "baseline": "7068619f497e0a2ef4eb92fa3150e9b8226bf478",
+  "model_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+  "generation": {
+    "temperature": 0,
+    "seed": 42,
+    "context_tokens": 2048,
+    "max_generation_tokens": 384,
+    "threads": 4,
+    "thinking": false,
+    "gpu_layers": 99
+  },
+  "native_requests": 240,
+  "training_steps": 0,
+  "policy_sha256": "7ce6d358c4b20c9cabcf3b166d33fdcd49c14571142865de52830b08055e364c",
+  "baseline_input_and_consumer_parity": 106,
+  "identical_input_on_common_history": 106
+}

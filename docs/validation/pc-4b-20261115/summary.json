@@ -1,0 +1,69 @@
+{
+  "platform": "PC CUDA only; Android results separate",
+  "questions": 54,
+  "new_comparison_generations": 108,
+  "compatibility_generations": 6,
+  "excluded_setup_probe_generations": 3,
+  "total_PC_new_generations": 117,
+  "historical_output_replays": 0,
+  "training_steps": 0,
+  "gpt": {
+    "before": {
+      "raw": {
+        "fail": 17,
+        "partial": 17,
+        "pass": 20
+      },
+      "delivered": {
+        "fail": 13,
+        "partial": 15,
+        "pass": 26
+      }
+    },
+    "after": {
+      "raw": {
+        "fail": 17,
+        "partial": 17,
+        "pass": 20
+      },
+      "delivered": {
+        "fail": 7,
+        "partial": 14,
+        "pass": 33
+      }
+    }
+  },
+  "improved": 7,
+  "regressed": 0,
+  "transitions": {
+    "fail->fail": 7,
+    "partial->partial": 14,
+    "pass->pass": 26,
+    "fail->pass": 6,
+    "partial->pass": 1
+  },
+  "raw_pair_identical": 54,
+  "dialogue_actions": {
+    "none": 47,
+    "ack_listening": 2,
+    "explain_uncertainty": 1,
+    "no_human_sadness": 1,
+    "no_birthday_in_empty_history": 1,
+    "ack_app_name": 1,
+    "no_lived_day": 1
+  },
+  "raw_contract_pass": 108,
+  "final_contract_pass": 108,
+  "normal_native_finish": 108,
+  "blocked": 0,
+  "truncated": 0,
+  "median_request_inference_ms": 1871.782436,
+  "request_inference_ms_range": [
+    1532.729106,
+    2756.493846
+  ],
+  "summed_request_wall_seconds": 230.26500000001397,
+  "max_prompt_tokens": 380,
+  "judge": "Direct GPT read all 54 actual PC before/after pairs. Identical before/after raw speech grouped for judgment; every generation is fresh. Exact earlier judged speech may reuse its label explicitly. Final app-act outcomes judged directly. Known development set and conditions, not blind/independent/holdout.",
+  "limits": "Fixed independent one-turn histories, one seed, known development questions. Bounded app acts, not improved model knowledge. No original APK update, physical UI/TTS or generated long-history verification."
+}

@@ -1,0 +1,1732 @@
+[
+  {
+    "id": "fresh-prefix-long-same",
+    "cohort": "unseen_same",
+    "before": "partial",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-prefix-long-other",
+    "cohort": "unseen_other",
+    "before": "partial",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-prefix-short-same",
+    "cohort": "unseen_same",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-prefix-short-other",
+    "cohort": "unseen_other",
+    "before": "partial",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-suffix-same",
+    "cohort": "unseen_same",
+    "before": "partial",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-suffix-other",
+    "cohort": "unseen_other",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-syllable-same",
+    "cohort": "unseen_same",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-syllable-other",
+    "cohort": "unseen_other",
+    "before": "partial",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-confirm-same",
+    "cohort": "unseen_same",
+    "before": "partial",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-confirm-other",
+    "cohort": "unseen_other",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-final-i-same",
+    "cohort": "unseen_same",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-final-i-other",
+    "cohort": "unseen_other",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-space-same",
+    "cohort": "unseen_same",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-space-other",
+    "cohort": "unseen_other",
+    "before": "partial",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-number-same",
+    "cohort": "unseen_same",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-number-other",
+    "cohort": "unseen_other",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-particle-same",
+    "cohort": "unseen_same",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-particle-other",
+    "cohort": "unseen_other",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-disjoint-same",
+    "cohort": "unseen_same",
+    "before": "partial",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-disjoint-other",
+    "cohort": "unseen_other",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-free-one-same",
+    "cohort": "unseen_same",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-free-one-other",
+    "cohort": "unseen_other",
+    "before": "partial",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-free-two-same",
+    "cohort": "unseen_same",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "fresh-free-two-other",
+    "cohort": "unseen_other",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "boundary-own",
+    "cohort": "unseen_boundary",
+    "before": "partial",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "boundary-third-party",
+    "cohort": "unseen_boundary",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "boundary-correction",
+    "cohort": "unseen_boundary",
+    "before": "fail",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "boundary-homonym-typed",
+    "cohort": "unseen_boundary",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "boundary-owner-name",
+    "cohort": "unseen_boundary",
+    "before": "partial",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "boundary-assistant-only",
+    "cohort": "unseen_boundary",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "boundary-ordinary",
+    "cohort": "unseen_boundary",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "boundary-two",
+    "cohort": "unseen_boundary",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "switch-t1",
+    "cohort": "unseen_dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "switch-t2",
+    "cohort": "unseen_dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "switch-t3",
+    "cohort": "unseen_dialogue",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": false,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "switch-t4",
+    "cohort": "unseen_dialogue",
+    "before": "partial",
+    "after": "pass",
+    "original_history_equal": false,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "switch-t5",
+    "cohort": "unseen_dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": false,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "confirm-frame-same",
+    "cohort": "confirmation_same",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "confirm-frame-other",
+    "cohort": "confirmation_other",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "confirm-word-order-same",
+    "cohort": "confirmation_same",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "confirm-word-order-other",
+    "cohort": "confirmation_other",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "confirm-called-same",
+    "cohort": "confirmation_same",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "confirm-called-other",
+    "cohort": "confirmation_other",
+    "before": "partial",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "confirm-punctuation-same",
+    "cohort": "confirmation_same",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "confirm-punctuation-other",
+    "cohort": "confirmation_other",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "confirm-digits-same",
+    "cohort": "confirmation_same",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "confirm-digits-other",
+    "cohort": "confirmation_other",
+    "before": "partial",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "confirm-after-other-fact-same",
+    "cohort": "confirmation_same",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "confirm-after-other-fact-other",
+    "cohort": "confirmation_other",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "confirm-natural-memory-same",
+    "cohort": "confirmation_same",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "confirm-natural-memory-other",
+    "cohort": "confirmation_other",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "confirm-natural-team-same",
+    "cohort": "confirmation_same",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "confirm-natural-team-other",
+    "cohort": "confirmation_other",
+    "before": "fail",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "maker-pol",
+    "cohort": "control",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": true
+  },
+  {
+    "id": "maker-cas",
+    "cohort": "control",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": true
+  },
+  {
+    "id": "maker-quoted",
+    "cohort": "control",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": true
+  },
+  {
+    "id": "own-only",
+    "cohort": "control",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": true
+  },
+  {
+    "id": "third-party",
+    "cohort": "control",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "retracted",
+    "cohort": "control",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "homonym",
+    "cohort": "control",
+    "before": "fail",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "assistant-only",
+    "cohort": "control",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "different-title",
+    "cohort": "control",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "identity-pol",
+    "cohort": "control",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "identity-cas",
+    "cohort": "control",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "identity-known",
+    "cohort": "control",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "uncovered",
+    "cohort": "control",
+    "before": "fail",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": false
+  },
+  {
+    "id": "owner-item",
+    "cohort": "control",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv01",
+    "cohort": "known",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv02",
+    "cohort": "known",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv03",
+    "cohort": "known",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv04",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv05",
+    "cohort": "known",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv06",
+    "cohort": "known",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv07",
+    "cohort": "known",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv08",
+    "cohort": "known",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv09",
+    "cohort": "known",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv10",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv11",
+    "cohort": "known",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv12",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv13",
+    "cohort": "known",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv14",
+    "cohort": "known",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv15",
+    "cohort": "known",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv16",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv17",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv18",
+    "cohort": "known",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv19",
+    "cohort": "known",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv20",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv21",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv22",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv23",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv24",
+    "cohort": "known",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv25",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv26",
+    "cohort": "known",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv27",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv28",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv29",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv30",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv31",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv32",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv33",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv34",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv35",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv36",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv37",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv38",
+    "cohort": "known",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv39",
+    "cohort": "known",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv40",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv41",
+    "cohort": "known",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv42",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv43",
+    "cohort": "known",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv44",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv45",
+    "cohort": "known",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv46",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv47",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv48",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv49",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "conv50",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "identity01",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "identity02",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "register01",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "rules01",
+    "cohort": "known",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new01",
+    "cohort": "new_single",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new02",
+    "cohort": "new_single",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new03",
+    "cohort": "new_single",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new04",
+    "cohort": "new_single",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new05",
+    "cohort": "new_single",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new06",
+    "cohort": "new_single",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new07",
+    "cohort": "new_single",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new08",
+    "cohort": "new_single",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new09",
+    "cohort": "new_single",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new10",
+    "cohort": "new_single",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new11",
+    "cohort": "new_single",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new12",
+    "cohort": "new_single",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new13",
+    "cohort": "new_single",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new14",
+    "cohort": "new_single",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new15",
+    "cohort": "new_single",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new16",
+    "cohort": "new_single",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new17",
+    "cohort": "new_single",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new18",
+    "cohort": "new_single",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new19",
+    "cohort": "new_single",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "new20",
+    "cohort": "new_single",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog01-t1",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog01-t2",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog01-t3",
+    "cohort": "dialogue",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog01-t4",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog01-t5",
+    "cohort": "dialogue",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog01-t6",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog02-t1",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog02-t2",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog02-t3",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog02-t4",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog02-t5",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog02-t6",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog03-t1",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog03-t2",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog03-t3",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog03-t4",
+    "cohort": "dialogue",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog03-t5",
+    "cohort": "dialogue",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog03-t6",
+    "cohort": "dialogue",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog04-t1",
+    "cohort": "dialogue",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog04-t2",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog04-t3",
+    "cohort": "dialogue",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog04-t4",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog04-t5",
+    "cohort": "dialogue",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog04-t6",
+    "cohort": "dialogue",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog05-t1",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog05-t2",
+    "cohort": "dialogue",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog05-t3",
+    "cohort": "dialogue",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog05-t4",
+    "cohort": "dialogue",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog05-t5",
+    "cohort": "dialogue",
+    "before": "fail",
+    "after": "fail",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "dialog05-t6",
+    "cohort": "dialogue",
+    "before": "partial",
+    "after": "partial",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  },
+  {
+    "id": "fixed-dialog02-t2",
+    "cohort": "fixed_history_probe",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": false,
+    "raw_equal": false,
+    "final_speech_equal": true
+  },
+  {
+    "id": "fixed-dialog02-t5",
+    "cohort": "fixed_history_probe",
+    "before": "pass",
+    "after": "pass",
+    "original_history_equal": true,
+    "model_input_equal": true,
+    "raw_equal": true,
+    "final_speech_equal": true
+  }
+]

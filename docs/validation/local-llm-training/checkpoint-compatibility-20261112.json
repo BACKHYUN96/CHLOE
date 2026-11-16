@@ -1,0 +1,62 @@
+{
+  "model": "Qwen/Qwen3.5-2B",
+  "revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+  "checkpoint_sha256": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+  "token_masks": [
+    {
+      "id": "smoke-01",
+      "tokens": 287,
+      "assistant_tokens": 57
+    },
+    {
+      "id": "smoke-02",
+      "tokens": 317,
+      "assistant_tokens": 57
+    },
+    {
+      "id": "smoke-03",
+      "tokens": 294,
+      "assistant_tokens": 66
+    },
+    {
+      "id": "smoke-04",
+      "tokens": 316,
+      "assistant_tokens": 55
+    },
+    {
+      "id": "smoke-05",
+      "tokens": 280,
+      "assistant_tokens": 59
+    },
+    {
+      "id": "smoke-06",
+      "tokens": 321,
+      "assistant_tokens": 60
+    }
+  ],
+  "targets": [
+    "model.layers.3.self_attn.q_proj",
+    "model.layers.3.self_attn.v_proj",
+    "model.layers.7.self_attn.q_proj",
+    "model.layers.7.self_attn.v_proj",
+    "model.layers.11.self_attn.q_proj",
+    "model.layers.11.self_attn.v_proj",
+    "model.layers.15.self_attn.q_proj",
+    "model.layers.15.self_attn.v_proj",
+    "model.layers.19.self_attn.q_proj",
+    "model.layers.19.self_attn.v_proj",
+    "model.layers.23.self_attn.q_proj",
+    "model.layers.23.self_attn.v_proj"
+  ],
+  "loss": 1.9096285104751587,
+  "trainable_parameters": 417792,
+  "gpu_allocated_peak_bytes": 4686932992,
+  "gpu_reserved_peak_bytes": 5121245184,
+  "elapsed_seconds": 2.7396566969999867,
+  "forward_backward_verified": true,
+  "optimizer_steps": 0,
+  "cpu_offload": false,
+  "use_kernels": false,
+  "loading_missing_keys": [],
+  "loading_unexpected_keys": []
+}

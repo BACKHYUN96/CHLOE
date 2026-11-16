@@ -1,0 +1,63 @@
+{
+  "status": "final_worker_fixed_after_three_hybrid_setup_probes_before_strict_gates_and_main",
+  "base_commit": "d33fd526734b68e290aba4d2890b80c47c285d6d",
+  "model_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+  "model_bytes": 2740937888,
+  "runtime_revision": "aa75ff3239f9cc675b081697deda9e1b112345c6",
+  "platform": "WSL2 x86_64, separate CPU/CUDA compatibility gates; main comparison CUDA",
+  "compatibility_ids": [
+    "conv01",
+    "conv29",
+    "conv37"
+  ],
+  "compatibility_new_generations": 6,
+  "planned_comparison_new_generations": 108,
+  "questions": 54,
+  "training_steps": 0,
+  "generation": {
+    "temperature": 0,
+    "seed": 42,
+    "max_generation_tokens": 384,
+    "context_tokens": 2048,
+    "prefill_threads": 4,
+    "decode_threads": 4,
+    "thinking": false
+  },
+  "backend_changes": "Main PC uses CUDA all layers vs phone ARM CPU. Same engine source/archive, GGUF and input strings do not guarantee identical numerics/outputs. PC cohort is independent.",
+  "gate": "Run all 3 CPU then all 3 CUDA requests. Require qwen35/type15, normal native finish, schema grammar, actual JVM contract consumption, same CPU/CUDA input token IDs, and native GPU offload evidence before main 108 requests. Record output differences; no requirement to match phone answers.",
+  "comparison": "54 frozen original questions/history/register, before/after paired with alternating order. Both sides actual fresh model execution; source model inputs identical. After adds bounded app-owned acts, no speculative generation guidance. No generated-history propagation.",
+  "judge": "Direct GPT review of actual raw/final speech. Identical speech labels may be explicitly reused; no keyword quality scoring. Known development data, same author knows conditions; not blind/independent/holdout.",
+  "phone": "79 saved Android candidate responses and one interrupted request remain separate, incomplete; never pool phone and PC counts. Phone original apps not updated or rechecked while USB disconnected.",
+  "source_hashes": {
+    "training/pc-match/bootstrap_runtime.py": "4d1f0a92c042e9bd5bb0977648650e476ee54835540a9aeb11339b0b39713f9b",
+    "training/pc-match/build_ordered_json.py": "cf0b058a7010eadcc8a2489425d9440c5c35c06db0b991050cf6eaa729368e66",
+    "training/pc-match/CMakeLists.txt": "70c87defc46431e406fb4442cd33de6b3743be05c32f658c320f7fec8bac582f",
+    "training/pc-match/PcPolicyBridge.java": "f230a1280baf31f2055c8b65f42af9da51648679707ededa76e45eb160f5a5d0",
+    "training/pc-match/prepare_comparison.py": "60fd966dc901bc9b848900e1e6d27952dbecfa6123f5098f91e810b6b4da4533",
+    "training/pc-match/run_comparison.py": "104c8971d2f193030442ba74b94e900b4239df60f897bbed3bda4e437b28d3fa",
+    "training/pc-match/worker.cpp": "097a1798722568579d0729a0a6396f0920ab7abddc3ec60a0ddd146c95141303",
+    "app/src/main/java/ai/chloe/voicelab/conversation/GroundedConversationPolicy.java": "b0adc893c6cff35bc898867eba7879d155eb736a0ee4637218760cb96146094f",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ReplyEconomyPolicy.java": "02b6088fd9f4561bdf20f6e47cbc14c88ad57b460252147a65049cdf60d5c50c",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ReplyIntegrityPolicy.java": "75d3fe22278bdac6749374cf23713fbc6947b23eddc999c20fd928af01366403",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ConversationEngine.kt": "0ff49af58d57b6a4a10a07d0e9614d5801a3a690ce20a908723fcab25471e03c",
+    "app/src/main/assets/conversation-schema.json": "844294881ddde5d22d03f64aa52b711364d818197d13300379c599aaa64cf2a5",
+    "training/snapshots/pc-4b-20261115/ConversationActPolicy.initial.java.txt": "7882c052ad1cde219dd3c0e664036bb44b63a1387931e094940e63f8855b21bf"
+  },
+  "suite_lf_sha256": "65c688ce12034097324601b2b89d59d118cf155ee6410aa5ecce2513381ec38c",
+  "gates_lf_sha256": "c633a547a222cb8a911da5ecee936e9076360bc42a98bfd66ef7e7aef7484210",
+  "json_shim": {
+    "source_sha256": "54c781eea645c450cbbc4a5a1b5a474745465452cec1354cb567b781ea6622c3",
+    "modification": "JSONObject HashMap -> LinkedHashMap only",
+    "jar_sha256": "27602629dec60b6e739fb67dd700eb12a9820c150a334e25dcbd55bf5b24e364"
+  },
+  "android_parity": {
+    "prepared_messages_equal_android": 54,
+    "saved_android_outputs_same_consumption": 79,
+    "json_implementation": "Disclosed Android-ordered JSONObject compatibility shim; not a stock 2024 JVM HashMap implementation"
+  },
+  "setup_probe_generations": 3,
+  "setup_probe_note": "Initial n_gpu_layers=0 retained default op_offload and used CUDA compute buffers; preserved but excluded from strict CPU/GPU speed and quality cohorts. Final CPU path explicitly empties model devices and disables offload_kqv/op_offload.",
+  "initial_worker_snapshot": "training/snapshots/pc-4b-20261115/worker.initial.cpp.txt",
+  "post_run_guard_refinement": "After main PC generation, third-person Chloe aliases were removed from AI day/emotion intent detection to avoid treating a user pet/app named Chloe as the AI. Selected 54 request/decision outputs must remain equal under final JVM reconsumption; no native prompt or score selection changes.",
+  "final_policy_source_lf_sha256": "81cb849050a0f9d6cab5c8b463c7bf2b3e2a82932ed79f25ad4e9a43248e11df"
+}

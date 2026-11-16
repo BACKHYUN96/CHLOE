@@ -1,0 +1,742 @@
+{
+  "review_id": "33cb4dde1d2ddacc9a2c385f56202463",
+  "reviewer_kind": "gpt_session",
+  "human_review": false,
+  "gpt_review_completed": true,
+  "situations": 46,
+  "logical_judgments": 276,
+  "cells": {
+    "user_only:base": {
+      "cases": 46,
+      "strict_pass": 4,
+      "common_three_pass": 8,
+      "app_usable_strict_pass": 4,
+      "unassessable_cases": 0,
+      "dimensions": {
+        "register": {
+          "pass": 25,
+          "partial": 0,
+          "fail": 21,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 25,
+          "partial": 14,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 23,
+          "partial": 18,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 2,
+          "partial": 4,
+          "fail": 6,
+          "not_applicable": 34,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      },
+      "tags": {
+        "owner_confusion": {
+          "not_applicable": 40,
+          "yes": 4,
+          "no": 2
+        },
+        "off_topic_carryover": {
+          "not_applicable": 38,
+          "yes": 3,
+          "no": 5
+        }
+      },
+      "subsets": {
+        "history22": {
+          "cases": 22,
+          "strict_pass": 2,
+          "common_three_pass": 4,
+          "owner_confusion": {
+            "not_applicable": 16,
+            "yes": 4,
+            "no": 2
+          }
+        },
+        "user_fact_history20": {
+          "cases": 20,
+          "strict_pass": 1,
+          "common_three_pass": 3,
+          "owner_confusion": {
+            "not_applicable": 14,
+            "yes": 4,
+            "no": 2
+          }
+        },
+        "owner_edited12": {
+          "cases": 12,
+          "strict_pass": 0,
+          "common_three_pass": 2,
+          "owner_confusion": {
+            "yes": 2,
+            "no": 2,
+            "not_applicable": 8
+          }
+        },
+        "owner_edited_recall4": {
+          "cases": 4,
+          "strict_pass": 0,
+          "common_three_pass": 1,
+          "owner_confusion": {
+            "yes": 2,
+            "no": 2
+          }
+        }
+      }
+    },
+    "user_only:adapter": {
+      "cases": 46,
+      "strict_pass": 6,
+      "common_three_pass": 10,
+      "app_usable_strict_pass": 6,
+      "unassessable_cases": 0,
+      "dimensions": {
+        "register": {
+          "pass": 26,
+          "partial": 0,
+          "fail": 20,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 25,
+          "partial": 13,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 25,
+          "partial": 14,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 6,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 1,
+          "partial": 4,
+          "fail": 7,
+          "not_applicable": 34,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      },
+      "tags": {
+        "owner_confusion": {
+          "not_applicable": 40,
+          "yes": 4,
+          "no": 2
+        },
+        "off_topic_carryover": {
+          "not_applicable": 38,
+          "yes": 4,
+          "no": 4
+        }
+      },
+      "subsets": {
+        "history22": {
+          "cases": 22,
+          "strict_pass": 2,
+          "common_three_pass": 4,
+          "owner_confusion": {
+            "not_applicable": 16,
+            "yes": 4,
+            "no": 2
+          }
+        },
+        "user_fact_history20": {
+          "cases": 20,
+          "strict_pass": 1,
+          "common_three_pass": 3,
+          "owner_confusion": {
+            "not_applicable": 14,
+            "yes": 4,
+            "no": 2
+          }
+        },
+        "owner_edited12": {
+          "cases": 12,
+          "strict_pass": 0,
+          "common_three_pass": 2,
+          "owner_confusion": {
+            "yes": 2,
+            "no": 2,
+            "not_applicable": 8
+          }
+        },
+        "owner_edited_recall4": {
+          "cases": 4,
+          "strict_pass": 0,
+          "common_three_pass": 1,
+          "owner_confusion": {
+            "yes": 2,
+            "no": 2
+          }
+        }
+      }
+    },
+    "preserved:adapter": {
+      "cases": 46,
+      "strict_pass": 8,
+      "common_three_pass": 12,
+      "app_usable_strict_pass": 8,
+      "unassessable_cases": 0,
+      "dimensions": {
+        "register": {
+          "pass": 32,
+          "partial": 0,
+          "fail": 14,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 24,
+          "partial": 14,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 27,
+          "partial": 12,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 6,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 5,
+          "partial": 3,
+          "fail": 6,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      },
+      "tags": {
+        "owner_confusion": {
+          "not_applicable": 40,
+          "yes": 6
+        },
+        "off_topic_carryover": {
+          "not_applicable": 38,
+          "yes": 4,
+          "no": 4
+        }
+      },
+      "subsets": {
+        "history22": {
+          "cases": 22,
+          "strict_pass": 4,
+          "common_three_pass": 6,
+          "owner_confusion": {
+            "not_applicable": 16,
+            "yes": 6
+          }
+        },
+        "user_fact_history20": {
+          "cases": 20,
+          "strict_pass": 4,
+          "common_three_pass": 6,
+          "owner_confusion": {
+            "not_applicable": 14,
+            "yes": 6
+          }
+        },
+        "owner_edited12": {
+          "cases": 12,
+          "strict_pass": 2,
+          "common_three_pass": 4,
+          "owner_confusion": {
+            "yes": 4,
+            "not_applicable": 8
+          }
+        },
+        "owner_edited_recall4": {
+          "cases": 4,
+          "strict_pass": 0,
+          "common_three_pass": 2,
+          "owner_confusion": {
+            "yes": 4
+          }
+        }
+      }
+    },
+    "owner_sentence:base": {
+      "cases": 46,
+      "strict_pass": 9,
+      "common_three_pass": 11,
+      "app_usable_strict_pass": 9,
+      "unassessable_cases": 0,
+      "dimensions": {
+        "register": {
+          "pass": 33,
+          "partial": 0,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 26,
+          "partial": 13,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 25,
+          "partial": 16,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 3,
+          "fail": 3,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 3,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      },
+      "tags": {
+        "owner_confusion": {
+          "not_applicable": 40,
+          "yes": 3,
+          "no": 3
+        },
+        "off_topic_carryover": {
+          "not_applicable": 38,
+          "yes": 3,
+          "no": 5
+        }
+      },
+      "subsets": {
+        "history22": {
+          "cases": 22,
+          "strict_pass": 7,
+          "common_three_pass": 7,
+          "owner_confusion": {
+            "not_applicable": 16,
+            "yes": 3,
+            "no": 3
+          }
+        },
+        "user_fact_history20": {
+          "cases": 20,
+          "strict_pass": 7,
+          "common_three_pass": 7,
+          "owner_confusion": {
+            "not_applicable": 14,
+            "yes": 3,
+            "no": 3
+          }
+        },
+        "owner_edited12": {
+          "cases": 12,
+          "strict_pass": 5,
+          "common_three_pass": 5,
+          "owner_confusion": {
+            "no": 3,
+            "yes": 1,
+            "not_applicable": 8
+          }
+        },
+        "owner_edited_recall4": {
+          "cases": 4,
+          "strict_pass": 3,
+          "common_three_pass": 3,
+          "owner_confusion": {
+            "no": 3,
+            "yes": 1
+          }
+        }
+      }
+    },
+    "owner_sentence:adapter": {
+      "cases": 46,
+      "strict_pass": 11,
+      "common_three_pass": 13,
+      "app_usable_strict_pass": 11,
+      "unassessable_cases": 0,
+      "dimensions": {
+        "register": {
+          "pass": 32,
+          "partial": 0,
+          "fail": 14,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 25,
+          "partial": 14,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 26,
+          "partial": 12,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 6,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 3,
+          "fail": 3,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      },
+      "tags": {
+        "owner_confusion": {
+          "not_applicable": 40,
+          "yes": 3,
+          "no": 3
+        },
+        "off_topic_carryover": {
+          "not_applicable": 38,
+          "yes": 3,
+          "no": 5
+        }
+      },
+      "subsets": {
+        "history22": {
+          "cases": 22,
+          "strict_pass": 7,
+          "common_three_pass": 7,
+          "owner_confusion": {
+            "not_applicable": 16,
+            "yes": 3,
+            "no": 3
+          }
+        },
+        "user_fact_history20": {
+          "cases": 20,
+          "strict_pass": 7,
+          "common_three_pass": 7,
+          "owner_confusion": {
+            "not_applicable": 14,
+            "yes": 3,
+            "no": 3
+          }
+        },
+        "owner_edited12": {
+          "cases": 12,
+          "strict_pass": 5,
+          "common_three_pass": 5,
+          "owner_confusion": {
+            "no": 3,
+            "yes": 1,
+            "not_applicable": 8
+          }
+        },
+        "owner_edited_recall4": {
+          "cases": 4,
+          "strict_pass": 3,
+          "common_three_pass": 3,
+          "owner_confusion": {
+            "no": 3,
+            "yes": 1
+          }
+        }
+      }
+    },
+    "preserved:base": {
+      "cases": 46,
+      "strict_pass": 6,
+      "common_three_pass": 10,
+      "app_usable_strict_pass": 6,
+      "unassessable_cases": 0,
+      "dimensions": {
+        "register": {
+          "pass": 33,
+          "partial": 0,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 25,
+          "partial": 13,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 25,
+          "partial": 16,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "identity": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 42,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 36,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 5,
+          "partial": 3,
+          "fail": 6,
+          "not_applicable": 32,
+          "unassessable": 0
+        },
+        "instruction_protection": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 42,
+          "unassessable": 0
+        }
+      },
+      "tags": {
+        "owner_confusion": {
+          "not_applicable": 40,
+          "yes": 6
+        },
+        "off_topic_carryover": {
+          "not_applicable": 38,
+          "yes": 4,
+          "no": 4
+        }
+      },
+      "subsets": {
+        "history22": {
+          "cases": 22,
+          "strict_pass": 4,
+          "common_three_pass": 6,
+          "owner_confusion": {
+            "not_applicable": 16,
+            "yes": 6
+          }
+        },
+        "user_fact_history20": {
+          "cases": 20,
+          "strict_pass": 4,
+          "common_three_pass": 6,
+          "owner_confusion": {
+            "not_applicable": 14,
+            "yes": 6
+          }
+        },
+        "owner_edited12": {
+          "cases": 12,
+          "strict_pass": 2,
+          "common_three_pass": 4,
+          "owner_confusion": {
+            "yes": 4,
+            "not_applicable": 8
+          }
+        },
+        "owner_edited_recall4": {
+          "cases": 4,
+          "strict_pass": 0,
+          "common_three_pass": 2,
+          "owner_confusion": {
+            "yes": 4
+          }
+        }
+      }
+    }
+  },
+  "paired_transitions": {
+    "user_only:base:user_fact_history20": {
+      "strict:pass->pass": 1,
+      "common:pass->pass": 2,
+      "strict:nonpass->nonpass": 16,
+      "common:nonpass->nonpass": 13,
+      "strict:pass->nonpass": 3,
+      "common:pass->nonpass": 4,
+      "common:nonpass->pass": 1
+    },
+    "user_only:base:owner_edited12": {
+      "strict:nonpass->nonpass": 10,
+      "common:pass->pass": 1,
+      "common:nonpass->nonpass": 7,
+      "strict:pass->nonpass": 2,
+      "common:pass->nonpass": 3,
+      "common:nonpass->pass": 1
+    },
+    "owner_sentence:base:user_fact_history20": {
+      "strict:pass->pass": 4,
+      "common:pass->pass": 6,
+      "strict:nonpass->nonpass": 13,
+      "common:nonpass->nonpass": 13,
+      "strict:nonpass->pass": 3,
+      "common:nonpass->pass": 1
+    },
+    "owner_sentence:base:owner_edited12": {
+      "strict:nonpass->pass": 3,
+      "common:pass->pass": 4,
+      "strict:nonpass->nonpass": 7,
+      "common:nonpass->nonpass": 7,
+      "strict:pass->pass": 2,
+      "common:nonpass->pass": 1
+    },
+    "user_only:adapter:user_fact_history20": {
+      "strict:pass->pass": 1,
+      "common:pass->pass": 3,
+      "strict:nonpass->nonpass": 16,
+      "common:nonpass->nonpass": 14,
+      "strict:pass->nonpass": 3,
+      "common:pass->nonpass": 3
+    },
+    "user_only:adapter:owner_edited12": {
+      "strict:nonpass->nonpass": 10,
+      "common:pass->pass": 2,
+      "common:nonpass->nonpass": 8,
+      "strict:pass->nonpass": 2,
+      "common:pass->nonpass": 2
+    },
+    "owner_sentence:adapter:user_fact_history20": {
+      "strict:pass->pass": 4,
+      "common:pass->pass": 6,
+      "strict:nonpass->nonpass": 13,
+      "common:nonpass->nonpass": 13,
+      "strict:nonpass->pass": 3,
+      "common:nonpass->pass": 1
+    },
+    "owner_sentence:adapter:owner_edited12": {
+      "strict:nonpass->pass": 3,
+      "common:pass->pass": 4,
+      "strict:nonpass->nonpass": 7,
+      "common:nonpass->nonpass": 7,
+      "strict:pass->pass": 2,
+      "common:nonpass->pass": 1
+    }
+  },
+  "same_full_context_answer_consistency_checked": true,
+  "user_only_library_information_loss_separated": true,
+  "source_summary_sha256": "08739d980d1aaaa65adf7e4a879e90d92ecfff779b9b5b9fcb3996d3842a0dcf",
+  "packet_sha256": "ab87a705e3668124f032c68c7d5f8ac009f6d69bb23f66dcd43ccbeb3b196246",
+  "key_commitment_sha256": "187b9e509247fb9ba21b605f2cae385fce828f1f3e16da7acdd4dea0c6e2e695",
+  "verdicts_sha256": "6556cd5e4dcedae99ae2b51f2ed6403181450db665b2c74cca510cf6435232ce",
+  "limitations": "User-only also changes role alternation, history length and all assistant demonstrations; cannot isolate wrong content from structural changes. Single possessive edit retains older contradictions and may not be the last assistant turn; report edit recency. Effects do not identify internal attention/causal mechanism or prove deployment quality. No new training examples or model promotion approval.",
+  "training_executed": false,
+  "model_promotion_approved": false,
+  "raw_responses_included": false
+}

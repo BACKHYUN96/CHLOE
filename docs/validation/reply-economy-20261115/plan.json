@@ -1,0 +1,16 @@
+{
+  "status": "development_rules_fixed_before_final_device_replay",
+  "baseline_commit": "ac104ca70be7990d08617222e77016668c762268",
+  "baseline_responses": "docs/validation/summary-relevance-20261115/responses.json",
+  "baseline_lf_sha256": "566ad2879b41deef15bf063d76654116db3a4ff1a895d4054fa969f95aec18c1",
+  "reply_policy_lf_sha256": "02b6088fd9f4561bdf20f6e47cbc14c88ad57b460252147a65049cdf60d5c50c",
+  "grounding_policy_lf_sha256": "b0adc893c6cff35bc898867eba7879d155eb736a0ee4637218760cb96146094f",
+  "comparison_questions": 54,
+  "fresh_model_generations": 0,
+  "replayed_frozen_app_inputs": 54,
+  "method": "Same model drafts and grounding decisions, actual before/after VoiceDirector on device. Post-consumption deletion-only economy step, no new prompts/weights/samplers/generation. GPT direct scores only after actual replay; unchanged texts reuse labels.",
+  "rules": "Exact adjacent repeated units/blocks and long acknowledgement filler runs; narrow generic closing removal only with meaningful prefix or concise request. Preserve requested repetition, quoted/code/URL text, needed/vague clarification, requested interviews/questions and sentence floors. No semantic paraphrase or fabricated answers.",
+  "rubric": "Same content/register/honesty/identity-role/memory/instruction criteria as baseline. Known development questions, same author knows conditions; not blind/independent/human.",
+  "scope_limit": "Literal/lexical only; no guarantee that all repeated meanings or irrelevant topic questions are detected. Consumer effect is not improved model knowledge.",
+  "development_note": "Initial 54-response replay exposed a short named-answer tail; added named-answer coverage plus missing-information and requested-question guards, then reran all 54. Development comparison, not preregistered holdout."
+}

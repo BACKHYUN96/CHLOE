@@ -1,0 +1,123 @@
+{
+  "changed_situations": 12,
+  "unchanged_first_ownership_recall_controls": 2,
+  "changed_ownership_recall_short_summary": 4,
+  "recency_counts": {
+    "0": 10,
+    "1": 2
+  },
+  "all_historical_user_messages_roles_order_exactly_preserved": true,
+  "user_only_consecutive_user_roles_retained": true,
+  "single_owner_changes_only_one_possessive_span_in_one_sentence": true,
+  "no_other_assistant_text_changed": true,
+  "edits": [
+    {
+      "situation_id": "fixed:casual:conv45",
+      "one_message_changed": true,
+      "only_possessive_span_changed": true,
+      "removed_characters": 1,
+      "replacement_characters": 1,
+      "later_assistant_turns": 0,
+      "remaining_other_first_person_cat_clauses": 0
+    },
+    {
+      "situation_id": "fixed:casual:conv46",
+      "one_message_changed": true,
+      "only_possessive_span_changed": true,
+      "removed_characters": 1,
+      "replacement_characters": 1,
+      "later_assistant_turns": 0,
+      "remaining_other_first_person_cat_clauses": 1
+    },
+    {
+      "situation_id": "fixed:casual:conv47",
+      "one_message_changed": true,
+      "only_possessive_span_changed": true,
+      "removed_characters": 1,
+      "replacement_characters": 1,
+      "later_assistant_turns": 0,
+      "remaining_other_first_person_cat_clauses": 2
+    },
+    {
+      "situation_id": "fixed:casual:conv48",
+      "one_message_changed": true,
+      "only_possessive_span_changed": true,
+      "removed_characters": 1,
+      "replacement_characters": 1,
+      "later_assistant_turns": 0,
+      "remaining_other_first_person_cat_clauses": 3
+    },
+    {
+      "situation_id": "fixed:casual:conv49",
+      "one_message_changed": true,
+      "only_possessive_span_changed": true,
+      "removed_characters": 1,
+      "replacement_characters": 1,
+      "later_assistant_turns": 0,
+      "remaining_other_first_person_cat_clauses": 3
+    },
+    {
+      "situation_id": "fixed:casual:conv50",
+      "one_message_changed": true,
+      "only_possessive_span_changed": true,
+      "removed_characters": 1,
+      "replacement_characters": 1,
+      "later_assistant_turns": 1,
+      "remaining_other_first_person_cat_clauses": 2
+    },
+    {
+      "situation_id": "fixed:polite:conv45",
+      "one_message_changed": true,
+      "only_possessive_span_changed": true,
+      "removed_characters": 1,
+      "replacement_characters": 3,
+      "later_assistant_turns": 0,
+      "remaining_other_first_person_cat_clauses": 0
+    },
+    {
+      "situation_id": "fixed:polite:conv46",
+      "one_message_changed": true,
+      "only_possessive_span_changed": true,
+      "removed_characters": 1,
+      "replacement_characters": 3,
+      "later_assistant_turns": 0,
+      "remaining_other_first_person_cat_clauses": 1
+    },
+    {
+      "situation_id": "fixed:polite:conv47",
+      "one_message_changed": true,
+      "only_possessive_span_changed": true,
+      "removed_characters": 1,
+      "replacement_characters": 3,
+      "later_assistant_turns": 0,
+      "remaining_other_first_person_cat_clauses": 2
+    },
+    {
+      "situation_id": "fixed:polite:conv48",
+      "one_message_changed": true,
+      "only_possessive_span_changed": true,
+      "removed_characters": 1,
+      "replacement_characters": 3,
+      "later_assistant_turns": 0,
+      "remaining_other_first_person_cat_clauses": 3
+    },
+    {
+      "situation_id": "fixed:polite:conv49",
+      "one_message_changed": true,
+      "only_possessive_span_changed": true,
+      "removed_characters": 1,
+      "replacement_characters": 3,
+      "later_assistant_turns": 0,
+      "remaining_other_first_person_cat_clauses": 3
+    },
+    {
+      "situation_id": "fixed:polite:conv50",
+      "one_message_changed": true,
+      "only_possessive_span_changed": true,
+      "removed_characters": 1,
+      "replacement_characters": 3,
+      "later_assistant_turns": 1,
+      "remaining_other_first_person_cat_clauses": 2
+    }
+  ]
+}

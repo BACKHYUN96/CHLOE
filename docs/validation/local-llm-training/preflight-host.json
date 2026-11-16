@@ -1,0 +1,87 @@
+{
+  "observed_at": "2026-11-11T14:46:56.112172+00:00",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.10.6",
+  "wsl": false,
+  "wsl2": false,
+  "in_virtualenv": true,
+  "free_disk_bytes": 213373562880,
+  "package_versions": {
+    "torch": null,
+    "transformers": null,
+    "peft": null,
+    "trl": null,
+    "bitsandbytes": null,
+    "accelerate": null
+  },
+  "training_executed": false,
+  "model_forward_verified": false,
+  "training_compatibility_verified": false,
+  "cuda_pytorch_verified": false,
+  "gpu": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=name,memory.total,driver_version",
+      "--format=csv,noheader"
+    ],
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 4070 SUPER, 12282 MiB, 616.92\r\n",
+    "stderr": ""
+  },
+  "wsl_status": {
+    "command": [
+      "wsl",
+      "--status"
+    ],
+    "returncode": 50,
+    "stdout": "",
+    "stderr": "Linux용 Windows 하위 시스템 설치되어 있지 않습니다. 'wsl.exe --install'을 실행하여 설치할 수 있습니다.\r\r\n자세한 내용은 https://aka.ms/wslinstall\r\r\n 참조하세요."
+  },
+  "wsl_distributions": {
+    "command": [
+      "wsl",
+      "--list",
+      "--verbose"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Linux용 Windows 하위 시스템 설치되어 있지 않습니다. 'wsl.exe --install'을 실행하여 설치할 수 있습니다.\r\r\n자세한 내용은 https://aka.ms/wslinstall\r\r\n 참조하세요."
+  },
+  "runtime_probe": {
+    "returncode": 0,
+    "imports": {
+      "torch": {
+        "ok": false,
+        "error_type": "ModuleNotFoundError"
+      },
+      "transformers": {
+        "ok": false,
+        "error_type": "ModuleNotFoundError"
+      },
+      "peft": {
+        "ok": false,
+        "error_type": "ModuleNotFoundError"
+      },
+      "trl": {
+        "ok": false,
+        "error_type": "ModuleNotFoundError"
+      },
+      "bitsandbytes": {
+        "ok": false,
+        "error_type": "ModuleNotFoundError"
+      },
+      "accelerate": {
+        "ok": false,
+        "error_type": "ModuleNotFoundError"
+      }
+    },
+    "cuda_pytorch_verified": false,
+    "qwen35_text_class_imported": false
+  },
+  "environment_failures": [
+    "WSL2 execution environment required",
+    "training package imports not verified",
+    "Qwen3.5 text classes not imported",
+    "CUDA tensor forward/backward not verified"
+  ]
+}

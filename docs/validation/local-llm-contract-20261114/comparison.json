@@ -1,0 +1,450 @@
+{
+  "observed_at": "2026-11-13T16:01:44.838316+00:00",
+  "completed": true,
+  "comparison": "same existing base/adapter; seed42 greedy, thinking=false, max384/context2048, identical schema/decoder for both",
+  "decoder": {
+    "xgrammar": "0.2.9",
+    "apache_tvm_ffi": "0.1.11",
+    "wheel_hashes": [
+      {
+        "file": "apache_tvm_ffi-0.1.11-cp312-abi3-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "2843f084cdc94dedacd8b257a395a2b71b8a3dc7fc99711b148bf1d161983128"
+      },
+      {
+        "file": "xgrammar-0.2.9-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "3326c9fb5864922fde7b52efea9c7e83b91a8f5bf81dbb5f5164d23410dfdae4"
+      }
+    ],
+    "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+  },
+  "preserved": {
+    "checkpoint_sha256": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+    "adapter_sha256": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+    "training_venv_freeze_unchanged": true,
+    "training_executed": false,
+    "android_changed": false
+  },
+  "full_suite": {
+    "base:casual": {
+      "count": 55,
+      "json_syntax_valid": 55,
+      "schema_valid": 55,
+      "contract_valid": 55,
+      "eos_reached": 55,
+      "max_generated_tokens": 160,
+      "max_prompt_tokens": 607
+    },
+    "base:polite": {
+      "count": 55,
+      "json_syntax_valid": 55,
+      "schema_valid": 55,
+      "contract_valid": 55,
+      "eos_reached": 55,
+      "max_generated_tokens": 128,
+      "max_prompt_tokens": 569
+    },
+    "adapter:casual": {
+      "count": 55,
+      "json_syntax_valid": 55,
+      "schema_valid": 55,
+      "contract_valid": 55,
+      "eos_reached": 55,
+      "max_generated_tokens": 160,
+      "max_prompt_tokens": 612
+    },
+    "adapter:polite": {
+      "count": 55,
+      "json_syntax_valid": 55,
+      "schema_valid": 55,
+      "contract_valid": 55,
+      "eos_reached": 55,
+      "max_generated_tokens": 120,
+      "max_prompt_tokens": 563
+    }
+  },
+  "case_contract_pass": {
+    "conv01": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv02": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv03": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv04": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv05": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv06": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv07": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv08": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv09": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv10": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv11": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv12": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv13": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv14": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv15": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv16": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv17": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv18": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv19": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv20": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv21": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv22": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv23": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv24": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv25": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv26": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv27": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv28": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv29": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv30": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv31": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv32": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv33": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv34": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv35": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv36": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv37": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv38": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv39": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv40": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv41": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv42": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv43": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv44": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv45": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv46": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv47": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv48": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv49": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "conv50": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "identity01": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "identity02": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "register01": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "rules01": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    },
+    "heldout-smoke-06": {
+      "base:casual": true,
+      "base:polite": true,
+      "adapter:casual": true,
+      "adapter:polite": true
+    }
+  },
+  "prior_error_counts": {
+    "json_syntax:$": 1,
+    "missing_key:$.tts_instruction": 2,
+    "enum:$.intent": 15,
+    "enum:$.emotion": 12,
+    "enum:$.delivery.pace": 9,
+    "enum:$.delivery.energy": 13,
+    "enum:$.delivery.expressiveness": 13
+  },
+  "prior_reload": {
+    "json_syntax_valid": false,
+    "schema_valid": false,
+    "contract_valid": false,
+    "errors": [
+      {
+        "code": "json_syntax",
+        "path": "$"
+      },
+      {
+        "code": "token_limit",
+        "path": "$"
+      }
+    ]
+  },
+  "pilot_same_four_inputs": {
+    "base": {
+      "legacy_pass": 0,
+      "schema_only_pass": 4,
+      "count_per_candidate": 8
+    },
+    "adapter": {
+      "legacy_pass": 0,
+      "schema_only_pass": 8,
+      "count_per_candidate": 8
+    }
+  },
+  "failed_cases": [],
+  "full_local_summary_sha256": "48bee8ec9edd464ac382c539209a3624c94716de90b20c3405dd56beb570d806",
+  "raw_responses_committed": false,
+  "human_review_completed": false,
+  "human_scores": {
+    "korean_naturalness": null,
+    "register_consistency": null,
+    "self_introduction": null,
+    "excessive_empathy": null,
+    "instruction_exposure": null,
+    "context_memory": null,
+    "honesty": null
+  },
+  "quality_improvement_verified": false,
+  "gguf_exported": false,
+  "android_tested": false,
+  "tests_passed": 24
+}

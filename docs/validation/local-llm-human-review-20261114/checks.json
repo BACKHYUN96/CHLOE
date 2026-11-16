@@ -1,0 +1,39 @@
+{
+  "observed_at": "2026-11-14T00:43:33.436503+00:00",
+  "python_tests": {
+    "run": 37,
+    "passed": 37,
+    "skipped": 0
+  },
+  "new_summary_tests_windows": {
+    "passed": 8,
+    "initial_test_encoding_error_fixed": true
+  },
+  "independent_preference_tally_matches": true,
+  "original_ratings_digest_unchanged": true,
+  "original_ratings_copy_byte_identical": true,
+  "packet_and_key_commitments_verified": true,
+  "exactly_identical_spoken_pairs": 12,
+  "paired_turns": 40,
+  "original_fact_retained_at_recall": {
+    "base:casual:conv44": true,
+    "base:casual:conv50": true,
+    "base:polite:conv44": true,
+    "base:polite:conv50": true,
+    "adapter:casual:conv44": true,
+    "adapter:casual:conv50": true,
+    "adapter:polite:conv44": true,
+    "adapter:polite:conv50": true
+  },
+  "base_weight_sha256_verified": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+  "adapter_sha256_verified": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+  "training_venv_freeze_unchanged": true,
+  "additional_training": false,
+  "additional_inference": false,
+  "android_changed": false,
+  "android_tested": false,
+  "raw_ratings_committed": false,
+  "raw_responses_committed": false,
+  "key_committed": false,
+  "quality_improvement_verified": false
+}

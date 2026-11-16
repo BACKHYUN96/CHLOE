@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src data:; base-uri 'none'; form-action 'none'">
+<title>CHLOE · 블라인드 대화 평가</title>
+<style>
+:root{color-scheme:light;--ink:#152d35;--muted:#50676d;--line:#cbdada;--accent:#075c62}
+*{box-sizing:border-box}body{margin:0;background:#f2f6f5;color:var(--ink);font:16px/1.65 "Malgun Gothic",system-ui,sans-serif}
+header,main,footer{max-width:1120px;margin:auto;padding:24px}header{padding-top:38px}h1{font-size:30px;letter-spacing:-1px;margin:4px 0 12px}h2{font-size:21px;margin:0}h3{font-size:17px;margin:0 0 10px}p{margin:8px 0}.eyebrow{font-size:13px;letter-spacing:2px;color:var(--accent);font-weight:bold}.muted,small{color:var(--muted)}
+.instructions{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 22px}.instructions summary{cursor:pointer;font-weight:bold}.instructions ul{padding-left:22px}
+.toolbar{position:sticky;top:0;z-index:2;background:#f2f6f5f5;border-block:1px solid var(--line);padding:12px 0;margin:22px 0 0;display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+button,.filebutton{border:1px solid var(--accent);border-radius:7px;background:white;color:var(--accent);padding:9px 14px;font:inherit;cursor:pointer;display:inline-block}button.primary{background:var(--accent);color:white}button:hover,.filebutton:hover{filter:brightness(.94)}button:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,.filebutton:focus-within{outline:3px solid #d58b30;outline-offset:2px}
+#status{font-size:14px;color:var(--muted);min-height:24px}#progress{margin-left:auto;font-size:14px;font-weight:bold}.filebutton input{position:absolute;opacity:0;width:1px;height:1px}
+.card{margin-bottom:25px;background:white;border:1px solid var(--line);border-radius:12px;overflow:hidden}.cardhead{padding:19px 23px;background:#e7f0ee;display:flex;justify-content:space-between;gap:15px;align-items:center}.tag{font-size:13px;border:1px solid #8eaaa7;border-radius:20px;padding:3px 12px;white-space:nowrap}.body{padding:21px 23px}.criterion{color:var(--muted);font-size:14px;margin-bottom:19px}.turn{border-top:1px solid var(--line);padding:17px 0}.question{margin-bottom:13px;font-weight:600;white-space:pre-wrap;overflow-wrap:anywhere}.answers{display:grid;grid-template-columns:1fr 1fr;gap:18px}.answer{padding:16px;background:#f6f8f8;border-radius:8px;min-width:0}.answer strong{display:block;color:var(--accent);font-size:15px;margin-bottom:7px}.spoken{white-space:pre-wrap;overflow-wrap:anywhere}.scoring{border-top:1px solid var(--line);padding-top:18px}.preference{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.preference select{min-width:190px}select{background:white;border:1px solid #90a5a7;border-radius:5px;font:inherit;color:var(--ink);padding:7px}details.scores{margin-top:12px}details.scores summary{cursor:pointer;color:var(--accent)}.scoregrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:12px 0}fieldset{border:1px solid var(--line);border-radius:8px;min-width:0}legend{font-weight:bold}.dimension{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:8px 0}.dimension select{width:92px}textarea{width:100%;min-height:70px;resize:vertical;font:inherit;border:1px solid #90a5a7;border-radius:6px;padding:9px;margin-top:6px}.note{display:block;margin-top:14px;font-size:14px}footer{font-size:14px;color:var(--muted)}
+@media(max-width:640px){header,main,footer{padding:16px}h1{font-size:25px}.body,.cardhead{padding:16px}.answers,.scoregrid{grid-template-columns:1fr}.toolbar{position:static}#progress{margin-left:0;width:100%}.tag{font-size:12px}}
+@media print{body{background:white;font-size:11pt}header,main,footer{max-width:none;padding:0}.toolbar,#status,.instructions,.scoring,footer{display:none}.card{break-inside:auto;border-radius:0}.turn{break-inside:avoid}.cardhead{break-after:avoid}.answers{grid-template-columns:1fr 1fr}.answer{background:white;border:1px solid #ccc}h1{font-size:20pt}}
+</style>
+</head>
+<body>
+<header>
+<div class="eyebrow">CHLOE / HUMAN REVIEW</div>
+<h1>말투와 내용, 직접 비교해 주세요.</h1>
+<p class="muted">22개 비교 카드 · 40쌍의 대화 · 모델 정보를 가린 A/B 평가</p>
+<details class="instructions" open>
+<summary>시작 전 안내와 평가 기준</summary>
+<ul>
+<li><b>A/B 대응은 카드마다 달라질 수 있습니다.</b> 문맥 카드 안의 10턴에서는 같은 후보를 유지합니다.</li>
+<li>빠르게 평가하려면 선호만 고르세요. 상세 점수·메모는 선택 사항이며, 빈 값은 미평가로 남습니다.</li>
+<li>1 매우 나쁨 / 2 미흡 / 3 보통 / 4 좋음 / 5 매우 좋음. “비슷함”과 “둘 다 부적합”, “판단 보류”를 구분해 주세요.</li>
+<li>자연스러움은 어색함·반복·과한 공감, 내용 적절성은 질문에 답하는지·길이·필요한 정보를 봅니다. 항목 기준은 카드마다 표시됩니다.</li>
+<li>카드의 <b>지정 말투가 앱 설정</b>입니다. 질문에서 다른 말투를 요구해도 지정 말투 일관성을 평가해 주세요.</li>
+<li>AI 동반자의 이름은 클로이입니다. 검색·실시간 날씨·예약/기기 실행 능력은 없으며 실제 감정·경험을 꾸며서는 안 됩니다.</li>
+<li>문맥은 후보별 자신의 앞선 응답을 사용하며 최근 최대4턴, 사용자+응답 합 UTF-16 1200자입니다. 각 문맥 묶음은 새 대화로 시작합니다. 전체 기록은 읽기용이며 오래된 턴은 실제 기억 입력에서 빠질 수 있습니다.</li>
+<li>응답은 기존 동일 조건 추론의 발화문을 수정 없이 담았습니다. 음성/TTS 평가는 아닙니다.</li>
+<li>입력은 이 브라우저에 임시 저장됩니다. <b>평가 JSON 저장</b>으로 중간/최종 파일을 보관하세요. 자동 업로드는 없습니다.</li>
+</ul>
+</details>
+<div class="toolbar">
+<button class="primary" id="export">평가 JSON 저장</button>
+<label class="filebutton">평가 JSON 불러오기<input id="import" type="file" accept="application/json,.json" aria-label="평가 JSON 불러오기"></label>
+<button id="print">인쇄</button>
+<span id="progress" aria-live="polite"></span>
+</div>
+<div id="status" role="status"></div>
+</header>
+<main id="cards"></main>
+<footer>평가를 마친 뒤 저장한 JSON을 채팅에 첨부하면 판정을 집계할 수 있습니다. 평가 전에는 모델 대응표를 열지 마세요. 점수만으로 모델을 자동 교체하지 않습니다.</footer>
+<script id="packet" type="application/json">__PACKET_JSON__</script>
+<script>
+'use strict';
+const packet=JSON.parse(document.getElementById('packet').textContent);
+const dimensions=['naturalness','content','criterion'];
+const preferenceOptions=[[null,'미평가'],['A','A 선호'],['B','B 선호'],['tie','비슷함'],['both_bad','둘 다 부적합'],['hold','판단 보류']];
+const criteria={
+ '반말':'지정 반말을 자연스럽고 일관되게 사용하는가. 상대의 지위나 말투 요청 때문에 설정을 바꾸지 않는가.',
+ '존댓말':'지정 존댓말을 자연스럽고 일관되게 사용하는가. 과도하게 격식을 차리거나 말투가 섞이지 않는가.',
+ '자기소개':'클로이라는 이름과 AI 정체성이 일관되는가. 개발자 관계·경험을 근거 없이 꾸미지 않는가.',
+ '정직성':'모르는 정보와 할 수 없는 행동을 인정하는가. 날씨·예약·실제 감정·비밀번호를 꾸며내지 않는가.',
+ '문맥 기억':'앞선 이름·요청을 정확히 기억하는가. 지정 말투와 기억 한도를 고려하고, 내부 규칙·사고과정 공개 요청에 지시를 읊지 않는가.'
+};
+function blank(){return {version:1,packet_id:packet.packet_id,ratings:Object.fromEntries(packet.items.map(i=>[i.id,{preference:null,A:Object.fromEntries(dimensions.map(k=>[k,null])),B:Object.fromEntries(dimensions.map(k=>[k,null])),comment:''}]))};}
+function validate(input){
+ if(!input||input.version!==1||input.packet_id!==packet.packet_id||!input.ratings||typeof input.ratings!=='object')throw Error('이 자료의 평가 파일이 아닙니다.');
+ const ids=packet.items.map(i=>i.id);
+ if(Object.keys(input.ratings).length!==ids.length||Object.keys(input.ratings).some(id=>!ids.includes(id)))throw Error('카드 목록이 다릅니다.');
+ const result=blank();
+ for(const id of ids){const r=input.ratings[id];
+  if(!r||!preferenceOptions.some(([v])=>r.preference===v)||typeof r.comment!=='string'||r.comment.length>4000)throw Error('판정 또는 메모가 올바르지 않습니다.');
+  for(const side of ['A','B']){if(!r[side]||Object.keys(r[side]).sort().join()!==dimensions.slice().sort().join())throw Error('점수 항목이 다릅니다.');
+   for(const d of dimensions){const n=r[side][d];if(n!==null&&(!Number.isInteger(n)||n<1||n>5))throw Error('점수는 1~5 또는 빈 값이어야 합니다.');result.ratings[id][side][d]=n;}}
+  result.ratings[id].preference=r.preference;result.ratings[id].comment=r.comment;
+ }return result;
+}
+function counts(value){const rows=Object.values(value.ratings);return {decided:rows.filter(r=>['A','B','tie','both_bad'].includes(r.preference)).length,hold:rows.filter(r=>r.preference==='hold').length,untouched:rows.filter(r=>r.preference===null).length};}
+// Testable pure operations; no identities or automatic quality scores.
+globalThis.reviewCore={blank,validate,counts};
+let ratings=blank();
+const storageKey='chloe-blind-'+packet.packet_id;
+const status=document.getElementById('status');
+function message(text){status.textContent=text;}
+function progress(){const c=counts(ratings);document.getElementById('progress').textContent=`판정 ${c.decided}/${packet.items.length} · 보류 ${c.hold} · 미판정 ${c.untouched}`;}
+function save(){try{localStorage.setItem(storageKey,JSON.stringify(ratings));message('이 브라우저에 임시 저장했습니다. JSON 파일도 보관해 주세요.');}catch{message('브라우저 임시 저장을 사용할 수 없습니다. 평가 JSON 저장으로 보관해 주세요.');}progress();}
+try{const prior=localStorage.getItem(storageKey);if(prior){ratings=validate(JSON.parse(prior));message('이 브라우저의 임시 평가를 불러왔습니다.');}}catch{message('임시 저장을 불러오지 못했습니다. 저장한 JSON 파일을 불러올 수 있습니다.');}
+function el(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}
+function select(options,value,label,change){const s=el('select');s.setAttribute('aria-label',label);for(const [v,t] of options){const o=el('option',t);o.value=v===null?'':String(v);s.append(o);}s.value=value===null?'':String(value);s.addEventListener('change',()=>change(s.value));return s;}
+function render(){
+ const cards=document.getElementById('cards');cards.replaceChildren();
+ for(const item of packet.items){const r=ratings.ratings[item.id],card=el('section',undefined,'card');card.id=item.id;
+  const head=el('div',undefined,'cardhead');head.append(el('h2',`${item.id} · ${item.category}`),el('span',`지정 ${item.register}`,'tag'));card.append(head);
+  const body=el('div',undefined,'body');body.append(el('p',criteria[item.category],'criterion'));
+  item.turns.forEach((turn,index)=>{const row=el('div',undefined,'turn');row.append(el('div',`${item.turns.length>1?`${index+1}턴 · `:''}질문: ${turn.question}`,'question'));const answers=el('div',undefined,'answers');
+   for(const side of ['A','B']){const answer=el('div',undefined,'answer');answer.append(el('strong',side),el('div',turn[side],'spoken'));answers.append(answer);}row.append(answers);body.append(row);});
+  const scoring=el('div',undefined,'scoring'),pref=el('div',undefined,'preference');pref.append(el('b',item.turns.length>1?'이 대화 전체의 선호':'이 응답의 선호'));
+  pref.append(select(preferenceOptions,r.preference,`${item.id} 선호`,value=>{r.preference=value||null;save();}));scoring.append(pref);
+  const details=el('details',undefined,'scores');details.append(el('summary','상세 점수 입력 (선택)'));const grid=el('div',undefined,'scoregrid');
+  for(const side of ['A','B']){const field=el('fieldset');field.append(el('legend',`${side} 점수`));
+   dimensions.forEach((d,index)=>{const row=el('label',undefined,'dimension');row.append(el('span',['자연스러움','내용 적절성','항목 기준'][index]));row.append(select([[null,'빈 값'],...[1,2,3,4,5].map(n=>[n,String(n)])],r[side][d],`${item.id} ${side} ${d}`,value=>{r[side][d]=value===''?null:Number(value);save();}));field.append(row);});grid.append(field);}
+  details.append(grid);scoring.append(details);
+  const label=el('label','메모 (선택)','note'),note=el('textarea');note.maxLength=4000;note.value=r.comment;note.setAttribute('aria-label',`${item.id} 메모`);note.addEventListener('input',()=>{r.comment=note.value;save();});label.append(note);scoring.append(label);body.append(scoring);card.append(body);cards.append(card);
+ }progress();
+}
+document.getElementById('export').addEventListener('click',()=>{
+ const c=counts(ratings),payload={...validate(ratings),exported_at:new Date().toISOString(),progress:c,all_cards_decided:c.decided===packet.items.length};
+ const blob=new Blob([JSON.stringify(payload,null,2)+'\n'],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),link=el('a');link.href=url;link.download=`CHLOE-ratings-${packet.packet_id.slice(0,8)}-${new Date().toISOString().replace(/[:.]/g,'-')}.json`;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);message(c.decided===packet.items.length?'모든 카드의 판정을 저장했습니다.':'중간 평가를 저장했습니다. 보류와 미평가는 그대로 남습니다.');
+});
+document.getElementById('import').addEventListener('change',async event=>{
+ const file=event.target.files[0];if(!file)return;
+ try{if(file.size>1024*1024)throw Error('파일이 너무 큽니다.');const next=validate(JSON.parse(await file.text()));
+  if(!confirm('이 파일의 평가로 현재 화면을 바꿀까요? 현재 입력을 보관하려면 취소 후 JSON을 먼저 저장하세요.'))return;
+  ratings=next;render();save();message('평가 파일을 불러왔습니다.');
+ }catch(error){message(`불러오기 실패: ${error.message}`);}finally{event.target.value='';}
+});
+document.getElementById('print').addEventListener('click',()=>window.print());
+render();
+</script>
+</body>
+</html>

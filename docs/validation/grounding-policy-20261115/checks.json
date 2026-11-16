@@ -1,0 +1,68 @@
+{
+  "training_steps": 0,
+  "model_downloads": 0,
+  "merge_or_export": false,
+  "original_app_update": false,
+  "production_ui_tts_end_to_end": null,
+  "actual_alpha15_base_builder_equal": 54,
+  "actual_alpha15_final_consumer_nonfallback": 54,
+  "fresh_native_generations": 13,
+  "unchanged_policy_aliases": 41,
+  "unchanged_baseline_references": 6,
+  "final_policy_actual_messages_actions_equal_to_generation_policy": 54,
+  "final_retraction_policy_audit_messages_actions_replies_equal_to_previous_final_policy": 54,
+  "windows_python_tests": {
+    "total": 121,
+    "passed": 118,
+    "skipped": 3,
+    "skip_reason": "optional tokenizer/xgrammar dependencies absent",
+    "exit_code": 0
+  },
+  "jvm_actual_java_policy_kotlin_manager_tests": {
+    "total": 36,
+    "passed": 36,
+    "exit_code": 0
+  },
+  "isolated_org_json_test_jar_sha256": "3cf6cd6892e32e2b4c1c39e0f52f5248a2f5b37646fdfbb79a66b46b618414ed",
+  "preservation": {
+    "original_4b_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+    "trial_4b_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+    "original_apks_unchanged": [
+      {
+        "file": "chloe-alpha15-base.apk",
+        "sha256": "4d7ecb6da516b4b1d647428c05c13c69985aecae61728cab710a16d4f4e059a7"
+      },
+      {
+        "file": "pocketpal-1.22.0-base.apk",
+        "sha256": "7856c7210da2486638e7cc7d9ff077308063b7e9b25642239835942e792fe80e"
+      },
+      {
+        "file": "pocketpal-1.22.0-split_config.arm64_v8a.apk",
+        "sha256": "6ed5c0af7dfc8efebc371080cc819d1c840e535c74cce27ad35b4f5f6ea311ea"
+      },
+      {
+        "file": "pocketpal-1.22.0-split_config.ko.apk",
+        "sha256": "94882c5e56f39cf0602bad1e6fb544beaae55632fc74b57e62e53dc8230dba27"
+      },
+      {
+        "file": "pocketpal-1.22.0-split_config.xxhdpi.apk",
+        "sha256": "68e3840af7ff59d01b15be8ec9c2ffe1ac269ea785e65eb5e1020159d0651108"
+      }
+    ],
+    "original_chloe_settings_log_same_contents": true,
+    "original_pocket_private_db": "not hash verified; non-debuggable original, separate trial package used"
+  },
+  "base_2b_sha256": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+  "adapter_10step_sha256": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+  "frozen_smoke_source_lf_sha256": "f2d0d29da78ec1e3c12caa4b5192d46a7ddbbbfc35903e2464f751ac09afc676",
+  "final_policy_source_lf_sha256": "5fcc4902c4cd75530909a126b96ffcaf1d6a6636fce1fa5d899aa872d8510387",
+  "phase_driver_apk_sha256": {
+    "driver-scoped": "9b37224f846668e004ee493c7fd7c593f351b43b870889bc84269f02df667392",
+    "driver-final-reviewed": "5ba93d27fdc6e8f888f9005cb1d1f3e98041a380afd6965ddc209a8ea9110ba6",
+    "driver-final-retractions": "5cdd36bdd3f1c47402321757d9cf96d408927dba310db289bc8fbe144b1f58b2"
+  },
+  "rotation_changed_this_task": false,
+  "comparison_app_stopped": true,
+  "full_product_gradle_release_build": null,
+  "scope": "Installed alpha15 native via isolated package plus actual production Java policy bridge; current checkout alpha11 manager unit-compiled, not installed over originals."
+}

@@ -1,0 +1,33 @@
+{
+  "baseline": "2a222df1669b2ba3739c35ebde321b72c41abdb4",
+  "model_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+  "generation": {
+    "temperature": 0,
+    "seed": 42,
+    "context_tokens": 2048,
+    "max_generation_tokens": 384,
+    "threads": 4,
+    "thinking": false,
+    "gpu_layers": 99
+  },
+  "native_requests": 346,
+  "training_steps": 0,
+  "policy_sha256": "b375670930e78318c114bdd09e9719945ebacd2d7ab8818b7417cf92569fc396",
+  "baseline_input_and_consumer_parity": 120,
+  "identical_input_on_common_history": 111,
+  "source_hashes": {
+    "training/configs/app-title-binding-suite.json": "4455a1feabb496afa7dff04e810921b8ff116ed5d61b8f16f25ccd1ab142b5e5",
+    "training/pc-match/compare_app_recall.py": "6d1c00d0001e7fd2683f7a66b82a8a369807592cdf33afb5e3c3204bcaeee25a",
+    "training/pc-match/compare_relevance.py": "c845d7c6eed884abf540fa73c30a2838b35410101dee174687d3d570fe541e3a",
+    "training/pc-match/RouteBridge.java": "4cde33ad1bae513a64aa786f2cb10e98fa0f11591d8d3af58f80ecd6816e6f79",
+    "training/pc-match/worker.cpp": "097a1798722568579d0729a0a6396f0920ab7abddc3ec60a0ddd146c95141303",
+    "app/src/main/assets/conversation-schema.json": "844294881ddde5d22d03f64aa52b711364d818197d13300379c599aaa64cf2a5",
+    "app/src/main/java/ai/chloe/voicelab/conversation/AppCreatorRecall.java": "eefc8894bec1937b6deabcb294f7a753d3b750374467bd639bd63b90204382d2",
+    "app/src/main/java/ai/chloe/voicelab/conversation/GroundedConversationPolicy.java": "b375670930e78318c114bdd09e9719945ebacd2d7ab8818b7417cf92569fc396",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ConversationActPolicy.java": "81cb849050a0f9d6cab5c8b463c7bf2b3e2a82932ed79f25ad4e9a43248e11df",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ReplyEconomyPolicy.java": "02b6088fd9f4561bdf20f6e47cbc14c88ad57b460252147a65049cdf60d5c50c",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ReplyIntegrityPolicy.java": "75d3fe22278bdac6749374cf23713fbc6947b23eddc999c20fd928af01366403",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ConversationEngine.kt": "0ff49af58d57b6a4a10a07d0e9614d5801a3a690ce20a908723fcab25471e03c",
+    "training/configs/app-title-confirmation.json": "312ac9f42e94f23c375c390e3728b7a3279b772df0745dd61e893d78905b91b2"
+  }
+}

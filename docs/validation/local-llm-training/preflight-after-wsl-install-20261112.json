@@ -1,0 +1,87 @@
+{
+  "observed_at": "2026-11-11T15:42:24.501462+00:00",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.10.6",
+  "wsl": false,
+  "wsl2": false,
+  "in_virtualenv": true,
+  "free_disk_bytes": 209143631872,
+  "package_versions": {
+    "torch": null,
+    "transformers": null,
+    "peft": null,
+    "trl": null,
+    "bitsandbytes": null,
+    "accelerate": null
+  },
+  "training_executed": false,
+  "model_forward_verified": false,
+  "training_compatibility_verified": false,
+  "cuda_pytorch_verified": false,
+  "gpu": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=name,memory.total,driver_version",
+      "--format=csv,noheader"
+    ],
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 4070 SUPER, 12282 MiB, 616.92\r\n",
+    "stderr": ""
+  },
+  "wsl_status": {
+    "command": [
+      "wsl",
+      "--status"
+    ],
+    "returncode": 0,
+    "stdout": "기본 버전: 2\r\n현재 컴퓨터 구성에서는 WSL1이 지원되지 않습니다.\r\nWSL1을 사용하려면 \"Windows Subsystem for Linux” 선택적 구성 요소를 사용하세요.\r\n가상화가 활성화되지 않은 이 컴퓨터에서는 WSL2를 시작할 수 없습니다.\r\n컴퓨터의 펌웨어 설정에서 ‘가상 머신 플랫폼’ 선택적 구성 요소가 활성화되고, 가상화가 켜져 있는지 확인하세요.\r\n\r\n‘가상 머신 플랫폼’을 활성화기 위해 다음 명령 실행: wsl.exe --install --no-distribution\r\n\r\n자세한 내용을 알아보려면 https://aka.ms/enablevirtualization을 방문하세요.\r\n",
+    "stderr": ""
+  },
+  "wsl_distributions": {
+    "command": [
+      "wsl",
+      "--list",
+      "--verbose"
+    ],
+    "returncode": 4294967295,
+    "stdout": "Linux용 Windows 하위 시스템 설치된 배포가 없습니다.\r\n아래 지침에 따라 배포를 설치하여 이 resolve 수 있습니다.\r\n\r\n사용 가능한 배포를 나열하려면 'wsl.exe --list --online' 사용\r\n설치하려면 'wsl.exe --install <Distro>'를 선택하세요.\r\n",
+    "stderr": ""
+  },
+  "runtime_probe": {
+    "returncode": 0,
+    "imports": {
+      "torch": {
+        "ok": false,
+        "error_type": "ModuleNotFoundError"
+      },
+      "transformers": {
+        "ok": false,
+        "error_type": "ModuleNotFoundError"
+      },
+      "peft": {
+        "ok": false,
+        "error_type": "ModuleNotFoundError"
+      },
+      "trl": {
+        "ok": false,
+        "error_type": "ModuleNotFoundError"
+      },
+      "bitsandbytes": {
+        "ok": false,
+        "error_type": "ModuleNotFoundError"
+      },
+      "accelerate": {
+        "ok": false,
+        "error_type": "ModuleNotFoundError"
+      }
+    },
+    "cuda_pytorch_verified": false,
+    "qwen35_text_class_imported": false
+  },
+  "environment_failures": [
+    "WSL2 execution environment required",
+    "training package imports not verified",
+    "Qwen3.5 text classes not imported",
+    "CUDA tensor forward/backward not verified"
+  ]
+}

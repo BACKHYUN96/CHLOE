@@ -1,0 +1,351 @@
+{
+  "fresh_requests": 346,
+  "main_requests": 208,
+  "supplemental_fixed_history_requests": 4,
+  "training_steps": 0,
+  "cohorts": {
+    "unseen_same": {
+      "questions": 12,
+      "scores": {
+        "before": {
+          "partial": 4,
+          "pass": 5,
+          "fail": 3
+        },
+        "after": {
+          "pass": 12
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "partial": 5,
+          "pass": 4,
+          "fail": 3
+        },
+        "after": {
+          "pass": 5,
+          "partial": 4,
+          "fail": 3
+        }
+      },
+      "improved": 7,
+      "regressed": 0,
+      "model_input_equal": 0,
+      "raw_equal": 0,
+      "original_history_equal": 12
+    },
+    "unseen_other": {
+      "questions": 12,
+      "scores": {
+        "before": {
+          "partial": 5,
+          "fail": 7
+        },
+        "after": {
+          "pass": 12
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "partial": 5,
+          "fail": 7
+        },
+        "after": {
+          "fail": 3,
+          "pass": 5,
+          "partial": 4
+        }
+      },
+      "improved": 12,
+      "regressed": 0,
+      "model_input_equal": 0,
+      "raw_equal": 0,
+      "original_history_equal": 12
+    },
+    "unseen_boundary": {
+      "questions": 8,
+      "scores": {
+        "before": {
+          "partial": 3,
+          "pass": 2,
+          "fail": 3
+        },
+        "after": {
+          "pass": 5,
+          "partial": 2,
+          "fail": 1
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "partial": 2,
+          "pass": 2,
+          "fail": 4
+        },
+        "after": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 4
+        }
+      },
+      "improved": 4,
+      "regressed": 0,
+      "model_input_equal": 1,
+      "raw_equal": 1,
+      "original_history_equal": 8
+    },
+    "unseen_dialogue": {
+      "questions": 5,
+      "scores": {
+        "before": {
+          "pass": 3,
+          "fail": 1,
+          "partial": 1
+        },
+        "after": {
+          "pass": 5
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "pass": 3,
+          "fail": 1,
+          "partial": 1
+        },
+        "after": {
+          "pass": 5
+        }
+      },
+      "improved": 2,
+      "regressed": 0,
+      "model_input_equal": 1,
+      "raw_equal": 1,
+      "original_history_equal": 2
+    },
+    "confirmation_same": {
+      "questions": 8,
+      "scores": {
+        "before": {
+          "pass": 4,
+          "fail": 3,
+          "partial": 1
+        },
+        "after": {
+          "pass": 6,
+          "partial": 1,
+          "fail": 1
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "fail": 5,
+          "partial": 2,
+          "pass": 1
+        },
+        "after": {
+          "fail": 5,
+          "partial": 2,
+          "pass": 1
+        }
+      },
+      "improved": 2,
+      "regressed": 0,
+      "model_input_equal": 1,
+      "raw_equal": 1,
+      "original_history_equal": 8
+    },
+    "confirmation_other": {
+      "questions": 8,
+      "scores": {
+        "before": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 4
+        },
+        "after": {
+          "pass": 6,
+          "fail": 1,
+          "partial": 1
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 4
+        },
+        "after": {
+          "partial": 4,
+          "pass": 3,
+          "fail": 1
+        }
+      },
+      "improved": 5,
+      "regressed": 0,
+      "model_input_equal": 1,
+      "raw_equal": 1,
+      "original_history_equal": 8
+    },
+    "control": {
+      "questions": 14,
+      "scores": {
+        "before": {
+          "pass": 8,
+          "partial": 2,
+          "fail": 4
+        },
+        "after": {
+          "pass": 10,
+          "partial": 3,
+          "fail": 1
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "fail": 6,
+          "partial": 4,
+          "pass": 4
+        },
+        "after": {
+          "fail": 4,
+          "partial": 7,
+          "pass": 3
+        }
+      },
+      "improved": 3,
+      "regressed": 0,
+      "model_input_equal": 7,
+      "raw_equal": 7,
+      "original_history_equal": 14
+    },
+    "known": {
+      "questions": 54,
+      "scores": {
+        "before": {
+          "fail": 7,
+          "partial": 14,
+          "pass": 33
+        },
+        "after": {
+          "fail": 7,
+          "partial": 14,
+          "pass": 33
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "fail": 17,
+          "partial": 17,
+          "pass": 20
+        },
+        "after": {
+          "fail": 17,
+          "partial": 17,
+          "pass": 20
+        }
+      },
+      "improved": 0,
+      "regressed": 0,
+      "model_input_equal": 54,
+      "raw_equal": 54,
+      "original_history_equal": 54
+    },
+    "new_single": {
+      "questions": 20,
+      "scores": {
+        "before": {
+          "pass": 6,
+          "partial": 9,
+          "fail": 5
+        },
+        "after": {
+          "pass": 6,
+          "partial": 9,
+          "fail": 5
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "pass": 6,
+          "partial": 9,
+          "fail": 5
+        },
+        "after": {
+          "pass": 6,
+          "partial": 9,
+          "fail": 5
+        }
+      },
+      "improved": 0,
+      "regressed": 0,
+      "model_input_equal": 20,
+      "raw_equal": 20,
+      "original_history_equal": 20
+    },
+    "dialogue": {
+      "questions": 30,
+      "scores": {
+        "before": {
+          "pass": 17,
+          "partial": 8,
+          "fail": 5
+        },
+        "after": {
+          "pass": 17,
+          "partial": 8,
+          "fail": 5
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "pass": 13,
+          "fail": 8,
+          "partial": 9
+        },
+        "after": {
+          "pass": 14,
+          "fail": 7,
+          "partial": 9
+        }
+      },
+      "improved": 0,
+      "regressed": 0,
+      "model_input_equal": 29,
+      "raw_equal": 29,
+      "original_history_equal": 30
+    },
+    "fixed_history_probe": {
+      "questions": 2,
+      "scores": {
+        "before": {
+          "pass": 2
+        },
+        "after": {
+          "pass": 2
+        }
+      },
+      "raw_scores": {
+        "before": {
+          "fail": 1,
+          "pass": 1
+        },
+        "after": {
+          "pass": 2
+        }
+      },
+      "improved": 0,
+      "regressed": 0,
+      "model_input_equal": 1,
+      "raw_equal": 1,
+      "original_history_equal": 2
+    }
+  },
+  "supplemental_control_requests": 28,
+  "raw_contract_pass": 346,
+  "final_contract_pass": 346,
+  "normal_native_finish": 346,
+  "blocked": 0,
+  "truncated": 0,
+  "max_prompt_tokens": 531,
+  "judge": "final: direct GPT reading of 59 new context/speech groups, condition and stage hidden in review list. Existing judgments only for exact register/question/original messages/expectation/speech. Same author, development evaluation."
+}

@@ -1,0 +1,38 @@
+{
+  "questions": 54,
+  "fresh_model_generations": 0,
+  "device_replays": 54,
+  "before": {
+    "fail": 13,
+    "partial": 18,
+    "pass": 23
+  },
+  "after": {
+    "fail": 10,
+    "partial": 19,
+    "pass": 25
+  },
+  "raw_model_unchanged": {
+    "fail": 17,
+    "partial": 20,
+    "pass": 17
+  },
+  "actions": {
+    "trim_generic_tail": 15,
+    "none": 35,
+    "deduplicate": 3,
+    "deduplicate+trim_generic_tail": 1
+  },
+  "transitions": {
+    "fail->fail": 10,
+    "partial->partial": 18,
+    "pass->pass": 23,
+    "fail->partial": 1,
+    "fail->pass": 2
+  },
+  "actual_consumer_pass": 54,
+  "deletion_only_pass": 54,
+  "unchanged_model_inputs_and_grounding": 54,
+  "method": "Direct GPT review of 19 edited outputs; exact previous labels reused for 35 unchanged outputs. Known development questions and conditions, not blind or independent.",
+  "limitations": "Literal/lexical only; no guarantee that all repeated meanings or irrelevant topic questions are detected. Consumer effect is not improved model knowledge."
+}

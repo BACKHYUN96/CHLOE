@@ -1,0 +1,35 @@
+{
+  "status": "frozen_before_any_new_generation",
+  "baseline_commit": "d33fd526734b68e290aba4d2890b80c47c285d6d",
+  "questions": 54,
+  "conditions": [
+    "before",
+    "after"
+  ],
+  "planned_new_generations": 108,
+  "reused_outputs": 0,
+  "model_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+  "runtime_revision": "aa75ff3239f9cc675b081697deda9e1b112345c6",
+  "generation": {
+    "temperature": 0,
+    "seed": 42,
+    "max_generation_tokens": 384,
+    "context_tokens": 2048,
+    "prefill_threads": 4,
+    "decode_threads": 4,
+    "backend": "cpu"
+  },
+  "order": "Same frozen 54 questions/history/register; independent one-turn requests, paired before/after with alternating within-pair order. No generated history propagation, no candidate selection or retries.",
+  "change": "Generation-time TurnGuidancePolicy appended only for listening/unknown-answer-method/AI experience/user recall/app-name assertion. No answer templates; source user/assistant messages unchanged. Grounding/economy/integrity output policies identical in both arms.",
+  "quality": "Direct GPT six-criterion assessment of raw and final outputs. Known development questions/conditions, not blind/independent/holdout; all 108 fresh results retained including failures. Abstention remains failure.",
+  "limits": "Fixed histories and one seed, not next-turn self-generated history or full product APK/UI/TTS. Model weights/adapter preserved; no retraining.",
+  "source_hashes": {
+    "app/src/main/java/ai/chloe/voicelab/conversation/GroundedConversationPolicy.java": "b0adc893c6cff35bc898867eba7879d155eb736a0ee4637218760cb96146094f",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ReplyEconomyPolicy.java": "02b6088fd9f4561bdf20f6e47cbc14c88ad57b460252147a65049cdf60d5c50c",
+    "app/src/main/java/ai/chloe/voicelab/conversation/ReplyIntegrityPolicy.java": "75d3fe22278bdac6749374cf23713fbc6947b23eddc999c20fd928af01366403",
+    "training/snapshots/turn-guidance-20261115/TurnGuidancePolicy.java.txt": "88622271eb4cccc5606609a005e57415c3fbe3870d5cf75325f4f2cc2def24d9",
+    "training/snapshots/turn-guidance-20261115/ConversationEngine.kt.txt": "2a8e5688b31e6f97d2e001e82c5ab768a71521558705c4692cb5adf8b81d364a"
+  },
+  "suite_lf_sha256": "a6e193ff42b13e2c189c4f46f9fe408c5f20c214459b8383aa88e137898d5648",
+  "source_snapshot_note": "Candidate source preserved byte-for-byte with the original LF hash; only source reference separated for later acceptance/rejection. Generation rules and order unchanged."
+}

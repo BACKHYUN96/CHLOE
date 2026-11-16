@@ -1,0 +1,126 @@
+{
+  "questions": 54,
+  "comparison_cells": 108,
+  "baseline_reused": 54,
+  "selected_new_model_outputs": 6,
+  "previous_model_output_aliases": 48,
+  "new_generate_completions": 7,
+  "excluded_candidate_outputs": 1,
+  "training_steps": 0,
+  "model_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+  "policy_source_lf_sha256": "b0adc893c6cff35bc898867eba7879d155eb736a0ee4637218760cb96146094f",
+  "base_builder_and_final_consumer_pass": 54,
+  "fresh_native_parse_ok": 6,
+  "raw_contract_pass": 54,
+  "final_contract_pass": 54,
+  "truncated": 0,
+  "paired_omission_cases": [
+    "conv45",
+    "conv47",
+    "conv48",
+    "conv50"
+  ],
+  "policy_actions": {
+    "none": 46,
+    "unavailable_live_lookup": 2,
+    "unavailable_calendar": 1,
+    "unavailable_phone": 1,
+    "no_web_verification": 2,
+    "grounded_fact_recall": 1,
+    "grounded_fact_summary": 1
+  },
+  "gpt_previous_raw": {
+    "pass": 16,
+    "partial": 21,
+    "fail": 17,
+    "unassessable": 0,
+    "assessable": 54
+  },
+  "gpt_baseline": {
+    "pass": 21,
+    "partial": 19,
+    "fail": 14,
+    "unassessable": 0,
+    "assessable": 54
+  },
+  "gpt_raw": {
+    "pass": 17,
+    "partial": 20,
+    "fail": 17,
+    "unassessable": 0,
+    "assessable": 54
+  },
+  "gpt_delivered": {
+    "pass": 23,
+    "partial": 18,
+    "fail": 13,
+    "unassessable": 0,
+    "assessable": 54
+  },
+  "changed_subset_baseline": {
+    "pass": 2,
+    "partial": 2,
+    "fail": 2,
+    "unassessable": 0,
+    "assessable": 6
+  },
+  "changed_subset_raw": {
+    "pass": 3,
+    "partial": 1,
+    "fail": 2,
+    "unassessable": 0,
+    "assessable": 6
+  },
+  "changed_subset_delivered": {
+    "pass": 4,
+    "partial": 1,
+    "fail": 1,
+    "unassessable": 0,
+    "assessable": 6
+  },
+  "criteria_delivered": {
+    "content": {
+      "pass": 24,
+      "partial": 19,
+      "fail": 11
+    },
+    "register": {
+      "pass": 51,
+      "partial": 2,
+      "fail": 1
+    },
+    "honesty": {
+      "fail": 3,
+      "pass": 49,
+      "partial": 2
+    },
+    "identity_role": {
+      "not_applicable": 40,
+      "pass": 10,
+      "fail": 1,
+      "partial": 3
+    },
+    "memory": {
+      "not_applicable": 51,
+      "pass": 3
+    },
+    "instruction_handling": {
+      "not_applicable": 47,
+      "fail": 4,
+      "pass": 3
+    }
+  },
+  "transitions": {
+    "fail -> fail": 12,
+    "partial -> partial": 18,
+    "pass -> pass": 20,
+    "pass -> fail": 1,
+    "partial -> pass": 1,
+    "fail -> pass": 2
+  },
+  "improved": 3,
+  "regressed": 1,
+  "same": 50,
+  "judge": "GPT direct, same author knows conditions; fixed known development set, not blind/independent/human",
+  "scope": "Source-complete app summary and relevant model view; no model retraining or full product UI/TTS release validation."
+}

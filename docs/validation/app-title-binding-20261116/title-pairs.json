@@ -1,0 +1,153 @@
+{
+  "previous_baseline_reproduced": 120,
+  "panels": {
+    "app-title-binding-suite.json": {
+      "scenarios": 37,
+      "distinct_questions": 35,
+      "matched_pairs": 12,
+      "scores": {
+        "before_raw": {
+          "same": {
+            "user": 8,
+            "unknown": 2,
+            "suggested_user": 1,
+            "assistant": 1
+          },
+          "other": {
+            "unknown": 6,
+            "no_answer": 1,
+            "suggested_user": 1,
+            "user": 2,
+            "wrong_target": 1,
+            "assistant": 1
+          },
+          "strict_same": 4,
+          "strict_other": 0,
+          "both_references_correct": 4,
+          "both_strict_pass": 0
+        },
+        "before_final": {
+          "same": {
+            "user": 8,
+            "unknown": 2,
+            "suggested_user": 1,
+            "assistant": 1
+          },
+          "other": {
+            "unknown": 6,
+            "no_answer": 1,
+            "suggested_user": 1,
+            "user": 2,
+            "wrong_target": 1,
+            "assistant": 1
+          },
+          "strict_same": 5,
+          "strict_other": 0,
+          "both_references_correct": 4,
+          "both_strict_pass": 0
+        },
+        "after_raw": {
+          "same": {
+            "user": 8,
+            "unknown": 2,
+            "contradictory": 1,
+            "unclear": 1
+          },
+          "other": {
+            "unknown": 10,
+            "separate_without_unknown": 1,
+            "wrong_target": 1
+          },
+          "strict_same": 5,
+          "strict_other": 5,
+          "both_references_correct": 6,
+          "both_strict_pass": 2
+        },
+        "after_final": {
+          "same": {
+            "user": 12
+          },
+          "other": {
+            "unknown": 12
+          },
+          "strict_same": 12,
+          "strict_other": 12,
+          "both_references_correct": 12,
+          "both_strict_pass": 12
+        }
+      }
+    },
+    "app-title-confirmation.json": {
+      "scenarios": 16,
+      "distinct_questions": 16,
+      "matched_pairs": 8,
+      "scores": {
+        "before_raw": {
+          "same": {
+            "no_answer": 1,
+            "unknown": 4,
+            "user": 2,
+            "suggested_user": 1
+          },
+          "other": {
+            "unknown": 4,
+            "assistant": 2,
+            "wrong_target": 2
+          },
+          "strict_same": 1,
+          "strict_other": 2,
+          "both_references_correct": 1,
+          "both_strict_pass": 0
+        },
+        "before_final": {
+          "same": {
+            "user": 4,
+            "unknown": 3,
+            "suggested_user": 1
+          },
+          "other": {
+            "unknown": 4,
+            "assistant": 2,
+            "wrong_target": 2
+          },
+          "strict_same": 4,
+          "strict_other": 2,
+          "both_references_correct": 2,
+          "both_strict_pass": 1
+        },
+        "after_raw": {
+          "same": {
+            "unknown": 4,
+            "unclear": 1,
+            "contradictory": 1,
+            "user": 1,
+            "suggested_user": 1
+          },
+          "other": {
+            "unknown": 7,
+            "assistant": 1
+          },
+          "strict_same": 1,
+          "strict_other": 3,
+          "both_references_correct": 1,
+          "both_strict_pass": 1
+        },
+        "after_final": {
+          "same": {
+            "user": 6,
+            "suggested_user": 1,
+            "unknown": 1
+          },
+          "other": {
+            "unknown": 7,
+            "assistant": 1
+          },
+          "strict_same": 6,
+          "strict_other": 6,
+          "both_references_correct": 6,
+          "both_strict_pass": 6
+        }
+      }
+    }
+  }
+}

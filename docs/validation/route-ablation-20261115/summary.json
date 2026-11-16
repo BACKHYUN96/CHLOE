@@ -1,0 +1,228 @@
+{
+  "new_generations": 208,
+  "training_steps": 0,
+  "cohorts": {
+    "known": {
+      "questions": 54,
+      "scores": {
+        "minimal": {
+          "fail": 17,
+          "partial": 20,
+          "pass": 17
+        },
+        "current": {
+          "fail": 7,
+          "partial": 14,
+          "pass": 33
+        }
+      },
+      "raw_scores": {
+        "minimal": {
+          "fail": 17,
+          "partial": 20,
+          "pass": 17
+        },
+        "current": {
+          "fail": 17,
+          "partial": 17,
+          "pass": 20
+        }
+      },
+      "improved": 18,
+      "regressed": 1,
+      "input_tokens_equal": 40,
+      "raw_equal": 40,
+      "original_history_equal": 54
+    },
+    "new_single": {
+      "questions": 20,
+      "scores": {
+        "minimal": {
+          "pass": 6,
+          "partial": 9,
+          "fail": 5
+        },
+        "current": {
+          "pass": 6,
+          "partial": 9,
+          "fail": 5
+        }
+      },
+      "raw_scores": {
+        "minimal": {
+          "pass": 6,
+          "partial": 9,
+          "fail": 5
+        },
+        "current": {
+          "pass": 6,
+          "partial": 9,
+          "fail": 5
+        }
+      },
+      "improved": 0,
+      "regressed": 0,
+      "input_tokens_equal": 20,
+      "raw_equal": 20,
+      "original_history_equal": 20
+    },
+    "dialogue": {
+      "questions": 30,
+      "scores": {
+        "minimal": {
+          "partial": 8,
+          "fail": 10,
+          "pass": 12
+        },
+        "current": {
+          "pass": 13,
+          "partial": 8,
+          "fail": 9
+        }
+      },
+      "raw_scores": {
+        "minimal": {
+          "partial": 8,
+          "fail": 10,
+          "pass": 12
+        },
+        "current": {
+          "pass": 11,
+          "fail": 10,
+          "partial": 9
+        }
+      },
+      "improved": 4,
+      "regressed": 3,
+      "input_tokens_equal": 12,
+      "raw_equal": 13,
+      "original_history_equal": 15
+    }
+  },
+  "stage_effects": {
+    "minimal": {
+      "grounded_reply": {
+        "changed": 10,
+        "improved": 8,
+        "regressed": 0,
+        "changed_ids": [
+          "minimal-conv31",
+          "minimal-conv32",
+          "minimal-conv33",
+          "minimal-conv34",
+          "minimal-conv36",
+          "minimal-conv40",
+          "minimal-conv44",
+          "minimal-conv46",
+          "minimal-dialog01-t2",
+          "minimal-dialog03-t1"
+        ]
+      },
+      "conversation_act": {
+        "changed": 8,
+        "improved": 7,
+        "regressed": 0,
+        "changed_ids": [
+          "minimal-conv17",
+          "minimal-conv20",
+          "minimal-conv29",
+          "minimal-conv35",
+          "minimal-conv37",
+          "minimal-conv49",
+          "minimal-register01",
+          "minimal-dialog02-t1"
+        ]
+      },
+      "economy": {
+        "changed": 10,
+        "improved": 1,
+        "regressed": 0,
+        "changed_ids": [
+          "minimal-conv01",
+          "minimal-conv12",
+          "minimal-conv22",
+          "minimal-conv26",
+          "minimal-conv28",
+          "minimal-conv42",
+          "minimal-conv47",
+          "minimal-identity01",
+          "minimal-identity02",
+          "minimal-rules01"
+        ]
+      },
+      "integrity": {
+        "changed": 0,
+        "improved": 0,
+        "regressed": 0,
+        "changed_ids": []
+      }
+    },
+    "current": {
+      "grounded_reply": {
+        "changed": 10,
+        "improved": 7,
+        "regressed": 0,
+        "changed_ids": [
+          "current-conv31",
+          "current-conv32",
+          "current-conv33",
+          "current-conv34",
+          "current-conv36",
+          "current-conv40",
+          "current-conv44",
+          "current-conv46",
+          "current-dialog01-t2",
+          "current-dialog03-t1"
+        ]
+      },
+      "conversation_act": {
+        "changed": 8,
+        "improved": 7,
+        "regressed": 0,
+        "changed_ids": [
+          "current-conv17",
+          "current-conv20",
+          "current-conv29",
+          "current-conv35",
+          "current-conv37",
+          "current-conv49",
+          "current-register01",
+          "current-dialog02-t1"
+        ]
+      },
+      "economy": {
+        "changed": 12,
+        "improved": 1,
+        "regressed": 0,
+        "changed_ids": [
+          "current-conv01",
+          "current-conv12",
+          "current-conv22",
+          "current-conv26",
+          "current-conv28",
+          "current-conv42",
+          "current-conv45",
+          "current-conv47",
+          "current-identity01",
+          "current-identity02",
+          "current-rules01",
+          "current-dialog02-t2"
+        ]
+      },
+      "integrity": {
+        "changed": 0,
+        "improved": 0,
+        "regressed": 0,
+        "changed_ids": []
+      }
+    }
+  },
+  "raw_contract_pass": 208,
+  "final_contract_pass": 208,
+  "normal_native_finish": 208,
+  "blocked": 0,
+  "truncated": 0,
+  "max_prompt_tokens": 531,
+  "judge": "GPT direct six-criterion review. Exact known question/history/speech labels reused with explicit provenance; all unmatched speech read directly. Same author and visible conditions, not blind/independent/human/holdout. Repeated stages inherit the same reviewed speech within that original context.",
+  "limits": "GPT directly reads all raw/stage/final speech against provided context and expectation. Same author, conditions visible, development set; new wording not independent blind/holdout."
+}

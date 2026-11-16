@@ -84,3 +84,29 @@ alpha10 사용자 제공 4B 결과 3회는 모두 parser ok/fallback false/한�
 메모리는 worker 자체 llm_pss_kib를 완료 시점 값으로 별도 표시한다. UI 측 Android PSS 합산은 누락/캐시/권한 제한을 배제할 수 없어 전체/진짜 최대값으로 부르지 않는다. app_total_peak_pss_kib는 null로 기록한다. 이전 alpha10의 UI 252MiB와 worker 약2.8GiB가 충돌한 문제를 숫자 보정이나 추정 합계로 가리지 않는다. 요청마다 history_turns를 기록해 초기화/문맥 유지 상태도 확인한다.
 
 코드 회귀는 요청 완료 후 release/reset을 모사한 재연결을 확인하지만 실제 TTS 재생/Binder/기기 테스트는 아니다. 검증 순서: 업데이트 후 4B(또는 이미 준비한 2B)로 초기화 1번 → 인사/개발자 소개/이름 기억 질문을 초기화 없이 연속 입력 → 스타일 음성 재생 후 재요청 → 대화 초기화 후 재요청. history_turns=0/1/2, 말투, worker PSS와 각 지연 단계를 확인한다. 신규 기기 결과와 음성 청취, 10·30분은 미측정이다. 모델/양자화/CPU4/Sohee와 기존 TTS native는 유지한다.
+
+## 2026-11-15 주체·기능 한계 정책 후보
+
+`ConversationManager`는 현재 bounded user 이력의 명시적 사실과 앱의 사용 불가 기능을 `GroundedConversationPolicy`에서 다룬다. 관련 사실/요청이 있을 때만 system에 출처 데이터를 추가하고, 소비 가능한 답변에 한해 명확한 회상/불가 기능 요청을 앱 응답으로 처리한다. 보정 답변이 이력/TTS에 전달되고 `evaluation.policy_action`이 모델 답변과 앱 결정을 구분한다. 불완전 JSON/빈 출력은 이 경로로 성공 처리하지 않는다. 기존 PersonaManager·모델·native decoder·TTS 엔진은 유지한다.
+
+당시 smoke persona와 평가 소스는 별도 snapshot의 원래 해시로 동결했다. 새 정책을 기존 승인 데이터에 묵시적으로 적용해 학습하지 않는다. 실제 alpha15 별도 패키지의 동일4B 추론+같은 production policy를 계측했으며 현재 체크아웃의 Kotlin 연결은 JVM에서 검사했다. 원본 앱 업데이트/변경 제품 APK 전체 UI·TTS 검증은 하지 않았다. 개발 질문의 일부 손해가 남아 일반 품질 승격을 확정하지 않는다. [구현·비교·검증·남은 범위](validation/local-llm-grounding-policy-report.md)를 따른다.
+
+## 2026-11-15 요약과 모델 view의 사실 범위
+
+GroundedConversationPolicy는 세션과 모델 view를 구분한다. 무관한 독립 user 사실+중립 assistant 확인 쌍만 view에서 생략하고 원래4턴/1200자 세션은 그대로 둔다. 다음 회상 때 원래 사실을 다시 사용할 수 있다. 의미 있는 assistant 정보/알 수 없는 이력은 함부로 제거하지 않는다. user 사실만으로 완전히 요약 가능한 경우는 grounded_fact_summary로 주체를 보고하고, 그 외 요약은 전체 이력/역할 지시를 모델에 전달한다. 명시적 제작자와 소유자의 관계도 분리한다.
+
+관련성 필터 `preserve-uncertain-source-v1`은 불확실성을 생략 근거로 쓰지 않는다. 이름을 지칭한 제작자/소유자 질문과 여러 사실 정리에서 원문을 보존하고, 명확한 제외는 해당 화제에 한정한다. 모호한 이름 후보는 검색 단서일 뿐 정답/구조화 사실로 확정하지 않는다. 사실 추출·creator hint·최종 답변 정책은 그대로다. [PC212개 실제 전후 비교](validation/local-llm-relevance-filter-report.md)에서 연속30턴13/8/9→15/9/6, 기존74독립 질문은 유지됐다. 첫 제작자 회상과 이름 되묻기·폰 UI/TTS는 미해결/미검증으로 남는다.
+
+이 변경은 source/UI metadata와 계측 후보이며 원본 앱을 덮어쓰지 않았다. [같은54질문·새6선택/48재사용·직접 평가·회귀](validation/local-llm-summary-relevance-report.md)를 따른다. 전체 제품 UI/TTS와 장기 대화는 별도 검증이 필요하다.
+
+## 발화 정리 후속 · 2026-11-15
+
+JSON 소비와 기존 grounding 뒤 `ReplyEconomyPolicy`로 삭제만 수행한다. 정리한 발화를 이력과 TTS 호출자에게 반환하며 `economy_action`/`reply_economy_version`으로 구분한다. 오류 출력을 복구하지 않는다. [직접 평가/검증 경계](validation/local-llm-reply-economy-report.md)를 따른다.
+
+## 발화 무결성 후속 · 2026-11-15
+
+기존 정리 뒤 `ReplyIntegrityPolicy`를 적용해 한정된 질문 echo/미완성 꼬리/이름 처리 지시 노출을 삭제한다. 실질 답이 남지 않으면 `unusable_reply` 실패 안내만 반환하고 이력/TTS 대상에서 제외한다. 새 정답을 만들지 않으며 `integrity_action`/`reply_integrity_version`을 분리한다. [실제 비교와 미검증 범위](validation/local-llm-reply-integrity-report.md)를 따른다.
+
+## 경청·주체·불확실성 대화 동작 · 2026-11-15
+
+기존 grounding 뒤 `ConversationActPolicy`로 좁은 요청의 경청 수락, 불확실한 정보 답변 방법, AI 경험 한계, 빈 이력의 생일 정보 부재, 앱 이름 확인을 처리한다. 인용/부정/가정/지원하지 않는 이력에는 새 답을 가정하지 않는다. 3인칭 클로이는 다른 객체일 수 있어 AI로 단정하지 않는다. `dialogue_action`/`conversation_act_version`은 prompt version과 분리한다. 새로운 세계 지식/생일/사용자 이름을 만들지 않으며 malformed/empty 출력 복구용도 아니다. [PC실행/125검사/54질문 직접 평가와 남은 문제](validation/local-llm-pc-4b-report.md)를 따른다. 실제 제품 APK/UI/TTS는 아직 검증하지 않았다.

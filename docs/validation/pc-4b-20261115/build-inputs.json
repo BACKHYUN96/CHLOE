@@ -1,0 +1,82 @@
+[
+  {
+    "name": "cuda-cccl-12-8",
+    "version": "12.8.90-1",
+    "url": "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-cccl-12-8_12.8.90-1_amd64.deb",
+    "sha256": "873dbdfc3c1aa2806145c94ba75d058f658974ffa2366c4bba9190440bacece4",
+    "bytes": 966064,
+    "filename": "cuda-cccl-12-8_12.8.90-1_amd64.deb"
+  },
+  {
+    "name": "cuda-crt-12-8",
+    "version": "12.8.93-1",
+    "url": "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-crt-12-8_12.8.93-1_amd64.deb",
+    "sha256": "92a3c8eda8d3a3a8f3de71e0acf4edb8be568b20792e5bf7618898a72ffd6d10",
+    "bytes": 81126,
+    "filename": "cuda-crt-12-8_12.8.93-1_amd64.deb"
+  },
+  {
+    "name": "cuda-cudart-12-8",
+    "version": "12.8.90-1",
+    "url": "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-cudart-12-8_12.8.90-1_amd64.deb",
+    "sha256": "929554bc2f0831eefec4e212897d0cbb0db70cab75c5eeadd2a4a43e7d7ffb68",
+    "bytes": 169754,
+    "filename": "cuda-cudart-12-8_12.8.90-1_amd64.deb"
+  },
+  {
+    "name": "cuda-cudart-dev-12-8",
+    "version": "12.8.90-1",
+    "url": "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-cudart-dev-12-8_12.8.90-1_amd64.deb",
+    "sha256": "b9e927a530535631f789098080e5e59bcc3bc2ac368d7c7af51ea4fbfe8ad7eb",
+    "bytes": 1256992,
+    "filename": "cuda-cudart-dev-12-8_12.8.90-1_amd64.deb"
+  },
+  {
+    "name": "cuda-driver-dev-12-8",
+    "version": "12.8.90-1",
+    "url": "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-driver-dev-12-8_12.8.90-1_amd64.deb",
+    "sha256": "5ffbd709ee3ed8dee4d82a07de6c789efd4b37c3b23e72f59e0c519c1701a692",
+    "bytes": 29124,
+    "filename": "cuda-driver-dev-12-8_12.8.90-1_amd64.deb"
+  },
+  {
+    "name": "cuda-nvcc-12-8",
+    "version": "12.8.93-1",
+    "url": "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-nvcc-12-8_12.8.93-1_amd64.deb",
+    "sha256": "eaa8aaa7fc4bfbf8f4bf10fd5a29f04e0cf60142e1a61de42f03aba76835070e",
+    "bytes": 36043452,
+    "filename": "cuda-nvcc-12-8_12.8.93-1_amd64.deb"
+  },
+  {
+    "name": "cuda-nvvm-12-8",
+    "version": "12.8.93-1",
+    "url": "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-nvvm-12-8_12.8.93-1_amd64.deb",
+    "sha256": "9d27f5895dd5ea1bb8db3180faa30d5a3d2a50237ed5a82c2ec6b65665b6cba1",
+    "bytes": 43792884,
+    "filename": "cuda-nvvm-12-8_12.8.93-1_amd64.deb"
+  },
+  {
+    "name": "llama.cpp-source",
+    "version": "aa75ff3239f9cc675b081697deda9e1b112345c6",
+    "url": "https://codeload.github.com/ggml-org/llama.cpp/tar.gz/aa75ff3239f9cc675b081697deda9e1b112345c6",
+    "filename": "llama-aa75ff.tar.gz",
+    "sha256": "c3080ebdb4de6bcc30f048d14ff17a9572ff71adf0220367e0f429fc4f86f1de",
+    "bytes": 38846352
+  },
+  {
+    "name": "cmake",
+    "version": "3.31.6",
+    "url": "https://files.pythonhosted.org/packages/1e/52/85550dfcadca90b59809a1225461bfaadfcbbcc8fe62fa24f75edbe6e0b1/cmake-3.31.6-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl",
+    "sha256": "2297e9591307d9c61e557efe737bcf4d7c13a30f1f860732f684a204fee24dca",
+    "bytes": 26820570,
+    "filename": "cmake-3.31.6-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
+  },
+  {
+    "name": "ninja",
+    "version": "1.11.1.3",
+    "url": "https://files.pythonhosted.org/packages/6b/35/a8e38d54768e67324e365e2a41162be298f51ec93e6bd4b18d237d7250d8/ninja-1.11.1.3-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl",
+    "sha256": "a27e78ca71316c8654965ee94b286a98c83877bfebe2607db96897bbfe458af0",
+    "bytes": 422884,
+    "filename": "ninja-1.11.1.3-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
+  }
+]

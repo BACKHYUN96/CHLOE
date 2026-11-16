@@ -1,0 +1,29 @@
+{
+  "observed_at": "2026-11-13T16:22:21.341885+00:00",
+  "python_tests": {
+    "run": 29,
+    "passed": 29,
+    "skipped": 0,
+    "exit_code": 0
+  },
+  "javascript_logic_tests": {
+    "template": 5,
+    "delivered_packet": 5,
+    "passed": true,
+    "runner": "Node DOM harness, not a browser"
+  },
+  "responses_exactly_preserved": 80,
+  "reviewer_bundle_hashes_verified": true,
+  "zip_only_reviewer_files": true,
+  "all_delivered_ratings_null": true,
+  "base_weight_hash_verified": true,
+  "adapter_hash_verified": true,
+  "venv_freeze_unchanged": true,
+  "browser_visual_validation": {
+    "completed": false,
+    "reason": "Browser tool rejected file:// URL by protocol policy; no workaround attempted"
+  },
+  "human_review_completed": false,
+  "quality_improvement_verified": false,
+  "android_tested": false
+}

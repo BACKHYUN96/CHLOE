@@ -1,0 +1,51 @@
+{
+  "status": "exploratory_design_frozen_before_final_scoped_inference",
+  "model_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+  "source_suite": "matched-apps-plan.json",
+  "conditions": [
+    "baseline installed alpha15 persona/history unchanged",
+    "same questions/register/history and native runtime with policy-grounded system and post-generation app decision"
+  ],
+  "sampling": "same alpha15 4B CPU native path, temperature0 seed42 max384 context2048 prefill_threads4",
+  "evaluation": "GPT direct; known condition; raw quality and delivered policy quality separate; structurally invalid output not rescued; no trained-model improvement claim",
+  "policy_limits": "Only explicit standalone first-person Korean pet/app names and ownership; quoted standalone name values allowed, whole quoted assertions/third-party/conditional inputs ignored; ambiguous unquoted copula not guessed; narrow unavailable requests; no tools executed.",
+  "policy_source_sha256": "5fcc4902c4cd75530909a126b96ffcaf1d6a6636fce1fa5d899aa872d8510387",
+  "extra_checks": "fresh synthetic unseen names/negation/quoted/assistant assertions/multiple pets/clear/invalid-generation guards; not training data",
+  "fresh_baseline_reference_count": 6,
+  "baseline_reused": 54,
+  "comparison_cells": 108,
+  "baseline_reuse_decision": "Before policy output scoring,6 fresh unchanged references exactly matched old raw results; old54 preserved as baseline. Final scoped policy changes13 inputs/decisions;41 exact no-change cells explicitly reuse baseline outputs and ratings.",
+  "excluded_early_policy_completed": 2,
+  "fresh_final_policy_generations": 13,
+  "policy_alias_cells": 41,
+  "fresh_completed_final_and_reference_generations": 19,
+  "active_case_ids": [
+    "conv31",
+    "conv32",
+    "conv33",
+    "conv34",
+    "conv36",
+    "conv40",
+    "conv43",
+    "conv44",
+    "conv45",
+    "conv46",
+    "conv47",
+    "conv48",
+    "conv50"
+  ],
+  "excluded_global_policy_completed": 10,
+  "final_design": "Scoped after global-prompt pilot exposed unrelated dialogue regressions. Final source/active inputs fixed before all final scoped generations. No-fact/no-action cases return original prompt bytes and null decision; actual Java audit proves alias eligibility. Alias outputs and grades explicitly reused, not new inference or a fresh quality measurement.",
+  "development_history": [
+    "Original plan aimed at fresh108 calls;6 completed baseline references reproduced old raw6/6. Remaining redundant baseline calls were not completed.",
+    "Early ambiguity-edge policy pilot2 completed outputs excluded before semantic scoring.",
+    "Global-system-addition pilot10 completed outputs excluded; early observed dialogue regressions motivated scoped intervention. This is exploratory development, not a preregistered holdout.",
+    "Final source hash and actual54-input policy audit fixed before final13 fresh scoped outputs;41 no-change aliases are not new inference."
+  ],
+  "policy_source_hash_format": "LF-normalized SHA256; same source compiled into instrumentation and production manager",
+  "generation_policy_source_sha256": "4afbcc773eb076c13abd39e3d23b111ca8d79aa1c629b8789f44381a1c458e23",
+  "post_generation_review": "After raw drafts, negative/acknowledgement request guards tightened and polite fact recall made explicit about reported user ownership. Final actual Java audit proves model messages and decision action identical54/54; consumer replies replayed without new model generation. Final template is exploratory development, not frozen before draft review.",
+  "final_retraction_review": "Explicit retraction and ambiguous name-update invalidation added with edge tests. Actual final on-device policy audit exactly equals prior final54/54 including all messages/actions/replies; no inference or score changed.",
+  "policy_source": "training/snapshots/grounding-policy-20261115/GroundedConversationPolicy.java.txt",
+  "snapshot_note": "Prior v1 policy preserved with its original LF hash; current policy evolves separately."
+}

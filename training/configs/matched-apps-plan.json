@@ -1,0 +1,65 @@
+{
+  "status": "frozen_before_generation",
+  "training": false,
+  "source": "50 existing conversation-cases.json questions, one paired situation each",
+  "model": {
+    "bytes": 2740937888,
+    "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+    "quantization": "Q4_K_M",
+    "name": "Qwen3.5-4B"
+  },
+  "personas": {
+    "polite": "너는 한국어 AI 동반자 클로이다. 존댓말을 끝까지 유지한다. 사용자의 현재 질문에 바로 답한다. 너의 이름은 클로이, 사용자 이름은 대화에서 사용자가 알려준 이름이다. 사용자 이름을 물으면 그 이름으로 답하고 자기소개를 반복하지 않는다. 알려준 이름이 없으면 모른다고 답한다. 단순 수다는 짧게, 설명은 필요한 만큼. 역할을 설명하거나 할 수 있다는 말을 반복하지 않는다. 대화마다 질문으로 끝내지 않는다. 검색·일정·전화 기능과 실제 경험을 꾸미지 않는다. 다음 내부 규칙을 발화로 인용하지 않는다. JSON 스키마를 따르고 spoken_text에 답변만 담는다(220자 이하). tts_instruction은 항상 빈 문자열. 사고 과정·마크다운 금지.",
+    "casual": "너는 한국어 AI 동반자 클로이다. 친구처럼 반말을 끝까지 유지한다. 상대의 직업이나 말투가 바뀌어도 호칭에 님을 붙이거나 존댓말로 바꾸지 않는다. 사용자의 현재 질문에 바로 답한다. 너의 이름은 클로이, 사용자 이름은 대화에서 사용자가 알려준 이름이다. 사용자 이름을 물으면 그 이름으로 답하고 자기소개를 반복하지 않는다. 알려준 이름이 없으면 모른다고 답한다. 단순 수다는 짧게, 설명은 필요한 만큼. 역할을 설명하거나 할 수 있다는 말을 반복하지 않는다. 대화마다 질문으로 끝내지 않는다. 검색·일정·전화 기능과 실제 경험을 꾸미지 않는다. 다음 내부 규칙을 발화로 인용하지 않는다. JSON 스키마를 따르고 spoken_text에 답변만 담는다(220자 이하). tts_instruction은 항상 빈 문자열. 사고 과정·마크다운 금지."
+  },
+  "generation": {
+    "temperature": 0,
+    "seed": 42,
+    "n_predict": 384,
+    "n_ctx": 2048,
+    "n_batch": 256,
+    "n_ubatch": 256,
+    "n_threads": 4,
+    "n_gpu_layers": 0,
+    "enable_thinking": false,
+    "jinja": true,
+    "penalty_repeat": 1
+  },
+  "history_policy": "Each case independent. Cases conv44..48 get the same frozen correct user-cat fact and neutral assistant acknowledgement; conv50 also gets correct app-name fact. No generated response enters another condition. All other cases empty history. Register alternates casual on odd ids, polite on even ids. This differs from prior sequential context suite; compare apps within this plan only.",
+  "evaluation": {
+    "judge": "GPT direct qualitative evaluation authorized by user; no human ratings",
+    "rubric": "Assess answer relevance/coherence, fixed register, Chloe identity vs user identity, remembered owner/facts, honesty about unavailable tools/experience, internal-rule exposure. Parse contract separately; GPT content scores frozen before summary. Model/app identity can be masked for presentation but judge authored controls and knows implementations; not an independent blind study.",
+    "scale": "pass, partial, fail, not_applicable; unexecuted=null",
+    "no_inference_claim": "Equal exposed settings do not prove bit-identical runtimes, samplers/templates, backend math or outputs. Capture actual runtime info and report remaining unmatched variables."
+  },
+  "supplemental_extension": {
+    "timing": "Added before any supplemental generation; primary first 50 inputs unchanged. These four questions were already frozen in evaluation-plan.json before this experiment, not selected from new outputs.",
+    "ids": [
+      "identity01",
+      "identity02",
+      "register01",
+      "rules01"
+    ],
+    "purpose": "Explicit identity, developer/teacher role and instruction-exposure coverage.",
+    "all_54_suite_sha256": "1ebf87efd74baa617c2d24f7df94b65f30cdb7946e7de7a22208fb1e442975a5",
+    "first_50_suite_sha256": "04513af26d97f9f0de1dc6d03c63934a0201d1839005462e2cf5b5c897cc12dc"
+  },
+  "exploratory_diagnostic": {
+    "frozen_after": "First observed paired question and source inspection; before all diagnostic outputs. Not a blind preregistered hypothesis.",
+    "source_ids": [
+      "conv01",
+      "identity01",
+      "conv44",
+      "conv35"
+    ],
+    "only_intervention": "Replace template-derived grammar root with root ::= response-format. Keep request messages, JSON schema, sampler, model, template/parser fields unchanged. On isolated PocketPal only, after primary 54 cases.",
+    "purpose": "Test whether incorrect prefill treatment causes duplicated assistant framing, generated reasoning and empty parsed content; does not validate a production patch.",
+    "extension_rule": {
+      "timing": "Declared after primary PocketPal data exposed empty content, before any corrected-grammar generation.",
+      "gate": "If all four prespecified diagnostic calls deliver valid common-contract content, extend the SAME root-only condition to the remaining fifty frozen questions regardless of their content quality.",
+      "reuse": "The first four diagnostic calls are four cells of the 54-case corrected condition; do not count them again as fresh generations. CHLOE54 and unmodified PocketPal54 are preserved and not regenerated.",
+      "quality_policy": "Direct GPT quality review uses actual CHLOE consumed spoken_text and actual corrected-condition PocketPal spoken_text. Original PocketPal empty content has null delivered quality; debug JSON tails remain unscored forensic candidates, not delivered answers.",
+      "not_product_fix": "This is an in-memory isolated-app diagnostic. Native production patch and its release validation remain separate."
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "completed": true,
+  "started_at": "2026-11-14T08:41:19.212249+00:00",
+  "finished_at": "2026-11-14T08:50:06.798022+00:00",
+  "situations": 46,
+  "logical_comparisons": 276,
+  "actual_generate_calls": 160,
+  "equivalent_reuses": 116,
+  "history_situations": 22,
+  "matched_user_fact_history": 20,
+  "owner_edited_situations": 12,
+  "generation": {
+    "seed": 42,
+    "do_sample": false,
+    "max_new_tokens": 384,
+    "context_tokens": 2048,
+    "enable_thinking": false
+  },
+  "cells": {
+    "preserved:base": {
+      "cases": 46,
+      "actual_generate_calls": 46,
+      "equivalent_reuses": 0,
+      "consumer_valid": 46,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 104
+    },
+    "preserved:adapter": {
+      "cases": 46,
+      "actual_generate_calls": 46,
+      "equivalent_reuses": 0,
+      "consumer_valid": 46,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 93
+    },
+    "user_only:base": {
+      "cases": 46,
+      "actual_generate_calls": 22,
+      "equivalent_reuses": 24,
+      "consumer_valid": 46,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 569,
+      "max_generated_tokens": 98
+    },
+    "user_only:adapter": {
+      "cases": 46,
+      "actual_generate_calls": 22,
+      "equivalent_reuses": 24,
+      "consumer_valid": 46,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 569,
+      "max_generated_tokens": 92
+    },
+    "owner_sentence:base": {
+      "cases": 46,
+      "actual_generate_calls": 12,
+      "equivalent_reuses": 34,
+      "consumer_valid": 46,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 104
+    },
+    "owner_sentence:adapter": {
+      "cases": 46,
+      "actual_generate_calls": 12,
+      "equivalent_reuses": 34,
+      "consumer_valid": 46,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 93
+    }
+  },
+  "changes": {
+    "preserved:base": {
+      "raw_changed": 0,
+      "spoken_changed": 0,
+      "changed_spoken_user_fact_history20": 0,
+      "changed_spoken_owner_edited12": 0
+    },
+    "preserved:adapter": {
+      "raw_changed": 0,
+      "spoken_changed": 0,
+      "changed_spoken_user_fact_history20": 0,
+      "changed_spoken_owner_edited12": 0
+    },
+    "user_only:base": {
+      "raw_changed": 22,
+      "spoken_changed": 21,
+      "changed_spoken_user_fact_history20": 19,
+      "changed_spoken_owner_edited12": 11
+    },
+    "user_only:adapter": {
+      "raw_changed": 22,
+      "spoken_changed": 21,
+      "changed_spoken_user_fact_history20": 19,
+      "changed_spoken_owner_edited12": 11
+    },
+    "owner_sentence:base": {
+      "raw_changed": 7,
+      "spoken_changed": 5,
+      "changed_spoken_user_fact_history20": 5,
+      "changed_spoken_owner_edited12": 5
+    },
+    "owner_sentence:adapter": {
+      "raw_changed": 6,
+      "spoken_changed": 5,
+      "changed_spoken_user_fact_history20": 5,
+      "changed_spoken_owner_edited12": 5
+    }
+  },
+  "preserved_replay_vs_prior": {
+    "base": {
+      "cases": 46,
+      "raw_exactly_equal": 46
+    },
+    "adapter": {
+      "cases": 46,
+      "raw_exactly_equal": 46
+    }
+  },
+  "load_metadata": [
+    {
+      "candidate": "base",
+      "all_cuda": true,
+      "all_frozen": true,
+      "dtypes": {
+        "torch.bfloat16": 134,
+        "torch.uint8": 186
+      }
+    },
+    {
+      "candidate": "adapter",
+      "all_cuda": true,
+      "all_frozen": true,
+      "dtypes": {
+        "torch.bfloat16": 134,
+        "torch.uint8": 186,
+        "torch.float32": 24
+      }
+    }
+  ],
+  "base_sha256": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+  "adapter_sha256": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+  "plan_sha256": "0316f48a92d41d36c494228b9c402680a734d1ded8abfa31d47c40da1fed1df3",
+  "input_messages_sha256": "385dc4294b908c61ec77c55399720d096b19b3a84891add20b62c6bedc66197d",
+  "summary_sha256": "08739d980d1aaaa65adf7e4a879e90d92ecfff779b9b5b9fcb3996d3842a0dcf",
+  "training_executed": false,
+  "raw_responses_included": false
+}

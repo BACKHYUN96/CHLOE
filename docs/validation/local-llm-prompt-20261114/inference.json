@@ -1,0 +1,100 @@
+{
+  "started_at": "2026-11-14T00:54:09.640097+00:00",
+  "finished_at": "2026-11-14T01:38:57.609576+00:00",
+  "completed": true,
+  "total_results": 548,
+  "v1_results": 456,
+  "concise_results": 92,
+  "v1_original_fixed_condition_results": 432,
+  "v1_corrected_condition_results": 24,
+  "concise_preselected_fixed_condition_results": 80,
+  "concise_corrected_condition_results": 12,
+  "v1_situation_count": 114,
+  "concise_situation_count": 46,
+  "generation": {
+    "seed": 42,
+    "do_sample": false,
+    "max_new_tokens": 384,
+    "context_tokens": 2048,
+    "enable_thinking": false
+  },
+  "contract_mode": "constrained",
+  "cells": {
+    "original:base": {
+      "count": 114,
+      "json_syntax_valid": 114,
+      "schema_valid": 114,
+      "contract_valid": 114,
+      "eos_reached": 114,
+      "max_prompt_tokens": 607,
+      "max_generated_tokens": 160,
+      "generation_seconds_sum": 471.4287986339999
+    },
+    "original:adapter": {
+      "count": 114,
+      "json_syntax_valid": 114,
+      "schema_valid": 114,
+      "contract_valid": 114,
+      "eos_reached": 114,
+      "max_prompt_tokens": 612,
+      "max_generated_tokens": 160,
+      "generation_seconds_sum": 382.94692357800034
+    },
+    "revised:base": {
+      "count": 114,
+      "json_syntax_valid": 114,
+      "schema_valid": 114,
+      "contract_valid": 114,
+      "eos_reached": 114,
+      "max_prompt_tokens": 917,
+      "max_generated_tokens": 168,
+      "generation_seconds_sum": 464.3220695570007
+    },
+    "revised:adapter": {
+      "count": 114,
+      "json_syntax_valid": 114,
+      "schema_valid": 114,
+      "contract_valid": 114,
+      "eos_reached": 114,
+      "max_prompt_tokens": 897,
+      "max_generated_tokens": 168,
+      "generation_seconds_sum": 416.21541897799693
+    },
+    "concise:base": {
+      "count": 46,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "contract_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 718,
+      "max_generated_tokens": 116,
+      "generation_seconds_sum": 159.15762117499997
+    },
+    "concise:adapter": {
+      "count": 46,
+      "json_syntax_valid": 46,
+      "schema_valid": 46,
+      "contract_valid": 46,
+      "eos_reached": 46,
+      "max_prompt_tokens": 667,
+      "max_generated_tokens": 101,
+      "generation_seconds_sum": 146.4497162980001
+    }
+  },
+  "original_prompt_replay_vs_preserved_prior": {
+    "count": 216,
+    "raw_exactly_equal": 216,
+    "spoken_exactly_equal": 216
+  },
+  "plan_sha256": "73e40e9473ae9ffb94c3f1beaab48146f127c707be566a5fe865181e2bbafd58",
+  "source_summary_sha256": "f0b6aea417187c70bbc2675ee87dfac357863113ba0a6a037f4bb7e0123b8ac9",
+  "base_sha256": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+  "adapter_sha256": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+  "training_executed": false,
+  "android_changed": false,
+  "raw_responses_included": false,
+  "quality_review_source": "Separate GPT-session review of 276/548 responses",
+  "concise_source_summary_sha256": "f175e0f767e6fe6b38affa9cc037e8c76deaaf99a094cbe6f6af12a72fb421b7",
+  "concise_plan_sha256": "fcecd539c3f9f765ec0c108e65af8f0d2a727f5ae366109fbbad7c4ea4f5a09c",
+  "concise_followup_is_adaptive": true
+}

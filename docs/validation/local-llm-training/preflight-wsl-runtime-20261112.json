@@ -1,0 +1,61 @@
+{
+  "observed_at": "2026-11-11T16:00:55.969419+00:00",
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "wsl": true,
+  "wsl2": true,
+  "in_virtualenv": true,
+  "free_disk_bytes": 1015341154304,
+  "package_versions": {
+    "torch": "2.9.1+cu128",
+    "transformers": "5.23.0.dev0",
+    "peft": "0.21.3.dev0",
+    "trl": "1.18.0.dev0",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.15.0"
+  },
+  "training_executed": false,
+  "model_forward_verified": false,
+  "training_compatibility_verified": false,
+  "cuda_pytorch_verified": true,
+  "gpu": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=name,memory.total,driver_version",
+      "--format=csv,noheader"
+    ],
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 4070 SUPER, 12282 MiB, 616.92\n",
+    "stderr": ""
+  },
+  "runtime_probe": {
+    "returncode": 0,
+    "imports": {
+      "torch": {
+        "ok": true
+      },
+      "transformers": {
+        "ok": true
+      },
+      "peft": {
+        "ok": true
+      },
+      "trl": {
+        "ok": true
+      },
+      "bitsandbytes": {
+        "ok": true
+      },
+      "accelerate": {
+        "ok": true
+      }
+    },
+    "cuda_pytorch_verified": true,
+    "qwen35_text_class_imported": true,
+    "torch_cuda_build": "12.8",
+    "cuda_available": true,
+    "cuda_device": "NVIDIA GeForce RTX 4070 SUPER",
+    "bf16_supported": true
+  },
+  "environment_failures": []
+}

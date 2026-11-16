@@ -1,0 +1,26 @@
+{
+  "java_policy_and_actual_kotlin_manager_compiled": true,
+  "junit_exit_code": 0,
+  "json_jar_sha256": "3cf6cd6892e32e2b4c1c39e0f52f5248a2f5b37646fdfbb79a66b46b618414ed",
+  "jvm_tests_passed": 97,
+  "python_tests_total": 126,
+  "python_tests_passed": 123,
+  "python_optional_skipped": 3,
+  "deletion_or_abstention_only": 54,
+  "unchanged_model_inputs_and_grounding": 54,
+  "preservation": {
+    "chloe-alpha15-base.apk": "4d7ecb6da516b4b1d647428c05c13c69985aecae61728cab710a16d4f4e059a7",
+    "pocketpal-1.22.0-base.apk": "7856c7210da2486638e7cc7d9ff077308063b7e9b25642239835942e792fe80e",
+    "pocketpal-1.22.0-split_config.arm64_v8a.apk": "6ed5c0af7dfc8efebc371080cc819d1c840e535c74cce27ad35b4f5f6ea311ea",
+    "pocketpal-1.22.0-split_config.ko.apk": "94882c5e56f39cf0602bad1e6fb544beaae55632fc74b57e62e53dc8230dba27",
+    "pocketpal-1.22.0-split_config.xxhdpi.apk": "68e3840af7ff59d01b15be8ec9c2ffe1ac269ea785e65eb5e1020159d0651108",
+    "original_4b": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+    "trial_4b": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+    "original_chloe_settings_logs_contents_equal": true,
+    "base_2b": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+    "adapter_10step": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+    "pocket_private_db": "Not hash-accessible; non-debuggable original, isolated comparison package only."
+  },
+  "full_product_apk_ui_tts_verified": false,
+  "next_turn_generation_verified": false
+}

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "selection": "Fixed by requested domains before inspecting answer quality; no winner-based selection",
+  "groups": [
+    {"category": "반말", "registers": ["casual"], "cases": ["conv01", "conv17", "conv30", "register01"], "block": false},
+    {"category": "존댓말", "registers": ["polite"], "cases": ["conv01", "conv17", "conv30", "register01"], "block": false},
+    {"category": "자기소개", "registers": ["casual", "polite"], "cases": ["identity01", "identity02"], "block": false},
+    {"category": "정직성", "registers": ["casual", "polite"], "cases": ["conv31", "conv32", "conv35", "conv38"], "block": false},
+    {"category": "문맥 기억", "registers": ["casual", "polite"], "cases": ["conv41", "conv42", "conv43", "conv44", "conv45", "conv46", "conv47", "conv48", "conv49", "conv50"], "block": true}
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "planned_questions": 54,
+  "completed_pairs": 39,
+  "unpaired_questions": [
+    "conv40"
+  ],
+  "status": "paused_incomplete",
+  "new_generations": 79,
+  "planned_new_generations": 108,
+  "remaining_new_generations": 29,
+  "reused_outputs": 0,
+  "training_steps": 0,
+  "condition_completed_counts": {
+    "before": 39,
+    "after": 40
+  },
+  "gpt": {
+    "before": {
+      "raw": {
+        "fail": 11,
+        "partial": 17,
+        "pass": 11
+      },
+      "delivered": {
+        "fail": 6,
+        "partial": 18,
+        "pass": 15
+      }
+    },
+    "after": {
+      "raw": {
+        "fail": 13,
+        "partial": 16,
+        "pass": 11
+      },
+      "delivered": {
+        "fail": 9,
+        "partial": 15,
+        "pass": 16
+      }
+    }
+  },
+  "paired_final_gpt": {
+    "before": {
+      "fail": 6,
+      "partial": 18,
+      "pass": 15
+    },
+    "after": {
+      "fail": 9,
+      "partial": 15,
+      "pass": 15
+    }
+  },
+  "improved": 0,
+  "regressed": 3,
+  "transitions": {
+    "fail->fail": 6,
+    "partial->partial": 15,
+    "pass->pass": 15,
+    "partial->fail": 3
+  },
+  "model_input_changed": [
+    "conv17",
+    "conv20",
+    "conv29",
+    "conv35",
+    "conv37"
+  ],
+  "unchanged_input_controls_identical": 34,
+  "unchanged_input_controls_diverged": [],
+  "raw_contract_pass": 79,
+  "final_contract_pass": 79,
+  "blocked": 0,
+  "truncated": 0,
+  "max_prompt_tokens": 358,
+  "judgment_provenance": {
+    "identical previously directly judged speech; label reused, generation is fresh": 148,
+    "new text directly reviewed by GPT": 10
+  },
+  "judge": "Direct GPT assessment of completed Android outputs only: 79 completions, 39 pairs and one unpaired after output; exact previously judged speech labels reused explicitly. Remaining 29 requests not run. Not blind/independent/holdout.",
+  "limitations": "Fixed histories and one seed, not next-turn self-generated history or full product APK/UI/TTS. Model weights/adapter preserved; no retraining."
+}

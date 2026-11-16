@@ -1,0 +1,33 @@
+{
+  "observed_at": "2026-11-14T09:45:51.830770+00:00",
+  "tests": {
+    "run": 95,
+    "passed": 95,
+    "skipped": 0
+  },
+  "neutral_preserves_user_assistant_role_sequence": true,
+  "neutral_contains_no_added_user_facts": true,
+  "all_user_facts_exactly_preserved": true,
+  "newest_and_oldest_nested_edit_sequences_verified": true,
+  "actual_edit_counts_and_saturation_separated": true,
+  "shared_full_correction_input_and_alias_equivalence_verified": true,
+  "lost_assistant_library_facts_excluded_from_primary20": true,
+  "owner_omission_not_counted_as_correct": true,
+  "gpt_groups_exact_full_context_duplicates_only": true,
+  "gpt_verdicts_frozen_before_key": true,
+  "metadata_count_correction_neural_inputs_and_all_responses_unchanged": true,
+  "all_parameters_frozen_same_cuda_no_offload": true,
+  "base_hash_verified": true,
+  "adapter_hash_verified": true,
+  "venv_freeze_unchanged": true,
+  "app_persona_schema_cases_unchanged": true,
+  "original_user_ratings_unchanged": true,
+  "wrapper_decoder_source_unchanged": true,
+  "training_executed": false,
+  "model_downloaded": false,
+  "android_changed": false,
+  "android_tested": false,
+  "model_promotion_approved": false,
+  "raw_responses_committed": false,
+  "key_committed": false
+}

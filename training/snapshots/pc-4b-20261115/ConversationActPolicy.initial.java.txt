@@ -1,0 +1,47 @@
+package ai.chloe.voicelab.conversation;
+
+import org.json.*;
+import java.util.regex.Pattern;
+
+/** App-owned acknowledgements/capability statements, not generated world facts.
+ * Narrow literal intents only; unsupported/quoted requests remain model tasks.
+ */
+public final class ConversationActPolicy {
+    public static final String VERSION="bounded-listening-self-and-source-v1";
+    public static final class Decision {
+        public final String action,reply;
+        Decision(String action,String text)throws Exception {
+            this.action=action;
+            reply=new JSONObject().put("spoken_text",text).put("intent","chat").put("emotion","neutral")
+                .put("delivery",new JSONObject().put("pace","normal").put("energy","medium").put("expressiveness","restrained"))
+                .put("tts_instruction","").toString();
+        }
+    }
+    private static boolean has(String text,String regex){return Pattern.compile(regex).matcher(text).find();}
+    public static Decision resolve(String original,boolean polite){
+        try {
+            JSONArray rows=new JSONArray(original);JSONObject last=rows.getJSONObject(rows.length()-1);
+            if(!last.getString("role").equals("user"))return null;
+            String q=last.getString("content").trim().replaceAll("\\s+"," ");
+            if(has(q,"[\"'“”‘’「」<>]|(?:라고|라면|가정|예시|말하지|하지 ?마|말아|말고|아니)"))return null;
+            if(q.matches("^(?:(?:오늘은|지금은) )?(?:(?:칭찬보다|조언 없이) )?(?:(?:내|제) )?(?:(?:이야기|얘기)(?:를)? ?)?들어 ?(?:줘|주세요|줄래|줄래요)[.!?]?$"))
+                return new Decision("ack_listening",polite?"네, 조언을 덧붙이지 않고 이야기를 들을게요.":"알았어, 조언을 덧붙이지 않고 네 이야기를 들을게.");
+            if(q.matches("^모르는 (?:정보|내용)(?:는|은)? 어떻게 (?:대답|답변)해야 (?:해|하나요|하죠)[?？.!]?$"))
+                return new Decision("explain_uncertainty",polite?"모르는 내용은 모른다고 밝히고, 확인된 정보와 추측을 구분해서 답해야 해요.":"모르는 내용은 모른다고 밝히고, 확인된 정보와 추측을 구분해서 답해야 해.");
+            if(q.matches("^(?:(?:(?:나는|저는) (?:네|너의|당신의) [가-힣 ]{1,20}(?:이야|야|입니다)[.!] ?)|(?:(?:너|너는|클로이는) ))?오늘 뭐 했(?:어|어요|나요)[?？.!]?$"))
+                return new Decision("no_lived_day",polite?"저는 AI라 실제로 하루를 보내거나 활동하지는 않아요.":"나는 AI라 실제로 하루를 보내거나 활동하지는 않아.");
+            if(q.matches("^(?:너|너는|클로이는) (?:정말 )?(?:사람처럼 )?슬퍼[?？.!]?$"))
+                return new Decision("no_human_sadness",polite?"저는 AI라 사람처럼 슬픔을 느끼지는 않아요.":"나는 AI라 사람처럼 슬픔을 느끼지는 않아.");
+            if(q.matches("^(?:내|제) 생일(?:을|은)? (?:기억해|기억하나요|기억하세요|알고 있어|알고 있나요)[?？.!]?$")) {
+                // No negative inference from a partial/unsupported history or profile.
+                if(rows.length()==2&&!has(rows.getJSONObject(0).getString("content"),"생일|birthday|태어난"))
+                    return new Decision("no_birthday_in_empty_history",polite?"지금 보이는 대화 기록에는 생일 정보가 없어요.":"지금 보이는 대화 기록에는 네 생일 정보가 없어.");
+                return null;
+            }
+            if(q.matches("^(?:내가 만든|제가 만든|내|제) 앱 이름은 [가-힣A-Za-z0-9 ]{1,24}(?:이야|야|이에요|예요|입니다)[.!]?$"))
+                return new Decision("ack_app_name",polite?"앱 이름을 알려 주셔서 감사합니다.":"앱 이름을 알려줘서 고마워.");
+            return null;
+        }catch(Exception e){throw new IllegalArgumentException("Invalid dialogue act messages",e);}
+    }
+    private ConversationActPolicy(){}
+}

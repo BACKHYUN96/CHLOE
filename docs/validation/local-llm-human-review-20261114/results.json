@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "packet_id": "141357c08de6f67ec59400c4211ce4e8",
+  "review_status": "submitted_with_holds",
+  "human_review_submitted": true,
+  "reviewer_count": 1,
+  "all_cards_touched": true,
+  "all_cards_decided": false,
+  "quality_improvement_verified": false,
+  "unit": "card; a 10-turn context block counts once",
+  "cards": 22,
+  "paired_turns": 40,
+  "progress": {
+    "decided": 19,
+    "hold": 3,
+    "untouched": 0
+  },
+  "outcomes": {
+    "base": 0,
+    "adapter": 2,
+    "tie": 4,
+    "both_bad": 13,
+    "hold": 3,
+    "unrated": 0
+  },
+  "category_outcomes": {
+    "반말": {
+      "base": 0,
+      "adapter": 0,
+      "tie": 0,
+      "both_bad": 4,
+      "hold": 0,
+      "unrated": 0
+    },
+    "존댓말": {
+      "base": 0,
+      "adapter": 1,
+      "tie": 1,
+      "both_bad": 1,
+      "hold": 1,
+      "unrated": 0
+    },
+    "자기소개": {
+      "base": 0,
+      "adapter": 0,
+      "tie": 2,
+      "both_bad": 2,
+      "hold": 0,
+      "unrated": 0
+    },
+    "정직성": {
+      "base": 0,
+      "adapter": 1,
+      "tie": 1,
+      "both_bad": 6,
+      "hold": 0,
+      "unrated": 0
+    },
+    "문맥 기억": {
+      "base": 0,
+      "adapter": 0,
+      "tie": 0,
+      "both_bad": 0,
+      "hold": 2,
+      "unrated": 0
+    }
+  },
+  "register_outcomes": {
+    "casual": {
+      "base": 0,
+      "adapter": 1,
+      "tie": 1,
+      "both_bad": 8,
+      "hold": 1,
+      "unrated": 0
+    },
+    "polite": {
+      "base": 0,
+      "adapter": 1,
+      "tie": 3,
+      "both_bad": 5,
+      "hold": 2,
+      "unrated": 0
+    }
+  },
+  "exclusive_preferences": {
+    "base": 0,
+    "adapter": 2,
+    "total": 2
+  },
+  "numeric_scores": {
+    "base": {
+      "naturalness": {
+        "count": 0,
+        "mean": null
+      },
+      "content": {
+        "count": 0,
+        "mean": null
+      },
+      "criterion": {
+        "count": 0,
+        "mean": null
+      }
+    },
+    "adapter": {
+      "naturalness": {
+        "count": 0,
+        "mean": null
+      },
+      "content": {
+        "count": 0,
+        "mean": null
+      },
+      "criterion": {
+        "count": 0,
+        "mean": null
+      }
+    }
+  },
+  "commented_cards": 19,
+  "comments_included": false,
+  "card_mapping_included": false,
+  "model_responses_included": false,
+  "training_approved_by_submission": false,
+  "export_approval_created": false,
+  "aggregated_at": "2026-11-14T00:38:45.483591+00:00",
+  "ratings_sha256": "b74688a750d7a918964c3b4183b5617f91b44858c79d2644e8e6500ecb173024",
+  "packet_html_sha256": "94a140eebe8576e88c14ff7d4bb0bb28b18e7cdb3db622ece49dd71b4899c858",
+  "key_commitment_sha256": "19cc0462ef6ce2630838af365f736d509a731730a18fa8bafaa53099e691aab1",
+  "source_summary_sha256": "48bee8ec9edd464ac382c539209a3624c94716de90b20c3405dd56beb570d806"
+}

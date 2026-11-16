@@ -1,0 +1,107 @@
+{
+  "unit": "same GPT-rated situation; no raw responses or label mapping",
+  "cells": {
+    "original:base": {
+      "fixed": {
+        "count": 40,
+        "strict_all_applicable_pass": 5,
+        "register_pass": 28
+      },
+      "summary": {
+        "count": 2,
+        "strict_all_applicable_pass": 0,
+        "register_pass": 1
+      },
+      "follow": {
+        "count": 4,
+        "strict_all_applicable_pass": 1,
+        "register_pass": 4
+      }
+    },
+    "revised:base": {
+      "fixed": {
+        "count": 40,
+        "strict_all_applicable_pass": 2,
+        "register_pass": 15
+      },
+      "summary": {
+        "count": 2,
+        "strict_all_applicable_pass": 0,
+        "register_pass": 1
+      },
+      "follow": {
+        "count": 4,
+        "strict_all_applicable_pass": 0,
+        "register_pass": 1
+      }
+    },
+    "original:adapter": {
+      "fixed": {
+        "count": 40,
+        "strict_all_applicable_pass": 6,
+        "register_pass": 25
+      },
+      "summary": {
+        "count": 2,
+        "strict_all_applicable_pass": 0,
+        "register_pass": 1
+      },
+      "follow": {
+        "count": 4,
+        "strict_all_applicable_pass": 1,
+        "register_pass": 4
+      }
+    },
+    "revised:adapter": {
+      "fixed": {
+        "count": 40,
+        "strict_all_applicable_pass": 2,
+        "register_pass": 19
+      },
+      "summary": {
+        "count": 2,
+        "strict_all_applicable_pass": 0,
+        "register_pass": 1
+      },
+      "follow": {
+        "count": 4,
+        "strict_all_applicable_pass": 0,
+        "register_pass": 1
+      }
+    },
+    "concise:adapter": {
+      "fixed": {
+        "count": 40,
+        "strict_all_applicable_pass": 4,
+        "register_pass": 23
+      },
+      "summary": {
+        "count": 2,
+        "strict_all_applicable_pass": 0,
+        "register_pass": 1
+      },
+      "follow": {
+        "count": 4,
+        "strict_all_applicable_pass": 2,
+        "register_pass": 3
+      }
+    },
+    "concise:base": {
+      "fixed": {
+        "count": 40,
+        "strict_all_applicable_pass": 3,
+        "register_pass": 24
+      },
+      "summary": {
+        "count": 2,
+        "strict_all_applicable_pass": 0,
+        "register_pass": 1
+      },
+      "follow": {
+        "count": 4,
+        "strict_all_applicable_pass": 2,
+        "register_pass": 3
+      }
+    }
+  }
+}

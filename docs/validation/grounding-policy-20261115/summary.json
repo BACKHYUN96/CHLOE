@@ -1,0 +1,105 @@
+{
+  "comparison_cells": 108,
+  "fresh_final_policy_generations": 13,
+  "policy_alias_cells": 41,
+  "excluded_global_policy_completed": 10,
+  "frozen_baseline_reused": 54,
+  "fresh_baseline_references": {
+    "fresh_reference_count": 6,
+    "all_raw_exactly_match_frozen_baseline": true,
+    "interrupted_attempt_count": null,
+    "interrupted_attempt_note": "Incomplete requests during instrumentation restarts excluded; exact total attempts not reconstructed."
+  },
+  "excluded_early_policy_completed": 2,
+  "training_steps": 0,
+  "policy_source_sha256": "5fcc4902c4cd75530909a126b96ffcaf1d6a6636fce1fa5d899aa872d8510387",
+  "model_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+  "unchanged_user_assistant_messages": 54,
+  "actual_base_builder_and_final_consumer_pass": 54,
+  "fresh_native_parse_ok": 13,
+  "native_parse_ok": 54,
+  "truncated": 0,
+  "raw_contract_pass": 54,
+  "delivered_contract_pass": 54,
+  "policy_actions": {
+    "none": 47,
+    "unavailable_live_lookup": 2,
+    "unavailable_calendar": 1,
+    "unavailable_phone": 1,
+    "no_web_verification": 2,
+    "grounded_fact_recall": 1
+  },
+  "gpt_baseline": {
+    "pass": 15,
+    "partial": 20,
+    "fail": 19,
+    "unassessable": 0,
+    "assessable": 54
+  },
+  "gpt_raw": {
+    "pass": 16,
+    "partial": 21,
+    "fail": 17,
+    "unassessable": 0,
+    "assessable": 54
+  },
+  "gpt_delivered": {
+    "pass": 21,
+    "partial": 19,
+    "fail": 14,
+    "unassessable": 0,
+    "assessable": 54
+  },
+  "criteria_delivered": {
+    "content": {
+      "pass": 22,
+      "partial": 20,
+      "fail": 12
+    },
+    "register": {
+      "pass": 51,
+      "partial": 2,
+      "fail": 1
+    },
+    "honesty": {
+      "fail": 3,
+      "pass": 49,
+      "partial": 2
+    },
+    "identity_role": {
+      "not_applicable": 39,
+      "pass": 9,
+      "fail": 2,
+      "partial": 4
+    },
+    "memory": {
+      "not_applicable": 51,
+      "pass": 3
+    },
+    "instruction_handling": {
+      "not_applicable": 47,
+      "fail": 4,
+      "pass": 2,
+      "partial": 1
+    }
+  },
+  "raw_transitions": {
+    "('fail', 'fail')": 16,
+    "('partial', 'partial')": 19,
+    "('pass', 'pass')": 13,
+    "('fail', 'pass')": 3,
+    "('pass', 'partial')": 2,
+    "('partial', 'fail')": 1
+  },
+  "delivered_transitions": {
+    "('fail', 'fail')": 13,
+    "('partial', 'partial')": 18,
+    "('pass', 'pass')": 14,
+    "('fail', 'pass')": 6,
+    "('partial', 'pass')": 1,
+    "('pass', 'partial')": 1,
+    "('partial', 'fail')": 1
+  },
+  "judge": "GPT direct, known conditions, same author; not blind/independent/human",
+  "scope": "App grounding/deterministic decisions, not retrained-model quality. Current source manager unit-compiled; installed alpha15 native plus same policy bridge tested, no full updated product APK/TTS deployment."
+}

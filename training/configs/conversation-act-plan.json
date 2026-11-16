@@ -1,0 +1,27 @@
+{
+  "status": "final_rules_fixed_after_early_candidate_regressions_before_final_generations",
+  "candidate_plan": "training/configs/turn-guidance-plan.json",
+  "planned_final_generations": 7,
+  "final_act_cases": [
+    "conv17",
+    "conv20",
+    "conv29",
+    "conv35",
+    "conv37",
+    "conv49",
+    "register01"
+  ],
+  "selected_earlier_fresh_controls": 47,
+  "historical_output_replays": 0,
+  "selection": "Reject generation-time guidance as a whole due early role/register regressions. Final model inputs return to frozen before path. Keep every candidate result. Bounded app-owned acts, no world-fact synthesis. Regenerate all act cases; other within-experiment fresh after controls require unchanged actual request and no act.",
+  "quality": "Direct GPT review of changed outcomes, same exact text judgments reused explicitly. Development selection, not blind/independent/holdout.",
+  "source_hashes": {
+    "app/src/main/java/ai/chloe/voicelab/conversation/ConversationEngine.kt": "0ff49af58d57b6a4a10a07d0e9614d5801a3a690ce20a908723fcab25471e03c",
+    "training/snapshots/pc-4b-20261115/ConversationActPolicy.initial.java.txt": "7882c052ad1cde219dd3c0e664036bb44b63a1387931e094940e63f8855b21bf"
+  },
+  "final_suite_lf_sha256": "1353352d0656e9dc6591a3611a38e6ad5b4e5a718df23face62f72992470e3a3",
+  "platform": "Android continuation plan, superseded by separate PC comparison for this task",
+  "execution_status": "Android final 7 not executed; see pc-4b-plan.json and separate PC results",
+  "post_run_guard_refinement": "After main PC generation, third-person Chloe aliases were removed from AI day/emotion intent detection to avoid treating a user pet/app named Chloe as the AI. Selected 54 request/decision outputs must remain equal under final JVM reconsumption; no native prompt or score selection changes.",
+  "final_policy_source_lf_sha256": "81cb849050a0f9d6cab5c8b463c7bf2b3e2a82932ed79f25ad4e9a43248e11df"
+}

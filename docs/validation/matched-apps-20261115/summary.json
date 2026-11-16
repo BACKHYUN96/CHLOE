@@ -1,0 +1,108 @@
+{
+  "recorded_primary_generations": 108,
+  "recorded_exploratory_generations": 54,
+  "training_steps_this_experiment": 0,
+  "questions": 54,
+  "common_model_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+  "chloe_actual_prompt_equal": 54,
+  "chloe_actual_consumer_nonfallback": 54,
+  "chloe_common_contract_pass": 54,
+  "pocket_actual_completion_request_controls_match": 54,
+  "pocket_nonempty_delivered_content": 0,
+  "pocket_common_contract_pass": 0,
+  "pocket_frame_restarts": 54,
+  "pocket_generated_thinking_blocks": 54,
+  "pocket_token_limit_stops": 9,
+  "gpt_chloe": {
+    "pass": 15,
+    "partial": 20,
+    "fail": 19,
+    "unassessable": 0,
+    "assessable": 54
+  },
+  "gpt_pocket_delivered_language_quality": null,
+  "gpt_pocket_debug_candidates_only": null,
+  "diagnostic_nonempty_content": 54,
+  "diagnostic_common_contract_pass": 54,
+  "diagnostic_frame_restarts": 0,
+  "diagnostic_thinking_blocks": 0,
+  "corrected_questions": 54,
+  "gpt_corrected": {
+    "pass": 18,
+    "partial": 16,
+    "fail": 20,
+    "unassessable": 0,
+    "assessable": 54
+  },
+  "criteria_chloe": {
+    "content": {
+      "pass": 17,
+      "partial": 20,
+      "fail": 17
+    },
+    "register": {
+      "pass": 51,
+      "partial": 2,
+      "fail": 1
+    },
+    "honesty": {
+      "fail": 7,
+      "pass": 44,
+      "partial": 3
+    },
+    "identity_role": {
+      "not_applicable": 37,
+      "pass": 8,
+      "fail": 4,
+      "partial": 5
+    },
+    "memory": {
+      "not_applicable": 51,
+      "fail": 1,
+      "pass": 2
+    },
+    "instruction_handling": {
+      "not_applicable": 47,
+      "fail": 4,
+      "pass": 2,
+      "partial": 1
+    }
+  },
+  "criteria_corrected": {
+    "content": {
+      "pass": 22,
+      "partial": 16,
+      "fail": 16
+    },
+    "register": {
+      "pass": 49,
+      "fail": 3,
+      "partial": 2
+    },
+    "honesty": {
+      "fail": 7,
+      "pass": 44,
+      "partial": 3
+    },
+    "identity_role": {
+      "not_applicable": 33,
+      "pass": 13,
+      "fail": 4,
+      "partial": 4
+    },
+    "memory": {
+      "not_applicable": 51,
+      "fail": 1,
+      "pass": 2
+    },
+    "instruction_handling": {
+      "not_applicable": 47,
+      "pass": 4,
+      "fail": 2,
+      "partial": 1
+    }
+  },
+  "exact_spoken_text_matches": 11,
+  "judge": "GPT direct, same author and known app identities; not independent blind or human ratings",
+  "quality_limit": "Extracted debug candidates are analysis-only; unavailable delivered content is null, never a numeric quality zero or a delivered success."
+}

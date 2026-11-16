@@ -2,7 +2,7 @@ package ai.chloe.voicelab.conversation
 
 import org.json.JSONObject
 
-data class DirectedReply(val spokenText:String,val intent:String="chat",val emotion:String="neutral",val pace:String="normal",val energy:String="medium",val expressiveness:String="restrained",val instruction:String="",val fallback:Boolean=false,val failureCode:String="none")
+data class DirectedReply(val spokenText:String,val intent:String="chat",val emotion:String="neutral",val pace:String="normal",val energy:String="medium",val expressiveness:String="restrained",val instruction:String="",val fallback:Boolean=false,val failureCode:String="none",val policyAction:String="none",val economyAction:String="none",val integrityAction:String="none",val dialogueAction:String="none")
 interface ConversationEngine { fun request(messages:String,model:String); fun stop() }
 interface LocalLlmEngine:ConversationEngine
 class PersonaManager {
@@ -50,13 +50,35 @@ class TtsInstructionMapper {
 }
 class ConversationManager {
     val context=DialogueContextManager();private val persona=PersonaManager();private val director=VoiceDirector()
-    fun prompt(input:String,polite:Boolean):String {require(input.isNotBlank() && input.length<=400);return context.messages(persona.system(polite),input)}
-    fun accept(input:String,raw:String):DirectedReply=director.parse(raw).also{if(it.failureCode in setOf("none","invalid_direction","plain_text"))context.add(input,it.spokenText)}
+    private var requestedPolite=true
+    fun prompt(input:String,polite:Boolean):String {require(input.isNotBlank() && input.length<=400);requestedPolite=polite;return GroundedConversationPolicy.ground(context.messages(persona.system(polite),input))}
+    fun accept(input:String,raw:String):DirectedReply {
+        val parsed=director.parse(raw)
+        // Rebuild from current bounded history: clearing context also clears facts.
+        // Unrecoverable/empty generation remains failure; policy needs usable speech.
+        val decision=if(parsed.failureCode in setOf("none","invalid_direction","plain_text"))GroundedConversationPolicy.resolve(context.messages(persona.system(requestedPolite),input),requestedPolite) else null
+        val act=if(decision==null && parsed.failureCode in setOf("none","invalid_direction","plain_text"))ConversationActPolicy.resolve(context.messages(persona.system(requestedPolite),input),requestedPolite) else null
+        val grounded=when {
+            decision!=null -> director.parse(decision.reply).copy(policyAction=decision.action)
+            act!=null -> director.parse(act.reply).copy(dialogueAction=act.action)
+            else -> parsed
+        }
+        val economy=if(grounded.failureCode in setOf("none","invalid_direction","plain_text"))ReplyEconomyPolicy.apply(input,grounded.spokenText) else null
+        val economical=if(economy==null)grounded else grounded.copy(spokenText=economy.text,economyAction=economy.action)
+        val integrity=if(economical.failureCode in setOf("none","invalid_direction","plain_text"))ReplyIntegrityPolicy.apply(input,economical.spokenText) else null
+        val reply=when {
+            integrity==null -> economical
+            integrity.blocked -> economical.copy(spokenText=if(requestedPolite)"답변을 제대로 완성하지 못했어요." else "답변을 제대로 완성하지 못했어.",fallback=true,failureCode="unusable_reply",integrityAction=integrity.action)
+            else -> economical.copy(spokenText=integrity.text,integrityAction=integrity.action)
+        }
+        if(reply.failureCode in setOf("none","invalid_direction","plain_text"))context.add(input,reply.spokenText)
+        return reply
+    }
 }
 class SpeechRegisterCheck {
     // Advisory only: quoted material and nouns can produce false positives.
     fun suspectedPoliteEnding(text:String):Boolean = Regex("(?:[가-힣]+(?:요|습니다|습니까|십시오)|개발자님)(?=[.!?…\\s]|$)").containsMatchIn(text)
 }
 class ConversationEvaluator {
-    fun structural(reply:DirectedReply,polite:Boolean?=null)=JSONObject().put("fallback",reply.fallback).put("failure_code",reply.failureCode).put("length",reply.spokenText.length).put("register_warning",if(polite==false)SpeechRegisterCheck().suspectedPoliteEnding(reply.spokenText) else JSONObject.NULL).put("human_naturalness",JSONObject.NULL).put("factual_accuracy",JSONObject.NULL)
+    fun structural(reply:DirectedReply,polite:Boolean?=null)=JSONObject().put("fallback",reply.fallback).put("failure_code",reply.failureCode).put("policy_action",reply.policyAction).put("economy_action",reply.economyAction).put("reply_economy_version",ReplyEconomyPolicy.VERSION).put("integrity_action",reply.integrityAction).put("reply_integrity_version",ReplyIntegrityPolicy.VERSION).put("dialogue_action",reply.dialogueAction).put("conversation_act_version",ConversationActPolicy.VERSION).put("length",reply.spokenText.length).put("register_warning",if(polite==false)SpeechRegisterCheck().suspectedPoliteEnding(reply.spokenText) else JSONObject.NULL).put("human_naturalness",JSONObject.NULL).put("factual_accuracy",JSONObject.NULL)
 }

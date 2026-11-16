@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "status": "frozen_before_comparison_generation",
+  "questions": "same 46 quality situations and exact original-base histories from runtime-ablation-20261114/inputs.local.json",
+  "wrapper": "unchanged llm_runtime.load_base + llm_runtime.infer(contract_mode=constrained)",
+  "official": "installed official Qwen3_5ForCausalLM.from_pretrained without explicit config or key_mapping; independently render official template to string, tokenize(add_special_tokens=False), model.generate and decode",
+  "shared": "local pinned checkpoint/tokenizer/adapter; NF4 double quant BF16 compute, eager attention same CUDA GPU; frozen original persona/schema/history; official no-thinking template; same XGrammar processor; seed42 greedy max384/context2048 stop248044/248046; no truncation/offload",
+  "not_a_default_recipe_comparison": "Keep app prompt/schema and decoder identical. Official API path is not a different model architecture or vendor-hosted service; both use the same installed Qwen3_5ForCausalLM implementation. Do not compare vendor sampling defaults to app greedy.",
+  "evidence": ["full loaded state_dict tensor hashes including quantization state", "config/generation config differences", "embedding/head tying", "all actual generate inputs/kwargs/output token IDs", "all 46 last-position prefill logits", "raw reply/EOS/consumer equality", "same GPT rubric direct review"],
+  "execution": "184 actual generate calls: 46 situations x 2 paths x 2 candidates, no response aliases. Re-run current wrapper to check agreement with preserved baseline.",
+  "review": "Prepare new masked four-candidate packet; GPT directly fixes explicit item judgments before opening key; identical displayed content must have identical judgments; content/consumer distinct; no regex scores or external judge API.",
+  "limits": "Same GPT author/evaluator, known questions, single seed, NF4 eager shared library and decoder, common history contains prior baseline errors. Exact path equality rules out path-specific differences in this tested scope, not bugs shared by both paths, clean-history rollout behavior or general model capability. No retraining/download/update/merge/export/Android changes."
+}

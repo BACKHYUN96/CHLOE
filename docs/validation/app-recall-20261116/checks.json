@@ -1,0 +1,31 @@
+{
+  "fresh_requests": 240,
+  "independent_actual_history_reconstructed": true,
+  "exact_scripted_inputs": true,
+  "settings_verified": true,
+  "negative_controls": {
+    "missing": "rejected",
+    "sampling": "rejected",
+    "mixed_history": "rejected"
+  },
+  "baseline_reproduced_prior_after": 106,
+  "control_action_checks": 14,
+  "jvm_tests_passed": 137,
+  "offloaded_layers": "33/33",
+  "direct_new_context_speech_groups": 29,
+  "native_exit": {
+    "generations": 240,
+    "worker_exit_code": 0,
+    "bridge_exit_codes": [
+      0,
+      0
+    ]
+  },
+  "preservation_sha256": {
+    "base_2b": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+    "adapter_2b_10step": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+    "same_4b_gguf": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+    "previous_phone_results": "5113fa74b706708d24d5c69b050c2cb4d5c7cd9c182966593a1d7eaf75a905bd"
+  },
+  "phone_test_this_round": false
+}

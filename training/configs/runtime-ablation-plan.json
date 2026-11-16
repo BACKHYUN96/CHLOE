@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "status": "frozen_before_generation",
+  "prompt": "original existing app persona only; no prompt edits",
+  "questions": "same 46 preselected fixed/summary/follow situations from prompt-comparison-plan.json",
+  "common_history": "Exact preserved original-base messages from prompt-20261114-v1, frozen identically for both models and all conditions. Includes previous baseline errors. This measures direct conditional effects, not self-generated rollout quality.",
+  "conditions": {
+    "baseline": {"precision":"nf4", "template":"official", "decoder":"constrained"},
+    "training_template": {"precision":"nf4", "template":"training", "decoder":"constrained"},
+    "bf16": {"precision":"bf16", "template":"official", "decoder":"constrained"},
+    "decoder_off": {"precision":"nf4", "template":"official", "decoder":"off"}
+  },
+  "one_factor_rule": "Each non-baseline condition differs in exactly one setting. Schema-conditioned system messages, seed42, greedy, thinking=false, stop IDs, max384/context2048, GPU, source checkpoint and adapter remain fixed.",
+  "equivalent_template_policy": "If official/training input token IDs are exactly equal, reuse this run's same-model baseline response with an explicit alias record; do not count it as a second generate call.",
+  "decoder_off_policy": "Remove only the logits processor, retain the exact schema-conditioned input. Never repair JSON or silently accept invalid enum/schema. Content from valid JSON spoken_text can be diagnostic even when consumer validation fails. For malformed JSON the GPT reviewer reads raw output directly; no regex extraction or repaired app response.",
+  "bf16_policy": "Full BF16 on the same CUDA GPU, no CPU/disk inference offload, no model download, no merge. Record OOM/failure if it cannot run; do not substitute a CPU run as the same-factor control.",
+  "review": {
+    "kind":"gpt_session", "human_review":false, "masked_before_annotation":true,
+    "base_rubric":"prompt-comparison-plan.json review; same applicable dimensions",
+    "extra_value":"unassessable for genuinely unreadable/missing content, separate from failure and not_applicable",
+    "endpoints":["content_strict_all_applicable_pass", "app_usable_strict_pass", "json_syntax/schema/consumer/EOS", "exact response changes"],
+    "limitations":"Same GPT authored code and judges outputs; known repeated questions; no independent holdout, no full factorial interactions, no app rollout claim. Preserve historical human/GPT reviews separately."
+  }
+}

@@ -1,0 +1,4802 @@
+[
+  {
+    "situation_id": "fixed:casual:conv01",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 477,
+      "user_only": 477,
+      "neutral": 477,
+      "newest1": 477,
+      "oldest1": 477,
+      "newest2": 477,
+      "oldest2": 477,
+      "newest3": 477,
+      "oldest3": 477,
+      "newest4": 477,
+      "oldest4": 477
+    },
+    "token_hashes": {
+      "preserved": "c624f0290ee2556abe44f29bc2f9976e614b01c7e15c409c6bbf127299aeecf2",
+      "user_only": "c624f0290ee2556abe44f29bc2f9976e614b01c7e15c409c6bbf127299aeecf2",
+      "neutral": "c624f0290ee2556abe44f29bc2f9976e614b01c7e15c409c6bbf127299aeecf2",
+      "newest1": "c624f0290ee2556abe44f29bc2f9976e614b01c7e15c409c6bbf127299aeecf2",
+      "oldest1": "c624f0290ee2556abe44f29bc2f9976e614b01c7e15c409c6bbf127299aeecf2",
+      "newest2": "c624f0290ee2556abe44f29bc2f9976e614b01c7e15c409c6bbf127299aeecf2",
+      "oldest2": "c624f0290ee2556abe44f29bc2f9976e614b01c7e15c409c6bbf127299aeecf2",
+      "newest3": "c624f0290ee2556abe44f29bc2f9976e614b01c7e15c409c6bbf127299aeecf2",
+      "oldest3": "c624f0290ee2556abe44f29bc2f9976e614b01c7e15c409c6bbf127299aeecf2",
+      "newest4": "c624f0290ee2556abe44f29bc2f9976e614b01c7e15c409c6bbf127299aeecf2",
+      "oldest4": "c624f0290ee2556abe44f29bc2f9976e614b01c7e15c409c6bbf127299aeecf2"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:casual:conv17",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 479,
+      "user_only": 479,
+      "neutral": 479,
+      "newest1": 479,
+      "oldest1": 479,
+      "newest2": 479,
+      "oldest2": 479,
+      "newest3": 479,
+      "oldest3": 479,
+      "newest4": 479,
+      "oldest4": 479
+    },
+    "token_hashes": {
+      "preserved": "3b20a656a36795a4af9b154013ff9daa70a07d29231de64c1f970f81f8ef7939",
+      "user_only": "3b20a656a36795a4af9b154013ff9daa70a07d29231de64c1f970f81f8ef7939",
+      "neutral": "3b20a656a36795a4af9b154013ff9daa70a07d29231de64c1f970f81f8ef7939",
+      "newest1": "3b20a656a36795a4af9b154013ff9daa70a07d29231de64c1f970f81f8ef7939",
+      "oldest1": "3b20a656a36795a4af9b154013ff9daa70a07d29231de64c1f970f81f8ef7939",
+      "newest2": "3b20a656a36795a4af9b154013ff9daa70a07d29231de64c1f970f81f8ef7939",
+      "oldest2": "3b20a656a36795a4af9b154013ff9daa70a07d29231de64c1f970f81f8ef7939",
+      "newest3": "3b20a656a36795a4af9b154013ff9daa70a07d29231de64c1f970f81f8ef7939",
+      "oldest3": "3b20a656a36795a4af9b154013ff9daa70a07d29231de64c1f970f81f8ef7939",
+      "newest4": "3b20a656a36795a4af9b154013ff9daa70a07d29231de64c1f970f81f8ef7939",
+      "oldest4": "3b20a656a36795a4af9b154013ff9daa70a07d29231de64c1f970f81f8ef7939"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:casual:conv30",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 480,
+      "user_only": 480,
+      "neutral": 480,
+      "newest1": 480,
+      "oldest1": 480,
+      "newest2": 480,
+      "oldest2": 480,
+      "newest3": 480,
+      "oldest3": 480,
+      "newest4": 480,
+      "oldest4": 480
+    },
+    "token_hashes": {
+      "preserved": "4ed209b533ae2848091935a6704ec49f9a0125f748403bf844408e4e0cd58c02",
+      "user_only": "4ed209b533ae2848091935a6704ec49f9a0125f748403bf844408e4e0cd58c02",
+      "neutral": "4ed209b533ae2848091935a6704ec49f9a0125f748403bf844408e4e0cd58c02",
+      "newest1": "4ed209b533ae2848091935a6704ec49f9a0125f748403bf844408e4e0cd58c02",
+      "oldest1": "4ed209b533ae2848091935a6704ec49f9a0125f748403bf844408e4e0cd58c02",
+      "newest2": "4ed209b533ae2848091935a6704ec49f9a0125f748403bf844408e4e0cd58c02",
+      "oldest2": "4ed209b533ae2848091935a6704ec49f9a0125f748403bf844408e4e0cd58c02",
+      "newest3": "4ed209b533ae2848091935a6704ec49f9a0125f748403bf844408e4e0cd58c02",
+      "oldest3": "4ed209b533ae2848091935a6704ec49f9a0125f748403bf844408e4e0cd58c02",
+      "newest4": "4ed209b533ae2848091935a6704ec49f9a0125f748403bf844408e4e0cd58c02",
+      "oldest4": "4ed209b533ae2848091935a6704ec49f9a0125f748403bf844408e4e0cd58c02"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:casual:conv31",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 476,
+      "user_only": 476,
+      "neutral": 476,
+      "newest1": 476,
+      "oldest1": 476,
+      "newest2": 476,
+      "oldest2": 476,
+      "newest3": 476,
+      "oldest3": 476,
+      "newest4": 476,
+      "oldest4": 476
+    },
+    "token_hashes": {
+      "preserved": "4227ef8a0fa4d2e8e68f28218b9008424e7773bba884cf536402a3ac97f17f99",
+      "user_only": "4227ef8a0fa4d2e8e68f28218b9008424e7773bba884cf536402a3ac97f17f99",
+      "neutral": "4227ef8a0fa4d2e8e68f28218b9008424e7773bba884cf536402a3ac97f17f99",
+      "newest1": "4227ef8a0fa4d2e8e68f28218b9008424e7773bba884cf536402a3ac97f17f99",
+      "oldest1": "4227ef8a0fa4d2e8e68f28218b9008424e7773bba884cf536402a3ac97f17f99",
+      "newest2": "4227ef8a0fa4d2e8e68f28218b9008424e7773bba884cf536402a3ac97f17f99",
+      "oldest2": "4227ef8a0fa4d2e8e68f28218b9008424e7773bba884cf536402a3ac97f17f99",
+      "newest3": "4227ef8a0fa4d2e8e68f28218b9008424e7773bba884cf536402a3ac97f17f99",
+      "oldest3": "4227ef8a0fa4d2e8e68f28218b9008424e7773bba884cf536402a3ac97f17f99",
+      "newest4": "4227ef8a0fa4d2e8e68f28218b9008424e7773bba884cf536402a3ac97f17f99",
+      "oldest4": "4227ef8a0fa4d2e8e68f28218b9008424e7773bba884cf536402a3ac97f17f99"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:casual:conv32",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 478,
+      "user_only": 478,
+      "neutral": 478,
+      "newest1": 478,
+      "oldest1": 478,
+      "newest2": 478,
+      "oldest2": 478,
+      "newest3": 478,
+      "oldest3": 478,
+      "newest4": 478,
+      "oldest4": 478
+    },
+    "token_hashes": {
+      "preserved": "faa68f3f5a14dce528ce606c72b6372949ef45a031cff1850b0ba6b1fdf1a1a9",
+      "user_only": "faa68f3f5a14dce528ce606c72b6372949ef45a031cff1850b0ba6b1fdf1a1a9",
+      "neutral": "faa68f3f5a14dce528ce606c72b6372949ef45a031cff1850b0ba6b1fdf1a1a9",
+      "newest1": "faa68f3f5a14dce528ce606c72b6372949ef45a031cff1850b0ba6b1fdf1a1a9",
+      "oldest1": "faa68f3f5a14dce528ce606c72b6372949ef45a031cff1850b0ba6b1fdf1a1a9",
+      "newest2": "faa68f3f5a14dce528ce606c72b6372949ef45a031cff1850b0ba6b1fdf1a1a9",
+      "oldest2": "faa68f3f5a14dce528ce606c72b6372949ef45a031cff1850b0ba6b1fdf1a1a9",
+      "newest3": "faa68f3f5a14dce528ce606c72b6372949ef45a031cff1850b0ba6b1fdf1a1a9",
+      "oldest3": "faa68f3f5a14dce528ce606c72b6372949ef45a031cff1850b0ba6b1fdf1a1a9",
+      "newest4": "faa68f3f5a14dce528ce606c72b6372949ef45a031cff1850b0ba6b1fdf1a1a9",
+      "oldest4": "faa68f3f5a14dce528ce606c72b6372949ef45a031cff1850b0ba6b1fdf1a1a9"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:casual:conv35",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 477,
+      "user_only": 477,
+      "neutral": 477,
+      "newest1": 477,
+      "oldest1": 477,
+      "newest2": 477,
+      "oldest2": 477,
+      "newest3": 477,
+      "oldest3": 477,
+      "newest4": 477,
+      "oldest4": 477
+    },
+    "token_hashes": {
+      "preserved": "f6e023b70acb6db506402b9eab1d814fc159637dbd25b9f7208d64dfa295e43d",
+      "user_only": "f6e023b70acb6db506402b9eab1d814fc159637dbd25b9f7208d64dfa295e43d",
+      "neutral": "f6e023b70acb6db506402b9eab1d814fc159637dbd25b9f7208d64dfa295e43d",
+      "newest1": "f6e023b70acb6db506402b9eab1d814fc159637dbd25b9f7208d64dfa295e43d",
+      "oldest1": "f6e023b70acb6db506402b9eab1d814fc159637dbd25b9f7208d64dfa295e43d",
+      "newest2": "f6e023b70acb6db506402b9eab1d814fc159637dbd25b9f7208d64dfa295e43d",
+      "oldest2": "f6e023b70acb6db506402b9eab1d814fc159637dbd25b9f7208d64dfa295e43d",
+      "newest3": "f6e023b70acb6db506402b9eab1d814fc159637dbd25b9f7208d64dfa295e43d",
+      "oldest3": "f6e023b70acb6db506402b9eab1d814fc159637dbd25b9f7208d64dfa295e43d",
+      "newest4": "f6e023b70acb6db506402b9eab1d814fc159637dbd25b9f7208d64dfa295e43d",
+      "oldest4": "f6e023b70acb6db506402b9eab1d814fc159637dbd25b9f7208d64dfa295e43d"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:casual:conv38",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 478,
+      "user_only": 478,
+      "neutral": 478,
+      "newest1": 478,
+      "oldest1": 478,
+      "newest2": 478,
+      "oldest2": 478,
+      "newest3": 478,
+      "oldest3": 478,
+      "newest4": 478,
+      "oldest4": 478
+    },
+    "token_hashes": {
+      "preserved": "24e7ab8e08c9b24a85a43b02f4aeb5d5d17a7a9d6ebc461211a6b3846cbaac1d",
+      "user_only": "24e7ab8e08c9b24a85a43b02f4aeb5d5d17a7a9d6ebc461211a6b3846cbaac1d",
+      "neutral": "24e7ab8e08c9b24a85a43b02f4aeb5d5d17a7a9d6ebc461211a6b3846cbaac1d",
+      "newest1": "24e7ab8e08c9b24a85a43b02f4aeb5d5d17a7a9d6ebc461211a6b3846cbaac1d",
+      "oldest1": "24e7ab8e08c9b24a85a43b02f4aeb5d5d17a7a9d6ebc461211a6b3846cbaac1d",
+      "newest2": "24e7ab8e08c9b24a85a43b02f4aeb5d5d17a7a9d6ebc461211a6b3846cbaac1d",
+      "oldest2": "24e7ab8e08c9b24a85a43b02f4aeb5d5d17a7a9d6ebc461211a6b3846cbaac1d",
+      "newest3": "24e7ab8e08c9b24a85a43b02f4aeb5d5d17a7a9d6ebc461211a6b3846cbaac1d",
+      "oldest3": "24e7ab8e08c9b24a85a43b02f4aeb5d5d17a7a9d6ebc461211a6b3846cbaac1d",
+      "newest4": "24e7ab8e08c9b24a85a43b02f4aeb5d5d17a7a9d6ebc461211a6b3846cbaac1d",
+      "oldest4": "24e7ab8e08c9b24a85a43b02f4aeb5d5d17a7a9d6ebc461211a6b3846cbaac1d"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:casual:conv41",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 481,
+      "user_only": 481,
+      "neutral": 481,
+      "newest1": 481,
+      "oldest1": 481,
+      "newest2": 481,
+      "oldest2": 481,
+      "newest3": 481,
+      "oldest3": 481,
+      "newest4": 481,
+      "oldest4": 481
+    },
+    "token_hashes": {
+      "preserved": "37aaa0bc991f992f9a9b2c19a86b1708f4a320dd46962fd100a112fe28526143",
+      "user_only": "37aaa0bc991f992f9a9b2c19a86b1708f4a320dd46962fd100a112fe28526143",
+      "neutral": "37aaa0bc991f992f9a9b2c19a86b1708f4a320dd46962fd100a112fe28526143",
+      "newest1": "37aaa0bc991f992f9a9b2c19a86b1708f4a320dd46962fd100a112fe28526143",
+      "oldest1": "37aaa0bc991f992f9a9b2c19a86b1708f4a320dd46962fd100a112fe28526143",
+      "newest2": "37aaa0bc991f992f9a9b2c19a86b1708f4a320dd46962fd100a112fe28526143",
+      "oldest2": "37aaa0bc991f992f9a9b2c19a86b1708f4a320dd46962fd100a112fe28526143",
+      "newest3": "37aaa0bc991f992f9a9b2c19a86b1708f4a320dd46962fd100a112fe28526143",
+      "oldest3": "37aaa0bc991f992f9a9b2c19a86b1708f4a320dd46962fd100a112fe28526143",
+      "newest4": "37aaa0bc991f992f9a9b2c19a86b1708f4a320dd46962fd100a112fe28526143",
+      "oldest4": "37aaa0bc991f992f9a9b2c19a86b1708f4a320dd46962fd100a112fe28526143"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:casual:conv42",
+    "had_history": true,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 509,
+      "user_only": 493,
+      "neutral": 500,
+      "newest1": 509,
+      "oldest1": 509,
+      "newest2": 509,
+      "oldest2": 509,
+      "newest3": 509,
+      "oldest3": 509,
+      "newest4": 509,
+      "oldest4": 509
+    },
+    "token_hashes": {
+      "preserved": "9da649bedab03db04acbf198200861aa197ba8b1eb5307b6f2182f26b4c9b049",
+      "user_only": "5a24a516fb6339ce4407c629bc107ecf15dd711eb796caf4522627a89ef90fd5",
+      "neutral": "974f906e6c49342aaa16635dc799cd4ee8f094cfcb9f960fc024c82c9f0216f1",
+      "newest1": "9da649bedab03db04acbf198200861aa197ba8b1eb5307b6f2182f26b4c9b049",
+      "oldest1": "9da649bedab03db04acbf198200861aa197ba8b1eb5307b6f2182f26b4c9b049",
+      "newest2": "9da649bedab03db04acbf198200861aa197ba8b1eb5307b6f2182f26b4c9b049",
+      "oldest2": "9da649bedab03db04acbf198200861aa197ba8b1eb5307b6f2182f26b4c9b049",
+      "newest3": "9da649bedab03db04acbf198200861aa197ba8b1eb5307b6f2182f26b4c9b049",
+      "oldest3": "9da649bedab03db04acbf198200861aa197ba8b1eb5307b6f2182f26b4c9b049",
+      "newest4": "9da649bedab03db04acbf198200861aa197ba8b1eb5307b6f2182f26b4c9b049",
+      "oldest4": "9da649bedab03db04acbf198200861aa197ba8b1eb5307b6f2182f26b4c9b049"
+    },
+    "unique_conditioned_inputs": 3
+  },
+  {
+    "situation_id": "fixed:casual:conv43",
+    "had_history": true,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 541,
+      "user_only": 506,
+      "neutral": 520,
+      "newest1": 541,
+      "oldest1": 541,
+      "newest2": 541,
+      "oldest2": 541,
+      "newest3": 541,
+      "oldest3": 541,
+      "newest4": 541,
+      "oldest4": 541
+    },
+    "token_hashes": {
+      "preserved": "8cfb56811b580b17bd9660bb6a35f678c3ea66d7543a10b9cec1f576253489f0",
+      "user_only": "13020515d15326d68b5e76d8e1b100daa8a8d921151c9222a0e7ada3af01ddb7",
+      "neutral": "197fcf22ae15ad5bd6b64b39db4517f092a765d80cbe4779c7782f516e7b3d51",
+      "newest1": "8cfb56811b580b17bd9660bb6a35f678c3ea66d7543a10b9cec1f576253489f0",
+      "oldest1": "8cfb56811b580b17bd9660bb6a35f678c3ea66d7543a10b9cec1f576253489f0",
+      "newest2": "8cfb56811b580b17bd9660bb6a35f678c3ea66d7543a10b9cec1f576253489f0",
+      "oldest2": "8cfb56811b580b17bd9660bb6a35f678c3ea66d7543a10b9cec1f576253489f0",
+      "newest3": "8cfb56811b580b17bd9660bb6a35f678c3ea66d7543a10b9cec1f576253489f0",
+      "oldest3": "8cfb56811b580b17bd9660bb6a35f678c3ea66d7543a10b9cec1f576253489f0",
+      "newest4": "8cfb56811b580b17bd9660bb6a35f678c3ea66d7543a10b9cec1f576253489f0",
+      "oldest4": "8cfb56811b580b17bd9660bb6a35f678c3ea66d7543a10b9cec1f576253489f0"
+    },
+    "unique_conditioned_inputs": 3
+  },
+  {
+    "situation_id": "fixed:casual:conv44",
+    "had_history": true,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 578,
+      "user_only": 518,
+      "neutral": 539,
+      "newest1": 578,
+      "oldest1": 578,
+      "newest2": 578,
+      "oldest2": 578,
+      "newest3": 578,
+      "oldest3": 578,
+      "newest4": 578,
+      "oldest4": 578
+    },
+    "token_hashes": {
+      "preserved": "9c49f7e8c48af9943426642432fed95208f2a1dfd7a473f7dedf33bdcf8811a3",
+      "user_only": "f9a6b8b5d9af1fe635e5eec524df8deaef4f28bb91910ec9e934110859aaa6d4",
+      "neutral": "7b09fd4a9ada376b990c9168dfc304e6488e4d4fd0360fbd58f898d5a35a2457",
+      "newest1": "9c49f7e8c48af9943426642432fed95208f2a1dfd7a473f7dedf33bdcf8811a3",
+      "oldest1": "9c49f7e8c48af9943426642432fed95208f2a1dfd7a473f7dedf33bdcf8811a3",
+      "newest2": "9c49f7e8c48af9943426642432fed95208f2a1dfd7a473f7dedf33bdcf8811a3",
+      "oldest2": "9c49f7e8c48af9943426642432fed95208f2a1dfd7a473f7dedf33bdcf8811a3",
+      "newest3": "9c49f7e8c48af9943426642432fed95208f2a1dfd7a473f7dedf33bdcf8811a3",
+      "oldest3": "9c49f7e8c48af9943426642432fed95208f2a1dfd7a473f7dedf33bdcf8811a3",
+      "newest4": "9c49f7e8c48af9943426642432fed95208f2a1dfd7a473f7dedf33bdcf8811a3",
+      "oldest4": "9c49f7e8c48af9943426642432fed95208f2a1dfd7a473f7dedf33bdcf8811a3"
+    },
+    "unique_conditioned_inputs": 3
+  },
+  {
+    "situation_id": "fixed:casual:conv45",
+    "had_history": true,
+    "eligible_owner_errors": 1,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      }
+    },
+    "tokens": {
+      "preserved": 607,
+      "user_only": 530,
+      "neutral": 558,
+      "newest1": 607,
+      "oldest1": 607,
+      "newest2": 607,
+      "oldest2": 607,
+      "newest3": 607,
+      "oldest3": 607,
+      "newest4": 607,
+      "oldest4": 607
+    },
+    "token_hashes": {
+      "preserved": "f6db2f4f005daa286b889b49e8eeb678b110298a8a50af32601fbdaa56c5a368",
+      "user_only": "8575b3dff9e72e1f56b6597d113ec7d3e38067ed1f26f0e77b847fcb262f595a",
+      "neutral": "a64112d32114954b28aa6a8dd7477123003135ed015c30ce63582f550d3c7570",
+      "newest1": "e3479ec0a41f7380ab1f16ee774935b27eac48de039c63206ea6d61fd003e4a2",
+      "oldest1": "e3479ec0a41f7380ab1f16ee774935b27eac48de039c63206ea6d61fd003e4a2",
+      "newest2": "e3479ec0a41f7380ab1f16ee774935b27eac48de039c63206ea6d61fd003e4a2",
+      "oldest2": "e3479ec0a41f7380ab1f16ee774935b27eac48de039c63206ea6d61fd003e4a2",
+      "newest3": "e3479ec0a41f7380ab1f16ee774935b27eac48de039c63206ea6d61fd003e4a2",
+      "oldest3": "e3479ec0a41f7380ab1f16ee774935b27eac48de039c63206ea6d61fd003e4a2",
+      "newest4": "e3479ec0a41f7380ab1f16ee774935b27eac48de039c63206ea6d61fd003e4a2",
+      "oldest4": "e3479ec0a41f7380ab1f16ee774935b27eac48de039c63206ea6d61fd003e4a2"
+    },
+    "unique_conditioned_inputs": 4
+  },
+  {
+    "situation_id": "fixed:casual:conv46",
+    "had_history": true,
+    "eligible_owner_errors": 2,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          6
+        ]
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8,
+          6
+        ]
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          6,
+          8
+        ]
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 2,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8,
+          6
+        ]
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 2,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          6,
+          8
+        ]
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 2,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8,
+          6
+        ]
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 2,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          6,
+          8
+        ]
+      }
+    },
+    "tokens": {
+      "preserved": 604,
+      "user_only": 532,
+      "neutral": 560,
+      "newest1": 604,
+      "oldest1": 604,
+      "newest2": 604,
+      "oldest2": 604,
+      "newest3": 604,
+      "oldest3": 604,
+      "newest4": 604,
+      "oldest4": 604
+    },
+    "token_hashes": {
+      "preserved": "c3822e739d89940d70feb939f724ac4e9964bc829b2e8d2bb2aff2f89acdc9e8",
+      "user_only": "956510174db8d33f48ac508d1227fbf056c6af2418678024dd4c58825ad9206f",
+      "neutral": "dd25b8e9a2d5bb263d6b5e6ebad2ae5fa6efd2ac4481173344bac8063baae4ce",
+      "newest1": "e82f3f6645224cc214b2b6967a828bffebda74fdc7008610f0c0486a5a41156a",
+      "oldest1": "8a5c501f1a149a3bb6ef28c94d3ccd1c728ac03d75464ab27b993df79c2a8c10",
+      "newest2": "8dfe81a9cd6f2945d3a4c1e855176169f7da704dcaca3e3ffa1b335b2aa358d8",
+      "oldest2": "8dfe81a9cd6f2945d3a4c1e855176169f7da704dcaca3e3ffa1b335b2aa358d8",
+      "newest3": "8dfe81a9cd6f2945d3a4c1e855176169f7da704dcaca3e3ffa1b335b2aa358d8",
+      "oldest3": "8dfe81a9cd6f2945d3a4c1e855176169f7da704dcaca3e3ffa1b335b2aa358d8",
+      "newest4": "8dfe81a9cd6f2945d3a4c1e855176169f7da704dcaca3e3ffa1b335b2aa358d8",
+      "oldest4": "8dfe81a9cd6f2945d3a4c1e855176169f7da704dcaca3e3ffa1b335b2aa358d8"
+    },
+    "unique_conditioned_inputs": 6
+  },
+  {
+    "situation_id": "fixed:casual:conv47",
+    "had_history": true,
+    "eligible_owner_errors": 3,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 3,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          4
+        ]
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          8,
+          6
+        ]
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          4,
+          6
+        ]
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8,
+          6,
+          4
+        ]
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          4,
+          6,
+          8
+        ]
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8,
+          6,
+          4
+        ]
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          4,
+          6,
+          8
+        ]
+      }
+    },
+    "tokens": {
+      "preserved": 601,
+      "user_only": 537,
+      "neutral": 565,
+      "newest1": 601,
+      "oldest1": 601,
+      "newest2": 601,
+      "oldest2": 601,
+      "newest3": 601,
+      "oldest3": 601,
+      "newest4": 601,
+      "oldest4": 601
+    },
+    "token_hashes": {
+      "preserved": "6cc9d71800e7c84c860fc8ddf0f704f8fff0e050e754749a1d30543b665ae061",
+      "user_only": "d8a86affac5fa03286e1db44e94cdeec49dd8fac0d5f5607c4729e9875fd6ee1",
+      "neutral": "1bba42f592ec2f72a3eb4e5b85438409ac6efca7681124f3da5aa922dfb009ab",
+      "newest1": "84fa84ad67344ddb39b719512d23dd65b6ed857db8b981ef948423edac5baba9",
+      "oldest1": "c6271037c2f398deb7a4ef9e381ad8b9e294d512b4179108c212e76cde5e8830",
+      "newest2": "562c05ecccb33e89cfe92344ab7540e5c0e13ed9607b18f75285513eb806cd4b",
+      "oldest2": "6250c935b089c092baea044fe2709b9cae269e231bd0560024f7d52660f700f3",
+      "newest3": "db70abefa19fd3b76339d6a2dbc49c469771903213dfecb4c39b9b6c18dfc906",
+      "oldest3": "db70abefa19fd3b76339d6a2dbc49c469771903213dfecb4c39b9b6c18dfc906",
+      "newest4": "db70abefa19fd3b76339d6a2dbc49c469771903213dfecb4c39b9b6c18dfc906",
+      "oldest4": "db70abefa19fd3b76339d6a2dbc49c469771903213dfecb4c39b9b6c18dfc906"
+    },
+    "unique_conditioned_inputs": 8
+  },
+  {
+    "situation_id": "fixed:casual:conv48",
+    "had_history": true,
+    "eligible_owner_errors": 4,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 4,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 3,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 3,
+        "edited_message_indices": [
+          2
+        ]
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          8,
+          6
+        ]
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          2,
+          4
+        ]
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          8,
+          6,
+          4
+        ]
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          2,
+          4,
+          6
+        ]
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 4,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8,
+          6,
+          4,
+          2
+        ]
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 4,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          2,
+          4,
+          6,
+          8
+        ]
+      }
+    },
+    "tokens": {
+      "preserved": 595,
+      "user_only": 539,
+      "neutral": 567,
+      "newest1": 595,
+      "oldest1": 595,
+      "newest2": 595,
+      "oldest2": 595,
+      "newest3": 595,
+      "oldest3": 595,
+      "newest4": 595,
+      "oldest4": 595
+    },
+    "token_hashes": {
+      "preserved": "67a160705d56ea2ca1de33270f4b6676022bf0d7403aed01d754a30b36703773",
+      "user_only": "687387c6224ec51d4fe3ba7ef7c91bcc17e114012bf19aba8c36a2b95ee975e6",
+      "neutral": "5a0100a72286d14f3f8c4f9621439d6f18ecececa35737e3850cd75110f5ee24",
+      "newest1": "6deda4740459f819ed6388dd6ebd2548c77ab3f24088e7a102a0e8b52e848884",
+      "oldest1": "e26770144ced3c3c6422666b1e293849bba8ef952b4fa000f502feda7e7f8e6a",
+      "newest2": "360ebbe1675400cd7ab88a3562615d8603bcaccf84759e350169d27b84a07afd",
+      "oldest2": "04a69fcc45da58046d8aed8ac1fd60b9d72a085cc3282431628c539cacb690f1",
+      "newest3": "f1a5b639ae7357961cd4e2650bd944febdc616e941cbaaa6f8848551830d1d6d",
+      "oldest3": "b79466063d088f1b159ee6ae68958c6e6e91134b5b900adbbc748df5219decc1",
+      "newest4": "c0d02b89e99b9389f40b67bf7ed7066a2d96fb8442a9c95970deb54fa346eabd",
+      "oldest4": "c0d02b89e99b9389f40b67bf7ed7066a2d96fb8442a9c95970deb54fa346eabd"
+    },
+    "unique_conditioned_inputs": 10
+  },
+  {
+    "situation_id": "fixed:casual:conv49",
+    "had_history": true,
+    "eligible_owner_errors": 4,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 4,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 3,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 3,
+        "edited_message_indices": [
+          2
+        ]
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          8,
+          6
+        ]
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          2,
+          4
+        ]
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          8,
+          6,
+          4
+        ]
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          2,
+          4,
+          6
+        ]
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 4,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8,
+          6,
+          4,
+          2
+        ]
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 4,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          2,
+          4,
+          6,
+          8
+        ]
+      }
+    },
+    "tokens": {
+      "preserved": 597,
+      "user_only": 541,
+      "neutral": 569,
+      "newest1": 597,
+      "oldest1": 597,
+      "newest2": 597,
+      "oldest2": 597,
+      "newest3": 597,
+      "oldest3": 597,
+      "newest4": 597,
+      "oldest4": 597
+    },
+    "token_hashes": {
+      "preserved": "988e0d39fcb0992835cce4f5ac708868d7dbdd90dcb8859c92c63bf7a3c5af1e",
+      "user_only": "aba286fa1c5202fe7cd865b338f87f9c6063321a4fd6349701ae148f53dd7074",
+      "neutral": "e78b20962d153e56125060653eb499a6756caa80ce56cd9990917dd66aaf3158",
+      "newest1": "6f0db44aa34279019fcd8636715d6e8e7771c7ee524a3c313f89c8441924cabe",
+      "oldest1": "96291d4ebab898e1c34bdccb151d56380c3d2af059f2a5d046616307d8df766f",
+      "newest2": "2149a8f2ac73f442f0e8906094907b67803ed940abe3e403b2c3a42d71316514",
+      "oldest2": "77423fa8881c1f661f6f477a414a1110b29304b4af26f4b31a1e3e4040dbcbc5",
+      "newest3": "450168da830a9fa27a4ee4bd3adf6c6a525c0f87536eb321a1cc8718440f62b4",
+      "oldest3": "f735ca1ede0357546968c818a1129d7c5b440e8debac45f57e2f42df122003ea",
+      "newest4": "df019190ca12b81383f6a6d68cf14ac63a5bd5c92160cb9b64ac0c86346176ba",
+      "oldest4": "df019190ca12b81383f6a6d68cf14ac63a5bd5c92160cb9b64ac0c86346176ba"
+    },
+    "unique_conditioned_inputs": 10
+  },
+  {
+    "situation_id": "fixed:casual:conv50",
+    "had_history": true,
+    "eligible_owner_errors": 3,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 3,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          6
+        ]
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          2
+        ]
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          6,
+          4
+        ]
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          2,
+          4
+        ]
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          6,
+          4,
+          2
+        ]
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          2,
+          4,
+          6
+        ]
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          6,
+          4,
+          2
+        ]
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          2,
+          4,
+          6
+        ]
+      }
+    },
+    "tokens": {
+      "preserved": 604,
+      "user_only": 542,
+      "neutral": 570,
+      "newest1": 604,
+      "oldest1": 604,
+      "newest2": 604,
+      "oldest2": 604,
+      "newest3": 604,
+      "oldest3": 604,
+      "newest4": 604,
+      "oldest4": 604
+    },
+    "token_hashes": {
+      "preserved": "26b25c23e5f466149e2cf5abaefd3d7847cc7885d34b15e3f9da8cb7b55b0ad4",
+      "user_only": "0993aeb65be9c3b6eda7a52496646bc6bebd5a83e86224a339d98f4902cfd50b",
+      "neutral": "d76b31122cb66c4d0bb2485adb3a42470dbaabbd0eebb28150d9f51d712d25ae",
+      "newest1": "e58fa6448912fed67802543fd88f2678d7d9914d2398d83102c3436e45f7a626",
+      "oldest1": "fe39fe94d65108267e4f094d81af1785beefeb672f63a91fa35af47b38ef43aa",
+      "newest2": "d9448c5e6abfeb818694707cc70641938f83c4298275ad728692bfc4a1936451",
+      "oldest2": "01843253a60ac3df160cb31b84f97c167aa307bc20f7d37cde70f0692da1be63",
+      "newest3": "274e94ce1c35a3e9e1b0c2bcbdaebf225c1e8b4c249f0eeb5b32e1867b22b599",
+      "oldest3": "274e94ce1c35a3e9e1b0c2bcbdaebf225c1e8b4c249f0eeb5b32e1867b22b599",
+      "newest4": "274e94ce1c35a3e9e1b0c2bcbdaebf225c1e8b4c249f0eeb5b32e1867b22b599",
+      "oldest4": "274e94ce1c35a3e9e1b0c2bcbdaebf225c1e8b4c249f0eeb5b32e1867b22b599"
+    },
+    "unique_conditioned_inputs": 8
+  },
+  {
+    "situation_id": "fixed:casual:identity01",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 479,
+      "user_only": 479,
+      "neutral": 479,
+      "newest1": 479,
+      "oldest1": 479,
+      "newest2": 479,
+      "oldest2": 479,
+      "newest3": 479,
+      "oldest3": 479,
+      "newest4": 479,
+      "oldest4": 479
+    },
+    "token_hashes": {
+      "preserved": "2a9865e53006119967fc5dc71d9d397145a9e2f28d117388222b0709a4fcc01d",
+      "user_only": "2a9865e53006119967fc5dc71d9d397145a9e2f28d117388222b0709a4fcc01d",
+      "neutral": "2a9865e53006119967fc5dc71d9d397145a9e2f28d117388222b0709a4fcc01d",
+      "newest1": "2a9865e53006119967fc5dc71d9d397145a9e2f28d117388222b0709a4fcc01d",
+      "oldest1": "2a9865e53006119967fc5dc71d9d397145a9e2f28d117388222b0709a4fcc01d",
+      "newest2": "2a9865e53006119967fc5dc71d9d397145a9e2f28d117388222b0709a4fcc01d",
+      "oldest2": "2a9865e53006119967fc5dc71d9d397145a9e2f28d117388222b0709a4fcc01d",
+      "newest3": "2a9865e53006119967fc5dc71d9d397145a9e2f28d117388222b0709a4fcc01d",
+      "oldest3": "2a9865e53006119967fc5dc71d9d397145a9e2f28d117388222b0709a4fcc01d",
+      "newest4": "2a9865e53006119967fc5dc71d9d397145a9e2f28d117388222b0709a4fcc01d",
+      "oldest4": "2a9865e53006119967fc5dc71d9d397145a9e2f28d117388222b0709a4fcc01d"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:casual:identity02",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 487,
+      "user_only": 487,
+      "neutral": 487,
+      "newest1": 487,
+      "oldest1": 487,
+      "newest2": 487,
+      "oldest2": 487,
+      "newest3": 487,
+      "oldest3": 487,
+      "newest4": 487,
+      "oldest4": 487
+    },
+    "token_hashes": {
+      "preserved": "e49223a42f99f54cec79762c30342d2b3f2331775952a99e02ade2dde4c7932c",
+      "user_only": "e49223a42f99f54cec79762c30342d2b3f2331775952a99e02ade2dde4c7932c",
+      "neutral": "e49223a42f99f54cec79762c30342d2b3f2331775952a99e02ade2dde4c7932c",
+      "newest1": "e49223a42f99f54cec79762c30342d2b3f2331775952a99e02ade2dde4c7932c",
+      "oldest1": "e49223a42f99f54cec79762c30342d2b3f2331775952a99e02ade2dde4c7932c",
+      "newest2": "e49223a42f99f54cec79762c30342d2b3f2331775952a99e02ade2dde4c7932c",
+      "oldest2": "e49223a42f99f54cec79762c30342d2b3f2331775952a99e02ade2dde4c7932c",
+      "newest3": "e49223a42f99f54cec79762c30342d2b3f2331775952a99e02ade2dde4c7932c",
+      "oldest3": "e49223a42f99f54cec79762c30342d2b3f2331775952a99e02ade2dde4c7932c",
+      "newest4": "e49223a42f99f54cec79762c30342d2b3f2331775952a99e02ade2dde4c7932c",
+      "oldest4": "e49223a42f99f54cec79762c30342d2b3f2331775952a99e02ade2dde4c7932c"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:casual:register01",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 481,
+      "user_only": 481,
+      "neutral": 481,
+      "newest1": 481,
+      "oldest1": 481,
+      "newest2": 481,
+      "oldest2": 481,
+      "newest3": 481,
+      "oldest3": 481,
+      "newest4": 481,
+      "oldest4": 481
+    },
+    "token_hashes": {
+      "preserved": "7fa10fb2eeadd530071067eba86a086fd353970e12f7fe7610ae3ef60e5187a1",
+      "user_only": "7fa10fb2eeadd530071067eba86a086fd353970e12f7fe7610ae3ef60e5187a1",
+      "neutral": "7fa10fb2eeadd530071067eba86a086fd353970e12f7fe7610ae3ef60e5187a1",
+      "newest1": "7fa10fb2eeadd530071067eba86a086fd353970e12f7fe7610ae3ef60e5187a1",
+      "oldest1": "7fa10fb2eeadd530071067eba86a086fd353970e12f7fe7610ae3ef60e5187a1",
+      "newest2": "7fa10fb2eeadd530071067eba86a086fd353970e12f7fe7610ae3ef60e5187a1",
+      "oldest2": "7fa10fb2eeadd530071067eba86a086fd353970e12f7fe7610ae3ef60e5187a1",
+      "newest3": "7fa10fb2eeadd530071067eba86a086fd353970e12f7fe7610ae3ef60e5187a1",
+      "oldest3": "7fa10fb2eeadd530071067eba86a086fd353970e12f7fe7610ae3ef60e5187a1",
+      "newest4": "7fa10fb2eeadd530071067eba86a086fd353970e12f7fe7610ae3ef60e5187a1",
+      "oldest4": "7fa10fb2eeadd530071067eba86a086fd353970e12f7fe7610ae3ef60e5187a1"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "summary:casual:conv30",
+    "had_history": true,
+    "eligible_owner_errors": 0,
+    "is_library": true,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 543,
+      "user_only": 496,
+      "neutral": 503,
+      "newest1": 543,
+      "oldest1": 543,
+      "newest2": 543,
+      "oldest2": 543,
+      "newest3": 543,
+      "oldest3": 543,
+      "newest4": 543,
+      "oldest4": 543
+    },
+    "token_hashes": {
+      "preserved": "cc62021f79990f3dced81b6e053e5e70ac30567057b79476628baf455c6dbfc4",
+      "user_only": "66651c54bb848e7b10ccf4a5890ed8f23da721448d093500ec953e63c6d2f05d",
+      "neutral": "2cd1bcbcb221862bdc68c334dc371cbe49d421a963b68016b1e69d78933e473c",
+      "newest1": "cc62021f79990f3dced81b6e053e5e70ac30567057b79476628baf455c6dbfc4",
+      "oldest1": "cc62021f79990f3dced81b6e053e5e70ac30567057b79476628baf455c6dbfc4",
+      "newest2": "cc62021f79990f3dced81b6e053e5e70ac30567057b79476628baf455c6dbfc4",
+      "oldest2": "cc62021f79990f3dced81b6e053e5e70ac30567057b79476628baf455c6dbfc4",
+      "newest3": "cc62021f79990f3dced81b6e053e5e70ac30567057b79476628baf455c6dbfc4",
+      "oldest3": "cc62021f79990f3dced81b6e053e5e70ac30567057b79476628baf455c6dbfc4",
+      "newest4": "cc62021f79990f3dced81b6e053e5e70ac30567057b79476628baf455c6dbfc4",
+      "oldest4": "cc62021f79990f3dced81b6e053e5e70ac30567057b79476628baf455c6dbfc4"
+    },
+    "unique_conditioned_inputs": 3
+  },
+  {
+    "situation_id": "follow:casual:conv41",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 557,
+      "user_only": 557,
+      "neutral": 557,
+      "newest1": 557,
+      "oldest1": 557,
+      "newest2": 557,
+      "oldest2": 557,
+      "newest3": 557,
+      "oldest3": 557,
+      "newest4": 557,
+      "oldest4": 557
+    },
+    "token_hashes": {
+      "preserved": "6c23bcfc69f8724763bf947b7c0352f6419ca30a5b1271f4f60b64bd2eb1eacb",
+      "user_only": "6c23bcfc69f8724763bf947b7c0352f6419ca30a5b1271f4f60b64bd2eb1eacb",
+      "neutral": "6c23bcfc69f8724763bf947b7c0352f6419ca30a5b1271f4f60b64bd2eb1eacb",
+      "newest1": "6c23bcfc69f8724763bf947b7c0352f6419ca30a5b1271f4f60b64bd2eb1eacb",
+      "oldest1": "6c23bcfc69f8724763bf947b7c0352f6419ca30a5b1271f4f60b64bd2eb1eacb",
+      "newest2": "6c23bcfc69f8724763bf947b7c0352f6419ca30a5b1271f4f60b64bd2eb1eacb",
+      "oldest2": "6c23bcfc69f8724763bf947b7c0352f6419ca30a5b1271f4f60b64bd2eb1eacb",
+      "newest3": "6c23bcfc69f8724763bf947b7c0352f6419ca30a5b1271f4f60b64bd2eb1eacb",
+      "oldest3": "6c23bcfc69f8724763bf947b7c0352f6419ca30a5b1271f4f60b64bd2eb1eacb",
+      "newest4": "6c23bcfc69f8724763bf947b7c0352f6419ca30a5b1271f4f60b64bd2eb1eacb",
+      "oldest4": "6c23bcfc69f8724763bf947b7c0352f6419ca30a5b1271f4f60b64bd2eb1eacb"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "follow:casual:conv42",
+    "had_history": true,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 588,
+      "user_only": 569,
+      "neutral": 576,
+      "newest1": 588,
+      "oldest1": 588,
+      "newest2": 588,
+      "oldest2": 588,
+      "newest3": 588,
+      "oldest3": 588,
+      "newest4": 588,
+      "oldest4": 588
+    },
+    "token_hashes": {
+      "preserved": "f78a12e4419a23e793fe2559b348b843521a2458cdb546137fc33e6f0d685342",
+      "user_only": "e78e2ef624ebe4b83b03e1d67b0fb2de0e0ecbe115f7a3567719fac9c408521b",
+      "neutral": "e2b5a1ed351d67ef053b8d774fa3bec37d13b02fa38d66a2be0b7ad019c5c74b",
+      "newest1": "f78a12e4419a23e793fe2559b348b843521a2458cdb546137fc33e6f0d685342",
+      "oldest1": "f78a12e4419a23e793fe2559b348b843521a2458cdb546137fc33e6f0d685342",
+      "newest2": "f78a12e4419a23e793fe2559b348b843521a2458cdb546137fc33e6f0d685342",
+      "oldest2": "f78a12e4419a23e793fe2559b348b843521a2458cdb546137fc33e6f0d685342",
+      "newest3": "f78a12e4419a23e793fe2559b348b843521a2458cdb546137fc33e6f0d685342",
+      "oldest3": "f78a12e4419a23e793fe2559b348b843521a2458cdb546137fc33e6f0d685342",
+      "newest4": "f78a12e4419a23e793fe2559b348b843521a2458cdb546137fc33e6f0d685342",
+      "oldest4": "f78a12e4419a23e793fe2559b348b843521a2458cdb546137fc33e6f0d685342"
+    },
+    "unique_conditioned_inputs": 3
+  },
+  {
+    "situation_id": "fixed:polite:conv01",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 440,
+      "user_only": 440,
+      "neutral": 440,
+      "newest1": 440,
+      "oldest1": 440,
+      "newest2": 440,
+      "oldest2": 440,
+      "newest3": 440,
+      "oldest3": 440,
+      "newest4": 440,
+      "oldest4": 440
+    },
+    "token_hashes": {
+      "preserved": "bc586938ddc452a1ee4d651169825362e82fd61039149b78960b9cc2b40ffce6",
+      "user_only": "bc586938ddc452a1ee4d651169825362e82fd61039149b78960b9cc2b40ffce6",
+      "neutral": "bc586938ddc452a1ee4d651169825362e82fd61039149b78960b9cc2b40ffce6",
+      "newest1": "bc586938ddc452a1ee4d651169825362e82fd61039149b78960b9cc2b40ffce6",
+      "oldest1": "bc586938ddc452a1ee4d651169825362e82fd61039149b78960b9cc2b40ffce6",
+      "newest2": "bc586938ddc452a1ee4d651169825362e82fd61039149b78960b9cc2b40ffce6",
+      "oldest2": "bc586938ddc452a1ee4d651169825362e82fd61039149b78960b9cc2b40ffce6",
+      "newest3": "bc586938ddc452a1ee4d651169825362e82fd61039149b78960b9cc2b40ffce6",
+      "oldest3": "bc586938ddc452a1ee4d651169825362e82fd61039149b78960b9cc2b40ffce6",
+      "newest4": "bc586938ddc452a1ee4d651169825362e82fd61039149b78960b9cc2b40ffce6",
+      "oldest4": "bc586938ddc452a1ee4d651169825362e82fd61039149b78960b9cc2b40ffce6"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:polite:conv17",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 442,
+      "user_only": 442,
+      "neutral": 442,
+      "newest1": 442,
+      "oldest1": 442,
+      "newest2": 442,
+      "oldest2": 442,
+      "newest3": 442,
+      "oldest3": 442,
+      "newest4": 442,
+      "oldest4": 442
+    },
+    "token_hashes": {
+      "preserved": "911958b263dd8f0c6eafbc0ddc63192d7b4129ec9e0697551f5d3c0a764d52b5",
+      "user_only": "911958b263dd8f0c6eafbc0ddc63192d7b4129ec9e0697551f5d3c0a764d52b5",
+      "neutral": "911958b263dd8f0c6eafbc0ddc63192d7b4129ec9e0697551f5d3c0a764d52b5",
+      "newest1": "911958b263dd8f0c6eafbc0ddc63192d7b4129ec9e0697551f5d3c0a764d52b5",
+      "oldest1": "911958b263dd8f0c6eafbc0ddc63192d7b4129ec9e0697551f5d3c0a764d52b5",
+      "newest2": "911958b263dd8f0c6eafbc0ddc63192d7b4129ec9e0697551f5d3c0a764d52b5",
+      "oldest2": "911958b263dd8f0c6eafbc0ddc63192d7b4129ec9e0697551f5d3c0a764d52b5",
+      "newest3": "911958b263dd8f0c6eafbc0ddc63192d7b4129ec9e0697551f5d3c0a764d52b5",
+      "oldest3": "911958b263dd8f0c6eafbc0ddc63192d7b4129ec9e0697551f5d3c0a764d52b5",
+      "newest4": "911958b263dd8f0c6eafbc0ddc63192d7b4129ec9e0697551f5d3c0a764d52b5",
+      "oldest4": "911958b263dd8f0c6eafbc0ddc63192d7b4129ec9e0697551f5d3c0a764d52b5"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:polite:conv30",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 443,
+      "user_only": 443,
+      "neutral": 443,
+      "newest1": 443,
+      "oldest1": 443,
+      "newest2": 443,
+      "oldest2": 443,
+      "newest3": 443,
+      "oldest3": 443,
+      "newest4": 443,
+      "oldest4": 443
+    },
+    "token_hashes": {
+      "preserved": "4445560e75a1433078b5f76ba1bf8adbdbf5818d9a8e7ffb22e2eae6d635da98",
+      "user_only": "4445560e75a1433078b5f76ba1bf8adbdbf5818d9a8e7ffb22e2eae6d635da98",
+      "neutral": "4445560e75a1433078b5f76ba1bf8adbdbf5818d9a8e7ffb22e2eae6d635da98",
+      "newest1": "4445560e75a1433078b5f76ba1bf8adbdbf5818d9a8e7ffb22e2eae6d635da98",
+      "oldest1": "4445560e75a1433078b5f76ba1bf8adbdbf5818d9a8e7ffb22e2eae6d635da98",
+      "newest2": "4445560e75a1433078b5f76ba1bf8adbdbf5818d9a8e7ffb22e2eae6d635da98",
+      "oldest2": "4445560e75a1433078b5f76ba1bf8adbdbf5818d9a8e7ffb22e2eae6d635da98",
+      "newest3": "4445560e75a1433078b5f76ba1bf8adbdbf5818d9a8e7ffb22e2eae6d635da98",
+      "oldest3": "4445560e75a1433078b5f76ba1bf8adbdbf5818d9a8e7ffb22e2eae6d635da98",
+      "newest4": "4445560e75a1433078b5f76ba1bf8adbdbf5818d9a8e7ffb22e2eae6d635da98",
+      "oldest4": "4445560e75a1433078b5f76ba1bf8adbdbf5818d9a8e7ffb22e2eae6d635da98"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:polite:conv31",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 439,
+      "user_only": 439,
+      "neutral": 439,
+      "newest1": 439,
+      "oldest1": 439,
+      "newest2": 439,
+      "oldest2": 439,
+      "newest3": 439,
+      "oldest3": 439,
+      "newest4": 439,
+      "oldest4": 439
+    },
+    "token_hashes": {
+      "preserved": "9bfbba16801a90e553020a0c8f9ab1644b64a191210f12e0fb0521520628761e",
+      "user_only": "9bfbba16801a90e553020a0c8f9ab1644b64a191210f12e0fb0521520628761e",
+      "neutral": "9bfbba16801a90e553020a0c8f9ab1644b64a191210f12e0fb0521520628761e",
+      "newest1": "9bfbba16801a90e553020a0c8f9ab1644b64a191210f12e0fb0521520628761e",
+      "oldest1": "9bfbba16801a90e553020a0c8f9ab1644b64a191210f12e0fb0521520628761e",
+      "newest2": "9bfbba16801a90e553020a0c8f9ab1644b64a191210f12e0fb0521520628761e",
+      "oldest2": "9bfbba16801a90e553020a0c8f9ab1644b64a191210f12e0fb0521520628761e",
+      "newest3": "9bfbba16801a90e553020a0c8f9ab1644b64a191210f12e0fb0521520628761e",
+      "oldest3": "9bfbba16801a90e553020a0c8f9ab1644b64a191210f12e0fb0521520628761e",
+      "newest4": "9bfbba16801a90e553020a0c8f9ab1644b64a191210f12e0fb0521520628761e",
+      "oldest4": "9bfbba16801a90e553020a0c8f9ab1644b64a191210f12e0fb0521520628761e"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:polite:conv32",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 441,
+      "user_only": 441,
+      "neutral": 441,
+      "newest1": 441,
+      "oldest1": 441,
+      "newest2": 441,
+      "oldest2": 441,
+      "newest3": 441,
+      "oldest3": 441,
+      "newest4": 441,
+      "oldest4": 441
+    },
+    "token_hashes": {
+      "preserved": "03dd4cfae27d47ba2adaa073b9b449284f8387cfda8da4c54c747c07275de0cc",
+      "user_only": "03dd4cfae27d47ba2adaa073b9b449284f8387cfda8da4c54c747c07275de0cc",
+      "neutral": "03dd4cfae27d47ba2adaa073b9b449284f8387cfda8da4c54c747c07275de0cc",
+      "newest1": "03dd4cfae27d47ba2adaa073b9b449284f8387cfda8da4c54c747c07275de0cc",
+      "oldest1": "03dd4cfae27d47ba2adaa073b9b449284f8387cfda8da4c54c747c07275de0cc",
+      "newest2": "03dd4cfae27d47ba2adaa073b9b449284f8387cfda8da4c54c747c07275de0cc",
+      "oldest2": "03dd4cfae27d47ba2adaa073b9b449284f8387cfda8da4c54c747c07275de0cc",
+      "newest3": "03dd4cfae27d47ba2adaa073b9b449284f8387cfda8da4c54c747c07275de0cc",
+      "oldest3": "03dd4cfae27d47ba2adaa073b9b449284f8387cfda8da4c54c747c07275de0cc",
+      "newest4": "03dd4cfae27d47ba2adaa073b9b449284f8387cfda8da4c54c747c07275de0cc",
+      "oldest4": "03dd4cfae27d47ba2adaa073b9b449284f8387cfda8da4c54c747c07275de0cc"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:polite:conv35",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 440,
+      "user_only": 440,
+      "neutral": 440,
+      "newest1": 440,
+      "oldest1": 440,
+      "newest2": 440,
+      "oldest2": 440,
+      "newest3": 440,
+      "oldest3": 440,
+      "newest4": 440,
+      "oldest4": 440
+    },
+    "token_hashes": {
+      "preserved": "7fafcb9aef5865ee50ea1036c7183fcd35ca4d79408be9569d36e9e964e9e94f",
+      "user_only": "7fafcb9aef5865ee50ea1036c7183fcd35ca4d79408be9569d36e9e964e9e94f",
+      "neutral": "7fafcb9aef5865ee50ea1036c7183fcd35ca4d79408be9569d36e9e964e9e94f",
+      "newest1": "7fafcb9aef5865ee50ea1036c7183fcd35ca4d79408be9569d36e9e964e9e94f",
+      "oldest1": "7fafcb9aef5865ee50ea1036c7183fcd35ca4d79408be9569d36e9e964e9e94f",
+      "newest2": "7fafcb9aef5865ee50ea1036c7183fcd35ca4d79408be9569d36e9e964e9e94f",
+      "oldest2": "7fafcb9aef5865ee50ea1036c7183fcd35ca4d79408be9569d36e9e964e9e94f",
+      "newest3": "7fafcb9aef5865ee50ea1036c7183fcd35ca4d79408be9569d36e9e964e9e94f",
+      "oldest3": "7fafcb9aef5865ee50ea1036c7183fcd35ca4d79408be9569d36e9e964e9e94f",
+      "newest4": "7fafcb9aef5865ee50ea1036c7183fcd35ca4d79408be9569d36e9e964e9e94f",
+      "oldest4": "7fafcb9aef5865ee50ea1036c7183fcd35ca4d79408be9569d36e9e964e9e94f"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:polite:conv38",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 441,
+      "user_only": 441,
+      "neutral": 441,
+      "newest1": 441,
+      "oldest1": 441,
+      "newest2": 441,
+      "oldest2": 441,
+      "newest3": 441,
+      "oldest3": 441,
+      "newest4": 441,
+      "oldest4": 441
+    },
+    "token_hashes": {
+      "preserved": "4c94ea447548372e54962203ec26f170e90bd17d3e5ccd445745c2030efa07f3",
+      "user_only": "4c94ea447548372e54962203ec26f170e90bd17d3e5ccd445745c2030efa07f3",
+      "neutral": "4c94ea447548372e54962203ec26f170e90bd17d3e5ccd445745c2030efa07f3",
+      "newest1": "4c94ea447548372e54962203ec26f170e90bd17d3e5ccd445745c2030efa07f3",
+      "oldest1": "4c94ea447548372e54962203ec26f170e90bd17d3e5ccd445745c2030efa07f3",
+      "newest2": "4c94ea447548372e54962203ec26f170e90bd17d3e5ccd445745c2030efa07f3",
+      "oldest2": "4c94ea447548372e54962203ec26f170e90bd17d3e5ccd445745c2030efa07f3",
+      "newest3": "4c94ea447548372e54962203ec26f170e90bd17d3e5ccd445745c2030efa07f3",
+      "oldest3": "4c94ea447548372e54962203ec26f170e90bd17d3e5ccd445745c2030efa07f3",
+      "newest4": "4c94ea447548372e54962203ec26f170e90bd17d3e5ccd445745c2030efa07f3",
+      "oldest4": "4c94ea447548372e54962203ec26f170e90bd17d3e5ccd445745c2030efa07f3"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:polite:conv41",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 444,
+      "user_only": 444,
+      "neutral": 444,
+      "newest1": 444,
+      "oldest1": 444,
+      "newest2": 444,
+      "oldest2": 444,
+      "newest3": 444,
+      "oldest3": 444,
+      "newest4": 444,
+      "oldest4": 444
+    },
+    "token_hashes": {
+      "preserved": "a6de8ffb45531d8a1cae1659cf984d0d53b63222dfbac8e36d94fae9769c6e26",
+      "user_only": "a6de8ffb45531d8a1cae1659cf984d0d53b63222dfbac8e36d94fae9769c6e26",
+      "neutral": "a6de8ffb45531d8a1cae1659cf984d0d53b63222dfbac8e36d94fae9769c6e26",
+      "newest1": "a6de8ffb45531d8a1cae1659cf984d0d53b63222dfbac8e36d94fae9769c6e26",
+      "oldest1": "a6de8ffb45531d8a1cae1659cf984d0d53b63222dfbac8e36d94fae9769c6e26",
+      "newest2": "a6de8ffb45531d8a1cae1659cf984d0d53b63222dfbac8e36d94fae9769c6e26",
+      "oldest2": "a6de8ffb45531d8a1cae1659cf984d0d53b63222dfbac8e36d94fae9769c6e26",
+      "newest3": "a6de8ffb45531d8a1cae1659cf984d0d53b63222dfbac8e36d94fae9769c6e26",
+      "oldest3": "a6de8ffb45531d8a1cae1659cf984d0d53b63222dfbac8e36d94fae9769c6e26",
+      "newest4": "a6de8ffb45531d8a1cae1659cf984d0d53b63222dfbac8e36d94fae9769c6e26",
+      "oldest4": "a6de8ffb45531d8a1cae1659cf984d0d53b63222dfbac8e36d94fae9769c6e26"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:polite:conv42",
+    "had_history": true,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 475,
+      "user_only": 456,
+      "neutral": 463,
+      "newest1": 475,
+      "oldest1": 475,
+      "newest2": 475,
+      "oldest2": 475,
+      "newest3": 475,
+      "oldest3": 475,
+      "newest4": 475,
+      "oldest4": 475
+    },
+    "token_hashes": {
+      "preserved": "b9fc617001ccef7ef02b9638ddbbaa735a8ad70beb5307cf98e980202069e20a",
+      "user_only": "c6f3e4c5a0374489275f4e1aacf490065f9dcdb9fba301e317bd5e512dec8f6c",
+      "neutral": "d86d59531f32e032e2b80304c6602ec8f0da8fdd4535bd936f1e95e04c57de74",
+      "newest1": "b9fc617001ccef7ef02b9638ddbbaa735a8ad70beb5307cf98e980202069e20a",
+      "oldest1": "b9fc617001ccef7ef02b9638ddbbaa735a8ad70beb5307cf98e980202069e20a",
+      "newest2": "b9fc617001ccef7ef02b9638ddbbaa735a8ad70beb5307cf98e980202069e20a",
+      "oldest2": "b9fc617001ccef7ef02b9638ddbbaa735a8ad70beb5307cf98e980202069e20a",
+      "newest3": "b9fc617001ccef7ef02b9638ddbbaa735a8ad70beb5307cf98e980202069e20a",
+      "oldest3": "b9fc617001ccef7ef02b9638ddbbaa735a8ad70beb5307cf98e980202069e20a",
+      "newest4": "b9fc617001ccef7ef02b9638ddbbaa735a8ad70beb5307cf98e980202069e20a",
+      "oldest4": "b9fc617001ccef7ef02b9638ddbbaa735a8ad70beb5307cf98e980202069e20a"
+    },
+    "unique_conditioned_inputs": 3
+  },
+  {
+    "situation_id": "fixed:polite:conv43",
+    "had_history": true,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 502,
+      "user_only": 469,
+      "neutral": 483,
+      "newest1": 502,
+      "oldest1": 502,
+      "newest2": 502,
+      "oldest2": 502,
+      "newest3": 502,
+      "oldest3": 502,
+      "newest4": 502,
+      "oldest4": 502
+    },
+    "token_hashes": {
+      "preserved": "120bbddd687a232c8e6a5ee50b158aff6728d7bac664b9ebf60c39b02286a964",
+      "user_only": "8c81b59956a8609bd5f4375c97273c18356e4090d4c9c5af1996786ce05eaa4f",
+      "neutral": "b64623c6f9be2df32e965ba59649eeda7aec8e124312f47fec833246168acd79",
+      "newest1": "120bbddd687a232c8e6a5ee50b158aff6728d7bac664b9ebf60c39b02286a964",
+      "oldest1": "120bbddd687a232c8e6a5ee50b158aff6728d7bac664b9ebf60c39b02286a964",
+      "newest2": "120bbddd687a232c8e6a5ee50b158aff6728d7bac664b9ebf60c39b02286a964",
+      "oldest2": "120bbddd687a232c8e6a5ee50b158aff6728d7bac664b9ebf60c39b02286a964",
+      "newest3": "120bbddd687a232c8e6a5ee50b158aff6728d7bac664b9ebf60c39b02286a964",
+      "oldest3": "120bbddd687a232c8e6a5ee50b158aff6728d7bac664b9ebf60c39b02286a964",
+      "newest4": "120bbddd687a232c8e6a5ee50b158aff6728d7bac664b9ebf60c39b02286a964",
+      "oldest4": "120bbddd687a232c8e6a5ee50b158aff6728d7bac664b9ebf60c39b02286a964"
+    },
+    "unique_conditioned_inputs": 3
+  },
+  {
+    "situation_id": "fixed:polite:conv44",
+    "had_history": true,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 540,
+      "user_only": 481,
+      "neutral": 502,
+      "newest1": 540,
+      "oldest1": 540,
+      "newest2": 540,
+      "oldest2": 540,
+      "newest3": 540,
+      "oldest3": 540,
+      "newest4": 540,
+      "oldest4": 540
+    },
+    "token_hashes": {
+      "preserved": "e6d62bf1aa6a0e414d4486093eace7f8b70387f6ba43f714a9a738d6ab910f99",
+      "user_only": "ca0e485a551aa061672cdb8718045e4d46dd73927dabcb4a0327f732c725ebca",
+      "neutral": "c8525c4bbf90cc517d50d5498c45afc869ad81c2c35d252bb6da9e4d05823f22",
+      "newest1": "e6d62bf1aa6a0e414d4486093eace7f8b70387f6ba43f714a9a738d6ab910f99",
+      "oldest1": "e6d62bf1aa6a0e414d4486093eace7f8b70387f6ba43f714a9a738d6ab910f99",
+      "newest2": "e6d62bf1aa6a0e414d4486093eace7f8b70387f6ba43f714a9a738d6ab910f99",
+      "oldest2": "e6d62bf1aa6a0e414d4486093eace7f8b70387f6ba43f714a9a738d6ab910f99",
+      "newest3": "e6d62bf1aa6a0e414d4486093eace7f8b70387f6ba43f714a9a738d6ab910f99",
+      "oldest3": "e6d62bf1aa6a0e414d4486093eace7f8b70387f6ba43f714a9a738d6ab910f99",
+      "newest4": "e6d62bf1aa6a0e414d4486093eace7f8b70387f6ba43f714a9a738d6ab910f99",
+      "oldest4": "e6d62bf1aa6a0e414d4486093eace7f8b70387f6ba43f714a9a738d6ab910f99"
+    },
+    "unique_conditioned_inputs": 3
+  },
+  {
+    "situation_id": "fixed:polite:conv45",
+    "had_history": true,
+    "eligible_owner_errors": 1,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 1,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8
+        ]
+      }
+    },
+    "tokens": {
+      "preserved": 569,
+      "user_only": 493,
+      "neutral": 521,
+      "newest1": 569,
+      "oldest1": 569,
+      "newest2": 569,
+      "oldest2": 569,
+      "newest3": 569,
+      "oldest3": 569,
+      "newest4": 569,
+      "oldest4": 569
+    },
+    "token_hashes": {
+      "preserved": "5d9dd6d818289d47f472453606999a42a68912445280e5b202f585d559f885fa",
+      "user_only": "88c105b7d9bee1ed200ede21ff8e739545216e962001032a742e3b7fbfb6009d",
+      "neutral": "ca687455bd4ccf6f961f0070ae9cfea9020b37d7579b92e02309fb439d5e5820",
+      "newest1": "6b264440a22dfc23f32e8d518c20e24659b9a08efda0f954b1a39680010209fb",
+      "oldest1": "6b264440a22dfc23f32e8d518c20e24659b9a08efda0f954b1a39680010209fb",
+      "newest2": "6b264440a22dfc23f32e8d518c20e24659b9a08efda0f954b1a39680010209fb",
+      "oldest2": "6b264440a22dfc23f32e8d518c20e24659b9a08efda0f954b1a39680010209fb",
+      "newest3": "6b264440a22dfc23f32e8d518c20e24659b9a08efda0f954b1a39680010209fb",
+      "oldest3": "6b264440a22dfc23f32e8d518c20e24659b9a08efda0f954b1a39680010209fb",
+      "newest4": "6b264440a22dfc23f32e8d518c20e24659b9a08efda0f954b1a39680010209fb",
+      "oldest4": "6b264440a22dfc23f32e8d518c20e24659b9a08efda0f954b1a39680010209fb"
+    },
+    "unique_conditioned_inputs": 4
+  },
+  {
+    "situation_id": "fixed:polite:conv46",
+    "had_history": true,
+    "eligible_owner_errors": 2,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          6
+        ]
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8,
+          6
+        ]
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          6,
+          8
+        ]
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 2,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8,
+          6
+        ]
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 2,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          6,
+          8
+        ]
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 2,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8,
+          6
+        ]
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 2,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          6,
+          8
+        ]
+      }
+    },
+    "tokens": {
+      "preserved": 563,
+      "user_only": 495,
+      "neutral": 523,
+      "newest1": 563,
+      "oldest1": 563,
+      "newest2": 563,
+      "oldest2": 563,
+      "newest3": 563,
+      "oldest3": 563,
+      "newest4": 563,
+      "oldest4": 563
+    },
+    "token_hashes": {
+      "preserved": "9a3f06d25aee7ec24d8379c726992dee1c7337758175476f74f36db4ea633d37",
+      "user_only": "91f9afce2cb1833c83e49609a04d8dea47fc94a35c27901ff5cbe18b185b7b68",
+      "neutral": "bdf13710cfe72f82d8e5bcda64dba533915b5718387b5762335764c375b65b61",
+      "newest1": "7f8191a5d079df1869b1ba556ec00834952597a5a4e3d18f5fc2af9287e0dd52",
+      "oldest1": "1fa89666455b1e5b74c1190fe2c9a3cd2ee4662c16a31c0f3f062a9501a10e86",
+      "newest2": "64217221772eb57d2e4c976f836091ee3bf944aa423f0a13c06cc005758b7b10",
+      "oldest2": "64217221772eb57d2e4c976f836091ee3bf944aa423f0a13c06cc005758b7b10",
+      "newest3": "64217221772eb57d2e4c976f836091ee3bf944aa423f0a13c06cc005758b7b10",
+      "oldest3": "64217221772eb57d2e4c976f836091ee3bf944aa423f0a13c06cc005758b7b10",
+      "newest4": "64217221772eb57d2e4c976f836091ee3bf944aa423f0a13c06cc005758b7b10",
+      "oldest4": "64217221772eb57d2e4c976f836091ee3bf944aa423f0a13c06cc005758b7b10"
+    },
+    "unique_conditioned_inputs": 6
+  },
+  {
+    "situation_id": "fixed:polite:conv47",
+    "had_history": true,
+    "eligible_owner_errors": 3,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 3,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          4
+        ]
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          8,
+          6
+        ]
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          4,
+          6
+        ]
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8,
+          6,
+          4
+        ]
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          4,
+          6,
+          8
+        ]
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8,
+          6,
+          4
+        ]
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          4,
+          6,
+          8
+        ]
+      }
+    },
+    "tokens": {
+      "preserved": 565,
+      "user_only": 500,
+      "neutral": 528,
+      "newest1": 565,
+      "oldest1": 565,
+      "newest2": 565,
+      "oldest2": 565,
+      "newest3": 565,
+      "oldest3": 565,
+      "newest4": 565,
+      "oldest4": 565
+    },
+    "token_hashes": {
+      "preserved": "4e3ad2f27d426720afcd327c6958bed15bd5d008259b5b1c3aa5b29445f7b568",
+      "user_only": "52f20a82c1e9d43866b547e5cc7bd838c2517483100d38a7507d67ac6f8da90b",
+      "neutral": "c69ae5313011d4ed8ab683a6c49fe946700359d80ccdaf47b4624790c2116a1a",
+      "newest1": "b9115c3aaf2ddbaea9cedbd9e06fefba96b7276d99866b1772e31a9132424851",
+      "oldest1": "ca69ee89e76fa7cb85f35d01981a3a564f50a45a7250f0aa8fd66b07affe561b",
+      "newest2": "fd3f3f93474fd1309d30723a6faee2a1ae2c9f8e9d92f65612090a1833a0425c",
+      "oldest2": "2c896d7613af8d1b7ace1de1760a75af305bd0dacf2f3935de8fc686d0e1b294",
+      "newest3": "51ddbebb577490ebcbfae20eb4c077303c7647b4c64e584a947371d2666e7886",
+      "oldest3": "51ddbebb577490ebcbfae20eb4c077303c7647b4c64e584a947371d2666e7886",
+      "newest4": "51ddbebb577490ebcbfae20eb4c077303c7647b4c64e584a947371d2666e7886",
+      "oldest4": "51ddbebb577490ebcbfae20eb4c077303c7647b4c64e584a947371d2666e7886"
+    },
+    "unique_conditioned_inputs": 8
+  },
+  {
+    "situation_id": "fixed:polite:conv48",
+    "had_history": true,
+    "eligible_owner_errors": 4,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 4,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 3,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 3,
+        "edited_message_indices": [
+          2
+        ]
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          8,
+          6
+        ]
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          2,
+          4
+        ]
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          8,
+          6,
+          4
+        ]
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          2,
+          4,
+          6
+        ]
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 4,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8,
+          6,
+          4,
+          2
+        ]
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 4,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          2,
+          4,
+          6,
+          8
+        ]
+      }
+    },
+    "tokens": {
+      "preserved": 558,
+      "user_only": 502,
+      "neutral": 530,
+      "newest1": 558,
+      "oldest1": 558,
+      "newest2": 558,
+      "oldest2": 558,
+      "newest3": 558,
+      "oldest3": 558,
+      "newest4": 558,
+      "oldest4": 558
+    },
+    "token_hashes": {
+      "preserved": "fcdd9d5db4f18c6e47ea7f9aa5b07b5e405dbd20c6a1d53fc0cf37ad862b9c00",
+      "user_only": "ce76cc88b6be63cfb679d6baacd63e1d22d33873af5901d0f76c435cf4845231",
+      "neutral": "394a68a4c406fe7b410dca4d199c88174ec323ae5bab2fefc87dc64d0acb607f",
+      "newest1": "8c69fc408fdcf5c13cea4b63cf6b07e767e152390662f040029ce39fe267f83a",
+      "oldest1": "b073ae91fa1231b03ac8fed2ceb558ef301cd9bccda48876207d830fbe494d3c",
+      "newest2": "169fd19a0eae6c725f337666619f3b2b7cef5e5a9aed1b5f6471d8ac035c7739",
+      "oldest2": "03e205a14fdd334064a5a8bedb7b27891e60c9d681b6d48feaa2f41f77d23734",
+      "newest3": "cf0ddcde93973b6a31f7b80e534a5de209b7332a93b0ccf8cda3db245cba45bd",
+      "oldest3": "7b606b0bbef8a65226aee9ce07f63ce80e3b88f824131fa0a9111f4b3b71b5e7",
+      "newest4": "e341ee41837e067f537d58ff785b2d3f02fc9696aff4ec4203a2a55463126c09",
+      "oldest4": "e341ee41837e067f537d58ff785b2d3f02fc9696aff4ec4203a2a55463126c09"
+    },
+    "unique_conditioned_inputs": 10
+  },
+  {
+    "situation_id": "fixed:polite:conv49",
+    "had_history": true,
+    "eligible_owner_errors": 4,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 4,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 3,
+        "edited_message_indices": [
+          8
+        ]
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 3,
+        "edited_message_indices": [
+          2
+        ]
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          8,
+          6
+        ]
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          2,
+          4
+        ]
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          8,
+          6,
+          4
+        ]
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          2,
+          4,
+          6
+        ]
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 4,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          8,
+          6,
+          4,
+          2
+        ]
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 4,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          2,
+          4,
+          6,
+          8
+        ]
+      }
+    },
+    "tokens": {
+      "preserved": 560,
+      "user_only": 504,
+      "neutral": 532,
+      "newest1": 560,
+      "oldest1": 560,
+      "newest2": 560,
+      "oldest2": 560,
+      "newest3": 560,
+      "oldest3": 560,
+      "newest4": 560,
+      "oldest4": 560
+    },
+    "token_hashes": {
+      "preserved": "07fe7b0cd30c5163948929a5b61d203c32af48d9b75c2a93d5aaac6a64aa4fde",
+      "user_only": "cdd3bf3d54cf39e330b89fe8072b4fdb2aae1f10e869a03d6539f6fd24902d29",
+      "neutral": "1f74d11bb86b9a616b206697ea6959ac0fcbe2ae60c2b8729ba1184bad30a1a0",
+      "newest1": "c9c1dccbaabe84e497396c1dc6160aab8150b3f2413f9a3e6a34fcacd9efb223",
+      "oldest1": "fb81aaeb73c68f57a689ede917e51741ac7ad3ce86fdfef69f0b2ae518eac907",
+      "newest2": "7480aad2879cc26f833e1f43674063c4650b5bc57edab084045df41c4f04dc99",
+      "oldest2": "c0bdd6b6e602762fa34e23ec094174494e80b00474b1475a16963ede44322cf9",
+      "newest3": "1930a8accd0a7498b7075463fad538819aa20c2246206b78b21e63bfadba8685",
+      "oldest3": "ddae90a27b2334e7056ed7fbedb01405f27a9c4f53292ada25a83edf7c31250b",
+      "newest4": "e391f6fa772926e0eb64f6cef9c17693beef6ffacc892a40a3499128c8edda76",
+      "oldest4": "e391f6fa772926e0eb64f6cef9c17693beef6ffacc892a40a3499128c8edda76"
+    },
+    "unique_conditioned_inputs": 10
+  },
+  {
+    "situation_id": "fixed:polite:conv50",
+    "had_history": true,
+    "eligible_owner_errors": 3,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 3,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          6
+        ]
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 1,
+        "remaining_owner_errors": 2,
+        "edited_message_indices": [
+          2
+        ]
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          6,
+          4
+        ]
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 2,
+        "remaining_owner_errors": 1,
+        "edited_message_indices": [
+          2,
+          4
+        ]
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          6,
+          4,
+          2
+        ]
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          2,
+          4,
+          6
+        ]
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          6,
+          4,
+          2
+        ]
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 3,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": [
+          2,
+          4,
+          6
+        ]
+      }
+    },
+    "tokens": {
+      "preserved": 565,
+      "user_only": 505,
+      "neutral": 533,
+      "newest1": 565,
+      "oldest1": 565,
+      "newest2": 565,
+      "oldest2": 565,
+      "newest3": 565,
+      "oldest3": 565,
+      "newest4": 565,
+      "oldest4": 565
+    },
+    "token_hashes": {
+      "preserved": "2393b4b41221080ab94811c58105813d12fca8599fc5842c915b893300231182",
+      "user_only": "d3e661223f3008440f0246533c721928f5e2c3c74afd0ca4dfff4011389df26f",
+      "neutral": "c06d7477f69276e7698c527eb8b8ddeb163c08db561cbaa8d1521c0d4e2429ac",
+      "newest1": "3a2b828902548eeb4f35fceae1ea3af3042d079380fdc1e0222b20bbd7fbd437",
+      "oldest1": "6d8e877732bcebebf97f2239ca3f5f9e66238a363e2cdba2c531b164ae5e1b98",
+      "newest2": "05254c80746cdd355b20e40f9b4b9fbd4fb3d5a6a011f41929d07ffbb47c3aa4",
+      "oldest2": "620f9c787d2aede6d057c46b9537f805e3b3ada18a67f89d48d20607aa3ef295",
+      "newest3": "4406baba56f03f41311bcf6e9b80e5c45f9f45accba15f70de83563cdfc28ed2",
+      "oldest3": "4406baba56f03f41311bcf6e9b80e5c45f9f45accba15f70de83563cdfc28ed2",
+      "newest4": "4406baba56f03f41311bcf6e9b80e5c45f9f45accba15f70de83563cdfc28ed2",
+      "oldest4": "4406baba56f03f41311bcf6e9b80e5c45f9f45accba15f70de83563cdfc28ed2"
+    },
+    "unique_conditioned_inputs": 8
+  },
+  {
+    "situation_id": "fixed:polite:identity01",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 442,
+      "user_only": 442,
+      "neutral": 442,
+      "newest1": 442,
+      "oldest1": 442,
+      "newest2": 442,
+      "oldest2": 442,
+      "newest3": 442,
+      "oldest3": 442,
+      "newest4": 442,
+      "oldest4": 442
+    },
+    "token_hashes": {
+      "preserved": "43af3adb7190e1b0a86746e0e3f36033de7378539854ed8611cb1469c7e14298",
+      "user_only": "43af3adb7190e1b0a86746e0e3f36033de7378539854ed8611cb1469c7e14298",
+      "neutral": "43af3adb7190e1b0a86746e0e3f36033de7378539854ed8611cb1469c7e14298",
+      "newest1": "43af3adb7190e1b0a86746e0e3f36033de7378539854ed8611cb1469c7e14298",
+      "oldest1": "43af3adb7190e1b0a86746e0e3f36033de7378539854ed8611cb1469c7e14298",
+      "newest2": "43af3adb7190e1b0a86746e0e3f36033de7378539854ed8611cb1469c7e14298",
+      "oldest2": "43af3adb7190e1b0a86746e0e3f36033de7378539854ed8611cb1469c7e14298",
+      "newest3": "43af3adb7190e1b0a86746e0e3f36033de7378539854ed8611cb1469c7e14298",
+      "oldest3": "43af3adb7190e1b0a86746e0e3f36033de7378539854ed8611cb1469c7e14298",
+      "newest4": "43af3adb7190e1b0a86746e0e3f36033de7378539854ed8611cb1469c7e14298",
+      "oldest4": "43af3adb7190e1b0a86746e0e3f36033de7378539854ed8611cb1469c7e14298"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:polite:identity02",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 450,
+      "user_only": 450,
+      "neutral": 450,
+      "newest1": 450,
+      "oldest1": 450,
+      "newest2": 450,
+      "oldest2": 450,
+      "newest3": 450,
+      "oldest3": 450,
+      "newest4": 450,
+      "oldest4": 450
+    },
+    "token_hashes": {
+      "preserved": "1f18123d8e42f9f7a74840c74b6fadac1ef1c59e7e3a286004feef29e249ec3f",
+      "user_only": "1f18123d8e42f9f7a74840c74b6fadac1ef1c59e7e3a286004feef29e249ec3f",
+      "neutral": "1f18123d8e42f9f7a74840c74b6fadac1ef1c59e7e3a286004feef29e249ec3f",
+      "newest1": "1f18123d8e42f9f7a74840c74b6fadac1ef1c59e7e3a286004feef29e249ec3f",
+      "oldest1": "1f18123d8e42f9f7a74840c74b6fadac1ef1c59e7e3a286004feef29e249ec3f",
+      "newest2": "1f18123d8e42f9f7a74840c74b6fadac1ef1c59e7e3a286004feef29e249ec3f",
+      "oldest2": "1f18123d8e42f9f7a74840c74b6fadac1ef1c59e7e3a286004feef29e249ec3f",
+      "newest3": "1f18123d8e42f9f7a74840c74b6fadac1ef1c59e7e3a286004feef29e249ec3f",
+      "oldest3": "1f18123d8e42f9f7a74840c74b6fadac1ef1c59e7e3a286004feef29e249ec3f",
+      "newest4": "1f18123d8e42f9f7a74840c74b6fadac1ef1c59e7e3a286004feef29e249ec3f",
+      "oldest4": "1f18123d8e42f9f7a74840c74b6fadac1ef1c59e7e3a286004feef29e249ec3f"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "fixed:polite:register01",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 444,
+      "user_only": 444,
+      "neutral": 444,
+      "newest1": 444,
+      "oldest1": 444,
+      "newest2": 444,
+      "oldest2": 444,
+      "newest3": 444,
+      "oldest3": 444,
+      "newest4": 444,
+      "oldest4": 444
+    },
+    "token_hashes": {
+      "preserved": "981881f50c3baff5a39fde2c090ad0786634425b78aa56eebc7aab74369530fb",
+      "user_only": "981881f50c3baff5a39fde2c090ad0786634425b78aa56eebc7aab74369530fb",
+      "neutral": "981881f50c3baff5a39fde2c090ad0786634425b78aa56eebc7aab74369530fb",
+      "newest1": "981881f50c3baff5a39fde2c090ad0786634425b78aa56eebc7aab74369530fb",
+      "oldest1": "981881f50c3baff5a39fde2c090ad0786634425b78aa56eebc7aab74369530fb",
+      "newest2": "981881f50c3baff5a39fde2c090ad0786634425b78aa56eebc7aab74369530fb",
+      "oldest2": "981881f50c3baff5a39fde2c090ad0786634425b78aa56eebc7aab74369530fb",
+      "newest3": "981881f50c3baff5a39fde2c090ad0786634425b78aa56eebc7aab74369530fb",
+      "oldest3": "981881f50c3baff5a39fde2c090ad0786634425b78aa56eebc7aab74369530fb",
+      "newest4": "981881f50c3baff5a39fde2c090ad0786634425b78aa56eebc7aab74369530fb",
+      "oldest4": "981881f50c3baff5a39fde2c090ad0786634425b78aa56eebc7aab74369530fb"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "summary:polite:conv30",
+    "had_history": true,
+    "eligible_owner_errors": 0,
+    "is_library": true,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 506,
+      "user_only": 459,
+      "neutral": 466,
+      "newest1": 506,
+      "oldest1": 506,
+      "newest2": 506,
+      "oldest2": 506,
+      "newest3": 506,
+      "oldest3": 506,
+      "newest4": 506,
+      "oldest4": 506
+    },
+    "token_hashes": {
+      "preserved": "763843c5ff282112e11af2ff9ea6fffba5b00cb8cdf1244bbbea936eeb096caf",
+      "user_only": "93932362a641ce37860e8b73e8b90c3f5ba264fa91fd6ada0c1085c898186803",
+      "neutral": "2baa25f087341b5a8a6656eefa50a97548b3b15e75ddaaa5fb9f1e0572fe1357",
+      "newest1": "763843c5ff282112e11af2ff9ea6fffba5b00cb8cdf1244bbbea936eeb096caf",
+      "oldest1": "763843c5ff282112e11af2ff9ea6fffba5b00cb8cdf1244bbbea936eeb096caf",
+      "newest2": "763843c5ff282112e11af2ff9ea6fffba5b00cb8cdf1244bbbea936eeb096caf",
+      "oldest2": "763843c5ff282112e11af2ff9ea6fffba5b00cb8cdf1244bbbea936eeb096caf",
+      "newest3": "763843c5ff282112e11af2ff9ea6fffba5b00cb8cdf1244bbbea936eeb096caf",
+      "oldest3": "763843c5ff282112e11af2ff9ea6fffba5b00cb8cdf1244bbbea936eeb096caf",
+      "newest4": "763843c5ff282112e11af2ff9ea6fffba5b00cb8cdf1244bbbea936eeb096caf",
+      "oldest4": "763843c5ff282112e11af2ff9ea6fffba5b00cb8cdf1244bbbea936eeb096caf"
+    },
+    "unique_conditioned_inputs": 3
+  },
+  {
+    "situation_id": "follow:polite:conv41",
+    "had_history": false,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 520,
+      "user_only": 520,
+      "neutral": 520,
+      "newest1": 520,
+      "oldest1": 520,
+      "newest2": 520,
+      "oldest2": 520,
+      "newest3": 520,
+      "oldest3": 520,
+      "newest4": 520,
+      "oldest4": 520
+    },
+    "token_hashes": {
+      "preserved": "7f99ae193ec903e5e7f341ed6a2b93841581d3ceea8d93390fb66ba19713abf8",
+      "user_only": "7f99ae193ec903e5e7f341ed6a2b93841581d3ceea8d93390fb66ba19713abf8",
+      "neutral": "7f99ae193ec903e5e7f341ed6a2b93841581d3ceea8d93390fb66ba19713abf8",
+      "newest1": "7f99ae193ec903e5e7f341ed6a2b93841581d3ceea8d93390fb66ba19713abf8",
+      "oldest1": "7f99ae193ec903e5e7f341ed6a2b93841581d3ceea8d93390fb66ba19713abf8",
+      "newest2": "7f99ae193ec903e5e7f341ed6a2b93841581d3ceea8d93390fb66ba19713abf8",
+      "oldest2": "7f99ae193ec903e5e7f341ed6a2b93841581d3ceea8d93390fb66ba19713abf8",
+      "newest3": "7f99ae193ec903e5e7f341ed6a2b93841581d3ceea8d93390fb66ba19713abf8",
+      "oldest3": "7f99ae193ec903e5e7f341ed6a2b93841581d3ceea8d93390fb66ba19713abf8",
+      "newest4": "7f99ae193ec903e5e7f341ed6a2b93841581d3ceea8d93390fb66ba19713abf8",
+      "oldest4": "7f99ae193ec903e5e7f341ed6a2b93841581d3ceea8d93390fb66ba19713abf8"
+    },
+    "unique_conditioned_inputs": 1
+  },
+  {
+    "situation_id": "follow:polite:conv42",
+    "had_history": true,
+    "eligible_owner_errors": 0,
+    "is_library": false,
+    "condition_metadata": {
+      "preserved": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "user_only": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "neutral": {
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest1": {
+        "requested_edits": 1,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest2": {
+        "requested_edits": 2,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest3": {
+        "requested_edits": 3,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "newest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      },
+      "oldest4": {
+        "requested_edits": 4,
+        "applied_edits": 0,
+        "remaining_owner_errors": 0,
+        "edited_message_indices": []
+      }
+    },
+    "tokens": {
+      "preserved": 547,
+      "user_only": 532,
+      "neutral": 539,
+      "newest1": 547,
+      "oldest1": 547,
+      "newest2": 547,
+      "oldest2": 547,
+      "newest3": 547,
+      "oldest3": 547,
+      "newest4": 547,
+      "oldest4": 547
+    },
+    "token_hashes": {
+      "preserved": "21a06e9304712987c0052127b806db04825c791ccc89c03625d4196a8c46eedf",
+      "user_only": "0732739cd4ed2cb8e6c96eab5c915bc62d57f169a2d3346200fb32864ac56767",
+      "neutral": "f01af741e3bdc7f4cf4a73cb2fc49755033c6afc86e45b438b61185f63b7fc9d",
+      "newest1": "21a06e9304712987c0052127b806db04825c791ccc89c03625d4196a8c46eedf",
+      "oldest1": "21a06e9304712987c0052127b806db04825c791ccc89c03625d4196a8c46eedf",
+      "newest2": "21a06e9304712987c0052127b806db04825c791ccc89c03625d4196a8c46eedf",
+      "oldest2": "21a06e9304712987c0052127b806db04825c791ccc89c03625d4196a8c46eedf",
+      "newest3": "21a06e9304712987c0052127b806db04825c791ccc89c03625d4196a8c46eedf",
+      "oldest3": "21a06e9304712987c0052127b806db04825c791ccc89c03625d4196a8c46eedf",
+      "newest4": "21a06e9304712987c0052127b806db04825c791ccc89c03625d4196a8c46eedf",
+      "oldest4": "21a06e9304712987c0052127b806db04825c791ccc89c03625d4196a8c46eedf"
+    },
+    "unique_conditioned_inputs": 3
+  }
+]

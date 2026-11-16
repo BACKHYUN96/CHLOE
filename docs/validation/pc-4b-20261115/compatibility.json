@@ -1,0 +1,100 @@
+{
+  "gates_passed": true,
+  "normal_native_and_raw_contract": 6,
+  "cpu_cuda_same_prompt_token_ids": 3,
+  "phone_matching_prompt_counts": 3,
+  "gpu_offloaded_layers": "33/33",
+  "strict_cpu_has_no_cuda_compute_buffer": true,
+  "pairs": [
+    {
+      "id": "conv01",
+      "cpu_cuda_raw_identical": true,
+      "cpu_phone_raw_identical": true,
+      "cuda_phone_raw_identical": true,
+      "cpu": {
+        "inference_ms": 9819.015651,
+        "load_ms": 11231.944801,
+        "tokens": 72,
+        "prompt_tokens": 216,
+        "decode_tps": 9.885760323951182,
+        "spoken": "안녕! 오늘 기분 좋은 하루 보내는 중이야. 뭐가 궁금한 거 있니?"
+      },
+      "cuda": {
+        "inference_ms": 1728.1571000000004,
+        "load_ms": 11254.094766,
+        "tokens": 72,
+        "prompt_tokens": 216,
+        "decode_tps": 46.76743177082978,
+        "spoken": "안녕! 오늘 기분 좋은 하루 보내는 중이야. 뭐가 궁금한 거 있니?"
+      },
+      "phone": {
+        "inference_ms": 31196.050195999997,
+        "load_ms": 1703.955989,
+        "tokens": 72,
+        "prompt_tokens": 216,
+        "decode_tps": 5.9415254121428385,
+        "spoken": "안녕! 오늘 기분 좋은 하루 보내는 중이야. 뭐가 궁금한 거 있니?"
+      }
+    },
+    {
+      "id": "conv29",
+      "cpu_cuda_raw_identical": false,
+      "cpu_phone_raw_identical": false,
+      "cuda_phone_raw_identical": false,
+      "cpu": {
+        "inference_ms": 11903.89683,
+        "load_ms": 0.0,
+        "tokens": 92,
+        "prompt_tokens": 217,
+        "decode_tps": 9.746490129385087,
+        "spoken": "모르는 건 있으면 솔직하게 말해. '아, 그건 몰라'라고 하면 돼. 내가 알지 못한다고 거짓말은 안 해. 네가 궁금한 게 뭐야?"
+      },
+      "cuda": {
+        "inference_ms": 2162.91456,
+        "load_ms": 0.0,
+        "tokens": 106,
+        "prompt_tokens": 217,
+        "decode_tps": 49.35396603633448,
+        "spoken": "아, 모른다고 말해. 클로이, 네가 알려준 이름이 없으면 모른다고 해. 네가 알려준 이름이 있으면 그 이름으로 대답해. 이제 뭐 이야기해?"
+      },
+      "phone": {
+        "inference_ms": 64420.549976,
+        "load_ms": 0,
+        "tokens": 118,
+        "prompt_tokens": 217,
+        "decode_tps": 4.233015059502945,
+        "spoken": "아, 모른다고 말해. 클로이, 네가 알려준 이름이 없으면 모른다고 해. 네가 알려준 이름이 있으면 그 이름으로 답하고 자기소개는 안 해. 짧게 말해. 네가 뭐라고 했어?"
+      }
+    },
+    {
+      "id": "conv37",
+      "cpu_cuda_raw_identical": false,
+      "cpu_phone_raw_identical": false,
+      "cuda_phone_raw_identical": false,
+      "cpu": {
+        "inference_ms": 12798.349212,
+        "load_ms": 0.0,
+        "tokens": 100,
+        "prompt_tokens": 215,
+        "decode_tps": 9.699403025827378,
+        "spoken": "아직 기억 안 나요. 언제 생일인지 알려주시면 기억해둘게요. 오늘 생일인가요? 🎂"
+      },
+      "cuda": {
+        "inference_ms": 1977.892931,
+        "load_ms": 0.0,
+        "tokens": 101,
+        "prompt_tokens": 215,
+        "decode_tps": 51.73867163125415,
+        "spoken": "아, 내 생일 기억해? 아니야, 내가 기억하지. 너의 생일 기억해? 알려줘! 👏"
+      },
+      "phone": {
+        "inference_ms": 61977.026747,
+        "load_ms": 0,
+        "tokens": 106,
+        "prompt_tokens": 215,
+        "decode_tps": 4.1553090124842065,
+        "spoken": "아, 내 생일 기억해? 아니야, 내가 기억하는 게 아니라 너의 생일이야. 너의 생일이 언제인지 알려줘? \n"
+      }
+    }
+  ]
+}

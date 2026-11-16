@@ -1,0 +1,14 @@
+{
+  "java_policy_and_actual_kotlin_manager_compiled": true,
+  "junit_exit_code": 0,
+  "json_jar_sha256": "3cf6cd6892e32e2b4c1c39e0f52f5248a2f5b37646fdfbb79a66b46b618414ed",
+  "jvm_tests_passed": 107,
+  "python_tests_total": 126,
+  "python_tests_passed": 123,
+  "python_optional_skipped": 3,
+  "preservation": {
+    "phone_recheck": "not run; user disconnected USB after saving 79 outputs"
+  },
+  "full_product_apk_ui_tts_verified": false,
+  "next_turn_generation_verified": false
+}

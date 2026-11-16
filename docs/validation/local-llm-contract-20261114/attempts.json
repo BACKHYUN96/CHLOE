@@ -1,0 +1,74 @@
+[
+  {
+    "name": "schema-pilot",
+    "completed": true,
+    "responses": 16,
+    "contract_valid": 12,
+    "error_type": null,
+    "local_summary_sha256": "96843ab9ab783d7a4103b64ca6328a54a9930d112ddb4e82f13c3b17cafdc6d0"
+  },
+  {
+    "name": "constrained-pilot",
+    "completed": true,
+    "responses": 16,
+    "contract_valid": 0,
+    "error_type": null,
+    "local_summary_sha256": "5f6f3db6527278819e89f4b4764cb743c023e33102e84c19cfc18958df634a15"
+  },
+  {
+    "name": "constrained-pilot-unicode",
+    "completed": true,
+    "responses": 16,
+    "contract_valid": 16,
+    "error_type": null,
+    "local_summary_sha256": "d0f8ee0280a6bc6448cc0e4e3eca13e5518b63b89e3caf57e46a1f15cf988834"
+  },
+  {
+    "name": "constrained-full",
+    "completed": false,
+    "responses": 34,
+    "contract_valid": 34,
+    "error_type": "RuntimeError",
+    "local_summary_sha256": "2da5cee55b30f895be226aebb6c5bbf35e161f2ce1166e15bdcb07f3f14427a5"
+  },
+  {
+    "name": "conv35-diagnostic",
+    "completed": true,
+    "responses": 4,
+    "contract_valid": 1,
+    "error_type": null,
+    "local_summary_sha256": "b089733968ce5429e9bfdf28c8b046e67af7efaeba0f6f6bd9a8a0a955e37750"
+  },
+  {
+    "name": "constrained-full-hangul",
+    "completed": false,
+    "responses": 193,
+    "contract_valid": 189,
+    "error_type": null,
+    "local_summary_sha256": "c1db485a8bb9f06726f123e04965f61412aaea0862a20215d91e70aa541ca80e"
+  },
+  {
+    "name": "xgrammar-full",
+    "completed": false,
+    "responses": 0,
+    "contract_valid": 0,
+    "error_type": "RuntimeError",
+    "local_summary_sha256": "c51f2267f9b2a4828659fbf28d3d960f81e28a99e39c20058eceb5b1e9120cb3"
+  },
+  {
+    "name": "xgrammar-full-cc",
+    "completed": false,
+    "responses": 164,
+    "contract_valid": 164,
+    "error_type": null,
+    "local_summary_sha256": "ce2f24649ad0737df26cc37ab6ff90e7a87c2961dc6623035dce31e940c36db1"
+  },
+  {
+    "name": "xgrammar-final",
+    "completed": true,
+    "responses": 220,
+    "contract_valid": 220,
+    "error_type": null,
+    "local_summary_sha256": "48bee8ec9edd464ac382c539209a3624c94716de90b20c3405dd56beb570d806"
+  }
+]

@@ -1,0 +1,2979 @@
+{
+  "exact_available_owner_error_counts": {
+    "0": 34,
+    "1": 2,
+    "2": 2,
+    "3": 4,
+    "4": 4
+  },
+  "actual_additional_edit_eligible_counts": {
+    "1": 12,
+    "2": 10,
+    "3": 8,
+    "4": 4
+  },
+  "all_user_roles_content_order_unchanged": true,
+  "neutral_preserves_original_role_sequence": true,
+  "cumulative_edits_only_possessive_spans": true,
+  "nested_steps_verified": true,
+  "shared_full_endpoint_is_input_equivalence_not_independent_run": true,
+  "role_condition_remaining_count_metadata_correction": {
+    "scope": "Metadata only: user_only/neutral removed original assistant clauses but initial remaining_owner_errors recorded the source count. Corrected to zero; cumulative intervention metadata was already correct.",
+    "changed_metadata_entries": 24,
+    "all_neural_input_messages_identical": true,
+    "all1012_response_files_unchanged": true,
+    "model_inference_rerun": false,
+    "raw_inputs_and_summary_preserved": true,
+    "original_input_artifact_sha256": "d6dd1b047275f4a0a70c988b88fdf867a1c6f9c22e9da6e5ddbd0c951f68e0fb",
+    "executed_source_sha256": "71c29042e0c3fa380cf76c73141ad60fc547c327a3972b1201539e0dfbc549ab",
+    "metadata_fixed_source_sha256": "65da94f507e4a83d82cba1f73c36049249d6db49475a26618b42447b2e07d53c",
+    "changes": [
+      {
+        "situation_id": "fixed:casual:conv45",
+        "condition": "user_only",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 1,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:casual:conv45",
+        "condition": "neutral",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 1,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:casual:conv46",
+        "condition": "user_only",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 2,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:casual:conv46",
+        "condition": "neutral",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 2,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:casual:conv47",
+        "condition": "user_only",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 3,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:casual:conv47",
+        "condition": "neutral",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 3,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:casual:conv48",
+        "condition": "user_only",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 4,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:casual:conv48",
+        "condition": "neutral",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 4,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:casual:conv49",
+        "condition": "user_only",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 4,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:casual:conv49",
+        "condition": "neutral",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 4,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:casual:conv50",
+        "condition": "user_only",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 3,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:casual:conv50",
+        "condition": "neutral",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 3,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:polite:conv45",
+        "condition": "user_only",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 1,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:polite:conv45",
+        "condition": "neutral",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 1,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:polite:conv46",
+        "condition": "user_only",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 2,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:polite:conv46",
+        "condition": "neutral",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 2,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:polite:conv47",
+        "condition": "user_only",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 3,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:polite:conv47",
+        "condition": "neutral",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 3,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:polite:conv48",
+        "condition": "user_only",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 4,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:polite:conv48",
+        "condition": "neutral",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 4,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:polite:conv49",
+        "condition": "user_only",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 4,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:polite:conv49",
+        "condition": "neutral",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 4,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:polite:conv50",
+        "condition": "user_only",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 3,
+        "correct_remaining_count": 0
+      },
+      {
+        "situation_id": "fixed:polite:conv50",
+        "condition": "neutral",
+        "field": "remaining_owner_errors",
+        "recorded_original_count": 3,
+        "correct_remaining_count": 0
+      }
+    ]
+  },
+  "situations": [
+    {
+      "situation_id": "fixed:casual:conv01",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv17",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv30",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv31",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv32",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv35",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv38",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv41",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv42",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv43",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv44",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv45",
+      "available_owner_errors": 1,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv46",
+      "available_owner_errors": 2,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            6
+          ]
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8,
+            6
+          ]
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            6,
+            8
+          ]
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 2,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8,
+            6
+          ]
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 2,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            6,
+            8
+          ]
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 2,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8,
+            6
+          ]
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 2,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            6,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv47",
+      "available_owner_errors": 3,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            4
+          ]
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            8,
+            6
+          ]
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            4,
+            6
+          ]
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8,
+            6,
+            4
+          ]
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            4,
+            6,
+            8
+          ]
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8,
+            6,
+            4
+          ]
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            4,
+            6,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv48",
+      "available_owner_errors": 4,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 3,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 3,
+          "edited_message_indices": [
+            2
+          ]
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            8,
+            6
+          ]
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            2,
+            4
+          ]
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            8,
+            6,
+            4
+          ]
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            2,
+            4,
+            6
+          ]
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 4,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8,
+            6,
+            4,
+            2
+          ]
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 4,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            2,
+            4,
+            6,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv49",
+      "available_owner_errors": 4,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 3,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 3,
+          "edited_message_indices": [
+            2
+          ]
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            8,
+            6
+          ]
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            2,
+            4
+          ]
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            8,
+            6,
+            4
+          ]
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            2,
+            4,
+            6
+          ]
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 4,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8,
+            6,
+            4,
+            2
+          ]
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 4,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            2,
+            4,
+            6,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:conv50",
+      "available_owner_errors": 3,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            6
+          ]
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            2
+          ]
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            6,
+            4
+          ]
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            2,
+            4
+          ]
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            6,
+            4,
+            2
+          ]
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            2,
+            4,
+            6
+          ]
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            6,
+            4,
+            2
+          ]
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            2,
+            4,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:identity01",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:identity02",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:casual:register01",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "summary:casual:conv30",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "follow:casual:conv41",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "follow:casual:conv42",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv01",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv17",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv30",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv31",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv32",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv35",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv38",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv41",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv42",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv43",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv44",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv45",
+      "available_owner_errors": 1,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 1,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8
+          ]
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv46",
+      "available_owner_errors": 2,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            6
+          ]
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8,
+            6
+          ]
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            6,
+            8
+          ]
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 2,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8,
+            6
+          ]
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 2,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            6,
+            8
+          ]
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 2,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8,
+            6
+          ]
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 2,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            6,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv47",
+      "available_owner_errors": 3,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            4
+          ]
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            8,
+            6
+          ]
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            4,
+            6
+          ]
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8,
+            6,
+            4
+          ]
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            4,
+            6,
+            8
+          ]
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8,
+            6,
+            4
+          ]
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            4,
+            6,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv48",
+      "available_owner_errors": 4,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 3,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 3,
+          "edited_message_indices": [
+            2
+          ]
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            8,
+            6
+          ]
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            2,
+            4
+          ]
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            8,
+            6,
+            4
+          ]
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            2,
+            4,
+            6
+          ]
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 4,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8,
+            6,
+            4,
+            2
+          ]
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 4,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            2,
+            4,
+            6,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv49",
+      "available_owner_errors": 4,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 3,
+          "edited_message_indices": [
+            8
+          ]
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 3,
+          "edited_message_indices": [
+            2
+          ]
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            8,
+            6
+          ]
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            2,
+            4
+          ]
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            8,
+            6,
+            4
+          ]
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            2,
+            4,
+            6
+          ]
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 4,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            8,
+            6,
+            4,
+            2
+          ]
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 4,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            2,
+            4,
+            6,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:conv50",
+      "available_owner_errors": 3,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            6
+          ]
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 1,
+          "remaining_owner_errors": 2,
+          "edited_message_indices": [
+            2
+          ]
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            6,
+            4
+          ]
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 2,
+          "remaining_owner_errors": 1,
+          "edited_message_indices": [
+            2,
+            4
+          ]
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            6,
+            4,
+            2
+          ]
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            2,
+            4,
+            6
+          ]
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            6,
+            4,
+            2
+          ]
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 3,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": [
+            2,
+            4,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:identity01",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:identity02",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "fixed:polite:register01",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "summary:polite:conv30",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "follow:polite:conv41",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    },
+    {
+      "situation_id": "follow:polite:conv42",
+      "available_owner_errors": 0,
+      "condition_edits": {
+        "newest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest1": {
+          "requested_edits": 1,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest2": {
+          "requested_edits": 2,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest3": {
+          "requested_edits": 3,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "newest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        },
+        "oldest4": {
+          "requested_edits": 4,
+          "applied_edits": 0,
+          "remaining_owner_errors": 0,
+          "edited_message_indices": []
+        }
+      }
+    }
+  ]
+}

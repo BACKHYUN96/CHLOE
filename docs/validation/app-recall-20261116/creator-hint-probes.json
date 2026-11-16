@@ -1,0 +1,51 @@
+{
+  "design": "Two fixed contexts chosen after the main run. Compare full actual_messages in responses.json vs removing only the final system line starting with 앱 제작자는 사용자다. Same fresh worker settings, consumer uses unedited original history. No change deployed to the production prompt.",
+  "fresh_requests": 4,
+  "normal_raw_and_final_contracts": 4,
+  "rows": [
+    {
+      "id": "different-title-with",
+      "reference_id": "after-different-title",
+      "creator_hint": true,
+      "input_tokens_sha256": "d1afe1a1f0415ea889332b4edeea275ed673a46394f16c51451c25a0f7d2129f",
+      "raw": "{\n  \"spoken_text\": \"아라 앱은 사용자님께서 직접 만들어 주셨어요. 제가 만든 것이 아니에요.\",\n  \"intent\": \"question\",\n  \"emotion\": \"neutral\",\n  \"delivery\": {\n    \"pace\": \"normal\",\n    \"energy\": \"low\",\n    \"expressiveness\": \"gentle\"\n  },\n  \"tts_instruction\": \"\"\n}",
+      "final": "{\"spoken_text\":\"아라 앱은 사용자님께서 직접 만들어 주셨어요. 제가 만든 것이 아니에요.\",\"intent\":\"question\",\"emotion\":\"neutral\",\"delivery\":{\"pace\":\"normal\",\"energy\":\"low\",\"expressiveness\":\"gentle\"},\"tts_instruction\":\"\"}",
+      "raw_grade": "fail",
+      "final_grade": "fail",
+      "reason": "새아라 제작자를 아라 제작자라고 단정한다."
+    },
+    {
+      "id": "different-title-without",
+      "reference_id": "after-different-title",
+      "creator_hint": false,
+      "input_tokens_sha256": "15f0d08e76fd0f4d5a6feeb652a66ab5c7a60aaffd5f359a15ff20d181e2c703",
+      "raw": "{\n  \"spoken_text\": \"새아라 앱은 사용자님께서 직접 만들어 주셨군요. 제가 만든 것이 아니에요.\",\n  \"intent\": \"question\",\n  \"emotion\": \"neutral\",\n  \"delivery\": {\n    \"pace\": \"normal\",\n    \"energy\": \"low\",\n    \"expressiveness\": \"gentle\"\n  },\n  \"tts_instruction\": \"\"\n}",
+      "final": "{\"spoken_text\":\"새아라 앱은 사용자님께서 직접 만들어 주셨군요. 제가 만든 것이 아니에요.\",\"intent\":\"question\",\"emotion\":\"neutral\",\"delivery\":{\"pace\":\"normal\",\"energy\":\"low\",\"expressiveness\":\"gentle\"},\"tts_instruction\":\"\"}",
+      "raw_grade": "fail",
+      "final_grade": "fail",
+      "reason": "허위 귀속은 사라졌으나 새아라에 관해 답하며, 질문한 아라의 제작자가 미확인임을 설명하지 못한다."
+    },
+    {
+      "id": "maker-quoted-without",
+      "reference_id": "after-maker-quoted",
+      "creator_hint": false,
+      "input_tokens_sha256": "ec2c557f4be149c0a6504eb0a0bfa575e19c27570c2ff388573e437b98b32fc7",
+      "raw": "{\n  \"spoken_text\": \"저는 도담이 앱의 개발자가 아니에요. 개발자는 앱 제작자이신 분일 거예요.\",\n  \"intent\": \"question\",\n  \"emotion\": \"neutral\",\n  \"delivery\": {\n    \"pace\": \"normal\",\n    \"energy\": \"low\",\n    \"expressiveness\": \"restrained\"\n  },\n  \"tts_instruction\": \"\"\n}",
+      "final": "{\"spoken_text\":\"그 앱은 직접 만드셨다고 말씀하셨어요.\",\"intent\":\"chat\",\"emotion\":\"neutral\",\"delivery\":{\"pace\":\"normal\",\"energy\":\"medium\",\"expressiveness\":\"restrained\"},\"tts_instruction\":\"\"}",
+      "raw_grade": "fail",
+      "final_grade": "pass",
+      "reason": "원문은 제작자를 제작자라고 되풀이한다. 최종 발화는 사용자 진술에 따라 제작자를 답한다."
+    },
+    {
+      "id": "maker-quoted-with",
+      "reference_id": "after-maker-quoted",
+      "creator_hint": true,
+      "input_tokens_sha256": "f1280acd3ed2dd64fd5c531bf41afc6c9c1ef4c909b6f70186b98ef37610eb94",
+      "raw": "{\n  \"spoken_text\": \"도담이 앱은 사용자님께서 직접 만들어 주셨어요. 제가 만든 것이 아니에요.\",\n  \"intent\": \"question\",\n  \"emotion\": \"neutral\",\n  \"delivery\": {\n    \"pace\": \"normal\",\n    \"energy\": \"low\",\n    \"expressiveness\": \"restrained\"\n  },\n  \"tts_instruction\": \"\"\n}",
+      "final": "{\"spoken_text\":\"그 앱은 직접 만드셨다고 말씀하셨어요.\",\"intent\":\"chat\",\"emotion\":\"neutral\",\"delivery\":{\"pace\":\"normal\",\"energy\":\"medium\",\"expressiveness\":\"restrained\"},\"tts_instruction\":\"\"}",
+      "raw_grade": "pass",
+      "final_grade": "pass",
+      "reason": "원문과 최종 발화 모두 사용자가 도담이 앱을 만들었다고 답한다."
+    }
+  ]
+}

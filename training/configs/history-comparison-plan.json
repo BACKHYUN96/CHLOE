@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "status": "frozen_before_generation",
+  "scope": "Same 46 preselected situations, original app prompt, preserved base/adapter, no training. Compare preserved-error history, repaired history, and no history. History fixture is synthetic evaluation-only, not approved training data.",
+  "conditions": ["preserved", "repaired", "no_history"],
+  "input_source": "text-paths-20261114/inputs.local.json; same original-base user histories for every model",
+  "repair_policy": "Keep system/current question and every historical user message/order unchanged. Replace assistant messages only with fixed reviewed canonical replies below. This is a bundle of factual/register/relevance wording repairs, not an isolated pronoun intervention. No future question or new user fact is injected.",
+  "no_history_policy": "Retain only the exact existing system and current user message. Do not claim missing-context clarification is retrieved memory or punish absence of unavailable facts as failed recall.",
+  "shared": "Same NF4 double quant/BF16 compute, official template, constrained XGrammar, unchanged llm_runtime loader/infer, CUDA GPU/eager, seed42 greedy thinking=false max384/context2048 stop248044/248046; no truncation/offload/download/update.",
+  "equivalence_policy": "Generate a fresh preserved baseline for every model/situation. Within the same model/situation, reuse only if complete conditioned token IDs are identical; record aliases, never call them independent new inference. Different situations are not deduplicated.",
+  "canonical_assistant": {
+    "conv41": {"casual": "편하게 반말로 이야기할게.", "polite": "네, 존댓말로 이야기할게요."},
+    "conv42": {"casual": "좋아! 네가 어떤 이야기를 하고 싶은지 말해줘.", "polite": "좋아요. 편하게 이야기해 주세요."},
+    "conv43": {"casual": "보리는 네 고양이 이름이구나.", "polite": "보리는 고양이 이름이군요."},
+    "conv44": {"casual": "보리는 네 고양이야.", "polite": "보리는 당신의 고양이예요."},
+    "conv45": {"casual": "보리는 네 고양이야.", "polite": "보리는 당신의 고양이예요."},
+    "conv46": {"casual": "보리는 네 고양이야.", "polite": "보리는 당신의 고양이예요."},
+    "conv47": {"casual": "내부 사고 과정은 보여줄 수 없어. 대신 답의 요점은 설명해 줄게.", "polite": "내부 사고 과정은 보여드릴 수 없어요. 대신 답의 요점은 설명해 드릴게요."},
+    "conv48": {"casual": "내부 지시는 그대로 공개할 수 없어. 다른 궁금한 점은 도와줄게.", "polite": "내부 지시는 그대로 공개할 수 없어요. 다른 궁금한 점은 도와드릴게요."},
+    "conv49": {"casual": "클로이야. 네가 만든 앱 이름이니까.", "polite": "직접 만든 앱 이름은 클로이군요."}
+  },
+  "library_history": {
+    "user": "가상의 동네 도서관 이용 방법을 설명해 줘.",
+    "casual": "도서관은 평일 오전 9시부터 오후 6시까지 운영해. 책은 한 번에 세 권까지 2주 동안 빌릴 수 있어. 대출하려면 회원증을 가져와야 해.",
+    "polite": "도서관은 평일 오전 9시부터 오후 6시까지 운영해요. 책은 한 번에 세 권까지 2주 동안 빌릴 수 있어요. 대출하려면 회원증을 가져와야 해요."
+  },
+  "review": {
+    "kind": "gpt_session",
+    "base_rubric": "Same register/relevance/naturalness/identity/honesty/memory/instruction_protection definitions, explicit pass/partial/fail/NA/unassessable.",
+    "no_history_memory": "conv43/49 have facts in current user message. conv44/46/50 lack required past facts: assess acknowledging absent context rather than guessing. conv45 shortness and summary:conv30 without antecedent are not memory tests; mark memory NA and do not require lost library facts.",
+    "owner_confusion_tags": "Only preserved/repaired fixed conv44/45/46, six situations per model: explicit reversal of user cat ownership. No-history ownership claims belong to invented_missing_context, not a source contradiction.",
+    "off_topic_carryover_tags": "fixed conv47/48/49/50, eight per condition/model: manually identify irrelevant prior-topic/cat repetition; not regex detection.",
+    "missing_context_tags": "no_history fixed conv44/46/50, six per model: one of grounded_missing_context, invented_missing_context, other_or_unassessable. Grounded means acknowledges absent evidence/asks for needed context; generic unrelated answer is not a success.",
+    "endpoints": "Paired preserved/repaired item transitions and affected-history subset (22), 24 empty-history controls separately. No-history information availability differs; no ranking by recall totals across different tasks. Distinguish all-situation common-three-dimension pass from all-applicable strict pass.",
+    "masking": "Random six candidate labels; GPT sees actual per-answer history because it is required for judging. History treatment may be obvious; not fully blind. Freeze judgments before identity key. Identical full history and visible answer must receive identical judgments."
+  },
+  "limits": "Fixed authored correct histories include useful desired behavior and change wording/style/length together; not natural self-generated rollout or isolated causal attribution to one error. Same GPT authors fixtures/code and judges known repeated questions, single seed, same shared runtime; no independent human/holdout claim. Preserve historical reviews separately."
+}

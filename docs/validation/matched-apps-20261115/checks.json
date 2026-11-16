@@ -1,0 +1,146 @@
+{
+  "training_steps": 0,
+  "new_model_downloads": 0,
+  "model_merge_export": false,
+  "production_app_updates": false,
+  "windows_tests": {
+    "total": 119,
+    "passed": 116,
+    "skipped": 3,
+    "exit_code": 0,
+    "skip_reason": "optional tokenizer/xgrammar dependencies absent in Windows venv"
+  },
+  "wsl_windows_checkout_tests": {
+    "total": 119,
+    "passed": 116,
+    "skipped": 3,
+    "exit_code": 0
+  },
+  "wsl_existing_linux_json_contract_tests": {
+    "total": 7,
+    "passed": 7,
+    "skipped": 0,
+    "exit_code": 0
+  },
+  "android_instrumentation_build": {
+    "platform": "android-36",
+    "build_tools": "35.0.0",
+    "jdk": "21.0.12.101",
+    "signed_verified": true
+  },
+  "full_android_gradle_release_build": null,
+  "voice_tts_end_to_end": null,
+  "payloads": [
+    {
+      "source": "chloe-alpha15-base.apk",
+      "clone": "chloe-alpha15-base-signed.apk",
+      "source_sha256": "4d7ecb6da516b4b1d647428c05c13c69985aecae61728cab710a16d4f4e059a7",
+      "clone_sha256": "c4d3ba7141f73833f9abe181391d138b34a059143a5459f49c2551eea017df98",
+      "unchanged_payload_entries": 73,
+      "exceptions": [
+        "AndroidManifest.xml",
+        "META-INF/* (including version metadata)",
+        "stamp-cert-sha256 (signing provenance)"
+      ]
+    },
+    {
+      "source": "pocketpal-1.22.0-base.apk",
+      "clone": "pocketpal-1.22.0-base-signed.apk",
+      "source_sha256": "7856c7210da2486638e7cc7d9ff077308063b7e9b25642239835942e792fe80e",
+      "clone_sha256": "e99f7eab0051acce68cafc1b0b23cf600da26781719ba5434c13270136975218",
+      "unchanged_payload_entries": 853,
+      "exceptions": [
+        "AndroidManifest.xml",
+        "META-INF/* (including version metadata)",
+        "stamp-cert-sha256 (signing provenance)"
+      ]
+    },
+    {
+      "source": "pocketpal-1.22.0-split_config.arm64_v8a.apk",
+      "clone": "pocketpal-1.22.0-split_config.arm64_v8a-signed.apk",
+      "source_sha256": "6ed5c0af7dfc8efebc371080cc819d1c840e535c74cce27ad35b4f5f6ea311ea",
+      "clone_sha256": "9f35b86f9f21a5969f0fa1484eab9b9e4cd44991e8e24b22f560e025bbba6c6d",
+      "unchanged_payload_entries": 46,
+      "exceptions": [
+        "AndroidManifest.xml",
+        "META-INF/* (including version metadata)",
+        "stamp-cert-sha256 (signing provenance)"
+      ]
+    },
+    {
+      "source": "pocketpal-1.22.0-split_config.ko.apk",
+      "clone": "pocketpal-1.22.0-split_config.ko-signed.apk",
+      "source_sha256": "94882c5e56f39cf0602bad1e6fb544beaae55632fc74b57e62e53dc8230dba27",
+      "clone_sha256": "777e8b8ebc815f10b07ba72d2bbd38509df17174b659470f3fb419ab48ef8b4f",
+      "unchanged_payload_entries": 1,
+      "exceptions": [
+        "AndroidManifest.xml",
+        "META-INF/* (including version metadata)",
+        "stamp-cert-sha256 (signing provenance)"
+      ]
+    },
+    {
+      "source": "pocketpal-1.22.0-split_config.xxhdpi.apk",
+      "clone": "pocketpal-1.22.0-split_config.xxhdpi-signed.apk",
+      "source_sha256": "68e3840af7ff59d01b15be8ec9c2ffe1ac269ea785e65eb5e1020159d0651108",
+      "clone_sha256": "f141cb61c8bf2b1f1408199d1cc6e56708290820306d39faf1e9a45642ebd5b7",
+      "unchanged_payload_entries": 61,
+      "exceptions": [
+        "AndroidManifest.xml",
+        "META-INF/* (including version metadata)",
+        "stamp-cert-sha256 (signing provenance)"
+      ]
+    }
+  ],
+  "preservation": {
+    "original_4b_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+    "original_chloe_settings_and_log_same_contents": true,
+    "original_chloe_backup_members": 3,
+    "pocket_original_private_database_hash": "unavailable: original non-debuggable; isolation only, not a checksum claim"
+  },
+  "original_apks": [
+    {
+      "file": "chloe-alpha15-base.apk",
+      "sha256": "4d7ecb6da516b4b1d647428c05c13c69985aecae61728cab710a16d4f4e059a7",
+      "same_as_original_backup": true
+    },
+    {
+      "file": "pocketpal-1.22.0-base.apk",
+      "sha256": "7856c7210da2486638e7cc7d9ff077308063b7e9b25642239835942e792fe80e",
+      "same_as_original_backup": true
+    },
+    {
+      "file": "pocketpal-1.22.0-split_config.arm64_v8a.apk",
+      "sha256": "6ed5c0af7dfc8efebc371080cc819d1c840e535c74cce27ad35b4f5f6ea311ea",
+      "same_as_original_backup": true
+    },
+    {
+      "file": "pocketpal-1.22.0-split_config.ko.apk",
+      "sha256": "94882c5e56f39cf0602bad1e6fb544beaae55632fc74b57e62e53dc8230dba27",
+      "same_as_original_backup": true
+    },
+    {
+      "file": "pocketpal-1.22.0-split_config.xxhdpi.apk",
+      "sha256": "68e3840af7ff59d01b15be8ec9c2ffe1ac269ea785e65eb5e1020159d0651108",
+      "same_as_original_backup": true
+    }
+  ],
+  "base_2b_sha256": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+  "adapter_10step_sha256": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+  "phase_driver_apks": {
+    "driver": "a824a9ecc6fa50f4a0f77dd3d4fda97b68d8e1a1d919ffdcf4eb3f553f469cca",
+    "driver-post-audit-verified": "5aebd6b4789c7385d4a1b4c7095fb15dd029b989d47e1ba3a9a289db359355a8",
+    "driver-extended-verified": "d84102b9a4ff7335e1c492bafe90069c2d6c9363638676320f3f151a5b56d73d"
+  },
+  "exclusions": [
+    "preflight/pilot outputs not part of frozen 162 cells",
+    "heat-interrupted conv33 archived before clean rerun; not reused as completed output",
+    "heat-pause DB snapshot failed and was not used for resume"
+  ],
+  "performance_ranking": null,
+  "rotation_restored": "free",
+  "comparison_apps_force_stopped": true,
+  "corrected_requests_audited": 54,
+  "direct_gpt_judgments": 108,
+  "public_raw_reasoning_included": false
+}

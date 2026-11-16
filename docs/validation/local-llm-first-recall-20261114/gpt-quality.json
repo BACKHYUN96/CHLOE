@@ -1,0 +1,5874 @@
+{
+  "review_id": "e452647902c1e45433880692d13454df",
+  "reviewer_kind": "gpt_session",
+  "human_review": false,
+  "gpt_review_completed": true,
+  "cases": 82,
+  "logical_judgments": 164,
+  "distinct_full_visible_groups": 121,
+  "groups": {
+    "base:user": {
+      "cases": 48,
+      "strict_pass": 5,
+      "owner_correct": 18,
+      "owner_tags": {
+        "assistant": 20,
+        "other": 10,
+        "user": 7,
+        "third_minsu": 11
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 28,
+          "partial": 0,
+          "fail": 20,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 18,
+          "partial": 29,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 10,
+          "partial": 35,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 18,
+          "partial": 1,
+          "fail": 29,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 18,
+          "partial": 1,
+          "fail": 29,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:register:casual": {
+      "cases": 24,
+      "strict_pass": 1,
+      "owner_correct": 8,
+      "owner_tags": {
+        "assistant": 9,
+        "other": 7,
+        "user": 3,
+        "third_minsu": 5
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 10,
+          "partial": 0,
+          "fail": 14,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 8,
+          "partial": 15,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 21,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 1,
+          "fail": 15,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 8,
+          "partial": 1,
+          "fail": 15,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact:deictic": {
+      "cases": 8,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 8
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 8,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 5,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:question:original": {
+      "cases": 24,
+      "strict_pass": 0,
+      "owner_correct": 8,
+      "owner_tags": {
+        "assistant": 12,
+        "other": 4,
+        "user": 4,
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 11,
+          "partial": 0,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 8,
+          "partial": 16,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 21,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 16,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 16,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:format:user_only": {
+      "cases": 24,
+      "strict_pass": 2,
+      "owner_correct": 8,
+      "owner_tags": {
+        "assistant": 9,
+        "other": 7,
+        "user": 3,
+        "third_minsu": 5
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 13,
+          "partial": 0,
+          "fail": 11,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 8,
+          "partial": 15,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 19,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 16,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 16,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_format:deictic:user_only": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_question:deictic:original": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user": {
+      "cases": 48,
+      "strict_pass": 7,
+      "owner_correct": 20,
+      "owner_tags": {
+        "assistant": 22,
+        "other": 6,
+        "user": 9,
+        "third_minsu": 11
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 27,
+          "partial": 0,
+          "fail": 21,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 20,
+          "partial": 28,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 16,
+          "partial": 30,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 20,
+          "partial": 1,
+          "fail": 27,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 20,
+          "partial": 1,
+          "fail": 27,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:register:casual": {
+      "cases": 24,
+      "strict_pass": 0,
+      "owner_correct": 9,
+      "owner_tags": {
+        "assistant": 11,
+        "other": 4,
+        "user": 4,
+        "third_minsu": 5
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 6,
+          "partial": 0,
+          "fail": 18,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 9,
+          "partial": 15,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 21,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 9,
+          "partial": 1,
+          "fail": 14,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 9,
+          "partial": 1,
+          "fail": 14,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact:deictic": {
+      "cases": 8,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 8
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 8,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 4,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:question:original": {
+      "cases": 24,
+      "strict_pass": 0,
+      "owner_correct": 8,
+      "owner_tags": {
+        "assistant": 12,
+        "other": 4,
+        "user": 4,
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 13,
+          "partial": 0,
+          "fail": 11,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 8,
+          "partial": 16,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 4,
+          "partial": 20,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 16,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 16,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:format:user_only": {
+      "cases": 24,
+      "strict_pass": 4,
+      "owner_correct": 10,
+      "owner_tags": {
+        "assistant": 11,
+        "other": 3,
+        "user": 5,
+        "third_minsu": 5
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 12,
+          "partial": 0,
+          "fail": 12,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 10,
+          "partial": 14,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 6,
+          "partial": 17,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 10,
+          "partial": 0,
+          "fail": 14,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 10,
+          "partial": 0,
+          "fail": 14,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_format:deictic:user_only": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_question:deictic:original": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:question:explicit": {
+      "cases": 24,
+      "strict_pass": 5,
+      "owner_correct": 10,
+      "owner_tags": {
+        "assistant": 8,
+        "other": 6,
+        "user": 3,
+        "third_minsu": 7
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 17,
+          "partial": 0,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 10,
+          "partial": 13,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 7,
+          "partial": 14,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 10,
+          "partial": 1,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 10,
+          "partial": 1,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_question:deictic:explicit": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:question:explicit": {
+      "cases": 24,
+      "strict_pass": 7,
+      "owner_correct": 12,
+      "owner_tags": {
+        "assistant": 10,
+        "other": 2,
+        "user": 5,
+        "third_minsu": 7
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 14,
+          "partial": 0,
+          "fail": 10,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 12,
+          "partial": 12,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 12,
+          "partial": 10,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 12,
+          "partial": 1,
+          "fail": 11,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 12,
+          "partial": 1,
+          "fail": 11,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_question:deictic:explicit": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:format:neutral": {
+      "cases": 24,
+      "strict_pass": 3,
+      "owner_correct": 10,
+      "owner_tags": {
+        "assistant": 11,
+        "other": 3,
+        "user": 4,
+        "third_minsu": 6
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 15,
+          "partial": 0,
+          "fail": 9,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 10,
+          "partial": 14,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 7,
+          "partial": 16,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 10,
+          "partial": 1,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 10,
+          "partial": 1,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_format:deictic:neutral": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:format:neutral": {
+      "cases": 24,
+      "strict_pass": 3,
+      "owner_correct": 10,
+      "owner_tags": {
+        "assistant": 11,
+        "other": 3,
+        "user": 4,
+        "third_minsu": 6
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 15,
+          "partial": 0,
+          "fail": 9,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 10,
+          "partial": 14,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 10,
+          "partial": 13,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 10,
+          "partial": 1,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 10,
+          "partial": 1,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_format:deictic:neutral": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact:explicit_user": {
+      "cases": 8,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "other": 7,
+        "assistant": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 5,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 8,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 7,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_format:explicit_user:user_only": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "other": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_question:explicit_user:original": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "other": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact:explicit_user": {
+      "cases": 8,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "other": 6,
+        "assistant": 2
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 6,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 8,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 6,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_format:explicit_user:user_only": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "other": 3,
+        "assistant": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 3,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_question:explicit_user:original": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "other": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_question:explicit_user:explicit": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "other": 3,
+        "assistant": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 3,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_question:explicit_user:explicit": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "other": 2,
+        "assistant": 2
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 2,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_format:explicit_user:neutral": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "other": 3,
+        "assistant": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 3,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_format:explicit_user:neutral": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "other": 3,
+        "assistant": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 3,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact:named_deictic": {
+      "cases": 8,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 7,
+        "other": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 8,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 5,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_format:named_deictic:user_only": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 3,
+        "other": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 3,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_question:named_deictic:original": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact:named_deictic": {
+      "cases": 8,
+      "strict_pass": 1,
+      "owner_correct": 1,
+      "owner_tags": {
+        "assistant": 7,
+        "user": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 5,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 1,
+          "partial": 7,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 5,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_format:named_deictic:user_only": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 1,
+      "owner_tags": {
+        "assistant": 3,
+        "user": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_question:named_deictic:original": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_question:named_deictic:explicit": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "other": 1,
+        "assistant": 3
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 2,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_question:named_deictic:explicit": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 1,
+      "owner_tags": {
+        "assistant": 3,
+        "user": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_format:named_deictic:neutral": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_format:named_deictic:neutral": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact:named_explicit": {
+      "cases": 8,
+      "strict_pass": 1,
+      "owner_correct": 7,
+      "owner_tags": {
+        "user": 7,
+        "other": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 7,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 6,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 7,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 7,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_format:named_explicit:user_only": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 3,
+      "owner_tags": {
+        "user": 3,
+        "other": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 3,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_question:named_explicit:original": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 4,
+      "owner_tags": {
+        "user": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact:named_explicit": {
+      "cases": 8,
+      "strict_pass": 2,
+      "owner_correct": 8,
+      "owner_tags": {
+        "user": 8
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 4,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_format:named_explicit:user_only": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 4,
+      "owner_tags": {
+        "user": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_question:named_explicit:original": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 4,
+      "owner_tags": {
+        "user": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_question:named_explicit:explicit": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 3,
+      "owner_tags": {
+        "other": 1,
+        "user": 3
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 2,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_question:named_explicit:explicit": {
+      "cases": 4,
+      "strict_pass": 2,
+      "owner_correct": 4,
+      "owner_tags": {
+        "user": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_format:named_explicit:neutral": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 4,
+      "owner_tags": {
+        "user": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_format:named_explicit:neutral": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 4,
+      "owner_tags": {
+        "user": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact:third_quoted": {
+      "cases": 8,
+      "strict_pass": 2,
+      "owner_correct": 3,
+      "owner_tags": {
+        "assistant": 4,
+        "other": 1,
+        "third_minsu": 3
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 7,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 3,
+          "partial": 5,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 6,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_format:third_quoted:user_only": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 1,
+      "owner_tags": {
+        "assistant": 2,
+        "other": 1,
+        "third_minsu": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_question:third_quoted:original": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact:third_quoted": {
+      "cases": 8,
+      "strict_pass": 2,
+      "owner_correct": 3,
+      "owner_tags": {
+        "assistant": 5,
+        "third_minsu": 3
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 5,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 3,
+          "partial": 5,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 5,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_format:third_quoted:user_only": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 1,
+      "owner_tags": {
+        "assistant": 3,
+        "third_minsu": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_question:third_quoted:original": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_question:third_quoted:explicit": {
+      "cases": 4,
+      "strict_pass": 2,
+      "owner_correct": 3,
+      "owner_tags": {
+        "other": 1,
+        "third_minsu": 3
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 3,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_question:third_quoted:explicit": {
+      "cases": 4,
+      "strict_pass": 2,
+      "owner_correct": 3,
+      "owner_tags": {
+        "assistant": 1,
+        "third_minsu": 3
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 3,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_format:third_quoted:neutral": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 2,
+      "owner_tags": {
+        "assistant": 2,
+        "third_minsu": 2
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_format:third_quoted:neutral": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 2,
+      "owner_tags": {
+        "assistant": 2,
+        "third_minsu": 2
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact:third_explicit": {
+      "cases": 8,
+      "strict_pass": 2,
+      "owner_correct": 8,
+      "owner_tags": {
+        "third_minsu": 8
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 5,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 6,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_format:third_explicit:user_only": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 4,
+      "owner_tags": {
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_question:third_explicit:original": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 4,
+      "owner_tags": {
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact:third_explicit": {
+      "cases": 8,
+      "strict_pass": 2,
+      "owner_correct": 8,
+      "owner_tags": {
+        "third_minsu": 8
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 6,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_format:third_explicit:user_only": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 4,
+      "owner_tags": {
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_question:third_explicit:original": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 4,
+      "owner_tags": {
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_question:third_explicit:explicit": {
+      "cases": 4,
+      "strict_pass": 2,
+      "owner_correct": 4,
+      "owner_tags": {
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_question:third_explicit:explicit": {
+      "cases": 4,
+      "strict_pass": 2,
+      "owner_correct": 4,
+      "owner_tags": {
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:fact_format:third_explicit:neutral": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 4,
+      "owner_tags": {
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:fact_format:third_explicit:neutral": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 4,
+      "owner_tags": {
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role": {
+      "cases": 32,
+      "strict_pass": 7,
+      "owner_correct": 15,
+      "owner_tags": {
+        "assistant": 14,
+        "other": 9,
+        "user": 1,
+        "third_minsu": 8
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 27,
+          "partial": 0,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 16,
+          "partial": 15,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 9,
+          "partial": 10,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 14,
+          "partial": 3,
+          "fail": 15,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 17,
+          "partial": 15,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:register:casual": {
+      "cases": 16,
+      "strict_pass": 4,
+      "owner_correct": 8,
+      "owner_tags": {
+        "assistant": 7,
+        "other": 4,
+        "user": 1,
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 11,
+          "partial": 0,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 9,
+          "partial": 7,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 5,
+          "partial": 7,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 9,
+          "partial": 7,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:fact:first_person": {
+      "cases": 8,
+      "strict_pass": 3,
+      "owner_correct": 4,
+      "owner_tags": {
+        "assistant": 8
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 5,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 4,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:question:original": {
+      "cases": 16,
+      "strict_pass": 3,
+      "owner_correct": 8,
+      "owner_tags": {
+        "assistant": 10,
+        "other": 2,
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 14,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 8,
+          "partial": 7,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 7,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 8,
+          "partial": 8,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:source:user": {
+      "cases": 16,
+      "strict_pass": 0,
+      "owner_correct": 6,
+      "owner_tags": {
+        "assistant": 7,
+        "other": 5,
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 13,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 7,
+          "partial": 9,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 8,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 5,
+          "partial": 3,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 8,
+          "partial": 8,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:fact_source:first_person:user": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 3,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role": {
+      "cases": 32,
+      "strict_pass": 9,
+      "owner_correct": 16,
+      "owner_tags": {
+        "assistant": 15,
+        "other": 8,
+        "user": 1,
+        "third_minsu": 8
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 23,
+          "partial": 0,
+          "fail": 9,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 17,
+          "partial": 14,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 14,
+          "partial": 8,
+          "fail": 10,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 16,
+          "partial": 3,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 18,
+          "partial": 14,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:register:casual": {
+      "cases": 16,
+      "strict_pass": 4,
+      "owner_correct": 8,
+      "owner_tags": {
+        "assistant": 8,
+        "other": 3,
+        "user": 1,
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 10,
+          "partial": 0,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 9,
+          "partial": 7,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 5,
+          "partial": 6,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 9,
+          "partial": 7,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:fact:first_person": {
+      "cases": 8,
+      "strict_pass": 3,
+      "owner_correct": 4,
+      "owner_tags": {
+        "assistant": 7,
+        "other": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 7,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 5,
+          "partial": 2,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 4,
+          "partial": 3,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:question:original": {
+      "cases": 16,
+      "strict_pass": 3,
+      "owner_correct": 8,
+      "owner_tags": {
+        "assistant": 11,
+        "third_minsu": 4,
+        "other": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 12,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 8,
+          "partial": 8,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 6,
+          "partial": 5,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 1,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 8,
+          "partial": 8,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:source:user": {
+      "cases": 16,
+      "strict_pass": 3,
+      "owner_correct": 7,
+      "owner_tags": {
+        "assistant": 8,
+        "other": 4,
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 12,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 8,
+          "partial": 7,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 6,
+          "partial": 5,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 7,
+          "partial": 2,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 9,
+          "partial": 7,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:fact_source:first_person:user": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 3,
+        "other": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 1,
+          "partial": 2,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 2,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:question:explicit": {
+      "cases": 16,
+      "strict_pass": 4,
+      "owner_correct": 7,
+      "owner_tags": {
+        "assistant": 4,
+        "other": 7,
+        "user": 1,
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 13,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 8,
+          "partial": 8,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 6,
+          "partial": 3,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 6,
+          "partial": 3,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 9,
+          "partial": 7,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:question:explicit": {
+      "cases": 16,
+      "strict_pass": 6,
+      "owner_correct": 8,
+      "owner_tags": {
+        "assistant": 4,
+        "other": 7,
+        "user": 1,
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 11,
+          "partial": 0,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 9,
+          "partial": 6,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 8,
+          "partial": 3,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 2,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 10,
+          "partial": 6,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:source:assistant": {
+      "cases": 16,
+      "strict_pass": 7,
+      "owner_correct": 9,
+      "owner_tags": {
+        "assistant": 7,
+        "other": 4,
+        "user": 1,
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 14,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 9,
+          "partial": 6,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 7,
+          "partial": 2,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 9,
+          "partial": 0,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 9,
+          "partial": 7,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:fact_source:first_person:assistant": {
+      "cases": 4,
+      "strict_pass": 3,
+      "owner_correct": 4,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:source:assistant": {
+      "cases": 16,
+      "strict_pass": 6,
+      "owner_correct": 9,
+      "owner_tags": {
+        "assistant": 7,
+        "other": 4,
+        "user": 1,
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 11,
+          "partial": 0,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 9,
+          "partial": 7,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 8,
+          "partial": 3,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 9,
+          "partial": 1,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 9,
+          "partial": 7,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:fact_source:first_person:assistant": {
+      "cases": 4,
+      "strict_pass": 3,
+      "owner_correct": 4,
+      "owner_tags": {
+        "assistant": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:fact:second_person": {
+      "cases": 8,
+      "strict_pass": 0,
+      "owner_correct": 2,
+      "owner_tags": {
+        "assistant": 3,
+        "other": 5
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 6,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 2,
+          "partial": 5,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 1,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:fact_source:second_person:user": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 2,
+      "owner_tags": {
+        "assistant": 2,
+        "other": 2
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 1,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:fact:second_person": {
+      "cases": 8,
+      "strict_pass": 1,
+      "owner_correct": 3,
+      "owner_tags": {
+        "assistant": 4,
+        "other": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 3,
+          "partial": 5,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 1,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 3,
+          "partial": 2,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:fact_source:second_person:user": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 3,
+      "owner_tags": {
+        "assistant": 3,
+        "other": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 3,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 3,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:fact_source:second_person:assistant": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 1,
+        "other": 3
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 3,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:fact_source:second_person:assistant": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 1,
+        "other": 3
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:fact:explicit_user": {
+      "cases": 8,
+      "strict_pass": 1,
+      "owner_correct": 1,
+      "owner_tags": {
+        "other": 4,
+        "assistant": 3,
+        "user": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 1,
+          "partial": 7,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 1,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 7,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 1,
+          "partial": 7,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:fact_source:explicit_user:user": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "other": 3,
+        "assistant": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:fact:explicit_user": {
+      "cases": 8,
+      "strict_pass": 1,
+      "owner_correct": 1,
+      "owner_tags": {
+        "assistant": 4,
+        "other": 3,
+        "user": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 1,
+          "partial": 7,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 1,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 1,
+          "partial": 1,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 2,
+          "partial": 6,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:fact_source:explicit_user:user": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 2,
+        "other": 2
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 4,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 1,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:fact_source:explicit_user:assistant": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 1,
+      "owner_tags": {
+        "assistant": 2,
+        "user": 1,
+        "other": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:fact_source:explicit_user:assistant": {
+      "cases": 4,
+      "strict_pass": 1,
+      "owner_correct": 1,
+      "owner_tags": {
+        "assistant": 2,
+        "user": 1,
+        "other": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 1,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:fact:third_explicit": {
+      "cases": 8,
+      "strict_pass": 3,
+      "owner_correct": 8,
+      "owner_tags": {
+        "third_minsu": 8
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 5,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 4,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 7,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:fact_source:third_explicit:user": {
+      "cases": 4,
+      "strict_pass": 0,
+      "owner_correct": 4,
+      "owner_tags": {
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 3,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 3,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:fact:third_explicit": {
+      "cases": 8,
+      "strict_pass": 4,
+      "owner_correct": 8,
+      "owner_tags": {
+        "third_minsu": 8
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 4,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 5,
+          "partial": 3,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 8,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:fact_source:third_explicit:user": {
+      "cases": 4,
+      "strict_pass": 2,
+      "owner_correct": 4,
+      "owner_tags": {
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 2,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:fact_source:third_explicit:assistant": {
+      "cases": 4,
+      "strict_pass": 3,
+      "owner_correct": 4,
+      "owner_tags": {
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 3,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:fact_source:third_explicit:assistant": {
+      "cases": 4,
+      "strict_pass": 2,
+      "owner_correct": 4,
+      "owner_tags": {
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 3,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 4,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:reference": {
+      "cases": 2,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 2
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:reference:register:casual": {
+      "cases": 1,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:reference": {
+      "cases": 2,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 2
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 2,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 2,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:reference:register:casual": {
+      "cases": 1,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:user:register:polite": {
+      "cases": 24,
+      "strict_pass": 4,
+      "owner_correct": 10,
+      "owner_tags": {
+        "assistant": 11,
+        "other": 3,
+        "user": 4,
+        "third_minsu": 6
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 18,
+          "partial": 0,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 10,
+          "partial": 14,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 9,
+          "partial": 14,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 10,
+          "partial": 0,
+          "fail": 14,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 10,
+          "partial": 0,
+          "fail": 14,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:user:register:polite": {
+      "cases": 24,
+      "strict_pass": 7,
+      "owner_correct": 11,
+      "owner_tags": {
+        "assistant": 11,
+        "other": 2,
+        "user": 5,
+        "third_minsu": 6
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 21,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 11,
+          "partial": 13,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 13,
+          "partial": 9,
+          "fail": 2,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 11,
+          "partial": 0,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 11,
+          "partial": 0,
+          "fail": 13,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:role:register:polite": {
+      "cases": 16,
+      "strict_pass": 3,
+      "owner_correct": 7,
+      "owner_tags": {
+        "assistant": 7,
+        "other": 5,
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 16,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 7,
+          "partial": 8,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 4,
+          "partial": 3,
+          "fail": 9,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 6,
+          "partial": 2,
+          "fail": 8,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 8,
+          "partial": 8,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:role:register:polite": {
+      "cases": 16,
+      "strict_pass": 5,
+      "owner_correct": 8,
+      "owner_tags": {
+        "assistant": 7,
+        "other": 5,
+        "third_minsu": 4
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 13,
+          "partial": 0,
+          "fail": 3,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 8,
+          "partial": 7,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 9,
+          "partial": 2,
+          "fail": 5,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 8,
+          "partial": 2,
+          "fail": 6,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 9,
+          "partial": 7,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "base:reference:register:polite": {
+      "cases": 1,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    },
+    "adapter:reference:register:polite": {
+      "cases": 1,
+      "strict_pass": 0,
+      "owner_correct": 0,
+      "owner_tags": {
+        "assistant": 1
+      },
+      "unassessable": 0,
+      "dimensions": {
+        "register": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "relevance": {
+          "pass": 0,
+          "partial": 1,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "naturalness": {
+          "pass": 1,
+          "partial": 0,
+          "fail": 0,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "memory": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        },
+        "honesty": {
+          "pass": 0,
+          "partial": 0,
+          "fail": 1,
+          "not_applicable": 0,
+          "unassessable": 0
+        }
+      }
+    }
+  },
+  "paired": {
+    "base:user:neutral_vs_user_only": {
+      "cases": 24,
+      "transitions": {
+        "strict:0->0": 20,
+        "owner_correct:0->0": 14,
+        "owner:assistant->assistant": 9,
+        "owner:other->other": 3,
+        "owner:other->assistant": 2,
+        "owner_correct:1->1": 8,
+        "owner:user->user": 3,
+        "owner_correct:0->1": 2,
+        "owner:other->user": 1,
+        "owner:other->third_minsu": 1,
+        "owner:third_minsu->third_minsu": 5,
+        "strict:1->0": 1,
+        "strict:0->1": 2,
+        "strict:1->1": 1
+      },
+      "spoken_changed": 17
+    },
+    "adapter:user:neutral_vs_user_only": {
+      "cases": 24,
+      "transitions": {
+        "strict:0->0": 20,
+        "owner_correct:0->0": 13,
+        "owner:assistant->assistant": 10,
+        "owner:other->other": 3,
+        "owner_correct:1->1": 9,
+        "owner:user->user": 4,
+        "owner_correct:0->1": 1,
+        "owner:assistant->third_minsu": 1,
+        "owner:third_minsu->third_minsu": 5,
+        "strict:1->0": 1,
+        "owner_correct:1->0": 1,
+        "owner:user->assistant": 1,
+        "strict:1->1": 3
+      },
+      "spoken_changed": 12
+    },
+    "base:user:explicit_vs_original_question": {
+      "cases": 24,
+      "transitions": {
+        "strict:0->0": 19,
+        "owner_correct:0->0": 13,
+        "owner:assistant->assistant": 7,
+        "owner:other->other": 3,
+        "owner:assistant->other": 2,
+        "owner_correct:1->0": 1,
+        "owner:user->other": 1,
+        "owner_correct:1->1": 7,
+        "owner:user->user": 3,
+        "owner_correct:0->1": 3,
+        "owner:assistant->third_minsu": 3,
+        "strict:0->1": 5,
+        "owner:third_minsu->third_minsu": 4,
+        "owner:other->assistant": 1
+      },
+      "spoken_changed": 23
+    },
+    "adapter:user:explicit_vs_original_question": {
+      "cases": 24,
+      "transitions": {
+        "strict:0->0": 17,
+        "owner_correct:0->0": 12,
+        "owner:assistant->assistant": 8,
+        "owner:other->other": 2,
+        "owner_correct:1->1": 8,
+        "owner:user->user": 4,
+        "owner_correct:0->1": 4,
+        "owner:assistant->third_minsu": 3,
+        "owner:third_minsu->third_minsu": 4,
+        "owner:other->assistant": 2,
+        "strict:0->1": 7,
+        "owner:assistant->user": 1
+      },
+      "spoken_changed": 21
+    },
+    "base:user:user_deictic_vs_explicit": {
+      "cases": 8,
+      "transitions": {
+        "strict:0->0": 8,
+        "owner_correct:0->0": 8,
+        "owner:assistant->other": 7,
+        "owner:assistant->assistant": 1
+      },
+      "spoken_changed": 8
+    },
+    "adapter:user:user_deictic_vs_explicit": {
+      "cases": 8,
+      "transitions": {
+        "strict:0->0": 8,
+        "owner_correct:0->0": 8,
+        "owner:assistant->other": 6,
+        "owner:assistant->assistant": 2
+      },
+      "spoken_changed": 8
+    },
+    "base:user:self_name_added": {
+      "cases": 8,
+      "transitions": {
+        "strict:0->0": 8,
+        "owner_correct:0->0": 8,
+        "owner:assistant->assistant": 7,
+        "owner:assistant->other": 1
+      },
+      "spoken_changed": 4
+    },
+    "adapter:user:self_name_added": {
+      "cases": 8,
+      "transitions": {
+        "strict:0->0": 7,
+        "owner_correct:0->0": 7,
+        "owner:assistant->assistant": 7,
+        "strict:0->1": 1,
+        "owner_correct:0->1": 1,
+        "owner:assistant->user": 1
+      },
+      "spoken_changed": 5
+    },
+    "base:user:named_deictic_vs_explicit": {
+      "cases": 8,
+      "transitions": {
+        "strict:0->0": 7,
+        "owner_correct:0->1": 7,
+        "owner:assistant->user": 7,
+        "owner_correct:0->0": 1,
+        "owner:other->other": 1,
+        "strict:0->1": 1
+      },
+      "spoken_changed": 8
+    },
+    "adapter:user:named_deictic_vs_explicit": {
+      "cases": 8,
+      "transitions": {
+        "strict:0->0": 6,
+        "owner_correct:0->1": 7,
+        "owner:assistant->user": 7,
+        "strict:1->1": 1,
+        "owner_correct:1->1": 1,
+        "owner:user->user": 1,
+        "strict:0->1": 1
+      },
+      "spoken_changed": 8
+    },
+    "base:user:third_quoted_vs_explicit": {
+      "cases": 8,
+      "transitions": {
+        "strict:0->0": 5,
+        "owner_correct:0->1": 5,
+        "owner:assistant->third_minsu": 4,
+        "strict:0->1": 1,
+        "owner:other->third_minsu": 1,
+        "owner_correct:1->1": 3,
+        "owner:third_minsu->third_minsu": 3,
+        "strict:1->0": 1,
+        "strict:1->1": 1
+      },
+      "spoken_changed": 7
+    },
+    "adapter:user:third_quoted_vs_explicit": {
+      "cases": 8,
+      "transitions": {
+        "strict:0->0": 6,
+        "owner_correct:0->1": 5,
+        "owner:assistant->third_minsu": 5,
+        "owner_correct:1->1": 3,
+        "owner:third_minsu->third_minsu": 3,
+        "strict:1->1": 2
+      },
+      "spoken_changed": 6
+    },
+    "base:role:swap:first_person": {
+      "cases": 4,
+      "transitions": {
+        "strict:0->1": 3,
+        "owner_correct:0->1": 4,
+        "owner:assistant->assistant": 4,
+        "strict:0->0": 1
+      },
+      "spoken_changed": 4
+    },
+    "adapter:role:swap:first_person": {
+      "cases": 4,
+      "transitions": {
+        "strict:0->1": 3,
+        "owner_correct:0->1": 4,
+        "owner:assistant->assistant": 3,
+        "strict:0->0": 1,
+        "owner:other->assistant": 1
+      },
+      "spoken_changed": 3
+    },
+    "base:role:explicit_vs_original_question": {
+      "cases": 16,
+      "transitions": {
+        "strict:0->0": 11,
+        "owner_correct:0->0": 7,
+        "owner:assistant->assistant": 4,
+        "strict:1->1": 2,
+        "owner_correct:1->1": 6,
+        "owner_correct:1->0": 2,
+        "owner:assistant->other": 5,
+        "owner:other->other": 2,
+        "strict:0->1": 2,
+        "owner_correct:0->1": 1,
+        "owner:assistant->user": 1,
+        "owner:third_minsu->third_minsu": 4,
+        "strict:1->0": 1
+      },
+      "spoken_changed": 16
+    },
+    "adapter:role:explicit_vs_original_question": {
+      "cases": 16,
+      "transitions": {
+        "strict:0->0": 9,
+        "owner_correct:0->0": 7,
+        "owner:assistant->assistant": 4,
+        "strict:1->1": 2,
+        "owner_correct:1->1": 7,
+        "owner_correct:1->0": 1,
+        "owner:assistant->other": 6,
+        "strict:0->1": 4,
+        "owner_correct:0->1": 1,
+        "owner:assistant->user": 1,
+        "owner:third_minsu->third_minsu": 4,
+        "strict:1->0": 1,
+        "owner:other->other": 1
+      },
+      "spoken_changed": 15
+    },
+    "base:role:swap:second_person": {
+      "cases": 4,
+      "transitions": {
+        "strict:0->0": 4,
+        "owner_correct:1->0": 2,
+        "owner:assistant->assistant": 1,
+        "owner_correct:0->0": 2,
+        "owner:other->other": 2,
+        "owner:assistant->other": 1
+      },
+      "spoken_changed": 4
+    },
+    "adapter:role:swap:second_person": {
+      "cases": 4,
+      "transitions": {
+        "strict:0->0": 3,
+        "owner_correct:1->0": 3,
+        "owner:assistant->assistant": 1,
+        "owner_correct:0->0": 1,
+        "owner:other->other": 1,
+        "owner:assistant->other": 2,
+        "strict:1->0": 1
+      },
+      "spoken_changed": 4
+    },
+    "base:role:swap:explicit_user": {
+      "cases": 4,
+      "transitions": {
+        "strict:0->0": 3,
+        "owner_correct:0->0": 3,
+        "owner:other->assistant": 1,
+        "strict:0->1": 1,
+        "owner_correct:0->1": 1,
+        "owner:other->user": 1,
+        "owner:assistant->assistant": 1,
+        "owner:other->other": 1
+      },
+      "spoken_changed": 4
+    },
+    "adapter:role:swap:explicit_user": {
+      "cases": 4,
+      "transitions": {
+        "strict:0->0": 3,
+        "owner_correct:0->0": 3,
+        "owner:assistant->assistant": 2,
+        "strict:0->1": 1,
+        "owner_correct:0->1": 1,
+        "owner:other->user": 1,
+        "owner:other->other": 1
+      },
+      "spoken_changed": 4
+    },
+    "base:role:swap:third_explicit": {
+      "cases": 4,
+      "transitions": {
+        "strict:0->0": 1,
+        "owner_correct:1->1": 4,
+        "owner:third_minsu->third_minsu": 4,
+        "strict:0->1": 3
+      },
+      "spoken_changed": 4
+    },
+    "adapter:role:swap:third_explicit": {
+      "cases": 4,
+      "transitions": {
+        "strict:0->0": 1,
+        "owner_correct:1->1": 4,
+        "owner:third_minsu->third_minsu": 4,
+        "strict:0->1": 1,
+        "strict:1->0": 1,
+        "strict:1->1": 1
+      },
+      "spoken_changed": 2
+    }
+  },
+  "verdicts_sha256": "e7ab9c8c711ee96cdbbd2435f89ecb332787457eb21e47c48742d4202582b71a",
+  "packet_sha256": "73ef5ac26fd9262edae8a030ffa4e4fecc66e32ef0a3e63da95e2b4b5bcc930c",
+  "key_commitment_sha256": "3d4ee2224aaf62c969424616fcdc7afcf1d337b50e223191d613ef598a57dbcf",
+  "limitations": "Minimal dialogues are evaluation fixtures, not training data or app policy. Main examples use same name Bori and a small set of possession forms; naming/quoting manipulations alter length/syntax. Role block includes a shared fictional preface and differs from ordinary user-source block. No attribution to hidden attention states, a particular runtime defect, or training fault solely from outputs. No more prompt/decoder/runtime changes in this experiment.",
+  "training_executed": false,
+  "model_promotion_approved": false,
+  "raw_responses_included": false
+}

@@ -1,0 +1,45 @@
+{
+  "records": 208,
+  "exact_scripted_inputs": true,
+  "route_local_actual_history": true,
+  "minimal_input_untouched": true,
+  "final_stage_matches_delivery": true,
+  "negative_controls": {
+    "missing_response": "rejected",
+    "wrong_sampling": "rejected",
+    "modified_minimal_input": "rejected",
+    "cross_route_history": "rejected"
+  },
+  "prior_final_output_parity": 54,
+  "current_dialogue_actual_manager_equivalence": 30,
+  "minimal_dialogue_actual_context_manager": 30,
+  "all_exported_files_reproduce": true,
+  "preservation": {
+    "training_venv_freeze_equal": true,
+    "system_packages_equal": true,
+    "base_2b_sha256": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+    "adapter_10step_sha256": "661873993a9c70089937a64d9282e21a1ce2b622a5b60764305159c0c98bb025",
+    "compiler_packages": [
+      {
+        "filename": "libstdc++-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+        "sha256": "ee5633e863e19c3381ed97842ce35ed32ede96a3d1ae4e94c051d3036fe21347",
+        "bytes": 2419834
+      },
+      {
+        "filename": "g++-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+        "sha256": "0bd6af6164252d4ea9170d201ee4c10a3120fe0fc04985a00be3bc9076353844",
+        "bytes": 12161938
+      }
+    ],
+    "same_4b_sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+    "phone_saved_sha256": "5113fa74b706708d24d5c69b050c2cb4d5c7cd9c182966593a1d7eaf75a905bd",
+    "phone_device_currently_rechecked": false,
+    "phone_device_commands_this_round": 0,
+    "training_steps": 0,
+    "production_app_source_changed": false
+  },
+  "new_native_generation_count": 208,
+  "actual_gpu_offload_33_of_33": true,
+  "python_compileall_pass": true,
+  "full_android_apk_ui_tts_verified": false
+}
