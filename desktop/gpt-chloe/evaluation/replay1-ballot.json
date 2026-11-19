@@ -1,0 +1,164 @@
+[
+  {
+    "id": "toast-1",
+    "pick": "tie",
+    "note": "A는 열이 몰렸다는 가능한 원인을 짚지만 사용자가 원한 감상으로는 건조하다. B는 색 차이를 다시 말한다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "toast-2",
+    "pick": "A",
+    "note": "노릇한 색을 바캉스에서 탄 모습에 빗댄 표현이 바짝 놀다 왔다는 B보다 선명하다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "toast-3",
+    "pick": "B",
+    "note": "두 답 다 약불에서 한 면만 굽는다. B는 색을 보고 추가할 시간까지 알려 준다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "paper-1",
+    "pick": "B",
+    "note": "A는 남아 있었다는 사실에 흔한 추억 반응을 붙인다. B는 만든 사람의 손길을 짚지만 오래 보았다는 추측은 앞선다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "paper-2",
+    "pick": "A",
+    "note": "구겨진 날개에 시간이 남았다는 감상이 그 부분에 눈길이 간 이유에 조용히 호응한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "paper-3",
+    "pick": "B",
+    "note": "몸통을 받치고 날개에 힘이 닿지 않게 하는 설명과 대체 종이가 실용적이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "chalk-1",
+    "pick": "A",
+    "note": "A는 남은 글자가 자리를 지킨다는 장면을 만든다. B는 같은 사실에 묘했겠다는 말만 붙인다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "tie",
+    "note": "양쪽 모두 출석 농담을 조퇴로 이어 간다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "tie",
+    "note": "둘 다 공백을 빼도 일곱 글자라 여섯 글자 조건을 넘는다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "slipper-1",
+    "pick": "A",
+    "note": "등 돌린 두 사람처럼 보는 A는 짧게 의인화한다. B는 방향을 다시 말한다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "slipper-2",
+    "pick": "tie",
+    "note": "둘 다 각자 갈 길을 간다는 같은 농담이다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "slipper-3",
+    "pick": "tie",
+    "note": "둘 다 금지어를 쓰지 않고 사진 상황에 맞는 짧은 제목을 줬다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "recipe-1",
+    "pick": "tie",
+    "note": "A는 두드러진다는 말을 바꿔 반복하고 B는 진하게 적은 사람의 의도를 짐작한다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "recipe-2",
+    "pick": "A",
+    "note": "엄마가 양을 짚어 주는 장면이 간장 양과 목소리를 이어 준다. B는 해당 줄까지 흐려진 듯 읽힐 수 있다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "recipe-3",
+    "pick": "tie",
+    "note": "둘 다 간장 양을 넣은 담담한 한 줄이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "train-1",
+    "pick": "A",
+    "note": "먼저 내려갈 방울에 관심을 보이면서도 사용자가 계속 말할 여지를 준다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "train-2",
+    "pick": "A",
+    "note": "팀전으로 전환했다는 말이 빗방울 경주 농담을 자연스럽게 이어 간다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "train-3",
+    "pick": "A",
+    "note": "개인전에서 사라졌다는 중계가 응원한 방울의 결과를 살린다. B의 무승부는 정하지 않은 판정이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]
