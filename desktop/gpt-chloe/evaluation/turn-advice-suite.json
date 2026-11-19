@@ -1,0 +1,162 @@
+{
+  "model": "gpt-6.1-terra",
+  "gate": "continue and advice each require more candidate wins than baseline; setup must not reverse overall gain",
+  "sessions": [
+    {
+      "id": "badge",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "badge-1",
+          "message": "명찰에 이름을 써 놨는데 멀리선 안 보인대.",
+          "focus": "setup",
+          "expect": "이야기에 맞는 반응"
+        },
+        {
+          "id": "badge-2",
+          "message": "근데 옆자리 사람이 명찰을 보더니 하는 말이…",
+          "focus": "continue",
+          "expect": "차례를 넘기고 되묻지 않기"
+        },
+        {
+          "id": "badge-3",
+          "message": "글씨가 배경에 묻힌대. 검은 펜이랑 흰 종이만 있어. 바로 고칠 방법 하나만.",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 답"
+        }
+      ]
+    },
+    {
+      "id": "photo",
+      "register": "polite",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "photo-1",
+          "message": "단체 사진을 두 장 찍었어요. 표정은 둘 다 괜찮아요.",
+          "focus": "setup",
+          "expect": "이야기에 맞는 반응"
+        },
+        {
+          "id": "photo-2",
+          "message": "차이가 하나 있는데요, 두 번째 사진은 말이죠…",
+          "focus": "continue",
+          "expect": "차례를 넘기고 되묻지 않기"
+        },
+        {
+          "id": "photo-3",
+          "message": "두 번째는 맨 뒤 한 명이 가려졌어요. 단체방에는 어느 사진을 올릴까요? 이유도 짧게요.",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 답"
+        }
+      ]
+    },
+    {
+      "id": "box",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "box-1",
+          "message": "이삿짐 상자 세 개를 똑같은 걸로 샀어.",
+          "focus": "setup",
+          "expect": "이야기에 맞는 반응"
+        },
+        {
+          "id": "box-2",
+          "message": "진짜 곤란한 게 뭔지 아냐면…",
+          "focus": "continue",
+          "expect": "차례를 넘기고 되묻지 않기"
+        },
+        {
+          "id": "box-3",
+          "message": "상자를 쌓으면 윗면이 가려져. 펜 하나로 책 상자를 금방 찾게 하려면 어디에 뭘 쓸까?",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 답"
+        }
+      ]
+    },
+    {
+      "id": "plant",
+      "register": "polite",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "plant-1",
+          "message": "이틀 집을 비우는데 이웃이 화분을 봐주시기로 했어요.",
+          "focus": "setup",
+          "expect": "이야기에 맞는 반응"
+        },
+        {
+          "id": "plant-2",
+          "message": "부탁할 내용이 하나 더 있어서, 제가 먼저 설명을 좀…",
+          "focus": "continue",
+          "expect": "차례를 넘기고 되묻지 않기"
+        },
+        {
+          "id": "plant-3",
+          "message": "흙이 젖어 있으면 물을 주지 말아 달라는 메모 한 문장만 써 주세요.",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 답"
+        }
+      ]
+    },
+    {
+      "id": "sound",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "sound-1",
+          "message": "행사에서 내 멘트를 30초 안에 끝내야 해.",
+          "focus": "setup",
+          "expect": "이야기에 맞는 반응"
+        },
+        {
+          "id": "sound-2",
+          "message": "내가 일단 생각한 순서가 있거든. 그게…",
+          "focus": "continue",
+          "expect": "차례를 넘기고 되묻지 않기"
+        },
+        {
+          "id": "sound-3",
+          "message": "소개 10초, 안내 15초, 인사 10초야. 안내 시간은 유지하고 어디를 얼마나 줄일까?",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 답"
+        }
+      ]
+    },
+    {
+      "id": "ribbon",
+      "register": "polite",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "ribbon-1",
+          "message": "모임용 컵에 표시를 해 두려고 색 테이프를 샀어요.",
+          "focus": "setup",
+          "expect": "이야기에 맞는 반응"
+        },
+        {
+          "id": "ribbon-2",
+          "message": "그런데 한 분이 하신 말씀이 있거든요…",
+          "focus": "continue",
+          "expect": "차례를 넘기고 되묻지 않기"
+        },
+        {
+          "id": "ribbon-3",
+          "message": "색 구별이 어렵대요. 펜도 있는데 색에 기대지 않고 각자 컵을 찾게 하려면요?",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 답"
+        }
+      ]
+    }
+  ]
+}
