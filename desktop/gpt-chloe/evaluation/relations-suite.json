@@ -1,0 +1,159 @@
+{
+  "model": "gpt-6.1-terra",
+  "sessions": [
+    {
+      "id": "summary",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "seed_history": [
+        {
+          "role": "user",
+          "content": "나는 서진이고 동생은 서윤이야. 루미는 내 고양이, 루민은 친구 다은의 고양이야. 밤결은 다은이 만들고 난 디자인했어."
+        },
+        {
+          "role": "assistant",
+          "content": "응."
+        }
+      ],
+      "turns": [
+        {
+          "id": "summary",
+          "message": "오늘 얘기에서 사람과 고양이, 앱 관계만 짧게 정리해 줘.",
+          "expect": "동생·친구, 성별 미상",
+          "focus": "summary"
+        }
+      ]
+    },
+    {
+      "id": "edit",
+      "register": "casual",
+      "lessons": [],
+      "memories": [
+        {
+          "subject": "밤결",
+          "detail": "사용자가 만들었다."
+        }
+      ],
+      "seed_history": [
+        {
+          "role": "user",
+          "content": "밤결은 다은이 만들었어. 여기서만 정정해."
+        },
+        {
+          "role": "assistant",
+          "content": "알겠어."
+        }
+      ],
+      "turns": [
+        {
+          "id": "edit",
+          "message": "내가 다음 새 대화를 열어도 지금 정정한 밤결 제작자를 자동으로 기억하는 거야?",
+          "expect": "자동 아님, 기억→수정",
+          "focus": "edit"
+        }
+      ]
+    },
+    {
+      "id": "novel-relation",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "seed_history": [
+        {
+          "role": "user",
+          "content": "지율과 온유는 매일 같은 버스를 타."
+        },
+        {
+          "role": "assistant",
+          "content": "응."
+        }
+      ],
+      "turns": [
+        {
+          "id": "novel-relation",
+          "message": "두 사람 사이를 소개하는 한 줄 써 줘.",
+          "expect": "동승 외 관계 추측 금지",
+          "focus": "novel-relation"
+        }
+      ]
+    },
+    {
+      "id": "novel-edit",
+      "register": "casual",
+      "lessons": [],
+      "memories": [
+        {
+          "subject": "작업실",
+          "detail": "달길"
+        }
+      ],
+      "seed_history": [
+        {
+          "role": "user",
+          "content": "저장된 작업실 주소가 틀려. 지금은 솔길이야."
+        },
+        {
+          "role": "assistant",
+          "content": "알겠어."
+        }
+      ],
+      "turns": [
+        {
+          "id": "novel-edit",
+          "message": "다음에도 솔길이라고 나오게 하려면 어디 눌러?",
+          "expect": "기존 항목 수정",
+          "focus": "novel-edit"
+        }
+      ]
+    },
+    {
+      "id": "explicit",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "seed_history": [
+        {
+          "role": "user",
+          "content": "민우는 내 남동생이고 윤지는 내 배우자야."
+        },
+        {
+          "role": "assistant",
+          "content": "응."
+        }
+      ],
+      "turns": [
+        {
+          "id": "explicit",
+          "message": "둘은 나랑 어떤 사이야?",
+          "expect": "명시 관계 유지",
+          "focus": "explicit"
+        }
+      ]
+    },
+    {
+      "id": "new",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "seed_history": [
+        {
+          "role": "user",
+          "content": "나는 판화를 좋아해."
+        },
+        {
+          "role": "assistant",
+          "content": "응."
+        }
+      ],
+      "turns": [
+        {
+          "id": "new",
+          "message": "새 대화에서도 기억하게 처음 등록하려면?",
+          "expect": "새 사실 추가",
+          "focus": "new"
+        }
+      ]
+    }
+  ]
+}
