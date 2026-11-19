@@ -1,4 +1,5 @@
 """Local Korean conversation workbench. Python 3.10+, standard library only."""
+from datetime import datetime, timedelta, timezone
 import argparse
 import ctypes
 from contextlib import contextmanager
@@ -346,7 +347,9 @@ class App:
                 "동일한 대상에 대한 사용자의 나중 정정은 이전 발췌와 장기 기억보다 우선해. "
                 "보이지 않는 내용을 사용자가 말한 적 없다고 단정하지 마. "
                 "이전 사실이나 정정 여부를 확인할 수 없으면 현재 확인 가능한 범위를 설명해.")
-        messages = [{"role": "developer", "content": PERSONA},
+        today = datetime.now(timezone(timedelta(hours=9))).date().isoformat()
+        date_context = f"한국 기준 오늘은 {today}야. 사용자가 기준일을 지정하면 그 날짜를 써. 지금 나이를 물으면 해당 인물의 최근 정정된 생년월일과 기준일을 비교해 만 나이 하나로 바로 답해. 날짜나 설명은 필요할 때만 덧붙여. 계산에 필요한 정보가 부족하면 단정하지 마."
+        messages = [{"role": "developer", "content": PERSONA + "\n" + date_context},
                     {"role": "developer", "content": "사용자가 관리하는 설정과 참고 자료\n" + json.dumps(reference, ensure_ascii=False)}]
         limit = title_cap(question)
         if limit:
