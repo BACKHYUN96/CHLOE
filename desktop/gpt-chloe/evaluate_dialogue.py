@@ -45,6 +45,14 @@ def run():
             for lesson in scenario["lessons"]:
                 app.mutate("/api/lessons", lesson)
             session = app.mutate("/api/sessions", {})["id"]
+            # Optional synthetic fixtures are seeded, never presented as API-generated turns.
+            seed_history = scenario.get("seed_history", [])
+            if seed_history:
+                assert len(seed_history) % 2 == 0
+                assert [m["role"] for m in seed_history] == ["user", "assistant"] * (len(seed_history)//2)
+                with app.connect() as conn:
+                    conn.executemany("INSERT INTO messages(session,role,content,created) VALUES (?,?,?,?)",
+                        [(session, m["role"], m["content"], time.time()) for m in seed_history])
             for turn in scenario["turns"]:
                 history = app.messages(session)
                 payload = app.payload(turn["message"], history)
@@ -54,18 +62,25 @@ def run():
                     raise RuntimeError("Evaluation budget reached before the next request.")
                 observed = []
                 captured = []
+                api_usage = []
                 def events(api_key, request):
                     captured.append(request)
-                    yield from module.openai_events(api_key, request)
+                    for event in module.openai_events(api_key, request):
+                        if event.get("type") == "response.completed":
+                            api_usage.append(event.get("response", {}).get("usage", {}))
+                        yield event
                 row = dict(id=turn["id"], session=scenario["id"], question=turn["message"],
                            expectation=turn["expect"], focus=turn["focus"], history_messages=len(history),
                            request=payload, source_sha256=plan["source_sha256"])
+                row["seeded_messages"] = len(seed_history)
+                row["history_chars"] = sum(len(m["content"]) for m in history)
                 try:
                     app.generate({"session":session,"message":turn["message"],"request_id":turn["id"]},
                                  lambda kind, data: observed.append((kind,data)), events=events)
                     assert len(captured)==1 and captured[0]==payload
                     assert observed[-1][0]=="done"
                     row.update(status="completed", answer=app.messages(session)[-1]["content"], metrics=observed[-1][1])
+                    row["api_usage"] = api_usage[0] if api_usage else {}
                     spent += row["metrics"]["cost"]
                 except Exception as exc:
                     row.update(status="failed", error_type=type(exc).__name__, reserved_cost=reserve)

@@ -4,7 +4,7 @@ import threading
 import unittest
 import urllib.error
 import urllib.request
-from server import App, Server, UserError, protect_secret, HISTORY_CHAR_BUDGET
+from server import App, Server, UserError, protect_secret, HISTORY_CHAR_BUDGET, ARCHIVE_CHAR_BUDGET, recall_archive
 import os
 
 class CompanionTests(unittest.TestCase):
@@ -92,6 +92,56 @@ class CompanionTests(unittest.TestCase):
         sent = self.app.payload("누구 물건이었지?", history)["input"]
         self.assertEqual(sent[2:-1], history)
         self.assertNotIn("이력범위", sent[1]["content"])
+
+    def test_archive_preserves_role_order_and_corrections_without_mutating(self):
+        history = [{"role":"user","content":"초록 화분은 내 거야."},
+                   {"role":"assistant","content":"사용자 물건이구나."},
+                   {"role":"user","content":"정정할게. 초록 화분은 친구 유나 거야."},
+                   {"role":"assistant","content":"내 물건이야."}]
+        history += [{"role":role,"content":"긴 풍경 묘사 " * 400}
+                    for _ in range(12) for role in ("user","assistant")]
+        original = json.dumps(history)
+        payload = self.app.payload("초록 화분 주인은?", history)
+        reference = json.loads(payload["input"][1]["content"].split("\n",1)[1])
+        archive = reference["이전대화원문발췌"]
+        self.assertEqual(archive[0]["발화"][0]["content"], "초록 화분은 내 거야.")
+        self.assertEqual(archive[1]["발화"][0]["role"], "user")
+        self.assertIn("유나", archive[1]["발화"][0]["content"])
+        self.assertEqual(archive[1]["발화"][1]["role"], "assistant")
+        self.assertLessEqual(len(json.dumps(archive,ensure_ascii=False)), ARCHIVE_CHAR_BUDGET)
+        self.assertEqual(json.dumps(history), original)
+
+    def test_archive_is_session_scoped_and_recomputed_after_new_correction(self):
+        first = self.app.mutate("/api/sessions", {})["id"]
+        with self.app.connect() as conn:
+            for session, owner in ((self.session,"유나"),(first,"정우")):
+                conn.executemany("INSERT INTO messages(session,role,content,created) VALUES (?,?,?,?)",
+                    [(session,"user",f"가방은 {owner} 거야.",1),(session,"assistant","응",1)] +
+                    [(session,r,"풍경 "*2000,2) for _ in range(5) for r in ("user","assistant")])
+        source = self.app.messages(self.session)
+        sent = json.dumps(self.app.payload("가방 주인은?", source),ensure_ascii=False)
+        self.assertIn("유나",sent)
+        self.assertNotIn("정우",sent)
+        source += [{"role":"user","content":"정정. 가방은 윤호에게 돌려줬어."},{"role":"assistant","content":"응"}]
+        updated = json.dumps(self.app.payload("가방은?",source),ensure_ascii=False)
+        self.assertIn("윤호에게",updated)
+        self.assertEqual(App(self.temp.name).messages(self.session), self.app.messages(self.session))
+
+    def test_archive_does_not_split_oversized_pair_or_claim_complete_recall(self):
+        huge = [{"role":"user","content":"정정 " * ARCHIVE_CHAR_BUDGET},{"role":"assistant","content":"응"}]
+        self.assertEqual(recall_archive("정정",huge,[]), [])
+        sent = self.app.payload("정정 내용은?",huge)["input"][1]["content"]
+        self.assertIn("0문답",sent)
+        self.assertIn("빈 구간은 알 수 없어",sent)
+
+    def test_long_source_is_retrieved_even_outside_concise_bank(self):
+        target = "청록색 망원경은 은수가 빌려줬어. " + "주변 풍경 묘사. " * 100
+        older = [{"role":"user","content":target},{"role":"assistant","content":"확인했어."}]
+        older += [{"role":role,"content":f"문장 {i}. " + "하늘의 풍경. "*100}
+                  for i in range(40) for role in ("user","assistant")]
+        found = recall_archive("청록색 망원경을 누구에게 빌렸지?",older,[])
+        self.assertTrue(any(r["발화"][0]["content"] == target for r in found))
+        self.assertLessEqual(len(json.dumps(found,ensure_ascii=False)),ARCHIVE_CHAR_BUDGET)
 
     def test_oversized_latest_pair_does_not_include_disconnected_older_history(self):
         history = [{"role": "user", "content": "예전 사실"}, {"role": "assistant", "content": "응"},

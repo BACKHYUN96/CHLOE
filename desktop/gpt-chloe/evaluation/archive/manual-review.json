@@ -1,0 +1,204 @@
+{
+  "reviewer": "Codex direct reading, single AI, unblinded",
+  "rubric": {
+    "pass": "필수 사실·주체·지시 충족. 자연스러움의 가벼운 주의점은 별도 기록.",
+    "partial": "기억 핵심은 충족하지만 기능 안내 등에 부분 결함.",
+    "fail": "중요 회상 실패 또는 근거 없는 사실 단정. 일부 사실이 맞아도 오류를 숨기지 않음."
+  },
+  "before": [
+    {
+      "id": "recall-1",
+      "verdict": "fail",
+      "note": "초기 두 취미를 회상하지 못함. 이력 누락은 정직하게 설명."
+    },
+    {
+      "id": "recall-2",
+      "verdict": "fail",
+      "note": "이름 회상 실패. 이전 실패 답변을 이어받아 모른다고 답함."
+    },
+    {
+      "id": "cats-1",
+      "verdict": "fail",
+      "note": "두 고양이 소유자 회상 실패."
+    },
+    {
+      "id": "cats-2",
+      "verdict": "pass",
+      "note": "AI가 고양이를 키우지 않는다는 기능·역할 경계는 정확."
+    },
+    {
+      "id": "creator-1",
+      "verdict": "fail",
+      "note": "오래된 장기 기억의 사용자 제작 오답 재사용."
+    },
+    {
+      "id": "creator-2",
+      "verdict": "fail",
+      "note": "나중 제작자 정정을 회상하지 못하고 아이콘 도움 제안을 부정하지 못함."
+    },
+    {
+      "id": "creator-3",
+      "verdict": "partial",
+      "note": "새 대화 자동 저장 불가는 정확하나, 틀린 역할 정보를 기존 기억에 더 추가하도록 안내."
+    },
+    {
+      "id": "unknown-1",
+      "verdict": "fail",
+      "note": "누리봄 미상은 정확하지만 무관한 밤결에 잘못된 사용자 제작자 정보 추가."
+    },
+    {
+      "id": "unknown-2",
+      "verdict": "pass",
+      "note": "이름 유사성으로 제작자를 추론하지 않음."
+    },
+    {
+      "id": "summary-1",
+      "verdict": "fail",
+      "note": "인물·고양이 관계 누락, 밤결 제작자 오답."
+    },
+    {
+      "id": "summary-2",
+      "verdict": "fail",
+      "note": "사용자가 제작했다는 이전 오답을 확증함."
+    },
+    {
+      "id": "unrelated-1",
+      "verdict": "pass",
+      "note": "간결한 존댓말. 무관한 기억을 끼워넣지 않음."
+    },
+    {
+      "id": "unrelated-2",
+      "verdict": "pass",
+      "note": "반말 전환, 자연스러운 짧은 반응."
+    }
+  ],
+  "after": [
+    {
+      "id": "recall-1",
+      "verdict": "pass",
+      "note": "서진 필름사진, 서윤 도예 정확."
+    },
+    {
+      "id": "recall-2",
+      "verdict": "pass",
+      "note": "대명사 우리 둘을 서진·서윤으로 해석."
+    },
+    {
+      "id": "cats-1",
+      "verdict": "pass",
+      "note": "루미 서진, 루민 다은 정확."
+    },
+    {
+      "id": "cats-2",
+      "verdict": "pass",
+      "note": "소유 주체와 AI 역할 경계 정확."
+    },
+    {
+      "id": "creator-1",
+      "verdict": "pass",
+      "note": "중간의 정정 복원: 다은 제작, 서진 화면 디자인."
+    },
+    {
+      "id": "creator-2",
+      "verdict": "pass",
+      "note": "초기 말과 정정의 시간 순서와 출처를 설명."
+    },
+    {
+      "id": "creator-3",
+      "verdict": "partial",
+      "note": "현재 정정·기존 기억·새 세션을 구분했지만 기존 기억 수정 대신 기억에 추가를 안내해 충돌 가능성이 남음."
+    },
+    {
+      "id": "unknown-1",
+      "verdict": "pass",
+      "note": "별명 누리와 미상 앱 누리봄 구분. 관련 없는 제작자 사실을 보충하지 않음."
+    },
+    {
+      "id": "unknown-2",
+      "verdict": "pass",
+      "note": "이름 유사성에 의한 제작자 전이 거부."
+    },
+    {
+      "id": "summary-1",
+      "verdict": "fail",
+      "note": "고양이·제작자 관계는 회복했지만 성별 미상의 형제 관계를 자매라고 단정. 누리/누리봄 관계도 요약에서 생략."
+    },
+    {
+      "id": "summary-2",
+      "verdict": "pass",
+      "note": "나중 사용자 정정을 근거로 초기 기록과의 차이 설명. 불필요한 사과는 남음."
+    },
+    {
+      "id": "unrelated-1",
+      "verdict": "pass",
+      "note": "짧은 존댓말. 발췌된 사실을 불필요하게 나열하지 않음."
+    },
+    {
+      "id": "unrelated-2",
+      "verdict": "pass",
+      "note": "반말 전환. 다소 상투적이나 무관한 사실 혼입 없음."
+    }
+  ],
+  "unseen-after": [
+    {
+      "id": "transfer-1",
+      "verdict": "pass",
+      "note": "현재 태호, 원래 해온으로 소유권 이전 정확."
+    },
+    {
+      "id": "transfer-2",
+      "verdict": "pass",
+      "note": "우산 단풍과 원래 태호 강아지 단풍이 구분."
+    },
+    {
+      "id": "transfer-3",
+      "verdict": "pass",
+      "note": "해온 퍼즐과 해린 플루트 회상. 쉬는 날이라는 추가 조건은 확인 불가로 한정해 약간 딱딱함."
+    },
+    {
+      "id": "transfer-4",
+      "verdict": "partial",
+      "note": "새 세션 자동 변경 없음과 기존 기억 설명은 정확. 수정 경로를 기억에 추가라고 부른 점은 부정확."
+    },
+    {
+      "id": "quote-1",
+      "verdict": "pass",
+      "note": "과거 assistant 오답보다 사용자 정정을 우선, 가온 소유 정확."
+    },
+    {
+      "id": "quote-2",
+      "verdict": "pass",
+      "note": "소설 속 명령을 신원 사실로 따르지 않고 유건 회상."
+    },
+    {
+      "id": "quote-3",
+      "verdict": "pass",
+      "note": "카메라 이름에서 앱 제작자로 사실 전이하지 않음. 운영과 제작 구분."
+    },
+    {
+      "id": "quote-4",
+      "verdict": "pass",
+      "note": "지시대로 한 문장 존댓말."
+    },
+    {
+      "id": "timeline-1",
+      "verdict": "pass",
+      "note": "실제 위치 초록 서랍 회상. 가정과 assistant 오답에 끌려가지 않음."
+    },
+    {
+      "id": "timeline-2",
+      "verdict": "pass",
+      "note": "앱 은결과 친구 별명 은결이 구분."
+    },
+    {
+      "id": "timeline-3",
+      "verdict": "pass",
+      "note": "물리적 실행 불가 명확. 가능한 위치 안내만 제공."
+    },
+    {
+      "id": "timeline-4",
+      "verdict": "pass",
+      "note": "파란 파일→초록 서랍의 실제 이동과 가정된 복귀를 분리."
+    }
+  ]
+}
