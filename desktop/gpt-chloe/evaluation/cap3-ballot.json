@@ -1,0 +1,110 @@
+[
+  {
+    "id": "chalk-1",
+    "pick": "B",
+    "note": "칠판이 서명한 것 같다는 B는 이름의 흔적을 짧게 살린다. A도 이름을 붙잡은 칠판을 상상하지만 일반 공감부터 붙인다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "B",
+    "note": "혼자 남아서 자습 중이라는 설정이 수업 끝에 글자만 남은 장면에 꼭 들어맞는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "B",
+    "note": "마지막 출석은 여섯 칸이다. A는 여덟 칸이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "mirror-1",
+    "pick": "tie",
+    "note": "A는 메모의 흔적이라고 되짚고 B도 원래 붙은 자리를 기억할 것이라 덧붙인다. 그 자리는 이미 눈앞에 있다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "mirror-2",
+    "pick": "B",
+    "note": "자리가 대신 기억한다는 말이 주어진 관찰을 다른 시각으로 받는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "mirror-3",
+    "pick": "A",
+    "note": "남은 말은 네 칸으로 글씨 없는 메모의 여운을 살린다. B는 다섯 칸이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "moon-1",
+    "pick": "B",
+    "note": "조명이 꺼진 듯한 달이라는 비유가 하얗게 찍힌 모습을 구체적으로 받는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "moon-2",
+    "pick": "tie",
+    "note": "둘 다 낮에 눈에 잘 띄지 않게 근무하는 달로 농담을 잇는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "moon-3",
+    "pick": "A",
+    "note": "둘 다 길이를 지킨다. 달의 출근은 달이라는 피사체가 제목에 남는다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "orange-1",
+    "pick": "tie",
+    "note": "A의 출석 체크와 B의 질서정연한 간식 모두 관찰에서 온 농담이다. A는 실제 행동을 권하지 않는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "orange-2",
+    "pick": "A",
+    "note": "퇴근으로 이야기를 이은 A가 좋다. B는 모자를 벗어 두고 갔다는 말을 되풀이한다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "orange-3",
+    "pick": "tie",
+    "note": "같은 세 글자 제목이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

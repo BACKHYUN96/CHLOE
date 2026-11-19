@@ -1,0 +1,110 @@
+[
+  {
+    "id": "chalk-1",
+    "pick": "B",
+    "note": "칠판이 글자를 놓아주기 싫다는 한 문장이 장면을 살린다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "A",
+    "note": "지각·결석 농담이 출석 중이라는 말을 이어간다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "B",
+    "note": "남은 출석은 다섯 칸이고 A는 아홉 칸이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "pencil-1",
+    "pick": "B",
+    "note": "연필깎이에 잡아먹힌다는 표현이 연필이 짧아진 상황과 연결된다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "pencil-2",
+    "pick": "tie",
+    "note": "둘 다 옆에 신인을 세운다는 가정으로 은퇴 농담을 잇는다. 사진을 찍으라는 행동 권유는 아니다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "pencil-3",
+    "pick": "B",
+    "note": "두 제목 다 네 칸이며 은퇴선수가 실제로 세워둔 대상에 더 가깝다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "snow-1",
+    "pick": "tie",
+    "note": "새가 우체통에 들른 이유를 편지와 이어서 두 답 모두 가볍게 상상한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "snow-2",
+    "pick": "B",
+    "note": "발도장만 찍고 갔다는 말이 새 발자국에 어울린다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "snow-3",
+    "pick": "A",
+    "note": "새 집배원은 다섯 칸으로 형태와 장면을 모두 살린다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "shell-1",
+    "pick": "A",
+    "note": "모래와 달리 조개는 승차를 거절했다는 장난이 재미있다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "shell-2",
+    "pick": "tie",
+    "note": "두 답 모두 포장재만 있는 상황의 우스운 점에 반응한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "shell-3",
+    "pick": "tie",
+    "note": "모래만 남았다는 사실과 빈 포장이라는 농담을 각각 세 칸에 담았다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

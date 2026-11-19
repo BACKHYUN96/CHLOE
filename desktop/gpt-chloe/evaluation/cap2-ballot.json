@@ -1,0 +1,110 @@
+[
+  {
+    "id": "chalk-1",
+    "pick": "A",
+    "note": "A는 첫 문장이 길지만 칠판이 무언가를 붙잡고 있다는 관점을 내놓는다. B는 눈길이 갔겠다고만 한다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "tie",
+    "note": "결석과 지각 둘 다 이름 글자에 학교생활을 부여한 농담으로 어울린다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "A",
+    "note": "마지막 출석은 여섯 칸 안에서 수업 끝의 분위기를 살린다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "mirror-1",
+    "pick": "tie",
+    "note": "A와 B 모두 메모를 떼어 낸 자리를 보았다는 사실로 끝난다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "mirror-2",
+    "pick": "A",
+    "note": "당부만 남았다는 표현이 자국에서 말을 듣는 느낌과 어울린다. B는 신경이 쓰이는 것으로 받아들인다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "mirror-3",
+    "pick": "B",
+    "note": "A가 구체적이지만 공백을 포함하면 다섯 칸이다. B는 네 칸 안에서 의미가 통한다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "moon-1",
+    "pick": "tie",
+    "note": "건물 사이에 숨은 것 같은 달과 하늘에 묻힌 은은한 달 모두 장면에 맞는 감상이다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "moon-2",
+    "pick": "B",
+    "note": "A는 야간 대신 주간 근무라는 원래 농담을 다시 말한다. B는 교대하지 않는 근무와 낮에 잘 안 보이는 점을 연결한다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "moon-3",
+    "pick": "A",
+    "note": "달의 출근은 다섯 칸과 직장 농담을 지킨다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "orange-1",
+    "pick": "A",
+    "note": "출석부를 연상한 A가 모양에 반응한다. B는 줄 섰다는 사실과 귀엽다는 일반 감탄에 그친다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "orange-2",
+    "pick": "B",
+    "note": "모자만 두고 퇴근했다는 말이 사용자의 비유에 다음 장면을 붙인다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "orange-3",
+    "pick": "tie",
+    "note": "같은 제목이고 조건을 충족한다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

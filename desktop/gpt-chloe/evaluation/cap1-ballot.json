@@ -1,0 +1,110 @@
+[
+  {
+    "id": "chalk-1",
+    "pick": "tie",
+    "note": "둘 다 희미하게 남은 글자를 흔적이라고 바꿔 읽는 데 그쳤다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "A",
+    "note": "종례를 듣지 못했다는 설명이 수업이 끝난 뒤에도 출석인 농담과 잘 맞는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "A",
+    "note": "글자의 출석은 공백 포함 여섯 칸이며 글자의 의인화도 살렸다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "mirror-1",
+    "pick": "tie",
+    "note": "어제의 흔적과 눈에 띄는 자국 모두 기존 사실을 일반적인 말로 다시 짚는다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "mirror-2",
+    "pick": "B",
+    "note": "당부만 남았다는 표현이 담백하다. A는 할 일까지 사라졌다고 생각한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "mirror-3",
+    "pick": "B",
+    "note": "흔적은 다소 포괄적이지만 의미가 맞고 네 칸을 지킨다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "moon-1",
+    "pick": "A",
+    "note": "낮달을 옅게 그린 것 같다는 반응이 사용자 관찰을 살린다. B는 하늘이 파랬다고 덧붙인다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "moon-2",
+    "pick": "A",
+    "note": "흐릿하게 근무한다는 말이 사진에서 달빛이 하얗게 보인 점과 투잡 농담을 연결한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "moon-3",
+    "pick": "B",
+    "note": "둘 다 길이에 맞지만 달의 출근은 낮 근무 농담까지 살린다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "orange-1",
+    "pick": "B",
+    "note": "출석 체크를 떠올린 B가 줄을 섰다는 사실에 장난을 더한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "orange-2",
+    "pick": "B",
+    "note": "A는 같은 비유를 반복한다. B는 어디 갔는지를 받아 배 속이라는 결말을 덧붙인다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "orange-3",
+    "pick": "tie",
+    "note": "양쪽 제목이 같고 세 글자를 지킨다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

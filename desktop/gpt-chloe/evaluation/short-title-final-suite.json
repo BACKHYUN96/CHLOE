@@ -1,0 +1,113 @@
+{
+  "model": "gpt-6.1-terra",
+  "sessions": [
+    {
+      "id": "chalk",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "chalk-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "오늘 칠판을 지웠는데 제 이름 한 글자만 어렴풋이 남아 있었어요."
+        },
+        {
+          "id": "chalk-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "수업은 끝났는데 그 글자만 아직 출석 중이었죠."
+        },
+        {
+          "id": "chalk-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "그 얘기를 제목처럼 여섯 글자 안으로 적어 줄래요?",
+          "limit": 6
+        }
+      ]
+    },
+    {
+      "id": "sticker",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "sticker-1",
+          "message": "캐리어에 붙였던 스티커를 뗐는데 거기만 원래 색이야.",
+          "focus": "share",
+          "expect": "재진술과 선제 조언 없이 자연스럽게 호응"
+        },
+        {
+          "id": "sticker-2",
+          "message": "여행 다닌 티가 스티커 없는 자리에서 제일 나더라.",
+          "focus": "share",
+          "expect": "재진술과 선제 조언 없이 자연스럽게 호응"
+        },
+        {
+          "id": "sticker-3",
+          "message": "이 사진에 어울리는 제목을 네 글자 이내로 하나만 써 줘.",
+          "focus": "title",
+          "expect": "길이와 맥락을 만족하는 단일 제목",
+          "limit": 4
+        }
+      ]
+    },
+    {
+      "id": "score",
+      "register": "polite",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "score-1",
+          "message": "악보를 폈더니 예전에 연필로 그린 쉼표에만 동그라미가 쳐져 있어요.",
+          "focus": "share",
+          "expect": "재진술과 선제 조언 없이 자연스럽게 호응"
+        },
+        {
+          "id": "score-2",
+          "message": "그때는 음을 내는 것보다 거기서 쉬는 게 더 어려웠나 봐요.",
+          "focus": "share",
+          "expect": "재진술과 선제 조언 없이 자연스럽게 호응"
+        },
+        {
+          "id": "score-3",
+          "message": "사진 제목 하나 부탁해요. 공백 포함 5자 이하로요.",
+          "focus": "title",
+          "expect": "길이와 맥락을 만족하는 단일 제목",
+          "limit": 5
+        }
+      ]
+    },
+    {
+      "id": "shadow",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "shadow-1",
+          "message": "벤치에 앉았는데 옆자리엔 가로등 그림자가 길게 누워 있어.",
+          "focus": "share",
+          "expect": "재진술과 선제 조언 없이 자연스럽게 호응"
+        },
+        {
+          "id": "shadow-2",
+          "message": "내 옆자리는 해 질 때까지 예약석인가 봐.",
+          "focus": "share",
+          "expect": "재진술과 선제 조언 없이 자연스럽게 호응"
+        },
+        {
+          "id": "shadow-3",
+          "message": "이 사진 제목을 세 글자 안으로 하나만 지어 줘.",
+          "focus": "title",
+          "expect": "길이와 맥락을 만족하는 단일 제목",
+          "limit": 3
+        }
+      ]
+    }
+  ]
+}

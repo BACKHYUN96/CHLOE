@@ -1,0 +1,113 @@
+{
+  "model": "gpt-6.1-terra",
+  "sessions": [
+    {
+      "id": "chalk",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "chalk-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "오늘 칠판을 지웠는데 제 이름 한 글자만 어렴풋이 남아 있었어요."
+        },
+        {
+          "id": "chalk-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "수업은 끝났는데 그 글자만 아직 출석 중이었죠."
+        },
+        {
+          "id": "chalk-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "그 얘기를 제목처럼 여섯 글자 안으로 적어 줄래요?",
+          "limit": 6
+        }
+      ]
+    },
+    {
+      "id": "pencil",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "pencil-1",
+          "message": "연필을 끝까지 쓰고 나니 연필깎이보다 짧아졌어.",
+          "focus": "share",
+          "expect": "재진술과 선제 조언 없이 자연스럽게 호응"
+        },
+        {
+          "id": "pencil-2",
+          "message": "책상에 세워 놓으니까 키 재다 은퇴한 선수 같더라.",
+          "focus": "share",
+          "expect": "재진술과 선제 조언 없이 자연스럽게 호응"
+        },
+        {
+          "id": "pencil-3",
+          "message": "사진에 제목 하나만 붙여 줘. 네 글자 이내로.",
+          "focus": "title",
+          "expect": "길이와 맥락을 만족하는 단일 제목",
+          "limit": 4
+        }
+      ]
+    },
+    {
+      "id": "snow",
+      "register": "polite",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "snow-1",
+          "message": "눈 쌓인 우체통 위에 새 발자국이 찍혀 있었어요.",
+          "focus": "share",
+          "expect": "재진술과 선제 조언 없이 자연스럽게 호응"
+        },
+        {
+          "id": "snow-2",
+          "message": "편지 넣는 입구 앞에서 딱 멈춘 게 우편 배달 온 것 같았어요.",
+          "focus": "share",
+          "expect": "재진술과 선제 조언 없이 자연스럽게 호응"
+        },
+        {
+          "id": "snow-3",
+          "message": "사진 제목을 하나 적어 주세요. 공백 포함 5자 이하로요.",
+          "focus": "title",
+          "expect": "길이와 맥락을 만족하는 단일 제목",
+          "limit": 5
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "shell-1",
+          "message": "주머니에서 바닷가 모래가 나왔는데 조개는 한 개도 없네.",
+          "focus": "share",
+          "expect": "재진술과 선제 조언 없이 자연스럽게 호응"
+        },
+        {
+          "id": "shell-2",
+          "message": "기념품은 놓고 포장재만 가져온 느낌이야.",
+          "focus": "share",
+          "expect": "재진술과 선제 조언 없이 자연스럽게 호응"
+        },
+        {
+          "id": "shell-3",
+          "message": "이 얘기 제목을 세 글자 안으로 하나만 지어 줘.",
+          "focus": "title",
+          "expect": "길이와 맥락을 만족하는 단일 제목",
+          "limit": 3
+        }
+      ]
+    }
+  ]
+}
