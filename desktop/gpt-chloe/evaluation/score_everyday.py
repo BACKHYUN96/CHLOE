@@ -7,7 +7,7 @@ from pathlib import Path
 folder = Path(__file__).resolve().parent
 data = folder.parent / ".data"
 prefix = sys.argv[1] if len(sys.argv)>1 else "blind-day"
-name = "everyday-confirm" if prefix=="confirm-day" else "everyday-blind"
+name = {"confirm-day":"everyday-confirm", "blind-day":"everyday-blind", "intent":"intent"}[prefix]
 masked = data / (prefix+"-review")
 def load(path):
     return json.loads(path.read_text(encoding="utf8"))

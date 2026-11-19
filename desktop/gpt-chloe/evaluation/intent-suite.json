@@ -1,0 +1,162 @@
+{
+  "model": "gpt-6.1-terra",
+  "gate": "after wins > before overall; after wins >= before within each intent; meaningful differences only",
+  "sessions": [
+    {
+      "id": "ticket",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "ticket-1",
+          "message": "공연표 뽑았는데 맨 끝자리더라. 이건 이것대로 기억에 남겠지.",
+          "focus": "S",
+          "expect": "자연스럽게 반응하고 요청 없는 해결책 피하기"
+        },
+        {
+          "id": "ticket-2",
+          "message": "그런데 표 받아들고 돌아서는데 말이야…",
+          "focus": "C",
+          "expect": "사용자 차례, 재촉·추측 없이 양보"
+        },
+        {
+          "id": "ticket-3",
+          "message": "옆 사람이 자리를 바꾸자더라. 내가 뭘 먼저 확인하면 좋을까? 한 가지만.",
+          "focus": "A",
+          "expect": "요청한 구체적인 도움 제공"
+        }
+      ]
+    },
+    {
+      "id": "paint",
+      "register": "polite",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "paint-1",
+          "message": "벽에 시험 삼아 칠한 색이 마르니까 달라 보이네요. 그냥 신기해서요.",
+          "focus": "S",
+          "expect": "자연스럽게 반응하고 요청 없는 해결책 피하기"
+        },
+        {
+          "id": "paint-2",
+          "message": "한쪽만 다시 칠할까 싶은데 어느 부분부터 시험해 보면 좋겠어요?",
+          "focus": "A",
+          "expect": "요청한 구체적인 도움 제공"
+        },
+        {
+          "id": "paint-3",
+          "message": "아, 고르기 전에 제가 색깔 얘기 하나만 더 할게요.",
+          "focus": "C",
+          "expect": "사용자 차례, 재촉·추측 없이 양보"
+        }
+      ]
+    },
+    {
+      "id": "sticker",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "sticker-1",
+          "message": "스티커를 반대로 붙였는데 떼는 게 나을까, 둘까? 손상될까 걱정돼.",
+          "focus": "A",
+          "expect": "요청한 구체적인 도움 제공"
+        },
+        {
+          "id": "sticker-2",
+          "message": "응, 정했어. 지금은 그냥 내 노트에 웃긴 무늬 하나 생긴 기분이야.",
+          "focus": "S",
+          "expect": "자연스럽게 반응하고 요청 없는 해결책 피하기"
+        },
+        {
+          "id": "sticker-3",
+          "message": "근데 말이지, 그 무늬 보고 동생이 하는 말이…",
+          "focus": "C",
+          "expect": "사용자 차례, 재촉·추측 없이 양보"
+        }
+      ]
+    },
+    {
+      "id": "song",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "song-1",
+          "message": "노래방에서 내 차례 됐는데 전주만 두 번 나왔어 ㅋㅋ",
+          "focus": "S",
+          "expect": "자연스럽게 반응하고 요청 없는 해결책 피하기"
+        },
+        {
+          "id": "song-2",
+          "message": "아니 그게 웃긴 부분은 아니고, 뒤에 더 있거든.",
+          "focus": "C",
+          "expect": "사용자 차례, 재촉·추측 없이 양보"
+        },
+        {
+          "id": "song-3",
+          "message": "직원이 미안하다고 서비스 줬어. 그날 얘기는 그게 전부야.",
+          "focus": "S",
+          "expect": "자연스럽게 반응하고 요청 없는 해결책 피하기"
+        }
+      ]
+    },
+    {
+      "id": "message",
+      "register": "polite",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "message-1",
+          "message": "후배가 발표 순서 바뀌었다고 연락했어요. 일단 제가 들은 것부터 말씀드리면…",
+          "focus": "C",
+          "expect": "사용자 차례, 재촉·추측 없이 양보"
+        },
+        {
+          "id": "message-2",
+          "message": "후배는 오히려 좋아하더라고요. 제가 해결할 일은 아니고 그냥 의외였어요.",
+          "focus": "S",
+          "expect": "자연스럽게 반응하고 요청 없는 해결책 피하기"
+        },
+        {
+          "id": "message-3",
+          "message": "그래도 응원은 하고 싶어요. 후배한테 보낼 반말 한 줄만 골라 주세요.",
+          "focus": "A",
+          "expect": "요청한 구체적인 도움 제공"
+        }
+      ]
+    },
+    {
+      "id": "gift",
+      "register": "casual",
+      "lessons": [],
+      "memories": [],
+      "turns": [
+        {
+          "id": "gift-1",
+          "message": "친구한테 수건 선물할 건데 포장지 없이 묶는 쉬운 방법 하나 알려 줘.",
+          "focus": "A",
+          "expect": "요청한 구체적인 도움 제공"
+        },
+        {
+          "id": "gift-2",
+          "message": "오 그거면 되겠다. 근데 리본 꺼내다가 뭘 발견했냐면…",
+          "focus": "C",
+          "expect": "사용자 차례, 재촉·추측 없이 양보"
+        },
+        {
+          "id": "gift-3",
+          "message": "작년에 걔가 준 카드가 있더라. 그냥 반가웠어.",
+          "focus": "S",
+          "expect": "자연스럽게 반응하고 요청 없는 해결책 피하기"
+        }
+      ]
+    }
+  ]
+}
