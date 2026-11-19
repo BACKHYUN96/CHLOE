@@ -1,0 +1,109 @@
+{
+  "model": "gpt-6.1-terra",
+  "sessions": [
+    {
+      "id": "button",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "button-1",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "셔츠에 단추를 다 달고 보니 맨 아래 하나만 색이 달라."
+        },
+        {
+          "id": "button-2",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "입으면 바지 안에 들어가는 자리라 나만 아는 비밀 같아."
+        },
+        {
+          "id": "button-3",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 도움",
+          "message": "그 단추를 그대로 두고 싶은데 세탁할 때 풀리지 않게 뭘 확인하면 돼?"
+        }
+      ]
+    },
+    {
+      "id": "bakery",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "bakery-1",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "동네 빵집 문에 오늘은 늦게 연다고 손글씨가 붙어 있었어요."
+        },
+        {
+          "id": "bakery-2",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "밑에 누가 연필로 천천히 오세요 하고 써 놨더라고요."
+        },
+        {
+          "id": "bakery-3",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 도움",
+          "message": "저도 포스트잇 하나 붙이려는데 그 말이랑 안 겹치는 짧은 응원 문구 하나만요."
+        }
+      ]
+    },
+    {
+      "id": "ticket",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "ticket-1",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "헌책에서 예전 영화표가 툭 떨어졌어."
+        },
+        {
+          "id": "ticket-2",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "제목보다 구석에 적힌 그때 팝콘 가격이 먼저 눈에 들어오더라."
+        },
+        {
+          "id": "ticket-3",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 도움",
+          "message": "가격 적힌 면도 보이게 책갈피처럼 쓰고 싶어. 표에 테이프 안 붙이는 방법 있을까?"
+        }
+      ]
+    },
+    {
+      "id": "apron",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "apron-1",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "오늘 처음 앞치마를 매고 요리했는데 옷소매에만 양념이 튀었어요."
+        },
+        {
+          "id": "apron-2",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "앞치마는 지금 새것처럼 깨끗해요."
+        },
+        {
+          "id": "apron-3",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 도움",
+          "message": "다음번엔 소매를 어떻게 고정하면 좋을까요? 고무줄 두 개는 있어요."
+        }
+      ]
+    }
+  ]
+}

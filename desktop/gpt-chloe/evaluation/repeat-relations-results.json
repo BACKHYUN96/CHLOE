@@ -1,0 +1,992 @@
+[
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "repeat-1",
+    "question": "오늘 얘기에서 사람과 고양이, 앱 관계만 짧게 정리해 줘.",
+    "answer": "- 서진님은 필름 사진을 좋아하고, 동생 서윤님은 도예를 좋아해요.\n- 루미는 서진님의 고양이, 루민은 친구 다은님의 고양이예요.\n- 밤결 앱은 다은님이 만들었고, 서진님은 화면 디자인을 도왔어요.",
+    "history_chars": 62806,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1938,
+      "total_ms": 3204,
+      "input_tokens": 23143,
+      "output_tokens": 77,
+      "cost": 0.001545
+    },
+    "api_usage": {
+      "input_tokens": 23143,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23140
+      },
+      "output_tokens": 77,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23220
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "caption-1",
+    "question": "사진 설명에 하람이랑 우주가 서로 어떤 사이인지 적어 줄래?",
+    "answer": "우주는 하람의 동생이에요.\n\n사진 설명에는 “하람과 동생 우주”라고 적으면 자연스러워요.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 2172,
+      "total_ms": 2922,
+      "input_tokens": 23185,
+      "output_tokens": 35,
+      "cost": 0.02336
+    },
+    "api_usage": {
+      "input_tokens": 23185,
+      "input_tokens_details": {
+        "cache_write_tokens": 23182,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 23182
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 35,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23220
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "cards-1",
+    "question": "인물 카드 두 장에 라온과 도담의 관계를 각각 한 줄로 넣어 줘.",
+    "answer": "라온: 도담의 형제자매예요.\n도담: 라온의 동생이에요.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1671,
+      "total_ms": 2171,
+      "input_tokens": 23190,
+      "output_tokens": 28,
+      "cost": 0.02333
+    },
+    "api_usage": {
+      "input_tokens": 23190,
+      "input_tokens_details": {
+        "cache_write_tokens": 23187,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 23187
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 28,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23218
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "repeat-2",
+    "question": "오늘 얘기에서 사람과 고양이, 앱 관계만 짧게 정리해 줘.",
+    "answer": "- 서진님의 동생은 서윤, 친구는 다은이에요.\n- 루미는 서진님의 고양이, 루민은 다은의 고양이로 서로 달라요.\n- 밤결 앱은 다은이 만들었고 서진님은 화면 디자인을 도왔다고 정정하셨어요. 이 정정은 이번 대화에만 적용해요.",
+    "history_chars": 62806,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1047,
+      "total_ms": 2234,
+      "input_tokens": 23143,
+      "output_tokens": 88,
+      "cost": 0.0016
+    },
+    "api_usage": {
+      "input_tokens": 23143,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23140
+      },
+      "output_tokens": 88,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23231
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "caption-2",
+    "question": "사진 설명에 하람이랑 우주가 서로 어떤 사이인지 적어 줄래?",
+    "answer": "우주는 하람의 동생이에요.\n\n사진 설명에는 “하람과 동생 우주”라고 적으면 자연스러워요.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 2031,
+      "total_ms": 2703,
+      "input_tokens": 23185,
+      "output_tokens": 35,
+      "cost": 0.0013371000000000001
+    },
+    "api_usage": {
+      "input_tokens": 23185,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23182
+      },
+      "output_tokens": 35,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23220
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "cards-2",
+    "question": "인물 카드 두 장에 라온과 도담의 관계를 각각 한 줄로 넣어 줘.",
+    "answer": "- 라온: 도담의 형 또는 누나/언니 또는 오빠\n- 도담: 라온의 동생",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1203,
+      "total_ms": 2000,
+      "input_tokens": 23190,
+      "output_tokens": 31,
+      "cost": 0.0013173500000000001
+    },
+    "api_usage": {
+      "input_tokens": 23190,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23187
+      },
+      "output_tokens": 31,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23221
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "repeat-3",
+    "question": "오늘 얘기에서 사람과 고양이, 앱 관계만 짧게 정리해 줘.",
+    "answer": "- 서진님에게는 동생 서윤님과 친구 다은님이 있어요.\n- 루미는 서진님의 고양이, 루민은 다은님의 고양이로 서로 다른 고양이예요.\n- 이 대화에서 정정하신 내용에 따르면 밤결 앱은 다은님이 만들었고, 서진님은 화면 디자인을 도왔어요.",
+    "history_chars": 62806,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 3047,
+      "total_ms": 4453,
+      "input_tokens": 23143,
+      "output_tokens": 88,
+      "cost": 0.0016
+    },
+    "api_usage": {
+      "input_tokens": 23143,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23140
+      },
+      "output_tokens": 88,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23231
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "caption-3",
+    "question": "사진 설명에 하람이랑 우주가 서로 어떤 사이인지 적어 줄래?",
+    "answer": "하람이와 우주는 남매예요. 우주는 하람이의 동생이에요.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1281,
+      "total_ms": 1719,
+      "input_tokens": 23185,
+      "output_tokens": 26,
+      "cost": 0.0012921000000000002
+    },
+    "api_usage": {
+      "input_tokens": 23185,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23182
+      },
+      "output_tokens": 26,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23211
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "cards-3",
+    "question": "인물 카드 두 장에 라온과 도담의 관계를 각각 한 줄로 넣어 줘.",
+    "answer": "라온: 도담의 형제자매예요.\n도담: 라온의 동생이에요.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1078,
+      "total_ms": 1953,
+      "input_tokens": 23190,
+      "output_tokens": 28,
+      "cost": 0.00130235
+    },
+    "api_usage": {
+      "input_tokens": 23190,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23187
+      },
+      "output_tokens": 28,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23218
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "repeat-4",
+    "question": "오늘 얘기에서 사람과 고양이, 앱 관계만 짧게 정리해 줘.",
+    "answer": "- 서진님의 동생은 서윤, 친구는 다은이에요.\n- 루미는 서진님의 고양이, 루민은 다은의 고양이예요.\n- 밤결 앱은 다은이 만들었고, 서진님은 화면 디자인을 도왔어요.",
+    "history_chars": 62806,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1656,
+      "total_ms": 2531,
+      "input_tokens": 23143,
+      "output_tokens": 67,
+      "cost": 0.001495
+    },
+    "api_usage": {
+      "input_tokens": 23143,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23140
+      },
+      "output_tokens": 67,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23210
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "caption-4",
+    "question": "사진 설명에 하람이랑 우주가 서로 어떤 사이인지 적어 줄래?",
+    "answer": "하람과 우주는 형제자매 사이로, 우주가 하람의 동생입니다.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 2265,
+      "total_ms": 2875,
+      "input_tokens": 23185,
+      "output_tokens": 26,
+      "cost": 0.0012921000000000002
+    },
+    "api_usage": {
+      "input_tokens": 23185,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23182
+      },
+      "output_tokens": 26,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23211
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "cards-4",
+    "question": "인물 카드 두 장에 라온과 도담의 관계를 각각 한 줄로 넣어 줘.",
+    "answer": "- 라온: 도담의 형제자매\n- 도담: 라온의 동생",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1609,
+      "total_ms": 2000,
+      "input_tokens": 23190,
+      "output_tokens": 25,
+      "cost": 0.00128735
+    },
+    "api_usage": {
+      "input_tokens": 23190,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23187
+      },
+      "output_tokens": 25,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23215
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "repeat-5",
+    "question": "오늘 얘기에서 사람과 고양이, 앱 관계만 짧게 정리해 줘.",
+    "answer": "- 서진 님의 동생은 서윤이고, 다은은 친구예요.\n- 루미는 서진 님의 고양이, 루민은 다은의 고양이로 서로 달라요.\n- 밤결 앱은 다은이 만들었고, 서진 님은 화면 디자인을 도왔다고 정정해 주셨어요.",
+    "history_chars": 62806,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1360,
+      "total_ms": 2469,
+      "input_tokens": 23143,
+      "output_tokens": 83,
+      "cost": 0.001575
+    },
+    "api_usage": {
+      "input_tokens": 23143,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23140
+      },
+      "output_tokens": 83,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23226
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "caption-5",
+    "question": "사진 설명에 하람이랑 우주가 서로 어떤 사이인지 적어 줄래?",
+    "answer": "우주는 하람의 동생이에요.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 2391,
+      "total_ms": 2719,
+      "input_tokens": 23185,
+      "output_tokens": 14,
+      "cost": 0.0012321
+    },
+    "api_usage": {
+      "input_tokens": 23185,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23182
+      },
+      "output_tokens": 14,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23199
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "before",
+    "commit": "2be5c6e",
+    "id": "cards-5",
+    "question": "인물 카드 두 장에 라온과 도담의 관계를 각각 한 줄로 넣어 줘.",
+    "answer": "라온: 도담의 형제자매  \n도담: 라온의 동생",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 2187,
+      "total_ms": 2593,
+      "input_tokens": 23190,
+      "output_tokens": 23,
+      "cost": 0.0012773500000000002
+    },
+    "api_usage": {
+      "input_tokens": 23190,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23187
+      },
+      "output_tokens": 23,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23213
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "repeat-1",
+    "question": "오늘 얘기에서 사람과 고양이, 앱 관계만 짧게 정리해 줘.",
+    "answer": "- 서진 님의 동생은 서윤이고, 다은은 서진 님의 친구예요.\n- 루미는 서진 님의 고양이, 루민은 다은의 고양이예요.\n- 정정해 주신 대로, 밤결 앱은 다은이 만들었고 서진 님은 화면 디자인을 도왔어요.",
+    "history_chars": 62806,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 2141,
+      "total_ms": 3734,
+      "input_tokens": 23222,
+      "output_tokens": 85,
+      "cost": 0.00158895
+    },
+    "api_usage": {
+      "input_tokens": 23222,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23219
+      },
+      "output_tokens": 85,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23307
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "caption-1",
+    "question": "사진 설명에 하람이랑 우주가 서로 어떤 사이인지 적어 줄래?",
+    "answer": "하람이와 우주는 남매예요. 우주는 하람이의 동생이에요.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1672,
+      "total_ms": 2078,
+      "input_tokens": 23264,
+      "output_tokens": 26,
+      "cost": 0.023394
+    },
+    "api_usage": {
+      "input_tokens": 23264,
+      "input_tokens_details": {
+        "cache_write_tokens": 23261,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 23261
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 26,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23290
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "cards-1",
+    "question": "인물 카드 두 장에 라온과 도담의 관계를 각각 한 줄로 넣어 줘.",
+    "answer": "라온 카드: 도담은 라온의 동생이에요.  \n도담 카드: 도담은 라온의 동생이에요.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1672,
+      "total_ms": 2203,
+      "input_tokens": 23269,
+      "output_tokens": 35,
+      "cost": 0.023444
+    },
+    "api_usage": {
+      "input_tokens": 23269,
+      "input_tokens_details": {
+        "cache_write_tokens": 23266,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 23266
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 35,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23304
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "repeat-2",
+    "question": "오늘 얘기에서 사람과 고양이, 앱 관계만 짧게 정리해 줘.",
+    "answer": "- 서진 님의 동생은 서윤이고, 다은은 친구예요.\n- 루미는 서진 님의 고양이, 루민은 다은의 고양이로 서로 다른 고양이예요.\n- 밤결 앱은 다은이 만들었고, 서진 님은 화면 디자인을 도왔어요.",
+    "history_chars": 62806,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1797,
+      "total_ms": 2984,
+      "input_tokens": 23222,
+      "output_tokens": 79,
+      "cost": 0.0015589500000000001
+    },
+    "api_usage": {
+      "input_tokens": 23222,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23219
+      },
+      "output_tokens": 79,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23301
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "caption-2",
+    "question": "사진 설명에 하람이랑 우주가 서로 어떤 사이인지 적어 줄래?",
+    "answer": "우주는 하람의 동생이에요.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1141,
+      "total_ms": 1312,
+      "input_tokens": 23264,
+      "output_tokens": 14,
+      "cost": 0.00123605
+    },
+    "api_usage": {
+      "input_tokens": 23264,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23261
+      },
+      "output_tokens": 14,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23278
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "cards-2",
+    "question": "인물 카드 두 장에 라온과 도담의 관계를 각각 한 줄로 넣어 줘.",
+    "answer": "라온: 도담의 이름이 언급된 인물  \n도담: 라온의 동생",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1219,
+      "total_ms": 1953,
+      "input_tokens": 23269,
+      "output_tokens": 26,
+      "cost": 0.0012963
+    },
+    "api_usage": {
+      "input_tokens": 23269,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23266
+      },
+      "output_tokens": 26,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23295
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "repeat-3",
+    "question": "오늘 얘기에서 사람과 고양이, 앱 관계만 짧게 정리해 줘.",
+    "answer": "- 서진 님의 동생은 서윤이고, 회사에서 부르는 서진 님의 별명은 누리예요.\n- 루미는 서진 님의 고양이, 루민은 친구 다은의 고양이로 서로 달라요.\n- 밤결 앱은 다은이 만들었고, 서진 님은 화면 디자인을 도왔어요.",
+    "history_chars": 62806,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1360,
+      "total_ms": 3063,
+      "input_tokens": 23222,
+      "output_tokens": 87,
+      "cost": 0.00159895
+    },
+    "api_usage": {
+      "input_tokens": 23222,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23219
+      },
+      "output_tokens": 87,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23309
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "caption-3",
+    "question": "사진 설명에 하람이랑 우주가 서로 어떤 사이인지 적어 줄래?",
+    "answer": "우주는 하람의 동생이에요.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1093,
+      "total_ms": 1297,
+      "input_tokens": 23264,
+      "output_tokens": 14,
+      "cost": 0.00123605
+    },
+    "api_usage": {
+      "input_tokens": 23264,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23261
+      },
+      "output_tokens": 14,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23278
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "cards-3",
+    "question": "인물 카드 두 장에 라온과 도담의 관계를 각각 한 줄로 넣어 줘.",
+    "answer": "- 라온: 도담과의 관계에 대해 확인된 표현 없음\n- 도담: 라온의 동생",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1313,
+      "total_ms": 2157,
+      "input_tokens": 23269,
+      "output_tokens": 29,
+      "cost": 0.0013113
+    },
+    "api_usage": {
+      "input_tokens": 23269,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23266
+      },
+      "output_tokens": 29,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23298
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "repeat-4",
+    "question": "오늘 얘기에서 사람과 고양이, 앱 관계만 짧게 정리해 줘.",
+    "answer": "확인 가능한 대화 기준으로 정리하면요.\n\n- 서진님의 동생은 서윤님이고, 친구는 다은님이에요.\n- 루미는 서진님의 고양이, 루민은 다은님의 고양이로 서로 달라요.\n- 밤결 앱은 다은님이 만들었고 서진님은 화면 디자인을 도왔어요. 이 내용은 이번 대화에서만 적용해 달라고 정정하셨어요.",
+    "history_chars": 62806,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1734,
+      "total_ms": 3375,
+      "input_tokens": 23222,
+      "output_tokens": 104,
+      "cost": 0.00168395
+    },
+    "api_usage": {
+      "input_tokens": 23222,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23219
+      },
+      "output_tokens": 104,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23326
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "caption-4",
+    "question": "사진 설명에 하람이랑 우주가 서로 어떤 사이인지 적어 줄래?",
+    "answer": "우주는 하람의 동생이에요.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1703,
+      "total_ms": 1922,
+      "input_tokens": 23264,
+      "output_tokens": 14,
+      "cost": 0.00123605
+    },
+    "api_usage": {
+      "input_tokens": 23264,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23261
+      },
+      "output_tokens": 14,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23278
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "cards-4",
+    "question": "인물 카드 두 장에 라온과 도담의 관계를 각각 한 줄로 넣어 줘.",
+    "answer": "- 라온 카드: 도담은 라온의 동생.\n- 도담 카드: 도담은 라온의 동생.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1687,
+      "total_ms": 2281,
+      "input_tokens": 23269,
+      "output_tokens": 32,
+      "cost": 0.0013262999999999999
+    },
+    "api_usage": {
+      "input_tokens": 23269,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23266
+      },
+      "output_tokens": 32,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23301
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "repeat-5",
+    "question": "오늘 얘기에서 사람과 고양이, 앱 관계만 짧게 정리해 줘.",
+    "answer": "- 서진 님의 동생은 서윤이고, 다은은 서진 님의 친구예요.\n- 루미는 서진 님의 고양이, 루민은 다은의 고양이예요.\n- 밤결 앱은 다은이 만들었고, 서진 님은 화면 디자인을 도왔어요.\n- 누리는 회사에서 부르는 서진 님의 별명이에요. 누리봄은 서진 님이 처음 듣는 앱 이름이라고 했어요.",
+    "history_chars": 62806,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1297,
+      "total_ms": 3609,
+      "input_tokens": 23222,
+      "output_tokens": 114,
+      "cost": 0.00173395
+    },
+    "api_usage": {
+      "input_tokens": 23222,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23219
+      },
+      "output_tokens": 114,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23336
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "caption-5",
+    "question": "사진 설명에 하람이랑 우주가 서로 어떤 사이인지 적어 줄래?",
+    "answer": "우주는 하람의 동생이에요.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1156,
+      "total_ms": 1390,
+      "input_tokens": 23264,
+      "output_tokens": 14,
+      "cost": 0.00123605
+    },
+    "api_usage": {
+      "input_tokens": 23264,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23261
+      },
+      "output_tokens": 14,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23278
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  },
+  {
+    "mode": "after",
+    "commit": "05de869",
+    "id": "cards-5",
+    "question": "인물 카드 두 장에 라온과 도담의 관계를 각각 한 줄로 넣어 줘.",
+    "answer": "라온: 도담과의 관계는 이 방향으로 따로 말씀해 주신 내용이 없어요.\n\n도담: 라온의 동생이에요.",
+    "history_chars": 62821,
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1500,
+      "total_ms": 2375,
+      "input_tokens": 23269,
+      "output_tokens": 38,
+      "cost": 0.0013563
+    },
+    "api_usage": {
+      "input_tokens": 23269,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 23266
+      },
+      "output_tokens": 38,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23307
+    },
+    "source_sha256": "dcba87a6d2fee155bdb14273fe76d795916fcb75555a8fd3180520919fff0126"
+  }
+]

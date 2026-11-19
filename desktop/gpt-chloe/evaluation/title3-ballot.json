@@ -1,0 +1,110 @@
+[
+  {
+    "id": "chalk-1",
+    "pick": "A",
+    "note": "칠판이 이름을 붙잡는다는 반응에는 작은 장면이 있다. B는 사실을 되풀이한 뒤 눈길이 갔겠다고 한다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "A",
+    "note": "칠판 당번이라는 학교 농담이 상황에 꼭 맞는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "A",
+    "note": "둘 다 공백 포함 일곱 칸이지만 아직 출석 중이 사용자의 농담까지 살린다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "window-1",
+    "pick": "A",
+    "note": "창문 안에 작은 창문이라는 착상이 같고 A가 덜 반복한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "window-2",
+    "pick": "A",
+    "note": "풍경 하나 건졌다는 반응은 우연한 발견에 호응한다. B는 액자 속에 들어온 나무를 다시 묘사한다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "window-3",
+    "pick": "B",
+    "note": "한 그루라는 맥락과 네 글자를 둘 다 지킨다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "shelf-1",
+    "pick": "B",
+    "note": "A는 책 나이를 추측하고 사실을 다시 묻는다. B는 오래된 대출표가 있었다는 사실을 되읽지만 맥락에는 맞는다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "shelf-2",
+    "pick": "A",
+    "note": "수많은 날짜 중이라는 A가 우연의 희소성을 짚는다. B는 한 번 더 보았다는 사실을 되풀이한다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "shelf-3",
+    "pick": "A",
+    "note": "둘 다 여섯 칸으로 초과했다. A는 대출표의 구체적 사물을 제목에 담는다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "wave-1",
+    "pick": "tie",
+    "note": "양쪽 모두 끊어진 발자국의 모양을 설명하는 데 그친다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "wave-2",
+    "pick": "B",
+    "note": "포털을 연 파도라는 말이 장면을 이어 간다. 유일한 증거라는 A는 다소 과장됐다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "wave-3",
+    "pick": "A",
+    "note": "양쪽 모두 초과하고 A가 더 짧고 자연스럽다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

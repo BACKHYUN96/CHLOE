@@ -1,0 +1,128 @@
+[
+  {
+    "id": "poster-1",
+    "pick": "B",
+    "note": "짧은 탄식이 어울리고 감정을 단정하지 않는다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "poster-2",
+    "pick": "B",
+    "note": "의미는 비슷한데 덜 되풀이하고 한 문장으로 받는다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "poster-3",
+    "pick": "A",
+    "note": "같은 색 종이와 펜으로 고치는 방법은 흰 바탕이나 라벨 인쇄 수단을 전제할 필요가 적다.",
+    "premature_A": null,
+    "premature_B": null
+  },
+  {
+    "id": "door-1",
+    "pick": "B",
+    "note": "이사하자마자 발견했다는 시점을 덧붙이지 않는다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "door-2",
+    "pick": "tie",
+    "note": "두 답 모두 고양이를 깨운 미안함에 적절히 반응한다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "door-3",
+    "pick": "A",
+    "note": "수건 한 장으로 고정하고 밀어 확인하는 것까지 가능하다. B는 마지막에 반대쪽 수건까지 필요하다.",
+    "premature_A": null,
+    "premature_B": null
+  },
+  {
+    "id": "script-1",
+    "pick": "B",
+    "note": "B가 아끼는 원고를 줄이는 마음을 받아 준다. A는 줄여야겠다고 방향을 정하지만 무엇을 어떻게 덜지 제안하지 않아 구체적인 해결책으로 세지 않았다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "script-2",
+    "pick": "tie",
+    "note": "둘 다 좋아하는 부분이 시간을 차지하는 아이러니를 잘 받는다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "script-3",
+    "pick": "A",
+    "note": "중복 문장부터 덜고 다시 읽어 시간을 재는 흐름이 간결하며 아끼는 부분을 보존한다.",
+    "premature_A": null,
+    "premature_B": null
+  },
+  {
+    "id": "clay-1",
+    "pick": "B",
+    "note": "A는 나머지 손가락으로 컵을 받치는 방법까지 먼저 권한다.",
+    "premature_A": true,
+    "premature_B": false
+  },
+  {
+    "id": "clay-2",
+    "pick": "A",
+    "note": "다른 손가락은 구경한다는 표현이 농담에 맞는다. B의 새끼손가락으로 마신다는 말도 사용자의 비유를 잇는 농담으로 보았다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "clay-3",
+    "pick": "B",
+    "note": "둘 다 펜꽂이를 제안한다. B는 작은 손잡이로 채워진 컵을 들어 옮기라고 권하지 않는다.",
+    "premature_A": null,
+    "premature_B": null
+  },
+  {
+    "id": "cable-1",
+    "pick": "B",
+    "note": "두 답 모두 다른 선이 딸려 나왔다고 짐작한다. A의 경험담처럼 들리는 엉키더라보다 B가 상황에 집중한다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "cable-2",
+    "pick": "A",
+    "note": "허탈할 수 있는 상황을 먼저 받아 준다. 사용자에게서 명확한 웃음 신호는 없었다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "cable-3",
+    "pick": "A",
+    "note": "집게 손잡이로 선을 통과시키는 방식이 구체적이고 집게로 선 자체를 누를 필요가 없다.",
+    "premature_A": null,
+    "premature_B": null
+  },
+  {
+    "id": "cards-1",
+    "pick": "A",
+    "note": "B는 아직 도움을 요청하지 않았는데 착석 전후의 해결 절차부터 나열한다.",
+    "premature_A": false,
+    "premature_B": true
+  },
+  {
+    "id": "cards-2",
+    "pick": "B",
+    "note": "사용자가 말한 뿌듯함과 지금 느낄 법한 허탈함을 자연스럽게 이어 준다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "cards-3",
+    "pick": "tie",
+    "note": "둘 다 문자로 바로 보낼 길이지만 바뀐 자리가 잘못 표기된 자리인지 원래 지정석인지 모호하다.",
+    "premature_A": null,
+    "premature_B": null
+  }
+]

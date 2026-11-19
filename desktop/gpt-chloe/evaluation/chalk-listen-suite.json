@@ -1,0 +1,110 @@
+{
+  "model": "gpt-6.1-terra",
+  "sessions": [
+    {
+      "id": "chalk",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "chalk-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "오늘 칠판을 지웠는데 제 이름 한 글자만 어렴풋이 남아 있었어요."
+        },
+        {
+          "id": "chalk-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "수업은 끝났는데 그 글자만 아직 출석 중이었죠."
+        },
+        {
+          "id": "chalk-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "그 얘기를 제목처럼 여섯 글자 안으로 적어 줄래요?",
+          "limit": 6
+        }
+      ]
+    },
+    {
+      "id": "poster",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "poster-1",
+          "message": "공연 끝나고 포스터를 걷었더니 벽에 네모난 자국만 선명해.",
+          "focus": "share",
+          "expect": "상황이나 농담에 자연스럽게 화답하고 요청 전 조언은 하지 않기"
+        },
+        {
+          "id": "poster-2",
+          "message": "그 네모 안에서는 아직 공연 중인 것 같더라.",
+          "focus": "share",
+          "expect": "상황이나 농담에 자연스럽게 화답하고 요청 전 조언은 하지 않기"
+        },
+        {
+          "id": "poster-3",
+          "message": "사진 제목 하나만 네 글자 이내로 써 줘.",
+          "focus": "request",
+          "expect": "요청 내용과 형식 준수"
+        }
+      ]
+    },
+    {
+      "id": "bell",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "bell-1",
+          "message": "폐점한 가게 문을 지나는데 손잡이 위에 작은 방울은 아직 달려 있었어요.",
+          "focus": "share",
+          "expect": "상황이나 농담에 자연스럽게 화답하고 요청 전 조언은 하지 않기"
+        },
+        {
+          "id": "bell-2",
+          "message": "가게는 쉬는데 방울은 혼자 손님 기다리나 봐요.",
+          "focus": "share",
+          "expect": "상황이나 농담에 자연스럽게 화답하고 요청 전 조언은 하지 않기"
+        },
+        {
+          "id": "bell-3",
+          "message": "그 모습에 제목 하나만 붙여 주세요. 공백 포함 5자 이하로요.",
+          "focus": "request",
+          "expect": "요청 내용과 형식 준수"
+        }
+      ]
+    },
+    {
+      "id": "lunch",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "lunch-1",
+          "message": "도시락을 열어 보니 김에 눈 두 개만 뚫려 있어.",
+          "focus": "share",
+          "expect": "상황이나 농담에 자연스럽게 화답하고 요청 전 조언은 하지 않기"
+        },
+        {
+          "id": "lunch-2",
+          "message": "반찬 고르기 전에 도시락이랑 눈부터 마주쳤네.",
+          "focus": "share",
+          "expect": "상황이나 농담에 자연스럽게 화답하고 요청 전 조언은 하지 않기"
+        },
+        {
+          "id": "lunch-3",
+          "message": "이걸 친구한테 보내게 한 줄만 써 줘. 내가 도시락한테 먼저 인사하는 말로.",
+          "focus": "request",
+          "expect": "요청 내용과 형식 준수"
+        }
+      ]
+    }
+  ]
+}

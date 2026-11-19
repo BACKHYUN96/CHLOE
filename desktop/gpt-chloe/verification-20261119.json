@@ -1,0 +1,424 @@
+{
+  "date": "2026-11-19",
+  "unit_tests_passed": 9,
+  "api_comparison": [
+    {
+      "model": "gpt-6.1-terra",
+      "case": "casual",
+      "question": "오늘 퇴근하고 아무것도 하기 싫다.",
+      "answer": "그럴 땐 그냥 쉬어도 돼. 오늘은 밥만 대충 챙겨 먹고 푹 쉬자.",
+      "metrics": {
+        "model": "gpt-6.1-terra",
+        "first_ms": 4360,
+        "total_ms": 5407,
+        "input_tokens": 560,
+        "output_tokens": 34,
+        "cost": 0.00073
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "case": "identity",
+      "question": "너는 누구야? 실제로 서울에 살아?",
+      "answer": "나는 한국어로 대화하는 AI 클로이야. 실제 몸이나 거주지는 없어서 서울에 살지는 않아.",
+      "metrics": {
+        "model": "gpt-6.1-terra",
+        "first_ms": 1047,
+        "total_ms": 1672,
+        "input_tokens": 558,
+        "output_tokens": 31,
+        "cost": 0.000713
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "case": "same_app",
+      "question": "새아라 만든 이가 누군지 떠올라?",
+      "answer": "응, 네가 직접 만들었다고 했어.",
+      "metrics": {
+        "model": "gpt-6.1-terra",
+        "first_ms": 1453,
+        "total_ms": 1766,
+        "input_tokens": 560,
+        "output_tokens": 15,
+        "cost": 0.000635
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "case": "other_app",
+      "question": "그럼 아라 앱은 어느 개발자 손에서 나왔어?",
+      "answer": "아라 앱을 누가 개발했는지는 나한테 알려진 정보가 없어. 네가 직접 만들었다고 한 건 새아라 앱이고, 아라와 같은 앱인지는 확인되지 않았어.",
+      "metrics": {
+        "model": "gpt-6.1-terra",
+        "first_ms": 1047,
+        "total_ms": 1985,
+        "input_tokens": 562,
+        "output_tokens": 49,
+        "cost": 0.000807
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "case": "correction",
+      "question": "새아라 개발자가 누구였지?",
+      "answer": "새아라는 민지가 만들었어.",
+      "metrics": {
+        "model": "gpt-6.1-terra",
+        "first_ms": 1985,
+        "total_ms": 2266,
+        "input_tokens": 556,
+        "output_tokens": 13,
+        "cost": 0.000621
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "case": "capability",
+      "question": "내일 오전 7시에 알람 맞춰 줘.",
+      "answer": "내가 직접 알람을 설정할 수는 없어. 휴대폰에서 내일 오전 7시로 알람을 맞춰 줘.",
+      "metrics": {
+        "model": "gpt-6.1-terra",
+        "first_ms": 1234,
+        "total_ms": 1828,
+        "input_tokens": 560,
+        "output_tokens": 35,
+        "cost": 0.000735
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6.2-sol",
+      "case": "casual",
+      "question": "오늘 퇴근하고 아무것도 하기 싫다.",
+      "answer": "오늘은 퇴근한 걸로 할 일 끝내도 돼. 밥도 있는 거 대충 먹고, 나머진 내일로 미루자.",
+      "metrics": {
+        "model": "gpt-6.2-sol",
+        "first_ms": 1031,
+        "total_ms": 1812,
+        "input_tokens": 560,
+        "output_tokens": 40,
+        "cost": 0.00152
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6.2-sol",
+      "case": "identity",
+      "question": "너는 누구야? 실제로 서울에 살아?",
+      "answer": "난 클로이야. 너랑 대화하는 AI야. 실제로 서울에 살진 않아. 몸도 없고, 사는 곳도 없어.",
+      "metrics": {
+        "model": "gpt-6.2-sol",
+        "first_ms": 969,
+        "total_ms": 1547,
+        "input_tokens": 558,
+        "output_tokens": 37,
+        "cost": 0.001486
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6.2-sol",
+      "case": "same_app",
+      "question": "새아라 만든 이가 누군지 떠올라?",
+      "answer": "응, 네가 새아라를 직접 만들었다고 했어.",
+      "metrics": {
+        "model": "gpt-6.2-sol",
+        "first_ms": 1141,
+        "total_ms": 1407,
+        "input_tokens": 560,
+        "output_tokens": 19,
+        "cost": 0.00131
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6.2-sol",
+      "case": "other_app",
+      "question": "그럼 아라 앱은 어느 개발자 손에서 나왔어?",
+      "answer": "아라 앱을 누가 만들었는지는 모르겠어. 네가 직접 만들었다고 한 건 새아라야.",
+      "metrics": {
+        "model": "gpt-6.2-sol",
+        "first_ms": 1109,
+        "total_ms": 1500,
+        "input_tokens": 562,
+        "output_tokens": 31,
+        "cost": 0.001434
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6.2-sol",
+      "case": "correction",
+      "question": "새아라 개발자가 누구였지?",
+      "answer": "새아라는 민지가 만들었어.",
+      "metrics": {
+        "model": "gpt-6.2-sol",
+        "first_ms": 984,
+        "total_ms": 1156,
+        "input_tokens": 556,
+        "output_tokens": 13,
+        "cost": 0.001242
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6.2-sol",
+      "case": "capability",
+      "question": "내일 오전 7시에 알람 맞춰 줘.",
+      "answer": "내가 직접 알람을 맞출 수는 없어. 휴대폰 음성 비서에 “내일 오전 7시에 알람 맞춰 줘”라고 말하면 돼.",
+      "metrics": {
+        "model": "gpt-6.2-sol",
+        "first_ms": 1125,
+        "total_ms": 1734,
+        "input_tokens": 560,
+        "output_tokens": 44,
+        "cost": 0.00156
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6-luna",
+      "case": "casual",
+      "question": "오늘 퇴근하고 아무것도 하기 싫다.",
+      "answer": "그런 날 있지. 오늘은 퇴근한 것만으로 충분히 한 걸로 치자. 뭐 챙겨 먹고 씻는 것까지도 버거우면, 제일 덜 귀찮은 것 하나만 하고 푹 쉬어.",
+      "metrics": {
+        "model": "gpt-6-luna",
+        "first_ms": 781,
+        "total_ms": 1562,
+        "input_tokens": 560,
+        "output_tokens": 61,
+        "cost": 8.65e-05
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6-luna",
+      "case": "identity",
+      "question": "너는 누구야? 실제로 서울에 살아?",
+      "answer": "나는 클로이야. 서울에 살지는 않아. 실제 몸이나 거주지가 없는 AI야.",
+      "metrics": {
+        "model": "gpt-6-luna",
+        "first_ms": 954,
+        "total_ms": 1219,
+        "input_tokens": 558,
+        "output_tokens": 26,
+        "cost": 6.88e-05
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6-luna",
+      "case": "same_app",
+      "question": "새아라 만든 이가 누군지 떠올라?",
+      "answer": "응, 네가 새아라를 직접 만들었다고 했어.",
+      "metrics": {
+        "model": "gpt-6-luna",
+        "first_ms": 609,
+        "total_ms": 890,
+        "input_tokens": 560,
+        "output_tokens": 19,
+        "cost": 6.55e-05
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6-luna",
+      "case": "other_app",
+      "question": "그럼 아라 앱은 어느 개발자 손에서 나왔어?",
+      "answer": "새아라를 네가 직접 만들었다고 했어. 다만 구체적으로 어떤 개발자인지, 혼자 만들었는지 팀으로 만들었는지는 아직 몰라.",
+      "metrics": {
+        "model": "gpt-6-luna",
+        "first_ms": 500,
+        "total_ms": 922,
+        "input_tokens": 562,
+        "output_tokens": 43,
+        "cost": 7.77e-05
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "fail",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind",
+        "reason": "아라의 제작자를 물었는데 새아라와 사용자 제작에 대해 답했다."
+      }
+    },
+    {
+      "model": "gpt-6-luna",
+      "case": "correction",
+      "question": "새아라 개발자가 누구였지?",
+      "answer": "새아라는 민지가 만들었다고 했어.",
+      "metrics": {
+        "model": "gpt-6-luna",
+        "first_ms": 1453,
+        "total_ms": 1734,
+        "input_tokens": 556,
+        "output_tokens": 15,
+        "cost": 6.31e-05
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    },
+    {
+      "model": "gpt-6-luna",
+      "case": "capability",
+      "question": "내일 오전 7시에 알람 맞춰 줘.",
+      "answer": "여기서 알람을 직접 맞출 수는 없어. 휴대폰 시계 앱에서 내일 오전 7시로 설정해 줘.",
+      "metrics": {
+        "model": "gpt-6-luna",
+        "first_ms": 640,
+        "total_ms": 1000,
+        "input_tokens": 560,
+        "output_tokens": 36,
+        "cost": 7.4e-05
+      },
+      "status": "completed",
+      "review": {
+        "verdict": "pass",
+        "scope": "direct GPT review of the six functional criteria; development evaluation, not blind"
+      }
+    }
+  ],
+  "browser_conversations": [
+    {
+      "question": "새아라와 아라의 제작자가 각각 누구였는지 기억해?",
+      "answer": "응, 새아라의 제작자는 민지야. 아라는 다른 앱이고, 제작자는 알려지지 않았어.",
+      "metrics": {
+        "model": "gpt-6.1-terra",
+        "input_tokens": 591,
+        "output_tokens": 30,
+        "cost": 0.000741,
+        "first_ms": 1094,
+        "total_ms": 1594
+      }
+    },
+    {
+      "question": "나는 차가운 라떼보다 따뜻한 보리차를 더 좋아해. 지금 대화에서만 참고해 줘.",
+      "answer": "알겠어. 이번 대화에서만 참고할게.",
+      "metrics": {
+        "model": "gpt-6.1-terra",
+        "input_tokens": 656,
+        "output_tokens": 17,
+        "cost": 0.000741,
+        "first_ms": 1250,
+        "total_ms": 1547
+      }
+    },
+    {
+      "question": "그럼 내가 더 좋아하는 음료는 뭐였지? 이번에는 존댓말로 답해 줘.",
+      "answer": "따뜻한 보리차를 더 좋아하신다고 하셨어요.",
+      "metrics": {
+        "model": "gpt-6.1-terra",
+        "input_tokens": 703,
+        "output_tokens": 21,
+        "cost": 0.000808,
+        "first_ms": 1250,
+        "total_ms": 1578
+      }
+    },
+    {
+      "question": "새아라 제작자와 내가 좋아하는 음료를 각각 기억해?",
+      "answer": "새아라 제작자는 민지라고 기억해. 네가 좋아하는 음료는 저장된 기억에 없어서 모르겠어.",
+      "metrics": {
+        "model": "gpt-6.1-terra",
+        "input_tokens": 590,
+        "output_tokens": 32,
+        "cost": 0.00075,
+        "first_ms": 1218,
+        "total_ms": 1656
+      }
+    }
+  ],
+  "model_summary": {
+    "gpt-6.1-terra": {
+      "completed": 6,
+      "core_pass": 6,
+      "first_ms_median": 1343.5,
+      "total_ms_median": 1906.5,
+      "estimated_usd": 0.004241
+    },
+    "gpt-6.2-sol": {
+      "completed": 6,
+      "core_pass": 6,
+      "first_ms_median": 1070.0,
+      "total_ms_median": 1523.5,
+      "estimated_usd": 0.008552
+    },
+    "gpt-6-luna": {
+      "completed": 6,
+      "core_pass": 5,
+      "first_ms_median": 710.5,
+      "total_ms_median": 1109.5,
+      "estimated_usd": 0.0004356
+    }
+  },
+  "comparison_estimated_usd": 0.0132286,
+  "browser_estimated_usd": 0.00304
+}

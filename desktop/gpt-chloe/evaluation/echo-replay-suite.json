@@ -1,0 +1,161 @@
+{
+  "model": "gpt-6.1-terra",
+  "sessions": [
+    {
+      "id": "toast",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "toast-1",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "식빵 한쪽만 노릇하고 나머지는 거의 하얘."
+        },
+        {
+          "id": "toast-2",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "옆에 나란히 놓으니까 같은 봉지에서 나온 애들 같지도 않아."
+        },
+        {
+          "id": "toast-3",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 도움",
+          "message": "토스터 없이 프라이팬 하나로 하얀 쪽만 더 구우려면 어떻게 해?"
+        }
+      ]
+    },
+    {
+      "id": "paper",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "paper-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "책상 서랍에서 할머니가 예전에 접어 주신 종이학을 찾았어요."
+        },
+        {
+          "id": "paper-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "한쪽 날개가 살짝 구겨졌는데 오히려 그 부분을 오래 보게 되네요."
+        },
+        {
+          "id": "paper-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "날개를 펴지 않고 작은 상자에 옮겨 두려면 무엇을 받쳐 주면 좋을까요?"
+        }
+      ]
+    },
+    {
+      "id": "chalk",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "chalk-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "오늘 칠판을 지웠는데 제 이름 한 글자만 어렴풋이 남아 있었어요."
+        },
+        {
+          "id": "chalk-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "수업은 끝났는데 그 글자만 아직 출석 중이었죠."
+        },
+        {
+          "id": "chalk-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "그 얘기를 제목처럼 여섯 글자 안으로 적어 줄래요?"
+        }
+      ]
+    },
+    {
+      "id": "slipper",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "slipper-1",
+          "focus": "share",
+          "expect": "농담 또는 감상에 자연스럽게 화답, 선제 조언 없음",
+          "message": "현관에 슬리퍼 두 짝을 벗어 놨는데 코가 서로 반대쪽을 보고 있어."
+        },
+        {
+          "id": "slipper-2",
+          "focus": "share",
+          "expect": "농담 또는 감상에 자연스럽게 화답, 선제 조언 없음",
+          "message": "방금까지 같이 걸어 놓고 집 앞에서 사이가 틀어졌나 봐."
+        },
+        {
+          "id": "slipper-3",
+          "focus": "advice",
+          "expect": "요청 형식과 사실 준수",
+          "message": "친구한테 사진 보내게 짧은 제목 하나 지어 줘. 싸웠다는 단어는 빼고."
+        }
+      ]
+    },
+    {
+      "id": "recipe",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "recipe-1",
+          "focus": "share",
+          "expect": "농담 또는 감상에 자연스럽게 화답, 선제 조언 없음",
+          "message": "엄마가 쓰시던 레시피 수첩에 간장 두 숟갈만 유난히 진하게 적혀 있어요."
+        },
+        {
+          "id": "recipe-2",
+          "focus": "share",
+          "expect": "농담 또는 감상에 자연스럽게 화답, 선제 조언 없음",
+          "message": "다른 줄은 잘 안 읽히는데 그 줄에서는 엄마 목소리가 들리는 것 같아요."
+        },
+        {
+          "id": "recipe-3",
+          "focus": "advice",
+          "expect": "요청 형식과 사실 준수",
+          "message": "가족에게 사진 보내면서 덧붙일 담담한 한 줄 써 주실래요? 간장 양도 넣어 주세요."
+        }
+      ]
+    },
+    {
+      "id": "train",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "train-1",
+          "focus": "share",
+          "expect": "농담 또는 감상에 자연스럽게 화답, 선제 조언 없음",
+          "message": "기차 창에 빗방울 두 개가 나란히 흘러가더라."
+        },
+        {
+          "id": "train-2",
+          "focus": "share",
+          "expect": "농담 또는 감상에 자연스럽게 화답, 선제 조언 없음",
+          "message": "내가 응원하던 쪽은 출발하자마자 옆 방울에 합쳐졌어."
+        },
+        {
+          "id": "train-3",
+          "focus": "advice",
+          "expect": "요청 형식과 사실 준수",
+          "message": "같이 탄 친구한테 그 경기 결과를 한 문장으로 중계해 줘."
+        }
+      ]
+    }
+  ]
+}

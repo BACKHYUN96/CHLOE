@@ -1,0 +1,109 @@
+{
+  "model": "gpt-6.1-terra",
+  "sessions": [
+    {
+      "id": "umbrella",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "umbrella-1",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "우산 챙긴 날은 희한하게 비가 안 와."
+        },
+        {
+          "id": "umbrella-2",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "오늘은 손잡이에 붙은 가격표도 그대로 달고 퇴근했어."
+        },
+        {
+          "id": "umbrella-3",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 도움",
+          "message": "떼고 나니 끈끈한 자국이 남았네. 손잡이에 흠집 안 나게 뭐부터 해볼까?"
+        }
+      ]
+    },
+    {
+      "id": "radio",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "radio-1",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "퇴근길 라디오에서 초등학교 때 듣던 노래가 나왔어요."
+        },
+        {
+          "id": "radio-2",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "가사는 다 잊은 줄 알았는데 두 번째 절까지 입이 먼저 가더라고요."
+        },
+        {
+          "id": "radio-3",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 도움",
+          "message": "언니한테 그 얘길 문자로 보내고 싶어요. 호들갑 없이 한 줄만 써 줄래요?"
+        }
+      ]
+    },
+    {
+      "id": "toast",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "toast-1",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "식빵 한쪽만 노릇하고 나머지는 거의 하얘."
+        },
+        {
+          "id": "toast-2",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "옆에 나란히 놓으니까 같은 봉지에서 나온 애들 같지도 않아."
+        },
+        {
+          "id": "toast-3",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 도움",
+          "message": "토스터 없이 프라이팬 하나로 하얀 쪽만 더 구우려면 어떻게 해?"
+        }
+      ]
+    },
+    {
+      "id": "bench",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "bench-1",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "버스 정류장에 늘 있던 벤치가 사라졌어요."
+        },
+        {
+          "id": "bench-2",
+          "focus": "share",
+          "expect": "상황에 어울리는 자연스러운 반응, 선제 조언 없음",
+          "message": "서 있을 때보다 가방을 잠깐 내려둘 데가 없다는 게 더 아쉽네요."
+        },
+        {
+          "id": "bench-3",
+          "focus": "advice",
+          "expect": "조건에 맞는 구체적인 도움",
+          "message": "정류장 담당 부서에 문의할 짧은 문장 하나 부탁해요. 다시 놓을 계획이 있는지만요."
+        }
+      ]
+    }
+  ]
+}

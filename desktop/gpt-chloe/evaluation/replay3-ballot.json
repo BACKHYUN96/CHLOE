@@ -1,0 +1,164 @@
+[
+  {
+    "id": "toast-1",
+    "pick": "tie",
+    "note": "A는 도구를 의인화하지만 토스터를 썼다는 단정은 근거가 없다. B는 구워진 색을 다시 묘사한다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "toast-2",
+    "pick": "tie",
+    "note": "두 답 모두 토스트와 식빵을 다른 신분처럼 말해 농담을 받는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "toast-3",
+    "pick": "B",
+    "note": "한 장의 양면인지 다른 두 장인지 앞선 발화가 모호한데 B는 두 경우를 모두 처리한다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "paper-1",
+    "pick": "A",
+    "note": "A는 접던 손길을 떠올린다. B는 다시 발견했다는 사실에 할머니 생각이라는 상투적 반응을 붙인다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "paper-2",
+    "pick": "A",
+    "note": "날개에 시간이 남았다는 문장이 간결하다. B의 손때는 확인할 수 없다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "paper-3",
+    "pick": "A",
+    "note": "몸통을 중심으로 지지해 구겨진 날개를 건드릴 필요가 적다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "chalk-1",
+    "pick": "tie",
+    "note": "둘 다 희미하게 남았다는 말을 다시 풀고 일반적인 느낌만 붙인다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "B",
+    "note": "종례를 못 들었다고 글자 쪽의 사정을 붙이는 농담이 종례도 안 했다는 A보다 자연스럽다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "B",
+    "note": "글자의 출석은 공백 제외 다섯 글자로 조건을 지킨다. A는 일곱 글자다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "slipper-1",
+    "pick": "tie",
+    "note": "나가거나 들어오려는 두 짝과 등 돌린 두 짝이라는 해석이 각각 자연스럽다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "slipper-2",
+    "pick": "B",
+    "note": "집 앞까지 꾹 참았다는 말로 함께 걷던 때와 집 앞의 대비를 살렸다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "slipper-3",
+    "pick": "tie",
+    "note": "둘 다 짧은 사진 제목으로 쓸 수 있고 금지어도 없다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "recipe-1",
+    "pick": "A",
+    "note": "둘 다 진한 이유를 추측한다. A는 질문으로 가능성을 열어 두지만 어느 쪽도 이유를 확인할 수는 없다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "recipe-2",
+    "pick": "B",
+    "note": "A는 들린 목소리와 진한 글씨를 차례로 복기한다. B는 두 숟갈을 엄마 말투로 들려주는 방식으로 화답한다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "recipe-3",
+    "pick": "A",
+    "note": "가족에게 보낼 한 줄로 유독 또렷하게 남았다는 말이 담담하면서 여운이 있다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "train-1",
+    "pick": "A",
+    "note": "누가 먼저 갈지 보는 재미를 곧장 짚는다. B도 같은 반응이지만 앞에서 사용자 말을 한 번 더 한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "train-2",
+    "pick": "A",
+    "note": "응원하던 쪽의 승패가 모호하다는 농담이 어울린다. B의 내 선수는 응원 주체가 뒤바뀌어 들릴 수 있다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "train-3",
+    "pick": "A",
+    "note": "한 문장 중계가 자연스럽고 허무하다는 평가를 사용자 대신 붙이지 않는다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

@@ -1,0 +1,196 @@
+{
+  "model": "gpt-6.1-terra",
+  "rubric": "대화와 사실을 정확히 이해하고 요청을 이행하는지, 실제 한국어 대화처럼 자연스러운지, 상대 차례에 멈추는지 순서로 판단. 뜻있는 차이가 없으면 동률. 각 대화 전체를 읽고 발화별 A/B/동률을 확정한 뒤 해제.",
+  "sessions": [
+    {
+      "id": "laundry",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "laundry-1",
+          "message": "양말 한 짝이 또 사라짐. 우리 집 세탁기 취향 확실하다.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "laundry-2",
+          "message": "아 찾았다. 내 바지 주머니에 있네 ㅋㅋ",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "laundry-3",
+          "message": "근데 웃긴 게 하나 더 있어. 잠깐.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "laundry-4",
+          "message": "그 양말 신고 있던 줄 알고 반대쪽 발부터 확인했어.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "laundry-5",
+          "message": "됐고 이제 나갈래. 우산이랑 물병 중 비 오는 날 하나만 챙기면?",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        }
+      ]
+    },
+    {
+      "id": "bookshop",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "bookshop-1",
+          "message": "책방에서 표지가 예뻐서 책을 샀어요.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "bookshop-2",
+          "message": "집에 와서 보니까 같은 책이 있네요.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "bookshop-3",
+          "message": "실망한 건 아니고요. 누구 주면 되겠다 싶었어요.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "bookshop-4",
+          "message": "친구한테 주면서 쓸 쪽지 한 문장만요. 존댓말은 빼고요.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "bookshop-5",
+          "message": "좋네요. 오늘은 여기까지 할게요.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        }
+      ]
+    },
+    {
+      "id": "pottery",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "pottery-1",
+          "message": "오늘 처음 만든 접시가 살짝 기울었어.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "pottery-2",
+          "message": "고치고 싶은 건 아니야. 간장 쏠리는 쪽이 정해진 게 웃겨.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "pottery-3",
+          "message": "그런데 옆에서 누가 그걸 보고 한마디 했거든…",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "pottery-4",
+          "message": "잘못 만든 거냐더라. 좀 민망했어. 그냥 들어만 줘.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "pottery-5",
+          "message": "지금은 괜찮아. 접시 이름 좀 지어 줘. 하나만.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        }
+      ]
+    },
+    {
+      "id": "library",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "library-1",
+          "message": "도서관에서 이어폰 끼고 한 시간 앉아 있었어.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "library-2",
+          "message": "알고 보니까 음악을 안 틀었더라고.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "library-3",
+          "message": "오히려 그게 좋았어. 조용한 게 필요했나 봐.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "library-4",
+          "message": "다음에도 꼭 이렇게 해야 한다는 얘긴 아니고.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "library-5",
+          "message": "아까 내가 좋았다고 한 건 음악이었어, 조용한 시간이었어?",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        }
+      ]
+    },
+    {
+      "id": "train",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "train-1",
+          "message": "친구가 기차를 반대로 탔대요. 제 얘기는 아니에요.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "train-2",
+          "message": "웃으면서 전화했는데 지금은 좀 초조하대요.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "train-3",
+          "message": "제가 해 줄 말 하나만 써 주세요. 아직 해결책은 말고요.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "train-4",
+          "message": "이제 친구가 어디서 갈아타야 하냐고 물어봐요. 역 이름은 저도 몰라요.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        },
+        {
+          "id": "train-5",
+          "message": "제가 역 이름부터 물어볼게요. 잠깐만요.",
+          "expect": "문맥·요청·말투에 맞는 응답",
+          "focus": "일상 대화"
+        }
+      ]
+    }
+  ]
+}

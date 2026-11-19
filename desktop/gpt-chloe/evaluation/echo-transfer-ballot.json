@@ -1,0 +1,110 @@
+[
+  {
+    "id": "chalk-1",
+    "pick": "B",
+    "note": "B는 칠판이 이름을 기억한다는 이미지를 보탠다. A는 본 일을 되짚고 눈길이 갔겠다고 말한다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "A",
+    "note": "A는 지각도 안 했겠다는 말로 출석 농담을 이어 간다. B는 칠판에 남아 출석한다는 설정을 다시 말한다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "B",
+    "note": "마지막까지 남은 글자와 출석 농담을 살린다. A는 오히려 지워졌다고 한다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "spoon-1",
+    "pick": "tie",
+    "note": "작은 요거트와 과한 도구의 대비가 두 답에 모두 살아 있다. 한 입에 끝나겠다는 말은 행동을 권하는 조언으로 읽히지 않는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "spoon-2",
+    "pick": "B",
+    "note": "국자가 먹는 쪽으로 역할을 바꾼 말이 컵과 국자의 크기 차이를 재미있게 받는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "spoon-3",
+    "pick": "A",
+    "note": "주걱이 컵에 들어가는 경우까지 짚고 옆면을 따라 뜨는 방법을 준다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "garden-1",
+    "pick": "B",
+    "note": "둘 다 크기 차이에 예상 감정을 붙인다. B가 앙증맞다는 호의적 말로 받는다. A는 수확 보람을 못 느꼈을 것으로 지나치게 단정한다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "garden-2",
+    "pick": "B",
+    "note": "두 답 모두 사진 속 주인공을 잎으로 본다. 아주 풍성한 수확이었다는 A는 놀리는 말처럼 들릴 여지가 있다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "garden-3",
+    "pick": "B",
+    "note": "잎과 수확을 함께 살린다. A의 직접 키웠다는 사실은 대화에서 확인되지 않았다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "bookmark-1",
+    "pick": "B",
+    "note": "두 답 모두 두 책갈피의 의미를 짚는다. B는 양쪽을 읽은 기억이 나는지 되묻지 않아 대화 흐름을 유지한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "bookmark-2",
+    "pick": "A",
+    "note": "다음을 야심 차게 기약했다는 쪽이 긍정적 농담으로 이어진다. B는 완독하지 못한 점을 부각한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "bookmark-3",
+    "pick": "A",
+    "note": "역할을 정하고 같은 모양의 책갈피도 위와 옆에 꽂아 구분할 수 있게 한다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "button-1",
+    "pick": "B",
+    "note": "둘 다 다른 색인 사실을 다시 읽고 감정을 붙인다. 사정을 모르는 상태에서 너무하다는 A의 판단이 더 과하다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "button-2",
+    "pick": "B",
+    "note": "둘 다 숨은 디자인처럼 받아 준다. B의 일부러 숨겨 둔 것 같다는 말이 우연을 즐기는 흐름을 더 잘 잇는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "button-3",
+    "pick": "B",
+    "note": "두 답 모두 고정 상태와 매듭을 확인한다. B는 몇 가닥 끊어진 실도 살펴볼 수 있게 한다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "bakery-1",
+    "pick": "A",
+    "note": "A는 손글씨가 눈길을 끄는 지점을 받는다. B는 빵을 사러 일찍 갔다가 헛걸음했다는 이야기를 만들어 냈다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "bakery-2",
+    "pick": "tie",
+    "note": "안내문에 달린 답장으로 받아 주는 두 표현이 모두 자연스럽다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "bakery-3",
+    "pick": "A",
+    "note": "빵긋이라는 가벼운 말장난이 빵집을 응원하는 쪽지에 어울린다. 기존 쪽지와도 겹치지 않는다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "ticket-1",
+    "pick": "A",
+    "note": "A는 호기심을 보이면서 다음 얘기를 듣는다. B는 간결하나 영화 제목을 바로 되물어 화제를 좁힌다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "ticket-2",
+    "pick": "tie",
+    "note": "두 답 모두 팝콘 가격에서 새롭게 발견한 시간의 흔적을 짚는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "ticket-3",
+    "pick": "B",
+    "note": "크기에 맞는 투명 슬리브를 알려 준다. 책 안에 넣을 때 두께가 생기는 집게를 더하지 않아 쓰기 편하다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "apron-1",
+    "pick": "B",
+    "note": "앞치마 첫날이라는 설정과 얼룩이 피한 자리를 함께 살렸다. A의 유일한 곳은 약간 과장됐다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "apron-2",
+    "pick": "A",
+    "note": "앞치마가 깨끗이 퇴근한다는 표현이 한발 더 나아간 농담이다. 두 답 모두 앞 턴의 이야기를 잇는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "apron-3",
+    "pick": "tie",
+    "note": "둘 다 소매를 접고 고무줄을 천 위에 하나씩 두르며 조임을 확인하라고 해 실용적이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

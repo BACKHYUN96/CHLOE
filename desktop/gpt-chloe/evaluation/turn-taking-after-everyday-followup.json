@@ -1,0 +1,152 @@
+[
+  {
+    "id": "cinema-1",
+    "question": "영화 보러 나왔는데 상영관이 아니라 옆 건물 체육관 들어감 ㅋㅋ",
+    "answer": "ㅋㅋㅋ 영화 시작 전에 유산소 할 뻔했네. 그래도 상영 시간엔 안 늦었어?",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1000,
+      "total_ms": 1812,
+      "input_tokens": 946,
+      "output_tokens": 31,
+      "cost": 0.001101
+    },
+    "api_usage": {
+      "input_tokens": 946,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 31,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 977
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  },
+  {
+    "id": "cinema-2",
+    "question": "근데 그게 끝이 아니야. 잠깐만.",
+    "answer": "응, 기다릴게.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1109,
+      "total_ms": 1375,
+      "input_tokens": 997,
+      "output_tokens": 10,
+      "cost": 0.001047
+    },
+    "api_usage": {
+      "input_tokens": 997,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 10,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 1007
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  },
+  {
+    "id": "cinema-3",
+    "question": "나오다가 계단에서 넘어져서 지금은 웃을 기분이 아니야.",
+    "answer": "아이고, 많이 다친 거 아니야?",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1234,
+      "total_ms": 1531,
+      "input_tokens": 1032,
+      "output_tokens": 14,
+      "cost": 0.001102
+    },
+    "api_usage": {
+      "input_tokens": 1032,
+      "input_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 1029,
+        "cache_write_tokens_details": {
+          "ttl_30m_tokens": 1029,
+          "ttl_12h_tokens": 0
+        }
+      },
+      "output_tokens": 14,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 1046
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  },
+  {
+    "id": "cinema-4",
+    "question": "괜찮아, 안 다쳤어. 해결책 말고 잠깐만 들어줘.",
+    "answer": "응, 듣고 있어.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1078,
+      "total_ms": 1250,
+      "input_tokens": 1073,
+      "output_tokens": 10,
+      "cost": 0.00014544999999999998
+    },
+    "api_usage": {
+      "input_tokens": 1073,
+      "input_tokens_details": {
+        "cache_write_tokens": 41,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 41
+        },
+        "cached_tokens": 1029
+      },
+      "output_tokens": 10,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 1083
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  },
+  {
+    "id": "cinema-5",
+    "question": "이제 영화 시작한다. 나중에 봐.",
+    "answer": "응, 영화 잘 봐. 나중에 봐!",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1000,
+      "total_ms": 1687,
+      "input_tokens": 1101,
+      "output_tokens": 17,
+      "cost": 0.0001695
+    },
+    "api_usage": {
+      "input_tokens": 1101,
+      "input_tokens_details": {
+        "cache_write_tokens": 28,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 28
+        },
+        "cached_tokens": 1070
+      },
+      "output_tokens": 17,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 1118
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  }
+]

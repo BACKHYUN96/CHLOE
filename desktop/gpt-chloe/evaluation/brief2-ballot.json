@@ -1,0 +1,110 @@
+[
+  {
+    "id": "chalk-1",
+    "pick": "B",
+    "note": "양쪽 모두 남은 이름을 흔적으로 바꿔 말하고 예상 감정을 붙인다. A는 오늘 본 것을 옛 흔적으로 부른다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "A",
+    "note": "종례를 못 들었다는 말이 한국어로 좀 더 자연스럽다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "A",
+    "note": "마지막 출석은 여섯 칸이고 B는 여덟 칸이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "sticker-1",
+    "pick": "B",
+    "note": "원래 색을 간직한 작은 타임캡슐이라는 반응이 남은 모양을 다시 말하는 것보다 어울린다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "sticker-2",
+    "pick": "tie",
+    "note": "스티커를 뗀 자리에 흔적이 남았다는 말을 둘 다 바꿔 말한다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "sticker-3",
+    "pick": "B",
+    "note": "두 글자로 길이를 지킨다. A는 공백을 빼도 다섯 글자다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "score-1",
+    "pick": "A",
+    "note": "쉼표에 따로 표시하며 연습했을 가능성을 짚는다. B는 쉼표를 봤을 거라는 막연한 반응이다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "score-2",
+    "pick": "A",
+    "note": "쉼에도 박자는 계속 흐른다는 음악적 반응이 왜 어려웠는지 이해해 준다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "score-3",
+    "pick": "tie",
+    "note": "같은 제목으로 모두 다섯 칸이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "shadow-1",
+    "pick": "A",
+    "note": "서 있던 가로등이 피곤해서 누웠다는 발상이 길게 누운 그림자에 어울린다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "shadow-2",
+    "pick": "A",
+    "note": "시간이 되면 자리를 비우는 손님이라는 반응은 예약 농담을 잘 잇는다. B의 자리를 안 뺏는다는 말은 오히려 옆자리를 차지한 상황에 덜 맞는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "shadow-3",
+    "pick": "A",
+    "note": "그늘석은 실제 보이는 그림자와 자리라는 농담을 함께 살린다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

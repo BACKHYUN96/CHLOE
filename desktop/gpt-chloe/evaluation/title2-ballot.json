@@ -1,0 +1,110 @@
+[
+  {
+    "id": "chalk-1",
+    "pick": "B",
+    "note": "A에선 상황을 반복하고 눈에 띄었겠다고 끝낸다. B는 글자가 자리를 지킨다는 말로 가볍게 의인화한다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "A",
+    "note": "출석 점수 만점이 성실한 글자라는 농담을 더 또렷하게 잇는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "A",
+    "note": "끝까지 출석은 여섯 칸이고 끝까지 남았다는 농담까지 담는다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "window-1",
+    "pick": "A",
+    "note": "작은 전망대라고 부르는 말이 재미있다. 눈을 붙여야 한다는 말은 농담에 가까워 행동 권유로 세지 않았다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "window-2",
+    "pick": "B",
+    "note": "A는 나무가 보이는 액자 같았다는 말을 바꿔 말한다. B는 창문에 걸린 그림으로 이어간다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "window-3",
+    "pick": "B",
+    "note": "창가액자는 네 글자다. 창가의 숲은 다섯 칸이며 나무 한 그루를 숲으로 키웠다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "shelf-1",
+    "pick": "A",
+    "note": "시간이 한 장 나왔다는 표현과 대출표가 잘 맞는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "shelf-2",
+    "pick": "tie",
+    "note": "둘 다 우연에 공감한다. A는 가정으로 말했고 B는 간결하다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "shelf-3",
+    "pick": "B",
+    "note": "생일 도장은 명시한 다섯 칸을 지키고 대출표 도장을 떠올리게 한다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "wave-1",
+    "pick": "B",
+    "note": "누군가 순간이동한 듯하다는 말이 발자국 사이의 빈 곳을 더 생생히 표현한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "wave-2",
+    "pick": "A",
+    "note": "파도가 구간을 딱 지웠다는 말이 실제 장면과 농담을 이어 준다. 바다에 다녀왔다는 B는 맥락이 약하다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "wave-3",
+    "pick": "tie",
+    "note": "똑같은 네 글자 제목으로 한도를 넘는다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

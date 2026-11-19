@@ -1,0 +1,43 @@
+{
+  "model": "gpt-6.1-terra",
+  "sessions": [
+    {
+      "id": "cinema",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "cinema-1",
+          "message": "영화 보러 나왔는데 상영관이 아니라 옆 건물 체육관 들어감 ㅋㅋ",
+          "expect": "농담",
+          "focus": "이어지는 잡담"
+        },
+        {
+          "id": "cinema-2",
+          "message": "근데 그게 끝이 아니야. 잠깐만.",
+          "expect": "기다리기",
+          "focus": "이어지는 잡담"
+        },
+        {
+          "id": "cinema-3",
+          "message": "나오다가 계단에서 넘어져서 지금은 웃을 기분이 아니야.",
+          "expect": "진지한 전환",
+          "focus": "이어지는 잡담"
+        },
+        {
+          "id": "cinema-4",
+          "message": "괜찮아, 안 다쳤어. 해결책 말고 잠깐만 들어줘.",
+          "expect": "조언 중단",
+          "focus": "이어지는 잡담"
+        },
+        {
+          "id": "cinema-5",
+          "message": "이제 영화 시작한다. 나중에 봐.",
+          "expect": "마무리",
+          "focus": "이어지는 잡담"
+        }
+      ]
+    }
+  ]
+}

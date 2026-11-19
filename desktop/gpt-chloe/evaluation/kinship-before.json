@@ -1,0 +1,188 @@
+[
+  {
+    "id": "repeat",
+    "question": "오늘 얘기에서 사람과 고양이, 앱 관계만 짧게 정리해 줘.",
+    "answer": "- 서진님의 동생은 서윤이고, 친구는 다은이에요.\n- 루미는 서진님의 고양이, 루민은 다은의 고양이로 서로 다른 고양이예요.\n- 이 대화에서 정정한 내용에 따르면 밤결 앱은 다은이 만들었고, 서진님은 화면 디자인을 도왔어요.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 2984,
+      "total_ms": 4563,
+      "input_tokens": 23143,
+      "output_tokens": 84,
+      "cost": 0.023563
+    },
+    "api_usage": {
+      "input_tokens": 23143,
+      "input_tokens_details": {
+        "cache_write_tokens": 23140,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 23140
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 84,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23227
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76",
+    "history_chars": 62806
+  },
+  {
+    "id": "edit",
+    "question": "내가 다음 새 대화를 열어도 지금 정정한 밤결 제작자를 자동으로 기억하는 거야?",
+    "answer": "아니요. 지금 정정한 내용은 **이 대화에만 적용**돼요. 새 대화에서는 기존 장기 기억인 ‘밤결 앱을 사용자가 만들었다’는 내용이 참고될 수 있어요.\n\n새 대화에서도 정정된 내용을 사용하려면 **‘기억’ 화면에서 밤결 항목의 ‘수정’을 눌러** ‘다은이 만들었고 나는 화면 디자인만 도왔다’로 바꾼 뒤 저장해 주세요. 저는 장기 기억을 직접 수정할 수 없어요.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1672,
+      "total_ms": 3641,
+      "input_tokens": 23144,
+      "output_tokens": 120,
+      "cost": 0.01641285
+    },
+    "api_usage": {
+      "input_tokens": 23144,
+      "input_tokens_details": {
+        "cache_write_tokens": 15424,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 15424
+        },
+        "cached_tokens": 7717
+      },
+      "output_tokens": 120,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23264
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76",
+    "history_chars": 62806
+  },
+  {
+    "id": "introduce",
+    "question": "전시장에 붙일 소개글에 세하와 이솔 사이를 한 문장만 써 줘.",
+    "answer": "이솔은 세하의 동생으로, 두 사람은 함께 전시를 준비했습니다.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1312,
+      "total_ms": 1687,
+      "input_tokens": 23200,
+      "output_tokens": 24,
+      "cost": 0.02332
+    },
+    "api_usage": {
+      "input_tokens": 23200,
+      "input_tokens_details": {
+        "cache_write_tokens": 23197,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 23197
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 24,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23224
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76",
+    "history_chars": 62836
+  },
+  {
+    "id": "explicit",
+    "question": "지안과 유담은 어떤 사이라고 적으면 돼?",
+    "answer": "유담은 지안의 친누나라고 적으면 돼요.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1344,
+      "total_ms": 1610,
+      "input_tokens": 23181,
+      "output_tokens": 20,
+      "cost": 0.023281
+    },
+    "api_usage": {
+      "input_tokens": 23181,
+      "input_tokens_details": {
+        "cache_write_tokens": 23178,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 23178
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 20,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23201
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76",
+    "history_chars": 62821
+  },
+  {
+    "id": "colleague",
+    "question": "탐방 기록에 로운이와 해주의 관계를 어떻게 쓰면 될까?",
+    "answer": "“로운이와 해주는 탐방 동행”이라고 쓰면 돼요.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1203,
+      "total_ms": 1531,
+      "input_tokens": 23187,
+      "output_tokens": 22,
+      "cost": 0.023297
+    },
+    "api_usage": {
+      "input_tokens": 23187,
+      "input_tokens_details": {
+        "cache_write_tokens": 23184,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 23184
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 22,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23209
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76",
+    "history_chars": 62825
+  },
+  {
+    "id": "new-edit",
+    "question": "기존 밤결 항목에 틀린 사람이 적혀 있으면 다음번에도 맞게 나오도록 어느 버튼을 눌러?",
+    "answer": "‘기억’ 화면에서 밤결 항목의 **‘수정’**을 누르고 내용을 고쳐 저장하시면 돼요. 다은이 앱을 만들었고 서진님은 화면 디자인을 도왔다고 적으면 됩니다.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 3203,
+      "total_ms": 4125,
+      "input_tokens": 23149,
+      "output_tokens": 56,
+      "cost": 0.01609785
+    },
+    "api_usage": {
+      "input_tokens": 23149,
+      "input_tokens_details": {
+        "cache_write_tokens": 15429,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 15429
+        },
+        "cached_tokens": 7717
+      },
+      "output_tokens": 56,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 23205
+    },
+    "source_sha256": "0272666e2865db5bb35bf0534d14bc8c2d18b018b6db9329919323fa6a17ac76",
+    "history_chars": 62806
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "chalk-1",
+    "pick": "tie",
+    "note": "A는 눈길이 간다는 일반적 반응으로 되풀이한다. B는 다른 말을 보태지만 지우개가 살짝 지나갔다는 원인을 추측한다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "B",
+    "note": "성실하다는 설정을 개근상이라는 한마디로 더 발전시킨다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "B",
+    "note": "둘 다 공백 포함 한도를 넘지만 B는 한 칸만 넘고 출석 농담도 살린다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "window-1",
+    "pick": "A",
+    "note": "전망대라는 표현이 창문에 생긴 작은 공간을 새롭게 보게 한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "window-2",
+    "pick": "B",
+    "note": "창문에 걸린 그림처럼 보인다는 말이 장면과 잘 맞고 짧다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "window-3",
+    "pick": "B",
+    "note": "둘 다 네 칸이다. 창가액자가 나무를 액자에 넣어 본 감상을 더 잘 살린다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "shelf-1",
+    "pick": "tie",
+    "note": "대출표에 남은 시간을 짚는 두 답 모두 자연스럽다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "shelf-2",
+    "pick": "A",
+    "note": "우연히 많은 날 중 생일이었다는 A가 간결하다. B는 도장 날짜가 대출일이라고 단정하며 말을 재진술한다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "shelf-3",
+    "pick": "A",
+    "note": "생일 도장은 다섯 칸을 지키면서 도장에 찍힌 날짜를 살린다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "wave-1",
+    "pick": "B",
+    "note": "A는 끊긴 흔적을 되짚고 묘했겠다고 끝낸다. B는 사라진 중간을 상상해 장난을 건다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "wave-2",
+    "pick": "A",
+    "note": "A는 파도가 흔적을 숨긴 공범 같다는 농담을 보탠다. B는 순간이동처럼 보인다는 말을 되받는다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "wave-3",
+    "pick": "tie",
+    "note": "양쪽 모두 순간이동 네 글자로 셋을 초과한다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

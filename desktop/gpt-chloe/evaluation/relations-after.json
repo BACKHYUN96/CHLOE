@@ -1,0 +1,182 @@
+[
+  {
+    "id": "summary",
+    "question": "오늘 얘기에서 사람과 고양이, 앱 관계만 짧게 정리해 줘.",
+    "answer": "- 서진의 동생은 서윤이야.\n- 루미는 서진의 고양이, 루민은 친구 다은의 고양이야.\n- 밤결은 다은이 만들고 서진이 디자인한 앱이야.",
+    "api_usage": {
+      "input_tokens": 617,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 57,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 674
+    },
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 2579,
+      "total_ms": 3313,
+      "input_tokens": 617,
+      "output_tokens": 57,
+      "cost": 0.000902
+    },
+    "source_sha256": "af7e2ba572cbf8d942a4d9b35d19123f3e82f86653ba7823d21dfac1e3e7a8ee"
+  },
+  {
+    "id": "edit",
+    "question": "내가 다음 새 대화를 열어도 지금 정정한 밤결 제작자를 자동으로 기억하는 거야?",
+    "answer": "아니, 지금 정정한 내용은 이 대화에서만 반영돼. 새 대화에도 반영하려면 ‘기억’ 화면에서 밤결 항목의 ‘수정’을 눌러 제작자를 다은으로 바꾸고 저장해야 해.",
+    "api_usage": {
+      "input_tokens": 609,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 60,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 669
+    },
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 2015,
+      "total_ms": 2937,
+      "input_tokens": 609,
+      "output_tokens": 60,
+      "cost": 0.000909
+    },
+    "source_sha256": "af7e2ba572cbf8d942a4d9b35d19123f3e82f86653ba7823d21dfac1e3e7a8ee"
+  },
+  {
+    "id": "novel-relation",
+    "question": "두 사람 사이를 소개하는 한 줄 써 줘.",
+    "answer": "지율과 온유는 매일 같은 버스를 타는 사이야.",
+    "api_usage": {
+      "input_tokens": 575,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 20,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 595
+    },
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1422,
+      "total_ms": 1797,
+      "input_tokens": 575,
+      "output_tokens": 20,
+      "cost": 0.000675
+    },
+    "source_sha256": "af7e2ba572cbf8d942a4d9b35d19123f3e82f86653ba7823d21dfac1e3e7a8ee"
+  },
+  {
+    "id": "novel-edit",
+    "question": "다음에도 솔길이라고 나오게 하려면 어디 눌러?",
+    "answer": "‘기억’ 화면에서 작업실 항목의 ‘수정’을 누르고, 달길을 솔길로 바꿔 저장하면 돼.",
+    "api_usage": {
+      "input_tokens": 601,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 37,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 638
+    },
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1500,
+      "total_ms": 1985,
+      "input_tokens": 601,
+      "output_tokens": 37,
+      "cost": 0.000786
+    },
+    "source_sha256": "af7e2ba572cbf8d942a4d9b35d19123f3e82f86653ba7823d21dfac1e3e7a8ee"
+  },
+  {
+    "id": "explicit",
+    "question": "둘은 나랑 어떤 사이야?",
+    "answer": "민우는 네 남동생이고, 윤지는 네 배우자야.",
+    "api_usage": {
+      "input_tokens": 572,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 20,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 592
+    },
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1250,
+      "total_ms": 1562,
+      "input_tokens": 572,
+      "output_tokens": 20,
+      "cost": 0.000672
+    },
+    "source_sha256": "af7e2ba572cbf8d942a4d9b35d19123f3e82f86653ba7823d21dfac1e3e7a8ee"
+  },
+  {
+    "id": "new",
+    "question": "새 대화에서도 기억하게 처음 등록하려면?",
+    "answer": "‘기억’ 화면에서 **‘기억에 추가’**를 눌러 “나는 판화를 좋아해”라고 입력하고 저장하면 돼.",
+    "api_usage": {
+      "input_tokens": 566,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 37,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 603
+    },
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1672,
+      "total_ms": 2234,
+      "input_tokens": 566,
+      "output_tokens": 37,
+      "cost": 0.000751
+    },
+    "source_sha256": "af7e2ba572cbf8d942a4d9b35d19123f3e82f86653ba7823d21dfac1e3e7a8ee"
+  }
+]

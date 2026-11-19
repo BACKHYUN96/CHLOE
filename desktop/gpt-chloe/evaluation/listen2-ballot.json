@@ -1,0 +1,110 @@
+[
+  {
+    "id": "chalk-1",
+    "pick": "A",
+    "note": "A는 글자가 버티고 있었다는 관점이 있고 끝이 다소 상투적이다. B는 이름이 희미하게 남았다는 말을 바꿨을 뿐이다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "tie",
+    "note": "두 답이 같다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "tie",
+    "note": "같은 여섯 칸 제목을 제시한다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "poster-1",
+    "pick": "tie",
+    "note": "둘 다 포스터가 있던 자리에서만 공연이 미처 끝나지 않았다는 발상이다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "poster-2",
+    "pick": "B",
+    "note": "벽의 앙코르라는 말이 사용자가 이어 간 공연 농담을 한 발 더 진행한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "poster-3",
+    "pick": "tie",
+    "note": "두 답이 같다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "bell-1",
+    "pick": "tie",
+    "note": "A는 마지막 흔적, B는 울리지 않을 방울 소리에 주목한다. 양쪽 모두 앞으로 문이 안 열릴 거라고 짐작한 점은 아쉽다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "bell-2",
+    "pick": "tie",
+    "note": "퇴근 못 한 방울이라는 사실상 같은 반응이다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "bell-3",
+    "pick": "B",
+    "note": "기다림이 사진의 방울과 혼자 손님을 기다리는 느낌을 더 잘 담는다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "lunch-1",
+    "pick": "B",
+    "note": "밥이 김 뒤에서 빼꼼 내다본다는 말이 눈 구멍을 입체적으로 살린다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "lunch-2",
+    "pick": "tie",
+    "note": "A는 시선을 느끼는 어색함, B는 인사를 나눌 듯한 상상을 표현한다. B는 실제 인사를 권유하는 말로 보지 않았다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "lunch-3",
+    "pick": "tie",
+    "note": "도시락을 부르고 인사하는 동일한 한 줄이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

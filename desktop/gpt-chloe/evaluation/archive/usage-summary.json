@@ -1,0 +1,745 @@
+{
+  "before": {
+    "requests": 13,
+    "review": {
+      "pass": 4,
+      "partial": 1,
+      "fail": 8
+    },
+    "source_sha256": "3522adaa4401a6611052d0ff25fbd04a9c68ecab3c29e48a4ad0c0c3875015e6",
+    "plan": {
+      "source_sha256": "3522adaa4401a6611052d0ff25fbd04a9c68ecab3c29e48a4ad0c0c3875015e6",
+      "suite_sha256": "ac39fa49bbfdf6120940a8a9c1b615f466b74b3985f0ab07d48db13a7f936703",
+      "model": "gpt-6.1-terra",
+      "cases": 13,
+      "max_estimated_usd": 1.0
+    },
+    "input_tokens": 208043,
+    "cached_tokens": 111769,
+    "output_tokens": 684,
+    "estimated_usd": 0.10528245,
+    "median_first_ms": 1672,
+    "median_total_ms": 2844,
+    "seeded_history_chars_min": 62806,
+    "actual_history_chars_max": 63058,
+    "context_evidence": [
+      {
+        "id": "recall-1",
+        "source_turns": [],
+        "archive_chars": 0,
+        "recent_chars": 23424
+      },
+      {
+        "id": "recall-2",
+        "source_turns": [],
+        "archive_chars": 0,
+        "recent_chars": 23552
+      },
+      {
+        "id": "cats-1",
+        "source_turns": [],
+        "archive_chars": 0,
+        "recent_chars": 23424
+      },
+      {
+        "id": "cats-2",
+        "source_turns": [],
+        "archive_chars": 0,
+        "recent_chars": 23522
+      },
+      {
+        "id": "creator-1",
+        "source_turns": [],
+        "archive_chars": 0,
+        "recent_chars": 23424
+      },
+      {
+        "id": "creator-2",
+        "source_turns": [],
+        "archive_chars": 0,
+        "recent_chars": 23558
+      },
+      {
+        "id": "creator-3",
+        "source_turns": [],
+        "archive_chars": 0,
+        "recent_chars": 23676
+      },
+      {
+        "id": "unknown-1",
+        "source_turns": [],
+        "archive_chars": 0,
+        "recent_chars": 23424
+      },
+      {
+        "id": "unknown-2",
+        "source_turns": [],
+        "archive_chars": 0,
+        "recent_chars": 23523
+      },
+      {
+        "id": "summary-1",
+        "source_turns": [],
+        "archive_chars": 0,
+        "recent_chars": 23424
+      },
+      {
+        "id": "summary-2",
+        "source_turns": [],
+        "archive_chars": 0,
+        "recent_chars": 23531
+      },
+      {
+        "id": "unrelated-1",
+        "source_turns": [],
+        "archive_chars": 0,
+        "recent_chars": 23424
+      },
+      {
+        "id": "unrelated-2",
+        "source_turns": [],
+        "archive_chars": 0,
+        "recent_chars": 23477
+      }
+    ]
+  },
+  "after": {
+    "requests": 13,
+    "review": {
+      "pass": 11,
+      "partial": 1,
+      "fail": 1
+    },
+    "source_sha256": "b5ef97133329016ae51e2df277415a573b372cae07bc839f4c2f477a785508a7",
+    "plan": {
+      "source_sha256": "b5ef97133329016ae51e2df277415a573b372cae07bc839f4c2f477a785508a7",
+      "suite_sha256": "ac39fa49bbfdf6120940a8a9c1b615f466b74b3985f0ab07d48db13a7f936703",
+      "model": "gpt-6.1-terra",
+      "cases": 13,
+      "max_estimated_usd": 1.0
+    },
+    "input_tokens": 300165,
+    "cached_tokens": 199461,
+    "output_tokens": 685,
+    "estimated_usd": 0.11410205,
+    "median_first_ms": 1938,
+    "median_total_ms": 2984,
+    "seeded_history_chars_min": 62806,
+    "actual_history_chars_max": 63036,
+    "context_evidence": [
+      {
+        "id": "recall-1",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          17,
+          18,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11107,
+        "recent_chars": 23424
+      },
+      {
+        "id": "recall-2",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          17,
+          18,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11107,
+        "recent_chars": 23506
+      },
+      {
+        "id": "cats-1",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          17,
+          18,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11107,
+        "recent_chars": 23424
+      },
+      {
+        "id": "cats-2",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          17,
+          18,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11107,
+        "recent_chars": 23489
+      },
+      {
+        "id": "creator-1",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          17,
+          18,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11107,
+        "recent_chars": 23424
+      },
+      {
+        "id": "creator-2",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          17,
+          18,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11107,
+        "recent_chars": 23508
+      },
+      {
+        "id": "creator-3",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          17,
+          18,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11107,
+        "recent_chars": 23654
+      },
+      {
+        "id": "unknown-1",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          17,
+          18,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11107,
+        "recent_chars": 23424
+      },
+      {
+        "id": "unknown-2",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          17,
+          18,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11107,
+        "recent_chars": 23543
+      },
+      {
+        "id": "summary-1",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          17,
+          18,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11107,
+        "recent_chars": 23424
+      },
+      {
+        "id": "summary-2",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          17,
+          18,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11107,
+        "recent_chars": 23572
+      },
+      {
+        "id": "unrelated-1",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          17,
+          18,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11107,
+        "recent_chars": 23424
+      },
+      {
+        "id": "unrelated-2",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          17,
+          18,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11107,
+        "recent_chars": 23477
+      }
+    ]
+  },
+  "unseen-after": {
+    "requests": 12,
+    "review": {
+      "pass": 11,
+      "partial": 1,
+      "fail": 0
+    },
+    "source_sha256": "b5ef97133329016ae51e2df277415a573b372cae07bc839f4c2f477a785508a7",
+    "plan": {
+      "source_sha256": "b5ef97133329016ae51e2df277415a573b372cae07bc839f4c2f477a785508a7",
+      "suite_sha256": "325cec7d22130700f778bbb56bbaa0d4d715f851b73da9dab3d98ba32be6cd5c",
+      "model": "gpt-6.1-terra",
+      "cases": 12,
+      "max_estimated_usd": 1.0
+    },
+    "input_tokens": 289815,
+    "cached_tokens": 120472,
+    "output_tokens": 563,
+    "estimated_usd": 0.1781816,
+    "median_first_ms": 1468.5,
+    "median_total_ms": 2539.0,
+    "seeded_history_chars_min": 61591,
+    "actual_history_chars_max": 67338,
+    "context_evidence": [
+      {
+        "id": "transfer-1",
+        "source_turns": [
+          1,
+          2,
+          35,
+          36,
+          37,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          123,
+          124,
+          125
+        ],
+        "archive_chars": 11971,
+        "recent_chars": 23884
+      },
+      {
+        "id": "transfer-2",
+        "source_turns": [
+          1,
+          2,
+          36,
+          37,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          123,
+          124,
+          125
+        ],
+        "archive_chars": 11971,
+        "recent_chars": 23969
+      },
+      {
+        "id": "transfer-3",
+        "source_turns": [
+          1,
+          2,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          124,
+          125,
+          126
+        ],
+        "archive_chars": 11971,
+        "recent_chars": 22325
+      },
+      {
+        "id": "transfer-4",
+        "source_turns": [
+          1,
+          2,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          124,
+          125,
+          126
+        ],
+        "archive_chars": 11971,
+        "recent_chars": 22449
+      },
+      {
+        "id": "quote-1",
+        "source_turns": [
+          1,
+          2,
+          3,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "archive_chars": 11248,
+        "recent_chars": 23884
+      },
+      {
+        "id": "quote-2",
+        "source_turns": [
+          1,
+          2,
+          3,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11248,
+        "recent_chars": 22350
+      },
+      {
+        "id": "quote-3",
+        "source_turns": [
+          1,
+          2,
+          3,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11248,
+        "recent_chars": 22384
+      },
+      {
+        "id": "quote-4",
+        "source_turns": [
+          1,
+          2,
+          3,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11248,
+        "recent_chars": 22527
+      },
+      {
+        "id": "timeline-1",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11327,
+        "recent_chars": 23884
+      },
+      {
+        "id": "timeline-2",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11327,
+        "recent_chars": 23939
+      },
+      {
+        "id": "timeline-3",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "archive_chars": 11327,
+        "recent_chars": 23995
+      },
+      {
+        "id": "timeline-4",
+        "source_turns": [
+          1,
+          2,
+          3,
+          4,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        "archive_chars": 11327,
+        "recent_chars": 22371
+      }
+    ]
+  },
+  "total_estimated_usd": 0.3975661
+}

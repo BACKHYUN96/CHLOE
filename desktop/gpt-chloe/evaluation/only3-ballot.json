@@ -1,0 +1,110 @@
+[
+  {
+    "id": "chalk-1",
+    "pick": "tie",
+    "note": "눈길이 간다는 말과 지웠는데 이름만 남았다는 사실을 두 답 모두 되풀이한다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "B",
+    "note": "모범생이라는 성격을 붙여 농담을 확장한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "A",
+    "note": "글자의 출석은 여섯 칸이며 B는 여덟 칸이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "pencil-1",
+    "pick": "tie",
+    "note": "양쪽 모두 연필깎이와 손가락의 크기를 과장해 농담한다. 손가락을 넣으라는 지시는 아니지만 썩 편한 이미지는 아니다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "pencil-2",
+    "pick": "B",
+    "note": "신장 측정과 선수에게 건네는 인사를 이어받아 사용자의 농담에 잘 맞는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "pencil-3",
+    "pick": "B",
+    "note": "은퇴는 네 칸 안에 들고 A는 여섯 칸이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "snow-1",
+    "pick": "tie",
+    "note": "새를 편지 부치러 온 손님으로 보는 같은 감상이다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "snow-2",
+    "pick": "B",
+    "note": "입구가 높다는 추측보다 새에게 편지를 넣을 손이 없다는 농담이 자연스럽다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "snow-3",
+    "pick": "B",
+    "note": "둘 다 다섯 칸이다. 새의 배달이 앞의 배달원 놀이와 잘 맞는다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "shell-1",
+    "pick": "tie",
+    "note": "양쪽 모두 조개와 달리 모래만 따라왔다는 장난이 같다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "shell-2",
+    "pick": "tie",
+    "note": "완충재나 뽁뽁이만 챙겼다는 말 모두 포장재만 가져왔다는 비유를 되말한다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "shell-3",
+    "pick": "A",
+    "note": "모래는 평범하지만 뜻이 분명하고 모래품은 의미가 모호하다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

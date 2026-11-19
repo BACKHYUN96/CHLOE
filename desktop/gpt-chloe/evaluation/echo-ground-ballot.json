@@ -1,0 +1,110 @@
+[
+  {
+    "id": "mug-1",
+    "pick": "A",
+    "note": "자리 표시만 남겨뒀다는 말은 자국에 의미를 부여한다. B는 흔적이 남았다고 두 번 말한다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "mug-2",
+    "pick": "B",
+    "note": "사라진 뒤에 더 눈에 띄는 역설을 둘 다 받는다. B는 가려져서 못 봤던 것으로 이유를 한정하지 않는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "mug-3",
+    "pick": "A",
+    "note": "세척 가능한 재료와 대략적인 크기까지 답한다. 책상이 무채색일 것으로 생각할 이유는 없다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "album-1",
+    "pick": "tie",
+    "note": "두 답 모두 혼자만 눈을 감은 데 시선이 간다는 비슷한 반응이다. 어느 쪽도 감정을 크게 정하지 않는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "album-2",
+    "pick": "A",
+    "note": "A는 흠처럼 보이던 점이 기억할 매력이 됐다고 받아 준다. B의 본인만의 포인트라는 표현은 덜 구체적이다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "album-3",
+    "pick": "A",
+    "note": "눈을 감고 추억 저장 중이라는 말장난이 짧고 사진에 어울린다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "lift-1",
+    "pick": "A",
+    "note": "A는 문을 잡은 친절에 초점을 준다. B는 타려는 줄 알고 잡았다는 경위에 상투적인 감정만 붙인다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "lift-2",
+    "pick": "A",
+    "note": "예의를 받은 대상이 엘리베이터가 됐다는 짧은 농담이 알맞다. 길을 비켜 준다는 B 표현은 문을 잡은 행동과 어긋난다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "lift-3",
+    "pick": "tie",
+    "note": "두 답 모두 남을 놀리지 않고 친구에게 보낼 수 있는 한 문장이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "stamp-1",
+    "pick": "A",
+    "note": "A도 요약으로 시작하지만 첫인상이 흐릿하다는 말장난을 붙였다. B는 희미함을 다시 말하며 아쉬울 것이라 짐작한다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "stamp-2",
+    "pick": "B",
+    "note": "A는 손으로 찍은 티가 좋다는 말을 손맛으로 바꿔 읽는 데 그친다. B는 균일한 도장보다 정감 있다는 반응을 더한다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "stamp-3",
+    "pick": "B",
+    "note": "골고루 누르는 것과 더불어 시험지에 먼저 찍어 도장 면을 확인하는 방법을 준다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

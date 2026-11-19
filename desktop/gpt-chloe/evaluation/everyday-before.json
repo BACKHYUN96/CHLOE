@@ -1,0 +1,602 @@
+[
+  {
+    "id": "day-1",
+    "question": "아 또 버스 놓쳤어 ㅋㅋ",
+    "answer": "아 ㅋㅋㅋ 눈앞에서 떠나갔어? 다음 버스는 금방 와?",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1719,
+      "total_ms": 2391,
+      "input_tokens": 710,
+      "output_tokens": 25,
+      "cost": 0.000835
+    },
+    "api_usage": {
+      "input_tokens": 710,
+      "input_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_30m_tokens": 0,
+          "ttl_12h_tokens": 0
+        }
+      },
+      "output_tokens": 25,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 735
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-2",
+    "question": "버스 놓쳐서 면접에 늦었어.",
+    "answer": "아이고, 마음이 많이 급했겠다. 면접은 볼 수 있었어?",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1703,
+      "total_ms": 2297,
+      "input_tokens": 714,
+      "output_tokens": 22,
+      "cost": 0.000824
+    },
+    "api_usage": {
+      "input_tokens": 714,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 22,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 736
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-3",
+    "question": "근데 있잖아…",
+    "answer": "응, 무슨 일이야?",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 954,
+      "total_ms": 1219,
+      "input_tokens": 708,
+      "output_tokens": 11,
+      "cost": 0.000763
+    },
+    "api_usage": {
+      "input_tokens": 708,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 11,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 719
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-4",
+    "question": "아직 얘기 안 끝났어. 잠깐만.",
+    "answer": "응, 기다릴게.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1657,
+      "total_ms": 1938,
+      "input_tokens": 716,
+      "output_tokens": 10,
+      "cost": 0.000766
+    },
+    "api_usage": {
+      "input_tokens": 716,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 10,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 726
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-5",
+    "question": "드디어 빨래 다 갰다 ㅋㅋ",
+    "answer": "오 드디어 끝났다 ㅋㅋ 은근히 개는 게 제일 귀찮아. 이제 좀 쉬어!",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1046,
+      "total_ms": 1812,
+      "input_tokens": 711,
+      "output_tokens": 28,
+      "cost": 0.000851
+    },
+    "api_usage": {
+      "input_tokens": 711,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 28,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 739
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-6",
+    "question": "냉장고 열었는데 불빛만 반겨 주더라.",
+    "answer": "불빛만 열일하고 있었네. 냉장고가 텅 빈 거야?",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1125,
+      "total_ms": 1890,
+      "input_tokens": 717,
+      "output_tokens": 24,
+      "cost": 0.000837
+    },
+    "api_usage": {
+      "input_tokens": 717,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 24,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 741
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-7",
+    "question": "그냥 오늘은 조용히 있고 싶어.",
+    "answer": "응, 편하게 조용히 있어. 필요할 때 불러줘.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1281,
+      "total_ms": 2031,
+      "input_tokens": 712,
+      "output_tokens": 20,
+      "cost": 0.000812
+    },
+    "api_usage": {
+      "input_tokens": 712,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 20,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 732
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-8",
+    "question": "오늘 팀장이 내 말 중간에 끊었어. 해결책 말고 들어만 줘.",
+    "answer": "말하고 있는데 중간에 끊겼구나. 무슨 얘기 하고 있었어? 편하게 말해. 들어줄게.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1109,
+      "total_ms": 2094,
+      "input_tokens": 723,
+      "output_tokens": 34,
+      "cost": 0.000893
+    },
+    "api_usage": {
+      "input_tokens": 723,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 34,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 757
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-9",
+    "question": "기분이 좀 그래. 왜 그런지는 나도 몰라.",
+    "answer": "이유를 모르겠을 때도 있지. 지금은 억지로 이유를 찾으려고 하지 않아도 돼. 그냥 여기서 아무 말이나 해도 되고, 잠깐 조용히 있어도 괜찮아.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1172,
+      "total_ms": 2219,
+      "input_tokens": 715,
+      "output_tokens": 55,
+      "cost": 0.00099
+    },
+    "api_usage": {
+      "input_tokens": 715,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 55,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 770
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-10",
+    "question": "내일 발표인데 첫마디 하나만 골라 줘.",
+    "answer": "“안녕하세요. 오늘은 제가 준비한 이야기를 들려드릴게요.”",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1172,
+      "total_ms": 1688,
+      "input_tokens": 715,
+      "output_tokens": 22,
+      "cost": 0.000825
+    },
+    "api_usage": {
+      "input_tokens": 715,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 22,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 737
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-11",
+    "question": "친구가 ‘나 오늘 방전’이라는데 답장 한 줄만.",
+    "answer": "오늘 많이 힘들었나 보다, 푹 쉬어!",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1390,
+      "total_ms": 1906,
+      "input_tokens": 718,
+      "output_tokens": 18,
+      "cost": 0.000808
+    },
+    "api_usage": {
+      "input_tokens": 718,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 18,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 736
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-12",
+    "question": "오늘 점심 진짜 별로였어요.",
+    "answer": "아이고, 점심이 별로면 괜히 오후까지 기분이 찝찝하죠. 맛이 없었어요, 아니면 메뉴가 마음에 안 들었어요?",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1125,
+      "total_ms": 2359,
+      "input_tokens": 713,
+      "output_tokens": 45,
+      "cost": 0.000938
+    },
+    "api_usage": {
+      "input_tokens": 713,
+      "input_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_30m_tokens": 0,
+          "ttl_12h_tokens": 0
+        }
+      },
+      "output_tokens": 45,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 758
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-13",
+    "question": "창밖에 고양이 두 마리가 똑같이 앉아 있어.",
+    "answer": "우연히 마주친 데칼코마니네. 둘 다 같은 쪽을 보고 있어?",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1328,
+      "total_ms": 2000,
+      "input_tokens": 719,
+      "output_tokens": 26,
+      "cost": 0.000849
+    },
+    "api_usage": {
+      "input_tokens": 719,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 26,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 745
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-14",
+    "question": "아까 말한 거 취소. 오늘 쉬기로 했어.",
+    "answer": "알겠어. 아까 얘기한 건 취소하고 오늘은 쉬는 걸로 할게.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1093,
+      "total_ms": 1812,
+      "input_tokens": 715,
+      "output_tokens": 27,
+      "cost": 0.00085
+    },
+    "api_usage": {
+      "input_tokens": 715,
+      "input_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_30m_tokens": 0,
+          "ttl_12h_tokens": 0
+        }
+      },
+      "output_tokens": 27,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 742
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-15",
+    "question": "그냥 네가 하나 골라. 산책이랑 낮잠 중에.",
+    "answer": "낮잠! 오늘은 푹 쉬자.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1078,
+      "total_ms": 1906,
+      "input_tokens": 718,
+      "output_tokens": 16,
+      "cost": 0.000798
+    },
+    "api_usage": {
+      "input_tokens": 718,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 16,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 734
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-16",
+    "question": "이거 웃기지 않아? 내 우산 챙기고 가방은 놓고 나옴.",
+    "answer": "우산은 야무지게 챙겼는데 가방이 출근을 거부했네 ㅋㅋ 지금 가지러 돌아가는 중이야?",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1735,
+      "total_ms": 2703,
+      "input_tokens": 724,
+      "output_tokens": 36,
+      "cost": 0.000904
+    },
+    "api_usage": {
+      "input_tokens": 724,
+      "input_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_30m_tokens": 0,
+          "ttl_12h_tokens": 0
+        }
+      },
+      "output_tokens": 36,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 760
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-17",
+    "question": "가방 놓고 나왔는데 그 안에 발표 자료 있어.",
+    "answer": "아, 발표 자료가 가방 안에 있구나. 지금 가방 가지러 돌아갈 수 있어? 시간이 빠듯하면 자료를 다른 곳에 저장해 뒀는지도 확인해 봐. 파일이 없으면 발표할 내용을 간단히 정리해서 메모로 대신하는 방법도 있어.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1062,
+      "total_ms": 2703,
+      "input_tokens": 715,
+      "output_tokens": 70,
+      "cost": 0.001065
+    },
+    "api_usage": {
+      "input_tokens": 715,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 70,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 785
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-18",
+    "question": "생각보다 괜찮았어. 걱정할 정도는 아니고.",
+    "answer": "다행이네. 막상 겪어보니 걱정했던 것보다는 괜찮았구나.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1172,
+      "total_ms": 1656,
+      "input_tokens": 719,
+      "output_tokens": 30,
+      "cost": 0.000869
+    },
+    "api_usage": {
+      "input_tokens": 719,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 30,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 749
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-19",
+    "question": "그 얘긴 됐고 저녁 메뉴 하나 추천해 줘.",
+    "answer": "오늘 저녁은 제육볶음 어때? 밥이랑 같이 먹으면 든든해.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1406,
+      "total_ms": 2172,
+      "input_tokens": 717,
+      "output_tokens": 28,
+      "cost": 0.000857
+    },
+    "api_usage": {
+      "input_tokens": 717,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 28,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 745
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  },
+  {
+    "id": "day-20",
+    "question": "잘 자. 난 이제 진짜 잘 거야.",
+    "answer": "응, 푹 자. 좋은 밤 보내!",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1079,
+      "total_ms": 1625,
+      "input_tokens": 712,
+      "output_tokens": 15,
+      "cost": 0.000787
+    },
+    "api_usage": {
+      "input_tokens": 712,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 15,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 727
+    },
+    "source_sha256": "2ab7319be1e31a5ecade78ecebb35ce22a9d876a6e7db2be96220f895d8ab99e"
+  }
+]

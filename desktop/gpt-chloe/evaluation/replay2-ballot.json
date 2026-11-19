@@ -1,0 +1,164 @@
+[
+  {
+    "id": "toast-1",
+    "pick": "B",
+    "note": "햇볕 쬐고 왔다는 말이 색 차이에 가볍게 호응한다. A는 굽힌 상태를 두 문장으로 반복한다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "toast-2",
+    "pick": "tie",
+    "note": "토스트 대 식빵과 바캉스 대 집이라는 두 대비가 앞의 이야기와 각각 잘 이어진다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "toast-3",
+    "pick": "B",
+    "note": "하얀 면부터 두고 짧은 간격으로 색을 확인해 굽기를 조절하기 쉽다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "paper-1",
+    "pick": "tie",
+    "note": "서랍에 남았다는 사실에 반가움이나 눈길이 갔겠다는 일반적인 반응을 붙이는 정도다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "paper-2",
+    "pick": "A",
+    "note": "A는 지나온 시간을 짚고 B는 그 부분을 오래 본다는 감상을 바꿔 말한다.",
+    "echo_A": false,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "paper-3",
+    "pick": "tie",
+    "note": "양쪽 모두 산성 없는 종이를 느슨히 써서 몸통을 받치고 날개에 힘이 가지 않게 한다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "chalk-1",
+    "pick": "tie",
+    "note": "이름 한 글자가 남아 눈길이 갔겠다는 똑같은 되읽기다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "A",
+    "note": "종례를 못 들었다는 말이 끝나도 아직 출석 중인 이유를 재미있게 만들어 준다. B는 한 번 남은 것을 개근에 비유한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "B",
+    "note": "칠판의 개근생은 공백 제외 여섯 글자이고 앞의 농담을 잇는다. A는 일곱 글자다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "slipper-1",
+    "pick": "B",
+    "note": "들어오는 짝과 나가는 짝으로 본 말이 간결하다. A는 벗은 방향을 불필요하게 설명한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "slipper-2",
+    "pick": "tie",
+    "note": "서로 각자 갈 길을 간다는 농담이 같다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "slipper-3",
+    "pick": "A",
+    "note": "현관 앞 각자의 길이 짧고 사진의 두 짝을 떠올리기 쉽다. 우리라는 표현은 대상을 흐릴 수 있다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "recipe-1",
+    "pick": "tie",
+    "note": "A는 진한 글씨에 눈이 간다는 말과 일반적 가족 감상이다. B는 비결일 가능성을 보태지만 글씨의 이유는 알 수 없다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "recipe-2",
+    "pick": "A",
+    "note": "손글씨에 목소리가 남았다는 이미지가 차분하다. B는 수첩을 볼 때마다라고 범위를 넓힌다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "recipe-3",
+    "pick": "tie",
+    "note": "둘 다 간장 두 숟갈을 포함한 담담한 한 줄이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "train-1",
+    "pick": "B",
+    "note": "말하는 사람이 다음 장면을 계속 얘기하기에 자연스럽고 간결하다. A의 담담한데는 다소 평론처럼 들린다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "train-2",
+    "pick": "A",
+    "note": "상대 팀으로 이적했다는 스포츠 비유가 응원 맥락에 맞고 짧다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "train-3",
+    "pick": "B",
+    "note": "두 답 모두 한 문장이다. B의 선수 호칭과 경기를 마칩니다라는 말은 현장 중계 어감에 더 가깝다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

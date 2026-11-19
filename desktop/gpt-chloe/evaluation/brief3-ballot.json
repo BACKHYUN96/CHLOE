@@ -1,0 +1,110 @@
+[
+  {
+    "id": "chalk-1",
+    "pick": "tie",
+    "note": "둘 다 지운 뒤 남은 글자를 다시 묘사하고 묘하다거나 눈이 갔겠다고만 한다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-2",
+    "pick": "B",
+    "note": "모범생이라는 표현이 모범 글자보다 말맛이 자연스럽다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chalk-3",
+    "pick": "A",
+    "note": "둘 다 한도 안이다. 끝까지 출석이 수업 뒤에도 남은 뜻을 더 자연스럽게 전한다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "sticker-1",
+    "pick": "A",
+    "note": "시간이 거기만 비켜 갔다는 말은 원래 색의 의미를 짚고 햇빛 노출을 단정하지 않는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "sticker-2",
+    "pick": "tie",
+    "note": "둘 다 떼고 보니 여행 흔적이 남았다고 같은 내용을 되돌린다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "sticker-3",
+    "pick": "B",
+    "note": "여행자국이 스티커의 자국과 여행의 기억 둘 다 살린다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "score-1",
+    "pick": "A",
+    "note": "연필 동그라미를 메모로 본다. B는 반복해서 쉼표를 놓쳤다고 앞서 짐작한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "score-2",
+    "pick": "B",
+    "note": "소리 내지 않을 때에도 박자를 세야 한다는 이유가 사용자의 경험과 잘 이어진다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "score-3",
+    "pick": "B",
+    "note": "둘 다 길이를 지킨다. 쉼의 연습은 쉬는 것도 어려웠다는 맥락에 잘 맞는다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "shadow-1",
+    "pick": "tie",
+    "note": "먼저 쉬고 있는 그림자와 조용히 함께한 동반자 모두 자연스러운 반응이다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "shadow-2",
+    "pick": "A",
+    "note": "해가 지면 퇴근한다는 말이 시간 제한이 있는 예약 농담을 잇는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "shadow-3",
+    "pick": "B",
+    "note": "예약석은 세 글자이고 상황에 맞다. 그림자석은 네 글자다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]
