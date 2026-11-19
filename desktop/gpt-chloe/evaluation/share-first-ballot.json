@@ -1,0 +1,128 @@
+[
+  {
+    "id": "scarf-1",
+    "pick": "A",
+    "note": "둘 다 완성했다고 앞서 짐작했다. A가 코 간격을 원인으로 덧붙이지 않아 더 담백하다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "scarf-2",
+    "pick": "B",
+    "note": "한 뼘 차이가 눈에 보인다는 같은 반응인데 B의 문장이 매끄럽다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "scarf-3",
+    "pick": "B",
+    "note": "한 뼘만 더 긴 상황에서 감긴 부분 안에 끝을 넣는 방법은 목을 한 바퀴 더 감는 방법보다 길이 조절이 쉽다.",
+    "premature_A": null,
+    "premature_B": null
+  },
+  {
+    "id": "calendar-1",
+    "pick": "A",
+    "note": "앞으로 헷갈릴 수 있다는 A의 시제가 맞는다. B는 이미 혼동을 피한 일처럼 말한다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "calendar-2",
+    "pick": "B",
+    "note": "빽빽하다는 말에 적을 공간이 빠듯하겠다고 받아 주는 편이 자연스럽다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "calendar-3",
+    "pick": "tie",
+    "note": "둘 다 색펜으로 틀린 표시를 지우고 맞는 칸을 동그라미 치는 한 가지 방법을 준다.",
+    "premature_A": null,
+    "premature_B": null
+  },
+  {
+    "id": "cookie-1",
+    "pick": "tie",
+    "note": "남은 반죽으로 하나 더 만들 수 있다는 짧은 반응은 둘 다 어울린다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "cookie-2",
+    "pick": "B",
+    "note": "마지막 반죽을 놓을 자리가 없다는 말이 앞의 두 턴을 정확하게 잇는다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "cookie-3",
+    "pick": "tie",
+    "note": "둘 다 랩을 밀착시키고 밀폐해 냉장하라는 답으로 요청을 충족한다. 다음 날 굽는 설명은 부차적이다.",
+    "premature_A": null,
+    "premature_B": null
+  },
+  {
+    "id": "label-1",
+    "pick": "A",
+    "note": "같은 모양이라는 관찰을 받아 준다. B의 질문은 해결책은 아니지만 사용자가 대화를 이어가기 전에 용도를 묻는다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "label-2",
+    "pick": "A",
+    "note": "열쇠를 쌍둥이에 빗댄 사용자의 장난스러운 표현을 살렸다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "label-3",
+    "pick": "tie",
+    "note": "두 답 모두 창고 열쇠 머리에 촉각 표식을 남겨 어둠 속에서 구별하는 방법을 제시했다.",
+    "premature_A": null,
+    "premature_B": null
+  },
+  {
+    "id": "puzzle-1",
+    "pick": "B",
+    "note": "가벼운 비유가 어울린다. A의 추가 질문은 조각 모양 쪽으로 이야기를 돌린다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "puzzle-2",
+    "pick": "B",
+    "note": "하늘이 바다가 됐다는 표현이 사용자 비유를 살린다. A의 구름은 대화에 나오지 않았다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "puzzle-3",
+    "pick": "A",
+    "note": "하나의 기준을 부탁했을 때 돌기 개수 하나로 시작할 수 있게 한다.",
+    "premature_A": null,
+    "premature_B": null
+  },
+  {
+    "id": "record-1",
+    "pick": "B",
+    "note": "나머지는 남아서 다행이라는 위로를 먼저 정하지 않고 빠진 첫 소절만 짚는다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "record-2",
+    "pick": "B",
+    "note": "숨소리 자체가 합창의 시작이라는 맥락을 잡아 단순 반복을 피한다.",
+    "premature_A": false,
+    "premature_B": false
+  },
+  {
+    "id": "record-3",
+    "pick": "A",
+    "note": "녹음 후 지휘 자리로 돌아와 준비 박자에 숨을 모으고 첫 박자를 주는 순서가 명확하다. 답은 조금 길다.",
+    "premature_A": null,
+    "premature_B": null
+  }
+]

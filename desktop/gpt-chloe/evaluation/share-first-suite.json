@@ -1,0 +1,162 @@
+{
+  "model": "gpt-6.1-terra",
+  "gate": "fewer unsolicited fixes across share turns, more candidate than baseline preferences overall, no net loss in advice preferences",
+  "sessions": [
+    {
+      "id": "scarf",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "scarf-1",
+          "message": "목도리를 뜨는데 양끝 길이가 다르네.",
+          "focus": "share",
+          "expect": "상황을 구체적으로 받아주고 해결 행동을 먼저 권하지 않기"
+        },
+        {
+          "id": "scarf-2",
+          "message": "오늘 햇빛에 펼쳐 보니까 한쪽이 한 뼘쯤 더 길더라.",
+          "focus": "share",
+          "expect": "상황을 구체적으로 받아주고 해결 행동을 먼저 권하지 않기"
+        },
+        {
+          "id": "scarf-3",
+          "message": "풀어서 다시 뜨기는 싫어. 긴 쪽을 어떻게 매면 티가 덜 날까?",
+          "focus": "advice",
+          "expect": "조건에 맞는 실행 가능한 조언"
+        }
+      ]
+    },
+    {
+      "id": "calendar",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "calendar-1",
+          "message": "탁상 달력에 모임 날짜를 하루 앞당겨 써 버렸어요.",
+          "focus": "share",
+          "expect": "상황을 구체적으로 받아주고 해결 행동을 먼저 권하지 않기"
+        },
+        {
+          "id": "calendar-2",
+          "message": "이번 주는 날짜 칸이 유난히 빽빽하네요.",
+          "focus": "share",
+          "expect": "상황을 구체적으로 받아주고 해결 행동을 먼저 권하지 않기"
+        },
+        {
+          "id": "calendar-3",
+          "message": "수정액은 없고 색펜은 있어요. 어느 칸이 진짜 모임인지 헷갈리지 않게 표시하는 법 하나만요.",
+          "focus": "advice",
+          "expect": "조건에 맞는 실행 가능한 조언"
+        }
+      ]
+    },
+    {
+      "id": "cookie",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "cookie-1",
+          "message": "쿠키 반죽이 딱 하나 분량만 남았어.",
+          "focus": "share",
+          "expect": "상황을 구체적으로 받아주고 해결 행동을 먼저 권하지 않기"
+        },
+        {
+          "id": "cookie-2",
+          "message": "한 판은 이미 꽉 찼고 오븐 돌아가는 소리 듣고 있는 중이야.",
+          "focus": "share",
+          "expect": "상황을 구체적으로 받아주고 해결 행동을 먼저 권하지 않기"
+        },
+        {
+          "id": "cookie-3",
+          "message": "두 번째 판은 내일 구울 건데 이 반죽을 마르지 않게 냉장고에 어떻게 넣어 둘까?",
+          "focus": "advice",
+          "expect": "조건에 맞는 실행 가능한 조언"
+        }
+      ]
+    },
+    {
+      "id": "label",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "label-1",
+          "message": "연습실 열쇠 두 개가 똑같이 생겼어요.",
+          "focus": "share",
+          "expect": "상황을 구체적으로 받아주고 해결 행동을 먼저 권하지 않기"
+        },
+        {
+          "id": "label-2",
+          "message": "둘 다 제 건데 손에 올려두면 정말 쌍둥이 같아요.",
+          "focus": "share",
+          "expect": "상황을 구체적으로 받아주고 해결 행동을 먼저 권하지 않기"
+        },
+        {
+          "id": "label-3",
+          "message": "하나는 창고 열쇠예요. 조명이 어두워도 손으로 구별하려면 뭘 하면 좋을까요?",
+          "focus": "advice",
+          "expect": "조건에 맞는 실행 가능한 조언"
+        }
+      ]
+    },
+    {
+      "id": "puzzle",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "puzzle-1",
+          "message": "퍼즐 맞추다 보니까 하늘색 조각만 잔뜩 남았어.",
+          "focus": "share",
+          "expect": "상황을 구체적으로 받아주고 해결 행동을 먼저 권하지 않기"
+        },
+        {
+          "id": "puzzle-2",
+          "message": "바닥에 늘어놓으니까 작은 바다 같더라.",
+          "focus": "share",
+          "expect": "상황을 구체적으로 받아주고 해결 행동을 먼저 권하지 않기"
+        },
+        {
+          "id": "puzzle-3",
+          "message": "이제 다시 맞춰 보려고. 색이 다 비슷할 때 딱 하나 어떤 기준으로 나눠 볼까?",
+          "focus": "advice",
+          "expect": "조건에 맞는 실행 가능한 조언"
+        }
+      ]
+    },
+    {
+      "id": "record",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "record-1",
+          "message": "합창 연습 녹음에 첫 소절이 잘렸어요.",
+          "focus": "share",
+          "expect": "상황을 구체적으로 받아주고 해결 행동을 먼저 권하지 않기"
+        },
+        {
+          "id": "record-2",
+          "message": "다 같이 숨 들이쉬는 소리부터 담고 싶었는데 그 부분만 없네요.",
+          "focus": "share",
+          "expect": "상황을 구체적으로 받아주고 해결 행동을 먼저 권하지 않기"
+        },
+        {
+          "id": "record-3",
+          "message": "다음 녹음 땐 제가 지휘도 해야 해요. 시작 버튼이랑 첫 박자 순서를 어떻게 잡으면 좋겠어요?",
+          "focus": "advice",
+          "expect": "조건에 맞는 실행 가능한 조언"
+        }
+      ]
+    }
+  ]
+}

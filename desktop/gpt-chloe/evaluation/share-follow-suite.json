@@ -1,0 +1,162 @@
+{
+  "model": "gpt-6.1-terra",
+  "gate": "Same gate as share-first, evaluated independently on new conversations before any deployment.",
+  "sessions": [
+    {
+      "id": "poster",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "poster-1",
+          "message": "내일 붙일 포스터를 서른 장 뽑았는데 맨 아래에 오타가 있어요.",
+          "focus": "share",
+          "expect": "하소연이나 관찰을 받아 주고 먼저 해결 행동을 제안하지 않기"
+        },
+        {
+          "id": "poster-2",
+          "message": "분명히 두 번이나 읽었거든요. 집에 가져와서 보니까 그제야 보이네요.",
+          "focus": "share",
+          "expect": "하소연이나 관찰을 받아 주고 먼저 해결 행동을 제안하지 않기"
+        },
+        {
+          "id": "poster-3",
+          "message": "다시 인쇄할 돈은 없어요. 오타 한 글자를 서른 장 모두 깔끔하게 고칠 방법 하나만 알려 주세요.",
+          "focus": "advice",
+          "expect": "사용자 제약을 반영해 바로 쓸 조언"
+        }
+      ]
+    },
+    {
+      "id": "door",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "door-1",
+          "message": "이사 왔는데 방문이 닫힐 때마다 쾅 소리가 나.",
+          "focus": "share",
+          "expect": "하소연이나 관찰을 받아 주고 먼저 해결 행동을 제안하지 않기"
+        },
+        {
+          "id": "door-2",
+          "message": "오늘은 그 소리에 낮잠 자던 고양이까지 깼어. 괜히 내가 미안하더라.",
+          "focus": "share",
+          "expect": "하소연이나 관찰을 받아 주고 먼저 해결 행동을 제안하지 않기"
+        },
+        {
+          "id": "door-3",
+          "message": "일단 오늘 집에 있는 수건으로 소리 줄이는 방법 있을까? 문은 열어 놔도 돼.",
+          "focus": "advice",
+          "expect": "사용자 제약을 반영해 바로 쓸 조언"
+        }
+      ]
+    },
+    {
+      "id": "script",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "script-1",
+          "message": "발표가 내일인데 읽어 보니까 준비한 대본이 1분이나 길어.",
+          "focus": "share",
+          "expect": "하소연이나 관찰을 받아 주고 먼저 해결 행동을 제안하지 않기"
+        },
+        {
+          "id": "script-2",
+          "message": "웃긴 건 내가 제일 좋아하는 부분이 제일 길다는 거야.",
+          "focus": "share",
+          "expect": "하소연이나 관찰을 받아 주고 먼저 해결 행동을 제안하지 않기"
+        },
+        {
+          "id": "script-3",
+          "message": "그 부분은 살리고 싶어. 지금 원고에서 뭐부터 덜어 내면 좋을까?",
+          "focus": "advice",
+          "expect": "사용자 제약을 반영해 바로 쓸 조언"
+        }
+      ]
+    },
+    {
+      "id": "clay",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "clay-1",
+          "message": "도자기 수업에서 컵을 만들었는데 손잡이가 손가락 하나 들어갈 만큼 작아요.",
+          "focus": "share",
+          "expect": "하소연이나 관찰을 받아 주고 먼저 해결 행동을 제안하지 않기"
+        },
+        {
+          "id": "clay-2",
+          "message": "꺼내서 쥐어 보니까 꼭 제 새끼손가락 전용 컵 같더라고요.",
+          "focus": "share",
+          "expect": "하소연이나 관찰을 받아 주고 먼저 해결 행동을 제안하지 않기"
+        },
+        {
+          "id": "clay-3",
+          "message": "이미 구운 거라 손잡이는 못 바꿔요. 뜨거운 음료 말고 책상에서 어떻게 쓰면 좋을까요? 한 가지만요.",
+          "focus": "advice",
+          "expect": "사용자 제약을 반영해 바로 쓸 조언"
+        }
+      ]
+    },
+    {
+      "id": "cable",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "cable-1",
+          "message": "책상 아래 선을 어제 다 정리했는데 충전기 하나 빼니까 다시 엉켰어.",
+          "focus": "share",
+          "expect": "하소연이나 관찰을 받아 주고 먼저 해결 행동을 제안하지 않기"
+        },
+        {
+          "id": "cable-2",
+          "message": "한 시간 들인 건데 원래대로 돌아가는 덴 삼 초더라.",
+          "focus": "share",
+          "expect": "하소연이나 관찰을 받아 주고 먼저 해결 행동을 제안하지 않기"
+        },
+        {
+          "id": "cable-3",
+          "message": "자주 빼는 충전기만 따로 정리하고 싶어. 집게 하나로 어떻게 하면 될까?",
+          "focus": "advice",
+          "expect": "사용자 제약을 반영해 바로 쓸 조언"
+        }
+      ]
+    },
+    {
+      "id": "cards",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "cards-1",
+          "message": "행사 시작 직전에 보니까 제가 만든 좌석표에서 두 분 자리가 뒤바뀌어 있어요.",
+          "focus": "share",
+          "expect": "하소연이나 관찰을 받아 주고 먼저 해결 행동을 제안하지 않기"
+        },
+        {
+          "id": "cards-2",
+          "message": "어제는 붙여 놓고 꽤 뿌듯했는데 말이에요.",
+          "focus": "share",
+          "expect": "하소연이나 관찰을 받아 주고 먼저 해결 행동을 제안하지 않기"
+        },
+        {
+          "id": "cards-3",
+          "message": "두 분은 아직 안 오셨어요. 안내 담당자에게 지금 바로 보낼 짧은 문자 하나 써 주세요.",
+          "focus": "advice",
+          "expect": "사용자 제약을 반영해 바로 쓸 조언"
+        }
+      ]
+    }
+  ]
+}
