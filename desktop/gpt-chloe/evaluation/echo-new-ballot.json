@@ -1,0 +1,110 @@
+[
+  {
+    "id": "umbrella-1",
+    "pick": "B",
+    "note": "비를 쫓는 부적이라는 가벼운 농담이 말한 우연을 살린다. A도 자연스럽지만 가방에 넣었다고 짐작한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "umbrella-2",
+    "pick": "A",
+    "note": "새것 티를 내는 주체를 우산으로 돌린 장난이 가볍다. B는 사용자가 온 동네에 자랑했다고 놀리는 강도가 높다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "umbrella-3",
+    "pick": "B",
+    "note": "부드러운 천부터 쓰는 건 같고 B는 세제를 보이지 않는 곳에 먼저 시험하고 닦아내는 방법까지 준다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "radio-1",
+    "pick": "tie",
+    "note": "두 답 모두 노래가 주는 시간 여행 같은 느낌을 살려 자연스럽다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "radio-2",
+    "pick": "B",
+    "note": "B는 머리와 입의 기억을 대비해 짧게 호응한다. A는 잊었다가 노래를 따라 불렀다는 과정을 두 문장에 걸쳐 확인한다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "radio-3",
+    "pick": "B",
+    "note": "조용한 한 줄 문자로 읽었을 때 잊은 줄 알았더니보다 B의 연결이 간결하다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "toast-1",
+    "pick": "tie",
+    "note": "양쪽 모두 한쪽만 구워진 색 차이를 다시 설명하며 끝낸다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "toast-2",
+    "pick": "B",
+    "note": "두 답 모두 빵이 다른 종류처럼 보인다는 장난을 받지만 B의 토스트와 생식빵 대비가 짧고 선명하다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "toast-3",
+    "pick": "tie",
+    "note": "둘 다 약불과 확인 간격을 제시하고 노릇한 면은 남겨 두라는 요청을 지킨다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "bench-1",
+    "pick": "B",
+    "note": "양쪽 모두 평소 앉았다는 가정이 있다. B는 기다릴 때의 불편에 호응하고 A는 사라진 사실에 일반적인 감정만 붙인다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "bench-2",
+    "pick": "tie",
+    "note": "둘 다 가방을 올려두기 좋았다는 사실로 돌아간다. 공감의 정도와 어투도 거의 같다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "bench-3",
+    "pick": "tie",
+    "note": "다시 설치할 계획만 묻는 공손한 한 문장으로 둘 다 쓸 수 있다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

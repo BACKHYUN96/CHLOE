@@ -1,0 +1,110 @@
+[
+  {
+    "id": "chair-1",
+    "pick": "B",
+    "note": "B는 회의실이라는 장소가 소리를 두드러지게 한다는 점을 바로 짚는다. A도 회의 중이면 신경 쓰인다고 받지만 앞부분이 길다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chair-2",
+    "pick": "B",
+    "note": "A도 움직임이 조심스러웠겠다는 반응은 있다. B는 사람들 대신 의자가 존재감을 드러냈다는 말로 대비를 살린다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "chair-3",
+    "pick": "tie",
+    "note": "두 답 모두 위치와 증상을 정확히 담은 한 문장이다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "pear-1",
+    "pick": "tie",
+    "note": "두 답 모두 긴 껍질을 다시 설명하고 기분이 좋았을 거라고 덧붙인다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "pear-2",
+    "pick": "A",
+    "note": "둘 다 주연과 조연 농담에 호응한다. A가 더 가볍다. 가운데 놓였는지 또아리를 틀었는지는 알 수 없다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "pear-3",
+    "pick": "A",
+    "note": "A는 공백 제외 네 글자다. B는 공백을 빼도 다섯 글자로 제약을 어긴다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "map-1",
+    "pick": "B",
+    "note": "두 답 모두 삐져나온 모양이 여행 수첩에 어울린다고 받는다. B가 짧고 매끄럽다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "map-2",
+    "pick": "tie",
+    "note": "보기만 한 책갈피가 위치를 다시 찾는 데도 쓸모 있겠다는 두 답 모두 자연스럽다. 요청 전 행동을 권하지는 않는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "map-3",
+    "pick": "A",
+    "note": "A는 튀어나온 끝만 감싸고 표지에 고정하는 구체적 방법을 준다. B도 가능하지만 수첩 전체를 감싸야 한다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "sock-1",
+    "pick": "A",
+    "note": "없어진 짝을 궁금해하는 흐름은 둘 다 자연스럽지만 B는 둘을 같이 빨았다고 단정한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "sock-2",
+    "pick": "B",
+    "note": "A는 이틀째 혼자라 낯익다는 말을 바꿔 말한다. B는 외톨이 양말이라는 가벼운 별명으로 인격화에 화답한다.",
+    "echo_A": true,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "sock-3",
+    "pick": "B",
+    "note": "둘 다 한 서랍 안에서 분리한다. B는 다음 빨래 때 확인할 곳까지 알려 줘 질문의 목적에 맞다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

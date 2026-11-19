@@ -1,0 +1,109 @@
+{
+  "model": "gpt-6.1-terra",
+  "sessions": [
+    {
+      "id": "clock",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "clock-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "주방 시계 건전지를 빼 뒀는데도 자꾸 시간을 거기서 확인해."
+        },
+        {
+          "id": "clock-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "덕분에 오늘은 세 번이나 같은 시각에 저녁을 먹을 뻔했지."
+        },
+        {
+          "id": "clock-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "시계 밑에 건전지 사 오라는 메모를 붙일 거야. 나한테 하는 말로 한 줄만."
+        }
+      ]
+    },
+    {
+      "id": "pot",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "pot-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "화분 팻말을 뽑아 봤더니 흙에 묻힌 부분에만 글씨가 남았어요."
+        },
+        {
+          "id": "pot-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "식물 이름은 정작 땅속에서만 읽을 수 있었네요."
+        },
+        {
+          "id": "pot-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "새 팻말은 햇빛에 덜 바래게 쓰고 싶어요. 연필이랑 수성펜 중 어느 쪽을 써 볼까요? 나무 팻말이에요."
+        }
+      ]
+    },
+    {
+      "id": "bag",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "bag-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "장바구니 따로 챙겼다고 뿌듯했는데 계산대에서 보니 안에 다른 장바구니만 세 개야."
+        },
+        {
+          "id": "bag-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "마트 갈 준비만 네 겹으로 해 온 셈이지."
+        },
+        {
+          "id": "bag-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "다음엔 한 개만 들고나오게 현관에 어떻게 놔둘까? 고리 하나는 비어 있어."
+        }
+      ]
+    },
+    {
+      "id": "paper",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "paper-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "책상 서랍에서 할머니가 예전에 접어 주신 종이학을 찾았어요."
+        },
+        {
+          "id": "paper-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "한쪽 날개가 살짝 구겨졌는데 오히려 그 부분을 오래 보게 되네요."
+        },
+        {
+          "id": "paper-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "날개를 펴지 않고 작은 상자에 옮겨 두려면 무엇을 받쳐 주면 좋을까요?"
+        }
+      ]
+    }
+  ]
+}

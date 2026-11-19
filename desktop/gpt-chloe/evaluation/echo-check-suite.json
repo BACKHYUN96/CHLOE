@@ -1,0 +1,109 @@
+{
+  "model": "gpt-6.1-terra",
+  "sessions": [
+    {
+      "id": "chair",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "chair-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "회의실 의자 하나만 앉으면 끼익 소리가 나요."
+        },
+        {
+          "id": "chair-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "다들 조용히 읽고 있을 때 제가 페이지 넘기는 소리보다 의자가 더 컸어요."
+        },
+        {
+          "id": "chair-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "시설 담당자한테 어느 의자인지 알려 주려는데 창가에서 두 번째예요. 한 문장 부탁해요."
+        }
+      ]
+    },
+    {
+      "id": "pear",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "pear-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "배를 깎았더니 껍질이 중간에 안 끊기고 끝까지 이어졌어."
+        },
+        {
+          "id": "pear-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "접시에 배보다 껍질부터 올려놨어. 오늘 주인공은 그쪽이더라고."
+        },
+        {
+          "id": "pear-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "사진에 붙일 제목 네 글자 안으로 하나만 지어 줘."
+        }
+      ]
+    },
+    {
+      "id": "map",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "map-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "여행 수첩에 지도를 붙였더니 옆으로 조금 삐져나왔어요."
+        },
+        {
+          "id": "map-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "덮어 놓으니 거기만 책갈피처럼 보여서 그냥 뒀어요."
+        },
+        {
+          "id": "map-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "삐져나온 끝이 닳지 않게 하고 싶은데 지도에는 풀칠하지 않는 방법이 있을까요?"
+        }
+      ]
+    },
+    {
+      "id": "sock",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "sock-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "건조대에서 걷은 양말을 다 맞췄는데 줄무늬 하나만 남았어."
+        },
+        {
+          "id": "sock-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "어제도 혼자였던 애라 오늘은 좀 낯이 익더라."
+        },
+        {
+          "id": "sock-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "짝 찾을 때까지 어디 보관하면 덜 헷갈릴까? 서랍은 하나뿐이야."
+        }
+      ]
+    }
+  ]
+}

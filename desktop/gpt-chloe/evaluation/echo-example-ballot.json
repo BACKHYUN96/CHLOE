@@ -1,0 +1,110 @@
+[
+  {
+    "id": "clock-1",
+    "pick": "A",
+    "note": "멈춘 시계와 여전히 그쪽으로 가는 눈을 나란히 놓은 첫 문장이 습관의 묘한 점을 잘 짚는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "clock-2",
+    "pick": "A",
+    "note": "같은 저녁을 여러 번 먹는다는 농담에는 길어진 시간보다 무한 반복이 더 잘 맞는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "clock-3",
+    "pick": "B",
+    "note": "두 메모 모두 요청을 지킨다. B는 이 메모가 왜 시계 아래 있는지까지 사용자의 농담으로 연결한다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "pot-1",
+    "pick": "A",
+    "note": "A는 첫 문장에서 되읽지만 팻말의 역할과 실제 결과의 모순을 짚는다. B는 가능한 원인을 말하는 데 치우친다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "pot-2",
+    "pick": "tie",
+    "note": "식물에게만 알려주는 팻말과 이름을 숨기는 이름표 모두 사용자의 아이러니에 맞는 의인화다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "pot-3",
+    "pick": "tie",
+    "note": "둘 다 연필을 고르고 흑연과 야외 마찰을 구분하며 실제 쓰는 요령을 준다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "bag-1",
+    "pick": "tie",
+    "note": "가방을 담기 위한 가방이라는 역설을 양쪽 모두 잘 받는다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "bag-2",
+    "pick": "A",
+    "note": "준비성을 한마디로 치켜세운 농담이 자연스럽다. B는 물건을 넣을 자리가 없다고 단정한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "bag-3",
+    "pick": "tie",
+    "note": "고리에 빈 장바구니 하나, 다른 곳에 나머지를 두는 배치가 두 답에서 명확하다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  },
+  {
+    "id": "paper-1",
+    "pick": "B",
+    "note": "두 답 다 서랍에 남아 있었다는 사실에 관습적인 추억 반응을 붙였다. B는 설명을 덜 되짚고 할머니에게 초점이 있다.",
+    "echo_A": true,
+    "echo_B": true,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "paper-2",
+    "pick": "tie",
+    "note": "시간이 묻어 있는 날개라는 같은 이미지로 호응한다.",
+    "echo_A": false,
+    "echo_B": false,
+    "advice_A": false,
+    "advice_B": false
+  },
+  {
+    "id": "paper-3",
+    "pick": "B",
+    "note": "날개에 압력이 가지 않도록 몸통을 받치는 방법은 같다. B는 전용 티슈가 없을 때 임시로 쓸 종이까지 제안한다.",
+    "echo_A": null,
+    "echo_B": null,
+    "advice_A": null,
+    "advice_B": null
+  }
+]

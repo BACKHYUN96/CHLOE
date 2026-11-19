@@ -1,0 +1,109 @@
+{
+  "model": "gpt-6.1-terra",
+  "sessions": [
+    {
+      "id": "mug",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "mug-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "사무실 머그잔을 집에 가져왔는데 책상에 동그란 자국만 남았어."
+        },
+        {
+          "id": "mug-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "잔은 맨날 봐서 몰랐는데 그 자국은 자꾸 보이더라."
+        },
+        {
+          "id": "mug-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "그 자리에 놓을 작은 받침 하나만 추천해 줘. 물로 씻을 수 있는 걸로."
+        }
+      ]
+    },
+    {
+      "id": "album",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "album-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "옛날 사진 정리하다가 가족사진에서 저만 눈 감은 걸 찾았어요."
+        },
+        {
+          "id": "album-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "다들 잘 나왔는데 전 그게 제일 마음에 들어요."
+        },
+        {
+          "id": "album-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "가족 단톡에 올릴 건데 제 눈 감은 거 가지고 가볍게 한 줄 써 주세요."
+        }
+      ]
+    },
+    {
+      "id": "lift",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "lift-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "엘리베이터 문을 잡았는데 기다리던 사람이 계단 쪽으로 가더라."
+        },
+        {
+          "id": "lift-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "나 혼자 열린 문 앞에서 아주 예의 바르게 서 있었지."
+        },
+        {
+          "id": "lift-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "친구한테 보낼 말로 한 줄만 줄여 줄래? 그 사람을 놀리진 말고."
+        }
+      ]
+    },
+    {
+      "id": "stamp",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "stamp-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "새 도장을 종이에 처음 찍었는데 한쪽 끝만 희미해요."
+        },
+        {
+          "id": "stamp-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 장면에 호응",
+          "message": "진하게 나온 것보다 그게 손으로 찍은 티가 나서 좋아요."
+        },
+        {
+          "id": "stamp-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "똑같은 도장으로 다음 장에는 또렷하게 찍으려면 뭘 해보면 될까요?"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "model": "gpt-6.1-terra",
+  "sessions": [
+    {
+      "id": "chalk",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "chalk-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "오늘 칠판을 지웠는데 제 이름 한 글자만 어렴풋이 남아 있었어요."
+        },
+        {
+          "id": "chalk-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "수업은 끝났는데 그 글자만 아직 출석 중이었죠."
+        },
+        {
+          "id": "chalk-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "그 얘기를 제목처럼 여섯 글자 안으로 적어 줄래요?"
+        }
+      ]
+    },
+    {
+      "id": "spoon",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "spoon-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "작은 요거트 하나 먹으려고 서랍을 열었는데 국자밖에 없어."
+        },
+        {
+          "id": "spoon-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "요거트 컵보다 국자 입구가 더 크더라."
+        },
+        {
+          "id": "spoon-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "집에 티스푼은 없고 젓가락이랑 작은 주걱은 있어. 어느 걸 쓰면 덜 흘릴까?"
+        }
+      ]
+    },
+    {
+      "id": "garden",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "garden-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "주말 농장에서 당근을 뽑았는데 잎에 비해 뿌리가 손가락 한 마디밖에 안 돼요."
+        },
+        {
+          "id": "garden-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "한참 들고 있다가 뿌리보다 잎이 잘 나오게 사진을 찍었어요."
+        },
+        {
+          "id": "garden-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "사진 설명 한 줄만 부탁해요. 크기가 작아서 실패했다는 느낌은 빼 주세요."
+        }
+      ]
+    },
+    {
+      "id": "bookmark",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "bookmark-1",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "읽던 책 펼쳤더니 책갈피가 두 개나 물려 있더라."
+        },
+        {
+          "id": "bookmark-2",
+          "focus": "share",
+          "expect": "되풀이·선제 조언 없이 상황에 호응",
+          "message": "어디까지 읽었는지는 모르겠고 그동안 두 번이나 열심히 멈췄다는 건 알겠어."
+        },
+        {
+          "id": "bookmark-3",
+          "focus": "advice",
+          "expect": "요청·제약 준수",
+          "message": "다음엔 헷갈리지 않게 두 개를 서로 다른 용도로 쓰고 싶어. 어떻게 나눌까?"
+        }
+      ]
+    }
+  ]
+}
