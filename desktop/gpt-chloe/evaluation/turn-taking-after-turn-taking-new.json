@@ -1,0 +1,302 @@
+[
+  {
+    "id": "fridge-1",
+    "question": "냉장고 열었는데 불빛만 반겨 주더라.",
+    "answer": "냉장고가 “먹을 거 없어”를 환하게 알려줬네.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1156,
+      "total_ms": 1859,
+      "input_tokens": 939,
+      "output_tokens": 23,
+      "cost": 0.001054
+    },
+    "api_usage": {
+      "input_tokens": 939,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 23,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 962
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  },
+  {
+    "id": "desk-1",
+    "question": "회의 들어가는데 의자가 먼저 끼익 하고 인사하더라 ㅋㅋ",
+    "answer": "ㅋㅋㅋ 회의 시작도 전에 의자가 먼저 발언권 얻었네.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1062,
+      "total_ms": 1625,
+      "input_tokens": 941,
+      "output_tokens": 21,
+      "cost": 0.001046
+    },
+    "api_usage": {
+      "input_tokens": 941,
+      "input_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_30m_tokens": 0,
+          "ttl_12h_tokens": 0
+        }
+      },
+      "output_tokens": 21,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 962
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  },
+  {
+    "id": "desk-2",
+    "question": "아 뒷얘기 있어. 내가 마저 말할게.",
+    "answer": "응, 듣고 있어.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 953,
+      "total_ms": 1125,
+      "input_tokens": 984,
+      "output_tokens": 10,
+      "cost": 0.001034
+    },
+    "api_usage": {
+      "input_tokens": 984,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 10,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 994
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  },
+  {
+    "id": "desk-3",
+    "question": "그 뒤로 회의 분위기가 안 좋아졌거든.",
+    "answer": "아, 그 뒤로 분위기가 안 좋아졌구나.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 2563,
+      "total_ms": 2781,
+      "input_tokens": 1013,
+      "output_tokens": 17,
+      "cost": 0.001098
+    },
+    "api_usage": {
+      "input_tokens": 1013,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 17,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 1030
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  },
+  {
+    "id": "desk-4",
+    "question": "내가 어떻게 말을 꺼낼지 첫 문장 하나만 추천해 줘.",
+    "answer": "“아까 회의 분위기가 좀 무거워진 것 같아서, 잠깐 이야기 나누고 싶어.”",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1032,
+      "total_ms": 1563,
+      "input_tokens": 1054,
+      "output_tokens": 30,
+      "cost": 0.001204
+    },
+    "api_usage": {
+      "input_tokens": 1054,
+      "input_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 1051,
+        "cache_write_tokens_details": {
+          "ttl_30m_tokens": 1051,
+          "ttl_12h_tokens": 0
+        }
+      },
+      "output_tokens": 30,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 1084
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  },
+  {
+    "id": "bread-1",
+    "question": "빵을 구웠는데 모양이 슬리퍼예요 ㅎㅎ",
+    "answer": "ㅋㅋㅋ 슬리퍼빵이네요. 맛만 있으면 모양은 뭐든 괜찮죠!",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1313,
+      "total_ms": 2000,
+      "input_tokens": 941,
+      "output_tokens": 28,
+      "cost": 0.001081
+    },
+    "api_usage": {
+      "input_tokens": 941,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 28,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 969
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  },
+  {
+    "id": "bread-2",
+    "question": "농담은 여기까지요. 실은 오늘 속상한 일이 있었어요.",
+    "answer": "오늘 속상한 일이 있으셨군요. 편하게 말씀해 주세요.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1500,
+      "total_ms": 1828,
+      "input_tokens": 992,
+      "output_tokens": 20,
+      "cost": 0.001092
+    },
+    "api_usage": {
+      "input_tokens": 992,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 20,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 1012
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  },
+  {
+    "id": "bread-3",
+    "question": "음, 어디부터 얘기하냐면요…",
+    "answer": "네, 천천히 말씀하세요.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1110,
+      "total_ms": 1313,
+      "input_tokens": 1030,
+      "output_tokens": 12,
+      "cost": 0.00109
+    },
+    "api_usage": {
+      "input_tokens": 1030,
+      "input_tokens_details": {
+        "cache_write_tokens": 1027,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 1027
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 12,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 1042
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  },
+  {
+    "id": "bread-4",
+    "question": "친구가 제 얘기를 다 듣기 전에 가 버렸어요. 그냥 말해 보고 싶었어요.",
+    "answer": "얘기를 다 하지도 못했는데 친구가 가 버려서 속상하셨겠어요. 여기에 말해 주셔서 고마워요.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 1000,
+      "total_ms": 1875,
+      "input_tokens": 1072,
+      "output_tokens": 38,
+      "cost": 0.00028635000000000005
+    },
+    "api_usage": {
+      "input_tokens": 1072,
+      "input_tokens_details": {
+        "cache_write_tokens": 42,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 42
+        },
+        "cached_tokens": 1027
+      },
+      "output_tokens": 38,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 1110
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  },
+  {
+    "id": "bread-5",
+    "question": "이젠 제가 먼저 연락해 볼까요? 한 가지 의견은 듣고 싶어요.",
+    "answer": "네, 먼저 연락해 보셔도 좋겠어요. 다만 친구가 왜 갔는지 단정하기보다는 “아까 내 얘기가 끝나기 전에 가서 좀 속상했어. 무슨 일 있었어?”라고 말해 보세요.",
+    "metrics": {
+      "model": "gpt-6.1-terra",
+      "first_ms": 875,
+      "total_ms": 1813,
+      "input_tokens": 1134,
+      "output_tokens": 61,
+      "cost": 0.00042344999999999997
+    },
+    "api_usage": {
+      "input_tokens": 1134,
+      "input_tokens_details": {
+        "cache_write_tokens": 62,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 62
+        },
+        "cached_tokens": 1069
+      },
+      "output_tokens": 61,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 1195
+    },
+    "source_sha256": "1d0559157491348e2afb1cc837a098bb3c44ee24586029b06ddd37f85b01f415"
+  }
+]

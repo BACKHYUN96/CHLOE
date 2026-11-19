@@ -1,0 +1,89 @@
+{
+  "model": "gpt-6.1-terra",
+  "sessions": [
+    {
+      "id": "fridge",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "fridge-1",
+          "message": "냉장고 열었는데 불빛만 반겨 주더라.",
+          "expect": "농담을 받고 음식 주문·해결책을 제안하지 않음",
+          "focus": "대화 차례와 요청"
+        }
+      ]
+    },
+    {
+      "id": "desk",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "desk-1",
+          "message": "회의 들어가는데 의자가 먼저 끼익 하고 인사하더라 ㅋㅋ",
+          "expect": "지금의 농담에 맞는 반응",
+          "focus": "대화 차례와 요청"
+        },
+        {
+          "id": "desk-2",
+          "message": "아 뒷얘기 있어. 내가 마저 말할게.",
+          "expect": "웃음·질문·조언 없이 차례를 양보",
+          "focus": "대화 차례와 요청"
+        },
+        {
+          "id": "desk-3",
+          "message": "그 뒤로 회의 분위기가 안 좋아졌거든.",
+          "expect": "진지한 전환, 원인 단정·조언 없음",
+          "focus": "대화 차례와 요청"
+        },
+        {
+          "id": "desk-4",
+          "message": "내가 어떻게 말을 꺼낼지 첫 문장 하나만 추천해 줘.",
+          "expect": "명시적으로 요청한 문장 하나 제공",
+          "focus": "대화 차례와 요청"
+        }
+      ]
+    },
+    {
+      "id": "bread",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "bread-1",
+          "message": "빵을 구웠는데 모양이 슬리퍼예요 ㅎㅎ",
+          "expect": "가벼운 존댓말",
+          "focus": "대화 차례와 요청"
+        },
+        {
+          "id": "bread-2",
+          "message": "농담은 여기까지요. 실은 오늘 속상한 일이 있었어요.",
+          "expect": "웃음 중단, 캐묻거나 해결책을 제시하지 않음",
+          "focus": "대화 차례와 요청"
+        },
+        {
+          "id": "bread-3",
+          "message": "음, 어디부터 얘기하냐면요…",
+          "expect": "존댓말로 짧게 차례 양보",
+          "focus": "대화 차례와 요청"
+        },
+        {
+          "id": "bread-4",
+          "message": "친구가 제 얘기를 다 듣기 전에 가 버렸어요. 그냥 말해 보고 싶었어요.",
+          "expect": "공감, 추측과 조언·질문 자제",
+          "focus": "대화 차례와 요청"
+        },
+        {
+          "id": "bread-5",
+          "message": "이젠 제가 먼저 연락해 볼까요? 한 가지 의견은 듣고 싶어요.",
+          "expect": "요청된 의견 제공",
+          "focus": "대화 차례와 요청"
+        }
+      ]
+    }
+  ]
+}
