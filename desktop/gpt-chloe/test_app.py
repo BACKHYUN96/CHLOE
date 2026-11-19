@@ -5,6 +5,7 @@ import unittest
 import urllib.error
 import urllib.request
 from server import App, Server, UserError, protect_secret, HISTORY_CHAR_BUDGET, ARCHIVE_CHAR_BUDGET, recall_archive
+from server import title_cap, display_title
 import os
 
 class CompanionTests(unittest.TestCase):
@@ -58,6 +59,33 @@ class CompanionTests(unittest.TestCase):
         with self.assertRaises(UserError):
             self.app.generate(self.body(), lambda *_: None, self.complete)
         self.assertEqual(len(self.app.messages(self.session)), 2)
+
+
+    def test_bounded_title_displays_and_saves_only_first_fitting_option(self):
+        body = self.body()
+        body["message"] = "제목을 세 글자 안으로 하나만 써 줘."
+        usage = {"input_tokens": 90, "output_tokens": 12}
+
+        def candidates(key, payload):
+            self.assertIn("[제목후보]", payload["input"][2]["content"])
+            for piece in ("[제목", "후보]\n순간이동\n달 ", "빛\n달"):
+                yield {"type": "response.output_text.delta", "delta": piece}
+            yield {"type": "response.completed", "response": {"status": "completed", "usage": usage}}
+
+        emitted = []
+        self.app.generate(body, lambda event, data: emitted.append((event, data)), candidates)
+        self.assertEqual([e for e, _ in emitted], ["delta", "done"])
+        self.assertEqual(emitted[0][1]["text"], "달 빛")
+        self.assertEqual(self.app.messages(self.session)[-1]["content"], "달 빛")
+        self.assertEqual(emitted[-1][1]["output_tokens"], 12)
+
+    def test_bounded_title_preserves_other_requests_and_counts_normalized_text(self):
+        self.assertEqual(title_cap("제목 하나, 5자 이하로요."), 5)
+        self.assertIsNone(title_cap("여섯 글자 안으로 요약해."))
+        self.assertIsNone(title_cap("제목을 여러 개 추천해."))
+        self.assertEqual(display_title("두 가지 제목과 설명\n둘째 줄", 3), "두 가지 제목과 설명\n둘째 줄")
+        self.assertEqual(display_title("[제목후보]\n달", 1), "달")
+        self.assertIn("만들지 못했어요", display_title("[제목후보]\n순간이동", 3))
 
     def test_incomplete_and_dropped_stream_do_not_poison_history(self):
         for kind in ("response.incomplete", "response.failed", "eof"):

@@ -13,6 +13,7 @@ import secrets
 import sqlite3
 import threading
 import time
+import unicodedata
 import urllib.error
 import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -98,6 +99,32 @@ PERSONA = """너는 한국어 대화 동반자 클로이야. 한국인이 일상
 사용자가 불편했던 일을 들려주면 그 사람이 짚은 대목에 반응해. 문제를 언급한 것만으로 방법을 부탁했다고 여기지 마. 이야기를 듣다가 실제로 조언을 청하는 순간에는 구체적으로 답해.
 일상 대화에선 상대에게 이야기를 들려주는 역할과 듣는 역할이 달라. 듣는 너는 사건을 다시 서술하기보다 그 말을 듣고 떠오르는 반응을 바로 건네. 농담이면 웃긴 설정을 받아 다음 한마디를 얹고, 감상이면 그 사람이 눈여겨본 대목에 잠깐 같이 머물러. 사실에 없는 뒷이야기나 감정을 보태지 마. 상대 말에서 명사와 어미만 바꾼 문장이나 '신기하네요'만 남았다면 보내기 전에 듣는 사람의 말로 고쳐. 가령 “마지막 한 조각 남았길래 양보했더니 아무도 안 먹네”에는 “다들 마지막 한 조각 앞에서만 예의 바르네.”처럼. 억지로 농담할 필요는 없어. 조언이나 문구를 청하면 요청한 답으로 곧바로 전환해.
 답변은 자연스러운 한국어 본문으로 작성해."""
+
+TITLE_NUMBERS = dict(zip("한 두 세 네 다섯 여섯 일곱 여덟 아홉 열".split(), range(1, 11)))
+TITLE_CAP = re.compile(
+    r"(?<![가-힣0-9])([0-9]{1,4}|한|두|세|네|다섯|여섯|일곱|여덟|아홉|열)"
+    r"\s*(?:글자|자)\s*(?:이내|이하|안으로|안에|를?\s*넘지)"
+)
+TITLE_MARKER = "[제목후보]"
+
+def title_cap(question):
+    if "제목" not in question:
+        return None
+    matches = TITLE_CAP.findall(question)
+    if len(matches) != 1:
+        return None
+    number = matches[0]
+    return (int(number) if number.isdecimal() else TITLE_NUMBERS[number]) or None
+
+def display_title(answer, limit):
+    lines = answer.strip().splitlines()
+    if not lines or lines[0].strip() != TITLE_MARKER:
+        return answer
+    for line in lines[1:]:
+        title = unicodedata.normalize("NFC", line.strip())
+        if 0 < len(title) <= limit:
+            return title
+    return "요청한 길이에 맞는 제목을 만들지 못했어요."
 
 class UserError(Exception):
     pass
@@ -320,6 +347,15 @@ class App:
                 "이전 사실이나 정정 여부를 확인할 수 없으면 현재 확인 가능한 범위를 설명해.")
         messages = [{"role": "developer", "content": PERSONA},
                     {"role": "developer", "content": "사용자가 관리하는 설정과 참고 자료\n" + json.dumps(reference, ensure_ascii=False)}]
+        limit = title_cap(question)
+        if limit:
+            messages.append({"role": "developer", "content": (
+                f"이번 요청이 최대 {limit}칸 안의 제목 하나만 짓는 요청이면 첫 줄에 {TITLE_MARKER}을 쓰고, "
+                "다음 줄부터 가장 어울리는 제목을 먼저 써. 더 짧은 대안도 각각 한 줄에 써. "
+                "마지막은 장면을 담는 한 음절짜리 낱말로 마쳐. 번호·설명·따옴표는 생략해. "
+                "앱은 공백까지 포함해 한도를 만족하는 첫 제목 하나를 표시해. "
+                "여러 제목, 설명 등 다른 결과가 필요하거나 제목 자체가 요청 대상이 아니면 이 표시 없이 평소처럼 전부 답해."
+            )})
         messages += selected + [{"role": "user", "content": question}]
         return dict(model=settings["model"], input=messages, stream=True, store=False,
                     reasoning={"effort": MODELS[settings["model"]]["effort"]}, max_output_tokens=4096,
@@ -339,21 +375,27 @@ class App:
                     raise UserError("이미 완료한 요청이에요. 대화를 다시 열어 확인해 주세요.")
             history = self.messages(session)
             payload = self.payload(question, history)
+            limit = title_cap(question)
             start, first, answer, completed = time.monotonic(), None, "", None
             for event in events(self.key, payload):
                 kind = event.get("type")
                 if kind == "response.output_text.delta":
                     delta = event.get("delta", "")
-                    if delta and first is None:
+                    if delta and first is None and not limit:
                         first = round((time.monotonic() - start) * 1000)
                     answer += delta
-                    emit("delta", {"text": delta})
+                    if not limit:
+                        emit("delta", {"text": delta})
                 elif kind == "response.completed":
                     completed = event.get("response", {})
                 elif kind in ("response.failed", "response.incomplete", "error"):
                     raise UserError("응답이 완성되지 않았어요. 다시 보내 주세요. 이번 호출에도 비용이 발생할 수 있어요.")
             if not completed or completed.get("status") != "completed" or not answer.strip():
                 raise UserError("완성된 답변을 받지 못했어요. 이번 호출에도 비용이 발생할 수 있어요.")
+            if limit:
+                answer = display_title(answer, limit)
+                first = round((time.monotonic() - start) * 1000)
+                emit("delta", {"text": answer})
             usage = completed.get("usage") or {}
             incoming, outgoing = usage.get("input_tokens", 0), usage.get("output_tokens", 0)
             cached = (usage.get("input_tokens_details") or {}).get("cached_tokens", 0)
