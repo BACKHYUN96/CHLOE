@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>클로이 — 나다운 대화</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<aside class="sidebar">
+  <a class="brand" href="/" aria-label="클로이 홈"><span class="brand-symbol">✳</span><span>chloe<span class="brand-dot">.</span></span></a>
+  <button id="new-chat" class="new-chat">＋ 새 대화</button>
+  <nav aria-label="주 메뉴">
+    <button class="nav-item active" data-view="chat"><span>◌</span> 대화</button>
+    <button class="nav-item" data-view="memory"><span>◇</span> 기억</button>
+    <button class="nav-item" data-view="studio"><span>✦</span> 말투 학습</button>
+  </nav>
+  <div class="history-title">최근 대화</div><div id="session-list" class="session-list"></div>
+  <div class="sidebar-footer"><button class="nav-item" data-view="settings"><span>⚙</span> API · 설정</button><div id="key-status" class="key-status"></div><div id="usage" class="usage"></div></div>
+</aside>
+<main>
+  <header class="topbar"><span id="page-name">대화</span><button id="model-short" class="model-button"></button></header>
+  <section id="view-chat" class="view chat-view">
+    <div id="messages" class="messages" aria-live="polite"></div>
+    <div class="composer-wrap">
+      <div id="connection-note" class="connection-note" hidden>첫 대화를 시작하려면 <button id="setup-link">API 키를 연결해 주세요 →</button></div>
+      <form id="chat-form" class="composer"><label class="sr-only" for="message">클로이에게 메시지 보내기</label><textarea id="message" placeholder="클로이에게 이야기해 주세요" rows="2" maxlength="6000"></textarea><div class="composer-bottom"><span>Enter로 보내기 · Shift + Enter로 줄바꿈</span><button id="send" class="send" type="submit" aria-label="메시지 보내기">↑</button></div></form>
+      <p class="composer-note">대화는 이 PC에 저장돼요. 답변 생성 시 최근 대화와 저장한 기억·말투 자료가 OpenAI로 전송돼요.</p>
+    </div>
+  </section>
+  <section id="view-memory" class="view content-view" hidden>
+    <div class="section-heading"><div><p class="eyebrow">함께 쌓아 가는 이야기</p><h1>클로이가 기억할 것들</h1><p>새 대화에서도 참고할 사실을 직접 저장해 주세요.<br>대상을 정확히 적으면 이름이 비슷해도 구분하기 쉬워요.</p></div><button id="add-memory" class="primary">＋ 기억 추가</button></div>
+    <div id="memory-list" class="card-grid"></div>
+  </section>
+  <section id="view-studio" class="view content-view" hidden>
+    <div class="section-heading"><div><p class="eyebrow">조금 더 나에게 맞게</p><h1>클로이 말투 학습실</h1><p>원하는 말투와 좋은 대화 예시를 가르쳐 주세요.<br>저장한 자료를 다음 대화의 지침으로 활용해요.</p></div><button id="add-lesson" class="primary">＋ 말투 가르치기</button></div>
+    <div class="studio-intro"><span class="studio-flower">✳</span><div><h2>이렇게 말해 주면 좋겠어.</h2><p>“매번 질문으로 끝내지 말아 줘.” 같은 피드백도 좋아요.<br>마음에 드는 표현을 질문·답변 한 쌍으로 저장할 수도 있어요.</p></div></div>
+    <div id="lesson-list" class="card-grid"></div>
+    <div class="try-box"><h2>지금 말투로 연습하기</h2><p>아래 문장을 누르면 현재 설정으로 새 대화를 시작해요. API 사용량이 발생해요.</p><div class="sample-buttons"><button data-sample="오늘 퇴근하고 아무것도 하기 싫다.">지친 하루 이야기</button><button data-sample="친구한테 서운한데 어떻게 말하면 좋을까?">친구와의 고민</button><button data-sample="내가 아까 말한 취향 중 기억하는 게 있어?">기억 확인하기</button></div></div>
+    <p class="small-note">이 화면은 지침·예시를 저장하는 학습실이에요. 모델의 가중치를 바꾸는 파인튜닝은 수행하지 않아요.</p>
+  </section>
+  <section id="view-settings" class="view content-view" hidden>
+    <div class="section-heading"><div><p class="eyebrow">대화 준비</p><h1>나에게 맞는 클로이</h1><p>모델을 선택하고 편안한 말투를 정해 주세요.</p></div></div>
+    <div class="settings-grid">
+      <form id="settings-form" class="settings-card"><h2>대화 설정</h2>
+        <label for="model">API 모델</label><select id="model"><option value="gpt-6.1-terra">GPT-6.1 Terra · 일상 대화 추천</option><option value="gpt-6.2-sol">GPT-6.2 Sol · 복잡한 이야기</option><option value="gpt-6-luna">GPT-6 Luna · 비용 우선</option></select>
+        <p id="model-description" class="field-note"></p>
+        <label for="register">말투</label><select id="register"><option value="casual">편안한 반말</option><option value="polite">다정한 존댓말</option></select>
+        <label for="length">답변 길이</label><select id="length"><option value="balanced">상황에 맞게</option><option value="brief">짧고 편하게</option><option value="detailed">충분히 자세하게</option></select>
+        <label for="nickname">나를 부를 이름 <span class="optional">선택</span></label><input id="nickname" placeholder="예를 들면, 백현" maxlength="30">
+        <button class="primary" type="submit">대화 설정 저장</button>
+      </form>
+      <div class="settings-card"><h2>OpenAI 연결</h2><p id="key-description"></p>
+        <form id="key-form"><label for="api-key">API 키</label><input id="api-key" type="password" placeholder="sk-…" autocomplete="off" spellcheck="false" maxlength="300">
+        <label class="checkbox"><input id="persist-key" type="checkbox" checked> 이 Windows 계정에 암호화해서 저장</label><button class="primary" type="submit">API 키 저장</button></form>
+        <div class="inline-actions"><button id="check-key" class="secondary">연결 확인</button><button id="remove-key" class="text-button">키 지우기</button></div><p id="connection-result" role="status"></p>
+        <p class="field-note">키는 PC 서버에서만 사용해요. 대화창이나 Git에 기록하지 않아요.</p>
+        <a href="https://platform.openai.com/api-keys" target="_blank" rel="noreferrer">API 키 만들기 ↗</a><br><a href="https://platform.openai.com/settings/organization/billing/overview" target="_blank" rel="noreferrer">크레딧과 만료일 확인 ↗</a>
+      </div>
+    </div>
+    <div class="cost-note"><h2>사용량 확인</h2><p>왼쪽 금액은 이 앱에서 완료한 요청의 토큰으로 계산한 추정 비용이에요. 계정 전체 잔액은 API 결제 화면에서 확인해 주세요. 중단·실패한 요청의 비용은 추정치에 포함되지 않을 수 있어요.</p><p>기본 모델 Terra는 표준 요금 기준 입력 100만 토큰당 $1, 출력 $5예요. Sol은 $2 / $10, Luna는 $0.10 / $0.50예요. 2026-11-19 확인.</p><a href="https://developers.openai.com/api/docs/pricing" target="_blank" rel="noreferrer">공식 가격표 ↗</a></div>
+  </section>
+</main>
+<dialog id="edit-dialog"><form id="edit-form"><div class="dialog-header"><h2 id="dialog-title"></h2><button id="close-dialog" type="button" class="text-button" aria-label="닫기">✕</button></div><input id="edit-id" type="hidden">
+<div id="memory-fields"><label for="subject">누구 / 무엇에 관한 기억인가요?</label><input id="subject" maxlength="80" placeholder="예를 들면, 사용자 / 내가 만든 앱 ‘새아라’"><label for="detail">기억할 사실</label><textarea id="detail" rows="4" maxlength="500" placeholder="대상과 관계를 함께 적어 주세요."></textarea></div>
+<div id="lesson-fields"><label for="instruction">어떻게 말해 주면 좋을까요?</label><textarea id="instruction" rows="3" maxlength="500" placeholder="예를 들면, 위로할 때 조언을 길게 늘어놓지 말아 줘."></textarea><label for="example-user">예시 질문 <span class="optional">선택</span></label><textarea id="example-user" rows="2" maxlength="500"></textarea><label for="example-reply">원하는 답변 <span class="optional">선택</span></label><textarea id="example-reply" rows="3" maxlength="1000"></textarea></div><p id="edit-error" class="error" role="alert"></p><button class="primary" type="submit">저장하고 다음 대화에 반영</button></form></dialog>
+<div id="toast" class="toast" role="status" hidden></div>
+</body></html>
