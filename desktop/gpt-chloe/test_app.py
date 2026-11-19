@@ -4,7 +4,7 @@ import threading
 import unittest
 import urllib.error
 import urllib.request
-from server import App, Server, UserError, protect_secret
+from server import App, Server, UserError, protect_secret, HISTORY_CHAR_BUDGET
 import os
 
 class CompanionTests(unittest.TestCase):
@@ -81,7 +81,25 @@ class CompanionTests(unittest.TestCase):
         self.assertEqual(len(messages) % 2, 0)
         self.assertEqual(messages[0]["role"], "user")
         self.assertEqual(messages[-1]["role"], "assistant")
-        self.assertLessEqual(sum(len(r["content"]) for r in messages), 24000)
+        self.assertLessEqual(sum(len(r["content"]) for r in messages), HISTORY_CHAR_BUDGET)
+        self.assertIn("이력범위", self.app.payload("마지막", history)["input"][1]["content"])
+
+    def test_short_turns_do_not_drop_early_correction_after_twenty_turns(self):
+        history = [{"role": "user", "content": "내 물건이 아니라 수현의 물건이야."},
+                   {"role": "assistant", "content": "수현의 물건으로 정정할게."}]
+        history += [{"role": role, "content": f"일상 이야기 {i}"}
+                    for i in range(35) for role in ("user", "assistant")]
+        sent = self.app.payload("누구 물건이었지?", history)["input"]
+        self.assertEqual(sent[2:-1], history)
+        self.assertNotIn("이력범위", sent[1]["content"])
+
+    def test_oversized_latest_pair_does_not_include_disconnected_older_history(self):
+        history = [{"role": "user", "content": "예전 사실"}, {"role": "assistant", "content": "응"},
+                   {"role": "user", "content": "정정"},
+                   {"role": "assistant", "content": "가" * HISTORY_CHAR_BUDGET}]
+        sent = self.app.payload("지금은?", history)["input"]
+        self.assertEqual(len(sent), 3)
+        self.assertIn("오래된 메시지 4개", sent[1]["content"])
 
     @unittest.skipUnless(os.name == "nt", "Windows DPAPI only")
     def test_encrypted_key_roundtrip(self):

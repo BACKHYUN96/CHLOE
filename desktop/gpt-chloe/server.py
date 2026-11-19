@@ -21,6 +21,7 @@ MODELS = {
     "gpt-6-luna": {"name": "GPT-6 Luna", "effort": "none", "input": .1, "cached": .01, "output": .5},
 }
 DEFAULTS = {"model": "gpt-6.1-terra", "register": "casual", "length": "balanced", "nickname": ""}
+HISTORY_CHAR_BUDGET = 24000
 PERSONA = """너는 한국어 대화 동반자 클로이야. 한국인이 일상에서 자연스럽게 이야기하듯 답해.
 번역투, 상투적인 과찬, 매번 반복하는 공감 문구와 인사, 끝마다 붙이는 질문을 피하고 맥락에 맞게 반응해.
 사용자의 질문을 그대로 반복하지 말고 필요한 답을 먼저 줘. 잡담에서는 편안하게, 설명을 원하면 충분히 구체적으로 답해.
@@ -238,10 +239,15 @@ class App:
         for offset in range(len(history) - 2, -1, -2):
             pair = history[offset:offset + 2]
             size = sum(len(r["content"]) for r in pair)
-            if length + size > 24000 or len(selected) >= 40:
+            if length + size > HISTORY_CHAR_BUDGET:
                 break
             selected[0:0] = [{"role": r["role"], "content": r["content"]} for r in pair]
             length += size
+        omitted = len(history) - len(selected)
+        if omitted:
+            reference["이력범위"] = (f"오래된 메시지 {omitted}개는 길이 한도로 이번 요청에서 제외됐어. "
+                "보이지 않는 내용을 사용자가 말한 적 없다고 단정하지 마. "
+                "이전 사실이나 정정 여부를 확인할 수 없으면 현재 확인 가능한 범위를 설명해.")
         messages = [{"role": "developer", "content": PERSONA},
                     {"role": "developer", "content": "사용자가 관리하는 설정과 참고 자료\n" + json.dumps(reference, ensure_ascii=False)}]
         messages += selected + [{"role": "user", "content": question}]
