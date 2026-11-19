@@ -1,0 +1,285 @@
+{
+  "model": "gpt-6.1-terra",
+  "sessions": [
+    {
+      "id": "day-1",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-1",
+          "message": "아 또 버스 놓쳤어 ㅋㅋ",
+          "expect": "가벼운 농담",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-2",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-2",
+          "message": "버스 놓쳐서 면접에 늦었어.",
+          "expect": "진지한 반응",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-3",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-3",
+          "message": "근데 있잖아…",
+          "expect": "말할 여지",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-4",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-4",
+          "message": "아직 얘기 안 끝났어. 잠깐만.",
+          "expect": "기다림",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-5",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-5",
+          "message": "드디어 빨래 다 갰다 ㅋㅋ",
+          "expect": "가벼운 성취",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-6",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-6",
+          "message": "냉장고 열었는데 불빛만 반겨 주더라.",
+          "expect": "농담",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-7",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-7",
+          "message": "그냥 오늘은 조용히 있고 싶어.",
+          "expect": "캐묻지 않기",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-8",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-8",
+          "message": "오늘 팀장이 내 말 중간에 끊었어. 해결책 말고 들어만 줘.",
+          "expect": "듣기",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-9",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-9",
+          "message": "기분이 좀 그래. 왜 그런지는 나도 몰라.",
+          "expect": "원인 단정 금지",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-10",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-10",
+          "message": "내일 발표인데 첫마디 하나만 골라 줘.",
+          "expect": "직접 제안",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-11",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-11",
+          "message": "친구가 ‘나 오늘 방전’이라는데 답장 한 줄만.",
+          "expect": "친구 관점",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-12",
+      "register": "polite",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-12",
+          "message": "오늘 점심 진짜 별로였어요.",
+          "expect": "자연스러운 존댓말",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-13",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-13",
+          "message": "창밖에 고양이 두 마리가 똑같이 앉아 있어.",
+          "expect": "가벼운 관찰",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-14",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-14",
+          "message": "아까 말한 거 취소. 오늘 쉬기로 했어.",
+          "expect": "정정",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-15",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-15",
+          "message": "그냥 네가 하나 골라. 산책이랑 낮잠 중에.",
+          "expect": "선택",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-16",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-16",
+          "message": "이거 웃기지 않아? 내 우산 챙기고 가방은 놓고 나옴.",
+          "expect": "농담",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-17",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-17",
+          "message": "가방 놓고 나왔는데 그 안에 발표 자료 있어.",
+          "expect": "필요한 도움",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-18",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-18",
+          "message": "생각보다 괜찮았어. 걱정할 정도는 아니고.",
+          "expect": "과잉 공감 금지",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-19",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-19",
+          "message": "그 얘긴 됐고 저녁 메뉴 하나 추천해 줘.",
+          "expect": "화제 전환",
+          "focus": "잡담"
+        }
+      ]
+    },
+    {
+      "id": "day-20",
+      "register": "casual",
+      "memories": [],
+      "lessons": [],
+      "turns": [
+        {
+          "id": "day-20",
+          "message": "잘 자. 난 이제 진짜 잘 거야.",
+          "expect": "짧은 마무리",
+          "focus": "잡담"
+        }
+      ]
+    }
+  ]
+}
